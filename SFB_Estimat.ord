@@ -1,0 +1,108 @@
+Estimat SFB – berikningsdel och PIM
+	version:: 0.1
+	datum:: 2026-11-13
+	estimatklass:: 4
+	omfattningsbas:: SFB_Kravspecifikation_Vaimo.pdf 1.3-V; SFB_Kravkatalog_Vaimo.xlsx 1.3-V
+	metod:: ./Estimering/Estimeringsmetod.ord
+	checklista:: ./SFB_Offertprocess.ord
+	Estimatet för SFB enligt [[Estimeringsmetod med trepunktsestimat (PERT)]]. Siffrorna matas in i CSV-filerna; paket, grupper och totaler räknas av typerna i metodfilen.
+	Klass 4: kraven och arbetspaketen finns, men gränssnitt, export och volymer verifieras först i [[AP01]]. Estimera om till klass 3 när AP01 är klar.
+	Filer
+		./SFB_Estimat_paket.csv
+			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
+		./SFB_Estimat_rader.csv
+			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna.
+		./SFB_Estimat_risker.csv
+			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
+		./SFB_Estimat_kostnader.csv
+			Licenser, drift, support och andra parters avgifter.
+
+	Inställningar ^estimatinst
+		egenpart:: Vaimo
+		valuta:: SEK
+		sigmadelare:: 2.56
+		zintervall:: 1.2816
+		zp80:: 0.8416
+		timmarperdag:: 8
+		fokusfaktor:: 0.8
+		maxrad:: 40
+		maxspann:: 4
+		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
+
+	Roller
+		Fyll i timpris i SEK exklusive moms innan kostnaderna räknas.
+		Affärskonsult +estimatroll ^BC
+			part:: Vaimo
+			timpris::
+		Teknisk arkitekt +estimatroll ^TA
+			part:: Vaimo
+			timpris::
+		Utvecklare +estimatroll ^DEV
+			part:: Vaimo
+			timpris::
+		Testledare +estimatroll ^QA
+			part:: Vaimo
+			timpris::
+		Projektledare +estimatroll ^PM
+			part:: Vaimo
+			timpris::
+		ITM8 +estimatroll ^ITM8
+			part:: ITM8
+			timpris::
+			ITM8:s timmar och pris kommer från ITM8. Ett saknat ITM8-estimat lämnas tomt och syns som saknat, aldrig som noll.
+		SFB:s medverkan +estimatroll ^SFB
+			part:: SFB
+			Visar SFB:s egen insats per paket, som [[B11]] efterfrågar. Ingår inte i priset.
+
+	Grupper
+		Grupperna följer hur SFB vill se priset. De summeras inte med varandra.
+		F1 basestimat +estimatsumma ^E-F1
+			Alla F1-paket, även [[AP16]] och [[AP22]]. AP22 står som egen rad men ingår i F1-totalen.
+			ITM8:s paket [[AP07]]–[[AP10]] ingår som externa beroenden: deras timmar syns som extern insats och ingår inte i Vaimos pris.
+		V2 +estimatsumma ^E-V2
+			[[AP17]], [[AP18]] och [[AP19]] som egna rader med fullt leveransarbete.
+		Tillval +estimatsumma ^E-TILLVAL
+			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet.
+		Alternativ +estimatsumma ^E-ALT
+			[[ALT01]] och [[ALT03]]. Ersätter arbete i basen eller beställs separat; adderas aldrig till F1.
+
+	Så fyller estimatet SFB:s krav
+		Kraven kommer från avsnitt 3 och 9 i [[Offertprocess SFB – estimat för berikningsdel och PIM]].
+		Per paket: timmar
+			Fältet bas på paketet. Förväntad och riskreserv visar vad bas består av.
+		Per paket: viktat timpris
+			Fältet timpris på paketet.
+		Per paket: kostnad i SEK exklusive moms
+			Fältet baskostnad. Timpriserna anges exklusive moms.
+		Per paket: låg-, bas- och högbedömning
+			Fälten låg, bas och hög, i timmar och i kostnad. Låg är P10 och hög P90.
+		Per paket: bemanning och kalendertid
+			Bemanning fylls i på paketet. Arbetsdagar och kalenderveckor räknas.
+		Omräkning från persondagar
+			Fältet persondagar, med timmar per dag i inställningarna.
+		Övriga engångskostnader skilda från arbetstid
+			Kostnadsposter med slag Engång, i fältet engångskostnad.
+		Primär kostnadsplats per paket
+			Fältet kostnadsplats på paketet. Paketet självt är kostnadsplatsen om inget annat anges.
+		Osäkra delar
+			Prisstatus Undersökning, Intervall eller Enhetspris på paketet. Riskerna ligger per paket i riskregistret, aldrig i en generell reservation.
+		Insats per part utan dubbla timmar
+			Fälten perpart och extern. ITM8:s medverkan i [[AP01]] och [[AP12]] står bara där.
+		Migrering: fast och rörlig del samt enhetspriser
+			Raderna i [[AP11]] och [[AP22]] är uppdelade i fasta rader och rader med enhet. Enhetspris per körning, per 100 000 artiklar eller filer och per GB visas i sökningen Enhetspriser.
+			Extra körning är en rad med antal 0: den ger enhetspriset utan att påverka basen.
+		Fler attribut med samma grundregel
+			Rad med antal 0 och enhet attribut i [[AP03]].
+		Återkommande kostnader
+			Kostnadsposter med slag Återkommande, i fältet återkommandeperår. Volymantagandet står på posten.
+		Saknade externa priser syns
+			Fältet saknade på paketet och kontrollen Paket med saknade estimat.
+
+	Kontroller före inlämning
+		Utöver kontrollerna i metodfilen.
+		[ ] Varje F1-krav i SFB_Krav.ord finns i kolumnen krav på minst en rad.
+		[ ] Inga rader i [[AP07]]/[[AP08]] dubblerar ITM8:s medverkan i [[AP01]].
+		[ ] Gemensamma regler räknas bara i [[AP03]], inte igen i [[AP06]] eller [[AP16]].
+		[ ] Samma fil eller körning räknas inte i både [[AP11]] och [[AP22]].
+		[ ] Projektledningens antal veckor i [[AP15]] stämmer med F1:s kalendertid.
+		[ ] Relativt spann för F1 ligger i linje med klass 4. Mycket smalare spann ska motiveras.

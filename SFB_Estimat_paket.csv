@@ -1,0 +1,26 @@
+_id,_type,_label,_parent,arbetspaket,kostnadsplats,bemanning,prisstatus,start,ansvarig,antagande
+E-AP01,estimatsumma,AP01 Teknisk precisering och inventering,E-F1,AP01,AP01,,Fast,,,Avgränsad leverans med eget pris och kalendertid. Bara återstående arbete. Förstudiens resultat återanvänds.
+E-AP02,estimatsumma,AP02 Datamodell och grundstruktur,E-F1,AP02,AP02,,Intervall,,,
+E-AP03,estimatsumma,AP03 Administratörsgränssnitt och berikning,E-F1,AP03,AP03,,Intervall,,,"Gemensamma fält-, överstyrnings- och valideringsregler räknas här en gång."
+E-AP04,estimatsumma,AP04 PIMs integrationsgränssnitt,E-F1,AP04,AP04,,Intervall,,,Inget befintligt API antas. Kontrakt från AP01.
+E-AP05,estimatsumma,AP05 Bilder dokument och versioner,E-F1,AP05,AP05,,Intervall,,,
+E-AP06,estimatsumma,AP06 Excelimport och export,E-F1,AP06,AP06,,Intervall,,,Återanvänder AP03:s regler.
+E-AP07,estimatsumma,AP07 Källintegrationer till MagicBox,E-F1,AP07,AP07,,Saknas,,ITM8,Externt beroende. ITM8:s estimat.
+E-AP08,estimatsumma,AP08 MagicBoxanslutning och distribution,E-F1,AP08,AP08,,Saknas,,ITM8,Externt beroende. ITM8:s estimat.
+E-AP09,estimatsumma,AP09 Snickens separata anslutning,E-F1,AP09,AP09,,Saknas,,ITM8,Externt beroende. ITM8 bygger adaptern som estimatantagande.
+E-AP10,estimatsumma,AP10 Befintliga medier och länkar,E-F1,AP10,AP10,,Saknas,,ITM8,Externt beroende. ITM8 samordnar befintlig driftpart.
+E-AP11,estimatsumma,AP11 Migrering,E-F1,AP11,AP11,,Enhetspris,,,Fast del plus volymberoende del. Tre körningar i basen.
+E-AP22,estimatsumma,AP22 Äldre dokumentversioner och historikexport,E-F1,AP22,AP22,,Intervall,,,Bara tillkommande arbete. AP11:s verktyg och AP05:s versionsvy återanvänds.
+E-AP12,estimatsumma,AP12 Gemensamt test och acceptans,E-F1,AP12,AP12,,Intervall,,,
+E-AP13,estimatsumma,AP13 Miljöer drift och återställning,E-F1,AP13,AP13,,Intervall,,,Månatlig drift och support som kostnadsposter.
+E-AP14,estimatsumma,AP14 Driftsättning och överlämning,E-F1,AP14,AP14,,Fast,,,
+E-AP15,estimatsumma,AP15 Projektledning,E-F1,AP15,AP15,,Intervall,,,Timmar per vecka gånger antal veckor. Inget procentpåslag.
+E-AP16,estimatsumma,AP16 Tabellredigering och massändring i gränssnittet,E-F1,AP16,AP16,,Intervall,,,Använder AP03:s regler. Licens som kostnadspost.
+E-AP17,estimatsumma,AP17 ERP-baserad prioritering,E-V2,AP17,AP17,,Intervall,,,ITM8 och PIM-insats särredovisas.
+E-AP18,estimatsumma,AP18 Automatisk produktgruppering,E-V2,AP18,AP18,,Intervall,,,Regelbaserad metod i basen.
+E-AP19,estimatsumma,AP19 Manuell arkivering sökning och återaktivering,E-V2,AP19,AP19,,Intervall,,,
+E-AP20,estimatsumma,AP20 Nya mediedomäner,E-TILLVAL,AP20,AP20,,Intervall,,,Vi föreslår ansvarig.
+E-AP21,estimatsumma,AP21 Avancerade förhandsvisningar,E-TILLVAL,AP21,AP21,,Intervall,,,Formatlista anges.
+E-TV-ARKIV,estimatsumma,Automatiserad mottagartjänst för tioårsarkivet,E-TILLVAL,,AP05,,Intervall,,,Tillval enligt PDF 7.
+E-ALT01,estimatsumma,ALT01 Snicken inne i MagicBox,E-ALT,,AP09,,Saknas,,ITM8,"Ersätter AP09. Ersättningskostnad, inte tillägg."
+E-ALT03,estimatsumma,ALT03 Avgränsad kontinuitetslösning,E-ALT,,ALT03,,Intervall,,,Beställs inte automatiskt.

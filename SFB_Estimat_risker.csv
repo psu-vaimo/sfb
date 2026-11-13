@@ -1,0 +1,9 @@
+_id,_type,_label,_parent,roll,sannolikhet,optimistisk,trolig,pessimistisk,utlösare,åtgärd,ägare
+,estimatrisk,C4-exporten avviker från antaget format eller har luckor,E-AP11,DEV,,,,,Exportprovet i AP01 visar avvikelser,Exportprov tidigt i AP01. Kostnadssatt lösning före C4-stängning.,
+,estimatrisk,Äldre dokumentversioner saknas eller kan inte kopplas till artikel,E-AP22,DEV,,,,,Inventeringen i AP01 visar saknade versioner,Kostnadssatt åtkomstlösning för SFB:s beslut.,
+,estimatrisk,Transport mellan PIM och MagicBox måste byggas från grunden,E-AP04,DEV,,,,,AP01 visar att endpointar eller köer saknas,,
+,estimatrisk,Befintliga grupprelationer avviker från gruppregeln i B12,E-AP02,BC,,,,,Kontrollen i AP01 hittar avvikande relationer,Redovisas för SFB:s beslut. Tas inte bort tyst.,
+,estimatrisk,Vald tabellkomponent klarar inte kraven,E-AP16,DEV,,,,,Prototypen med representativa artiklar underkänns,Prototyp före beslut om komponent.,
+,estimatrisk,Jämförelseprofilen för prestanda nås inte med vald infrastruktur,E-AP12,DEV,,,,,Kapacitetstestet visar svarstider över profilen,,
+,estimatrisk,ITM8 är inte tillgängliga när gemensamt test ska köras,E-AP12,PM,,,,,ITM8:s plan avviker från vår,,
+,estimatrisk,SFB:s beslut eller medverkan dröjer,E-AP15,PM,,,,,Beslutsdatum i planen passeras,Senaste beslutsdatum i tidplanen. Medverkan per vecka enligt B11.,SFB

@@ -1,0 +1,1238 @@
+Kravkatalog för vår berikningsdel och PIM
+	version:: 1.3-V
+	källor:: SFB_Kravkatalog_Vaimo.xlsx; SFB_Kravspecifikation_Vaimo.pdf
+	Version 1.3-V. Till Vaimo. Kravbas 1.3. Filtrera på F1, V2, Tillval eller Framtid.
+	Alla F1-rader ingår i basestimatet. Bekräftat avser behovet; föreslagna detaljer anges i text och beroenden. Se [[B01]]-[[B14]] och huvuddokumentet.
+	Sammanställt ur kravkatalogen (Excel) och kravspecifikationen (PDF). Vid dubbletter gäller Excel. Krav-ID, AP-, B- och ALT-nummer är källornas egna och används som Ord-ID.
+	Poster utan ID under Övrigt ur kravspecifikationen finns bara i PDF:en och har inga egna ID:n där.
+	Krav
+		PIM-D01 Identitet +krav ^PIM-D01
+			prioritet:: F1
+			område:: Identitet
+			källstatus:: Bekräftat
+			arbetspaket:: AP02
+			Varje artikel ska ha en stabil intern identitet och bevara tillämpliga Finfo-nummer, leverantörs-id och leverantörsartikelnummer, WB-nummer, GTIN samt C4-referens för migreringsspårning. Identifierare hanteras som text.
+			Nytta
+				Bevarar kopplingar och möjliggör säkra uppdateringar.
+			Acceptanskriterium
+				Två artiklar med samma GTIN och olika leverantörer kvarstår som två poster. Import med samma överenskomna källnyckel uppdaterar samma post. Inledande nollor bevaras.
+			Beroenden och antaganden
+				[[B06]]; [[PIM-I01]]
+			Källa och precisering
+				Våra förtydliganden, fråga 5; Projektkrav.md, REQ428; Magic-Box-och-Occtoo.md, Globala idn
+		PIM-D02 Produktgrupper +krav ^PIM-D02
+			prioritet:: F1
+			område:: Produktgrupper
+			källstatus:: Bekräftat
+			arbetspaket:: AP02
+			Administratören ska manuellt skapa produktgrupper och koppla eller koppla loss artiklar. Gruppen har produktnamn, produktbild, variantdimensioner, leverantör, BK04, grupptyp bundle eller varianter samt kategorier. Gruppvärden lagras och distribueras på gruppen, utan automatisk kopiering till artikelfält. En artikel får sakna grupp, tillhöra högst en variantgrupp och dessutom flera bundles. Bundle har ingen antal-, paketpris- eller lagerlogik.
+			Nytta
+				Ger gemensam struktur och presentation.
+			Acceptanskriterium
+				Två artiklar kopplas till en variantgrupp. Gruppnamnet ändras en gång och distribueras med relationerna; artikelbenämningar och variantvärden består. En artikel kan även ingå i två bundles. Försök till en andra variantgrupp avvisas. Artikel kan kopplas loss utan radering. Avvikande befintliga relationer redovisas före migrering.
+			Beroenden och antaganden
+				[[B12]]; [[PIM-D01]]; [[PIM-I03]]; [[PIM-M02]]; [[AP01]] verifierar befintliga grupper och mottagarmappning
+			Källa och precisering
+				Våra förtydliganden, fråga 5; Våra sex fastställda beslut i version 1.3
+		PIM-D03 Attribut +krav ^PIM-D03
+			prioritet:: F1
+			område:: Attribut
+			källstatus:: Bekräftat
+			arbetspaket:: AP02
+			Alla befintliga attributdefinitioner och attributvärden för de poster som ingår i migreringsurvalet ska bevaras med datatyp, enhet, listvärden och källmappning där dessa finns. Ingen generell standardisering eller enhetskonvertering ingår.
+			Nytta
+				Undviker informationsförlust vid byte.
+			Acceptanskriterium
+				Antal definitioner och värden stäms av mot godkänd export. Avvikande eller saknade definitioner redovisas och hanteras, inte tyst tappas.
+			Beroenden och antaganden
+				[[B03]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 6; SFB-Smrtpunkter-grupperade-v2.md, PP06
+		PIM-D04 Attributförvaltning +krav ^PIM-D04
+			prioritet:: F1
+			område:: Attributförvaltning
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Administratören ska lista och söka attributdefinitioner, se användning, ändra visningsnamn och beskrivning samt markera attribut som inte ska användas vid ny berikning. Befintliga värden och identifierare bevaras. Sammanslagning, flytt av värden mellan attribut och byte av datatyp ingår inte i F1.
+			Nytta
+				Möjliggör försiktig städning efter migrering.
+			Acceptanskriterium
+				Ett använt attribut hittas med sina användningar. Namn och beskrivning ändras utan ändrad identitet. Markering mot ny användning hindrar ny berikning med attributet utan att befintliga värden eller relationer försvinner.
+			Beroenden och antaganden
+				[[B10]]; [[PIM-D03]]
+			Källa och precisering
+				Våra förtydliganden, fråga 6; konkret avgränsning föreslagen i kravspecifikationen; Våra sex fastställda beslut i version 1.3
+		PIM-D05 Kategorier +krav ^PIM-D05
+			prioritet:: F1
+			område:: Kategorier
+			källstatus:: Bekräftat
+			arbetspaket:: AP02
+			Tre aktuella kategoriträd ska hanteras: Produktkatalog, Brukspecialisten och Weydes. Äldre motsvarigheter till Produktkatalog och Brukspecialisten ska inte migreras som aktiva träd. Administratören ska manuellt relatera produkter och artiklar till kategorier.
+			Nytta
+				Bevarar rätt kategorisering och avgränsar migreringen.
+			Acceptanskriterium
+				De tre namngivna träden och deras godkända relationer finns. De två uteslutna träden saknas i den aktiva katalogen. Kategorisering kan ändras och överföras.
+			Beroenden och antaganden
+				[[PIM-I01]]; [[PIM-M02]]
+			Källa och precisering
+				Våra förtydliganden, fråga 6; våra förtydliganden, fråga 9
+		PIM-D06 Kategoriförvaltning +krav ^PIM-D06
+			prioritet:: F1
+			område:: Kategoriförvaltning
+			källstatus:: Behöver bekräftas
+			arbetspaket:: AP03
+			Behörig administratör ska kunna skapa kategorinod, ändra namn och ordning samt flytta nod inom ett av de tre träden. Borttagning ska blockeras om relationer eller undernoder återstår.
+			Nytta
+				Gör befintliga träd förvaltningsbara.
+			Acceptanskriterium
+				En nod skapas, flyttas och får nytt namn; ändringen når MagicBox. Borttagning av använd nod ger ett begripligt fel utan dataförlust.
+			Beroenden och antaganden
+				[[B07]]; [[PIM-I03]]
+			Källa och precisering
+				Funktionella-systemkrav-Integrationer.md, REQ330; konkret avgränsning föreslagen
+		PIM-D07 Referensdata +krav ^PIM-D07
+			prioritet:: F1
+			område:: Referensdata
+			källstatus:: Behöver bekräftas
+			arbetspaket:: AP02
+			Leverantörer och varumärken ska kunna visas, refereras och vid manuell uppläggning skapas med stabil identitet. Källägda identifierare ska skyddas från oavsiktlig redigering.
+			Nytta
+				Stöder manuella artiklar och korrekt referering.
+			Acceptanskriterium
+				En manuell artikel kan kopplas till befintlig eller ny manuell leverantör och varumärke. Dubblett på fastställd referensnyckel avvisas.
+			Beroenden och antaganden
+				[[B06]]; [[B07]]
+			Källa och precisering
+				Funktionella-systemkrav-PIM2.md, REQ338 och REQ258; To-be-fldet-hela-kedjan.md, avsnitt 1 och 4
+		PIM-W01 Sökning +krav ^PIM-W01
+			prioritet:: F1
+			område:: Sökning
+			källstatus:: Föreslaget
+			arbetspaket:: AP03
+			Administratören ska söka på benämning och artikelidentifierare och kombinera filter för leverantör, kategori, webbstatus, utgåendestatus samt avsaknad av bild eller kategori. Listan ska visa artikelidentitet och produktgrupp.
+			Nytta
+				Gör relevanta poster möjliga att hitta och bearbeta.
+			Acceptanskriterium
+				Kombinationen leverantör och saknad kategori ger endast matchande poster. Sökning på ett helt identifierarvärde hittar rätt artikel. Minst 100 träffar kan hanteras som urval.
+			Beroenden och antaganden
+				[[B08]]; [[PIM-D01]]
+			Källa och precisering
+				SFB-Smrtpunkter-grupperade-v2.md, PP20 och PP21; våra förtydliganden, fråga 13; filterurval föreslaget
+		PIM-W02 Artikelredigering +krav ^PIM-W02
+			prioritet:: F1
+			område:: Artikelredigering
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Administratören ska skapa manuell artikel med överenskomna affärsidentifierare och redigera tillåtna attribut, produktrelation, kategorier och status på svenska. Automatiskt WB-nummer ingår inte.
+			Nytta
+				Stöder det dagliga manuella arbetet.
+			Acceptanskriterium
+				Artikel skapas, sparas, öppnas på nytt och får korrekt utgående identitet. Saknad identitet eller okänd referens ger fältanknutet fel.
+			Beroenden och antaganden
+				[[B06]]; [[B07]]; [[PIM-W09]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 4; våra förtydliganden, fråga 5; våra förtydliganden, fråga 6; Funktionella-systemkrav-PIM2.md, REQ404; Våra sex fastställda beslut i version 1.3
+		PIM-W03 Textfält +krav ^PIM-W03
+			prioritet:: F1
+			område:: Textfält
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Artikeln ska ha extern och intern benämning, fyra externa textfält, ett härlett sammanslaget externt textfält och ett internt textfält. Externa textfält sammanfogas i ordning 1 till 4 med styckesindelning.
+			Nytta
+				Behåller ursprung och ger en kontrollerad redaktionell text.
+			Acceptanskriterium
+				Alla sju lagrade fälten och det härledda fältet visas. Två fyllda externa textfält ger två stycken i rätt ordning; tomma fält ger enligt antagande inga tomma stycken.
+			Beroenden och antaganden
+				[[B07]]; [[PIM-I02]]
+			Källa och precisering
+				Våra förtydliganden, fråga 7; Funktionella-systemkrav-PIM2.md, REQ609 för textfält och REQ610
+		PIM-W04 Textöverstyrning +krav ^PIM-W04
+			prioritet:: F1
+			område:: Textöverstyrning
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Som effektiv benämning används intern benämning när den innehåller ett värde, annars extern benämning; motsvarande gäller intern text och sammanfogad extern text. Källdata uppdateras oberoende av interna fält. Administratören kan tömma internfältet för att återgå till källvärdet.
+			Nytta
+				Manuella rättelser bevaras utan att källdata fryses.
+			Acceptanskriterium
+				Ny källtext ändrar externfältet men inte internfältet eller effektiv text. När internfältet töms används senaste källtext. Endast blanksteg räknas enligt antagande som tomt.
+			Beroenden och antaganden
+				[[B07]]; [[PIM-W03]]
+			Källa och precisering
+				Våra förtydliganden, fråga 7; prioritet och tomvärdesregel preciserade som estimatantagande
+		PIM-W05 Ändringsnotiser +krav ^PIM-W05
+			prioritet:: F1
+			område:: Ändringsnotiser
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Vid ändrat externt benämnings- eller textvärde där motsvarande internvärde finns ska en åtgärd visas i en gemensam lista i gränssnittet. Den ska ange artikel, berört fält, ändringstid och före- och eftervärde samt kunna kvitteras.
+			Nytta
+				Gör manuella överstyrningar möjliga att ompröva.
+			Acceptanskriterium
+				Ändrad källa skapar en oläst åtgärd. Oförändrad omsändning skapar ingen. En kvitterad åtgärd öppnas igen vid en senare relevant ändring. E-post och push ingår inte.
+			Beroenden och antaganden
+				[[PIM-W04]]; gemensam lista är antagande
+			Källa och precisering
+				Våra förtydliganden, fråga 7
+		PIM-W06 Webbstatus +krav ^PIM-W06
+			prioritet:: F1
+			område:: Webbstatus
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Administratören sätter webbstatus aktiv eller inaktiv manuellt och kategoriserar manuellt. Samtliga artikeländringar ska överföras till MagicBox oberoende av webbstatus.
+			Nytta
+				Bevarar nuvarande publiceringsarbetssätt.
+			Acceptanskriterium
+				Både aktiv och inaktiv testartikel når MagicBox. Status och kategorisering överförs; befintliga ERP- och visningsvillkor avgör fortsatt faktisk webbvisning.
+			Beroenden och antaganden
+				[[PIM-I03]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 3; våra förtydliganden, fråga 9; Funktionella-systemkrav-PIM2.md, REQ309
+		PIM-W07 Livscykelstatus i första versionen +krav ^PIM-W07
+			prioritet:: F1
+			område:: Livscykelstatus i första versionen
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Befintlig livscykelstatus och utgåendedatum ska bevaras, visas och överföras. Administratören styr webbstatus enligt [[PIM-W06]]. Funktioner för ny manuell arkivering, generell arkivsökning och återaktivering ingår tillsammans i V2. Ingen automatisk arkivering eller fysisk radering ingår i F1.
+			Nytta
+				Förhindrar oavsiktlig dataförlust och felaktig distribution.
+			Acceptanskriterium
+				En migrerad artikel med utgåendedatum behåller uppgiften. En källuppdatering visas och distribueras utan automatisk radering eller ändring av administratörens webbstatus. F1 har ingen funktion för manuell arkivering.
+			Beroenden och antaganden
+				[[B14]]; [[PIM-W06]]; [[PIM-I03]]; [[PIM-N04]]
+			Källa och precisering
+				Vårt kompletterande beslut i version 1.2 om samlad arkivhantering; våra förtydliganden, fråga 12
+		PIM-W08 Validering +krav ^PIM-W08
+			prioritet:: F1
+			område:: Validering
+			källstatus:: Föreslaget
+			arbetspaket:: AP03
+			Inmatning och import ska kontrollera identiteter, existerande referenser, datatyper och överenskomna listvärden. Saknad bild eller kategori ska synliggöras utan att stoppa distribution av artikeln till MagicBox. Befintliga källtransformeringar dokumenteras och bevaras där de behövs.
+			Nytta
+				Ger begripliga fel utan att stoppa rå informationsdistribution.
+			Acceptanskriterium
+				Ogiltig referens blockeras med rad eller fält och orsak. Artikel utan bild kan sparas och distribueras, med synlig bristmarkering.
+			Beroenden och antaganden
+				[[B07]]; [[PIM-I01]]
+			Källa och precisering
+				Våra förtydliganden, fråga 9; Funktionella-systemkrav-PIM2.md, REQ422 och REQ505; preciserat basförslag
+		PIM-W09 Egen berikning av produktegenskaper +krav ^PIM-W09
+			prioritet:: F1
+			område:: Egen berikning av produktegenskaper
+			källstatus:: Bekräftat
+			arbetspaket:: AP03
+			Administratören ska kunna komplettera och överstyra ett avgränsat urval produktegenskaper på källartiklar. Senaste källvärde och eget värde lagras separat. Eget värde används tills överstyrningen uttryckligen tas bort; då används senaste källvärde. Samma regler gäller enskild redigering, tabell och Excel. Identifierare och externa bedömningar är skyddade.
+			Nytta
+				Gör det möjligt att rätta och komplettera produktinformation i det dagliga arbetet utan att källuppdateringar förstör berikningen.
+			Acceptanskriterium
+				Ett mått kompletteras när källvärde saknas. Ett annat källvärde överstyrs i tabellen och återimporteras via Excel. Ny källdata ändrar bara källvärdet. När överstyrningen tas bort används senaste källvärde. Eget nollvärde bevaras. Försök att ändra skyddad identifierare eller extern bedömning avvisas.
+			Beroenden och antaganden
+				[[B07]]; [[PIM-D03]]; [[PIM-W08]]; [[PIM-X01]]; [[PIM-N01]]. Gemensam prisförutsättning, föreslagen startlista: material, färg, längd, bredd, höjd, tjocklek och diameter. Sju attributdefinitioner med befintlig datatyp och enhet; exakta attribut-ID:n och eventuella likvärdiga ersättningar fastställs i [[AP01]]. Ingen generell enhetskonvertering ingår.
+			Källa och precisering
+				Våra sex fastställda beslut i version 1.3, punkt 1. Principen är beslutad; startlistans sju attribut är en föreslagen gemensam prisförutsättning.
+		PIM-A01 Medierelationer +krav ^PIM-A01
+			prioritet:: F1
+			område:: Medierelationer
+			källstatus:: Bekräftat
+			arbetspaket:: AP05
+			Bilder och dokument ska kunna kopplas manuellt till artiklar och produkter, typas och återanvändas utan filkopiering. Källrelationer kan läsas in automatiskt. Administratören ska kunna välja flera filer i samma uppladdning till en redan vald artikel eller produkt. Resultat visas per fil. Automatisk matchning av ett filpaket mot många artiklar ingår inte i F1.
+			Nytta
+				Minskar dubbelarbete och bevarar delade filer.
+			Acceptanskriterium
+				Tre giltiga filer och en ogiltig fil väljs samtidigt till en artikel. Giltiga filer kopplas till vald artikel och den ogiltiga får begriplig felorsak och kan prövas igen. Samma flöde fungerar för produktgrupp. En fil återanvänds på två artiklar utan dubblerat innehåll. Dokumenterade format och filstorlekar kontrolleras.
+			Beroenden och antaganden
+				[[B04]]; [[PIM-D02]]; [[PIM-A03]]; format, filstorlek och lagring inventeras i [[AP01]]
+			Källa och precisering
+				Våra sex fastställda beslut i version 1.3, punkt 5; Funktionella-systemkrav-PIM2.md, REQ217, REQ403, REQ405 och REQ510; Projektkrav.md, REQ264
+		PIM-A02 Ordning och bortval +krav ^PIM-A02
+			prioritet:: F1
+			område:: Ordning och bortval
+			källstatus:: Bekräftat
+			arbetspaket:: AP05
+			Administratören ska styra ordning och webbexkludering på relationen mellan fil och artikel eller produkt. Manuella val ska kvarstå när källan uppdaterar samma logiska bild eller dokument.
+			Nytta
+				Hindrar att underkända medier återkommer på webben.
+			Acceptanskriterium
+				Samma bild kan ha olika ordning eller synlighet på två artiklar. Källuppdatering behåller båda valen och skapar notis för exkluderat media som ändrats.
+			Beroenden och antaganden
+				[[B04]]; relation per användning är antagande
+			Källa och precisering
+				Våra förtydliganden, fråga 7; Funktionella-systemkrav-PIM2.md, REQ235, REQ328, REQ613
+		PIM-A03 Dokumentversioner +krav ^PIM-A03
+			prioritet:: F1
+			område:: Dokumentversioner
+			källstatus:: Bekräftat
+			arbetspaket:: AP05
+			Ny version av dokument ska skapas som en ny oföränderlig version. Detta gäller alla dokumenttyper utom Färgkarta och Produktkatalog. Tidigare versioner ska finnas tillgängliga från berörd artikel och bevaras i tio år enligt beslutad startpunkt. Bevarandet ska omfatta filinnehållet; en länk till en fil som källan kan skriva över räcker inte.
+			Nytta
+				Bevarar dokumenthistorik och undviker överskrivning.
+			Acceptanskriterium
+				Ändrad fil på samma käll-URL skapar en ny version. Föregående fil kan öppnas och är oförändrad. Oförändrad omsändning skapar ingen dubblettversion.
+			Beroenden och antaganden
+				[[B04]]; [[PIM-A04]]; [[PIM-M06]] för äldre dokumentversioner
+			Källa och precisering
+				Våra förtydliganden, fråga 12; Våra sex fastställda beslut i version 1.3
+		PIM-A04 Versionsvisning +krav ^PIM-A04
+			prioritet:: F1
+			område:: Versionsvisning
+			källstatus:: Bekräftat
+			arbetspaket:: AP05
+			Endast senaste dokumentversion ska markeras som aktuell för e-handel. Webbexkludering ska bevaras även vid ny version. Historiska versioner ska vara åtkomliga för PIM-administratörer via artikelns versionslista.
+			Nytta
+				Skiljer aktuell publicering från arkivåtkomst.
+			Acceptanskriterium
+				Två versioner finns i PIM; endast den senaste är publicerbar. Om dokumentet är exkluderat är även den senaste exkluderad. Äldre version kan öppnas av administratör.
+			Beroenden och antaganden
+				[[B04]]; [[PIM-I03]]
+			Källa och precisering
+				Våra förtydliganden, fråga 7; våra förtydliganden, fråga 12
+		PIM-A05 Versionsundantag +krav ^PIM-A05
+			prioritet:: F1
+			område:: Versionsundantag
+			källstatus:: Bekräftat
+			arbetspaket:: AP05
+			Färgkarta och Produktkatalog ska stödja aktuell fil och byte av denna. Obligatoriskt tioårigt versionsbevarande gäller inte dessa typer. Ingen automatisk historisk massradering beställs i F1.
+			Nytta
+				Avgränsar versionslagring till beslutad omfattning.
+			Acceptanskriterium
+				Ny Färgkarta blir aktuell. Systemet kräver inte tio års historik för den. Katalogtypen Produktkatalog för dokument blandas inte ihop med kategoriträdet med samma namn.
+			Beroenden och antaganden
+				[[B04]]
+			Källa och precisering
+				Våra förtydliganden, fråga 12; avsaknad av automatisk radering är antagande
+		PIM-A06 Medietransformering +krav ^PIM-A06
+			prioritet:: F1
+			område:: Medietransformering
+			källstatus:: Bekräftat
+			arbetspaket:: AP10
+			Fungerande bildtransformeringar, färghantering och formatvarianter ska bevaras genom återanvändning eller nödvändig ersättning av befintlig lösning. Exakta profiler inventeras före implementation.
+			Nytta
+				Undviker försämring av e-handelns bilder.
+			Acceptanskriterium
+				För varje godkänd transformationsprofil jämförs representativa original och utdata avseende format, dimensioner, orientering och färghantering. Resultatet accepteras av oss.
+			Beroenden och antaganden
+				[[B04]]; [[AP01]]
+			Källa och precisering
+				Våra förtydliganden, fråga 10; Projektkrav.md, REQ278; System-As-is.md, ImageMagick
+		PIM-A07 Befintliga länkar +krav ^PIM-A07
+			prioritet:: F1
+			område:: Befintliga länkar
+			källstatus:: Bekräftat
+			arbetspaket:: AP10
+			Fungerande publicerade bild- och dokumentlänkar ska bevaras vid övergången. DNS, lagring och eventuella ompekningar ska ingå där de krävs för samma åtkomst. Nya domänupplägg ingår inte.
+			Nytta
+				Undviker brutna länkar hos befintliga mottagare.
+			Acceptanskriterium
+				Godkänd länkförteckning testas efter växlingen. Alla kontrollerbara länkar i urvalet svarar och levererar avsett innehåll; undantag kräver vårt godkännande.
+			Beroenden och antaganden
+				[[B04]]; åtkomst till nuvarande domäner och lagring
+			Källa och precisering
+				Våra förtydliganden, fråga 10; Funktionella-systemkrav-PIM2.md, REQ607
+		PIM-A08 Källborttagning +krav ^PIM-A08
+			prioritet:: F1
+			område:: Källborttagning
+			källstatus:: Föreslaget
+			arbetspaket:: AP05
+			När källa tar bort media ska detta registreras och visas för administratör. Historiska dokumentversioner eller manuella medierelationer ska inte raderas automatiskt.
+			Nytta
+				Skyddar arkiv och manuella beslut.
+			Acceptanskriterium
+				En källborttagning flaggas och spåras utan fysisk radering av bevarandepliktiga versioner. Aktuell publicering ändras endast enligt fastställd regel eller manuellt beslut.
+			Beroenden och antaganden
+				[[B04]]; [[PIM-W05]]
+			Källa och precisering
+				Funktionella-systemkrav-Integrationer.md, REQ605; våra förtydliganden, fråga 7; våra förtydliganden, fråga 12; konfliktregel föreslagen
+		PIM-X01 Excelimport +krav ^PIM-X01
+			prioritet:: F1
+			område:: Excelimport
+			källstatus:: Bekräftat
+			arbetspaket:: AP06
+			En fast Excel-mall ska skapa och uppdatera manuella artiklar samt uppdatera vår egen berikning på befintliga källartiklar. Importen omfattar tillåtna attribut, interna texter och överenskomna produkt-, kategori- och mediereferenser. Källägda externa värden får inte ändras genom importen. Tom cell lämnar oförändrat; rensning kräver uttrycklig instruktion.
+			Nytta
+				Stöder dagens volymarbete med förutsägbara regler.
+			Acceptanskriterium
+				En fil med 5 000 artikelrader valideras och importeras. Provet omfattar ny manuell artikel, ändrad manuell artikel och ändrad intern text på en Finfo-artikel. Extern text på Finfo-artikeln består. Otillåten fältändring eller okänd referens får radbundet fel. Tom cell raderar inte värde. Eget värde för en godkänd produktegenskap hanteras enligt [[PIM-W09]] utan ändring av källvärdet.
+			Beroenden och antaganden
+				[[B01]]; [[B06]]; [[B07]]; [[B13]]; fast fältlista och rensningssätt preciseras i [[AP01]]; [[PIM-W09]]
+			Källa och precisering
+				Våra förtydliganden, fråga 4 och 13; vårt kompletterande beslut i version 1.2 om Excel på källartiklar; tomvärdesregel är estimatantagande; Våra sex fastställda beslut i version 1.3
+		PIM-X02 Excelexport +krav ^PIM-X02
+			prioritet:: F1
+			område:: Excelexport
+			källstatus:: Bekräftat
+			arbetspaket:: AP06
+			Ett urval av manuella artiklar och källartiklar ska kunna exporteras med stabila identifierare och fält för vår egen berikning, för redigering och återimport. Källfält får följa med som tydligt markerad referensinformation. Importkontrollen ska avvisa försök att ändra källägda fält. Egen överstyrning av godkända produktegenskaper är separat från skrivskyddat källvärde. Tömning av överstyrning använder samma uttryckliga rensningssätt som importen.
+			Nytta
+				Möjliggör export, extern redigering och återimport.
+			Acceptanskriterium
+				5 000 artiklar exporteras. Ändrad intern text återimporteras på både manuell artikel och källartikel och träffar samma identitet. Oförändrade celler medför ingen dataändring. Ändrat källfält avvisas med begriplig orsak.
+			Beroenden och antaganden
+				[[PIM-X01]]; [[B06]]; [[B07]]; [[B13]]; [[PIM-W09]]
+			Källa och precisering
+				Våra förtydliganden, fråga 4 och 13; vårt kompletterande beslut i version 1.2 om Excel på källartiklar; Våra sex fastställda beslut i version 1.3
+		PIM-X03 Importkontroll +krav ^PIM-X03
+			prioritet:: F1
+			område:: Importkontroll
+			källstatus:: Föreslaget
+			arbetspaket:: AP06
+			Import ska ha förhandskontroll, tydligt resultat per rad och sammanfattning av skapade, uppdaterade och avvisade rader. Återförsök av samma fil ska inte skapa dubbletter.
+			Nytta
+				Ger kontrollerad hantering av fel och återförsök.
+			Acceptanskriterium
+				En blandad fil ger korrekta radsvar. Efter rättning kan avvisade rader köras om. Samma redan behandlade nycklar ger inga extra artiklar. En fil med ett värde som ändrats manuellt efter export får en synlig konflikt; den nyare ändringen skrivs inte över tyst.
+			Beroenden och antaganden
+				[[PIM-D01]]; [[PIM-X01]]; [[B13]]; [[PIM-Q03]]
+			Källa och precisering
+				Funktionella-systemkrav-PIM2.md, REQ270 och REQ335; verifieringsbeteende föreslaget
+		PIM-I01 Gränssnittskontrakt +krav ^PIM-I01
+			prioritet:: F1
+			område:: Gränssnittskontrakt
+			källstatus:: Föreslaget
+			arbetspaket:: AP01
+			PIM-partner och ITM8 ska fastställa versionshanterat data- och felkontrakt för MagicBox till PIM, PIM till MagicBox samt separat Snickenflöde. Kontraktet omfattar ägarskap, identifierare, produkter, kategorier, statusar, medie- och versionsreferenser.
+			Nytta
+				Gör gränser testbara och förhindrar dubbelt arbete.
+			Acceptanskriterium
+				Exempel för skapa, uppdatera, livscykel- och webbstatus, relationsändring, mediauppdatering och fel valideras av båda parter mot samma kontrakt. Arkivåtgärder tillkommer i V2 enligt [[PIM-N04]].
+			Beroenden och antaganden
+				[[B02]]; [[B05]]; [[B06]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 2; våra förtydliganden, fråga 3; uppdragets avsnitt B och F
+		PIM-I02 Källmottagning i PIM +krav ^PIM-I02
+			prioritet:: F1
+			område:: Källmottagning i PIM
+			källstatus:: Föreslaget
+			arbetspaket:: AP04
+			PIM ska ta emot källdata från MagicBox och uppdatera endast källägda fält och relationer. Leverans ska kunna återupptas efter fel. Uppdateringar ska ha spårbar källa och ändringsidentitet.
+			Nytta
+				Säkerställer löpande uppdatering utan att berikning skrivs över.
+			Acceptanskriterium
+				Samma leverans två gånger ger samma slutresultat. En äldre revision skriver inte över en nyare. Manuella interna fält kvarstår. Felaktig post kan isoleras och skickas om.
+			Beroenden och antaganden
+				[[PIM-I01]]; [[B06]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 2; våra förtydliganden, fråga 7; robusthetsbeteende föreslaget
+		PIM-I03 Utgående från PIM +krav ^PIM-I03
+			prioritet:: F1
+			område:: Utgående från PIM
+			källstatus:: Bekräftat
+			arbetspaket:: AP04
+			PIM ska tillgängliggöra inkrementella ändringar för alla artiklar till MagicBox, med berörda produkter, kategorier, effektiva värden, käll- och internfält, medier och status. Produkt- eller mediaändring ska göra beroende artikeldata uppdaterad. Gruppfält distribueras separat från artikelvärden. Källvärde, eget värde och effektivt värde för godkända produktegenskaper ingår enligt fältmatrisen.
+			Nytta
+				Håller mottagare aktuella även när gemensamma objekt ändras.
+			Acceptanskriterium
+				Ändring av en produkt som används av två artiklar blir tillgänglig för båda. Ändring av inaktiv artikel skickas. Livscykel- och webbstatus förmedlas utan att mottagaren behöver tolka en utebliven post som radering.
+			Beroenden och antaganden
+				[[PIM-I01]]; [[B05]]
+			Källa och precisering
+				Våra förtydliganden, fråga 3; våra förtydliganden, fråga 9; Funktionella-systemkrav-PIM2.md, REQ309 och REQ341; Våra sex fastställda beslut i version 1.3
+		PIM-I04 Fel och omsändning +krav ^PIM-I04
+			prioritet:: F1
+			område:: Fel och omsändning
+			källstatus:: Föreslaget
+			arbetspaket:: AP04
+			Gränssnitten ska ha återförsök, separat felstatus, spårbar leverans och omsändning av vald post eller hela godkända urvalet. En enkel administratörsvy ska visa senaste lyckade överföring och kvarstående fel.
+			Nytta
+				Gör fel upptäckbara och möjliga att åtgärda.
+			Acceptanskriterium
+				Simulerat avbrott ger synligt fel; återstart levererar återstående data utan dubbletter. Omsändning av ett urval påverkar inte andra mottagares position.
+			Beroenden och antaganden
+				[[PIM-I01]]; [[AP08]]; [[AP09]]
+			Källa och precisering
+				Funktionella-systemkrav-Integrationer.md, REQ503 och REQ504; uppdragets avsnitt F
+		PIM-I05 Finfo till MagicBox +krav ^PIM-I05
+			prioritet:: F1
+			område:: Finfo till MagicBox
+			källstatus:: Bekräftat
+			arbetspaket:: AP07
+			ITM8 ska koppla om befintlig Finfo-hämtning till MagicBox och bevara nödvändiga informationsflöden, scheman och transformationer. Detta ska inte byggas en andra gång av PIM-partnern.
+			Nytta
+				Återanvänder befintlig hämtning och tydliggör integrationsansvar.
+			Acceptanskriterium
+				Godkända prov från respektive relevant Finfo-tjänst når MagicBox och nya PIM med identifierare och rätt källfält. Total- och deltauppdatering verifieras där de finns.
+			Beroenden och antaganden
+				[[AP01]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 2; Integrationer.md, Finfo till Azure Integration
+		PIM-I06 BASTA till MagicBox +krav ^PIM-I06
+			prioritet:: F1
+			område:: BASTA till MagicBox
+			källstatus:: Bekräftat
+			arbetspaket:: AP07
+			ITM8 ska skapa anslutning från BASTA till MagicBox och föra över överenskomna artikelkopplingar och uppgifter till berikningsdelen.
+			Nytta
+				Bevarar BASTA-information när C4 avvecklas.
+			Acceptanskriterium
+				Dokumenterade API-exempel hämtas, matchas och visas på rätt artikel. Omatchad post loggas för hantering och skapar inte en godtycklig dubblett.
+			Beroenden och antaganden
+				[[B06]]; [[B07]]; API-dokumentation från oss eller berörd partner
+			Källa och precisering
+				Våra förtydliganden, fråga 2
+		PIM-I07 BVB i MagicBox +krav ^PIM-I07
+			prioritet:: F1
+			område:: BVB i MagicBox
+			källstatus:: Bekräftat
+			arbetspaket:: AP07
+			Befintlig BVB-koppling i MagicBox ska återanvändas. Endast nödvändig vidareföring, fältmappning och verifiering mot nya PIM ska ingå.
+			Nytta
+				Undviker dubbelutveckling.
+			Acceptanskriterium
+				Ett befintligt BVB-resultat kan följas från MagicBox till rätt artikel och befintlig distribution fortsätter. Eventuella ändringar redovisas uttryckligen.
+			Beroenden och antaganden
+				[[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 2; System-As-is.md, Byggvarubedömningen
+		PIM-I08 MagicBoxanpassning +krav ^PIM-I08
+			prioritet:: F1
+			område:: MagicBoxanpassning
+			källstatus:: Bekräftat
+			arbetspaket:: AP08
+			ITM8 ansvarar för MagicBox-sidan av kontraktet, källöverföring till PIM och mottagning av berikad data. Befintlig ERP-matchning och inkrementell distribution per delägare ska fortsätta.
+			Nytta
+				Skiljer ny PIM-utveckling från integrationsarbete.
+			Acceptanskriterium
+				Ett komplett test visar källa till PIM, manuell ändring till MagicBox och korrekt delägarutdata. Ingen uppdateringsslinga uppstår när berikad data återkommer till MagicBox.
+			Beroenden och antaganden
+				[[PIM-I01]]; [[B07]]
+			Källa och precisering
+				Våra förtydliganden, fråga 2; våra förtydliganden, fråga 3; uppdragets systemgräns
+		PIM-I09 Snickens urval +krav ^PIM-I09
+			prioritet:: F1
+			område:: Snickens urval
+			källstatus:: Bekräftat
+			arbetspaket:: AP09
+			Snicken och Järn AB är samma mottagare. Lösningen ska ta emot vilket artikelurval Snicken önskar och behålla mottagarens matchning och leveransposition separat. Gränssnitt och nycklar fastställs med Snicken.
+			Nytta
+				Avgränsar mottagarens information utan sammanblandning med andra delägare.
+			Acceptanskriterium
+				Ett urval tas emot och matchas. Omatchade identifierare rapporteras. Nytillagd artikel får en aktuell full post innan efterföljande delta. Borttagen artikel slutar få uppdateringar enligt kontrakt.
+			Beroenden och antaganden
+				[[B02]]; [[B05]]; [[B06]]
+			Källa och precisering
+				Våra förtydliganden, fråga 3
+		PIM-I10 Snickens leveranser +krav ^PIM-I10
+			prioritet:: F1
+			område:: Snickens leveranser
+			källstatus:: Bekräftat
+			arbetspaket:: AP09
+			All avtalad aktuell data för Snickens valda artiklar ska levereras inkrementellt i en ersättning för Exchange-flödet. Full återhämtning av urvalet ska vara möjlig efter avbrott. Basestimatet använder en logiskt separat anslutning utanför gemensam MagicBox-distribution.
+			Nytta
+				Säkrar kontinuitet och synliggör den öppna avtalsgränsen.
+			Acceptanskriterium
+				Ändring för vald artikel levereras, oönskad artikel levereras inte. Livscykelstatus och urvalsändring har definierade besked. Återspelning tappar inga uppdateringar. Manuella arkivåtgärder tillkommer i V2.
+			Beroenden och antaganden
+				[[B02]]; [[B05]]; [[PIM-I03]]; ITM8-utförande är antagande
+			Källa och precisering
+				Våra förtydliganden, fråga 3; separat placering är estimatantagande, inte avtalsbeslut
+		PIM-Q01 Dimensionering +krav ^PIM-Q01
+			prioritet:: F1
+			område:: Dimensionering
+			källstatus:: Bekräftat
+			arbetspaket:: AP12
+			Lösningen ska dimensioneras för cirka 1 400 000 artiklar, 22 442 produktgrupper, 519 781 bilder och 118 228 dokument samt två samtidiga PIM-administratörer. Migreringsurvalet kan vara mindre.
+			Nytta
+				Ger samma volymgrund för jämförbara leverantörsestimat.
+			Acceptanskriterium
+				Ni redovisar dimensionering och test med representativ full datamängd eller motiverad ekvivalent last. Lagringsmängd och daglig ändringstopp mäts i [[AP01]].
+			Beroenden och antaganden
+				[[B08]]
+			Källa och precisering
+				Våra förtydliganden, fråga 13
+		PIM-Q02 Arbete med större urval +krav ^PIM-Q02
+			prioritet:: F1
+			område:: Arbete med större urval
+			källstatus:: Bekräftat
+			arbetspaket:: AP12
+			Två administratörer ska samtidigt kunna arbeta med urval om minst 100 artiklar var och köra import/export om 5 000 artiklar utan att gränssnittet låses. Långa jobb ska ha synlig status och resultat.
+			Nytta
+				Åtgärdar dagens låsningar och stöder verkliga arbetsvolymer.
+			Acceptanskriterium
+				Samtidighetstest kör sökning och artikelredigering medan ett jobb om 5 000 rader pågår. Ingen data förloras och gränssnittet förblir användbart. Mättider rapporteras mot profilen i [[B08]].
+			Beroenden och antaganden
+				[[PIM-X01]]; [[PIM-X02]]; [[B08]]
+			Källa och precisering
+				Våra förtydliganden, fråga 13; mätprofil är föreslagen
+		PIM-Q03 Samtidig redigering +krav ^PIM-Q03
+			prioritet:: F1
+			område:: Samtidig redigering
+			källstatus:: Föreslaget
+			arbetspaket:: AP03
+			Två administratörers ändringar av samma post får inte tyst skriva över varandra. Konflikt ska visas med möjlighet att läsa senaste versionen och spara ett medvetet beslut.
+			Nytta
+				Skyddar arbete vid samtidig användning.
+			Acceptanskriterium
+				Två sessioner öppnar samma artikel; andra sparningen upptäcker ändrad version och bevarar den första ändringen tills konflikten hanteras.
+			Beroenden och antaganden
+				[[PIM-W02]]
+			Källa och precisering
+				Våra förtydliganden, fråga 13; tekniskt skydd föreslaget
+		PIM-Q04 Ändringshistorik +krav ^PIM-Q04
+			prioritet:: F1
+			område:: Ändringshistorik
+			källstatus:: Behöver bekräftas
+			arbetspaket:: AP03
+			Från driftstart ska ändringar av redaktionella värden, statusar och relationer loggas med tid, aktör eller källa samt före- och eftervärde. Basestimatet bevarar denna historik så länge posten finns. Gammal C4-ändringshistorik sparas som läsbar export om den kan tas ut, enligt [[PIM-M06]]. Ett gränssnitt för den gamla ändringsloggen ingår inte.
+			Nytta
+				Möjliggör felsökning och spårbarhet.
+			Acceptanskriterium
+				En manuell ändring och källuppdatering kan följas till användare respektive leverans. Historiken skiljer källvärde från intern överstyrning.
+			Beroenden och antaganden
+				[[B03]]; [[B08]]
+			Källa och precisering
+				Funktionella-systemkrav-PIM2.md, REQ210 och REQ326; bevarandetid behöver bekräftas; Våra sex fastställda beslut i version 1.3
+		PIM-O01 Inloggning +krav ^PIM-O01
+			prioritet:: F1
+			område:: Inloggning
+			källstatus:: Föreslaget
+			arbetspaket:: AP13
+			Personliga konton för PIM-administratörer och separata tekniska integrationsidentiteter ska användas. Etablerad identitetstjänst ska återanvändas om tillgänglig. Ingen delägarportal ingår.
+			Nytta
+				Ger kontrollerad åtkomst och ansvarig aktör i loggar.
+			Acceptanskriterium
+				Obehörig åtkomst avvisas. Avslutad användare förlorar åtkomst. Integrationens behörighet begränsas till kontraktet och använder inte ett personkonto.
+			Beroenden och antaganden
+				[[B09]]
+			Källa och precisering
+				Våra förtydliganden, fråga 14; uppdragets avsnitt G; säkerhetsdetaljer föreslagna
+		PIM-O02 Miljöer +krav ^PIM-O02
+			prioritet:: F1
+			område:: Miljöer
+			källstatus:: Bekräftat
+			arbetspaket:: AP13
+			Separata test- och produktionsmiljöer ska finnas med reproducerbar konfiguration och kontrollerad driftsättning. Hemligheter ska hanteras separat från källkod.
+			Nytta
+				Gör förändringar möjliga att testa och återställa.
+			Acceptanskriterium
+				En dokumenterad version driftsätts i test och produktion med miljöspecifik konfiguration. Återgång till föregående applikationsversion demonstreras.
+			Beroenden och antaganden
+				[[B09]]
+			Källa och precisering
+				Våra förtydliganden, fråga 14; uppdragets avsnitt G och I
+		PIM-O03 Backup och återställning +krav ^PIM-O03
+			prioritet:: F1
+			område:: Backup och återställning
+			källstatus:: Bekräftat
+			arbetspaket:: AP13
+			Databas, nödvändiga filer, dokumentversioner och konfiguration ska omfattas av dokumenterad backup och provad återställning. Högst en timmes sparade ändringar får gå förlorade vid allvarligt fel (RPO). Administrationsdelen ska återställas inom en arbetsdag enligt [[B09]] (RTO). Support ska ges under svensk kontorstid. Backup ersätter inte dokumentversionsarkivet.
+			Nytta
+				Skyddar data och gör driftavbrott hanterbara.
+			Acceptanskriterium
+				Före driftstart genomförs ett återställningsprov med kända ändringstider. Identiteter, relationer, egna värden och dokumentversionernas filinnehåll återställs konsekvent. Uppmätt dataförlust är högst en timme och återställningstid högst en arbetsdag enligt [[B09]]. Resultat och eventuella undantag redovisas.
+			Beroenden och antaganden
+				[[B09]]; [[PIM-O05]]; exakt mätfönster är föreslaget; [[AP13]] äger återställningsprovet, [[AP12]] använder protokollet
+			Källa och precisering
+				Uppdragets avsnitt G och H; våra förtydliganden, fråga 12; våra förtydliganden, fråga 14; Våra sex fastställda beslut i version 1.3
+		PIM-O04 Övervakning och förvaltning +krav ^PIM-O04
+			prioritet:: F1
+			område:: Övervakning och förvaltning
+			källstatus:: Föreslaget
+			arbetspaket:: AP13
+			Lösningen ska övervaka tjänstetillstånd, misslyckade jobb och integrationsstopp. Ansvar, larmmottagare, uppgraderingar, säkerhetsuppdateringar och felsökningsrutin ska dokumenteras. Detta konkretiserar förvaltningen som basförslag. Kontorstidssupport är redan beslutad enligt [[PIM-O03]]/[[B09]]. Kontaktväg och ansvar ska anges i svaret.
+			Nytta
+				Förhindrar att fel blir osynliga efter överlämning.
+			Acceptanskriterium
+				Ett simulerat integrationsstopp ger larm till utsedd mottagare och synlig felstatus. En annan tekniker följer dokumenterad felsökningsrutin.
+			Beroenden och antaganden
+				[[B09]]; [[B11]]; [[PIM-O03]]; [[PIM-O05]]
+			Källa och precisering
+				Uppdragets avsnitt F, G och I; Organisatoriska-krav-frndringar-och-beslut.md, REQ240; Våra sex fastställda beslut i version 1.3
+		PIM-O05 Publicerad information vid PIM-avbrott +krav ^PIM-O05
+			prioritet:: F1
+			område:: Publicerad information vid PIM-avbrott
+			källstatus:: Bekräftat
+			arbetspaket:: AP13
+			Redan distribuerad produktinformation och publicerade medielänkar ska fortsätta fungera vid avbrott i PIM:s administrationsdel. Nya ändringar får vänta under avbrottet och ska kunna levereras efter återstart. Beroenden mellan PIM, MagicBox, Snicken och medielagring ska verifieras.
+			Nytta
+				Gör att avbrott i administratörernas arbete inte i sig bryter redan publicerad information hos mottagarna.
+			Acceptanskriterium
+				Vid simulerat avbrott i PIM-administrationen kan mottagare använda senast levererad information och testurvalets publicerade medielänkar. Efter återstart återupptas datautbytet utan tappade leveranspositioner. Testet avser PIM-avbrott; oberoende fel hos externa mottagare ska avgränsas.
+			Beroenden och antaganden
+				[[B09]]; [[PIM-I04]]; [[PIM-A07]]; [[AP01]] verifierar beroenden; anpassningar på respektive sida ligger i [[AP04]], [[AP08]], [[AP09]] och [[AP10]]; samlat test i [[AP12]]
+			Källa och precisering
+				Våra sex fastställda beslut i version 1.3, punkt 6
+		PIM-M01 Export och inventering +krav ^PIM-M01
+			prioritet:: F1
+			område:: Export och inventering
+			källstatus:: Bekräftat
+			arbetspaket:: AP01
+			Ni ska kartlägga C4-exportens innehåll och kvalitet tillsammans med oss och berörda driftparter. Vi fastställer vilka poster som ska flyttas och rensar före uttag.
+			Nytta
+				Gör migreringens omfattning mätbar.
+			Acceptanskriterium
+				Exportinventering visar antal, storlek, identifierare, relationer, käll- och internfält, filoriginal och tillgänglig historik; saknade delar har ansvarig och åtgärd.
+			Beroenden och antaganden
+				[[B03]]; Ariser eller nuvarande exportansvarig
+			Källa och precisering
+				Våra förtydliganden, fråga 11; Projektkrav.md, REQ218, REQ220 och REQ262
+		PIM-M02 Mappning +krav ^PIM-M02
+			prioritet:: F1
+			område:: Mappning
+			källstatus:: Bekräftat
+			arbetspaket:: AP11
+			Godkänd mappning ska bevara artikel- och produktidentiteter, valda träd, leverantörer, varumärken, attribut, internberikning, medieurval och ordning. Numeriska mediekategorier ska översättas till uttrycklig ordning. Gruppregeln i [[B12]] kontrolleras före migrering; befintliga relationer som avviker redovisas för beslut och får inte tappas tyst.
+			Nytta
+				Bevarar det arbete som redan gjorts.
+			Acceptanskriterium
+				Mappning innehåller en regel per källfält och relation. Före- och efterexempel bekräftar medieordning och att exkluderade medier förblir exkluderade.
+			Beroenden och antaganden
+				[[B03]]; [[B04]]; [[B06]]; [[PIM-W09]]; [[B12]]; [[PIM-M06]]
+			Källa och precisering
+				Våra förtydliganden, fråga 6; våra förtydliganden, fråga 11; Projektkrav.md, REQ222 och REQ223; Våra sex fastställda beslut i version 1.3
+		PIM-M03 Provmigrering +krav ^PIM-M03
+			prioritet:: F1
+			område:: Provmigrering
+			källstatus:: Föreslaget
+			arbetspaket:: AP11
+			Basestimatet ska omfatta en full provmigrering av godkänt urval, en korrigeringskörning efter avvikelser och en produktionsmigrering med sista delta eller kontrollerat ändringsstopp.
+			Nytta
+				Gör fel synliga före växling.
+			Acceptanskriterium
+				Avstämning av antal per objekttyp och relation samt valda fältvärden görs. Inga oförklarade differenser får kvarstå vid vårt godkännande.
+			Beroenden och antaganden
+				[[B03]]; [[PIM-M02]]
+			Källa och precisering
+				Projektkrav.md, REQ224; antal körningar är estimatantagande
+		PIM-M04 Acceptanstest +krav ^PIM-M04
+			prioritet:: F1
+			område:: Acceptanstest
+			källstatus:: Bekräftat
+			arbetspaket:: AP12
+			Ni ska planera och stödja acceptanstest med två PIM-administratörer. Test omfattar dagliga flöden, integrationer, dokumentversioner, migrerad data, samtidighet och återställning. Fel som hindrar avtalad acceptans ska rättas och omtestas.
+			Nytta
+				Säkerställer en användbar driftversion.
+			Acceptanskriterium
+				Testprotokoll kopplar krav-ID till utfall och avvikelse. Inga blockerande dataförlust-, åtkomst- eller distributionsfel kvarstår; andra avvikelser har uttrycklig acceptans. Provet omfattar egen attributöverstyrning, gruppregler, flerfiluppladdning, äldre C4-dokument och fortsatt åtkomst vid PIM-avbrott.
+			Beroenden och antaganden
+				[[B11]]; [[AP01]] till [[AP13]] samt [[AP16]]; [[AP22]]; [[PIM-O05]]
+			Källa och precisering
+				Uppdragets avsnitt H och kvalitetskontroll; våra förtydliganden, fråga 15; Våra sex fastställda beslut i version 1.3
+		PIM-M05 Övergång till drift +krav ^PIM-M05
+			prioritet:: F1
+			område:: Övergång till drift
+			källstatus:: Bekräftat
+			arbetspaket:: AP14
+			Övergångsplan ska säkra drift före C4-avvecklingen och omfatta sista export, ändringsstopp eller delta, verifiering av mottagare och beslutad återgång. Möjlig återgång till C4 får inte antas efter stängningen.
+			Nytta
+				Skyddar kontinuitet under en hård avvecklingsgräns.
+			Acceptanskriterium
+				Vi godkänner en repeterbar växlingsplan med ansvar, kontrollpunkter och stoppkriterier. Ni anger realistisk leveransdag och senast möjliga beslut/start.
+			Beroenden och antaganden
+				[[B03]]; [[B11]]; reservplan [[ALT03]] vid behov
+			Källa och precisering
+				Våra förtydliganden, fråga 1; Projektkrav.md, REQ225
+		PIM-M06 Äldre dokumentversioner och historikexport +krav ^PIM-M06
+			prioritet:: F1
+			område:: Äldre dokumentversioner och historikexport
+			källstatus:: Bekräftat
+			arbetspaket:: AP22
+			Tillgängliga äldre dokumentversioner för valt migreringsurval ska flyttas och vara åtkomliga per artikel med bevarat filinnehåll, dokumenttyp, artikelkoppling och tillgängliga versionsdatum. Saknade datum får inte uppfinnas. Gammal ändringshistorik sparas som läsbar export om den kan tas ut; inget nytt gränssnitt för den gamla ändringsloggen ingår.
+			Nytta
+				Säkrar åtkomst till dokumenthistorik innan C4 avvecklas, utan att återskapa dess gamla logggränssnitt.
+			Acceptanskriterium
+				Exportinventering och migrationsprotokoll stämmer av äldre versioner, filer och artikelkopplingar. En äldre version från C4 kan öppnas från rätt artikel. Luckor och saknade datum redovisas. Läsbar ändringsloggexport överlämnas där den finns. Saknad exportmöjlighet ger en kostnadssatt åtkomstlösning för vårt beslut före avvecklingen.
+			Beroenden och antaganden
+				[[B03]]; [[B04]]; [[PIM-M01]] till [[PIM-M03]]; [[PIM-A03]] till [[PIM-A05]]. Undantagen Färgkarta/Produktkatalog har inget obligatoriskt tioårsarkiv; tillgänglig äldre historik hanteras enligt valt migreringsurval.
+			Källa och precisering
+				Våra sex fastställda beslut i version 1.3, punkt 4; exportmöjlighet och volym måste verifieras
+		PIM-H01 Kodägande +krav ^PIM-H01
+			prioritet:: F1
+			område:: Kodägande
+			källstatus:: Bekräftat
+			arbetspaket:: AP14
+			Vi ska äga kundspecifik kod. Källkod, tester, bygg- och driftsättningsinstruktioner, nödvändiga konfigurationer, data- och gränssnittsdokumentation ska överlämnas i ett kodarkiv som vi kontrollerar eller har full åtkomst till.
+			Nytta
+				Gör byte av utvecklingspartner praktiskt möjligt.
+			Acceptanskriterium
+				En annan tekniker kan bygga, testa och driftsätta leveransen med överlämnat material utan era privata verktyg eller personkonton.
+			Beroenden och antaganden
+				[[B11]]; tredjepartsberoenden i [[PIM-H02]]
+			Källa och precisering
+				Uppdragets avsnitt I
+		PIM-H02 Tredjepartsberoenden +krav ^PIM-H02
+			prioritet:: F1
+			område:: Tredjepartsberoenden
+			källstatus:: Bekräftat
+			arbetspaket:: AP14
+			Ni ska redovisa komponenter, licenser, molntjänster, egna tjänster, kostnader och exitberoenden. Befintlig MagicBox-kod och tredjepartskod ska särskiljas från ny kundspecifik kod.
+			Nytta
+				Synliggör kostnader och faktisk överlämningsbarhet.
+			Acceptanskriterium
+				Komponent- och tjänsteförteckning innehåller rättighet, licens, ägare, kostnad och vad som krävs för fortsatt drift hos annan partner.
+			Beroenden och antaganden
+				[[B02]]; [[B09]]
+			Källa och precisering
+				Uppdragets avsnitt I; våra förtydliganden, fråga 3
+		PIM-H03 Utbildning och stöd +krav ^PIM-H03
+			prioritet:: F1
+			område:: Utbildning och stöd
+			källstatus:: Föreslaget
+			arbetspaket:: AP14
+			Två PIM-administratörer ska få utbildning i dagliga flöden och felhantering samt en användarhandledning. Driftorganisationen ska få runbook och ansvarsfördelning. Basestimatet omfattar två utbildningstillfällen och tio arbetsdagars förstärkt stöd efter driftstart.
+			Nytta
+				Gör leveransen möjlig att ta i bruk och förvalta.
+			Acceptanskriterium
+				Administratörer genomför artikel-, Excel- och dokumentflöden med handledningen. Kontaktväg och ansvar under driftstart är dokumenterade.
+			Beroenden och antaganden
+				[[B11]]; antal tillfällen och stöddagar är antagande
+			Källa och precisering
+				Uppdragets avsnitt H och I; våra förtydliganden, fråga 13
+		PIM-N01 Tabellredigering och massändring +krav ^PIM-N01
+			prioritet:: F1
+			område:: Tabellredigering och massändring
+			källstatus:: Bekräftat
+			arbetspaket:: AP16
+			Administratören ska snabbt kunna redigera minst 100 valda artiklar direkt i en tabell i gränssnittet. Gemensamt basförslag: cellredigering, kopiera och klistra in ett cellområde, sätta samma värde på valda rader samt kontroll av urval och ändringar före sparande. Tillåtna fält och relationer följer samma fältmatris som enskild redigering och Excelimport. Externa källfält skyddas.
+			Nytta
+				Effektiviserar daglig berikning av stora artikelurval direkt i gränssnittet.
+			Acceptanskriterium
+				Två administratörer bearbetar var sitt urval om 100 artiklar. En administratör klistrar in olika interna benämningar och sätter en gemensam kategori. Endast bekräftade rader ändras. Ogiltigt värde och konflikt med nyare ändring visas per artikel eller fält. Resultatet visar sparade respektive avvisade rader och gränssnittet förblir användbart. Godkänd produktegenskap kan överstyras utan att källvärdet ändras.
+			Beroenden och antaganden
+				[[B01]]; [[B07]]; [[PIM-Q02]]; [[PIM-Q03]]; [[PIM-W08]]; minsta tabellbeteende är föreslagen konkretisering; [[PIM-W09]]
+			Källa och precisering
+				Våra förtydliganden, fråga 4 och 13; vårt kompletterande beslut i version 1.2 om snabb tabellredigering redan i första driftversionen; Våra sex fastställda beslut i version 1.3
+		PIM-N02 ERP-baserad prioritering +krav ^PIM-N02
+			prioritet:: V2
+			område:: ERP-baserad prioritering
+			källstatus:: Bekräftat
+			arbetspaket:: AP17
+			PIM ska visa uppgifter från MagicBox om artiklars relevans per delägare och kunna filtrera på dem. Basestimatet omfattar matchning, aktiv i ERP, webbflagga, lagersaldo och uppdateringstid per delägare; detta fälturval är ett förslag.
+			Nytta
+				Gör prioritering av relevanta artiklar möjlig.
+			Acceptanskriterium
+				Med ett avtalat provurval kan administratören filtrera fram artiklar relevanta för en delägare. Uppgifternas aktualitet och källa visas. Saknat värde skiljs från nollsaldo.
+			Beroenden och antaganden
+				[[B07]]; [[B08]]; integration och PIM-del särredovisas
+			Källa och precisering
+				Våra förtydliganden, fråga 8; SFB-Smrtpunkter-grupperade-v2.md, PP05 och PP38; fälturval föreslaget
+		PIM-N03 Automatisk produktgruppering +krav ^PIM-N03
+			prioritet:: V2
+			område:: Automatisk produktgruppering
+			källstatus:: Bekräftat
+			arbetspaket:: AP18
+			Artiklar från samma leverantör ska grupperas automatiskt vid säkra regelträffar utifrån modell, produktserie och produkttyp med längd, färg och storlek som variationer. Osäkra fall ska bli förslag för manuell bedömning. Manuella grupperingar skyddas; nya möjliga medlemmar i befintlig grupp notifieras.
+			Nytta
+				Minskar manuellt grupperingsarbete utan att ändra redaktionella beslut.
+			Acceptanskriterium
+				Fastställt testunderlag ger automatisk grupp för säker träff, manuell åtgärd för osäker träff och notis för nytillkommen artikel. Manuellt fastställd gruppering ändras inte utan godkännande. Regler för säker träff beslutas separat.
+			Beroenden och antaganden
+				[[PIM-D02]]; [[B12]]; avgränsad regelutredning ingår i [[AP18]]
+			Källa och precisering
+				Våra förtydliganden, fråga 5; regelbaserad metod är estimatantagande
+		PIM-N04 Samlad arkivhantering +krav ^PIM-N04
+			prioritet:: V2
+			område:: Samlad arkivhantering
+			källstatus:: Bekräftat
+			arbetspaket:: AP19
+			I V2 ska administratören kunna arkivera, söka och återaktivera arkiverade artiklar, bilder och dokument med bibehållen identitet. Arkivering ska bevara relationer, historik och dokumentversioner och förmedla ändrad status till berörda mottagare. Ny källdata får inte automatiskt återaktivera manuellt arkiverad entitet.
+			Nytta
+				Gör arkiverat material återanvändbart utan dubbletter.
+			Acceptanskriterium
+				En artikel, bild och ett dokument arkiveras, hittas och återaktiveras med samma identiteter. Relationer och historik består. Statusbesked når berörd mottagare. Ny källdata på arkiverad entitet återaktiverar den inte. Dokumentbevarande från F1 respekteras.
+			Beroenden och antaganden
+				[[PIM-W07]]; [[PIM-A03]]; [[PIM-I03]]; [[B14]]; synlighet efter återaktivering preciseras i [[AP19]]
+			Källa och precisering
+				Våra förtydliganden, fråga 12; vårt kompletterande beslut i version 1.2 om samlad arkivhantering
+		PIM-N05 Nya mediedomäner +krav ^PIM-N05
+			prioritet:: Tillval
+			område:: Nya mediedomäner
+			källstatus:: Bekräftat
+			arbetspaket:: AP20
+			Nya domänupplägg för bilder och dokument ska utredas och estimeras separat från bevarandet av befintliga länkar.
+			Nytta
+				Möjliggör senare domänbyte utan att belasta grundomfattningen.
+			Acceptanskriterium
+				Tillvalet anger berörda domäner, länkmappning, ompekning, test och återkommande kostnader.
+			Beroenden och antaganden
+				[[B04]]; beställs separat
+			Källa och precisering
+				Våra förtydliganden, fråga 10
+		PIM-N06 Förhandsvisningar +krav ^PIM-N06
+			prioritet:: Tillval
+			område:: Förhandsvisningar
+			källstatus:: Bekräftat
+			arbetspaket:: AP21
+			Avancerade förhandsvisningar och tumnaglar för ytterligare filformat ska estimeras per avtalad formatlista. Vanlig visning av webbbild och öppning av PDF ingår redan i F1.
+			Nytta
+				Avgränsar extra mediefunktioner.
+			Acceptanskriterium
+				Tillvalet redovisar format, renderingstjänst, kostnad och testfiler; ingen generell garanti för alla filtyper lämnas.
+			Beroenden och antaganden
+				[[B04]]; beställs separat
+			Källa och precisering
+				Våra förtydliganden, fråga 10
+		PIM-N07 Framtida delägaranvändare +krav ^PIM-N07
+			prioritet:: Framtid
+			område:: Framtida delägaranvändare
+			källstatus:: Bekräftat
+			En senare utbyggnad kan omfatta upp till cirka 40 användare och delägarnas skapande och administration av egna artiklar. Katalogbehörigheter, arbetsflöden och lastmål ska då definieras separat.
+			Arbetspaket enligt kravkatalogen: FRAMTID
+			Nytta
+				Synliggör framtida riktning utan att beställa portal nu.
+			Acceptanskriterium
+				F1-lösningsförslaget beskriver större begränsningar för framtida utbyggnad. Ingen delägarportal eller 40-användaracceptans krävs i F1 eller V2.
+			Beroenden och antaganden
+				Senare behovs- och behörighetsanalys
+			Källa och precisering
+				Våra förtydliganden, fråga 13
+		PIM-H04 Projektledning +krav ^PIM-H04
+			prioritet:: F1
+			område:: Projektledning
+			källstatus:: Bekräftat
+			arbetspaket:: AP15
+			Ni ska planera och samordna F1 med oss, ITM8 och Snicken samt hantera beroenden, beslut, risker och ändringar. Kostnad för gemensam projektledning ska redovisas en gång i [[AP15]].
+			Nytta
+				Gör leveransansvar och samordningsinsats synliga.
+			Acceptanskriterium
+				Leveransplan visar ansvar, beslutsdatum, bemanning, kritiska beroenden och första användbara driftversion. Ändringar av grundomfattningen har spårbart beslut och kostnadspåverkan.
+			Beroenden och antaganden
+				[[B11]]; samtliga F1-paket
+			Källa och precisering
+				Uppdragets avsnitt 5; våra förtydliganden, fråga 15
+	Arbetspaket
+		AP01 Teknisk precisering och inventering +arbetspaket ^AP01
+			grupp:: F1 PIM
+			utförare:: "PIM-partner samordnar; ITM8 bidrar"
+			krav:: PIM-I01; PIM-M01
+			Gemensam leverabel
+				Verifierade gränssnittskontrakt, fältmatris, identitetsregler, fast Excel-format, exportprov, media- och volyminventering samt reviderat genomförandeestimat. Öppna beslut har rekommendation, kostnadspåverkan och ansvarig. Resultatet ska kunna användas av annan partner. Verifiera startlistan för redigerbara egenskaper, befintliga grupptillhörigheter, äldre dokumentexport och att publicerad information klarar PIM-avbrott.
+			Gräns mot andra paket
+				Ingen implementation av produktfunktioner. ITM8:s medverkan särredovisas som resurs i paketet, inte igen i [[AP07]]/[[AP08]].
+		AP02 Datamodell och grundstruktur +arbetspaket ^AP02
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-D01; PIM-D02; PIM-D03; PIM-D05; PIM-D07
+			Gemensam leverabel
+				Objekt, identiteter, attribut och skilda käll-/egna värden, referensdata, tre kategoriträd och manuella produktgrupper. En variantgrupp och flera bundles enligt [[B12]].
+			Gräns mot andra paket
+				Ingen import av produktionsbeståndet. [[AP11]]/[[AP22]] hanterar migrering. Gemensam överstyrningslogik och redigeringsregler ligger i [[AP03]]; här ingår datamodellen.
+		AP03 Administratörsgränssnitt och berikning +arbetspaket ^AP03
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-D04; PIM-D06; PIM-W01; PIM-W02; PIM-W03; PIM-W04; PIM-W05; PIM-W06; PIM-W07; PIM-W08; PIM-Q03; PIM-Q04; PIM-W09
+			Gemensam leverabel
+				Sökning, enskild redigering, textregler, egen attributöverstyrning enligt [[B07]], notiser, webbstatus, livscykelstatus, validering, ny ändringshistorik och enkel attributstädning.
+			Gräns mot andra paket
+				Gemensamma fält-, överstyrnings- och valideringsregler räknas här en gång. [[AP06]] bygger Excel och [[AP16]] tabellinteraktion. Attributsammanslagning, värdeflytt och datatypbyte ingår inte. Arkivfunktioner i [[AP19]]; medier i [[AP05]].
+		AP04 PIMs integrationsgränssnitt +arbetspaket ^AP04
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-I02; PIM-I03; PIM-I04
+			Gemensam leverabel
+				Mottagning av källdata, utgående förändringsflöde, återförsök, omsändning och felvy på PIM-sidan.
+			Gräns mot andra paket
+				MagicBox-adapter ingår i [[AP08]] och Snicken-adapter i [[AP09]]. Kontraktsarbetet ligger i [[AP01]].
+		AP05 Bilder dokument och versioner +arbetspaket ^AP05
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-A01; PIM-A02; PIM-A03; PIM-A04; PIM-A05; PIM-A08
+			Gemensam leverabel
+				Medieinformation, uppladdning av flera filer till en vald artikel/produkt med resultat per fil, återanvändning, ordning, webbexkludering, oföränderliga dokumentversioner och artikelns versionslista.
+			Gräns mot andra paket
+				Ingen automatisk filpaketsmatchning mot många artiklar. Befintlig lagring, transformation och länkar i [[AP10]]. Flytt av aktuellt bestånd i [[AP11]], äldre dokumenthistorik i [[AP22]]. Ingen dubbel kostnad för versionsvyn.
+		AP06 Excelimport och export +arbetspaket ^AP06
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-X01; PIM-X02; PIM-X03
+			Gemensam leverabel
+				Fast mall, förhandskontroll, import, export, radsvar och jobbstatus för 5 000 artiklar. Både manuella artiklar och egen berikning på källartiklar omfattas; externa källfält skyddas. Godkända egna produktegenskaper och uttryckligt borttagande av överstyrning ingår enligt [[B07]].
+			Gräns mot andra paket
+				Ingen fri mappningsdesigner. Migreringsverktyg och migreringskörningar i [[AP11]].
+		AP07 Källintegrationer till MagicBox +arbetspaket ^AP07
+			grupp:: F1 ITM8
+			utförare:: ITM8
+			krav:: PIM-I05; PIM-I06; PIM-I07
+			Gemensam leverabel
+				Finfo-omkoppling, ny BASTA-anslutning och återanvändning av BVB med nödvändiga anpassningar.
+			Gräns mot andra paket
+				Specificera timmar för Finfo, BASTA och BVB separat i ert svar. Ingen ny BVB-hämtare utan motivering.
+		AP08 MagicBoxanslutning och distribution +arbetspaket ^AP08
+			grupp:: F1 ITM8
+			utförare:: ITM8
+			krav:: PIM-I08
+			Gemensam leverabel
+				MagicBox-sidan av utbyte med PIM samt verifierad befintlig ERP-matchning och distribution per delägare. Gruppfält och artikelvärden hålls åtskilda. Senast distribuerad information ska kunna användas vid PIM-avbrott.
+			Gräns mot andra paket
+				ERP-baserad prioriteringsvy i PIM ingår i [[AP17]]. Snicken är separat i basalternativet.
+		AP09 Snickens separata anslutning +arbetspaket ^AP09
+			grupp:: F1 ITM8
+			utförare:: ITM8 som estimatantagande
+			krav:: PIM-I09; PIM-I10
+			Gemensam leverabel
+				Mottagning av artikelurval, matchning, startleverans, inkrementell data, återhämtning och ersättning av Exchange.
+			Gräns mot andra paket
+				Bas: logiskt separat adapter. Alternativ placering i MagicBox redovisas i [[ALT01]] som ersättningskostnad, inte tillägg ovanpå [[AP09]].
+		AP10 Befintliga medier och länkar +arbetspaket ^AP10
+			grupp:: F1 ITM8
+			utförare:: ITM8 samordnar befintlig driftpart
+			krav:: PIM-A06; PIM-A07
+			Gemensam leverabel
+				Återanvändning eller nödvändig ersättning av lagring, transformering och länkhantering; driftåtkomst verifieras. Publicerade medielänkar ska fungera vid avbrott i PIM-administrationen.
+			Gräns mot andra paket
+				Fysisk migrering av urval och kopplingsdata i [[AP11]]. Tredjepartsavgifter anges separat.
+		AP11 Migrering +arbetspaket ^AP11
+			grupp:: F1 migrering
+			utförare:: PIM-partner med export från nuvarande part
+			krav:: PIM-M02; PIM-M03
+			Gemensam leverabel
+				Mappning, verktyg, provkörning, korrigeringskörning och slutkörning. Beräkningsvolym: 1,4 miljoner artiklar, 22 442 grupper, 519 781 bilder och 118 228 dokument.
+			Gräns mot andra paket
+				Vi beslutar urval. Ange fasta/rörliga kostnader och extra körning, 100 000 artiklar/filer och GB. Gemensamma migreringsverktyg och körningar räknas här en gång. [[AP22]] avser extra arbete med äldre dokumentversioner/historik. [[AP01]] inventerar; [[AP14]] leder växling.
+		AP22 Äldre dokumentversioner och historikexport +arbetspaket ^AP22
+			grupp:: F1 migrering
+			utförare:: "PIM-partner; vi ordnar export, befintlig part och ITM8 medverkar"
+			krav:: PIM-M06
+			Gemensam leverabel
+				Särskild export, historikmappning, inläsning och avstämning av äldre dokumentversioner med artikelkoppling och datum. Läsbar export av gammal ändringslogg om tillgänglig. Ingår i F1-totalen med eget intervall.
+			Gräns mot andra paket
+				[[AP01]] inventerar. Återanvänd [[AP11]]:s verktyg/körningar och [[AP05]]:s versionsvy; räkna bara tillkommande historikarbete här. Redovisa historisk filmängd/GB och enhetspris utan dubbelräkning mot [[AP11]]. Exportluckor och alternativ åtkomst före C4-stängning ska kostnadssättas.
+		AP12 Gemensamt test och acceptans +arbetspaket ^AP12
+			grupp:: F1 PIM
+			utförare:: "PIM-partner samordnar; ITM8 deltar"
+			krav:: PIM-Q01; PIM-Q02; PIM-M04
+			Gemensam leverabel
+				Sammanhängande integrationstest, kapacitetstest inklusive tabellredigering för 100 artiklar per administratör och Exceljobb för 5 000 artiklar, migreringskontroll, acceptansstöd samt rättning och omtest inför godkännande. Verifiera de sex besluten, äldre dokumentåtkomst och mottagarnas funktion vid PIM-avbrott. Använd [[AP13]]:s återställningsprotokoll.
+			Gräns mot andra paket
+				Egna komponenttester i respektive paket. [[AP13]] utför återställningsprovet; [[AP12]] använder protokollet i acceptansen utan att räkna samma prov igen. Samlat avbrottstest ingår här.
+		AP13 Miljöer drift och återställning +arbetspaket ^AP13
+			grupp:: F1 PIM
+			utförare:: "PIM-partner; driftansvar bekräftas"
+			krav:: PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05
+			Gemensam leverabel
+				Test/produktion, identitet, säker konfiguration, backup med RPO högst en timme, RTO högst en arbetsdag, genomfört återställningsprov, övervakning och rutiner för support svensk kontorstid. Verifierad lösning för fortsatt åtkomst vid PIM-avbrott.
+			Gräns mot andra paket
+				Medieanpassningar i [[AP10]] och ändringar på integrationssidorna i [[AP04]]/[[AP08]]/[[AP09]]. Samlat avbrottstest i [[AP12]]. Återställningsprov utförs här en gång. Månatlig drift/support under återkommande kostnader i offerten. [[B09]] anger mätförutsättning.
+		AP14 Driftsättning och överlämning +arbetspaket ^AP14
+			grupp:: F1 PIM
+			utförare:: PIM-partner samordnar
+			krav:: PIM-M05; PIM-H01; PIM-H02; PIM-H03
+			Gemensam leverabel
+				Växling, kontroll av mottagare, kod- och dokumentationsöverlämning, två utbildningstillfällen och tio arbetsdagars förstärkt stöd.
+			Gräns mot andra paket
+				Migreringskörning i [[AP11]]. Löpande support efter startperioden är återkommande kostnad.
+		AP15 Projektledning +arbetspaket ^AP15
+			grupp:: F1 PIM
+			utförare:: PIM-partner samordnar med oss och ITM8
+			krav:: PIM-H04
+			Gemensam leverabel
+				Planering, samordning, risker, rapportering, besluts- och ändringshantering under hela F1.
+			Gräns mot andra paket
+				Teknisk utredning i [[AP01]]. Er interna paketledning ska inte samtidigt läggas på som separat generellt påslag.
+		AP16 Tabellredigering och massändring i gränssnittet +arbetspaket ^AP16
+			grupp:: F1 PIM
+			utförare:: PIM-partner
+			krav:: PIM-N01
+			Gemensam leverabel
+				Snabb tabellredigering för minst 100 artiklar med cellredigering, inklistring av cellområde, gemensam ändring på valda rader, validering och resultat per artikel. Ingår i första driftversionen.
+			Gräns mot andra paket
+				[[AP03]] äger gemensamma fält- och valideringsregler; [[AP16]] bygger tabellens interaktion och egna komponenttester. Sammanhängande acceptans och kapacitetstest i [[AP12]], gemensam driftsättning i [[AP14]] och projektledning i [[AP15]]. Komponentlicenser särredovisas. Egen attributöverstyrning använder [[PIM-W09]]; gemensam regelutveckling ska inte räknas igen.
+		AP17 ERP-baserad prioritering +arbetspaket ^AP17
+			grupp:: V2
+			utförare:: PIM-partner och ITM8
+			krav:: PIM-N02
+			Gemensam leverabel
+				Avgränsad fältanalys, återföring från MagicBox och prioriteringsfilter.
+			Gräns mot andra paket
+				Särredovisa ITM8 och PIM-insats. Inkludera tillvalets fulla leveransarbete.
+		AP18 Automatisk produktgruppering +arbetspaket ^AP18
+			grupp:: V2
+			utförare:: PIM-partner
+			krav:: PIM-N03
+			Gemensam leverabel
+				Avgränsad regelanalys med testmaterial, automatisk gruppering för säkra träffar, manuell hantering av osäkra fall, skydd för manuella grupper och notiser.
+			Gräns mot andra paket
+				Regelbaserad metod är bas; AI-tjänst redovisas som alternativ. Inkludera test och överlämning.
+		AP19 Manuell arkivering sökning och återaktivering +arbetspaket ^AP19
+			grupp:: V2
+			utförare:: "PIM-partner; ITM8 vid kontraktsändring"
+			krav:: PIM-N04
+			Gemensam leverabel
+				Samlad arkivhantering: manuell arkivering, arkivsökning och återaktivering med bibehållna identiteter, relationer och historik samt uttryckliga distributionsbesked.
+			Gräns mot andra paket
+				Dokumentversionslista och bevarande ingår redan i [[AP05]]. Inkludera tillvalets fulla leveransarbete.
+		AP20 Nya mediedomäner +arbetspaket ^AP20
+			grupp:: Tillval
+			utförare:: Ni föreslår ansvarig
+			krav:: PIM-N05
+			Gemensam leverabel
+				Avgränsat domän- och länkupplägg enligt godkänd domänlista.
+			Gräns mot andra paket
+				Ersätter inte F1-kravet att befintliga länkar fungerar. Inkludera test och driftkostnad.
+		AP21 Avancerade förhandsvisningar +arbetspaket ^AP21
+			grupp:: Tillval
+			utförare:: PIM-partner
+			krav:: PIM-N06
+			Gemensam leverabel
+				Visning för särskilt valda ytterligare filformat.
+			Gräns mot andra paket
+				Formatlista och eventuella tjänster måste anges. Inkludera test och återkommande kostnader.
+	Beslut, antaganden och preciseringar
+		De sex fastställda besluten i version 1.3 finns i [[B03]], [[B04]], [[B07]], [[B09]], [[B10]] och [[B12]]. Tidigare beslut om tabellredigering, Excel och arkivhantering består.
+		Leverans, integration och migrering
+			B01 Leveransordning +beslut ^B01
+				ansvar:: Vi
+				berör:: AP03; AP06; AP12; AP16
+				Grund för estimatet
+					Bekräftat i version 1.2: snabb tabellredigering direkt i gränssnittet, Excel-export och fast Excelimport ingår tillsammans i första driftversionen. [[AP16]] ingår i F1-totalen.
+				Återstår att precisera
+					Det konkreta tabellbeteendet i [[PIM-N01]] är ett basförslag: cellredigering, inklistring och gemensam ändring. Ange lösning och komponentlicenser. Vi behöver verifiera utformningen med representativa artiklar. Full Excel-kopia med formler, pivottabeller eller fri arbetsboksdesign ingår inte.
+			B02 Snickens placering och avtal +beslut ^B02
+				ansvar:: Vi och ITM8 samt Snicken
+				berör:: AP09; ALT01
+				Grund för estimatet
+					Logiskt separat adapter och mottagarurval utanför gemensam MagicBox-distribution; ITM8 antas bygga adaptern. Alternativ i MagicBox estimeras separat och ersätter [[AP09]] om det väljs.
+				Återstår att precisera
+					Separering är inte ett konstaterat avtalskrav. Ägande, åtkomst och kostnadsansvar måste klarläggas.
+			B03 Migreringsurval och export +beslut ^B03
+				ansvar:: Vi och nuvarande exportansvarig
+				berör:: AP01; AP11; AP22
+				Grund för estimatet
+					Bekräftat: vi städar och beslutar urval. Tillgängliga äldre dokumentversioner för urvalet ingår i F1 genom [[AP22]]. Gammal ändringslogg sparas som läsbar export om tillgänglig, utan nytt logggränssnitt. Dagens bestånd används som gemensam beräkningsvolym, inte slutligt urval.
+				Återstår att precisera
+					[[AP01]] verifierar export, historikmängd och bytevolym. [[AP11]] omfattar en provkörning, en korrigeringskörning och en slutkörning. [[AP22]] prissätts separat men ingår i F1-totalen. Ange intervall, mängdantaganden och enhetspriser. Samma fil/körning får inte räknas två gånger. Saknade dokumentversioner eller exportluckor kräver kostnadssatt åtkomstlösning för vårt beslut före C4-stängning.
+		Medier, utbyte och identiteter
+			B04 Medieidentitet och bevarande +beslut ^B04
+				ansvar:: Vi och ITM8 samt PIM-partner
+				berör:: AP01; AP05; AP10; AP22
+				Grund för estimatet
+					Bekräftat: flera filer kan laddas upp samtidigt till en redan vald artikel eller produkt, med resultat per fil. Automatisk matchning av filpaket mot många artiklar ingår inte. Dokumentversioner bevaras som faktiskt, oföränderligt filinnehåll. Undantag från tioårsarkiv: Färgkarta och Produktkatalog.
+				Återstår att precisera
+					Kvarvarande estimatantagande: tio år räknas från att versionen ersätts; aktuell version medan den används. Ingen automatisk radering i F1. Startpunkten behöver fastställas. [[AP01]] verifierar versionsnycklar, gamla URL:er, format, filstorlekar, original, domäner, lagring och transformationsprofiler. Okända historiska datum redovisas och får inte leda till för tidig radering.
+			B05 Innehåll och transport till mottagare +beslut ^B05
+				ansvar:: Vi och Snicken samt ITM8
+				berör:: AP01; AP04; AP08; AP09
+				Grund för estimatet
+					All aktuell artikeldata inklusive käll- och internfält, effektivt värde, produkt, kategorier och mediereferenser med visningsflaggor. Tioårigt filarkiv distribueras inte som standard. Snickens urvalsnyckel och besked vid ändrat artikelurval fastställs i kontraktet.
+				Återstår att precisera
+					All data måste definieras i fältkontraktet. Transport, kvittens, frekvens och omtag verifieras; inget befintligt API antas.
+			B06 Identifierare och matchning +beslut ^B06
+				ansvar:: Vi och ITM8
+				berör:: AP01; AP02; AP11
+				Grund för estimatet
+					Stabil intern identitet plus bevarade källnycklar. Samma GTIN från olika leverantörer får inte slås ihop. Källans identitet används före GTIN; saknad eller tvetydig matchning ger felkö.
+				Återstår att precisera
+					Konkret sammansatt nyckel, leverantörs-id, befintliga C4-kopplingar och behandling av manuella artiklar måste verifieras.
+		Fältregler, kapacitet och drift
+			B07 Fältägarskap och regler +beslut ^B07
+				ansvar:: Vi och ITM8 samt PIM-partner
+				berör:: AP01; AP02; AP03; AP04; AP06; AP08; AP16
+				Grund för estimatet
+					Bekräftat: ett avgränsat urval produktegenskaper får kompletteras och överstyras manuellt. Källa och eget värde hålls isär; eget värde gäller tills överstyrningen tas bort. Samma regel i enskild redigering, tabell och Excel. Identifierare och externa bedömningar skyddas. Gemensam prisförutsättning, föreslagen startlista: material, färg, längd, bredd, höjd, tjocklek och diameter. Sju attributdefinitioner med befintlig datatyp och enhet; exakta attribut-ID:n och eventuella likvärdiga ersättningar fastställs i [[AP01]]. Ingen generell enhetskonvertering ingår.
+				Återstår att precisera
+					Startlistan är föreslagen för samma estimatbas, inte en inventerad C4-fältlista. [[AP01]] låser attribut-ID:n, datatyper, listvärden, enheter, skyddade fält, källprioritet och mottagarmappning. Tomvärdesregler för Excel och blanksteg i texter är fortsatt basförslag. Ingen generell överstyrning av samtliga attribut eller nya särskilda notiser för egenskapsändringar beställs.
+			B08 Prestanda och lagringsmängd +beslut ^B08
+				ansvar:: Vi tillsammans med er
+				berör:: AP01; AP12; AP13
+				Grund för estimatet
+					Använd angivna beståndsvolymer, två samtidiga administratörer, 100 artiklar per urval och 5 000 rader per Exceljobb. Föreslagen jämförelseprofil finns i specifikationens avsnitt 8.
+				Återstår att precisera
+					Filernas bytevolym, versionsökning, dagliga ändringar och toppar måste mätas. Profilens tidsgränser är förslag, inte bekräftade krav.
+			B09 Drift och tjänstenivå +beslut ^B09
+				ansvar:: Vi och utsedd driftpart
+				berör:: AP01; AP04; AP08; AP09; AP10; AP12; AP13
+				Berör även återkommande driftkostnader.
+				Grund för estimatet
+					Bekräftat: RPO högst en timmes förlust av sparade ändringar, RTO högst en arbetsdag för administrationsdelen, support svensk kontorstid och återställningsprov före drift. Redan distribuerad information och publicerade medielänkar ska fungera vid PIM-avbrott. Separat test/produktion och personliga konton.
+				Återstår att precisera
+					Gemensam föreslagen mätförutsättning: RTO högst åtta supporttimmar från registrerat larm eller felanmälan, inom helgfri måndag-fredag kl. 08-17 svensk tid. RPO mäts i löpande tid, även utanför supportfönstret. Ni ska ange avvikelse från detta öppet. Identitetstjänst, driftägare, loggtid och tekniska beroenden verifieras i [[AP01]]. Om publicerad åtkomst kräver anpassning ska den prissättas i berört F1-paket.
+		Arbetssätt och fastställda avgränsningar
+			B10 Städning efter migrering +beslut ^B10
+				ansvar:: Vi
+				berör:: AP03
+				Grund för estimatet
+					Bekräftat: söka attribut, visa användning, ändra visningsnamn/beskrivning och stoppa ny användning. Befintliga identifierare och värden bevaras. Sammanslagning, flytt av värden mellan attribut och datatypbyte ligger utanför F1.
+				Återstår att precisera
+					Ingen öppen omfattningsfråga för F1. Detaljer i visningen verifieras med administratörerna. Ett senare städarbete får egen omfattning och beställning.
+			B11 Bemanning och acceptans +beslut ^B11
+				ansvar:: Vi tillsammans med er
+				berör:: AP12; AP13; AP14; AP15
+				Grund för estimatet
+					Vi äger regler och verksamhetsgodkännande; partnern implementerar och verifierar. Ni anger vår medverkan per vecka och senast möjliga beslut/start för drift före avveckling.
+				Återstår att precisera
+					Namngiven beslutsfattare, administratörernas tillgänglighet, startdatum och driftansvar saknas. Två utbildningar och tio stöddagar är estimatantaganden.
+			B12 Produktgrupper och arv +beslut ^B12
+				ansvar:: Vi och PIM-partner
+				berör:: AP01; AP02; AP04; AP08; AP09; AP11; AP18
+				Grund för estimatet
+					Bekräftat: gruppnamn, gruppbild och gruppkategorier hanteras gemensamt på produktgruppen. Artikelns egna värden hålls åtskilda. Båda nivåerna och relationerna distribueras utan automatisk kopiering. Artikel får sakna grupp, ha högst en variantgrupp och dessutom flera bundles. Bundle saknar antal-, paketpris- och lagerlogik.
+				Återstår att precisera
+					[[AP01]] kontrollerar regeln mot befintliga grupper och hur mottagarna använder gruppfälten. Avvikande relationer ska redovisas för vårt beslut och får inte tyst tas bort. Obligatoriska gruppfält preciseras. Detta är verifiering av beslutad regel, inte ett öppet val av valfri gruppmodell.
+			B13 Excel på manuella artiklar och källartiklar +beslut ^B13
+				ansvar:: Vi och PIM-partner
+				berör:: AP01; AP03; AP06; AP12
+				Grund för estimatet
+					Bekräftat i version 1.2: export, redigering och återimport ska fungera för egen berikning på båda artikeltyperna. Nya manuella artiklar ska också kunna skapas. Externa källvärden skyddas.
+				Återstår att precisera
+					Fast kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export preciseras i [[AP01]]. En föråldrad Excel-fil får inte tyst skriva över nyare manuellt arbete. Inget fritt importverktyg ingår.
+			B14 Arkivhanteringens leveransgräns +beslut ^B14
+				ansvar:: Vi och PIM-partner samt ITM8 för statusutbyte
+				berör:: AP03; AP05; AP11; AP19
+				Grund för estimatet
+					Bekräftat i version 1.2: F1 visar befintlig livscykelstatus och låter oss styra webbstatus. Ny manuell arkivering, generell arkivsökning och återaktivering levereras tillsammans i V2. Dokumentversioner och tioårigt bevarande ingår fortsatt i F1.
+				Återstår att precisera
+					För V2 ska regler för återaktivering, källändring på arkiverad entitet och återpublicering preciseras. Gamla arkiverade poster följer endast med enligt vårt migreringsurval. Ingen automatisk radering beställs.
+	Separata alternativ
+		Alternativ får inte summeras ovanpå samma arbete i basen. ALT02 förekommer inte i underlaget.
+		ALT01 Snicken inne i MagicBox +alternativ ^ALT01
+			ersätter:: AP09
+			Snicken inne i MagicBox i stället för basens separata adapter. Ange ersättningskostnad för [[AP09]], följdändringar och avtalsförutsättningar.
+			Ska visa ett ersättningsalternativ inne i MagicBox, med förutsättningar för godkännande. Se [[B02]].
+		ALT03 Avgränsad kontinuitetslösning +alternativ ^ALT03
+			Avgränsad kontinuitetslösning om F1 inte kan nå drift före avvecklingen av C4.
+			Ska beskriva och estimera en avgränsad kontinuitetsåtgärd, med bevarad export och nödvändiga mottagarflöden, ansvar och sluttid. Återgång till stängt C4 får inte vara reservplan.
+			Åtgärden beställs inte automatiskt och får inte räknas in dolt i F1.
+	Övrigt ur kravspecifikationen
+		Extern gräns: avvecklingen av C4
+			C4 och dess meddelandekö avvecklas. Ange om leveransen kan vara i drift före avvecklingen, med vilken bemanning och vilka beslut som då krävs. Fortsatt drift eller åtkomst efter avvecklingen får inte förutsättas.
+		Bekräftade ramar
+			Berikning sker på svenska.
+			Samma GTIN från olika leverantörer ska vara separata artiklar.
+			Alla attributdefinitioner följer med; värden och poster följer migreringsurvalet.
+			Aktiva kategoriträd är de aktuella träden för Produktkatalog, Brukspecialisten och Weydes. Äldre motsvarigheter till Produktkatalog och Brukspecialisten följer inte med som aktiva.
+			Ett krav på att alla attribut ska bevaras innebär inte att alla källägda fält får ändras manuellt.
+		Senare, tillval och utanför omfattning
+			V2: ERP-baserad prioritering, [[PIM-N02]] och [[AP17]].
+			V2: automatisk produktgruppering, [[PIM-N03]] och [[AP18]].
+			V2: samlad arkivhantering, [[PIM-N04]] och [[AP19]]. Dokumentversioner med tio års bevarande ingår redan i F1.
+			Senare, ej F1: attributsammanslagning, flytt av värden mellan attribut och datatypbyte kräver ett separat städuppdrag. Automatisk matchning av stora filpaket mot många artiklar kräver separat omfattning.
+			Tillval: nya mediedomäner och avancerad förhandsvisning av ytterligare filformat. Fungerande befintliga länkar och nödvändiga bildvarianter säkras däremot i F1.
+			Tillval: separat automatiserad mottagartjänst för hela tioårsarkivet av dokumentfiler.
+			Framtid: delägare kan få egna artiklar och administration, upp till cirka 40 användare. Portal, lokal behörighetsmodell och sådan lastacceptans ingår inte i F1 eller V2.
+			Utanför omfattningen: automatiska WB-nummer, generell regelmotor, AI-berikning, leverantörsportal, nya GS1/SQARP-flöden, orderhantering och generell ombyggnad av ERP eller e-handel.
+			Utanför omfattningen: e-post- och pushnotiser, fritt sidbyggarverktyg, generell kalkylmotor med formler, pivottabeller eller fri arbetsboksdesign, fria importmappningar.
+		Dimensionering och driftmål
+			Bestånd: cirka 1 400 000 artiklar, 22 442 produktgrupper, 519 781 bildfiler och 118 228 dokumentfiler.
+			Användning: två samtidiga PIM-administratörer; cirka 700 000 till 800 000 artiklar är relevanta för deras arbete.
+			Urval och filjobb: minst 100 artiklar per administratörsurval och import/export om 5 000 artikelrader.
+			Föreslaget svarstidsmål ([[B08]]): sökning/filter, öppning av artikel och sparande av enskild artikel högst 3 sekunder i 95 procent av minst 100 representativa försök per moment, med minst två aktiva administratörer och ett pågående jobb om 5 000 rader.
+			Föreslaget mål: Excelimport eller export av 5 000 rader inom 10 minuter, exklusive extern filöverföring och binär massimport.
+			Beslutat ([[B09]]): RPO högst en timme, RTO en arbetsdag för administrationsdelen, support svensk kontorstid och genomfört återställningsprov före drift.
+			Två miljöer, test och produktion. Personliga konton och separata tekniska identiteter. Hemligheter utanför källkod.
+			Ny ändringshistorik föreslås bevaras så länge posten finns.
+			Överlämning: källkod och versionshistorik, automatiserade tester, dokumenterad datamodell och gränssnitt, bygg- och driftsättningsinstruktioner, migreringsverktyg, konfigurationer, miljöbeskrivning, återställningsrutin och felsökningshandledning.
+			Basestimatet omfattar två utbildningstillfällen för de två administratörerna och tio arbetsdagars förstärkt stöd efter driftstart.
+		Acceptanskontroller före driftstart
+			Dataförlust, överskrivna interna värden, obehörig åtkomst eller utebliven central distribution blockerar driftstart. Andra avvikelser kräver uttryckligt godkännande och en åtgärdsplan.
+			Dagligt arbete +acceptanskontroll
+				krav:: PIM-W01; PIM-W02; PIM-Q01; PIM-Q02; PIM-Q03
+				Två administratörer hittar och redigerar artiklar utan att gränssnittet låses. Representativ datamängd och uppmätta svarstider redovisas.
+			Tabell och Excel +acceptanskontroll
+				krav:: PIM-N01; PIM-X01; PIM-X02; PIM-X03; PIM-Q02
+				Urval om 100 artiklar redigeras direkt i gränssnittet. Export/import om 5 000 rader fungerar för manuella artiklar och egen berikning på källartiklar. Fel och konflikter är synliga.
+			Skyddad berikning +acceptanskontroll
+				krav:: PIM-W03; PIM-W04; PIM-W05; PIM-W09; PIM-I02
+				Källan ändrar en internt berikad artikel. Källvärden uppdateras, interna texter och egna godkända egenskaper består. Textnotis visas enligt [[PIM-W05]]. Överstyrning kan tas bort för att använda senaste källa.
+			Identiteter och struktur +acceptanskontroll
+				krav:: PIM-D01; PIM-D02; PIM-D03; PIM-D04; PIM-D05; PIM-M02; PIM-M03
+				Samma GTIN från olika leverantörer förblir separata artiklar. Gruppregeln och separata gruppvärden fungerar. Attribut och de tre kategoriträden stämmer med godkänt urval.
+			Medier och versioner +acceptanskontroll
+				krav:: PIM-A01; PIM-A02; PIM-A03; PIM-A04; PIM-A05; PIM-A06; PIM-A07; PIM-M06
+				Flera filer laddas upp till vald artikel/produkt. Ny version bevarar föregående fil. Äldre C4-version kan öppnas. Senaste version, webbexkludering, ordning och länkar är korrekta.
+			Utbyte hela vägen +acceptanskontroll
+				krav:: PIM-I02; PIM-I03; PIM-I05; PIM-I06; PIM-I07; PIM-I08; PIM-I09; PIM-I10
+				Finfo, BASTA och BVB når rätt artikel. Manuell ändring når MagicBox och rätt mottagarutdata. Snicken får bara sitt urval, med korrekt startleverans och efterföljande ändringar.
+			Avbrott och återställning +acceptanskontroll
+				krav:: PIM-I04; PIM-O03; PIM-O04; PIM-O05
+				Vid PIM-avbrott fungerar senast levererad information och medielänkar. [[AP13]]:s återställningsprov visar högst en timmes dataförlust och en arbetsdags återställning enligt [[B09]].
+			Migrering och överlämning +acceptanskontroll
+				krav:: PIM-M03; PIM-M04; PIM-M05; PIM-M06; PIM-H01; PIM-H02; PIM-H03
+				Inga oförklarade differenser kvarstår. Administratörerna kan arbeta, driftansvar är utsett och kod, tester, konfiguration och instruktioner har överlämnats.

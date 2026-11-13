@@ -1,0 +1,9 @@
+_id,_type,_label,_parent,slag,belopp,antal,period,leverantör,volymantagande
+,kostnadspost,Licens för tabellkomponent,E-AP16,Återkommande,,,År,,Två administratörer.
+,kostnadspost,Hosting av test- och produktionsmiljö,E-AP13,Återkommande,,,Månad,,Volymer enligt B08.
+,kostnadspost,Lagring av filer och dokumentversioner,E-AP13,Återkommande,,,Månad,,Bytevolym mäts i AP01. Tioårsarkiv.
+,kostnadspost,Övervakning och loggtjänst,E-AP13,Återkommande,,,Månad,,
+,kostnadspost,Support svensk kontorstid och felrättning,E-AP13,Återkommande,,,Månad,Vaimo,Efter de tio stöddagarna i AP14.
+,kostnadspost,Export från nuvarande part,E-AP11,Engång,,,,Ariser,Om nuvarande part tar betalt för uttag.
+,kostnadspost,Domäner och certifikat,E-AP20,Återkommande,,,År,,
+,kostnadspost,Tjänst för förhandsvisning,E-AP21,Återkommande,,,Månad,,Formatlista anges.

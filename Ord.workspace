@@ -1,0 +1,50 @@
+SFB berikningsdel och PIM
+	Arbetsyta för SFB:s förfrågan, version 1.3-V.
+	Filer
+		./SFB_Krav.ord
+			Alla krav, arbetspaket, beslut B01–B14 och alternativ. Typdefinitionerna finns där.
+		./SFB_Offertprocess.ord
+			Checklista för Vaimos offert med estimat. Länkar till ID:n i SFB_Krav.ord.
+		./SFB_Estimat.ord
+			Estimatet för SFB: inställningar, roller och grupper. Siffrorna finns i SFB_Estimat_paket.csv, SFB_Estimat_rader.csv, SFB_Estimat_risker.csv och SFB_Estimat_kostnader.csv.
+		./Estimering/Estimeringsmetod.ord
+			Återanvändbar estimeringsmetod med trepunktsestimat. Arbetsgång, kontroller och typerna som räknar estimatet. Tomma CSV-mallar i samma mapp.
+
+
+Kravtyp +ord-type
+	name:: krav
+	fields::
+		prioritet::
+			options:: F1; V2; Tillval; Framtid
+		område::
+		källstatus::
+			options:: Bekräftat; Föreslaget; Behöver bekräftas
+		arbetspaket::
+			options:: +arbetspaket
+	Ett krav ur fliken Krav i kravkatalogen. Prioriteten styr leveransfasen, inte bokstaven i krav-ID:t.
+Arbetspakettyp +ord-type
+	name:: arbetspaket
+	fields::
+		grupp::
+		utförare::
+		krav::
+			options:: +krav
+	Ett arbetspaket ur fliken Arbetspaket. Grupp kommer från kravspecifikationens avsnitt 12.
+Beslutstyp +ord-type
+	name:: beslut
+	fields::
+		ansvar::
+		berör::
+			options:: +arbetspaket; +alternativ
+	Beslut, antaganden och preciseringar B01 till B14 ur kravspecifikationens bilaga.
+Alternativtyp +ord-type
+	name:: alternativ
+	fields::
+		ersätter::
+			options:: +arbetspaket
+Acceptanskontrolltyp +type-def
+	name:: acceptanskontroll
+	fields::
+		krav::
+			options:: +krav
+	Kontroll före driftstart, kravspecifikationen avsnitt 9.1.

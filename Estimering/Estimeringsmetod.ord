@@ -1,0 +1,446 @@
+Estimeringsmetod med trepunktsestimat (PERT)
+	version:: 1.0
+	datum:: 2026-11-13
+	Återanvändbar metod och mall för Vaimos estimat. Filen beskriver arbetsgången och definierar de typer som räknar fram estimatet. Själva siffrorna matas in i CSV-filer; Ord räknar resten.
+	Ersätter osäkerhetsfaktorn i Vaimos estimeringsmall v3.2 med trepunktsestimat, ett riskregister i timmar och öppna reserver. Se Vad som ändrats mot den gamla mallen längre ned.
+
+	1 Principer
+		Estimera arbetsinsats först. Kostnad och kalendertid räknas fram ur insatsen, aldrig tvärtom.
+			Ett pris eller ett datum som någon redan önskar får inte styra timmarna. Är ramen för snäv, ändra omfattning eller bemanning öppet.
+		Varje rad har tre värden: optimistisk, trolig och pessimistisk.
+			Optimistisk är det utfall vi slår ungefär en gång av tio (P10). Pessimistisk är det vi överskrider ungefär en gång av tio (P90). Trolig är det vanligaste utfallet.
+			Vi använder 10/90 och inte absoluta ytterlägen, eftersom människor inte kan bedöma ytterlägen. Den klassiska PERT-formeln med delaren 6 förutsätter ytterlägen och ger för smala intervall.
+		Osäkerhet läggs på rätt nivå.
+			Osäkerhet i själva arbetet syns i spannet mellan optimistisk och pessimistisk.
+			Händelser som kanske inträffar, till exempel att en export saknas, är risker med sannolikhet och konsekvens i timmar. De ligger i riskregistret, inte i radernas spann.
+			Gemensamma orsaker som påverkar många rader samtidigt modelleras som en risk. Annars blir totalens spann för smalt.
+		Inga dolda påslag.
+			Projektledning, test, möten och kvalitetssäkring estimeras som egna rader eller paket. Inga procentsatser läggs ovanpå.
+			Riskreserven syns per paket och kan följas tillbaka till enskilda risker.
+		Allt arbete räknas en gång.
+			Paketen följer 100 %-regeln: tillsammans täcker de hela omfattningen, och inget arbete finns i två paket. Varje paket har en gräns mot andra paket.
+		Minst två personer estimerar oberoende av varandra.
+			Skillnader diskuteras och leder till nya antaganden. De medelvärdesbildas inte bort.
+		Estimatet är en prognos med känd osäkerhet, inte ett löfte.
+			Det redovisas som låg, bas och hög, och uppdateras när ny kunskap finns. Varje version sparas.
+
+	2 Struktur
+		Estimatet är ett träd med tre nivåer. Varje nivå räknar ihop nivån under.
+			Grupp, till exempel F1, V2, Tillval eller Alternativ. Typen estimatsumma.
+				Paket, ett arbetspaket eller en leverabel. Också typen estimatsumma.
+					Rad, ett arbetsmoment för en roll. Typen estimatrad.
+					Risk, en möjlig händelse. Typen estimatrisk.
+					Kostnadspost, en kostnad som inte är arbetstid. Typen kostnadspost.
+			Grupper summeras aldrig med varandra automatiskt. Alternativ och tillval ska inte läggas ovanpå basen.
+			Ett paket kan delas i underpaket; de är också estimatsumma och räknas ihop på samma sätt.
+		Filer i ett projekt
+			Projektfil, Ord: inställningar, roller och grupper. Mall finns under 9 Mallar.
+			Paket, CSV: en rad per paket. Kolumnen _parent anger grupp.
+			Rader, CSV: en rad per arbetsmoment och roll. Kolumnen _parent anger paket.
+			Risker, CSV: _parent anger paket.
+			Kostnader, CSV: licenser, tjänster, drift och andra parters avgifter. _parent anger paket.
+			Tomma CSV-mallar finns i samma mapp som denna fil: mall_paket.csv, mall_rader.csv, mall_risker.csv och mall_kostnader.csv.
+		En rad per roll
+			Ett moment som kräver både konsult och utvecklare blir två rader med samma beskrivning och olika roll. Då går det att räkna viktat timpris och insats per part.
+			Rader från andra parter, till exempel kundens egen tid eller en annan leverantör, får sin part via rollen. De syns som extern insats och ingår inte i vårt pris.
+		Radernas storlek
+			Sikta på rader mellan 4 och 40 förväntade timmar. Större rader bryts ned. Mindre rader slås ihop med ett närliggande moment.
+			Om pessimistisk är mer än fyra gånger optimistisk vet vi för lite. Bryt ned raden, eller gör en avgränsad utredning med eget estimat.
+		Antal och enhet
+			Antal multiplicerar radens timmar. Utan antal räknas 1.
+			Om enhet är ifylld måste antal också vara det, annars räknas raden som saknad.
+			Antal 0 ger en ren enhetsprisrad: den syns som enhetspris men ingår inte i summan. Använd det för extra körningar, fler attribut och liknande.
+
+	3 Beräkningar
+		Inställningarna ligger på en nod med ID estimatinst i projektfilen. Formlerna hämtar dem därifrån.
+		Per rad
+			Förväntad tid: `antal × (optimistisk + 4 × trolig + pessimistisk) / 6`.
+			Standardavvikelse: `antal × (pessimistisk − optimistisk) / sigmadelare`.
+				Med P10 och P90 är sigmadelaren 2,56, eftersom avståndet P10 till P90 är 2 × 1,2816 standardavvikelser i en normalfördelning.
+				Om teamet i stället anger P5 och P95 är delaren 3,29. Med absoluta ytterlägen, klassisk PERT, är den 6.
+			Kostnad: förväntad tid × rollens timpris.
+			Enhetspris: timmar för en enhet × rollens timpris. Påverkas inte av antal.
+			Spann: pessimistisk / optimistisk. Används i kontrollen för breda rader.
+			Avvikelse: utfall / förväntad − 1, när utfallet är ifyllt.
+		Per risk
+			Konsekvens: förväntad tid ur riskens tre värden, på samma sätt som en rad.
+			Riskvärde: sannolikhet × konsekvens. Det är riskens bidrag till riskreserven.
+			Riskvarians: sannolikhet × (konsekvensens varians + konsekvens²) − riskvärde². Risken breddar alltså också totalens intervall.
+		Per paket och grupp
+			Förväntad: summan av egna raders förväntade tid och underpaketens förväntade tid.
+			Extern: samma sak för rader där rollen tillhör en annan part. Ingår inte i vårt pris.
+			Varians: summan av egna raders varians och riskernas varians. Standardavvikelsen är roten ur variansen.
+				Det förutsätter att raderna varierar oberoende av varandra. Gemensamma orsaker ska därför ligga som risker.
+			Riskreserv: summan av riskvärden.
+			Bas: förväntad + riskreserv. Motsvarar P50.
+			Låg: bas − 1,2816 × standardavvikelse, P10. Aldrig under noll.
+			Hög: bas + 1,2816 × standardavvikelse, P90.
+			P80: bas + 0,8416 × standardavvikelse. Lämplig nivå för fastpris eller takpris.
+			Låg och hög för ett paket är inte summan av radernas optimistiska och pessimistiska värden. Det är sannolikt att några rader går bättre och några sämre, så totalens intervall blir relativt sett smalare.
+			Kostnad: summan av egna raders kostnad. Riskkostnad: riskvärde × timpris för riskens roll. Baskostnad: kostnad + riskkostnad.
+			Låg och hög kostnad: baskostnad skalad med låg/bas och hög/bas. Förutsätter samma rollfördelning i hela intervallet.
+			Viktat timpris: kostnad / förväntad.
+			Persondagar: bas / timmar per dag.
+			Arbetsdagar: bas / (bemanning × timmar per dag × fokusfaktor), avrundat uppåt. Kräver att bemanning är ifyllt på paketet.
+				Fokusfaktorn är andelen av en arbetsdag som går till paketet. Möten, frånvaro och växling mellan uppdrag tar resten.
+				Dubblad bemanning halverar inte kalendertiden. Ange den bemanning som paketet faktiskt kan använda.
+			Kalenderveckor: arbetsdagar / 5, avrundat uppåt. Slutdatum räknas om startdatum finns.
+			Engångskostnad och återkommande kostnad per år: summan av paketets kostnadsposter. Hålls skilda från arbetstiden.
+			Saknade: antal rader utan komplett estimat. Ett paket med saknade rader är inte klart, och en saknad rad räknas aldrig som noll.
+			Relativt spann: (hög − låg) / bas. Jämförs med estimatklassen under 5.
+			Per roll och per part: timmar för paketets egna rader, uppdelade på roll och på part. Visas på paketnivå.
+
+	4 Arbetsgång
+		Förbered
+			[ ] Bestäm omfattningsbasen: vilka dokument och versioner estimatet bygger på. Skriv dem i projektfilen.
+			[ ] Bestäm vilken estimatklass som är möjlig nu, se 5. Det styr hur breda intervallen får vara.
+			[ ] Kopiera projektmallen under 9 och de tomma CSV-filerna. Fyll i inställningar och roller med timpris.
+			[ ] Utse minst två estimatorer med erfarenhet av liknande leveranser, och en som håller i processen.
+		Bygg nedbrytningen
+			[ ] Skapa grupper efter hur kunden vill se priset, till exempel bas, senare faser, tillval och alternativ.
+			[ ] Skapa ett paket per leverabel eller arbetspaket. Skriv vad som ingår och var gränsen mot andra paket går.
+			[ ] Bryt ned varje paket i rader per roll. Utgå från leverablerna och lägg till test, rättning, dokumentation och överlämning där de hör hemma.
+				Glöm inte arbete som ofta faller bort: miljöer, behörigheter, testdata, kodgranskning, driftsättning, rättning efter test, kundens granskningsrundor och möten.
+			[ ] Ange krav-ID på raderna så att varje krav går att spåra till ett estimat.
+			[ ] Kontrollera att varje krav i omfattningen täcks av minst en rad, och att ingen rad saknar stöd i omfattningen.
+		Skriv antaganden och risker
+			[ ] Skriv varje antagande som påverkar timmarna på raden där det spelar roll, i kolumnen antagande.
+			[ ] För in händelser som kanske inträffar i riskregistret, med utlösare, ägare och åtgärd.
+			[ ] Gå igenom komplexitetsfaktorerna under 6 och bestäm för var och en om den breddar några rader eller är en risk.
+		Estimera oberoende
+			[ ] Varje estimator fyller i optimistisk, trolig och pessimistisk på egen hand, utan att se de andras siffror.
+				Börja med trolig. Fråga sedan: vad måste gå rätt för att vi ska bli klara på optimistisk tid, och vad gör att det tar pessimistisk tid?
+				Kontrollfråga för pessimistisk: skulle jag bli förvånad om det tog längre tid? Ungefär en gång av tio ska svaret vara nej.
+			[ ] Estimera risker på samma sätt: sannolikhet mellan 0 och 1 och konsekvensens tre värden i timmar.
+		Jämför och enas
+			[ ] Jämför estimaten rad för rad. Diskutera rader där de troliga värdena skiljer mer än 30 % eller där spannen inte överlappar.
+				Skillnaden beror oftast på olika antaganden. Skriv in det antagande ni enas om och estimera om raden.
+			[ ] Upprepa tills skillnaderna är förklarade. Ta inte medelvärdet av oförklarade skillnader.
+		Kontrollera
+			[ ] Kör kontrollerna under 7. Inga rader får stå kvar i de blockerande kontrollerna.
+			[ ] Jämför med tidigare projekt: total per paket och fördelningen mellan konsult, utveckling, test och projektledning.
+				Avviker fördelningen mycket från liknande projekt ska skillnaden kunna förklaras.
+			[ ] Låt en person som inte estimerat granska de tio största paketen och de tio bredaste raderna.
+		Prissätt och planera
+			[ ] Fyll i bemanning och startdatum per paket. Kontrollera kalendertiden mot beroenden mellan paketen.
+			[ ] Välj prisnivå. Löpande räkning: bas med låg och hög som intervall. Fastpris eller tak: P80 eller hög, beroende på affärsrisk.
+			[ ] Redovisa riskreserven öppet per paket. Lägg den inte i timpriset eller i en generell reservation.
+			[ ] För in licenser, tjänster och andra parters avgifter som kostnadsposter, med volymantaganden.
+			[ ] Ge varje paket en prisstatus: fast, intervall, enhetspris, undersökning eller saknas.
+		Versionera
+			[ ] Spara estimatet som en version med datum innan det skickas. Ändra versionsfältet i projektfilen.
+			[ ] Estimera om när en utredning eller förstudie är klar. Smalare intervall är ett av resultaten.
+		Följ upp och kalibrera
+			[ ] För in utfall per rad under leveransen.
+			[ ] Kontrollera efter avslutat paket hur många rader som hamnade mellan optimistisk och pessimistisk. Med 10/90 ska det vara ungefär åtta av tio.
+				Färre betyder för smala spann. Fler betyder för breda.
+			[ ] Spara projektets utfall som referens till nästa estimat av samma typ.
+
+	5 Estimatklass och förväntad precision
+		Klassen beskriver hur mogen omfattningen är. Den bygger på AACE:s klassificering, anpassad till systemleveranser.
+		Klass 5, idé eller tidig förfrågan
+			Omfattningen är en lista med behov. Relativt spann ofta över 100 %.
+		Klass 4, efter förfrågningsunderlag
+			Krav och arbetspaket finns men gränssnitt, data och volymer är inte verifierade. Relativt spann ungefär 50–100 %.
+		Klass 3, efter förstudie eller teknisk precisering
+			Kontrakt, datamodell och volymer är verifierade. Relativt spann ungefär 30–50 %.
+		Klass 2 och 1, under leverans
+			Estimatet bygger på detaljerade specifikationer och eget utfall. Relativt spann under 30 %.
+		Om totalens relativa spann är mycket smalare än klassen tillåter är intervallen sannolikt för optimistiska.
+		Siffrorna är riktvärden för vår typ av uppdrag. AACE:s egna intervall gäller byggprojekt och ska inte citeras som exakta.
+
+	6 Komplexitetsfaktorer
+		Gå igenom listan när raderna och riskerna skrivs. En faktor som gäller breddar spannet på berörda rader, eller blir en risk om den är en händelse.
+		Datamängd: stort artikelbestånd, många digitala filer, stora filer.
+		Datamodell: många produkttyper med egna attributuppsättningar, många attribut, avancerade datatyper, varianter och produkthierarkier.
+		Integrationer: många källor och mottagare, okända eller overifierade gränssnitt, redundanta data mellan system.
+		Berikning: många språk och användare, godkännandeflöden, arbetskopia och publicerad version.
+		Lösningen: många funktioner, regelverk och standarder (till exempel GS1, ETIM, DPP).
+		Datakvalitet: tvätt och normalisering före migrering, dubbletter.
+		Migrering: omfattande mappning eller transformering, okänt exportformat, historik.
+		Organisation: tillgång till nyckelpersoner hos kund, oss och andra leverantörer; intern förankring och förändringsledning hos kund; beslut som dröjer.
+		Omfattning: risk att omfattningen växer under leveransen.
+
+	7 Kontroller
+		Blockerande
+			Rader utan komplett trepunktsestimat +search
+				view:: table
+				query:: +estimatrad =(saknas)
+				columns::
+					_label::
+					_parent::
+					roll::
+					antagande::
+			Rader där optimistisk ≤ trolig ≤ pessimistisk inte gäller +search
+				query:: +estimatrad =($not(saknas) and $not(ordning))
+			Rader utan roll +search
+				query:: +estimatrad =($not($exists(roll.part)))
+			Egna rader utan timpris +search
+				query:: +estimatrad =(egen and $not($exists(roll.timpris)))
+			Paket med saknade estimat +search
+				view:: table
+				query:: +estimatsumma =(saknade > 0)
+				columns::
+					_label::
+					saknade::
+					prisstatus::
+		Granskas
+			Breda rader att bryta ned eller utreda +search
+				view:: table
+				sort:: spann desc
+				query:: +estimatrad =(spann > $node("estimatinst").maxspann)
+				columns::
+					_label::
+					_parent::
+					optimistisk::
+					trolig::
+					pessimistisk::
+					spann::
+			Stora rader att bryta ned +search
+				query:: +estimatrad =(förväntad > $node("estimatinst").maxrad)
+			Risker utan komplett bedömning +search
+				query:: +estimatrisk =($not($exists(riskvärde)))
+			Risker utan åtgärd eller ägare +search
+				query:: +estimatrisk =($not($exists(åtgärd)) or $not($exists(ägare)))
+			Kostnadsposter utan belopp +search
+				query:: +kostnadspost =($not($exists(belopp)))
+		Översikt
+			Paketöversikt +search
+				view:: table
+				query:: +estimatsumma
+				columns::
+					_label::
+					förväntad::
+					riskreserv::
+					låg::
+					bas::
+					hög::
+					p80::
+					timpris::
+					baskostnad::
+					bemanning::
+					kalenderveckor::
+					extern::
+					saknade::
+					prisstatus::
+			Enhetspriser +search
+				view:: table
+				query:: +estimatrad =($exists(enhet))
+				columns::
+					_label::
+					_parent::
+					enhet::
+					antal::
+					enhetstimmar::
+					enhetspris::
+			Kalibrering mot utfall +search
+				view:: table
+				query:: +estimatrad =($exists(utfall))
+				columns::
+					_label::
+					optimistisk::
+					trolig::
+					pessimistisk::
+					utfall::
+					avvikelse::
+					inomspann::
+
+	8 Vad som ändrats mot den gamla mallen
+		Gäller Estimate PIM Project Template v3.2, Detailed estimation per task och PERT-bladet.
+		Osäkerhetsfaktor ersätts av tre värden
+			Förut: låg = timmar, hög = låg × osäkerhetsfaktor. Osäkerheten kunde bara gå uppåt, och låg var i praktiken det optimistiska fallet.
+			Nu: optimistisk, trolig och pessimistisk per rad. Låg, bas och hög räknas statistiskt för paket och totaler.
+		Låg och hög summeras inte rakt av
+			Förut: summan av alla raders hög blev projektets hög. Det motsvarar att allt går fel samtidigt och ger ett för brett intervall.
+			Nu: varianser summeras, och P10, P50 och P90 räknas för varje nivå.
+		Påslag i procent ersätts av egna rader
+			Förut: projektledning 20–25 %, kvalitetssäkring 10–12 % och teknisk assistans 10 % ovanpå timmarna.
+			Nu: projektledning och möten estimeras som timmar per vecka gånger antal veckor i ett eget paket. Test och kvalitetssäkring är rader i de paket där arbetet sker.
+			Procentsatserna kan användas som rimlighetskontroll, inte som beräkning.
+		Komplexitetsbladet kopplas till siffrorna
+			Förut: sannolikhet × konsekvens på skalan 1–4, utan påverkan på estimatet.
+			Nu: komplexitetsfaktorerna är en checklista, och risker har sannolikhet och konsekvens i timmar som ger riskreserv och breddar intervallet.
+		Buffertrader tas bort
+			Förut: rader som Unforseen challenges med fasta buffertimmar.
+			Nu: osäkerheten ligger i spannen och i riskregistret, där den går att förklara.
+		BC- och Dev-kolumner blir rader per roll
+			Det ger viktat timpris, insats per part och plats för fler roller och andra parter.
+		Tidplanen räknas ur insatsen
+			Förut: start, varaktighet och slut skrevs för hand per rad.
+			Nu: arbetsdagar räknas per paket ur bas, bemanning och fokusfaktor. Den detaljerade tidplanen görs i planeringsverktyget.
+		CAPEX och OPEX blir kostnadsposter
+			Engångs- och återkommande kostnader ligger per paket med leverantör och volymantagande.
+		Uppföljningen finns kvar
+			Utfall per rad ger avvikelse och kalibrering, som Outcome och Variance gjorde förut.
+
+	9 Mallar
+		Projektfil
+			Kopiera blocket nedan till en ny .ord-fil i projektets workspace och fyll i. ID:t estimatinst måste vara unikt i workspace.
+			```
+			Estimat <projekt>
+				version:: 0.1
+				datum:: <ÅÅÅÅ-MM-DD>
+				estimatklass:: 4
+				omfattningsbas:: <dokument och versioner>
+				metod:: ./Estimering/Estimeringsmetod.ord
+				Inställningar ^estimatinst
+					egenpart:: Vaimo
+					valuta:: SEK
+					sigmadelare:: 2.56
+					zintervall:: 1.2816
+					zp80:: 0.8416
+					timmarperdag:: 8
+					fokusfaktor:: 0.8
+					maxrad:: 40
+					maxspann:: 4
+				Roller
+					Affärskonsult +estimatroll ^BC
+						part:: Vaimo
+						timpris::
+					Teknisk arkitekt +estimatroll ^TA
+						part:: Vaimo
+						timpris::
+					Utvecklare +estimatroll ^DEV
+						part:: Vaimo
+						timpris::
+					Testledare +estimatroll ^QA
+						part:: Vaimo
+						timpris::
+					Projektledare +estimatroll ^PM
+						part:: Vaimo
+						timpris::
+					Kundens medverkan +estimatroll ^KUND
+						part:: Kund
+				Grupper
+					Bas +estimatsumma ^E-BAS
+					Senare fas +estimatsumma ^E-FAS2
+					Tillval +estimatsumma ^E-TILLVAL
+					Alternativ +estimatsumma ^E-ALT
+			```
+		CSV-kolumner
+			mall_paket.csv: _id, _type (estimatsumma), _label, _parent (grupp), arbetspaket, kostnadsplats, bemanning, prisstatus, start, ansvarig, antagande.
+			mall_rader.csv: _id, _type (estimatrad), _label, _parent (paket), roll, optimistisk, trolig, pessimistisk, antal, enhet, krav, antagande, utfall.
+			mall_risker.csv: _id, _type (estimatrisk), _label, _parent (paket), roll, sannolikhet, optimistisk, trolig, pessimistisk, utlösare, åtgärd, ägare.
+			mall_kostnader.csv: _id, _type (kostnadspost), _label, _parent (paket), slag, belopp, antal, period, leverantör, volymantagande.
+			Datum skrivs ÅÅÅÅ-MM-DD och decimaler med punkt. Flera värden i en cell skiljs med semikolon.
+
+	10 Källor
+		Malcolm, Roseboom, Clark och Fazar (1959). Application of a Technique for Research and Development Program Evaluation. Operations Research 7(5). Ursprunget till PERT och trepunktsformeln.
+		Project Management Institute (2019). Practice Standard for Project Estimating, andra upplagan. Trepunktsestimat, reserver och estimat i flera steg.
+		Project Management Institute (2019). Practice Standard for Work Breakdown Structures, tredje upplagan. 100 %-regeln.
+		McConnell, Steve (2006). Software Estimation: Demystifying the Black Art. Microsoft Press. 10/90-intervall i stället för ytterlägen, summering av varianser, osäkerhetskonen och att räkna före att bedöma.
+		Boehm, Barry (1981). Software Engineering Economics. Prentice Hall. Wideband Delphi och osäkerhetskonen.
+		AACE International. Recommended Practice 18R-97, Cost Estimate Classification System. Estimatklasser.
+		AACE International. Recommended Practice 40R-08, Contingency Estimating – General Principles, och 65R-11, riskreserv med förväntat värde.
+		Flyvbjerg, Bent (2006). From Nobel Prize to Project Management: Getting Risks Right. Project Management Journal 37(3). Referensklassprognoser mot planeringsoptimism.
+		Jørgensen, Magne (2014). What We Do and Don't Know about Software Development Effort Estimation. IEEE Software 31(2). Expertbedömning och för smala intervall.
+
+	Typdefinitioner
+		Formlerna nedan räknar estimatet. Ändra dem bara här.
+		Estimatroll +type-def
+			name:: estimatroll
+			fields::
+				part::
+				timpris::
+			En roll med timpris. Part avgör om rollens timmar ingår i vårt pris (part lika med egenpart i inställningarna) eller räknas som extern insats.
+		Estimatrad +type-def
+			name:: estimatrad
+			fields::
+				roll::
+					options:: +estimatroll
+				optimistisk::
+				trolig::
+				pessimistisk::
+				antal::
+				enhet::
+				krav::
+				antagande::
+				utfall::
+				n:: =($exists(antal) ? antal : 1)
+				enhetstimmar:: =((optimistisk + 4 * trolig + pessimistisk) / 6)
+				förväntad:: =(n * enhetstimmar)
+				sigma:: =(n * (pessimistisk - optimistisk) / $node("estimatinst").sigmadelare)
+				varians:: =(sigma * sigma)
+				egen:: =(roll.part = $node("estimatinst").egenpart)
+				kostnad:: =(förväntad * roll.timpris)
+				enhetspris:: =(enhetstimmar * roll.timpris)
+				spann:: =(optimistisk > 0 ? pessimistisk / optimistisk)
+				ordning:: =(optimistisk <= trolig and trolig <= pessimistisk)
+				saknas:: =($not($exists(optimistisk) and $exists(trolig) and $exists(pessimistisk)) or ($exists(enhet) and $not($exists(antal))))
+				avvikelse:: =($exists(utfall) and förväntad > 0 ? utfall / förväntad - 1)
+				inomspann:: =($exists(utfall) ? (utfall >= n * optimistisk and utfall <= n * pessimistisk))
+			Ett arbetsmoment för en roll. Optimistisk och pessimistisk är P10 och P90 i timmar per enhet.
+		Estimatrisk +type-def
+			name:: estimatrisk
+			fields::
+				roll::
+					options:: +estimatroll
+				sannolikhet::
+					valid:: =($value >= 0 and $value <= 1)
+				optimistisk::
+				trolig::
+				pessimistisk::
+				utlösare::
+				åtgärd::
+				ägare::
+				konsekvens:: =((optimistisk + 4 * trolig + pessimistisk) / 6)
+				konsekvenssigma:: =((pessimistisk - optimistisk) / $node("estimatinst").sigmadelare)
+				riskvärde:: =(sannolikhet * konsekvens)
+				riskvarians:: =(sannolikhet * (konsekvenssigma * konsekvenssigma + konsekvens * konsekvens) - riskvärde * riskvärde)
+				riskkostnad:: =(riskvärde * roll.timpris)
+			En händelse som kanske inträffar. Konsekvensen är extra timmar om den inträffar. Stäng en risk genom att tagga den `#archived`.
+		Kostnadspost +type-def
+			name:: kostnadspost
+			fields::
+				slag::
+					options:: Engång; Återkommande
+				belopp::
+				antal::
+				period::
+					options:: Månad; År
+				leverantör::
+				volymantagande::
+				summa:: =(belopp * ($exists(antal) ? antal : 1))
+				engång:: =(slag = "Engång" ? summa)
+				perår:: =(slag = "Återkommande" ? summa * (period = "Månad" ? 12 : 1))
+			En kostnad som inte är vår arbetstid: licens, tjänst, drift eller annan parts avgift. Belopp per enhet och, för återkommande, per period.
+		Estimatsumma +type-def
+			name:: estimatsumma
+			fields::
+				arbetspaket::
+					options:: +arbetspaket
+				kostnadsplats::
+				bemanning::
+				prisstatus::
+					options:: Fast; Intervall; Enhetspris; Undersökning; Saknas
+				start::
+				ansvarig::
+				antagande::
+				förväntad:: =($sum([0, _children[("estimatsumma" in _type) or egen].förväntad]))
+				extern:: =($sum([0, _children[("estimatrad" in _type) and $not(egen)].förväntad, _children[("estimatsumma" in _type)].extern]))
+				varians:: =($sum([0, _children[("estimatsumma" in _type) or egen].varians, _children[("estimatrisk" in _type)].riskvarians]))
+				sigma:: =($sqrt(varians))
+				riskreserv:: =($sum([0, _children[("estimatrisk" in _type)].riskvärde, _children[("estimatsumma" in _type)].riskreserv]))
+				bas:: =(förväntad + riskreserv)
+				låg:: =($max([0, bas - $node("estimatinst").zintervall * sigma]))
+				hög:: =(bas + $node("estimatinst").zintervall * sigma)
+				p80:: =(bas + $node("estimatinst").zp80 * sigma)
+				kostnad:: =($sum([0, _children[("estimatsumma" in _type) or egen].kostnad]))
+				riskkostnad:: =($sum([0, _children[("estimatrisk" in _type)].riskkostnad, _children[("estimatsumma" in _type)].riskkostnad]))
+				baskostnad:: =(kostnad + riskkostnad)
+				lågkostnad:: =(bas > 0 ? baskostnad * låg / bas)
+				högkostnad:: =(bas > 0 ? baskostnad * hög / bas)
+				p80kostnad:: =(bas > 0 ? baskostnad * p80 / bas)
+				timpris:: =(förväntad > 0 ? kostnad / förväntad)
+				persondagar:: =(bas / $node("estimatinst").timmarperdag)
+				arbetsdagar:: =($exists(bemanning) and bemanning > 0 ? $ceil(bas / (bemanning * $node("estimatinst").timmarperdag * $node("estimatinst").fokusfaktor)))
+				kalenderveckor:: =($exists(arbetsdagar) ? $ceil(arbetsdagar / 5))
+				slut:: =($exists(start) and $exists(arbetsdagar) ? $date(start, $ceil(arbetsdagar * 7 / 5)))
+				engångskostnad:: =($sum([0, _children[("kostnadspost" in _type)].engång, _children[("estimatsumma" in _type)].engångskostnad]))
+				återkommandeperår:: =($sum([0, _children[("kostnadspost" in _type)].perår, _children[("estimatsumma" in _type)].återkommandeperår]))
+				saknade:: =($count(_children[("estimatrad" in _type) and saknas]) + $sum([0, _children[("estimatsumma" in _type)].saknade]))
+				relativtspann:: =(bas > 0 ? (hög - låg) / bas)
+				perroll:: =(_children[("estimatrad" in _type) and $not(saknas)]{roll._label: $sum(förväntad)})
+				perpart:: =(_children[("estimatrad" in _type) and $not(saknas)]{roll.part: $sum(förväntad)})
+			En grupp, ett paket eller ett underpaket. Räknar ihop raderna, riskerna, kostnadsposterna och underpaketen direkt under sig.
+			Fältet arbetspaket pekar på projektets eget arbetspaket, om projektet har en sådan typ. Byt typen i options om projektet kallar den något annat.

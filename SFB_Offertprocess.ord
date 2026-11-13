@@ -1,0 +1,289 @@
+Offertprocess SFB – estimat för berikningsdel och PIM
+	version:: 1.3-V
+	källor:: SFB_Kravspecifikation_Vaimo.pdf; SFB_Kravkatalog_Vaimo.xlsx
+	krav:: ./SFB_Krav.ord
+	Checklista för att ta fram Vaimos offert med estimat. Den bygger på kravspecifikationens regler för estimering (avsnitt 1, 2.1, 7–12 och bilagan) och på kravkatalogens instruktioner.
+	Länkar som [[AP01]], [[B07]] och [[PIM-N01]] pekar på noder i SFB_Krav.ord.
+	Fältet källa anger var i underlaget punkten kommer ifrån. Punkter under Utöver underlaget är våra egna förslag och inga krav från SFB.
+	Hur listan läses
+		[ ] är något vi ska göra eller redovisa i offerten.
+		Om … är ett villkor: gäller bara när förutsättningen stämmer.
+		Får inte … är en fälla som gör offerten ojämförbar eller felaktig.
+		Uppdraget i en mening
+			Estimat på samma kravbas och omfattning som version 1.3: arbetsinsats, kostnad, bemanning, kalendertid och återkommande kostnader. Ingen budget är fastställd och utvecklingen är inte beställd. [källa:: PDF 1]
+
+	1 Förstå underlaget och spelreglerna
+		[ ] Läs kravspecifikationen och kravkatalogen version 1.3-V som enda omfattningsbas: 63 krav och 22 arbetspaket. [källa:: PDF 1.1]
+		[ ] Använd prioritetskolumnen (F1, V2, Tillval, Framtid) för fasplacering, inte bokstaven i krav-ID:t. [källa:: PDF 1]
+		[ ] Räkna med samtliga F1-rader i basestimatet, även de som är Föreslaget eller Behöver bekräftas. [källa:: PDF 2.1]
+			Bekräftat betyder att SFB uttryckligen angett behovet. Behöver bekräftas har stöd i förstudien. Föreslaget är en konkretisering för jämförbar prissättning.
+			En bekräftad kravrad kan innehålla en föreslagen detalj; den syns i text, beroenden eller B-posten.
+		[ ] Räkna med antagandena B01–B14 som prisförutsättningar. [källa:: PDF 11]
+			Får inte utelämna ett antagande ur priset utan att redovisa avvikelsen. [källa:: PDF 2]
+		[ ] Respektera de sex fastställda besluten: [[B03]], [[B04]], [[B07]], [[B09]], [[B10]] och [[B12]]. De går före äldre lösningsförslag. [källa:: PDF bilaga, 13]
+		Om underlaget motsäger förstudien eller äldre material
+			[ ] Följ besluten och avgränsningarna i de två underlagen. [källa:: PDF 1.1]
+			[ ] Ange motsägelsen och dess påverkan i svaret.
+		[ ] Ange vilka underlag vi använder och redovisa eventuella motsägelser. [källa:: PDF 13]
+			Förstudie, workshopmaterial och Miro är bakgrund och utökar inte omfattningen.
+			Anteckningar om Occtoo eller Aja innebär inga krav på plattform, API eller funktion.
+			REQ609 används för två olika saker; kravkatalogen anger vilken kravtext som avses.
+		[ ] Använd paket-ID (AP01–AP22) i offerten. [källa:: Excel, fliken Arbetspaket]
+		[ ] Ange per paket pris, arbetsinsats, bemanning, antaganden och avvikelser. [källa:: Excel, fliken Arbetspaket]
+		Offerten får lämnas i eget format. [källa:: PDF 11]
+
+	2 AP01 teknisk precisering och återanvändning av förstudien
+		[ ] Prissätt AP01 som en avgränsad leverans med eget pris, timmar och kalenderdagar. [källa:: PDF 7, 7.1]
+			Får inte vara ett obegränsat förstudieuppdrag. AP01 ska leda till verifierade kontrakt och ett uppdaterat estimat. [källa:: PDF 11]
+		[ ] Ange för AP01 vilka dokument eller resultat från förstudien som kan återanvändas, med version eller datum. [källa:: PDF 1.1]
+		[ ] Ange vad som redan är verifierat och vilken komplettering som återstår.
+		[ ] Visa hur tidigare underlag täcker varje AP01-leverabel och redovisa kvarvarande osäkerhet, ITM8:s medverkan och beroenden.
+		[ ] Estimera bara det återstående arbetet.
+			Får inte debitera redan utfört arbete en gång till.
+			Att ett område behandlades i förstudien betyder inte att dagens gränssnitt, exportformat eller volymer är verifierade.
+		[ ] Täck de sex AP01-leverablerna med minsta innehåll och avslutskriterium. [källa:: PDF 7.1]
+			Fältmatris
+				Objekt och fältnamn, datatyp, källa, ändringsrätt, källprioritet, obligatoriskt värde, validering, tomvärde och rensning samt användning i gränssnitt, tabell, Excel och utgående data. Varje oklar regel har ett beslut eller en uttrycklig prisreservation.
+			Identiteter och exempeldata
+				Verifierade nycklar för artikel, leverantör, grupp, kategorinod, fil och dokumentversion. Exempel för manuella artiklar, Finfo-artiklar, samma GTIN hos olika leverantörer, variantgrupp och bundle. Befintliga gruppavvikelser dokumenteras.
+			Utbyteskontrakt
+				Fält och beteenden per riktning, startleverans, förändringsleverans, kvittens, återförsök, rensning, relationsändring och fel. PIM-partnern och ITM8 har kontrollerat samma exempel. Snicken har bekräftat urval och mottagningsformat.
+			Fast Excel-mall
+				Kolumner, identifierare, redigerbara fält, relationsformat, rensningsmarkör och konflikthantering, med exempel för manuella artiklar och egen berikning på källartiklar.
+			Export- och medieinventering
+				C4-exportprov med faktisk täckning, mätning av filvolym, original, äldre dokumentversioner och loggexport. Verifiera transformationsprofiler, publicerade länkar och åtkomst vid PIM-avbrott. Dokumentera exportluckor och kostnadssatt lösning.
+			Reviderat estimat och plan
+				Verifierade antaganden, kvarstående risker, påverkan per arbetspaket, ansvariga, beroenden och realistisk driftstart. Inget öppet område får försvinna in i en generell reservation.
+		[ ] Ta med kravkatalogens extra verifieringar i AP01: startlistan för redigerbara egenskaper, befintliga grupptillhörigheter, äldre dokumentexport och att publicerad information klarar PIM-avbrott. [källa:: Excel AP01]
+		[ ] Se till att AP01-resultatet kan lämnas vidare till en annan utvecklingspartner. [källa:: PDF 7.1]
+		Om tekniskt underlag saknas
+			[ ] Låt AP01 leverera verifierade kontrakt och provdata, komponent- och kostnadsgränser, identifierade migreringsrisker och ett reviderat estimat. [källa:: PDF 7]
+			Befintliga endpointar, händelser, scheman eller kapacitet antas inte finnas förrän de är verifierade.
+		[ ] Föreslå transport (API, kö eller annat) men lås inte teknik utan underlag. [källa:: PDF 7]
+		[ ] Redovisa ITM8:s medverkan i AP01 som resurs i AP01, inte igen i AP07 eller AP08. [källa:: Excel AP01]
+		Prisets status
+			Genomförandeestimatet får ha synlig osäkerhet. Ett bindande pris för okända exportformat, lagringsvolymer eller gränssnitt förutsätter verifieringen i AP01. SFB vill jämföra både undersökningen och det preliminära genomförandet. [källa:: PDF 2.1]
+
+	3 Basestimatet per arbetspaket
+		[ ] Lämna ett komplett basestimat för alla F1-paket enligt kravkatalogen. [källa:: PDF 1.1, 11]
+		[ ] Redovisa per paket: [källa:: PDF 11]
+			[ ] Timmar
+			[ ] Viktat timpris
+			[ ] Kostnad i SEK exklusive moms
+			[ ] Låg-, bas- och högbedömning
+			[ ] Bemanning
+			[ ] Kalendertid
+		Om vi räknar i persondagar
+			[ ] Ange omräkningen till timmar.
+		[ ] Håll övriga engångskostnader skilda från arbetstid.
+		[ ] Ge varje paket en primär kostnadsplats.
+		[ ] Redovisa F1-totalen inklusive [[AP16]] och [[AP22]]. [källa:: PDF 12]
+			AP22 ska stå som separat kostnadsrad men ingå i F1-totalen.
+		Om en del är osäker
+			[ ] Ge den ett avgränsat undersökningsresultat med eget estimat, eller ett uttryckligt intervall och enhetspris. [källa:: PDF 11]
+			Får inte dölja slutlig migrering, historik, lagring eller återkommande tjänster i generella reservationer.
+		[ ] Redovisa reservationer, intervall och alternativ öppet. [källa:: PDF 1]
+
+	4 Kostnadsplacering och dubbelräkning
+		Samma arbete får inte debiteras i flera paket. [källa:: PDF 7.1, 11]
+		[ ] Egen komponenttestning ligger i respektive utvecklingspaket.
+		[ ] Sammanhängande tester, acceptansstöd och rättning/omtest före godkännande ligger i [[AP12]].
+		[ ] Gemensamma migreringsverktyg och körningar ligger i [[AP11]].
+		[ ] [[AP22]] innehåller bara tillkommande arbete med äldre dokumentversioner och läsbar historikexport. AP05:s versionsvy återanvänds.
+		[ ] Växling, utbildning och överlämning ligger i [[AP14]].
+		[ ] Gemensam projektledning ligger i [[AP15]].
+		[ ] Gemensam kontraktsprecisering ligger bara i [[AP01]]. AP02 implementerar modellen; AP04 och AP07–AP09 implementerar gränssnitten.
+		[ ] Visa var kostnaden för gemensamma regler och komponenter mellan [[AP03]], [[AP06]] och [[AP16]] ligger, så att samma validering eller redigeringsfunktion inte räknas flera gånger. [källa:: PDF 12]
+			AP03 äger gemensamma fält-, överstyrnings- och valideringsregler. AP06 bygger Excel, AP16 tabellens interaktion. [källa:: Excel AP03]
+		[ ] Räkna inte samma fil eller körning i både AP11 och AP22. [källa:: PDF 9, B03]
+		Om ett paket bemannas av flera parter, till exempel AP01 och AP12
+			[ ] Visa insats per part utan dubbla timmar. [källa:: PDF 11]
+		Om vi prissätter ett tillval
+			[ ] Ta med hela leveransarbetet i tillvalets egen rad. [källa:: PDF 11]
+
+	5 ITM8 och andra parter
+		I svaret estimerar Vaimo rollen PIM-partner. [källa:: PDF 3]
+		[ ] Ange [[AP07]], [[AP08]], [[AP09]] och [[AP10]] som externa beroenden med ITM8:s estimat när det finns. [källa:: PDF 11]
+			Får inte ange ett saknat ITM8-pris som noll. Markera det som saknat.
+			Håll ITM8:s integrations- och mediearbete åtskilt från Vaimos PIM-estimat.
+		Bekräftat ansvar
+			ITM8 gör källkopplingarna till MagicBox oavsett PIM-partner. [källa:: PDF 3]
+		Antaget ansvar som måste bekräftas
+			ITM8 bygger Snicken-adaptern ([[AP09]]) och samordnar befintlig mediedrift ([[AP10]]). [källa:: PDF 3]
+			[ ] Skriv i offerten att priset förutsätter dessa antaganden, och vad som händer om de inte håller.
+		[ ] Avgränsa PIM-sidans gränssnitt i [[AP04]] mot ITM8:s MagicBox-sida i AP07 och AP08. [källa:: PDF 3]
+		Om Ariser eller annan befintlig part måste ta ut data
+			[ ] Redovisa deras arbete och avgifter separat. [källa:: PDF 9]
+		Om en anpassning krävs hos befintlig medietjänst
+			[ ] Ange återanvändning respektive nödvändig ersättning i AP10. [källa:: PDF bilaga 5]
+		[ ] Föreslå ansvarig för [[AP20]] Nya mediedomäner. [källa:: Excel AP20]
+
+	6 Om och men per område
+		Tabellredigering ([[PIM-N01]], [[AP16]], [[B01]])
+			[ ] Prissätt minimibeteendet: cellredigering, kopiera/klistra in ett cellområde och gemensamt värde för valda artiklar. [källa:: PDF 4.1]
+			[ ] Föreslå komponent och utformning, inklusive eventuella licenskostnader.
+			Ingår inte: generell kalkylmotor, formler, pivottabeller eller fri arbetsboksdesign.
+			Tabellen ingår i F1; en senareläggning kräver nytt beslut från SFB. [källa:: PDF 9.1]
+		Egen berikning av produktegenskaper ([[PIM-W09]], [[B07]])
+			[ ] Räkna med startlistan på sju egenskaper: material, färg, längd, bredd, höjd, tjocklek och diameter. [källa:: PDF 6.2]
+			[ ] Ange hur fler attribut med samma grundregel påverkar priset.
+			Ingår inte: automatisk enhetskonvertering, nya beräknade egenskaper, generell överstyrning av alla attribut eller nya egenskapsnotiser.
+		Produktgrupper ([[PIM-D02]], [[B12]])
+			Gruppregeln är beslutad, inte ett öppet val. Räkna på den: högst en variantgrupp och flera bundles per artikel, utan bundle-logik för antal, pris eller lager.
+			[ ] Prissätt kontrollen av befintliga relationer och mottagarmappning i AP01.
+		Medier och dokumentversioner ([[B04]])
+			[ ] Räkna med flerfiluppladdning till en vald artikel eller produkt, med resultat per fil.
+			[ ] Räkna med tioårsarkiv med faktiskt, oföränderligt filinnehåll. Färgkarta och Produktkatalog är undantagna.
+			Ingen automatisk radering ingår i F1. Startpunkten för tio år är ännu inte fastställd.
+			[ ] Prissätt en automatiserad mottagartjänst för hela tioårsarkivet som tillval. [källa:: PDF 7]
+			Ingår inte: automatisk matchning av stora filpaket mot många artiklar.
+		Integration och Snicken ([[B02]], [[B05]])
+			[ ] Räkna med en logiskt separat Snicken-adapter i basen.
+			Om SFB hellre vill ha Snicken i MagicBox
+				Det prissätts som [[ALT01]], inte i basen.
+			[ ] Ange möjlig normal- och maxtid för källdelta och Snickenleveranser efter mottagen förändring. [källa:: PDF 8]
+		Migrering ([[AP11]], [[AP22]], [[B03]])
+			[ ] Använd dagens bestånd som beräkningsvolym: cirka 1,4 miljoner artiklar, 22 442 produktgrupper, 519 781 bilder och 118 228 dokument. [källa:: PDF 9]
+				Detta är inte ett beslut att flytta alla poster; SFB beslutar urvalet.
+			[ ] Dela upp i fast och volymberoende arbete.
+			[ ] Ange pris per extra körning, per 100 000 artiklar eller filer och per GB filöverföring.
+			[ ] Räkna med en provkörning, en korrigeringskörning och en slutkörning i basen. Extra körningar prissätts som enhetskostnad. [källa:: PDF 9, B03]
+			[ ] Ge AP22 eget prisintervall med mängdantaganden och enhetspriser.
+			[ ] Räkna med läsbar export av gammal ändringslogg om den kan tas ut; inget logggränssnitt byggs.
+			Om äldre dokumentversioner saknas eller exporten har luckor
+				[ ] Ta fram en kostnadssatt lösning för fortsatt åtkomst, som SFB beslutar om före C4-stängning. [källa:: PDF 9, B03]
+			Får inte dölja oförklarade differenser i en allmän procentsats. [källa:: PDF 9]
+		Prestanda och kapacitet ([[B08]])
+			[ ] Prissätt mot jämförelseprofilen: högst 3 sekunder i 95 procent för sökning, öppning och sparande, minst två aktiva administratörer och ett pågående jobb om 5 000 rader. [källa:: PDF 8]
+			[ ] Prissätt Excelimport eller export av 5 000 rader inom 10 minuter.
+			Tidsgränserna är förslag, inte bekräftade krav.
+			[ ] Redovisa testmiljö, datamängd, testfall, mätpunkter och avvikelser.
+			Om en annan avvägning ger tydlig kostnadsnytta
+				[ ] Föreslå den separat.
+			Får inte förutsätta ett litet bestånd utan att redovisa skillnaden.
+		Drift, säkerhet och återställning ([[B09]])
+			[ ] Föreslå teknikstack, hosting och praktisk säkerhetslösning. [källa:: PDF 8]
+			[ ] Räkna med två miljöer, test och produktion, personliga konton, separata tekniska identiteter och hemligheter utanför källkod.
+			Befintlig identitetstjänst återanvänds där möjligt. Microsoft-inloggning är inte bekräftad.
+			[ ] Räkna med beslutade driftmål: RPO en timme, RTO en arbetsdag, support svensk kontorstid och återställningsprov före drift.
+			Om vi avviker från driftmålen eller mätfönstret
+				[ ] Redovisa avvikelsen med pris och konsekvens. [källa:: PDF 8, B09]
+			Om publicerad information eller medielänkar kräver anpassning för att fungera vid PIM-avbrott
+				[ ] Prissätt anpassningen i berört F1-paket. [källa:: PDF 8, B09]
+		Test och acceptans ([[AP12]])
+			[ ] Redovisa vilka tester som blockerar driftstart. [källa:: PDF 9]
+				I basförslaget blockerar dataförlust, obehörig åtkomst, utebliven central distribution och överskrivna interna värden.
+			[ ] Ta med felrättning och omtest före godkännande i estimatet.
+			[ ] Planera för acceptanskontrollerna i avsnitt 9.1, kopplade till samma krav-ID:n i testprotokollet.
+		Överlämning, kodägande och tredjepart ([[AP14]], [[PIM-H01]], [[PIM-H02]])
+			[ ] Skriv i avtalsförslaget att SFB äger kundspecifik kod som utvecklas för lösningen. [källa:: PDF 10]
+				Befintlig MagicBox-kod och tredjepartskomponenter ska särskiljas.
+			[ ] Redovisa samtliga tredjepartskomponenter, licenser, leverantörsegna tjänster, driftberoenden och återkommande avgifter.
+			[ ] Beskriv vilka delar som kan bytas ut och hur data och filer exporteras vid byte av partner.
+			Om någon tjänst kräver fortsatt avtal med Vaimo
+				[ ] Säg det uttryckligen.
+			[ ] Räkna med överlämning av källkod och versionshistorik, automatiserade tester, dokumenterad datamodell och gränssnitt, bygg- och driftsättningsinstruktioner, migreringsverktyg, konfigurationer, miljöbeskrivning, återställningsrutin och felsökningshandledning.
+		Utbildning och support ([[PIM-H03]])
+			[ ] Räkna med två utbildningstillfällen för två administratörer och tio arbetsdagars förstärkt stöd efter driftstart. [källa:: PDF 10]
+			[ ] Prissätt fortsatt support som återkommande tjänst.
+			[ ] Ange vad vi menar med stöd, incidenthantering och felrättning.
+
+	7 V2, tillval och framtid
+		[ ] Prissätt V2 som egna rader: [[AP17]] ERP-baserad prioritering, [[AP18]] automatisk produktgruppering och [[AP19]] samlad arkivhantering. [källa:: PDF 2.1, 12]
+			För AP17 särredovisas integrationen och PIM-delen. [källa:: Excel PIM-N02]
+			AP18 innehåller en avgränsad regelutredning. [källa:: Excel PIM-N03]
+		[ ] Prissätt tillvalen som egna rader: [[AP20]] nya mediedomäner och [[AP21]] avancerade förhandsvisningar.
+		[[PIM-N07]] Framtida delägaranvändare har inget arbetspaket och prissätts inte nu.
+		Utanför omfattningen och ska inte prissättas: automatiska WB-nummer, generell regelmotor, AI-berikning, leverantörsportal, nya GS1/SQARP-flöden, orderhantering och generell ombyggnad av ERP eller e-handel. [källa:: PDF 2.1]
+		Separat städuppdrag, inte F1: attributsammanslagning, flytt av värden mellan attribut och datatypbyte.
+
+	8 Alternativ och egna förslag
+		[ ] Redovisa egna förenklingar eller andra lösningar separat, med berörda krav, konsekvens, pris- och tidspåverkan. [källa:: PDF 1.1, 12]
+			De får inte ersätta svaret på grundomfattningen.
+			Lägre insats genom återanvändning är välkommen, men leverabler och acceptanskrav får inte försvinna.
+		[ ] Estimera [[ALT01]] Snicken i MagicBox: ersättningskostnad för AP09, följdändringar och avtalsförutsättningar. [källa:: PDF 12]
+		Om vi bedömer att F1 inte kan vara i drift före avvecklingen av C4
+			[ ] Säg det direkt i svaret. [källa:: PDF 9]
+			[ ] Beskriv och estimera [[ALT03]]: avgränsad kontinuitetsåtgärd med bevarad export, nödvändiga mottagarflöden, ansvar och sluttid.
+			Får inte använda återgång till stängt C4 som reservplan.
+			Får inte räkna in ALT03 dolt i F1; den beställs inte automatiskt.
+		Får inte summera alternativ ovanpå samma arbete i basen. [källa:: PDF 12]
+
+	9 Tidplan och avvecklingen av C4
+		C4 och dess meddelandekö avvecklas. Fortsatt drift eller åtkomst efter avvecklingen får inte förutsättas. [källa:: PDF 1]
+		[ ] Ange om leveransen kan vara i drift före avvecklingen, med vilken bemanning och vilka beslut som då krävs från SFB.
+		[ ] Ange genomförbar start, bemanning och driftstart utifrån när vi kan börja. [källa:: PDF 1.1]
+		[ ] Redovisa kalendertid med faktisk föreslagen start, resurser och beläggning, beroenden, SFB:s medverkan, testperiod och första användbara driftversion. [källa:: PDF 11]
+			Timmar delat med antal personer är ingen leveransplan.
+		[ ] Ange senaste datum för beställning, tillgång till data och SFB:s beslut för att klara avvecklingen.
+		[ ] Ange SFB:s medverkan per vecka. [källa:: B11]
+		[ ] Visa en gemensam plan med PIM-partner, ITM8, Snicken och SFB, med testfönster och beslutspunkter. [källa:: PDF bilaga 5]
+
+	10 Återkommande kostnader
+		[ ] Redovisa återkommande kostnader separat med volymantaganden: [källa:: PDF 12]
+			[ ] Miljöer
+			[ ] Lagring, inklusive tioårsarkivet
+			[ ] Backup
+			[ ] Övervakning
+			[ ] Licenser
+			[ ] Integrationer
+			[ ] Support
+		[ ] Separera original, bildvarianter, versionsarkiv och backup i lagringsantagandena. [källa:: PDF bilaga 5]
+		Backup och dokumentversionsarkiv är skilda funktioner. [källa:: PDF 8]
+
+	11 Risker som offerten ska bemöta
+		[ ] Avveckling av C4: visa genomförbar plan och senaste beslut/start. Om F1 inte ryms, avgränsa ALT03. [källa:: PDF bilaga 5]
+		[ ] Oprövad C4-export: AP01 tar fram exportprov och differenslista; AP11 och AP22 har intervall och enhetspriser; kostnadssätt åtkomstlösning vid exportluckor.
+		[ ] Okänd filvolym och tillväxt: mät bytevolym och versionsökning i AP01.
+		[ ] Otillgänglig befintlig medietjänst: verifiera ägarskap, åtkomst och fortsatt drift i AP01.
+		[ ] Olika tolkning av fält och grupper: verifiera B07:s startlista och B12:s gruppregel med verklig data; ange mängdavvikelser eller tekniska hinder öppet.
+		[ ] Beroenden mellan parter: gemensam plan med testfönster och beslutspunkter.
+		[ ] Massredigering utan kontroll: visa urval, fältfel och resultat; testa samtidig redigering och skydd av externa värden; samma regler i tabell och Excel.
+
+	12 Det vi behöver från SFB
+		Lista i offerten vad vårt pris och vår plan förutsätter från SFB och andra parter.
+		[ ] Namngiven beslutsfattare och administratörernas tillgänglighet. [källa:: B11]
+		[ ] Startdatum och utsett driftansvar, larmmottagare, loggtid och incidentrutiner. [källa:: B09, B11]
+		[ ] Beslut om migreringsurval och genomförd datastädning. [källa:: B03]
+		[ ] Beställt C4-schema och exportprov från nuvarande ansvarig. [källa:: PDF 7]
+		[ ] MagicBox-kontrakt, exempeldata, matchningsregler, ERP- och webbstatusvillkor samt fel- och driftloggar, från ITM8 och SFB.
+		[ ] Finfo-tjänster, scheman, transformationer och import/exportexempel, från ITM8.
+		[ ] BASTA API-dokumentation och BVB:s fält och koppling.
+		[ ] Snickens urvalsformat, identifierare, mottagningsförmåga och nuvarande Exchange-innehåll.
+		[ ] Bildprofiler, filinventering, publicerade URL:er samt åtkomst och ägarskap för lagring och domäner, från ITM8 och befintlig driftpart.
+		[ ] Bekräftelse av ITM8:s antagna ansvar för AP09 och AP10, och av Snickens placering och avtal. [källa:: B02]
+
+	13 Utöver underlaget (vårt förslag)
+		Punkter som SFB inte kräver men som en komplett offert bör ha.
+		[ ] Sammanfattning med totalsummor: AP01, F1-bas, V2, tillval, alternativ och återkommande kostnader, var för sig.
+		[ ] Samlad lista över antaganden, med hänvisning till B-nummer och krav-ID.
+		[ ] Samlad lista över undantag och det som inte ingår.
+		[ ] Prislista för timpriser per roll, så att intervall och enhetspriser går att följa.
+		[ ] Hur ändringar hanteras efter AP01: hur estimatet uppdateras och vad som kräver ny beställning.
+		[ ] Offertens giltighetstid, betalningsplan och kommersiella villkor.
+		[ ] Bemanningsplan med namngivna nyckelroller eller profiler.
+		[ ] Styrning och mötesrytm: styrgrupp, projektmöten och statusrapportering i AP15.
+		[ ] Spårbarhet: tabell som visar att varje F1-krav har ett arbetspaket och ett pris.
+
+	14 Slutkontroll före inlämning
+		[ ] Alla 22 arbetspaket finns med, och alla 63 krav har ett paket eller en motivering.
+		[ ] Varje F1-paket har timmar, viktat timpris, SEK exklusive moms, låg/bas/hög, bemanning och kalendertid.
+		[ ] AP01 har eget pris och avgränsad kalendertid, och visar återanvändning från förstudien.
+		[ ] F1-totalen innehåller AP16 och AP22; AP22 står på egen rad.
+		[ ] AP07–AP10 står som externa beroenden; inget saknat ITM8-pris står som noll.
+		[ ] Ingen timme eller fil räknas två gånger (AP01/AP07–AP08, AP03/AP06/AP16, AP11/AP22, AP01/AP12).
+		[ ] Inga osäkra områden är gömda i en generell reservation; alla har intervall, enhetspris eller avgränsad undersökning.
+		[ ] Migrering har fast och volymberoende del samt pris per körning, per 100 000 artiklar eller filer och per GB.
+		[ ] Avvikelser från B01–B14, driftmål och svarstider är redovisade med pris och konsekvens.
+		[ ] Egna förslag och alternativ ligger separat och adderas inte till basen.
+		[ ] Svaret om drift före C4-avvecklingen är tydligt; ALT03 finns med om svaret är nej.
+		[ ] Tidplanen har senaste datum för beställning, data och beslut.
+		[ ] Återkommande kostnader står separat med volymantaganden.
+		[ ] Kodägande, tredjepartsberoenden och exportmöjligheter vid partnerbyte är beskrivna.
+		[ ] Blockerande tester och vad stöd, incidenthantering och felrättning betyder är angivna.
+		[ ] Motsägelser mot förstudien och vilka underlag vi använt är redovisade.
+
+	Efter offerten: SFB:s beslutspunkter
+		Inför val av genomförande jämför SFB omfattning, osäkerhet, total engångskostnad, återkommande kostnad och realistisk leveransdag. Saknade externa priser ska synas. [källa:: PDF bilaga 5]
+		Efter AP01, före bindande pris, fastställs gränssnitt, nycklar, fältmatris, medielösning, migreringsurval och prispåverkande driftantaganden.
+		Inför drift används kontrollpunkterna i avsnitt 9.1. Driftansvar, larmmottagare och överlämning måste vara klara.
