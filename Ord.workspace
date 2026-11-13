@@ -9,6 +9,8 @@ SFB berikningsdel och PIM
 			Estimatet för SFB: inställningar, roller och grupper. Siffrorna finns i SFB_Estimat_paket.csv, SFB_Estimat_rader.csv, SFB_Estimat_risker.csv och SFB_Estimat_kostnader.csv.
 		./Estimering/Estimeringsmetod.ord
 			Återanvändbar estimeringsmetod med trepunktsestimat. Arbetsgång, kontroller och typerna som räknar estimatet. Tomma CSV-mallar i samma mapp.
+		./SFB_Aja_bedomning.ord
+			Kraven bedömda mot Vaimo Aja: täckning, risk och vad som behöver verifieras.
 
 
 Kravtyp +ord-type
@@ -42,9 +44,20 @@ Alternativtyp +ord-type
 	fields::
 		ersätter::
 			options:: +arbetspaket
-Acceptanskontrolltyp +type-def
+Acceptanskontrolltyp +ord-type
 	name:: acceptanskontroll
 	fields::
 		krav::
 			options:: +krav
 	Kontroll före driftstart, kravspecifikationen avsnitt 9.1.
+Kravbedömningstyp +ord-type
+	name:: kravbedömning
+	fields::
+		krav::
+			options:: +krav
+		täckning::
+			options:: Standard; Konfiguration; Anpassning; Projekt; Extern; Saknas
+		risk::
+			options:: Låg; Medel; Hög
+		verifieras:: false
+	Hur väl ett system täcker ett krav. Används i SFB_Aja_bedomning.ord.
