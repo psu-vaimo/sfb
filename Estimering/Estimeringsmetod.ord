@@ -337,13 +337,13 @@ Estimeringsmetod med trepunktsestimat (PERT)
 
 	Typdefinitioner
 		Formlerna nedan räknar estimatet. Ändra dem bara här.
-		Estimatroll +type-def
+		Estimatroll +ord-type
 			name:: estimatroll
 			fields::
 				part::
 				timpris::
 			En roll med timpris. Part avgör om rollens timmar ingår i vårt pris (part lika med egenpart i inställningarna) eller räknas som extern insats.
-		Estimatrad +type-def
+		Estimatrad +ord-type
 			name:: estimatrad
 			fields::
 				roll::
@@ -370,7 +370,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				avvikelse:: =($exists(utfall) and förväntad > 0 ? utfall / förväntad - 1)
 				inomspann:: =($exists(utfall) ? (utfall >= n * optimistisk and utfall <= n * pessimistisk))
 			Ett arbetsmoment för en roll. Optimistisk och pessimistisk är P10 och P90 i timmar per enhet.
-		Estimatrisk +type-def
+		Estimatrisk +ord-type
 			name:: estimatrisk
 			fields::
 				roll::
@@ -389,7 +389,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				riskvarians:: =(sannolikhet * (konsekvenssigma * konsekvenssigma + konsekvens * konsekvens) - riskvärde * riskvärde)
 				riskkostnad:: =(riskvärde * roll.timpris)
 			En händelse som kanske inträffar. Konsekvensen är extra timmar om den inträffar. Stäng en risk genom att tagga den `#archived`.
-		Kostnadspost +type-def
+		Kostnadspost +ord-type
 			name:: kostnadspost
 			fields::
 				slag::
@@ -404,7 +404,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				engång:: =(slag = "Engång" ? summa)
 				perår:: =(slag = "Återkommande" ? summa * (period = "Månad" ? 12 : 1))
 			En kostnad som inte är vår arbetstid: licens, tjänst, drift eller annan parts avgift. Belopp per enhet och, för återkommande, per period.
-		Estimatsumma +type-def
+		Estimatsumma +ord-type
 			name:: estimatsumma
 			fields::
 				arbetspaket::

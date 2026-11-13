@@ -1,0 +1,358 @@
+SFB-kraven mot Vaimo Aja
+	Bedömning av kraven i [[Kravkatalog för vår berikningsdel och PIM]] (version 1.3-V) mot Vaimo Aja PIM, gjord 2026-11-13.
+	Underlag för Aja: kartläggningen i ../aja (vaimo-aja-pim.ord med följefiler), instansen sfb.vaimo-aja.com version 2.0.0, Ajas handbok och webbplats samt Jira-projektet AJAPIMMVP.
+	Bedömningen gäller funktionen i Aja. Den ersätter inte estimatet i [[Estimat SFB – berikningsdel och PIM]] utan visar vad som täcks av standard, vad som kräver konfiguration eller utveckling och var riskerna finns.
+	Täckningsnivåer
+			Standard: finns i Aja och används som den är.
+			Konfiguration: byggs med Ajas inställningar, attribut, regler och profiler utan kodändring.
+			Anpassning: kräver kundspecifik eller produktmässig utveckling i Aja.
+			Projekt: leverans, migrering, drift eller tjänst, inte en produktfunktion.
+			Extern: ansvar hos ITM8, Snicken eller SFB enligt kravet.
+			Saknas: finns inte och är inte planerat.
+	Sammanfattning
+		Aja passar bra för datamodell, kategorier, attributförvaltning, sökning, validering, import, historik och asynkrona jobb. De flesta D-, W- och X-krav är standard eller konfiguration.
+		De största gapen är dokumentversioner med tioårsbevarande (A03–A05, A08, M06), medieinställningar per relation (A02), tabellredigering i gränssnittet (N01), skyddad egen berikning med käll- och eget värde (W04, W05, W09) och MagicBox- och Snickenflödena (I02–I04, I09–I10).
+		Den största risken är volymen: cirka 1,4 miljoner artiklar och 520 000 bilder ligger över vad Aja själv anger (hundratusentals produkter) och kräver lasttest tidigt i [[AP01]].
+		Den största kommersiella frågan är kodägande ([[PIM-H01]]): Aja är Vaimos produkt med privat paketkälla, medan SFB kräver att en annan partner kan bygga och driftsätta utan Vaimos privata verktyg.
+		Aja innehåller funktioner som SFB uttryckligen lägger utanför omfattningen: regelmotor, AI-berikning och leverantörsportal. De behöver inte prissättas men kan stängas av eller hållas utanför leveransen. Leverantörsportalen och partnermodellen ger däremot en tydlig väg mot [[PIM-N07]].
+		? +kravbedömning [täckning:: Anpassning]
+		? +kravbedömning [täckning:: Saknas]
+		? +kravbedömning [risk:: Hög]
+		? +kravbedömning [verifieras:: true]
+	Data och struktur
+		Bedömning PIM-D01 +kravbedömning
+			krav:: PIM-D01
+			täckning:: Konfiguration
+			risk:: Låg
+			Stabil intern identitet (UUID) plus identifierare som text. Finfo-nummer, leverantörs-id, WB-nummer, GTIN och C4-referens blir textattribut; inledande nollor bevaras. GTIN är inte unikt i Aja, så samma GTIN hos två leverantörer blir två poster.
+			Matchning på ordnade fält (källnyckel före GTIN) finns i produktmatchningen för leverantörsflöden och i mappningsmanifestens identitetsstrategi.
+		Bedömning PIM-D02 +kravbedömning
+			krav:: PIM-D02
+			täckning:: Anpassning
+			risk:: Medel
+			verifieras:: true
+			Variantgrupp motsvarar produktmodell: en artikel har högst en förälder, gruppen har egna värden och kategorier, och produktmodeller exporteras och distribueras separat. Varianter visar ärvda modellvärden; kravet att gruppvärden inte kopieras till artikelfält uppfylls om mottagarna läser båda nivåerna.
+			Produktmodeller kräver familjevarianter med variantaxlar och unika axelvärden. Befintliga C4-grupper som inte följer axlarna måste redovisas enligt [[B12]]. Produktmodellstödet var i intern test i Jira (AJAPIMMVP-130, -131).
+			Bundles: flera per artikel går med grupper eller en associationstyp, men grupper saknar egna attribut som namn, bild och kategorier. En bundle som egen post i en entitetsfamilj med referens från artiklar är ett troligt upplägg och behöver verifieras.
+		Bedömning PIM-D03 +kravbedömning
+			krav:: PIM-D03
+			täckning:: Konfiguration
+			risk:: Medel
+			Attributtyperna täcker text, tal, mått med enhet, enkel- och flerval, datum, media och tabell. Mappningsmanifest med torrkörning stöder avstämningen. Antalet listvärden och attribut i C4 behöver inventeras i [[AP01]].
+		Bedömning PIM-D04 +kravbedömning
+			krav:: PIM-D04
+			täckning:: Anpassning
+			risk:: Låg
+			Lista, söka och ändra namn och beskrivning är standard. Användning per attribut visas i Data Model Checker.
+			En markering "använd inte vid ny berikning" saknas. Kan lösas med en attributgrupp med läsbehörighet, men en riktig markering är en mindre anpassning.
+		Bedömning PIM-D05 +kravbedömning
+			krav:: PIM-D05
+			täckning:: Standard
+			risk:: Låg
+			Flera kategoriträd är standard. De tre aktiva träden sätts upp; äldre träd migreras inte.
+		Bedömning PIM-D06 +kravbedömning
+			krav:: PIM-D06
+			täckning:: Standard
+			risk:: Låg
+			verifieras:: true
+			Skapa, byta namn, sortera och flytta med dra och släpp är standard. Att borttagning blockeras när produkter eller undernoder finns måste verifieras; annars krävs en mindre anpassning. Distribution till MagicBox ingår i [[Bedömning PIM-I03]].
+		Bedömning PIM-D07 +kravbedömning
+			krav:: PIM-D07
+			täckning:: Konfiguration
+			risk:: Låg
+			Leverantörer och varumärken som entitetsfamiljer av typen data, refererade med entitetsval. Källägda identifierare skyddas med läsbehörighet på attributgruppen. Unik referensnyckel avvisar dubbletter.
+	Webbadministration och berikning
+		Bedömning PIM-W01 +kravbedömning
+			krav:: PIM-W01
+			täckning:: Konfiguration
+			risk:: Låg
+			Snabbsök på identifierare och benämning, attributfilter, sparade vyer och valbara kolumner är standard. Saknad bild filtreras via tomt attribut eller fullständighet.
+			Filter för artiklar utan kategori är planerat (AJAPIMMVP-111). Produktgrupp i listan visas som förälder eller kolumn.
+		Bedömning PIM-W02 +kravbedömning
+			krav:: PIM-W02
+			täckning:: Standard
+			risk:: Medel
+			Skapa och redigera artiklar med fältfel är standard, och innehåll berikas i svensk locale.
+			Gränssnittet finns bara på engelska; svenskt gränssnitt är planerat (AJAPIMMVP-159). Om "på svenska" avser gränssnittet är det en risk.
+		Bedömning PIM-W03 +kravbedömning
+			krav:: PIM-W03
+			täckning:: Konfiguration
+			risk:: Medel
+			De sju lagrade textfälten är attribut. Det sammanfogade fältet byggs med regelåtgärden Concatenate med styckeseparator.
+			Regler körs schemalagt och efter import; triggern vid sparande är modellerad men inte inkopplad (AJAPIMMVP-70). Härledning direkt vid sparande kräver det, eller att fältet beräknas vid utleverans.
+		Bedömning PIM-W04 +kravbedömning
+			krav:: PIM-W04
+			täckning:: Anpassning
+			risk:: Medel
+			Effektivt värde (intern om ifylld, annars extern) kan byggas med två regler med villkor på tomt fält, men det blir skört med tre fält per text. En inbyggd hantering av effektivt värde är säkrare och återanvänds av [[Bedömning PIM-W09]].
+		Bedömning PIM-W05 +kravbedömning
+			krav:: PIM-W05
+			täckning:: Anpassning
+			risk:: Medel
+			Ändringshistorik med före- och eftervärde och notiser finns, men ingen lista över källändringar på överstyrda fält med kvittering. Närmast är fältförslagskön för leverantörsvärden, som hanterar skillnader men inte en uppdatering som redan skett. Byggs som anpassning, möjligen ovanpå uppgifter eller fältförslag.
+		Bedömning PIM-W06 +kravbedömning
+			krav:: PIM-W06
+			täckning:: Konfiguration
+			risk:: Låg
+			Webbstatus blir ett eget attribut. Aktiverad-flaggan ska inte användas, eftersom export och kopplingar hoppar över inaktiverade produkter medan SFB vill distribuera alla.
+		Bedömning PIM-W07 +kravbedömning
+			krav:: PIM-W07
+			täckning:: Konfiguration
+			risk:: Låg
+			Befintlig livscykelstatus och utgåendedatum blir attribut eller Ajas livscykelstatus. Ingen automatisk arkivering behöver stängas av.
+		Bedömning PIM-W08 +kravbedömning
+			krav:: PIM-W08
+			täckning:: Standard
+			risk:: Låg
+			Import och redigering kontrollerar datatyper, referenser och listvärden med fel per rad och fält. Saknad bild och kategori synliggörs med fullständighet och valideringsprofiler utan att stoppa distribution.
+		Bedömning PIM-W09 +kravbedömning
+			krav:: PIM-W09
+			täckning:: Anpassning
+			risk:: Hög
+			Aja har inget inbyggt lager för källvärde, eget värde och effektivt värde per attribut. Med sju egenskaper enligt [[B07]] går det att modellera tre attribut per egenskap och regler, men samma regel ska gälla i redigering, tabell och Excel. En generell överstyrningsfunktion för utvalda attribut är den robusta vägen och bör estimeras som anpassning.
+	Medier och dokument
+		Bedömning PIM-A01 +kravbedömning
+			krav:: PIM-A01
+			täckning:: Konfiguration
+			risk:: Medel
+			verifieras:: true
+			Bilder och dokument som tillgångar i en entitetsfamilj, kopplade via tillgångssamlingar, återanvänds utan filkopiering. Import av fil-URL:er återanvänder samma tillgång. Typning med separata samlingar eller ett typattribut.
+			Uppladdning av flera filer till vald artikel med resultat per fil behöver verifieras.
+		Bedömning PIM-A02 +kravbedömning
+			krav:: PIM-A02
+			täckning:: Anpassning
+			risk:: Hög
+			Ordning finns per artikel i tillgångssamlingen. Webbexkludering per relation finns inte; tillgångens attribut gäller överallt. Krav på att manuella val består vid källuppdatering och notis för ändrad exkluderad media kräver anpassning.
+		Bedömning PIM-A03 +kravbedömning
+			krav:: PIM-A03
+			täckning:: Saknas
+			risk:: Hög
+			Ingen versionshantering av filer i Aja. Oföränderliga versioner med bevarat filinnehåll i tio år måste byggas, inklusive lagring och åtkomst från artikeln.
+		Bedömning PIM-A04 +kravbedömning
+			krav:: PIM-A04
+			täckning:: Saknas
+			risk:: Hög
+			Beror på [[Bedömning PIM-A03]].
+		Bedömning PIM-A05 +kravbedömning
+			krav:: PIM-A05
+			täckning:: Konfiguration
+			risk:: Låg
+			Undantaget för Färgkarta och Produktkatalog blir en inställning per dokumenttyp när versionshanteringen finns.
+		Bedömning PIM-A06 +kravbedömning
+			krav:: PIM-A06
+			täckning:: Projekt
+			risk:: Medel
+			Aja har ingen egen bildtransformering med färghantering och formatvarianter. Befintlig lösning återanvänds eller ersätts med en bildtjänst framför lagringen.
+		Bedömning PIM-A07 +kravbedömning
+			krav:: PIM-A07
+			täckning:: Projekt
+			risk:: Medel
+			Länkar bevaras med lagring och DNS. Ajas import kan behålla publik länk i stället för att ladda ner filen, vilket kan förenkla övergången.
+		Bedömning PIM-A08 +kravbedömning
+			krav:: PIM-A08
+			täckning:: Anpassning
+			risk:: Medel
+			Registrering och visning av källborttagning utan radering kräver anpassning i källmottagningen.
+	Excel
+		Bedömning PIM-X01 +kravbedömning
+			krav:: PIM-X01
+			täckning:: Anpassning
+			risk:: Medel
+			verifieras:: true
+			XLSX-import med förhandsgranskning, validering och resultat är standard, och en fast mall går att sätta upp.
+			Regeln att tom cell lämnar värdet orört och att rensning kräver uttrycklig markör måste verifieras och troligen anpassas. Skydd av källägda fält kan delvis lösas med attributgruppbehörighet för importen.
+		Bedömning PIM-X02 +kravbedömning
+			krav:: PIM-X02
+			täckning:: Konfiguration
+			risk:: Låg
+			XLSX-export med filter och val av attribut är standard. Avvisning vid ändrade källfält hör till [[Bedömning PIM-X01]].
+		Bedömning PIM-X03 +kravbedömning
+			krav:: PIM-X03
+			täckning:: Anpassning
+			risk:: Medel
+			Förhandskontroll, resultat per rad och sammanfattning av skapade, uppdaterade och avvisade rader är standard. Omkörning skapar inga dubbletter när identifieraren är nyckel.
+			Att en föråldrad Excelfil inte tyst skriver över nyare manuellt arbete ([[B13]]) kräver versionskontroll per rad och är en anpassning.
+	Integration
+		Bedömning PIM-I01 +kravbedömning
+			krav:: PIM-I01
+			täckning:: Projekt
+			risk:: Medel
+			Kontraktsarbete. Ajas REST-API, webhooks och mappningsmanifest ger byggstenarna; en formell API-specifikation är planerad (AJAPIMMVP-143).
+		Bedömning PIM-I02 +kravbedömning
+			krav:: PIM-I02
+			täckning:: Anpassning
+			risk:: Hög
+			Källmottagning går via REST-API eller en inkommande anslutning med mappning. Tillämpning av mappning i bakgrundssynk är inte färdig (AJAPIMMVP-161).
+			Krav på att endast källägda fält uppdateras, att äldre revision inte skriver över nyare och spårbar ändringsidentitet kräver anpassning.
+		Bedömning PIM-I03 +kravbedömning
+			krav:: PIM-I03
+			täckning:: Anpassning
+			risk:: Hög
+			Webhooks för ändrade produkter, modeller, kategorier och tillgångar samt API-sökning på uppdateringstid är standard. Utgående kopplingar finns bara för Occtoo, och via Connectmach för Magento och Shopify. En MagicBox-koppling med effektiva värden, gruppfält och beroende uppdateringar vid produkt- eller mediaändring måste byggas.
+		Bedömning PIM-I04 +kravbedömning
+			krav:: PIM-I04
+			täckning:: Anpassning
+			risk:: Medel
+			Synkaktivitetsloggen visar körningar, status och fel per koppling. Omsändning av vald post eller urval och separat felstatus per post kräver anpassning.
+		Bedömning PIM-I05 +kravbedömning
+			krav:: PIM-I05
+			täckning:: Extern
+			risk:: Låg
+			ITM8:s ansvar. Ajas del täcks av [[Bedömning PIM-I02]].
+		Bedömning PIM-I06 +kravbedömning
+			krav:: PIM-I06
+			täckning:: Extern
+			risk:: Låg
+			ITM8:s ansvar. Omatchade poster syns i Ajas felhantering om de kommer via källmottagningen.
+		Bedömning PIM-I07 +kravbedömning
+			krav:: PIM-I07
+			täckning:: Extern
+			risk:: Låg
+		Bedömning PIM-I08 +kravbedömning
+			krav:: PIM-I08
+			täckning:: Extern
+			risk:: Medel
+			Ingen uppdateringsslinga får uppstå när berikad data kommer tillbaka; Aja behöver känna igen sina egna ändringar i källmottagningen.
+		Bedömning PIM-I09 +kravbedömning
+			krav:: PIM-I09
+			täckning:: Anpassning
+			risk:: Medel
+			En utgående koppling med kriterier per mottagare finns som mönster (Occtoo), men inte för Snicken. Urvalet kan styras med ett attribut eller en kategori.
+		Bedömning PIM-I10 +kravbedömning
+			krav:: PIM-I10
+			täckning:: Anpassning
+			risk:: Medel
+			Inkrementell leverans och full återhämtning för Snickens urval byggs som ny koppling, eller hos ITM8 enligt [[ALT01]].
+	Kapacitet och samtidighet
+		Bedömning PIM-Q01 +kravbedömning
+			krav:: PIM-Q01
+			täckning:: Projekt
+			risk:: Hög
+			verifieras:: true
+			Aja anger stöd för hundratusentals produkter och tusentals attribut. 1,4 miljoner artiklar, 22 442 grupper, 519 781 bilder och 118 228 dokument är en större volym. Regelmotorn är byggd för körningar över 50 000 produkter. Lasttest med representativ datamängd behövs tidigt i [[AP01]].
+		Bedömning PIM-Q02 +kravbedömning
+			krav:: PIM-Q02
+			täckning:: Standard
+			risk:: Medel
+			Import, export och massändring körs som asynkrona jobb med status och resultat. Markering av alla träffar över flera sidor är under arbete (AJAPIMMVP-105, -133). Svarstidsmålen i [[B08]] mäts i lasttestet.
+		Bedömning PIM-Q03 +kravbedömning
+			krav:: PIM-Q03
+			täckning:: Anpassning
+			risk:: Medel
+			verifieras:: true
+			Ingen konfliktkontroll vid samtidig redigering av samma artikel har setts. Optimistisk låsning med versionsjämförelse behöver troligen byggas.
+		Bedömning PIM-Q04 +kravbedömning
+			krav:: PIM-Q04
+			täckning:: Standard
+			risk:: Låg
+			Versionshistorik per produkt med tid, användare och före- och eftervärde för värden, kategorier, associationer och status. Källa anges via integrationsanvändaren. Rensning av gammal historik stängs av.
+	Drift och åtkomst
+		Bedömning PIM-O01 +kravbedömning
+			krav:: PIM-O01
+			täckning:: Konfiguration
+			risk:: Medel
+			verifieras:: true
+			Personliga konton, roller och separata API-användare och API-nycklar per flöde är standard. Inloggning via befintlig identitetstjänst (SSO) har inte setts och behöver verifieras eller byggas.
+		Bedömning PIM-O02 +kravbedömning
+			krav:: PIM-O02
+			täckning:: Projekt
+			risk:: Låg
+			Aja levereras som container för Kubernetes; process för flera driftsättningar är under arbete i Jira.
+		Bedömning PIM-O03 +kravbedömning
+			krav:: PIM-O03
+			täckning:: Projekt
+			risk:: Medel
+			Backup, RPO en timme och RTO en arbetsdag är driftåtagande. Dokumentversionsarkivet måste omfattas separat.
+		Bedömning PIM-O04 +kravbedömning
+			krav:: PIM-O04
+			täckning:: Konfiguration
+			risk:: Låg
+			Systemsidan visar hälsa för databas, sök, filsystem, jobbkö och integrationer. Larm till mottagare kopplas på i drift.
+		Bedömning PIM-O05 +kravbedömning
+			krav:: PIM-O05
+			täckning:: Projekt
+			risk:: Medel
+			Distribuerad data finns i MagicBox. Publicerade medielänkar måste serveras från lagring eller CDN som inte beror på Ajas administrationsdel.
+	Migrering
+		Bedömning PIM-M01 +kravbedömning
+			krav:: PIM-M01
+			täckning:: Projekt
+			risk:: Medel
+			Ajas källor och kvalitetsrevisioner på provfiler stöder inventeringen.
+		Bedömning PIM-M02 +kravbedömning
+			krav:: PIM-M02
+			täckning:: Projekt
+			risk:: Medel
+			Mappningsmanifest med identitetsstrategi, fältmappning, härledningar, värderegister och variantstruktur stöder mappningen.
+		Bedömning PIM-M03 +kravbedömning
+			krav:: PIM-M03
+			täckning:: Projekt
+			risk:: Medel
+			Torrkörning av mappningen och importresultat per rad stöder prov- och korrigeringskörningar. Volymen påverkar körtiden, se [[Bedömning PIM-Q01]].
+		Bedömning PIM-M04 +kravbedömning
+			krav:: PIM-M04
+			täckning:: Projekt
+			risk:: Låg
+		Bedömning PIM-M05 +kravbedömning
+			krav:: PIM-M05
+			täckning:: Projekt
+			risk:: Medel
+		Bedömning PIM-M06 +kravbedömning
+			krav:: PIM-M06
+			täckning:: Anpassning
+			risk:: Hög
+			Beror på dokumentversionerna i [[Bedömning PIM-A03]]. Gammal ändringshistorik sparas som export utanför Aja.
+	Överlämning och projekt
+		Bedömning PIM-H01 +kravbedömning
+			krav:: PIM-H01
+			täckning:: Projekt
+			risk:: Hög
+			Kundspecifik kod kan överlämnas, men Aja är Vaimos produkt och byggs från ett privat paketregister. Licens och åtkomst för en annan partner måste lösas kommersiellt innan svar.
+		Bedömning PIM-H02 +kravbedömning
+			krav:: PIM-H02
+			täckning:: Projekt
+			risk:: Medel
+			Förteckningen ska skilja Ajas produktkod, den underliggande plattformens licens, tredjepartskomponenter och kundspecifik kod, samt AI-leverantörer om AI-funktioner hålls påslagna.
+		Bedömning PIM-H03 +kravbedömning
+			krav:: PIM-H03
+			täckning:: Projekt
+			risk:: Låg
+			Ajas handbok finns på engelska och behöver kompletteras med en svensk handledning för SFB:s flöden.
+		Bedömning PIM-H04 +kravbedömning
+			krav:: PIM-H04
+			täckning:: Projekt
+			risk:: Låg
+	Senare faser och tillval
+		Bedömning PIM-N01 +kravbedömning
+			krav:: PIM-N01
+			täckning:: Saknas
+			risk:: Hög
+			Massändring av valda produkter (sätta samma värde, lägga till värden, kategorier) är standard. Cellredigering i tabell och inklistring av cellområden finns inte och kräver utveckling.
+		Bedömning PIM-N02 +kravbedömning
+			krav:: PIM-N02
+			täckning:: Konfiguration
+			risk:: Låg
+			Uppgifter per delägare blir attribut som fylls via källmottagningen och kan filtreras. Ajas e-handelsinsikter per produkt visar att mönstret finns.
+		Bedömning PIM-N03 +kravbedömning
+			krav:: PIM-N03
+			täckning:: Anpassning
+			risk:: Medel
+			Data Model Checker analyserar möjliga produktgrupperingar, mappningen kan upptäcka varianter och produktmodeller kan skapas från ett urval. Automatisk gruppering med förslagskö och skydd av manuella grupper kräver anpassning.
+		Bedömning PIM-N04 +kravbedömning
+			krav:: PIM-N04
+			täckning:: Konfiguration
+			risk:: Medel
+			Livscykelstatus Arkiverad, sökning och återaktivering finns för produkter. Arkivering av bilder och dokument och regeln att ny källdata inte återaktiverar kräver anpassning.
+		Bedömning PIM-N05 +kravbedömning
+			krav:: PIM-N05
+			täckning:: Projekt
+			risk:: Låg
+		Bedömning PIM-N06 +kravbedömning
+			krav:: PIM-N06
+			täckning:: Anpassning
+			risk:: Låg
+		Bedömning PIM-N07 +kravbedömning
+			krav:: PIM-N07
+			täckning:: Standard
+			risk:: Låg
+			Partner, partnerportal med egna produkter, förslag och godkännande samt behörighet per kategori och attributgrupp finns redan. En stark framtida passform.
