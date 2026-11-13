@@ -260,6 +260,16 @@ Offertprocess SFB – estimat för berikningsdel och PIM
 		[ ] Samlad lista över undantag och det som inte ingår.
 		[ ] Prislista för timpriser per roll, så att intervall och enhetspriser går att följa.
 		[ ] Hur ändringar hanteras efter AP01: hur estimatet uppdateras och vad som kräver ny beställning.
+		[ ] Föreslå prismodell för det bindande genomförandepriset efter AP01, och skriv in den i avtalsförslaget.
+			SFB förutsätter ett bindande pris efter AP01 men definierar inte vad det betyder. Fast pris, takpris och ändringshantering nämns inte i underlaget. [källa:: PDF 2.1, bilaga 5]
+			Förslag: fast pris per arbetspaket för den omfattning som AP01 har verifierat, enhetspriser för volymberoende delar och ändringshantering för allt utanför.
+			[ ] Ange vad priset binder: vilka paket, vilken verifierad omfattning och vilka antaganden.
+			[ ] Ange vad som ligger kvar som enhetspris: extra migreringskörningar, per 100 000 artiklar eller filer, per GB och arkivlagring.
+			[ ] Ange hur öppna punkter efter AP01 prissätts, eftersom de enligt SFB ska ha ansvar, slutdatum och kostnadsbehandling.
+			[ ] Ange att priset förutsätter ITM8:s och Snickens leveranser och SFB:s beslut och medverkan, och vad som händer om de försenas.
+			[ ] Ange hur länge det bindande priset gäller efter AP01.
+			Om SFB inte beställer genomförandet av oss
+				AP01-resultatet ska kunna lämnas till en annan partner, så AP01 ska stå på egna ben kommersiellt. [källa:: PDF 7.1]
 		[ ] Offertens giltighetstid, betalningsplan och kommersiella villkor.
 		[ ] Bemanningsplan med namngivna nyckelroller eller profiler.
 		[ ] Styrning och mötesrytm: styrgrupp, projektmöten och statusrapportering i AP15.
