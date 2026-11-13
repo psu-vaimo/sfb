@@ -54,7 +54,7 @@ Det är **inte en beställning**. Det är en förfrågan om estimat (en uppskatt
    - kalendertid med verklig startdag, beroenden och testperiod
    - återkommande kostnader (drift, lagring, licenser, backup, övervakning, support) separat
    - övriga engångskostnader separat från arbetstid
-2. **Ett eget pris för den tekniska förstudien (AP01)**, se avsnitt 7 nedan.
+2. **Ett eget pris för den tekniska förstudien (AP01)**, se avsnitt 8 nedan. Detta är ett krav. Grundestimatet för resten av F1 ska ändå lämnas nu, som ett preliminärt estimat. Det bindande priset för osäkra delar kommer efter AP01.
 3. **En tidsplan mot C4-stängningen**: kan F1 vara i drift innan C4 stängs? Med vilken bemanning? Vilka beslut behöver SFB ta och senast när?
 4. **Om F1 inte hinner bli klar**: beskriv och prissätt en nödlösning (ALT03) som håller verksamheten igång. Den får inte gömmas inuti F1-priset.
 5. **Egna förslag och förenklingar** är välkomna men ska redovisas **separat** från grundestimatet, med vilka krav som påverkas och vad det betyder för pris och tid.
@@ -247,7 +247,7 @@ Samma arbete får inte räknas i flera paket.
 **Förutsättningarna:**
 1. C4 stängs, och det är den hårda tidsgränsen. Säg tydligt om ni hinner.
 2. Räkna exakt på kravkatalogen version 1.3 (63 krav, 22 arbetspaket), så att svaret går att jämföra med andra leverantörer.
-3. Börja med en avgränsad teknisk förstudie (AP01) med eget pris. Bindande pris först efter den.
+3. Lämna ett eget pris för den tekniska förstudien (AP01) **och** ett preliminärt estimat för resten av F1 redan nu. AP01 med eget pris och tydligt slut är ett krav. Att det bindande priset för de osäkra delarna kommer först efter AP01 är SFB:s beslutsordning. Osäkra delar ska fram till dess ha intervall eller enhetspriser.
 4. ITM8:s arbete räknas inte in i Vaimos pris.
 5. Återanvänd förstudien, ta inte betalt två gånger.
 6. Egna förslag är välkomna, men separat.
