@@ -7,3 +7,4 @@ _id,_type,_label,_parent,roll,sannolikhet,optimistisk,trolig,pessimistisk,utlös
 ,estimatrisk,Jämförelseprofilen för prestanda nås inte med vald infrastruktur,E-AP12,DEV,,,,,Kapacitetstestet visar svarstider över profilen,,
 ,estimatrisk,ITM8 är inte tillgängliga när gemensamt test ska köras,E-AP12,PM,,,,,ITM8:s plan avviker från vår,,
 ,estimatrisk,SFB:s beslut eller medverkan dröjer,E-AP15,PM,,,,,Beslutsdatum i planen passeras,Senaste beslutsdatum i tidplanen. Medverkan per vecka enligt B11.,SFB
+,estimatrisk,"Volymen, cirka 1,4 miljoner artiklar, ligger över vad Aja själv anger att plattformen hanterar",E-AP01,TA,,,,,"Lasttestet i AP01 med representativ datamängd visar svarstider eller jobbtider över målen i B08","Lasttest med representativ datamängd tidigt i AP01, före beslut om plattform och genomförandeestimat.",
