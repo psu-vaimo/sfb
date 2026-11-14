@@ -90,7 +90,7 @@ Varje regel nedan är liten för sig. Svårigheten är att de påverkar varandra
 | AP19 (V2) Arkivering och återaktivering | 100 | 150 | 230 |
 | AP20 (tillval) Nya mediedomäner | 40 | 70 | 130 |
 | AP21 (tillval) Förhandsvisning | 50 | 100 | 170 |
-| ALT03 Nödlösning | 80 | 200 | 400 |
+| ALT03 Nödlösning, nivå B i tio månader (se planen) | 120 | 200 | 350 |
 
 ---
 
