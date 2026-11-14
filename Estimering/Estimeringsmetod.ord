@@ -166,7 +166,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Rader utan komplett trepunktsestimat +search
 				view:: table
 				query:: +estimatrad =(saknas)
-				columns::
+				fields::
 					_label::
 					_parent::
 					roll::
@@ -180,7 +180,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Paket med saknade estimat +search
 				view:: table
 				query:: +estimatsumma =(saknade > 0)
-				columns::
+				fields::
 					_label::
 					saknade::
 					prisstatus::
@@ -189,7 +189,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				view:: table
 				sort:: spann desc
 				query:: +estimatrad =(spann > $node("estimatinst").maxspann)
-				columns::
+				fields::
 					_label::
 					_parent::
 					optimistisk::
