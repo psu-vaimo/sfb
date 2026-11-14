@@ -160,7 +160,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 		Migrering: omfattande mappning eller transformering, okänt exportformat, historik.
 		Organisation: tillgång till nyckelpersoner hos kund, oss och andra leverantörer; intern förankring och förändringsledning hos kund; beslut som dröjer.
 		Omfattning: risk att omfattningen växer under leveransen.
-
 	7 Kontroller
 		Blockerande
 			Rader utan komplett trepunktsestimat +search
@@ -208,7 +207,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Paketöversikt +search
 				view:: table
 				query:: +estimatsumma
-				columns::
+				fields::
 					_label::
 					förväntad::
 					riskreserv::
@@ -226,7 +225,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Enhetspriser +search
 				view:: table
 				query:: +estimatrad =($exists(enhet))
-				columns::
+				fields::
 					_label::
 					_parent::
 					enhet::
@@ -236,7 +235,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Kalibrering mot utfall +search
 				view:: table
 				query:: +estimatrad =($exists(utfall))
-				columns::
+				fields::
 					_label::
 					optimistisk::
 					trolig::
