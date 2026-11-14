@@ -61,3 +61,5 @@ Kravbedömningstyp +ord-type
 			options:: Låg; Medel; Hög
 		verifieras:: false
 	Hur väl ett system täcker ett krav. Används i SFB_Aja_bedomning.ord.
+theme::
+	font weight:: 400

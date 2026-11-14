@@ -3,3 +3,10 @@ Samtal med Hampus
 	så få ändringar som möjligt i magic box 
 	temporär lösning som kanske blir permanent
 	mejl med estimat behöver inte följa formuläret rakt av
+	varför bygga ett eget pim?
+		nu är det bråttom så det finns inte tid att införa ett system på den vanliga vägen
+		kan man inte ta ett open source?
+			även investeringen i att anpassa sig till hur ett annat system gör tex integrationer och datamodell blir för stor, och långsam. 
+			
+lösningen i stora drag
+	i kedjan finfo till c4 till magic box till optimizely ska c4 bytas ut
