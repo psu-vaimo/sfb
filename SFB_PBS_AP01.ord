@@ -184,13 +184,25 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			paket:: AP01
 			krav::
 			part:: PIM-partner
-			Kravspecifikationen kräver att motsägelser och deras påverkan anges. Kravspecifikationen 1.3-V gäller.
-			Webbstatus: förstudien räknar om webbstatus med regel, kravspecifikationen låter administratören sätta den manuellt, [[PIM-W06]].
-			Arkivering: förstudien arkiverar automatiskt efter datum och lagersaldo, F1 har ingen automatisk arkivering, [[PIM-W07]] och [[B14]].
-			Byggvarubedömningen: förstudien flyttar kopplingen från Magic Box till PIM, kravspecifikationen återanvänder den i Magic Box, [[PIM-I07]].
-			Snicken: förstudien låter SFB och Snicken bygga integrationen, kravspecifikationen antar ITM8, [[AP09]] och [[B02]].
-			Migrering: förstudien lägger migreringen utanför projektbudgeten med SFB som ägare, kravspecifikationen lägger den i [[AP11]].
-			Egna egenskaper: förstudien gör om textvärden för mått till tal, kravspecifikationen utesluter generell standardisering och enhetskonvertering, [[PIM-D03]].
+			Kravspecifikationen kräver att motsägelser och deras påverkan anges. Kravspecifikationen 1.3-V gäller där inget annat är beslutat.
+			Webbstatus
+				Förstudien räknar om webbstatus med regel. Kravspecifikationen låter administratören sätta den manuellt, [[PIM-W06]].
+				Beslut: webbstatus beräknas automatiskt och har en manuell komponent. F1 behåller manuell webbstatus enligt [[PIM-W06]]. Den automatiska beräkningen läggs i V2 och utökar omfattningen.
+			Arkivering
+				Förstudien arkiverar automatiskt efter datum och lagersaldo. F1 har ingen automatisk arkivering, [[PIM-W07]] och [[B14]].
+				Beslut: automatisk arkivering ingår i V2, tillsammans med [[AP19]]. Det utökar [[PIM-N04]], som bara har manuell arkivering.
+			Byggvarubedömningen
+				Förstudien flyttar kopplingen från Magic Box till PIM. Kravspecifikationen återanvänder den i Magic Box, [[PIM-I07]].
+				Beslut: kravspecifikationen gäller.
+			Snicken
+				Förstudien låter SFB och Snicken bygga integrationen. Kravspecifikationen antar ITM8, [[AP09]] och [[B02]].
+				Beslut: kravspecifikationen gäller.
+			Migrering
+				Förstudien lägger migreringen utanför projektbudgeten med SFB som ägare. Kravspecifikationen lägger den i [[AP11]].
+				Beslut: kravspecifikationen gäller.
+			Egna egenskaper
+				Förstudien gör om textvärden för mått till tal. Kravspecifikationen utesluter generell standardisering och enhetskonvertering, [[PIM-D03]].
+				Beslut: kravspecifikationen gäller.
 			Mediehantering: förstudien lägger bildkonvertering och URL:er i ett eget paket med oklar ägare, kravspecifikationen i [[AP10]] hos ITM8.
 		3.3 Reviderat genomförandeestimat +produkt
 			paket:: AP01
