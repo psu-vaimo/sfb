@@ -1,11 +1,11 @@
 PBS AP01 Teknisk precisering och inventering ^PBS-AP01
-	version:: 0.2
+	version:: 0.3
 	datum:: 2026-11-15
 	paket:: AP01
 	Produktnedbrytning för [[AP01]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet. Arbetet som tar fram produkterna finns i SFB_Estimat_rader.csv.
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela AP01, och ingen produkt finns också i ett annat paket.
 	Resultatet ska kunna användas av en annan partner. Ingen implementation av produktfunktioner ingår.
-	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
+	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) och dess bilagor (SFB_Discovery_rapport_appendix_20261021.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
 	1 Verifierade specifikationer
 		1.1 Återanvändningsmatris för förstudien +produkt
 			paket:: AP01
@@ -19,7 +19,23 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Avsnitt 6: målbild med to-be-flöden.
 				Avsnitt 7 och bilaga K, L: Happy Flow i Occtoo och utkast till datamodell. Plattformsspecifikt, bara delvis återanvändbart.
 				Avsnitt 8: integrationspunkter från integrationsworkshopen med SFB och ITM8 2026-10-08.
-				Bilaga H: kravregistret med 104 REQ-krav, och bilaga G med 43 pain-points.
+				Bilaga H: kravregistret med 104 REQ-krav, varav 39 i fas 1. Kravspecifikationens källhänvisningar använder samma REQ-nummer.
+				Bilaga G: 43 pain-points. PP24 och PP46 saknar krav.
+				Bilaga I: dokumentlistan och datautdragen, se nedan.
+				Bilaga K: datamodellens områden och öppna beslut för datamodellen.
+			Dokument från SFB och ITM8 som redan finns
+				Woody-Finfo, ITM8:s dokumentation v2: schemaläggning och validering i Finfo-integrationen.
+				Berikningsfil Lokalt Sortiment 2026-06-11: Excelmallen för lokala artiklar.
+				Fältbeskrivning Vilma 2.8.0, 2025-11-10.
+				Konvertering av bilder från C4 till Azure, med konverteringsregler.
+				Slides om artikelns livscykel i dag.
+			Datautdrag som redan finns
+				Full C4-export som JSON, 3,4 miljoner artiklar och 1,2 TB bilder och dokument.
+				Finfo XML från två konton, med förändringsfiler för ungefär en vecka.
+				JSON från C4 till Magic Box för 12 referensartiklar, med binära filer.
+				Finfo XML för 13 referensartiklar.
+				C4-strukturer för produkt och variant, bundle, leverantörs-id, egenskapsdefinitioner och bild- och dokumentkategorier.
+				BMEcat-fält från C4 och en exempelexport till Snicken.
 		1.2 Gränssnittskontrakt +produkt
 			paket:: AP01
 			krav:: PIM-I01; PIM-I02; PIM-I03; PIM-I04; PIM-I09; PIM-I10
@@ -37,13 +53,13 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				krav:: PIM-I01; PIM-I03
 				part:: PIM-partner
 				Inkrementella ändringar, effektiva värden, gruppfält skilda från artikelvärden, status och mediereferenser.
-				Förstudien: PIM signalerar ändring och Magic Box hämtar. Om Magic Box hämtar bilderna eller om de skickas till PIM är inte beslutat.
+				Förstudien: PIM signalerar ändring och Magic Box hämtar. Om Magic Box hämtar bilderna eller om de skickas till PIM är inte beslutat. Dagens JSON från C4 till Magic Box för 12 referensartiklar visar nuvarande format.
 			1.2.3 Kontrakt för Snickenflödet +produkt
 				paket:: AP01
 				krav:: PIM-I01; PIM-I09; PIM-I10
 				part:: PIM-partner
 				Urvalsnyckel, besked vid ändrat urval, startleverans och återhämtning.
-				Förstudien: i dag en JSON-export i BMEcat-struktur på Exchange-kön.
+				Förstudien: i dag en JSON-export i BMEcat-struktur på Exchange-kön, RabbitMQ. Fältlistan och en exempelexport till Snicken finns.
 			1.2.4 Fel- och transportkontrakt +produkt
 				paket:: AP01
 				krav:: PIM-I01; PIM-I04
@@ -65,7 +81,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			krav:: PIM-D03; PIM-W03; PIM-W09; PIM-I03
 			part:: PIM-partner
 			Per fält: ägare, datatyp, enhet, listvärden, källprioritet, språkneutral eller svensk, skyddat eller redigerbart, och mottagarmappning. Samma matris styr enskild redigering, tabell och Excel. Se [[B07]].
-			Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Mappning per fält saknas.
+			Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
+			Bilaga K föreslår att mått och koder är språkneutrala och att text och alt-text är svenska. Förslaget är inte beslutat.
 			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt
 				paket:: AP01
 				krav:: PIM-W09
@@ -88,7 +105,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			krav:: PIM-D01; PIM-D07
 			part:: PIM-partner
 			Sammansatt nyckel, leverantörs-id, befintliga C4-kopplingar, manuella artiklar och felkö vid tvetydig matchning. Se [[B06]].
-			Förstudien: prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
+			Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
 			1.4.1 Rapport över artiklar utan entydig identitet +produkt
 				paket:: AP01
 				krav:: PIM-D01
@@ -105,7 +122,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			krav:: PIM-X01; PIM-X02; PIM-X03
 			part:: PIM-partner
 			Kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export. Se [[B13]].
-			Förstudien: dagens Excelmall för lokala leverantörer och SQARP:s upp till fyra Excelfiler är utgångspunkt.
+			Förstudien: Berikningsfil Lokalt Sortiment och SQARP:s upp till fyra Excelfiler är utgångspunkt.
 	2 Inventeringar
 		2.1 C4-exportinventering +produkt
 			paket:: AP01
@@ -124,25 +141,26 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				krav:: PIM-M06; PIM-Q04
 				part:: PIM-partner
 				Exportmöjlighet, volym och luckor. Underlag för [[AP22]].
-				Förstudien: äldre säkerhetsdatablad finns bara i C4, eftersom Finfo bara skickar det gällande.
+				Förstudien: äldre säkerhetsdatablad finns bara i C4, eftersom Finfo bara skickar det gällande. REACH artikel 36 kräver att de sparas minst tio år efter senaste leverans.
 			2.1.3 Underlag för migreringsurval +produkt
 				paket:: AP01
 				krav:: PIM-M01
 				part:: PIM-partner
 				Förslag till urvalsregel och volymer för SFB:s beslut i [[AP11]].
 				Förstudien: regeln utgångsdatum 2023-10-01 eller senare, utan utgångsdatum eller webbstatus aktiv ger 1 219 825 artiklar. SFB har beslutat att de 60 012 testartiklarna tas bort.
+				Förstudien: C4 har 783 leverantörer mot cirka 150 centrala avtalsleverantörer, PP32. Vilka leverantörer som ska med är inte beslutat.
 		2.2 Medieinventering +produkt
 			paket:: AP01
 			krav:: PIM-A01; PIM-A03; PIM-A06; PIM-A07
 			part:: PIM-partner
 			Versionsnycklar, gamla URL:er, format, filstorlekar, original, domäner, lagring och transformationsprofiler. Se [[B04]].
-			Förstudien: 99,98 % av medieposterna pekar på en verklig fil. Urvalet har 421 550 bilder och 75 912 dokument efter dubblettrensning, cirka 1,1 TB. Cirka 130 000 filer saknar koppling. Återstår: versionsnycklar, transformationsprofiler och domäner.
+			Förstudien: 99,98 % av medieposterna pekar på en verklig fil. Urvalet har 421 550 bilder och 75 912 dokument efter dubblettrensning, cirka 1,1 TB. Cirka 130 000 filer saknar koppling. 15 till 20 mediatyper från dagens bildkategorier, bildgrupper och dokumentkategorier. Konverteringsreglerna finns i SFB:s dokument om bildkonvertering. Återstår: versionsnycklar, verifiering av transformationsprofiler och domäner.
 		2.3 Volym- och lastinventering +produkt
 			paket:: AP01
 			krav:: PIM-Q01; PIM-Q02
 			part:: PIM-partner
 			Filernas bytevolym, versionsökning, dagliga ändringar och toppar. Se [[B08]].
-			Förstudien: bestånd och filvolym finns. Dagliga ändringar och toppar saknas, eftersom statistik bara finns per delägare.
+			Förstudien: bestånd och filvolym finns. Finfos förändringsfiler för ungefär en vecka ger en första bild av ändringsvolymen. Toppar saknas, eftersom statistik bara finns per delägare.
 		2.4 Verifiering av åtkomst vid PIM-avbrott +produkt
 			paket:: AP01
 			krav:: PIM-O05
@@ -153,7 +171,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			krav:: PIM-O01; PIM-O03
 			part:: PIM-partner
 			Identitetstjänst, driftägare, loggtid och tekniska beroenden. Se [[B09]].
-			Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8.
+			Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
 	3 Beslutsunderlag och plan
 		3.1 Beslutsunderlag för öppna frågor +produkt
 			paket:: AP01
@@ -161,6 +179,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			part:: PIM-partner
 			Varje öppen fråga under Återstår att precisera i [[B01]] till [[B14]] har rekommendation, kostnadspåverkan och ansvarig.
 			Förstudien: frågorna i avsnitt 5.6 och 10.3 som rör F1 tas med, till exempel varumärke för 705 119 artiklar, de 537 leverantörer som saknar berikning och hur SQARP-artiklar hanteras innan en SQARP-integration finns.
+			Förstudien: bilaga K har öppna beslut om vad en artikel är, krav för att vara klar för kanal, livscykelstadier, språk per egenskap och ämnesdata från säkerhetsdatablad. PP24 om varumärkesmappning och PP46 om delägarnas Finfo-tjänster saknar krav och behöver ett beslut.
 		3.2 Förteckning över motsägelser mot förstudien +produkt
 			paket:: AP01
 			krav::

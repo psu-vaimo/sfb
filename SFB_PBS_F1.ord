@@ -1,10 +1,10 @@
 PBS F1 första driftversionen ^PBS-F1
-	version:: 0.2
+	version:: 0.3
 	datum:: 2026-11-15
 	Produktnedbrytning för hela F1: [[AP01]] till [[AP16]] och [[AP22]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2, inte igen i 2.3 eller 2.4.
 	Produkter med part ITM8 eller Nuvarande part ingår i F1 men inte i Vaimos pris.
-	Raderna Förstudien: kommer från discoveryrapporten v0.5. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
+	Raderna Förstudien: kommer från discoveryrapporten v0.5 och dess bilagor. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
 	1 Teknisk precisering
 		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord.
 		@ PBS AP01 Teknisk precisering och inventering^PBS-AP01
@@ -118,6 +118,7 @@ PBS F1 första driftversionen ^PBS-F1
 				krav:: PIM-A03; PIM-A05
 				part:: PIM-partner
 				Oföränderliga versioner med tioårigt bevarande, med undantag för Färgkarta och Produktkatalog.
+				Förstudien: för säkerhetsdatablad kräver REACH artikel 36 minst tio år efter senaste leverans.
 			2.5.4 Versionslista per artikel +produkt
 				paket:: AP05
 				krav:: PIM-A04
@@ -179,7 +180,7 @@ PBS F1 första driftversionen ^PBS-F1
 				paket:: AP10
 				krav:: PIM-A06
 				part:: ITM8
-				Förstudien: CMYK till sRGB, högst 2000 x 2000 pixlar, TIFF, BMP och GIF som JPEG. Logotyper och symboler för miljöbedömningar och faror är PNG och konverteras inte.
+				Förstudien: reglerna finns i SFB:s dokument om bildkonvertering från C4 till Azure. CMYK till sRGB, högst 2000 x 2000 pixlar, TIFF, BMP och GIF som JPEG. Logotyper och symboler för miljöbedömningar och faror är PNG och konverteras inte.
 			3.4.2 Bevarade medielänkar +produkt
 				paket:: AP10
 				krav:: PIM-A07
