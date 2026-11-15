@@ -1,152 +1,504 @@
 PBS V2 och tillval ^PBS-V2T
-	version:: 0.3
+	version:: 0.4
 	datum:: 2026-11-15
 	Produktnedbrytning för allt utanför F1 som har ett paket: V2 med [[AP17]], [[AP18]] och [[AP19]], tillvalen [[AP20]] och [[AP21]] samt mottagartjänsten för tioårsarkivet. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
-	Varje paket levereras fullt, med test, driftsättning och överlämning. Bygger på F1, se [[PBS F1 första driftversionen]].
+	Varje paket levereras fullt, med test, driftsättning och överlämning. Bygger på F1, se [[PBS F1 första driftversionen]]. Produkterna där heter PF-nummer.
 	Automatisk arkivering och automatisk webbstatus är beslutade utökningar av V2 utöver kravspecifikationen. Se motsägelserna i AP01, produkt 3.2.
+	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
+	Testprotokoll och överlämning per paket omfattar test, driftsättning, uppdaterad användarhandledning och uppdaterad dokumentation.
 	1 V2
 		1.1 ERP-baserad prioritering
-			1.1.1 Fältanalys för relevans per delägare +produkt
+			Paket [[AP17]]. Gör prioritering av relevanta artiklar möjlig, [[PIM-N02]].
+			1.1.1 Fältanalys för relevans per delägare +produkt ^PV-1-1-1
 				paket:: AP17
 				krav:: PIM-N02
 				part:: PIM-partner
-				Matchning, aktiv i ERP, webbflagga, lagersaldo och uppdateringstid per delägare.
-				Förstudien: i dag syns inte hos vilka delägare en artikel är tänd, PP38 och PP39. Järn AB kan också skicka ERP-data tillbaka.
-			1.1.2 Återföring av ERP-uppgifter från MagicBox +produkt
+				format:: Dokument
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB e-handel; ITM8
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Låser vilka ERP-uppgifter som förs tillbaka till PIM, så att AP17 kan prissättas och byggas.
+				Innehåll
+					Fält per delägare: matchning, aktiv i ERP, webbflagga, lagersaldo och uppdateringstid. Källa, aktualitet och hur saknat värde skiljs från nollsaldo.
+				Underlag
+					Förstudien: i dag syns inte hos vilka delägare en artikel är tänd, PP38 och PP39. Järn AB kan också skicka ERP-data tillbaka.
+				Kvalitetskriterier
+					Varje fält har källa, uppdateringsfrekvens och betydelse av tomt värde.
+			1.1.2 Återföring av ERP-uppgifter från MagicBox +produkt ^PV-1-1-2
 				paket:: AP17
 				krav:: PIM-N02
 				part:: ITM8
-			1.1.3 Prioriteringsfilter i PIM +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB e-handel
+				beror på:: PV-1-1-1
+				Syfte
+					Ger PIM ERP-uppgifter per delägare.
+				Innehåll
+					Kontraktsändring och flöde från MagicBox till PIM för de fält som låstes i 1.1.1. Mottagningen i PIM ingår i 1.1.3.
+				Kvalitetskriterier
+					Uppgifterna för ett avtalat provurval når PIM med källa och tid.
+			1.1.3 Prioriteringsfilter i PIM +produkt ^PV-1-1-3
 				paket:: AP17
 				krav:: PIM-N02
 				part:: PIM-partner
-				Visar källa och aktualitet och skiljer saknat värde från nollsaldo.
-			1.1.4 Testprotokoll och överlämning för AP17 +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-1-1; PF-2-2-1; PF-2-6-1
+				Syfte
+					Låter administratören filtrera fram artiklar som är relevanta för en delägare.
+				Innehåll
+					Mottagning av ERP-uppgifterna, visning på artikeln och filter i sökningen.
+				Kvalitetskriterier
+					Med ett avtalat provurval kan administratören filtrera fram artiklar relevanta för en delägare. Aktualitet och källa visas. Saknat värde skiljs från nollsaldo, [[PIM-N02]].
+			1.1.4 Testprotokoll och överlämning för AP17 +produkt ^PV-1-1-4
 				paket:: AP17
 				krav:: PIM-N02
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team; ITM8
+				godkännare:: SFB produktägare
+				beror på:: PV-1-1-2; PV-1-1-3
+				Syfte
+					Visar att AP17 fungerar hela vägen och lämnas över.
+				Innehåll
+					Testprotokoll från MagicBox till filter i PIM, driftsättning och uppdaterad handledning och dokumentation.
+				Kvalitetskriterier
+					Acceptanskriteriet i [[PIM-N02]] är uppfyllt i produktion.
 		1.2 Automatisk produktgruppering
-			1.2.1 Grupperingsregler med testmaterial +produkt
+			Paket [[AP18]]. Minskar manuellt grupperingsarbete utan att ändra redaktionella beslut, [[PIM-N03]].
+			1.2.1 Grupperingsregler med testmaterial +produkt ^PV-1-2-1
 				paket:: AP18
 				krav:: PIM-N03
 				part:: PIM-partner
-				Regler för säker träff, beslutade separat av SFB. Regelbaserad metod är bas.
-				Förstudien: Happy Flow visade filter på liknande leverantörsartikelnummer och texter som halvautomatiskt stöd.
-			1.2.2 Automatisk gruppering för säkra träffar +produkt
+				format:: Dokument
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1-5
+				Syfte
+					Bestämmer vad som är en säker träff, så att automatiken inte gör fel grupperingar.
+				Innehåll
+					Regler på modell, produktserie och produkttyp med längd, färg och storlek som variationer. Testmaterial med säkra och osäkra fall. Regelbaserad metod är bas.
+				Underlag
+					Förstudien: Happy Flow visade filter på liknande leverantörsartikelnummer och texter som halvautomatiskt stöd.
+				Kvalitetskriterier
+					SFB har beslutat reglerna för säker träff.
+			1.2.2 Automatisk gruppering för säkra träffar +produkt ^PV-1-2-2
 				paket:: AP18
 				krav:: PIM-N03
 				part:: PIM-partner
-			1.2.3 Förslagskö för osäkra fall +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-2-1
+				Syfte
+					Grupperar artiklar från samma leverantör automatiskt vid säker träff.
+				Innehåll
+					Regelmotor som skapar eller utökar grupper.
+				Kvalitetskriterier
+					Testmaterialet ger automatisk grupp för säker träff, [[PIM-N03]].
+			1.2.3 Förslagskö för osäkra fall +produkt ^PV-1-2-3
 				paket:: AP18
 				krav:: PIM-N03
 				part:: PIM-partner
-			1.2.4 Skydd för manuella grupper och notiser om nya medlemmar +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-2-1
+				Syfte
+					Låter administratören bedöma osäkra fall.
+				Innehåll
+					Kö med förslag som kan godkännas eller avvisas.
+				Kvalitetskriterier
+					Testmaterialet ger manuell åtgärd för osäker träff, [[PIM-N03]].
+			1.2.4 Skydd för manuella grupper och notiser om nya medlemmar +produkt ^PV-1-2-4
 				paket:: AP18
 				krav:: PIM-N03
 				part:: PIM-partner
-			1.2.5 Testprotokoll och överlämning för AP18 +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-2-2; PF-2-2-4
+				Syfte
+					Skyddar redaktionella beslut.
+				Innehåll
+					Manuellt fastställda grupper ändras inte utan godkännande. Nya möjliga medlemmar notifieras i notislistan från F1.
+				Kvalitetskriterier
+					Manuell gruppering ändras inte utan godkännande. Nytillkommen artikel ger notis, [[PIM-N03]].
+			1.2.5 Testprotokoll och överlämning för AP18 +produkt ^PV-1-2-5
 				paket:: AP18
 				krav:: PIM-N03
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-2-2; PV-1-2-3; PV-1-2-4
+				Syfte
+					Visar att AP18 fungerar och lämnas över.
+				Innehåll
+					Testprotokoll mot testmaterialet, driftsättning och uppdaterad handledning och dokumentation.
+				Kvalitetskriterier
+					Acceptanskriteriet i [[PIM-N03]] är uppfyllt i produktion.
 		1.3 Samlad arkivhantering
-			1.3.1 Regler för arkivering och återaktivering +produkt
+			Paket [[AP19]], [[PIM-N04]], och den beslutade automatiska arkiveringen.
+			1.3.1 Regler för arkivering och återaktivering +produkt ^PV-1-3-1
 				paket:: AP19
 				krav:: PIM-N04
 				part:: PIM-partner
-				Återaktivering, källändring på arkiverad entitet och återpublicering. Se [[B14]].
-			1.3.2 Manuell arkivering +produkt
+				format:: Dokument
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB PIM-team; SFB e-handel
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Preciserar det som [[B14]] lämnar öppet, innan AP19 byggs.
+				Innehåll
+					Återaktivering, källändring på arkiverad entitet, återpublicering och regeln för automatisk arkivering med datum och lagersaldo.
+				Kvalitetskriterier
+					Varje fall i [[B14]] under Återstår att precisera har en regel.
+			1.3.2 Manuell arkivering +produkt ^PV-1-3-2
 				paket:: AP19
 				krav:: PIM-N04
 				part:: PIM-partner
-				Artiklar, bilder och dokument med bevarade relationer, historik och dokumentversioner.
-			1.3.3 Arkivsökning +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-3-1; PF-2-2-2; PF-2-5
+				Syfte
+					Låter administratören arkivera med bibehållen identitet.
+				Innehåll
+					Arkivering av artiklar, bilder och dokument med bevarade relationer, historik och dokumentversioner.
+				Kvalitetskriterier
+					En artikel, en bild och ett dokument arkiveras med samma identiteter. Dokumentbevarandet från F1 respekteras, [[PIM-N04]].
+			1.3.3 Arkivsökning +produkt ^PV-1-3-3
 				paket:: AP19
 				krav:: PIM-N04
 				part:: PIM-partner
-			1.3.4 Återaktivering +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-3-2; PF-2-2-1
+				Syfte
+					Gör arkiverat material återanvändbart utan dubbletter.
+				Innehåll
+					Sökning bland arkiverade artiklar, bilder och dokument.
+				Kvalitetskriterier
+					Arkiverade entiteter hittas, [[PIM-N04]].
+			1.3.4 Återaktivering +produkt ^PV-1-3-4
 				paket:: AP19
 				krav:: PIM-N04
 				part:: PIM-partner
-			1.3.5 Distributionsbesked för arkivstatus +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-3-3
+				Syfte
+					Låter SFB återaktivera själv, utan leverantören.
+				Innehåll
+					Återaktivering med samma identiteter och relationer.
+				Kvalitetskriterier
+					Relationer och historik består. Ny källdata återaktiverar inte en manuellt arkiverad entitet, [[PIM-N04]].
+			1.3.5 Distributionsbesked för arkivstatus +produkt ^PV-1-3-5
 				paket:: AP19
 				krav:: PIM-N04; PIM-I01
 				part:: ITM8
-				Kontraktsändring för arkivåtgärder mot MagicBox och Snicken.
-			1.3.6 Automatisk arkivering +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt; Snicken
+				godkännare:: SFB e-handel
+				beror på:: PV-1-3-1
+				Syfte
+					Berörda mottagare får besked när arkivstatus ändras.
+				Innehåll
+					Kontraktsändring för arkivåtgärder mot MagicBox och Snicken, och ITM8:s anpassning.
+				Kvalitetskriterier
+					Statusbesked når berörd mottagare, [[PIM-N04]].
+			1.3.6 Automatisk arkivering +produkt ^PV-1-3-6
 				paket:: AP19
 				krav:: PIM-N04; PIM-W07
 				part:: PIM-partner
-				Arkivering enligt en regel som kombinerar utgåendedatum och lagersaldo. Artikeln ligger kvar så länge den har saldo.
-				Utökning utöver [[PIM-N04]]. Ny källdata återaktiverar inte en arkiverad artikel.
-				Förstudien: REQ325, BE107.1.
-			1.3.7 Testprotokoll och överlämning för AP19 +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-3-1; PV-1-3-2; PV-1-1-3
+				Syfte
+					Arkiverar utgångna artiklar utan manuellt arbete.
+				Innehåll
+					Arkivering enligt en regel som kombinerar utgåendedatum och lagersaldo. Artikeln ligger kvar så länge den har saldo. Lagersaldot kommer från ERP-återföringen i AP17.
+					Utökning utöver [[PIM-N04]]. Ny källdata återaktiverar inte en arkiverad artikel.
+				Underlag
+					Förstudien: REQ325, BE107.1.
+				Kvalitetskriterier
+					En artikel med passerat utgåendedatum och saldo noll arkiveras. En med saldo ligger kvar.
+			1.3.7 Testprotokoll och överlämning för AP19 +produkt ^PV-1-3-7
 				paket:: AP19
 				krav:: PIM-N04
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team; ITM8
+				godkännare:: SFB produktägare
+				beror på:: PV-1-3-3; PV-1-3-4; PV-1-3-5; PV-1-3-6
+				Syfte
+					Visar att arkivhanteringen fungerar hela vägen och lämnas över.
+				Innehåll
+					Testprotokoll, driftsättning och uppdaterad handledning och dokumentation.
+				Kvalitetskriterier
+					Acceptanskriteriet i [[PIM-N04]] är uppfyllt i produktion.
 		1.4 Automatisk webbstatus
 			Har inget paket i kravspecifikationen. Utökning utöver [[PIM-W06]].
-			1.4.1 Regel för klar per kanal +produkt
+			1.4.1 Regel för klar per kanal +produkt ^PV-1-4-1
 				paket::
 				krav:: PIM-W06
 				part:: SFB
-				Vad som måste finnas för att en artikel ska få webbstatus aktiv, till exempel namn, text, bild, varumärke och GTIN.
-				Förstudien: REQ292, REQ514, bilaga K.
-			1.4.2 Automatisk beräkning av webbstatus +produkt
+				format:: Beslut
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB e-handel; Vaimo affärskonsult
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Bestämmer när en artikel är klar för webben, så att webbstatus kan räknas ut.
+				Innehåll
+					Vad som måste finnas för att en artikel ska få webbstatus aktiv, till exempel namn, text, bild, varumärke och GTIN.
+				Underlag
+					Förstudien: REQ292, REQ514, bilaga K.
+				Kvalitetskriterier
+					Varje villkor går att avgöra från data i PIM.
+			1.4.2 Automatisk beräkning av webbstatus +produkt ^PV-1-4-2
 				paket::
 				krav:: PIM-W06
 				part:: PIM-partner
-				Räknas om löpande när artikeln blir klar eller tappar bild eller text.
-				Förstudien: REQ314, REQ411, BE115.1.
-			1.4.3 Manuell överstyrning av webbstatus +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-4-1; PF-2-2-2; PF-2-2-3
+				Syfte
+					Tänder och släcker artiklar utan manuellt arbete.
+				Innehåll
+					Webbstatus räknas om löpande när artikeln blir klar eller tappar bild eller text, och distribueras som i F1.
+				Underlag
+					Förstudien: REQ314, REQ411, BE115.1.
+				Kvalitetskriterier
+					En artikel som får sin sista saknade bild blir aktiv. En som tappar texten blir inaktiv.
+			1.4.3 Manuell överstyrning av webbstatus +produkt ^PV-1-4-3
 				paket::
 				krav:: PIM-W06
 				part:: PIM-partner
-				Administratören kan sätta webbstatus i undantagsfall utan att automatiken skriver över. Bygger på den manuella webbstatusen från F1.
-				Förstudien: REQ214.
-			1.4.4 Testprotokoll och överlämning för automatisk webbstatus +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-1-4-2
+				Syfte
+					Den manuella komponenten i beslutet om webbstatus.
+				Innehåll
+					Administratören kan sätta webbstatus i undantagsfall utan att automatiken skriver över, och ta bort överstyrningen. Bygger på den manuella webbstatusen från F1.
+				Underlag
+					Förstudien: REQ214.
+				Kvalitetskriterier
+					En överstyrd status ändras inte av automatiken förrän överstyrningen tas bort.
+			1.4.4 Testprotokoll och överlämning för automatisk webbstatus +produkt ^PV-1-4-4
 				paket::
 				krav:: PIM-W06
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team; SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PV-1-4-2; PV-1-4-3
+				Syfte
+					Visar att automatisk webbstatus fungerar och lämnas över.
+				Innehåll
+					Testprotokoll, driftsättning och uppdaterad handledning och dokumentation.
+				Kvalitetskriterier
+					Kvalitetskriterierna i 1.4.2 och 1.4.3 är uppfyllda i produktion.
 	2 Tillval
 		2.1 Nya mediedomäner
-			2.1.1 Godkänd domänlista och länkmappning +produkt
+			Paket [[AP20]], [[PIM-N05]]. Ansvarig part föreslås i offerten.
+			2.1.1 Godkänd domänlista och länkmappning +produkt ^PV-2-1-1
 				paket:: AP20
 				krav:: PIM-N05
 				part:: PIM-partner
-				Ansvarig part föreslås i offerten.
-			2.1.2 Driftsatt domän- och länkupplägg +produkt
+				format:: Kalkylark
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB e-handel; ITM8
+				godkännare:: SFB produktägare
+				beror på:: PF-3-4-2
+				Syfte
+					Bestämmer vilka domäner som införs och hur gamla länkar pekar.
+				Innehåll
+					Berörda domäner, länkmappning från befintliga länkar och ompekning.
+				Kvalitetskriterier
+					Varje befintlig länk i F1:s länkförteckning har en mappning.
+			2.1.2 Driftsatt domän- och länkupplägg +produkt ^PV-2-1-2
 				paket:: AP20
 				krav:: PIM-N05
 				part:: PIM-partner
-				Ersätter inte F1-kravet att befintliga länkar fungerar.
-			2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +produkt
+				format:: Konfiguration
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel; ITM8
+				godkännare:: SFB produktägare
+				beror på:: PV-2-1-1
+				Syfte
+					De nya domänerna i drift.
+				Innehåll
+					DNS, certifikat, ompekning och konfiguration. Ersätter inte F1-kravet att befintliga länkar fungerar.
+				Kvalitetskriterier
+					Både nya och befintliga länkar svarar.
+			2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +produkt ^PV-2-1-3
 				paket:: AP20
 				krav:: PIM-N05
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PV-2-1-2
+				Syfte
+					Visar att tillvalet fungerar och vad det kostar att driva.
+				Innehåll
+					Testprotokoll och återkommande kostnader.
+				Kvalitetskriterier
+					Tillvalet anger domäner, länkmappning, ompekning, test och återkommande kostnader, [[PIM-N05]].
 		2.2 Avancerade förhandsvisningar
-			2.2.1 Avtalad formatlista +produkt
+			Paket [[AP21]], [[PIM-N06]].
+			2.2.1 Avtalad formatlista +produkt ^PV-2-2-1
 				paket:: AP21
 				krav:: PIM-N06
 				part:: PIM-partner
-			2.2.2 Förhandsvisning för valda format +produkt
+				format:: Dokument
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Avgränsar vilka format som får förhandsvisning.
+				Innehåll
+					Format, renderingstjänst och testfiler per format.
+				Kvalitetskriterier
+					Ingen generell garanti för alla filtyper, [[PIM-N06]].
+			2.2.2 Förhandsvisning för valda format +produkt ^PV-2-2-2
 				paket:: AP21
 				krav:: PIM-N06
 				part:: PIM-partner
-				Med renderingstjänst om en sådan behövs.
-			2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21 +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-2-2-1; PF-2-5-1
+				Syfte
+					Förhandsvisningar och tumnaglar utöver webbild och PDF.
+				Innehåll
+					Rendering med tjänst om en sådan behövs.
+				Kvalitetskriterier
+					Varje format i listan visas för testfilerna.
+			2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21 +produkt ^PV-2-2-3
 				paket:: AP21
 				krav:: PIM-N06
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PV-2-2-2
+				Syfte
+					Visar att tillvalet fungerar och vad det kostar.
+				Innehåll
+					Testprotokoll och återkommande kostnader för renderingstjänsten.
+				Kvalitetskriterier
+					Tillvalet redovisar format, renderingstjänst, kostnad och testfiler, [[PIM-N06]].
 		2.3 Mottagartjänst för tioårsarkivet
-			Har inget eget AP. Estimeras som E-TV-ARKIV med [[AP05]] som kostnadsplats.
-			2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet +produkt
+			Har inget eget AP. Estimeras som E-TV-ARKIV med [[AP05]] som kostnadsplats. Tillval enligt kravspecifikationen avsnitt 7.
+			2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet +produkt ^PV-2-3-1
 				paket::
 				krav:: PIM-A03
 				part:: PIM-partner
-			2.3.2 Testprotokoll för mottagartjänsten +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PF-2-5-3
+				Syfte
+					Låter mottagare hämta hela tioårsarkivet av dokumentfiler automatiskt. I F1 distribueras arkivet inte som standard, [[B05]].
+				Innehåll
+					Tjänst som exponerar dokumentversioner ur arkivet i F1.
+				Kvalitetskriterier
+					En mottagare kan hämta en äldre version av ett dokument utan manuellt arbete.
+			2.3.2 Testprotokoll för mottagartjänsten +produkt ^PV-2-3-2
 				paket::
 				krav:: PIM-A03
 				part:: PIM-partner
+				format:: Protokoll
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PV-2-3-1
+				Syfte
+					Visar att tjänsten fungerar.
+				Innehåll
+					Testprotokoll och driftsättning.
+				Kvalitetskriterier
+					Kvalitetskriteriet i 2.3.1 är uppfyllt i produktion.
+	Produktflöde
+		Ordningen följer fältet beror på. Allt förutsätter att F1 är i drift, se produktflödet i SFB_PBS_F1.ord. Paketen är oberoende av varandra utom att automatisk arkivering 1.3.6 behöver lagersaldot från AP17.
+		Föreslagen ordning: AP17 först, eftersom ERP-uppgifterna behövs för automatisk arkivering och ger prioriteringsstöd tidigt. Därefter AP19, automatisk webbstatus och AP18. Tillvalen när de beställs.
+		Steg 1 Regler, analyser och underlag
+			@ 1.1.1 Fältanalys för relevans per delägare^PV-1-1-1
+			@ 1.2.1 Grupperingsregler med testmaterial^PV-1-2-1
+			@ 1.3.1 Regler för arkivering och återaktivering^PV-1-3-1
+			@ 1.4.1 Regel för klar per kanal^PV-1-4-1
+			@ 2.1.1 Godkänd domänlista och länkmappning^PV-2-1-1
+			@ 2.2.1 Avtalad formatlista^PV-2-2-1
+			@ 2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet^PV-2-3-1
+		Steg 2 Bygg
+			@ 1.1.2 Återföring av ERP-uppgifter från MagicBox^PV-1-1-2
+			@ 1.1.3 Prioriteringsfilter i PIM^PV-1-1-3
+			@ 1.2.2 Automatisk gruppering för säkra träffar^PV-1-2-2
+			@ 1.2.3 Förslagskö för osäkra fall^PV-1-2-3
+			@ 1.3.2 Manuell arkivering^PV-1-3-2
+			@ 1.3.5 Distributionsbesked för arkivstatus^PV-1-3-5
+			@ 1.4.2 Automatisk beräkning av webbstatus^PV-1-4-2
+			@ 2.1.2 Driftsatt domän- och länkupplägg^PV-2-1-2
+			@ 2.2.2 Förhandsvisning för valda format^PV-2-2-2
+			@ 2.3.2 Testprotokoll för mottagartjänsten^PV-2-3-2
+		Steg 3 Bygg vidare och test
+			@ 1.1.4 Testprotokoll och överlämning för AP17^PV-1-1-4
+			@ 1.2.4 Skydd för manuella grupper och notiser om nya medlemmar^PV-1-2-4
+			@ 1.3.3 Arkivsökning^PV-1-3-3
+			@ 1.3.6 Automatisk arkivering^PV-1-3-6
+			@ 1.4.3 Manuell överstyrning av webbstatus^PV-1-4-3
+			@ 2.1.3 Testprotokoll och driftkostnadsunderlag för AP20^PV-2-1-3
+			@ 2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21^PV-2-2-3
+		Steg 4 Test och överlämning
+			@ 1.2.5 Testprotokoll och överlämning för AP18^PV-1-2-5
+			@ 1.3.4 Återaktivering^PV-1-3-4
+			@ 1.4.4 Testprotokoll och överlämning för automatisk webbstatus^PV-1-4-4
+		Steg 5 Överlämning av AP19
+			@ 1.3.7 Testprotokoll och överlämning för AP19^PV-1-3-7
+	Öppna frågor
+		Frågor om den här PBS:en, för Vaimo och SFB.
+		[ ] Paket för automatisk webbstatus: 1.4 saknar paket. Ska det bli ett nytt AP23 i estimatet, eller ingå i ett befintligt V2-paket?
+		[ ] Webbstatus per kanal: förstudien har tre nivåer, B2C, B2B och Riks. Kravspecifikationen har en webbstatus. Gäller beslutet om automatisk webbstatus en eller tre statusar? Tre statusar ändrar kontraktet med MagicBox.
+		[ ] Automatisk arkivering utan AP17: om AP17 inte beställs saknas lagersaldo i PIM. Ska regeln då bara använda datum, eller ska automatisk arkivering vänta?
+		[ ] Återaktivering: förstudien säger att manuell återaktivering utgår och att en ny artikel skapas i stället. Kravspecifikationen och [[AP19]] har återaktivering. Kravspecifikationen gäller tills SFB säger annat.
+		[ ] Estimat för utökningarna: automatisk arkivering och automatisk webbstatus har inga rader i SFB_Estimat_rader.csv.
+		[ ] Ansvar för AP20: kravspecifikationen låter oss föreslå ansvarig part. PBS:en antar PIM-partner.
 	Utanför
 		[[ALT01]] och [[ALT03]] är alternativ, inte tillägg, och ingår inte här.
 		[[PIM-N07]] Framtida delägaranvändare har inget paket och ingår inte i F1 eller V2.
