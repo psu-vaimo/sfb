@@ -1,5 +1,5 @@
 PBS AP01 Teknisk precisering och inventering ^PBS-AP01
-	version:: 0.3
+	version:: 0.4
 	datum:: 2026-11-15
 	paket:: AP01
 	Produktnedbrytning för [[AP01]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet. Arbetet som tar fram produkterna finns i SFB_Estimat_rader.csv.
@@ -123,6 +123,18 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			part:: PIM-partner
 			Kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export. Se [[B13]].
 			Förstudien: Berikningsfil Lokalt Sortiment och SQARP:s upp till fyra Excelfiler är utgångspunkt.
+		1.7 Specifikation av icke-funktionella krav +produkt
+			paket:: AP01
+			krav:: PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02
+			part:: PIM-partner
+			De icke-funktionella kraven samlade som mätbara krav, med mätvärde, mätförutsättning och verifieringssätt per krav. Testplanen i F1 spårar mot den.
+			Kapacitet: cirka 1 400 000 artiklar, 22 442 produktgrupper, 519 781 bilder och 118 228 dokument, två samtidiga administratörer, 100 artiklar per urval och 5 000 rader per Exceljobb.
+			Svarstider enligt [[B08]]: sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök per moment, med två aktiva administratörer och ett pågående jobb om 5 000 rader. Excel med 5 000 rader inom 10 minuter. Målen är förslag och bekräftas här.
+			Drift enligt [[B09]]: RPO högst en timme, RTO högst en arbetsdag, support svensk kontorstid och återställningsprov före drift.
+			Säkerhet: personliga konton, separata tekniska identiteter, behörighet för integrationer begränsad till kontraktet och hemligheter utanför källkod.
+			Spårbarhet och förvaltning: ändringshistorik så länge posten finns, kodägande och överlämningsbarhet.
+			Språk: gränssnitt och berikning på svenska.
+			Punkter som saknas i kravspecifikationen tas med när SFB har besvarat frågorna i 3.1.
 	2 Inventeringar
 		2.1 C4-exportinventering +produkt
 			paket:: AP01
@@ -180,6 +192,12 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Varje öppen fråga under Återstår att precisera i [[B01]] till [[B14]] har rekommendation, kostnadspåverkan och ansvarig.
 			Förstudien: frågorna i avsnitt 5.6 och 10.3 som rör F1 tas med, till exempel varumärke för 705 119 artiklar, de 537 leverantörer som saknar berikning och hur SQARP-artiklar hanteras innan en SQARP-integration finns.
 			Förstudien: bilaga K har öppna beslut om vad en artikel är, krav för att vara klar för kanal, livscykelstadier, språk per egenskap och ämnesdata från säkerhetsdatablad. PP24 om varumärkesmappning och PP46 om delägarnas Finfo-tjänster saknar krav och behöver ett beslut.
+			Icke-funktionella krav som saknas i kravspecifikationen
+				Personuppgifter och GDPR: vilka personuppgifter som lagras i konton och ändringshistorik, hur länge, och om ett personuppgiftsbiträdesavtal behövs.
+				Tillgänglighet i gränssnittet: om WCAG eller annan nivå ska gälla för administratörsgränssnittet.
+				Webbläsarstöd: vilka webbläsare och skärmstorlekar administratörerna använder.
+				Säkerhetstest: om penetrationstest eller säkerhetsgranskning krävs före driftstart, och vem som utför det.
+				Drifttid: om ett mål för tillgänglighet över tid ska gälla utöver RTO, och för vilka delar.
 		3.2 Förteckning över motsägelser mot förstudien +produkt
 			paket:: AP01
 			krav::

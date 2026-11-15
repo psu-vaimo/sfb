@@ -1,5 +1,5 @@
 PBS F1 första driftversionen ^PBS-F1
-	version:: 0.3
+	version:: 0.4
 	datum:: 2026-11-15
 	Produktnedbrytning för hela F1: [[AP01]] till [[AP16]] och [[AP22]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2, inte igen i 2.3 eller 2.4.
@@ -144,6 +144,13 @@ PBS F1 första driftversionen ^PBS-F1
 				paket:: AP04
 				krav:: PIM-I04
 				part:: PIM-partner
+		2.7 Teknisk arkitektur och säkerhetslösning +produkt
+			paket:: AP02
+			krav:: PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02
+			part:: PIM-partner
+			Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven. Kravspecifikationen ber oss föreslå detta.
+			Godkänns av SFB tidigt i F1, eftersom de andra produkterna i 2 bygger på den. Säkerhetslösningen driftsätts i 5.
+			Utgår från specifikationen av icke-funktionella krav i AP01, produkt 1.7.
 	3 Integrationer utanför PIM
 		Externa beroenden. Ingår inte i Vaimos pris.
 		3.1 Källintegrationer till MagicBox +produkt
@@ -241,10 +248,12 @@ PBS F1 första driftversionen ^PBS-F1
 			paket:: AP13
 			krav:: PIM-O02
 			part:: PIM-partner
+			Reproducerbar konfiguration, hemligheter utanför källkod.
 		5.2 Produktionsmiljö +produkt
 			paket:: AP13
 			krav:: PIM-O02
 			part:: PIM-partner
+			Reproducerbar konfiguration, hemligheter utanför källkod och demonstrerad återgång till föregående version.
 		5.3 Inloggning och tekniska identiteter +produkt
 			paket:: AP13
 			krav:: PIM-O01
@@ -272,6 +281,7 @@ PBS F1 första driftversionen ^PBS-F1
 			paket:: AP12
 			krav:: PIM-M04
 			part:: PIM-partner
+			Spårar både funktionella krav och de icke-funktionella kraven i AP01, produkt 1.7.
 		6.2 Integrationstestprotokoll +produkt
 			paket:: AP12
 			krav:: PIM-M04; PIM-I08
@@ -282,6 +292,7 @@ PBS F1 första driftversionen ^PBS-F1
 			krav:: PIM-Q01; PIM-Q02
 			part:: PIM-partner
 			Två administratörer, 100 artiklar per urval i tabellen och Exceljobb om 5 000 rader. Mättider mot profilen i [[B08]].
+			Svarstider för sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök, och Excel med 5 000 rader inom 10 minuter, om målen bekräftas i AP01.
 		6.4 Avbrottstestprotokoll +produkt
 			paket:: AP12
 			krav:: PIM-O05
