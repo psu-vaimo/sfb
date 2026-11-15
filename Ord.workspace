@@ -11,6 +11,8 @@ SFB berikningsdel och PIM
 			Återanvändbar estimeringsmetod med trepunktsestimat. Arbetsgång, kontroller och typerna som räknar estimatet. Tomma CSV-mallar i samma mapp.
 		./SFB_Aja_bedomning.ord
 			Kraven bedömda mot Vaimo Aja: täckning, risk och vad som behöver verifieras.
+		./SFB_Discovery_rapport_v0.5_20261028.pdf
+			Vaimos discoveryrapport v0.5. Bakgrund, utökar inte omfattningen i kravspecifikationen 1.3-V.
 		./SFB_PBS_AP01.ord
 			Produktnedbrytning (PBS) för AP01.
 		./SFB_PBS_F1.ord

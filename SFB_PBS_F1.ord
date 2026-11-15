@@ -1,9 +1,10 @@
 PBS F1 första driftversionen ^PBS-F1
-	version:: 0.1
+	version:: 0.2
 	datum:: 2026-11-15
 	Produktnedbrytning för hela F1: [[AP01]] till [[AP16]] och [[AP22]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2, inte igen i 2.3 eller 2.4.
 	Produkter med part ITM8 eller Nuvarande part ingår i F1 men inte i Vaimos pris.
+	Raderna Förstudien: kommer från discoveryrapporten v0.5. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
 	1 Teknisk precisering
 		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord.
 		@ PBS AP01 Teknisk precisering och inventering^PBS-AP01
@@ -17,6 +18,7 @@ PBS F1 första driftversionen ^PBS-F1
 				krav:: PIM-D01
 				part:: PIM-partner
 				Stabil intern identitet och bevarade källnycklar. Samma GTIN från olika leverantörer är separata artiklar.
+				Förstudien: C4:s fält Artikeltyp rymmer typ, sortiment, livscykel och berikningsregel och blir tre eller fyra fält. Plats för GTIN och GLN inför övergången till GS1 omkring kvartal 3 2027.
 			2.1.2 Attributmodell med käll- och egna värden +produkt
 				paket:: AP02
 				krav:: PIM-D03; PIM-W09
@@ -26,6 +28,7 @@ PBS F1 första driftversionen ^PBS-F1
 				paket:: AP02
 				krav:: PIM-D07
 				part:: PIM-partner
+				Förstudien: C4:s varumärkesregister rymmer varumärken, leverantörer, miljömärkningar och farosymboler. De blir separata register.
 			2.1.4 Tre kategoriträd +produkt
 				paket:: AP02
 				krav:: PIM-D05
@@ -176,17 +179,25 @@ PBS F1 första driftversionen ^PBS-F1
 				paket:: AP10
 				krav:: PIM-A06
 				part:: ITM8
+				Förstudien: CMYK till sRGB, högst 2000 x 2000 pixlar, TIFF, BMP och GIF som JPEG. Logotyper och symboler för miljöbedömningar och faror är PNG och konverteras inte.
 			3.4.2 Bevarade medielänkar +produkt
 				paket:: AP10
 				krav:: PIM-A07
 				part:: ITM8
 				Med DNS, lagring och ompekningar där de krävs.
+				Förstudien: dokumenten nås i dag via media.woody.se och bilderna via delägarnas URL:er. Om ImageMagick, Azure Storage och Azure Fileshare finns kvar beslutas med ITM8.
 	4 Migrerad data
 		4.1 Beslutat migreringsurval +produkt
 			paket:: AP11
 			krav:: PIM-M01
 			part:: SFB
 			SFB städar och beslutar urval. Se [[B03]].
+			4.1.1 Städad C4-data före uttag +produkt
+				paket:: AP11
+				krav:: PIM-M01
+				part:: SFB
+				Det som måste rensas i C4 eller exporten innan flytt, till exempel leverantörs-id i varumärkesfältet och testartiklarna.
+				Förstudien: paket 1 i avsnitt 10, med besluten i avsnitt 5.6.
 		4.2 C4-export för migrering +produkt
 			paket:: AP11
 			krav:: PIM-M01
@@ -196,6 +207,7 @@ PBS F1 första driftversionen ^PBS-F1
 			krav:: PIM-M02
 			part:: PIM-partner
 			En regel per källfält och relation, numeriska mediekategorier översatta till ordning.
+			Förstudien: mappningen behöver dela upp Artikeltyp och varumärkesregistret, mappa interna varumärken mot Finfos och flytta bara mått som är språkneutrala.
 		4.4 Migreringsverktyg +produkt
 			paket:: AP11
 			krav:: PIM-M02; PIM-M03
@@ -211,11 +223,13 @@ PBS F1 första driftversionen ^PBS-F1
 			krav:: PIM-M02; PIM-M03
 			part:: PIM-partner
 			Artiklar, produktgrupper, kategorier, attribut, referensdata och aktuella medier enligt urvalet.
+			Förstudien: flytta bara filer som används och rensa dubbletter på checksumma.
 		4.7 Migrerade äldre dokumentversioner +produkt
 			paket:: AP22
 			krav:: PIM-M06
 			part:: PIM-partner
 			Med filinnehåll, dokumenttyp, artikelkoppling och tillgängliga versionsdatum. Luckor redovisas.
+			Förstudien: gäller särskilt äldre säkerhetsdatablad, som bara finns i C4.
 		4.8 Läsbar export av C4:s ändringslogg +produkt
 			paket:: AP22
 			krav:: PIM-M06; PIM-Q04

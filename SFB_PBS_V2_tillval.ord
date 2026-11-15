@@ -1,5 +1,5 @@
 PBS V2 och tillval ^PBS-V2T
-	version:: 0.1
+	version:: 0.2
 	datum:: 2026-11-15
 	Produktnedbrytning för allt utanför F1 som har ett paket: V2 med [[AP17]], [[AP18]] och [[AP19]], tillvalen [[AP20]] och [[AP21]] samt mottagartjänsten för tioårsarkivet. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
 	Varje paket levereras fullt, med test, driftsättning och överlämning. Bygger på F1, se [[PBS F1 första driftversionen]].
@@ -10,6 +10,7 @@ PBS V2 och tillval ^PBS-V2T
 				krav:: PIM-N02
 				part:: PIM-partner
 				Matchning, aktiv i ERP, webbflagga, lagersaldo och uppdateringstid per delägare.
+				Förstudien: i dag syns inte hos vilka delägare en artikel är tänd, PP38 och PP39. Järn AB kan också skicka ERP-data tillbaka.
 			1.1.2 Återföring av ERP-uppgifter från MagicBox +produkt
 				paket:: AP17
 				krav:: PIM-N02
@@ -29,6 +30,7 @@ PBS V2 och tillval ^PBS-V2T
 				krav:: PIM-N03
 				part:: PIM-partner
 				Regler för säker träff, beslutade separat av SFB. Regelbaserad metod är bas.
+				Förstudien: Happy Flow visade filter på liknande leverantörsartikelnummer och texter som halvautomatiskt stöd.
 			1.2.2 Automatisk gruppering för säkra träffar +produkt
 				paket:: AP18
 				krav:: PIM-N03
