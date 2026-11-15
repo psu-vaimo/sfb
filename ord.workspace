@@ -1,0 +1,40 @@
+Note +ord-type
+	name:: note
+	color:: #39f
+	fields::
+		project::
+			options:: +project
+Project +ord-type
+	name:: project
+	color:: #69c
+Doc +ord-type
+	name:: doc
+	fields::
+		summary::
+		stage::
+Decision +ord-type
+	name:: decision
+	fields::
+		why::
+		reason::
+Task +ord-type
+	name:: task
+	checkbox:: true
+	fields::
+		project::
+			options:: +project
+theme::
+	font family:: monospace
+	font weight:: 300
+	font size:: 14
+	font size adjustments::
+		heading:: +30%
+		node token:: -10%
+		computed:: 0%
+		inline field:: -10%
+editor::
+	mode:: full
+	line wrap:: true
+	show hidden:: false
+pinned files::
+	Stickies.txt

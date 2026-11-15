@@ -1139,7 +1139,7 @@ Kravkatalog för vår berikningsdel och PIM
 				ansvar:: Vi
 				berör:: AP03
 				Grund för estimatet
-					Bekräftat: söka attribut, visa användning, ändra visningsnamn/beskrivning och stoppa ny användning. Befintliga identifierare och värden bevaras. Sammanslagning, flytt av värden mellan attribut och datatypbyte ligger utanför F1.
+					Bekräftat: söka attribut, visa användning, ändra visningsnamn/beskrivning och stoppa ny användning. Befintliga identifierare och värden bevaras. ==Sammanslagning, flytt av värden mellan attribut och datatypbyte ligger utanför F1.==
 				Återstår att precisera
 					Ingen öppen omfattningsfråga för F1. Detaljer i visningen verifieras med administratörerna. Ett senare städarbete får egen omfattning och beställning.
 			B11 Bemanning och acceptans +beslut ^B11
@@ -1162,7 +1162,7 @@ Kravkatalog för vår berikningsdel och PIM
 				Grund för estimatet
 					Bekräftat i version 1.2: export, redigering och återimport ska fungera för egen berikning på båda artikeltyperna. Nya manuella artiklar ska också kunna skapas. Externa källvärden skyddas.
 				Återstår att precisera
-					Fast kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export preciseras i [[AP01]]. En föråldrad Excel-fil får inte tyst skriva över nyare manuellt arbete. Inget fritt importverktyg ingår.
+					Fast kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export preciseras i [[AP01]]. En föråldrad Excel-fil får inte tyst skriva över nyare manuellt arbete. ==Inget fritt importverktyg ingår.==
 			B14 Arkivhanteringens leveransgräns +beslut ^B14
 				ansvar:: Vi och PIM-partner samt ITM8 för statusutbyte
 				berör:: AP03; AP05; AP11; AP19
@@ -1185,7 +1185,7 @@ Kravkatalog för vår berikningsdel och PIM
 			C4 och dess meddelandekö avvecklas. Ange om leveransen kan vara i drift före avvecklingen, med vilken bemanning och vilka beslut som då krävs. Fortsatt drift eller åtkomst efter avvecklingen får inte förutsättas.
 		Bekräftade ramar
 			Berikning sker på svenska.
-			Samma GTIN från olika leverantörer ska vara separata artiklar.
+			==Samma GTIN från olika leverantörer ska vara separata artiklar.==
 			Alla attributdefinitioner följer med; värden och poster följer migreringsurvalet.
 			Aktiva kategoriträd är de aktuella träden för Produktkatalog, Brukspecialisten och Weydes. Äldre motsvarigheter till Produktkatalog och Brukspecialisten följer inte med som aktiva.
 			Ett krav på att alla attribut ska bevaras innebär inte att alla källägda fält får ändras manuellt.
