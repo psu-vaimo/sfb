@@ -1,0 +1,118 @@
+PBS V2 och tillval ^PBS-V2T
+	version:: 0.1
+	datum:: 2026-11-15
+	Produktnedbrytning för allt utanför F1 som har ett paket: V2 med [[AP17]], [[AP18]] och [[AP19]], tillvalen [[AP20]] och [[AP21]] samt mottagartjänsten för tioårsarkivet. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
+	Varje paket levereras fullt, med test, driftsättning och överlämning. Bygger på F1, se [[PBS F1 första driftversionen]].
+	1 V2
+		1.1 ERP-baserad prioritering
+			1.1.1 Fältanalys för relevans per delägare +produkt
+				paket:: AP17
+				krav:: PIM-N02
+				part:: PIM-partner
+				Matchning, aktiv i ERP, webbflagga, lagersaldo och uppdateringstid per delägare.
+			1.1.2 Återföring av ERP-uppgifter från MagicBox +produkt
+				paket:: AP17
+				krav:: PIM-N02
+				part:: ITM8
+			1.1.3 Prioriteringsfilter i PIM +produkt
+				paket:: AP17
+				krav:: PIM-N02
+				part:: PIM-partner
+				Visar källa och aktualitet och skiljer saknat värde från nollsaldo.
+			1.1.4 Testprotokoll och överlämning för AP17 +produkt
+				paket:: AP17
+				krav:: PIM-N02
+				part:: PIM-partner
+		1.2 Automatisk produktgruppering
+			1.2.1 Grupperingsregler med testmaterial +produkt
+				paket:: AP18
+				krav:: PIM-N03
+				part:: PIM-partner
+				Regler för säker träff, beslutade separat av SFB. Regelbaserad metod är bas.
+			1.2.2 Automatisk gruppering för säkra träffar +produkt
+				paket:: AP18
+				krav:: PIM-N03
+				part:: PIM-partner
+			1.2.3 Förslagskö för osäkra fall +produkt
+				paket:: AP18
+				krav:: PIM-N03
+				part:: PIM-partner
+			1.2.4 Skydd för manuella grupper och notiser om nya medlemmar +produkt
+				paket:: AP18
+				krav:: PIM-N03
+				part:: PIM-partner
+			1.2.5 Testprotokoll och överlämning för AP18 +produkt
+				paket:: AP18
+				krav:: PIM-N03
+				part:: PIM-partner
+		1.3 Samlad arkivhantering
+			1.3.1 Regler för arkivering och återaktivering +produkt
+				paket:: AP19
+				krav:: PIM-N04
+				part:: PIM-partner
+				Återaktivering, källändring på arkiverad entitet och återpublicering. Se [[B14]].
+			1.3.2 Manuell arkivering +produkt
+				paket:: AP19
+				krav:: PIM-N04
+				part:: PIM-partner
+				Artiklar, bilder och dokument med bevarade relationer, historik och dokumentversioner.
+			1.3.3 Arkivsökning +produkt
+				paket:: AP19
+				krav:: PIM-N04
+				part:: PIM-partner
+			1.3.4 Återaktivering +produkt
+				paket:: AP19
+				krav:: PIM-N04
+				part:: PIM-partner
+			1.3.5 Distributionsbesked för arkivstatus +produkt
+				paket:: AP19
+				krav:: PIM-N04; PIM-I01
+				part:: ITM8
+				Kontraktsändring för arkivåtgärder mot MagicBox och Snicken.
+			1.3.6 Testprotokoll och överlämning för AP19 +produkt
+				paket:: AP19
+				krav:: PIM-N04
+				part:: PIM-partner
+	2 Tillval
+		2.1 Nya mediedomäner
+			2.1.1 Godkänd domänlista och länkmappning +produkt
+				paket:: AP20
+				krav:: PIM-N05
+				part:: PIM-partner
+				Ansvarig part föreslås i offerten.
+			2.1.2 Driftsatt domän- och länkupplägg +produkt
+				paket:: AP20
+				krav:: PIM-N05
+				part:: PIM-partner
+				Ersätter inte F1-kravet att befintliga länkar fungerar.
+			2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +produkt
+				paket:: AP20
+				krav:: PIM-N05
+				part:: PIM-partner
+		2.2 Avancerade förhandsvisningar
+			2.2.1 Avtalad formatlista +produkt
+				paket:: AP21
+				krav:: PIM-N06
+				part:: PIM-partner
+			2.2.2 Förhandsvisning för valda format +produkt
+				paket:: AP21
+				krav:: PIM-N06
+				part:: PIM-partner
+				Med renderingstjänst om en sådan behövs.
+			2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21 +produkt
+				paket:: AP21
+				krav:: PIM-N06
+				part:: PIM-partner
+		2.3 Mottagartjänst för tioårsarkivet
+			Har inget eget AP. Estimeras som E-TV-ARKIV med [[AP05]] som kostnadsplats.
+			2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet +produkt
+				paket::
+				krav:: PIM-A03
+				part:: PIM-partner
+			2.3.2 Testprotokoll för mottagartjänsten +produkt
+				paket::
+				krav:: PIM-A03
+				part:: PIM-partner
+	Utanför
+		[[ALT01]] och [[ALT03]] är alternativ, inte tillägg, och ingår inte här.
+		[[PIM-N07]] Framtida delägaranvändare har inget paket och ingår inte i F1 eller V2.

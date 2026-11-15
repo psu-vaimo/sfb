@@ -1,0 +1,138 @@
+PBS AP01 Teknisk precisering och inventering ^PBS-AP01
+	version:: 0.1
+	datum:: 2026-11-15
+	paket:: AP01
+	Produktnedbrytning för [[AP01]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet. Arbetet som tar fram produkterna finns i SFB_Estimat_rader.csv.
+	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela AP01, och ingen produkt finns också i ett annat paket.
+	Resultatet ska kunna användas av en annan partner. Ingen implementation av produktfunktioner ingår.
+	1 Verifierade specifikationer
+		1.1 Återanvändningsmatris för förstudien +produkt
+			paket:: AP01
+			krav:: PIM-I01
+			part:: PIM-partner
+			Vilka dokument och versioner från förstudien som återanvänds och vad som redan är verifierat. Avgör vilket arbete som återstår i AP01.
+		1.2 Gränssnittskontrakt +produkt
+			paket:: AP01
+			krav:: PIM-I01; PIM-I02; PIM-I03; PIM-I04; PIM-I09; PIM-I10
+			part:: PIM-partner
+			Versionshanterat data- och felkontrakt, godkänt av PIM-partner och ITM8. Se [[B02]] och [[B05]].
+			1.2.1 Kontrakt MagicBox till PIM +produkt
+				paket:: AP01
+				krav:: PIM-I01; PIM-I02
+				part:: PIM-partner
+				Källägda fält och relationer, ändringsidentitet, revisioner och omtag.
+			1.2.2 Kontrakt PIM till MagicBox +produkt
+				paket:: AP01
+				krav:: PIM-I01; PIM-I03
+				part:: PIM-partner
+				Inkrementella ändringar, effektiva värden, gruppfält skilda från artikelvärden, status och mediereferenser.
+			1.2.3 Kontrakt för Snickenflödet +produkt
+				paket:: AP01
+				krav:: PIM-I01; PIM-I09; PIM-I10
+				part:: PIM-partner
+				Urvalsnyckel, besked vid ändrat urval, startleverans och återhämtning.
+			1.2.4 Fel- och transportkontrakt +produkt
+				paket:: AP01
+				krav:: PIM-I01; PIM-I04
+				part:: PIM-partner
+				Felkoder, kvittens, frekvens, återförsök och omsändning. Inget befintligt API antas.
+			1.2.5 Validerade kontraktsexempel +produkt
+				paket:: AP01
+				krav:: PIM-I01
+				part:: PIM-partner
+				Skapa, uppdatera, livscykel- och webbstatus, relationsändring, mediauppdatering och fel, validerade av båda parter.
+			1.2.6 ITM8:s granskning av kontrakten +produkt
+				paket:: AP01
+				krav:: PIM-I01
+				part:: ITM8
+				ITM8:s medverkan räknas bara här, inte i [[AP07]] eller [[AP08]].
+		1.3 Fältmatris +produkt
+			paket:: AP01
+			krav:: PIM-D03; PIM-W09; PIM-I03
+			part:: PIM-partner
+			Per fält: ägare, datatyp, enhet, listvärden, källprioritet, skyddat eller redigerbart, och mottagarmappning. Samma matris styr enskild redigering, tabell och Excel. Se [[B07]].
+			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt
+				paket:: AP01
+				krav:: PIM-W09
+				part:: PIM-partner
+				Attribut-ID:n för material, färg, längd, bredd, höjd, tjocklek och diameter, eller likvärdiga ersättningar.
+			1.3.2 Förteckning över skyddade fält +produkt
+				paket:: AP01
+				krav:: PIM-W09; PIM-D07
+				part:: PIM-partner
+				Identifierare, källägda värden och externa bedömningar.
+		1.4 Identitetsregler och exempeldata +produkt
+			paket:: AP01
+			krav:: PIM-D01; PIM-D07
+			part:: PIM-partner
+			Sammansatt nyckel, leverantörs-id, befintliga C4-kopplingar, manuella artiklar och felkö vid tvetydig matchning. Se [[B06]].
+		1.5 Kontrollrapport för produktgrupper +produkt
+			paket:: AP01
+			krav:: PIM-D02
+			part:: PIM-partner
+			Befintliga grupper prövade mot regeln i [[B12]], avvikande relationer för SFB:s beslut och hur mottagarna använder gruppfälten.
+		1.6 Fast Excel-format +produkt
+			paket:: AP01
+			krav:: PIM-X01; PIM-X02; PIM-X03
+			part:: PIM-partner
+			Kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export. Se [[B13]].
+	2 Inventeringar
+		2.1 C4-exportinventering +produkt
+			paket:: AP01
+			krav:: PIM-M01
+			part:: PIM-partner
+			Antal, storlek, identifierare, relationer, käll- och internfält, filoriginal och tillgänglig historik. Saknade delar har ansvarig och åtgärd. Se [[B03]].
+			2.1.1 C4-exportprov +produkt
+				paket:: AP01
+				krav:: PIM-M01
+				part:: Nuvarande part
+				Provexport från nuvarande exportansvarig, underlag för inventeringen.
+			2.1.2 Inventering av äldre dokumentversioner och ändringslogg +produkt
+				paket:: AP01
+				krav:: PIM-M06; PIM-Q04
+				part:: PIM-partner
+				Exportmöjlighet, volym och luckor. Underlag för [[AP22]].
+		2.2 Medieinventering +produkt
+			paket:: AP01
+			krav:: PIM-A01; PIM-A03; PIM-A06; PIM-A07
+			part:: PIM-partner
+			Versionsnycklar, gamla URL:er, format, filstorlekar, original, domäner, lagring och transformationsprofiler. Se [[B04]].
+		2.3 Volym- och lastinventering +produkt
+			paket:: AP01
+			krav:: PIM-Q01; PIM-Q02
+			part:: PIM-partner
+			Filernas bytevolym, versionsökning, dagliga ändringar och toppar. Se [[B08]].
+		2.4 Verifiering av åtkomst vid PIM-avbrott +produkt
+			paket:: AP01
+			krav:: PIM-O05
+			part:: PIM-partner
+			Beroenden mellan PIM, MagicBox, Snicken och medielagring. Anger vilka anpassningar som behövs i [[AP04]], [[AP08]], [[AP09]] och [[AP10]].
+		2.5 Verifiering av drift och identitet +produkt
+			paket:: AP01
+			krav:: PIM-O01; PIM-O03
+			part:: PIM-partner
+			Identitetstjänst, driftägare, loggtid och tekniska beroenden. Se [[B09]].
+	3 Beslutsunderlag och plan
+		3.1 Beslutsunderlag för öppna frågor +produkt
+			paket:: AP01
+			krav::
+			part:: PIM-partner
+			Varje öppen fråga under Återstår att precisera i [[B01]] till [[B14]] har rekommendation, kostnadspåverkan och ansvarig.
+		3.2 Reviderat genomförandeestimat +produkt
+			paket:: AP01
+			krav::
+			part:: PIM-partner
+			Estimatet omräknat från klass 4 till klass 3 enligt metodfilen.
+		3.3 Reviderad genomförandeplan +produkt
+			paket:: AP01
+			krav:: PIM-H04
+			part:: PIM-partner
+			Tidplan och beroenden för resten av F1, underlag för [[AP15]].
+		3.4 Granskade workshopanteckningar +produkt
+			paket:: AP01
+			krav::
+			part:: PIM-partner
+			Beslut och avstämningar med SFB och ITM8, granskade av SFB.
+	Utanför AP01
+		Implementation av datamodell, gränssnitt och integrationer, se [[PBS F1 första driftversionen]].
+		Migreringsmappning och migreringsverktyg, se [[AP11]]. AP01 inventerar, AP11 mappar.

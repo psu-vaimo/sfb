@@ -11,6 +11,12 @@ SFB berikningsdel och PIM
 			Återanvändbar estimeringsmetod med trepunktsestimat. Arbetsgång, kontroller och typerna som räknar estimatet. Tomma CSV-mallar i samma mapp.
 		./SFB_Aja_bedomning.ord
 			Kraven bedömda mot Vaimo Aja: täckning, risk och vad som behöver verifieras.
+		./SFB_PBS_AP01.ord
+			Produktnedbrytning (PBS) för AP01.
+		./SFB_PBS_F1.ord
+			Produktnedbrytning (PBS) för hela F1. Speglar PBS:en för AP01.
+		./SFB_PBS_V2_tillval.ord
+			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen.
 
 
 Kravtyp +ord-type
@@ -66,3 +72,13 @@ theme::
 	font size:: 15
 editor::
 	line wrap:: false
+Produkttyp +ord-type
+	name:: produkt
+	fields::
+		paket::
+			options:: +arbetspaket
+		krav::
+			options:: +krav
+		part::
+			options:: PIM-partner; ITM8; SFB; Nuvarande part
+	En produkt i en produktnedbrytning (PBS): något som lämnas över och kan godkännas, inte en aktivitet. Används i SFB_PBS_*.ord.
