@@ -11,7 +11,7 @@ Estimat SFB – berikningsdel och PIM
 		./SFB_Estimat_paket.csv
 			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
 		./SFB_Estimat_rader.csv
-			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna.
+			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram.
 		./SFB_Estimat_risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
 		./SFB_Estimat_kostnader.csv
@@ -61,6 +61,7 @@ Estimat SFB – berikningsdel och PIM
 			ITM8:s paket [[AP07]]–[[AP10]] ingår som externa beroenden: deras timmar syns som extern insats och ingår inte i Vaimos pris.
 		V2 +estimatsumma ^E-V2
 			[[AP17]], [[AP18]] och [[AP19]] som egna rader med fullt leveransarbete.
+			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt 3.2, i SFB_PBS_AP01.ord.
 		Tillval +estimatsumma ^E-TILLVAL
 			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet.
 		Alternativ +estimatsumma ^E-ALT
@@ -101,6 +102,8 @@ Estimat SFB – berikningsdel och PIM
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.
 		[ ] Varje F1-krav i SFB_Krav.ord finns i kolumnen krav på minst en rad.
+		[ ] Varje produkt i SFB_PBS_*.ord finns i kolumnen produkt på minst en rad, utom samlingsprodukter vars delprodukter har rader.
+		[ ] Kolumnen krav stämmer med produktens krav i PBS:en.
 		[ ] Inga rader i [[AP07]]/[[AP08]] dubblerar ITM8:s medverkan i [[AP01]].
 		[ ] Gemensamma regler räknas bara i [[AP03]], inte igen i [[AP06]] eller [[AP16]].
 		[ ] Samma fil eller körning räknas inte i både [[AP11]] och [[AP22]].

@@ -16,11 +16,11 @@ SFB berikningsdel och PIM
 		./SFB_Discovery_rapport_appendix_20261021.pdf
 			Bilagor C till M till discoveryrapporten: smärtpunkter, kravregister, underlag, datamodell och Happy Flow.
 		./SFB_PBS_AP01.ord
-			Produktnedbrytning (PBS) för AP01.
+			Produktnedbrytning (PBS) för AP01, med produktbeskrivningar, produktflöde och öppna frågor.
 		./SFB_PBS_F1.ord
-			Produktnedbrytning (PBS) för hela F1. Speglar PBS:en för AP01.
+			Produktnedbrytning (PBS) för hela F1, med produktbeskrivningar, produktflöde och öppna frågor. Speglar PBS:en för AP01.
 		./SFB_PBS_V2_tillval.ord
-			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen.
+			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen, med produktbeskrivningar, produktflöde och öppna frågor.
 
 
 Kravtyp +ord-type

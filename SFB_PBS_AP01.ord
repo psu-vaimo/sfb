@@ -8,6 +8,15 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) och dess bilagor (SFB_Discovery_rapport_appendix_20261021.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	AP01 är klar när 3.3 och 3.4 är godkända av SFB. Då kan resten av F1 estimeras om till klass 3.
+	Kravspecifikationens sex leverabler i avsnitt 7.1
+		Kravspecifikationen kräver att AP01 behåller sina sex leverabler med minsta innehåll och avslutskriterium. Så här motsvarar de produkterna.
+		Fältmatris: 1.3 med 1.3.1 till 1.3.3.
+		Identiteter och exempeldata: 1.4, 1.4.1 och 1.5.
+		Utbyteskontrakt: 1.2 med 1.2.1 till 1.2.6.
+		Fast Excel-mall: 1.6.
+		Export- och medieinventering: 2.1 med 2.1.1 till 2.1.3, 2.2, 2.3 och 2.4.
+		Reviderat estimat och plan: 3.3 och 3.4, med 3.1 som underlag.
+		Produkterna 1.1, 1.7, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och motsägelser.
 	1 Verifierade specifikationer
 		1.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
 			paket:: AP01
@@ -63,12 +72,13 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Ett versionshanterat data- och felkontrakt som PIM-partner och ITM8 bygger mot. Gör gränsen mellan [[AP04]], [[AP08]] och [[AP09]] testbar och förhindrar dubbelt arbete. Se [[B02]] och [[B05]].
 			Innehåll
 				Samlingsdokument för 1.2.1 till 1.2.6, med versionsnummer, ändringslogg och gemensamma begrepp.
+				Fält och beteenden per riktning: startleverans, förändringsleverans, kvittens, återförsök, rensning, relationsändring och fel.
 				Ägarskap per fält och objekt, identifierare, produkter, kategorier, statusar och medie- och versionsreferenser.
 			Underlag
 				Förstudien: integrationspunkter, riktning, trigger och byggansvar finns i avsnitt 8.1. Fält, format och felhantering saknas.
 			Kvalitetskriterier
 				Alla exempel i 1.2.5 validerar mot kontraktet.
-				Kontraktet är godkänt av både PIM-partner och ITM8, med samma versionsnummer.
+				Kontraktet är godkänt av både PIM-partner och ITM8, med samma versionsnummer. Snicken har bekräftat urval och mottagningsformat.
 				Arkivåtgärder är markerade som V2 enligt [[PIM-N04]].
 			1.2.1 Kontrakt MagicBox till PIM +produkt ^PA-1-2-1
 				paket:: AP01
@@ -178,7 +188,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Alla synpunkter är stängda eller har ett beslut.
 		1.3 Fältmatris +produkt ^PA-1-3
 			paket:: AP01
-			krav:: PIM-D03; PIM-W03; PIM-W09; PIM-I03
+			krav:: PIM-D03; PIM-W03; PIM-W09; PIM-I03; PIM-I01
 			part:: PIM-partner
 			format:: Kalkylark
 			kvalitetsmetod:: Granskning
@@ -188,7 +198,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Syfte
 				En regel per fält som styr datamodellen, kontrakten, enskild redigering, tabell, Excel och migrering. Se [[B07]].
 			Innehåll
-				Per fält: objekt, ägare, datatyp, enhet, listvärden, källprioritet, språkneutral eller svensk, skyddat eller redigerbart, mottagarmappning och C4-källfält.
+				Per fält: objekt, fältnamn, ägare, källa, datatyp, enhet, listvärden, källprioritet, ändringsrätt, obligatoriskt värde, validering, tomvärde och rensning, språkneutral eller svensk, C4-källfält och användning i gränssnitt, tabell, Excel och utgående data.
 				1.3.1, 1.3.2 och 1.3.3 som egna flikar.
 			Underlag
 				Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
@@ -196,6 +206,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje attributdefinition i C4-exporten finns, eller är uttryckligen utesluten med skäl, [[PIM-D03]].
 				Varje fält har ägare och skyddsnivå.
+				Varje oklar regel har ett beslut eller en uttrycklig prisreservation, enligt kravspecifikationen 7.1.
 				Ingen generell standardisering eller enhetskonvertering ingår.
 			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt ^PA-1-3-1
 				paket:: AP01
@@ -259,9 +270,10 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Syfte
 				Bestämmer hur artiklar, produkter, leverantörer och varumärken identifieras i PIM, MagicBox och vid migrering. Se [[B06]].
 			Innehåll
+				Verifierade nycklar för artikel, leverantör, grupp, kategorinod, fil och dokumentversion.
 				Intern identitet, sammansatt källnyckel, prioriteringsordning, leverantörs-id, befintliga C4-kopplingar, manuella artiklar, WB-nummer och felkö vid tvetydig matchning.
 				Plats för GTIN och GLN inför övergången till GS1.
-				Exempeldata som visar varje regel.
+				Exempel för manuella artiklar, Finfo-artiklar, samma GTIN hos olika leverantörer, variantgrupp och bundle.
 			Underlag
 				Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
 			Kvalitetskriterier
@@ -314,8 +326,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Syfte
 				Låser mallen för import och export så att [[AP06]] kan prissättas och byggas. Se [[B13]].
 			Innehåll
-				Kolumnlista, tillåtna relationer, rensningsmarkör, tomvärdesregel och hantering av ändring efter export.
-				En ifylld exempelfil.
+				Kolumner, identifierare, redigerbara fält, relationsformat, rensningsmarkör, tomvärdesregel och konflikthantering vid ändring efter export.
+				Exempelfiler för manuella artiklar och för egen berikning på källartiklar.
 			Underlag
 				Förstudien: Berikningsfil Lokalt Sortiment och SQARP:s upp till fyra Excelfiler är utgångspunkt.
 			Kvalitetskriterier
@@ -398,6 +410,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien: äldre säkerhetsdatablad finns bara i C4, eftersom Finfo bara skickar det gällande. REACH artikel 36 kräver att de sparas minst tio år efter senaste leverans.
 				Kvalitetskriterier
 					Luckor och saknade datum redovisas. Inga datum uppfinns.
+				Varje exportlucka har en kostnadssatt lösning för SFB:s beslut före C4:s stängning.
 			2.1.3 Underlag för migreringsurval +produkt ^PA-2-1-3
 				paket:: AP01
 				krav:: PIM-M01
@@ -557,10 +570,12 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Ger SFB ett bindande eller nästan bindande genomförandepris för resten av F1.
 			Innehåll
 				Estimatet omräknat från klass 4 till klass 3 enligt metodfilen, med uppdaterade rader, risker och kostnadsposter.
+				Verifierade antaganden, kvarstående risker, påverkan per arbetspaket, ansvariga och beroenden.
 			Kvalitetskriterier
 				Relativt spann för F1 ligger ungefär mellan 30 och 50 %.
 				Kontrollerna i SFB_Estimat.ord och metodfilen är gjorda.
 				Inga saknade rader utom ITM8:s, som syns som saknade.
+				Inget öppet område försvinner i en generell reservation, enligt kravspecifikationen 7.1.
 		3.4 Reviderad genomförandeplan +produkt ^PA-3-4
 			paket:: AP01
 			krav:: PIM-H04
@@ -644,7 +659,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 		[ ] Exportprov: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
 		[ ] Mediehantering: motsägelsen om bildkonvertering och URL:er i 3.2 saknar beslut.
 		[ ] Fältmatrisens omfattning: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
-		[ ] Estimatrader: 1.4.1, 1.5, 2.1.2, 2.1.3, 2.2, 2.3, 2.5, 3.2 och 3.5 saknar egna rader i SFB_Estimat_rader.csv eller ligger i bredare rader. Ska raderna delas upp per produkt?
+		[x] Estimatrader: löst. Varje rad i SFB_Estimat_rader.csv har nu produkt-ID i kolumnen produkt, och 1.3.3, 1.4.1, 1.5, 2.5, 3.1 och 3.2 har fått egna rader. 2.1.2, 2.1.3, 2.2 och 2.3 delar raden för export- och medieinventering.
 	Utanför AP01
 		Implementation av datamodell, gränssnitt och integrationer, se [[PBS F1 första driftversionen]].
 		Migreringsmappning och migreringsverktyg, se [[AP11]]. AP01 inventerar, AP11 mappar.

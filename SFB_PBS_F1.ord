@@ -154,7 +154,7 @@ PBS F1 första driftversionen ^PBS-F1
 					Både aktiv och inaktiv artikel når MagicBox, [[PIM-W06]].
 			2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler +produkt ^PF-2-2-3
 				paket:: AP03
-				krav:: PIM-W04; PIM-W08; PIM-W09
+				krav:: PIM-W04; PIM-W08; PIM-W09; PIM-W03
 				part:: PIM-partner
 				format:: Kod
 				kvalitetsmetod:: Test
@@ -941,7 +941,7 @@ PBS F1 första driftversionen ^PBS-F1
 				Mottagare använder senast levererad information och testurvalets medielänkar. Datautbytet återupptas utan tappade positioner, [[PIM-O05]].
 		6.5 Acceptanstestprotokoll +produkt ^PF-6-5
 			paket:: AP12
-			krav:: PIM-M04
+			krav:: PIM-M04; PIM-M03
 			part:: PIM-partner
 			format:: Protokoll
 			kvalitetsmetod:: Test
@@ -1269,7 +1269,7 @@ PBS F1 första driftversionen ^PBS-F1
 		[ ] Testdata: 6.3 och 6.5 behöver migrerad data från provkörningen 4.5. Räcker en korrigeringskörning, eller behövs en extra körning efter rättningar inför acceptansen?
 		[ ] Utbildning före eller efter driftstart: kravspecifikationen säger två utbildningar och tio dagars stöd efter driftstart. PBS:en lägger utbildningen före driftstart. Stämmer det?
 		[ ] Ändringshistorik och arkiv i 2.2.6 och 2.5.3 innehåller personuppgifter om aktörer. Svaret på GDPR-frågan i PA-3-1 kan ändra dem.
-		[ ] Estimatrader: flera produkter delar rader i SFB_Estimat_rader.csv, till exempel 2.1.1 till 2.1.5 och 7.3 till 7.5. Ska raderna knytas till produkt-ID?
+		[x] Estimatrader: löst. Raderna har produkt-ID i kolumnen produkt. Nya rader för 2.5.5, 4.1, 4.1.1, 4.2, 7.6 och 7.7.
 	Utanför F1
 		V2 och tillval, se [[PBS V2 och tillval]].
 		Alternativen [[ALT01]] och [[ALT03]] ingår inte.

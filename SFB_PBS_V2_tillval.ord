@@ -261,7 +261,7 @@ PBS V2 och tillval ^PBS-V2T
 				Kvalitetskriterier
 					Acceptanskriteriet i [[PIM-N04]] är uppfyllt i produktion.
 		1.4 Automatisk webbstatus
-			Har inget paket i kravspecifikationen. Utökning utöver [[PIM-W06]].
+			Har inget paket i kravspecifikationen. Utökning utöver [[PIM-W06]]. Estimeras i paketet E-AUTOWEBB.
 			1.4.1 Regel för klar per kanal +produkt ^PV-1-4-1
 				paket::
 				krav:: PIM-W06
@@ -493,11 +493,11 @@ PBS V2 och tillval ^PBS-V2T
 			@ 1.3.7 Testprotokoll och överlämning för AP19^PV-1-3-7
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB.
-		[ ] Paket för automatisk webbstatus: 1.4 saknar paket. Ska det bli ett nytt AP23 i estimatet, eller ingå i ett befintligt V2-paket?
+		[ ] Paket för automatisk webbstatus: 1.4 estimeras nu i paketet E-AUTOWEBB under V2, utan AP-nummer, som tioårsarkivet. Ska det få ett AP-nummer i svaret till SFB?
 		[ ] Webbstatus per kanal: förstudien har tre nivåer, B2C, B2B och Riks. Kravspecifikationen har en webbstatus. Gäller beslutet om automatisk webbstatus en eller tre statusar? Tre statusar ändrar kontraktet med MagicBox.
 		[ ] Automatisk arkivering utan AP17: om AP17 inte beställs saknas lagersaldo i PIM. Ska regeln då bara använda datum, eller ska automatisk arkivering vänta?
 		[ ] Återaktivering: förstudien säger att manuell återaktivering utgår och att en ny artikel skapas i stället. Kravspecifikationen och [[AP19]] har återaktivering. Kravspecifikationen gäller tills SFB säger annat.
-		[ ] Estimat för utökningarna: automatisk arkivering och automatisk webbstatus har inga rader i SFB_Estimat_rader.csv.
+		[x] Estimat för utökningarna: löst. Automatisk arkivering har en rad i AP19 och automatisk webbstatus har paketet E-AUTOWEBB.
 		[ ] Ansvar för AP20: kravspecifikationen låter oss föreslå ansvarig part. PBS:en antar PIM-partner.
 	Utanför
 		[[ALT01]] och [[ALT03]] är alternativ, inte tillägg, och ingår inte här.
