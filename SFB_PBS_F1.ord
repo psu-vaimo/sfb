@@ -1,373 +1,1275 @@
 PBS F1 första driftversionen ^PBS-F1
-	version:: 0.4
+	version:: 0.5
 	datum:: 2026-11-15
 	Produktnedbrytning för hela F1: [[AP01]] till [[AP16]] och [[AP22]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
-	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2, inte igen i 2.3 eller 2.4.
+	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2.3, inte igen i 2.3 eller 2.4.
 	Produkter med part ITM8 eller Nuvarande part ingår i F1 men inte i Vaimos pris.
 	Raderna Förstudien: kommer från discoveryrapporten v0.5 och dess bilagor. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
+	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
+	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
 	1 Teknisk precisering
-		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord.
+		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord. Produkterna där heter PA-nummer, och F1:s produkter beror på dem.
 		@ PBS AP01 Teknisk precisering och inventering^PBS-AP01
 	2 PIM-applikationen
-		2.1 Datamodell +produkt
+		2.1 Datamodell +produkt ^PF-2-1
 			paket:: AP02
 			krav:: PIM-D01; PIM-D02; PIM-D03; PIM-D05; PIM-D07
 			part:: PIM-partner
-			2.1.1 Artikelmodell med identiteter +produkt
+			format:: Kod
+			kvalitetsmetod:: Demo
+			granskare:: SFB PIM-team; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PF-2-1-1; PF-2-1-2; PF-2-1-3; PF-2-1-4; PF-2-1-5
+			Syfte
+				Grunden som gränssnitt, Excel, integrationer och migrering bygger på.
+			Innehåll
+				Objekt, identiteter, attribut med skilda käll- och egna värden, referensdata, tre kategoriträd och manuella produktgrupper. Dokumenterad datamodell.
+				Gemensam överstyrningslogik och redigeringsregler ligger i 2.2.3. Här ingår modellen.
+			Kvalitetskriterier
+				Varje fält i fältmatrisen PA-1-3 finns i modellen med rätt datatyp och skyddsnivå.
+				Acceptanskontrollen Identiteter och struktur i SFB_Krav.ord går att genomföra.
+			2.1.1 Artikelmodell med identiteter +produkt ^PF-2-1-1
 				paket:: AP02
 				krav:: PIM-D01
 				part:: PIM-partner
-				Stabil intern identitet och bevarade källnycklar. Samma GTIN från olika leverantörer är separata artiklar.
-				Förstudien: C4:s fält Artikeltyp rymmer typ, sortiment, livscykel och berikningsregel och blir tre eller fyra fält. Plats för GTIN och GLN inför övergången till GS1 omkring kvartal 3 2027.
-			2.1.2 Attributmodell med käll- och egna värden +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: Vaimo testledare
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7; PA-1-3; PA-1-4
+				Syfte
+					Ger varje artikel en stabil identitet som tål källuppdateringar och migrering.
+				Innehåll
+					Intern identitet, bevarade källnycklar och plats för GTIN och GLN.
+					Förstudien: C4:s fält Artikeltyp rymmer typ, sortiment, livscykel och berikningsregel och blir tre eller fyra fält.
+				Kvalitetskriterier
+					Två artiklar med samma GTIN och olika leverantörer förblir två poster. Import med samma källnyckel uppdaterar samma post. Inledande nollor bevaras, [[PIM-D01]].
+			2.1.2 Attributmodell med käll- och egna värden +produkt ^PF-2-1-2
 				paket:: AP02
 				krav:: PIM-D03; PIM-W09
 				part:: PIM-partner
-				Datatyp, enhet, listvärden och källmappning. Senaste källvärde och eget värde lagras separat.
-			2.1.3 Referensdata för leverantörer och varumärken +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: Vaimo testledare
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7; PA-1-3; PA-1-3-1
+				Syfte
+					Bevarar alla attribut och håller källvärde och eget värde isär.
+				Innehåll
+					Attributdefinitioner med datatyp, enhet, listvärden och källmappning. Senaste källvärde och eget värde lagras separat för de godkända egenskaperna.
+				Kvalitetskriterier
+					Antal definitioner och värden stäms av mot godkänd export, [[PIM-D03]].
+					Eget nollvärde bevaras, [[PIM-W09]].
+			2.1.3 Referensdata för leverantörer och varumärken +produkt ^PF-2-1-3
 				paket:: AP02
 				krav:: PIM-D07
 				part:: PIM-partner
-				Förstudien: C4:s varumärkesregister rymmer varumärken, leverantörer, miljömärkningar och farosymboler. De blir separata register.
-			2.1.4 Tre kategoriträd +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: Vaimo testledare
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7; PA-1-4
+				Syfte
+					Låter artiklar referera leverantörer och varumärken med stabil identitet.
+				Innehåll
+					Register för leverantörer och varumärken, med skyddade källägda identifierare.
+					Förstudien: C4:s varumärkesregister rymmer varumärken, leverantörer, miljömärkningar och farosymboler. De blir separata register.
+				Kvalitetskriterier
+					Dubblett på fastställd referensnyckel avvisas, [[PIM-D07]].
+			2.1.4 Tre kategoriträd +produkt ^PF-2-1-4
 				paket:: AP02
 				krav:: PIM-D05
 				part:: PIM-partner
-				Produktkatalog, Brukspecialisten och Weydes.
-			2.1.5 Produktgruppsmodell +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7; PA-1-3
+				Syfte
+					Bär de tre aktiva kategoriträden.
+				Innehåll
+					Produktkatalog, Brukspecialisten och Weydes, och manuell relation från produkter och artiklar.
+				Kvalitetskriterier
+					De två uteslutna äldre träden finns inte i den aktiva katalogen, [[PIM-D05]].
+			2.1.5 Produktgruppsmodell +produkt ^PF-2-1-5
 				paket:: AP02
 				krav:: PIM-D02
 				part:: PIM-partner
-				En variantgrupp och flera bundles per artikel enligt [[B12]]. Gruppvärden på gruppen.
-		2.2 Administratörsgränssnitt +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7; PA-1-5
+				Syfte
+					Bär manuella produktgrupper enligt [[B12]].
+				Innehåll
+					Grupper med egna värden, högst en variantgrupp och flera bundles per artikel. Ingen bundle-logik för antal, pris eller lager.
+				Kvalitetskriterier
+					Försök till en andra variantgrupp avvisas. Artikel kan kopplas loss utan radering, [[PIM-D02]].
+		2.2 Administratörsgränssnitt +produkt ^PF-2-2
 			paket:: AP03
 			krav:: PIM-W01; PIM-W02; PIM-W03; PIM-W04; PIM-W05; PIM-W06; PIM-W07; PIM-W08; PIM-W09; PIM-Q03; PIM-Q04; PIM-D04; PIM-D06
 			part:: PIM-partner
-			2.2.1 Sökning och filter +produkt
+			format:: Kod
+			kvalitetsmetod:: Demo
+			granskare:: SFB PIM-team; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-2-1; PF-2-2-2; PF-2-2-3; PF-2-2-4; PF-2-2-5; PF-2-2-6; PF-2-2-7; PF-2-2-8
+			Syfte
+				Gränssnittet där två PIM-administratörer gör det dagliga arbetet, på svenska.
+			Innehåll
+				Delprodukterna 2.2.1 till 2.2.8. Medier ligger i 2.5, tabell i 2.3, Excel i 2.4 och arkivfunktioner i V2.
+			Kvalitetskriterier
+				Acceptanskontrollerna Dagligt arbete och Skyddad berikning i SFB_Krav.ord går att genomföra.
+			2.2.1 Sökning och filter +produkt ^PF-2-2-1
 				paket:: AP03
 				krav:: PIM-W01
 				part:: PIM-partner
-			2.2.2 Artikelvy och enskild redigering +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1
+				Syfte
+					Gör relevanta artiklar möjliga att hitta och bearbeta.
+				Innehåll
+					Sökning på benämning och identifierare, filter för leverantör, kategori, webbstatus, utgåendestatus och saknad bild eller kategori.
+				Kvalitetskriterier
+					Kombinerade filter ger endast matchande poster. Minst 100 träffar kan hanteras som urval, [[PIM-W01]].
+			2.2.2 Artikelvy och enskild redigering +produkt ^PF-2-2-2
 				paket:: AP03
 				krav:: PIM-W02; PIM-W03; PIM-W06; PIM-W07
 				part:: PIM-partner
-				Manuell artikel, tillåtna attribut, produktrelation, kategorier, webbstatus och livscykelstatus.
-			2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1; PF-2-2-3
+				Syfte
+					Det dagliga arbetet med en artikel i taget.
+				Innehåll
+					Manuell artikel, tillåtna attribut, textfält, produktrelation, kategorier, manuell webbstatus och livscykelstatus.
+				Kvalitetskriterier
+					Artikel skapas, sparas och öppnas på nytt med korrekt identitet. Saknad identitet ger fältanknutet fel, [[PIM-W02]].
+					Både aktiv och inaktiv artikel når MagicBox, [[PIM-W06]].
+			2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler +produkt ^PF-2-2-3
 				paket:: AP03
 				krav:: PIM-W04; PIM-W08; PIM-W09
 				part:: PIM-partner
-				Används av 2.2, 2.3 och 2.4. Räknas bara här.
-			2.2.4 Ändringsnotislista +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo testledare; SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1-2; PA-1-3-2; PA-1-3-3
+				Syfte
+					En gemensam regelmotor för enskild redigering, tabell, Excel och källmottagning. Räknas bara här.
+				Innehåll
+					Effektivt värde, överstyrning och borttagen överstyrning, skyddade fält, validering av identiteter, referenser, datatyper och listvärden.
+				Kvalitetskriterier
+					Ny källtext ändrar externfältet men inte internfältet, [[PIM-W04]].
+					Ogiltig referens blockeras med fält och orsak. Artikel utan bild kan sparas med bristmarkering, [[PIM-W08]].
+					Samma regeltester går igenom via 2.2.2, 2.3 och 2.4.
+			2.2.4 Ändringsnotislista +produkt ^PF-2-2-4
 				paket:: AP03
 				krav:: PIM-W05
 				part:: PIM-partner
-			2.2.5 Samtidighetsskydd +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-2-3
+				Syfte
+					Gör manuella överstyrningar möjliga att ompröva när källan ändras.
+				Innehåll
+					Gemensam lista med artikel, fält, tid och före- och eftervärde, som kan kvitteras.
+				Kvalitetskriterier
+					Ändrad källa skapar en oläst åtgärd. Oförändrad omsändning skapar ingen, [[PIM-W05]].
+			2.2.5 Samtidighetsskydd +produkt ^PF-2-2-5
 				paket:: AP03
 				krav:: PIM-Q03
 				part:: PIM-partner
-			2.2.6 Ändringshistorik +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo testledare
+				godkännare:: SFB produktägare
+				beror på:: PF-2-2-2
+				Syfte
+					Hindrar att två administratörer tyst skriver över varandra.
+				Innehåll
+					Versionskontroll vid sparande och konfliktvy med medvetet beslut.
+				Kvalitetskriterier
+					Andra sparningen upptäcker ändrad version och bevarar den första, [[PIM-Q03]].
+			2.2.6 Ändringshistorik +produkt ^PF-2-2-6
 				paket:: AP03
 				krav:: PIM-Q04
 				part:: PIM-partner
-			2.2.7 Attributförvaltning +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1
+				Syfte
+					Spårbarhet från driftstart.
+				Innehåll
+					Logg över redaktionella värden, statusar och relationer med tid, aktör eller källa och före- och eftervärde.
+				Kvalitetskriterier
+					En manuell ändring och en källuppdatering kan följas till användare respektive leverans, [[PIM-Q04]].
+			2.2.7 Attributförvaltning +produkt ^PF-2-2-7
 				paket:: AP03
 				krav:: PIM-D04
 				part:: PIM-partner
-				Sök, visa användning, ändra namn och beskrivning, stoppa ny användning. Se [[B10]].
-			2.2.8 Kategoriförvaltning +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1-2
+				Syfte
+					Gör försiktig städning efter migreringen möjlig. Se [[B10]].
+				Innehåll
+					Sök attribut, visa användning, ändra visningsnamn och beskrivning, stoppa ny användning.
+				Kvalitetskriterier
+					Markering mot ny användning tar inte bort befintliga värden, [[PIM-D04]].
+			2.2.8 Kategoriförvaltning +produkt ^PF-2-2-8
 				paket:: AP03
 				krav:: PIM-D06
 				part:: PIM-partner
-		2.3 Tabellredigering +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1-4
+				Syfte
+					Gör de tre träden förvaltningsbara.
+				Innehåll
+					Skapa, byta namn, ordna och flytta noder. Borttagning blockeras om relationer eller undernoder finns.
+				Kvalitetskriterier
+					Ändringen når MagicBox. Borttagning av använd nod ger begripligt fel, [[PIM-D06]].
+		2.3 Tabellredigering +produkt ^PF-2-3
 			paket:: AP16
 			krav:: PIM-N01
 			part:: PIM-partner
-			Cellredigering, inklistring av cellområde, gemensam ändring på valda rader och resultat per artikel för minst 100 artiklar. Komponentlicens som kostnadspost.
-		2.4 Excelimport och export +produkt
+			format:: Kod
+			kvalitetsmetod:: Demo
+			granskare:: SFB PIM-team; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-2-1; PF-2-2-3; PF-2-2-5
+			Syfte
+				Snabb redigering av stora urval direkt i gränssnittet, i första driftversionen. Se [[B01]].
+			Innehåll
+				Cellredigering, inklistring av cellområde, gemensam ändring på valda rader, kontroll före sparande och resultat per artikel för minst 100 artiklar.
+				Använder reglerna i 2.2.3. Komponentlicens som kostnadspost.
+			Kvalitetskriterier
+				Endast bekräftade rader ändras. Konflikt med nyare ändring visas per artikel eller fält, [[PIM-N01]].
+		2.4 Excelimport och export +produkt ^PF-2-4
 			paket:: AP06
 			krav:: PIM-X01; PIM-X02; PIM-X03
 			part:: PIM-partner
-			Mallen själv tas fram i [[AP01]].
-			2.4.1 Excelimport med förhandskontroll +produkt
+			format:: Kod
+			kvalitetsmetod:: Demo
+			granskare:: SFB PIM-team; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-4-1; PF-2-4-2; PF-2-4-3
+			Syfte
+				Volymarbete med Excel för manuella artiklar och egen berikning på källartiklar. Se [[B13]].
+			Innehåll
+				Delprodukterna 2.4.1 till 2.4.3. Mallen tas fram i AP01, PA-1-6. Ingen fri mappningsdesigner.
+			Kvalitetskriterier
+				Acceptanskontrollen Tabell och Excel i SFB_Krav.ord går att genomföra.
+			2.4.1 Excelimport med förhandskontroll +produkt ^PF-2-4-1
 				paket:: AP06
 				krav:: PIM-X01; PIM-X03
 				part:: PIM-partner
-				Radsvar, sammanfattning, konfliktvisning och återförsök utan dubbletter.
-			2.4.2 Excelexport +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PA-1-6; PF-2-2-3; PF-2-4-3
+				Syfte
+					Skapar och uppdaterar artiklar från den fasta mallen utan att källvärden ändras.
+				Innehåll
+					Förhandskontroll, radsvar, sammanfattning, konfliktvisning och återförsök utan dubbletter.
+				Kvalitetskriterier
+					En fil med 5 000 rader valideras och importeras. Tom cell raderar inte värde, [[PIM-X01]].
+					Samma behandlade nycklar ger inga extra artiklar, [[PIM-X03]].
+			2.4.2 Excelexport +produkt ^PF-2-4-2
 				paket:: AP06
 				krav:: PIM-X02
 				part:: PIM-partner
-			2.4.3 Jobbstatus för långa jobb +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PA-1-6; PF-2-1; PF-2-4-3
+				Syfte
+					Export för extern redigering och återimport.
+				Innehåll
+					Urval med stabila identifierare, fält för egen berikning och tydligt markerade källfält.
+				Kvalitetskriterier
+					5 000 artiklar exporteras. Oförändrade celler ger ingen ändring vid återimport, [[PIM-X02]].
+			2.4.3 Jobbstatus för långa jobb +produkt ^PF-2-4-3
 				paket:: AP06
 				krav:: PIM-Q02
 				part:: PIM-partner
-		2.5 Medie- och dokumenthantering +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-7
+				Syfte
+					Låter långa jobb köra utan att gränssnittet låses.
+				Innehåll
+					Synlig status och resultat för import, export och andra långa jobb.
+				Kvalitetskriterier
+					Sökning och redigering fungerar medan ett jobb om 5 000 rader pågår, [[PIM-Q02]].
+		2.5 Medie- och dokumenthantering +produkt ^PF-2-5
 			paket:: AP05
 			krav:: PIM-A01; PIM-A02; PIM-A03; PIM-A04; PIM-A05; PIM-A08
 			part:: PIM-partner
-			2.5.1 Medierelationer med flerfilsuppladdning +produkt
+			format:: Kod
+			kvalitetsmetod:: Demo
+			granskare:: SFB PIM-team; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-5-1; PF-2-5-2; PF-2-5-3; PF-2-5-4; PF-2-5-5
+			Syfte
+				Bilder och dokument med relationer, ordning och versioner. Se [[B04]].
+			Innehåll
+				Delprodukterna 2.5.1 till 2.5.5. Befintlig lagring, transformering och länkar ligger i 3.4.
+			Kvalitetskriterier
+				Acceptanskontrollen Medier och versioner i SFB_Krav.ord går att genomföra.
+			2.5.1 Medierelationer med flerfilsuppladdning +produkt ^PF-2-5-1
 				paket:: AP05
 				krav:: PIM-A01
 				part:: PIM-partner
-			2.5.2 Ordning och webbexkludering per relation +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-1; PA-2-2
+				Syfte
+					Kopplar och återanvänder filer utan kopiering.
+				Innehåll
+					Typade relationer, uppladdning av flera filer till vald artikel eller produkt med resultat per fil, och inläsning av källrelationer.
+				Kvalitetskriterier
+					Tre giltiga och en ogiltig fil ger rätt resultat per fil. En fil återanvänds på två artiklar utan dubblerat innehåll, [[PIM-A01]].
+			2.5.2 Ordning och webbexkludering per relation +produkt ^PF-2-5-2
 				paket:: AP05
 				krav:: PIM-A02
 				part:: PIM-partner
-			2.5.3 Dokumentversionsarkiv +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-5-1
+				Syfte
+					Hindrar att underkända medier återkommer på webben.
+				Innehåll
+					Ordning och webbexkludering per relation, som består vid källuppdatering.
+				Kvalitetskriterier
+					Samma bild kan ha olika ordning och synlighet på två artiklar, [[PIM-A02]].
+			2.5.3 Dokumentversionsarkiv +produkt ^PF-2-5-3
 				paket:: AP05
 				krav:: PIM-A03; PIM-A05
 				part:: PIM-partner
-				Oföränderliga versioner med tioårigt bevarande, med undantag för Färgkarta och Produktkatalog.
-				Förstudien: för säkerhetsdatablad kräver REACH artikel 36 minst tio år efter senaste leverans.
-			2.5.4 Versionslista per artikel +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo testledare
+				godkännare:: SFB produktägare
+				beror på:: PF-2-5-1
+				Syfte
+					Bevarar dokumenthistorik i tio år.
+				Innehåll
+					Oföränderliga versioner med bevarat filinnehåll. Undantag för Färgkarta och Produktkatalog.
+					Förstudien: för säkerhetsdatablad kräver REACH artikel 36 minst tio år efter senaste leverans.
+				Kvalitetskriterier
+					Ändrad fil på samma käll-URL skapar en ny version. Oförändrad omsändning skapar ingen, [[PIM-A03]].
+			2.5.4 Versionslista per artikel +produkt ^PF-2-5-4
 				paket:: AP05
 				krav:: PIM-A04
 				part:: PIM-partner
-				Används även för äldre versioner från [[AP22]], utan dubbel kostnad.
-			2.5.5 Flaggning av källborttagning +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-5-3
+				Syfte
+					Skiljer aktuell publicering från arkivåtkomst.
+				Innehåll
+					Versionslista på artikeln. Används även för äldre versioner från [[AP22]], utan dubbel kostnad.
+				Kvalitetskriterier
+					Endast senaste versionen är publicerbar. Äldre version kan öppnas av administratör, [[PIM-A04]].
+			2.5.5 Flaggning av källborttagning +produkt ^PF-2-5-5
 				paket:: AP05
 				krav:: PIM-A08
 				part:: PIM-partner
-		2.6 PIM:s integrationsgränssnitt +produkt
+				format:: Kod
+				kvalitetsmetod:: Demo
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PF-2-5-1; PF-2-2-4
+				Syfte
+					Skyddar arkiv och manuella beslut när källan tar bort media.
+				Innehåll
+					Registrering och visning av källborttagning, utan automatisk radering.
+				Kvalitetskriterier
+					Källborttagning flaggas utan fysisk radering av bevarandepliktiga versioner, [[PIM-A08]].
+		2.6 PIM:s integrationsgränssnitt +produkt ^PF-2-6
 			paket:: AP04
 			krav:: PIM-I02; PIM-I03; PIM-I04
 			part:: PIM-partner
-			2.6.1 Källmottagning +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: ITM8; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-6-1; PF-2-6-2; PF-2-6-3
+			Syfte
+				PIM-sidan av kontrakten i PA-1-2. MagicBox-adaptern ligger i 3.2 och Snicken-adaptern i 3.3.
+			Innehåll
+				Delprodukterna 2.6.1 till 2.6.3.
+			Kvalitetskriterier
+				Kontraktsexemplen i PA-1-2-5 går igenom.
+			2.6.1 Källmottagning +produkt ^PF-2-6-1
 				paket:: AP04
 				krav:: PIM-I02
 				part:: PIM-partner
-			2.6.2 Utgående ändringsflöde +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: ITM8
+				godkännare:: SFB produktägare
+				beror på:: PA-1-2; PF-2-1; PF-2-2-3
+				Syfte
+					Tar emot källdata utan att egen berikning skrivs över.
+				Innehåll
+					Uppdatering av källägda fält och relationer, spårbar källa och ändringsidentitet, återupptag efter fel.
+				Kvalitetskriterier
+					Samma leverans två gånger ger samma resultat. En äldre revision skriver inte över en nyare, [[PIM-I02]].
+			2.6.2 Utgående ändringsflöde +produkt ^PF-2-6-2
 				paket:: AP04
 				krav:: PIM-I03
 				part:: PIM-partner
-			2.6.3 Återförsök, omsändning och felvy +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: ITM8; SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PA-1-2; PF-2-1
+				Syfte
+					Håller mottagarna aktuella.
+				Innehåll
+					Inkrementella ändringar för alla artiklar, med berörda produkter, kategorier, effektiva värden, medier och status.
+				Kvalitetskriterier
+					Ändring av en produkt som används av två artiklar blir tillgänglig för båda. Ändring av inaktiv artikel skickas, [[PIM-I03]].
+			2.6.3 Återförsök, omsändning och felvy +produkt ^PF-2-6-3
 				paket:: AP04
 				krav:: PIM-I04
 				part:: PIM-partner
-		2.7 Teknisk arkitektur och säkerhetslösning +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: ITM8
+				godkännare:: SFB produktägare
+				beror på:: PF-2-6-1; PF-2-6-2
+				Syfte
+					Gör fel upptäckbara och möjliga att åtgärda.
+				Innehåll
+					Återförsök, felstatus, spårbar leverans, omsändning och administratörsvy med senaste lyckade överföring.
+				Kvalitetskriterier
+					Simulerat avbrott ger synligt fel. Återstart levererar resten utan dubbletter, [[PIM-I04]].
+		2.7 Teknisk arkitektur och säkerhetslösning +produkt ^PF-2-7
 			paket:: AP02
 			krav:: PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02
 			part:: PIM-partner
-			Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven. Kravspecifikationen ber oss föreslå detta.
-			Godkänns av SFB tidigt i F1, eftersom de andra produkterna i 2 bygger på den. Säkerhetslösningen driftsätts i 5.
-			Utgår från specifikationen av icke-funktionella krav i AP01, produkt 1.7.
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PA-1-7; PA-2-5; PA-1-2
+			Syfte
+				Kravspecifikationen ber oss föreslå teknikstack, hosting och säkerhetslösning. Alla andra produkter i 2 och 5 bygger på den.
+			Innehåll
+				Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
+				Säkerhetslösningen driftsätts i 5.
+			Kvalitetskriterier
+				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
+				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för 7.5.
+				Godkänd tidigt i F1, innan utvecklingen av 2.1 startar.
 	3 Integrationer utanför PIM
-		Externa beroenden. Ingår inte i Vaimos pris.
-		3.1 Källintegrationer till MagicBox +produkt
+		Externa beroenden. Ingår inte i Vaimos pris. ITM8 tar fram produkterna. SFB e-handel godkänner dem, eftersom MagicBox och Plattan 2.0 är deras.
+		3.1 Källintegrationer till MagicBox +produkt ^PF-3-1
 			paket:: AP07
 			krav:: PIM-I05; PIM-I06; PIM-I07
 			part:: ITM8
-			3.1.1 Omkopplad Finfo-hämtning +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: Vaimo teknisk arkitekt; SFB PIM-team
+			godkännare:: SFB e-handel
+			beror på:: PF-3-1-1; PF-3-1-2; PF-3-1-3
+			Syfte
+				Källdata når MagicBox och nya PIM utan C4.
+			Innehåll
+				Delprodukterna 3.1.1 till 3.1.3. ITM8 anger timmar för Finfo, BASTA och BVB separat.
+			Kvalitetskriterier
+				Acceptanskontrollen Utbyte hela vägen visar att Finfo, BASTA och BVB når rätt artikel.
+			3.1.1 Omkopplad Finfo-hämtning +produkt ^PF-3-1-1
 				paket:: AP07
 				krav:: PIM-I05
 				part:: ITM8
-			3.1.2 BASTA-anslutning +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB e-handel
+				beror på:: PA-1-2
+				Syfte
+					Återanvänder dagens Finfo-hämtning mot MagicBox i stället för C4.
+				Innehåll
+					Omkopplade flöden, scheman och transformationer för Finfos tjänster.
+				Kvalitetskriterier
+					Godkända prov från varje relevant Finfo-tjänst når PIM med rätt källfält. Total- och deltauppdatering verifieras, [[PIM-I05]].
+			3.1.2 BASTA-anslutning +produkt ^PF-3-1-2
 				paket:: AP07
 				krav:: PIM-I06
 				part:: ITM8
-			3.1.3 BVB-vidareföring +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB e-handel
+				beror på:: PA-1-2
+				Syfte
+					Bevarar BASTA-information när C4 avvecklas.
+				Innehåll
+					Ny anslutning från BASTA till MagicBox med matchning och felhantering.
+				Kvalitetskriterier
+					Omatchad post loggas och skapar inte en godtycklig dubblett, [[PIM-I06]].
+			3.1.3 BVB-vidareföring +produkt ^PF-3-1-3
 				paket:: AP07
 				krav:: PIM-I07
 				part:: ITM8
-		3.2 MagicBox-anslutning och distribution +produkt
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB e-handel
+				beror på:: PA-1-2
+				Syfte
+					Återanvänder befintlig BVB-koppling i MagicBox, enligt beslutet i PA-3-2.
+				Innehåll
+					Nödvändig vidareföring och fältmappning mot nya PIM.
+				Kvalitetskriterier
+					Ett befintligt BVB-resultat kan följas till rätt artikel, [[PIM-I07]].
+		3.2 MagicBox-anslutning och distribution +produkt ^PF-3-2
 			paket:: AP08
 			krav:: PIM-I08
 			part:: ITM8
-			MagicBox-sidan av kontraktet, verifierad ERP-matchning och distribution per delägare.
-		3.3 Snicken-adapter +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: Vaimo teknisk arkitekt
+			godkännare:: SFB e-handel
+			beror på:: PA-1-2
+			Syfte
+				MagicBox-sidan av utbytet med PIM.
+			Innehåll
+				Källöverföring till PIM, mottagning av berikad data, verifierad ERP-matchning utan C4:s sysid och distribution per delägare. Senast distribuerad information används vid PIM-avbrott.
+			Kvalitetskriterier
+				Ingen uppdateringsslinga när berikad data återkommer till MagicBox, [[PIM-I08]].
+		3.3 Snicken-adapter +produkt ^PF-3-3
 			paket:: AP09
 			krav:: PIM-I09; PIM-I10
 			part:: ITM8
-			Logiskt separat adapter som ersätter Exchange-flödet. [[ALT01]] ersätter denna produkt om det väljs.
-		3.4 Medielagring, transformering och länkar +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: Vaimo teknisk arkitekt; Snicken
+			godkännare:: Snicken
+			beror på:: PA-1-2-3
+			Syfte
+				Ersätter Exchange-flödet till Snicken med en logiskt separat adapter.
+			Innehåll
+				Mottagning av urval, matchning, startleverans, inkrementell data och återhämtning. [[ALT01]] ersätter denna produkt om det väljs.
+			Kvalitetskriterier
+				Vald artikel levereras, oönskad artikel levereras inte. Återspelning tappar inga uppdateringar, [[PIM-I10]].
+		3.4 Medielagring, transformering och länkar +produkt ^PF-3-4
 			paket:: AP10
 			krav:: PIM-A06; PIM-A07; PIM-O05
 			part:: ITM8
-			3.4.1 Godkända transformationsprofiler +produkt
+			format:: Konfiguration
+			kvalitetsmetod:: Test
+			granskare:: Vaimo teknisk arkitekt; SFB e-handel
+			godkännare:: SFB e-handel
+			beror på:: PF-3-4-1; PF-3-4-2
+			Syfte
+				Återanvänder eller ersätter lagring, transformering och länkhantering så att e-handelns medier fungerar efter C4.
+			Innehåll
+				Delprodukterna 3.4.1 och 3.4.2, och driftåtkomst. Tredjepartsavgifter anges separat.
+			Kvalitetskriterier
+				Publicerade medielänkar fungerar vid avbrott i PIM-administrationen, [[PIM-O05]].
+			3.4.1 Godkända transformationsprofiler +produkt ^PF-3-4-1
 				paket:: AP10
 				krav:: PIM-A06
 				part:: ITM8
-				Förstudien: reglerna finns i SFB:s dokument om bildkonvertering från C4 till Azure. CMYK till sRGB, högst 2000 x 2000 pixlar, TIFF, BMP och GIF som JPEG. Logotyper och symboler för miljöbedömningar och faror är PNG och konverteras inte.
-			3.4.2 Bevarade medielänkar +produkt
+				format:: Konfiguration
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PA-2-2
+				Syfte
+					Undviker försämring av e-handelns bilder.
+				Innehåll
+					Bildtransformeringar, färghantering och formatvarianter.
+					Förstudien: reglerna finns i SFB:s dokument om bildkonvertering från C4 till Azure. CMYK till sRGB, högst 2000 x 2000 pixlar, TIFF, BMP och GIF som JPEG. Logotyper och symboler för miljöbedömningar och faror är PNG och konverteras inte.
+				Kvalitetskriterier
+					Representativa original och utdata jämförs per profil och accepteras av SFB, [[PIM-A06]].
+			3.4.2 Bevarade medielänkar +produkt ^PF-3-4-2
 				paket:: AP10
 				krav:: PIM-A07
 				part:: ITM8
-				Med DNS, lagring och ompekningar där de krävs.
-				Förstudien: dokumenten nås i dag via media.woody.se och bilderna via delägarnas URL:er. Om ImageMagick, Azure Storage och Azure Fileshare finns kvar beslutas med ITM8.
+				format:: Konfiguration
+				kvalitetsmetod:: Test
+				granskare:: SFB e-handel
+				godkännare:: SFB produktägare
+				beror på:: PA-2-2
+				Syfte
+					Undviker brutna länkar hos mottagare och i externt material.
+				Innehåll
+					DNS, lagring och ompekningar där de krävs.
+					Förstudien: dokumenten nås i dag via media.woody.se och bilderna via delägarnas URL:er. Om ImageMagick, Azure Storage och Azure Fileshare finns kvar beslutas med ITM8.
+				Kvalitetskriterier
+					Alla kontrollerbara länkar i den godkända länkförteckningen svarar efter växlingen, [[PIM-A07]].
 	4 Migrerad data
-		4.1 Beslutat migreringsurval +produkt
+		4.1 Beslutat migreringsurval +produkt ^PF-4-1
 			paket:: AP11
 			krav:: PIM-M01
 			part:: SFB
-			SFB städar och beslutar urval. Se [[B03]].
-			4.1.1 Städad C4-data före uttag +produkt
+			format:: Beslut
+			kvalitetsmetod:: Godkännande
+			granskare:: Vaimo affärskonsult
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1-3
+			Syfte
+				Bestämmer vad som flyttas. SFB beslutar urvalet, [[B03]].
+			Innehåll
+				Urvalsregel för artiklar, leverantörer och filer, beslutad utifrån underlaget i PA-2-1-3.
+			Kvalitetskriterier
+				Beslutet är skriftligt och daterat, med volymer per objekttyp.
+			4.1.1 Städad C4-data före uttag +produkt ^PF-4-1-1
 				paket:: AP11
 				krav:: PIM-M01
 				part:: SFB
-				Det som måste rensas i C4 eller exporten innan flytt, till exempel leverantörs-id i varumärkesfältet och testartiklarna.
-				Förstudien: paket 1 i avsnitt 10, med besluten i avsnitt 5.6.
-		4.2 C4-export för migrering +produkt
+				format:: Data
+				kvalitetsmetod:: Avstämning
+				granskare:: Vaimo affärskonsult
+				godkännare:: SFB produktägare
+				beror på:: PF-4-1; PA-1-4-1; PA-1-5
+				Syfte
+					Det som måste rensas innan flytt, så att skräp inte följer med.
+				Innehåll
+					Rensning i C4 eller exporten, till exempel leverantörs-id i varumärkesfältet, testartiklarna och avvikande grupprelationer enligt SFB:s beslut.
+					Förstudien: paket 1 i avsnitt 10, med besluten i avsnitt 5.6.
+				Kvalitetskriterier
+					Varje beslutad rensning är gjord eller har en regel i mappningen.
+		4.2 C4-export för migrering +produkt ^PF-4-2
 			paket:: AP11
 			krav:: PIM-M01
 			part:: Nuvarande part
-		4.3 Migreringsmappning +produkt
+			format:: Data
+			kvalitetsmetod:: Avstämning
+			granskare:: Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PF-4-1-1
+			Syfte
+				Källan för prov-, korrigerings- och slutkörning.
+			Innehåll
+				Export enligt det format som inventerades i AP01, för urvalet. En export per körning.
+			Kvalitetskriterier
+				Antal per posttyp stämmer med urvalet.
+		4.3 Migreringsmappning +produkt ^PF-4-3
 			paket:: AP11
 			krav:: PIM-M02
 			part:: PIM-partner
-			En regel per källfält och relation, numeriska mediekategorier översatta till ordning.
-			Förstudien: mappningen behöver dela upp Artikeltyp och varumärkesregistret, mappa interna varumärken mot Finfos och flytta bara mått som är språkneutrala.
-		4.4 Migreringsverktyg +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PA-1-3; PF-2-1; PF-4-1
+			Syfte
+				Bevarar det arbete som redan gjorts i C4.
+			Innehåll
+				En regel per källfält och relation, numeriska mediekategorier översatta till ordning, gruppregeln kontrollerad.
+				Förstudien: mappningen behöver dela upp Artikeltyp och varumärkesregistret och mappa interna varumärken mot Finfos.
+			Kvalitetskriterier
+				Före- och efterexempel bekräftar medieordning och att exkluderade medier förblir exkluderade, [[PIM-M02]].
+		4.4 Migreringsverktyg +produkt ^PF-4-4
 			paket:: AP11
 			krav:: PIM-M02; PIM-M03
 			part:: PIM-partner
-			Överlämnas med koden. Återanvänds i [[AP22]].
-		4.5 Avstämningsprotokoll per körning +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-4-3
+			Syfte
+				Kör mappningen repeterbart. Återanvänds i [[AP22]] och överlämnas med koden.
+			Innehåll
+				Inläsning, transformering, avstämning och omkörning. Fasta och rörliga delar redovisas.
+			Kvalitetskriterier
+				Två körningar på samma export ger samma resultat.
+		4.5 Avstämningsprotokoll för prov- och korrigeringskörning +produkt ^PF-4-5
 			paket:: AP11
 			krav:: PIM-M03
 			part:: PIM-partner
-			Provkörning, korrigeringskörning och slutkörning. Antal per objekttyp och relation samt valda fältvärden.
-		4.6 Migrerat bestånd i produktion +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Avstämning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-4-2; PF-4-4; PF-5-1
+			Syfte
+				Gör fel synliga före växling, och ger migrerad data för acceptanstestet.
+			Innehåll
+				Full provmigrering av urvalet till testmiljön och en korrigeringskörning efter avvikelser. Antal per objekttyp och relation samt valda fältvärden.
+			Kvalitetskriterier
+				Inga oförklarade differenser efter korrigeringskörningen, [[PIM-M03]].
+		4.6 Migrerat bestånd i produktion +produkt ^PF-4-6
 			paket:: AP11
 			krav:: PIM-M02; PIM-M03
 			part:: PIM-partner
-			Artiklar, produktgrupper, kategorier, attribut, referensdata och aktuella medier enligt urvalet.
-			Förstudien: flytta bara filer som används och rensa dubbletter på checksumma.
-		4.7 Migrerade äldre dokumentversioner +produkt
+			format:: Data
+			kvalitetsmetod:: Avstämning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-6-6; PF-7-1; PF-5-2
+			Syfte
+				Det aktuella beståndet i produktion vid växlingen.
+			Innehåll
+				Slutkörning med sista delta eller kontrollerat ändringsstopp, och dess avstämningsprotokoll. Artiklar, produktgrupper, kategorier, attribut, referensdata och aktuella medier enligt urvalet.
+				Förstudien: flytta bara filer som används och rensa dubbletter på checksumma.
+			Kvalitetskriterier
+				Avstämningen stämmer med korrigeringskörningen, med förklarade skillnader för ändringar sedan dess.
+		4.7 Migrerade äldre dokumentversioner +produkt ^PF-4-7
 			paket:: AP22
 			krav:: PIM-M06
 			part:: PIM-partner
-			Med filinnehåll, dokumenttyp, artikelkoppling och tillgängliga versionsdatum. Luckor redovisas.
-			Förstudien: gäller särskilt äldre säkerhetsdatablad, som bara finns i C4.
-		4.8 Läsbar export av C4:s ändringslogg +produkt
+			format:: Data
+			kvalitetsmetod:: Avstämning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-4-4; PF-2-5-4; PA-2-1-2
+			Syfte
+				Säkrar dokumenthistorik innan C4 stängs.
+			Innehåll
+				Äldre versioner med filinnehåll, dokumenttyp, artikelkoppling och tillgängliga versionsdatum, och avstämningsprotokoll. Återanvänder verktyget i 4.4 och versionslistan i 2.5.4.
+				Förstudien: gäller särskilt äldre säkerhetsdatablad, som bara finns i C4.
+			Kvalitetskriterier
+				En äldre version från C4 kan öppnas från rätt artikel. Luckor redovisas och inga datum uppfinns, [[PIM-M06]].
+		4.8 Läsbar export av C4:s ändringslogg +produkt ^PF-4-8
 			paket:: AP22
 			krav:: PIM-M06; PIM-Q04
 			part:: PIM-partner
-			Om den kan tas ut. Annars en kostnadssatt åtkomstlösning för SFB:s beslut.
+			format:: Data
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1-2
+			Syfte
+				Bevarar gammal ändringshistorik utan ett nytt logggränssnitt.
+			Innehåll
+				Läsbar export om den kan tas ut. Annars en kostnadssatt åtkomstlösning för SFB:s beslut före C4:s stängning.
+			Kvalitetskriterier
+				Exporten går att öppna och söka i utan C4.
 	5 Miljöer och drift
-		5.1 Testmiljö +produkt
+		5.1 Testmiljö +produkt ^PF-5-1
 			paket:: AP13
 			krav:: PIM-O02
 			part:: PIM-partner
-			Reproducerbar konfiguration, hemligheter utanför källkod.
-		5.2 Produktionsmiljö +produkt
+			format:: Miljö
+			kvalitetsmetod:: Demo
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-2-7
+			Syfte
+				Gör förändringar möjliga att testa. ITM8 får åtkomst från start.
+			Innehåll
+				Reproducerbar konfiguration och hemligheter utanför källkod.
+			Kvalitetskriterier
+				En dokumenterad version driftsätts med miljöspecifik konfiguration, [[PIM-O02]].
+		5.2 Produktionsmiljö +produkt ^PF-5-2
 			paket:: AP13
 			krav:: PIM-O02
 			part:: PIM-partner
-			Reproducerbar konfiguration, hemligheter utanför källkod och demonstrerad återgång till föregående version.
-		5.3 Inloggning och tekniska identiteter +produkt
+			format:: Miljö
+			kvalitetsmetod:: Demo
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-2-7; PF-5-3
+			Syfte
+				Driftmiljön för F1.
+			Innehåll
+				Reproducerbar konfiguration, hemligheter utanför källkod och kontrollerad driftsättning.
+			Kvalitetskriterier
+				Återgång till föregående applikationsversion demonstreras, [[PIM-O02]].
+		5.3 Inloggning och tekniska identiteter +produkt ^PF-5-3
 			paket:: AP13
 			krav:: PIM-O01
 			part:: PIM-partner
-		5.4 Backup och återställningsprotokoll +produkt
+			format:: Konfiguration
+			kvalitetsmetod:: Test
+			granskare:: Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-2-7; PA-2-5
+			Syfte
+				Kontrollerad åtkomst och ansvarig aktör i loggar.
+			Innehåll
+				Personliga konton för administratörer, separata tekniska identiteter för integrationer och återanvänd identitetstjänst om den finns.
+			Kvalitetskriterier
+				Obehörig åtkomst avvisas. Avslutad användare förlorar åtkomst. Integrationen använder inte ett personkonto, [[PIM-O01]].
+		5.4 Backup och återställningsprotokoll +produkt ^PF-5-4
 			paket:: AP13
 			krav:: PIM-O03
 			part:: PIM-partner
-			Genomfört återställningsprov med RPO högst en timme och RTO högst en arbetsdag. Används i 6.5.
-		5.5 Övervakning och larm +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Test
+			granskare:: Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PF-5-2
+			Syfte
+				Visar att data går att återställa inom målen. Används i acceptansen 6.5 utan att provet görs igen.
+			Innehåll
+				Dokumenterad backup och genomfört återställningsprov med kända ändringstider. Backup ersätter inte dokumentversionsarkivet.
+			Kvalitetskriterier
+				Uppmätt dataförlust högst en timme och återställning inom en arbetsdag enligt [[B09]], [[PIM-O03]].
+		5.5 Övervakning och larm +produkt ^PF-5-5
 			paket:: AP13
 			krav:: PIM-O04
 			part:: PIM-partner
-		5.6 Felsökningsrutin +produkt
+			format:: Konfiguration
+			kvalitetsmetod:: Test
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-5-2
+			Syfte
+				Förhindrar att fel blir osynliga efter överlämning.
+			Innehåll
+				Övervakning av tjänstetillstånd, misslyckade jobb och integrationsstopp, med utsedda larmmottagare.
+			Kvalitetskriterier
+				Ett simulerat integrationsstopp ger larm till utsedd mottagare, [[PIM-O04]].
+		5.6 Felsökningsrutin +produkt ^PF-5-6
 			paket:: AP13
 			krav:: PIM-O04
 			part:: PIM-partner
-		5.7 Verifierad lösning för åtkomst vid PIM-avbrott +produkt
+			format:: Dokument
+			kvalitetsmetod:: Test
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-5-5
+			Syfte
+				Låter en annan tekniker felsöka utan Vaimos hjälp.
+			Innehåll
+				Felsökning, ansvar, uppgraderingar och säkerhetsuppdateringar.
+			Kvalitetskriterier
+				En annan tekniker följer rutinen vid ett simulerat fel, [[PIM-O04]].
+		5.7 Verifierad lösning för åtkomst vid PIM-avbrott +produkt ^PF-5-7
 			paket:: AP13
 			krav:: PIM-O05
 			part:: PIM-partner
+			format:: Konfiguration
+			kvalitetsmetod:: Test
+			granskare:: ITM8; Snicken
+			godkännare:: SFB produktägare
+			beror på:: PA-2-4; PF-3-2; PF-3-4
+			Syfte
+				Redan publicerad information fungerar när PIM:s administrationsdel ligger nere.
+			Innehåll
+				Anpassningar på PIM-sidan enligt PA-2-4. Anpassningar hos ITM8 ligger i 3.2, 3.3 och 3.4.
+			Kvalitetskriterier
+				Lösningen är på plats för avbrottstestet i 6.4.
 	6 Test och acceptans
 		Komponenttester ingår i respektive produkt ovan.
-		6.1 Testplan med kravspårning +produkt
+		6.1 Testplan med kravspårning +produkt ^PF-6-1
 			paket:: AP12
 			krav:: PIM-M04
 			part:: PIM-partner
-			Spårar både funktionella krav och de icke-funktionella kraven i AP01, produkt 1.7.
-		6.2 Integrationstestprotokoll +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB PIM-team; ITM8
+			godkännare:: SFB produktägare
+			beror på:: PA-1-7; PA-1-2
+			Syfte
+				Visar hur varje krav verifieras före driftstart.
+			Innehåll
+				Testfall per krav-ID, både funktionella och icke-funktionella från PA-1-7, testdata, miljö, roller och SFB:s medverkan per vecka.
+			Kvalitetskriterier
+				Varje F1-krav och varje krav i PA-1-7 har minst ett testfall.
+				De åtta acceptanskontrollerna i SFB_Krav.ord är täckta.
+		6.2 Integrationstestprotokoll +produkt ^PF-6-2
 			paket:: AP12
 			krav:: PIM-M04; PIM-I08
 			part:: PIM-partner
-			Hela kedjan från källa via PIM och MagicBox till mottagare, med ITM8.
-		6.3 Kapacitets- och samtidighetsrapport +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Test
+			granskare:: ITM8; SFB e-handel
+			godkännare:: SFB produktägare
+			beror på:: PF-6-1; PF-2-6; PF-3-1; PF-3-2; PF-3-3; PF-5-1
+			Syfte
+				Visar att hela kedjan fungerar från källa via PIM och MagicBox till mottagare.
+			Innehåll
+				Utfall per testfall, med ITM8. Källa till PIM, manuell ändring till MagicBox, delägarutdata och Snicken.
+			Kvalitetskriterier
+				Acceptanskontrollen Utbyte hela vägen går igenom.
+		6.3 Kapacitets- och samtidighetsrapport +produkt ^PF-6-3
 			paket:: AP12
 			krav:: PIM-Q01; PIM-Q02
 			part:: PIM-partner
-			Två administratörer, 100 artiklar per urval i tabellen och Exceljobb om 5 000 rader. Mättider mot profilen i [[B08]].
-			Svarstider för sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök, och Excel med 5 000 rader inom 10 minuter, om målen bekräftas i AP01.
-		6.4 Avbrottstestprotokoll +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Test
+			granskare:: Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PF-6-1; PF-2-3; PF-2-4; PF-4-5
+			Syfte
+				Visar att lösningen klarar volymerna och två samtidiga administratörer.
+			Innehåll
+				Test med representativ full datamängd eller motiverad ekvivalent last. Två administratörer, 100 artiklar per urval i tabellen och Exceljobb om 5 000 rader. Mättider mot profilen i [[B08]].
+				Svarstider för sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök, och Excel med 5 000 rader inom 10 minuter, om målen bekräftas i AP01.
+			Kvalitetskriterier
+				Ingen data förloras och gränssnittet förblir användbart, [[PIM-Q02]].
+		6.4 Avbrottstestprotokoll +produkt ^PF-6-4
 			paket:: AP12
 			krav:: PIM-O05
 			part:: PIM-partner
-		6.5 Acceptanstestprotokoll +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Test
+			granskare:: ITM8; Snicken
+			godkännare:: SFB produktägare
+			beror på:: PF-6-1; PF-5-7
+			Syfte
+				Visar att mottagare klarar ett avbrott i PIM.
+			Innehåll
+				Simulerat avbrott i PIM-administrationen och återstart.
+			Kvalitetskriterier
+				Mottagare använder senast levererad information och testurvalets medielänkar. Datautbytet återupptas utan tappade positioner, [[PIM-O05]].
+		6.5 Acceptanstestprotokoll +produkt ^PF-6-5
 			paket:: AP12
 			krav:: PIM-M04
 			part:: PIM-partner
-			Krav-ID kopplat till utfall och avvikelse, för de åtta acceptanskontrollerna i SFB_Krav.ord.
-		6.6 Acceptansbeslut +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Test
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-6-2; PF-6-3; PF-6-4; PF-5-4; PF-4-5; PF-4-7; PF-2-2; PF-2-5
+			Syfte
+				Underlag för SFB:s acceptansbeslut.
+			Innehåll
+				Krav-ID kopplat till utfall och avvikelse för de åtta acceptanskontrollerna, med två PIM-administratörer, migrerad data och återställningsprotokollet från 5.4. Rättning och omtest av fel som hindrar acceptans.
+			Kvalitetskriterier
+				Inga blockerande fel för dataförlust, åtkomst eller distribution kvarstår, [[PIM-M04]].
+		6.6 Acceptansbeslut +produkt ^PF-6-6
 			paket:: AP12
 			krav:: PIM-M04
 			part:: SFB
-			SFB:s godkännande, med uttrycklig acceptans av kvarstående avvikelser.
+			format:: Beslut
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB produktägare
+			godkännare:: SFB sponsor
+			beror på:: PF-6-5
+			Syfte
+				SFB:s beslut att F1 får gå i drift.
+			Innehåll
+				Godkännande med uttrycklig acceptans och åtgärdsplan för kvarstående avvikelser.
+			Kvalitetskriterier
+				Skriftligt och daterat.
 	7 Driftsättning och överlämning
-		7.1 Växlingsplan +produkt
+		7.1 Växlingsplan +produkt ^PF-7-1
 			paket:: AP14
 			krav:: PIM-M05
 			part:: PIM-partner
-			Sista export, ändringsstopp eller delta, verifiering av mottagare, stoppkriterier och beslutad återgång.
-		7.2 Driftsatt F1 med växlingsprotokoll +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; SFB e-handel; Nuvarande part
+			godkännare:: SFB produktägare
+			beror på:: PF-4-5; PF-5-2
+			Syfte
+				Säkrar drift före C4:s stängning med en repeterbar växling.
+			Innehåll
+				Sista export, ändringsstopp eller delta, verifiering av mottagare, ansvar, kontrollpunkter, stoppkriterier och beslutad återgång. Återgång till C4 antas inte efter stängningen.
+			Kvalitetskriterier
+				Repeterbar och godkänd av SFB, med realistisk leveransdag och senaste möjliga beslut, [[PIM-M05]].
+		7.2 Driftsatt F1 med växlingsprotokoll +produkt ^PF-7-2
 			paket:: AP14
 			krav:: PIM-M05
 			part:: PIM-partner
-		7.3 Överlämnat kodarkiv +produkt
+			format:: Protokoll
+			kvalitetsmetod:: Avstämning
+			granskare:: ITM8; SFB e-handel
+			godkännare:: SFB produktägare
+			beror på:: PF-4-6; PF-6-6; PF-5-5; PF-7-7; PF-7-8
+			Syfte
+				F1 i drift och bevis på att växlingen gick enligt plan.
+			Innehåll
+				Protokoll per kontrollpunkt i växlingsplanen och verifiering av mottagarna.
+			Kvalitetskriterier
+				Alla mottagare får data från nya PIM. Inga öppna stoppkriterier.
+		7.3 Överlämnat kodarkiv +produkt ^PF-7-3
 			paket:: AP14
 			krav:: PIM-H01
 			part:: PIM-partner
-			Källkod med versionshistorik, automatiserade tester, bygg- och driftsättningsinstruktioner och konfiguration.
-		7.4 Data- och gränssnittsdokumentation +produkt
+			format:: Kod
+			kvalitetsmetod:: Test
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-6-6
+			Syfte
+				Gör byte av utvecklingspartner praktiskt möjligt.
+			Innehåll
+				Källkod med versionshistorik, automatiserade tester, bygg- och driftsättningsinstruktioner, migreringsverktyg och konfiguration, i ett kodarkiv som SFB kontrollerar.
+			Kvalitetskriterier
+				En annan tekniker kan bygga, testa och driftsätta utan Vaimos verktyg eller personkonton, [[PIM-H01]].
+		7.4 Data- och gränssnittsdokumentation +produkt ^PF-7-4
 			paket:: AP14
 			krav:: PIM-H01
 			part:: PIM-partner
-		7.5 Komponent- och tjänsteförteckning +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-2-1; PF-2-6; PF-2-7
+			Syfte
+				Beskriver datamodell och gränssnitt så att andra kan förvalta och integrera.
+			Innehåll
+				Dokumenterad datamodell, gränssnitt enligt det slutliga kontraktet och miljöbeskrivning.
+			Kvalitetskriterier
+				Stämmer med driftsatt version.
+		7.5 Komponent- och tjänsteförteckning +produkt ^PF-7-5
 			paket:: AP14
 			krav:: PIM-H02
 			part:: PIM-partner
-		7.6 Användarhandledning +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-2-7
+			Syfte
+				Synliggör kostnader och faktisk överlämningsbarhet.
+			Innehåll
+				Komponenter, licenser, molntjänster, egna tjänster, kostnader och exitberoenden. Befintlig MagicBox-kod och tredjepartskod skild från ny kundspecifik kod.
+			Kvalitetskriterier
+				Varje rad har rättighet, licens, ägare, kostnad och vad som krävs för drift hos annan partner, [[PIM-H02]].
+		7.6 Användarhandledning +produkt ^PF-7-6
 			paket:: AP14
 			krav:: PIM-H03
 			part:: PIM-partner
-		7.7 Runbook och ansvarsfördelning +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-2-2; PF-2-3; PF-2-4; PF-2-5
+			Syfte
+				Stöd för administratörernas dagliga flöden och felhantering.
+			Innehåll
+				Artikel-, tabell-, Excel- och dokumentflöden och felhantering, på svenska.
+			Kvalitetskriterier
+				Administratörerna genomför flödena med handledningen, [[PIM-H03]].
+		7.7 Runbook och ansvarsfördelning +produkt ^PF-7-7
 			paket:: AP14
 			krav:: PIM-H03
 			part:: PIM-partner
-			Bygger på felsökningsrutinen i 5.6.
-		7.8 Genomförda utbildningar +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8
+			godkännare:: SFB produktägare
+			beror på:: PF-5-6
+			Syfte
+				Driftorganisationens stöd efter överlämning.
+			Innehåll
+				Driftrutiner, ansvar, kontaktvägar och återställningsrutin. Bygger på felsökningsrutinen i 5.6.
+			Kvalitetskriterier
+				Kontaktväg och ansvar under driftstart är dokumenterade, [[PIM-H03]].
+		7.8 Genomförda utbildningar +produkt ^PF-7-8
 			paket:: AP14
 			krav:: PIM-H03
 			part:: PIM-partner
-			Två tillfällen för de två administratörerna.
-		7.9 Ärendelogg från stödperioden +produkt
+			format:: Utbildning
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-7-6; PF-5-1
+			Syfte
+				Gör administratörerna redo för driftstart.
+			Innehåll
+				Två utbildningstillfällen för de två administratörerna, i testmiljön.
+			Kvalitetskriterier
+				Båda administratörerna har deltagit i båda tillfällena.
+		7.9 Ärendelogg från stödperioden +produkt ^PF-7-9
 			paket:: AP14
 			krav:: PIM-H03
 			part:: PIM-partner
-			Tio arbetsdagars förstärkt stöd efter driftstart.
+			format:: Dokument
+			kvalitetsmetod:: Avstämning
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PF-7-2
+			Syfte
+				Visar vad som hände under de tio arbetsdagarnas förstärkta stöd och vad som överlämnas till löpande support.
+			Innehåll
+				Ärenden, åtgärder och öppna punkter.
+			Kvalitetskriterier
+				Varje öppet ärende har ägare i den löpande supporten.
 	8 Projektledning
-		8.1 Leveransplan +produkt
+		8.1 Leveransplan +produkt ^PF-8-1
 			paket:: AP15
 			krav:: PIM-H04
 			part:: PIM-partner
-			Ansvar, beslutsdatum, bemanning, kritiska beroenden och första användbara driftversion.
-		8.2 Risk- och beslutslogg +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB produktägare; ITM8
+			godkännare:: SFB sponsor
+			beror på:: PA-3-4
+			Syfte
+				Gör leveransansvar och samordning synliga under hela F1.
+			Innehåll
+				Ansvar, beslutsdatum, bemanning, kritiska beroenden och första användbara driftversion. Bygger på produktflödet nedan och planen i PA-3-4. Uppdateras löpande.
+			Kvalitetskriterier
+				Visar ansvar, beslutsdatum, bemanning och kritiska beroenden, [[PIM-H04]].
+		8.2 Risk- och beslutslogg +produkt ^PF-8-2
 			paket:: AP15
 			krav:: PIM-H04
 			part:: PIM-partner
-		8.3 Ändringslogg +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: SFB produktägare
+			godkännare:: SFB sponsor
+			beror på:: PF-8-1
+			Syfte
+				Håller risker och beslut spårbara.
+			Innehåll
+				Risker med sannolikhet, konsekvens och åtgärd, och beslut med datum och beslutsfattare. Startar från riskregistret i estimatet.
+			Kvalitetskriterier
+				Genomgången vid varje styrgruppsmöte.
+		8.3 Ändringslogg +produkt ^PF-8-3
 			paket:: AP15
 			krav:: PIM-H04
 			part:: PIM-partner
-			Spårbart beslut och kostnadspåverkan per ändring av grundomfattningen.
-		8.4 Statusrapporter +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB produktägare
+			godkännare:: SFB sponsor
+			beror på:: PF-8-1
+			Syfte
+				Gör ändringar av grundomfattningen beslutade och kostnadssatta.
+			Innehåll
+				Varje ändring med beskrivning, kostnads- och tidspåverkan och beslut.
+			Kvalitetskriterier
+				Ingen ändring genomförs utan beslut, [[PIM-H04]].
+		8.4 Statusrapporter +produkt ^PF-8-4
 			paket:: AP15
 			krav:: PIM-H04
 			part:: PIM-partner
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: SFB produktägare
+			godkännare:: SFB sponsor
+			beror på:: PF-8-1
+			Syfte
+				Löpande bild av läget för SFB:s styrning.
+			Innehåll
+				Läge mot plan per produkt, risker, beslut som behövs och förbrukade timmar mot estimat.
+			Kvalitetskriterier
+				Lämnas med överenskommen frekvens.
+	Produktflöde
+		Ordningen följer fältet beror på. Produkter i samma steg kan tas fram parallellt. Alla steg förutsätter att AP01 är klar, se produktflödet i SFB_PBS_AP01.ord.
+		Kritisk linje: AP01, 2.7, datamodellen 2.1, reglerna 2.2.3, artikelvyn 2.2.2, samtidighetsskyddet 2.2.5, tabellen 2.3, kapacitetstestet 6.3, acceptanstestet 6.5, acceptansbeslutet 6.6, slutmigreringen 4.6 och driftstarten 7.2.
+		Parallell linje med lite marginal: urvalet 4.1, städningen 4.1.1, exporten 4.2, mappningen 4.3, verktyget 4.4 och provmigreringen 4.5, som behövs till kapacitetstestet och acceptanstestet.
+		ITM8:s produkter i 3 beror bara på kontrakten i AP01 och kan byggas parallellt. De behövs först i integrationstestet 6.2.
+		Projektledningens produkter 8.2 till 8.4 förs löpande från steg 2.
+		Steg 1 Arkitektur, ITM8:s byggen och planering
+			@ 2.7 Teknisk arkitektur och säkerhetslösning^PF-2-7
+			@ 3.1.1 Omkopplad Finfo-hämtning^PF-3-1-1
+			@ 3.1.2 BASTA-anslutning^PF-3-1-2
+			@ 3.1.3 BVB-vidareföring^PF-3-1-3
+			@ 3.2 MagicBox-anslutning och distribution^PF-3-2
+			@ 3.3 Snicken-adapter^PF-3-3
+			@ 3.4.1 Godkända transformationsprofiler^PF-3-4-1
+			@ 3.4.2 Bevarade medielänkar^PF-3-4-2
+			@ 4.1 Beslutat migreringsurval^PF-4-1
+			@ 4.8 Läsbar export av C4:s ändringslogg^PF-4-8
+			@ 6.1 Testplan med kravspårning^PF-6-1
+			@ 8.1 Leveransplan^PF-8-1
+		Steg 2 Datamodell och testmiljö
+			@ 2.1.1 Artikelmodell med identiteter^PF-2-1-1
+			@ 2.1.2 Attributmodell med käll- och egna värden^PF-2-1-2
+			@ 2.1.3 Referensdata för leverantörer och varumärken^PF-2-1-3
+			@ 2.1.4 Tre kategoriträd^PF-2-1-4
+			@ 2.1.5 Produktgruppsmodell^PF-2-1-5
+			@ 2.4.3 Jobbstatus för långa jobb^PF-2-4-3
+			@ 3.1 Källintegrationer till MagicBox^PF-3-1
+			@ 3.4 Medielagring, transformering och länkar^PF-3-4
+			@ 4.1.1 Städad C4-data före uttag^PF-4-1-1
+			@ 5.1 Testmiljö^PF-5-1
+			@ 5.3 Inloggning och tekniska identiteter^PF-5-3
+			@ 7.5 Komponent- och tjänsteförteckning^PF-7-5
+			@ 8.2 Risk- och beslutslogg^PF-8-2
+			@ 8.3 Ändringslogg^PF-8-3
+			@ 8.4 Statusrapporter^PF-8-4
+		Steg 3 Regler och produktionsmiljö
+			@ 2.1 Datamodell^PF-2-1
+			@ 2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler^PF-2-2-3
+			@ 2.2.7 Attributförvaltning^PF-2-2-7
+			@ 2.2.8 Kategoriförvaltning^PF-2-2-8
+			@ 4.2 C4-export för migrering^PF-4-2
+			@ 5.2 Produktionsmiljö^PF-5-2
+			@ 5.7 Verifierad lösning för åtkomst vid PIM-avbrott^PF-5-7
+		Steg 4 Funktioner och mappning
+			@ 2.2.1 Sökning och filter^PF-2-2-1
+			@ 2.2.2 Artikelvy och enskild redigering^PF-2-2-2
+			@ 2.2.4 Ändringsnotislista^PF-2-2-4
+			@ 2.2.6 Ändringshistorik^PF-2-2-6
+			@ 2.4.1 Excelimport med förhandskontroll^PF-2-4-1
+			@ 2.4.2 Excelexport^PF-2-4-2
+			@ 2.5.1 Medierelationer med flerfilsuppladdning^PF-2-5-1
+			@ 2.6.1 Källmottagning^PF-2-6-1
+			@ 2.6.2 Utgående ändringsflöde^PF-2-6-2
+			@ 4.3 Migreringsmappning^PF-4-3
+			@ 5.4 Backup och återställningsprotokoll^PF-5-4
+			@ 5.5 Övervakning och larm^PF-5-5
+			@ 6.4 Avbrottstestprotokoll^PF-6-4
+		Steg 5 Funktioner, verktyg och drift
+			@ 2.2.5 Samtidighetsskydd^PF-2-2-5
+			@ 2.4 Excelimport och export^PF-2-4
+			@ 2.5.2 Ordning och webbexkludering per relation^PF-2-5-2
+			@ 2.5.3 Dokumentversionsarkiv^PF-2-5-3
+			@ 2.5.5 Flaggning av källborttagning^PF-2-5-5
+			@ 2.6.3 Återförsök, omsändning och felvy^PF-2-6-3
+			@ 4.4 Migreringsverktyg^PF-4-4
+			@ 5.6 Felsökningsrutin^PF-5-6
+		Steg 6 Samlade funktioner och provmigrering
+			@ 2.2 Administratörsgränssnitt^PF-2-2
+			@ 2.3 Tabellredigering^PF-2-3
+			@ 2.5.4 Versionslista per artikel^PF-2-5-4
+			@ 2.6 PIM:s integrationsgränssnitt^PF-2-6
+			@ 4.5 Avstämningsprotokoll för prov- och korrigeringskörning^PF-4-5
+			@ 7.7 Runbook och ansvarsfördelning^PF-7-7
+		Steg 7 Integrationstest, kapacitet och växlingsplan
+			@ 2.5 Medie- och dokumenthantering^PF-2-5
+			@ 4.7 Migrerade äldre dokumentversioner^PF-4-7
+			@ 6.2 Integrationstestprotokoll^PF-6-2
+			@ 6.3 Kapacitets- och samtidighetsrapport^PF-6-3
+			@ 7.1 Växlingsplan^PF-7-1
+			@ 7.4 Data- och gränssnittsdokumentation^PF-7-4
+		Steg 8 Acceptanstest och handledning
+			@ 6.5 Acceptanstestprotokoll^PF-6-5
+			@ 7.6 Användarhandledning^PF-7-6
+		Steg 9 Acceptansbeslut och utbildning
+			@ 6.6 Acceptansbeslut^PF-6-6
+			@ 7.8 Genomförda utbildningar^PF-7-8
+		Steg 10 Slutmigrering och kodöverlämning
+			@ 4.6 Migrerat bestånd i produktion^PF-4-6
+			@ 7.3 Överlämnat kodarkiv^PF-7-3
+		Steg 11 Driftstart
+			@ 7.2 Driftsatt F1 med växlingsprotokoll^PF-7-2
+		Steg 12 Stödperiod
+			@ 7.9 Ärendelogg från stödperioden^PF-7-9
+	Öppna frågor
+		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i AP01, produkt 3.1.
+		[ ] Tid mot C4:s stängning: den kritiska linjen har tolv steg efter AP01, och C4 stängs 2026-12-31. Planen i PA-3-4 måste visa om F1 hinner, annars behövs [[ALT03]].
+		[ ] Arkitekturens paket: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
+		[ ] Driftägare: vem på SFB godkänner miljöer, övervakning och runbook i 5 och 7? I dag står SFB produktägare, eftersom driftansvaret inte är bekräftat enligt [[B11]].
+		[ ] Godkännare för ITM8:s produkter: är SFB e-handel rätt godkännare för 3.1 till 3.4, och Snicken för 3.3?
+		[ ] Medielagring: 2.5 bygger på att lagringen i 3.4 finns, men 3.4 hos ITM8 har ingen tidsatt leverans. När behöver PIM-partnern tillgång till lagringen?
+		[ ] Testdata: 6.3 och 6.5 behöver migrerad data från provkörningen 4.5. Räcker en korrigeringskörning, eller behövs en extra körning efter rättningar inför acceptansen?
+		[ ] Utbildning före eller efter driftstart: kravspecifikationen säger två utbildningar och tio dagars stöd efter driftstart. PBS:en lägger utbildningen före driftstart. Stämmer det?
+		[ ] Ändringshistorik och arkiv i 2.2.6 och 2.5.3 innehåller personuppgifter om aktörer. Svaret på GDPR-frågan i PA-3-1 kan ändra dem.
+		[ ] Estimatrader: flera produkter delar rader i SFB_Estimat_rader.csv, till exempel 2.1.1 till 2.1.5 och 7.3 till 7.5. Ska raderna knytas till produkt-ID?
 	Utanför F1
 		V2 och tillval, se [[PBS V2 och tillval]].
 		Alternativen [[ALT01]] och [[ALT03]] ingår inte.

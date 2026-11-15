@@ -86,7 +86,7 @@ Produkttyp +ord-type
 		part::
 			options:: PIM-partner; ITM8; SFB; Nuvarande part
 		format::
-			options:: Dokument; Kalkylark; Kod; Miljö; Data; Protokoll; Beslut; Utbildning
+			options:: Dokument; Kalkylark; Kod; Konfiguration; Miljö; Data; Protokoll; Beslut; Utbildning
 		kvalitetsmetod::
 			options:: Granskning; Test; Demo; Avstämning; Godkännande
 		granskare::
