@@ -85,4 +85,17 @@ Produkttyp +ord-type
 			options:: +krav
 		part::
 			options:: PIM-partner; ITM8; SFB; Nuvarande part
+		format::
+			options:: Dokument; Kalkylark; Kod; Miljö; Data; Protokoll; Beslut; Utbildning
+		kvalitetsmetod::
+			options:: Granskning; Test; Demo; Avstämning; Godkännande
+		granskare::
+			options:: SFB produktägare; SFB PIM-team; SFB e-handel; SFB sponsor; ITM8; Snicken; Nuvarande part; Vaimo affärskonsult; Vaimo teknisk arkitekt; Vaimo testledare; Vaimo projektledare
+		godkännare::
+			options:: SFB produktägare; SFB PIM-team; SFB e-handel; SFB sponsor; ITM8; Snicken; Nuvarande part; Vaimo affärskonsult; Vaimo teknisk arkitekt; Vaimo testledare; Vaimo projektledare
+		beror på::
+			options:: +produkt
 	En produkt i en produktnedbrytning (PBS): något som lämnas över och kan godkännas, inte en aktivitet. Används i SFB_PBS_*.ord.
+	Part är den som tar fram produkten. Beror på pekar på de produkter som måste vara klara, eller i godkänt utkast, innan produkten kan bli klar. Det ger produktflödet.
+	Under varje produkt: Syfte, Innehåll och Kvalitetskriterier, och Underlag när produkten bygger på något annat än andra produkter.
+	ID:n: PA för AP01, PF för F1 och PV för V2 och tillval, följt av produktens nummer med bindestreck.

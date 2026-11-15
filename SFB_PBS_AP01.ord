@@ -1,18 +1,29 @@
 PBS AP01 Teknisk precisering och inventering ^PBS-AP01
-	version:: 0.4
+	version:: 0.5
 	datum:: 2026-11-15
 	paket:: AP01
 	Produktnedbrytning för [[AP01]]. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet. Arbetet som tar fram produkterna finns i SFB_Estimat_rader.csv.
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela AP01, och ingen produkt finns också i ett annat paket.
 	Resultatet ska kunna användas av en annan partner. Ingen implementation av produktfunktioner ingår.
 	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) och dess bilagor (SFB_Discovery_rapport_appendix_20261021.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
+	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
+	AP01 är klar när 3.3 och 3.4 är godkända av SFB. Då kan resten av F1 estimeras om till klass 3.
 	1 Verifierade specifikationer
-		1.1 Återanvändningsmatris för förstudien +produkt
+		1.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
 			paket:: AP01
 			krav:: PIM-I01
 			part:: PIM-partner
-			Vilka dokument och versioner från förstudien som återanvänds och vad som redan är verifierat. Avgör vilket arbete som återstår i AP01.
-			Underlag att ta med i matrisen
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: SFB produktägare; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på::
+			Syfte
+				Visar vad förstudien redan har verifierat, så att AP01 bara gör och debiterar återstående arbete. Kravspecifikationen kräver detta per leverabel i AP01.
+			Innehåll
+				En rad per produkt i AP01 med de underlag som täcker den, version eller datum, vad som är verifierat, vad som återstår och kvarvarande osäkerhet.
+				En rad per underlag nedan med bedömning: återanvänds, återanvänds delvis eller används inte.
+			Underlag
 				Discoveryrapport v0.5, 2026-10-30, med bilagor C till M.
 				Avsnitt 4: nuläge med BE-steg, systemkarta och roller.
 				Avsnitt 5: data audit på C4-exporten 2026-09-30, med bruttolistan över egna egenskaper.
@@ -21,223 +32,619 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Avsnitt 8: integrationspunkter från integrationsworkshopen med SFB och ITM8 2026-10-08.
 				Bilaga H: kravregistret med 104 REQ-krav, varav 39 i fas 1. Kravspecifikationens källhänvisningar använder samma REQ-nummer.
 				Bilaga G: 43 pain-points. PP24 och PP46 saknar krav.
-				Bilaga I: dokumentlistan och datautdragen, se nedan.
 				Bilaga K: datamodellens områden och öppna beslut för datamodellen.
-			Dokument från SFB och ITM8 som redan finns
-				Woody-Finfo, ITM8:s dokumentation v2: schemaläggning och validering i Finfo-integrationen.
-				Berikningsfil Lokalt Sortiment 2026-06-11: Excelmallen för lokala artiklar.
-				Fältbeskrivning Vilma 2.8.0, 2025-11-10.
-				Konvertering av bilder från C4 till Azure, med konverteringsregler.
-				Slides om artikelns livscykel i dag.
-			Datautdrag som redan finns
-				Full C4-export som JSON, 3,4 miljoner artiklar och 1,2 TB bilder och dokument.
-				Finfo XML från två konton, med förändringsfiler för ungefär en vecka.
-				JSON från C4 till Magic Box för 12 referensartiklar, med binära filer.
-				Finfo XML för 13 referensartiklar.
-				C4-strukturer för produkt och variant, bundle, leverantörs-id, egenskapsdefinitioner och bild- och dokumentkategorier.
-				BMEcat-fält från C4 och en exempelexport till Snicken.
-		1.2 Gränssnittskontrakt +produkt
+				Dokument från SFB och ITM8 som redan finns
+					Woody-Finfo, ITM8:s dokumentation v2: schemaläggning och validering i Finfo-integrationen.
+					Berikningsfil Lokalt Sortiment 2026-06-11: Excelmallen för lokala artiklar.
+					Fältbeskrivning Vilma 2.8.0, 2025-11-10.
+					Konvertering av bilder från C4 till Azure, med konverteringsregler.
+					Slides om artikelns livscykel i dag.
+				Datautdrag som redan finns
+					Full C4-export som JSON, 3,4 miljoner artiklar och 1,2 TB bilder och dokument.
+					Finfo XML från två konton, med förändringsfiler för ungefär en vecka.
+					JSON från C4 till Magic Box för 12 referensartiklar, med binära filer.
+					Finfo XML för 13 referensartiklar.
+					C4-strukturer för produkt och variant, bundle, leverantörs-id, egenskapsdefinitioner och bild- och dokumentkategorier.
+					BMEcat-fält från C4 och en exempelexport till Snicken.
+			Kvalitetskriterier
+				Varje produkt i AP01 har en rad.
+				Varje påstående om att något är verifierat har källa med version eller datum.
+				Ingen timme i estimatet avser arbete som matrisen visar som gjort.
+		1.2 Gränssnittskontrakt +produkt ^PA-1-2
 			paket:: AP01
 			krav:: PIM-I01; PIM-I02; PIM-I03; PIM-I04; PIM-I09; PIM-I10
 			part:: PIM-partner
-			Versionshanterat data- och felkontrakt, godkänt av PIM-partner och ITM8. Se [[B02]] och [[B05]].
-			Förstudien: integrationspunkter, riktning, trigger och byggansvar finns i avsnitt 8.1. Fält, format och felhantering saknas.
-			1.2.1 Kontrakt MagicBox till PIM +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; SFB e-handel; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare; ITM8
+			beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-3; PA-1-2-4; PA-1-2-5; PA-1-2-6
+			Syfte
+				Ett versionshanterat data- och felkontrakt som PIM-partner och ITM8 bygger mot. Gör gränsen mellan [[AP04]], [[AP08]] och [[AP09]] testbar och förhindrar dubbelt arbete. Se [[B02]] och [[B05]].
+			Innehåll
+				Samlingsdokument för 1.2.1 till 1.2.6, med versionsnummer, ändringslogg och gemensamma begrepp.
+				Ägarskap per fält och objekt, identifierare, produkter, kategorier, statusar och medie- och versionsreferenser.
+			Underlag
+				Förstudien: integrationspunkter, riktning, trigger och byggansvar finns i avsnitt 8.1. Fält, format och felhantering saknas.
+			Kvalitetskriterier
+				Alla exempel i 1.2.5 validerar mot kontraktet.
+				Kontraktet är godkänt av både PIM-partner och ITM8, med samma versionsnummer.
+				Arkivåtgärder är markerade som V2 enligt [[PIM-N04]].
+			1.2.1 Kontrakt MagicBox till PIM +produkt ^PA-1-2-1
 				paket:: AP01
 				krav:: PIM-I01; PIM-I02
 				part:: PIM-partner
-				Källägda fält och relationer, ändringsidentitet, revisioner och omtag.
-				Förstudien: Azure Integration skickar ändrade fält till PIM via API. Bilder kommer som publika URL:er som PIM laddar ner. Hantering av bilddubbletter när Finfo skickar allt är olöst.
-			1.2.2 Kontrakt PIM till MagicBox +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: ITM8; Vaimo teknisk arkitekt
+				godkännare:: ITM8
+				beror på:: PA-1-3; PA-1-4; PA-2-2
+				Syfte
+					Bestämmer hur källdata från MagicBox når PIM utan att egen berikning skrivs över.
+				Innehåll
+					Källägda fält och relationer, ändringsidentitet, revisionsordning, idempotens och omtag efter fel.
+					Hur bilder och dokument levereras, som publik URL eller fil, och hur dubbletter känns igen.
+				Underlag
+					Förstudien: Azure Integration skickar ändrade fält till PIM via API. Bilder kommer som publika URL:er som PIM laddar ner. Hantering av bilddubbletter när Finfo skickar allt är olöst.
+				Kvalitetskriterier
+					Samma leverans två gånger ger samma resultat. En äldre revision skriver inte över en nyare. Det följer av acceptanskriteriet i [[PIM-I02]].
+					Varje källfält i fältmatrisen 1.3 finns i kontraktet.
+			1.2.2 Kontrakt PIM till MagicBox +produkt ^PA-1-2-2
 				paket:: AP01
 				krav:: PIM-I01; PIM-I03
 				part:: PIM-partner
-				Inkrementella ändringar, effektiva värden, gruppfält skilda från artikelvärden, status och mediereferenser.
-				Förstudien: PIM signalerar ändring och Magic Box hämtar. Om Magic Box hämtar bilderna eller om de skickas till PIM är inte beslutat. Dagens JSON från C4 till Magic Box för 12 referensartiklar visar nuvarande format.
-			1.2.3 Kontrakt för Snickenflödet +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: ITM8; SFB e-handel; Vaimo teknisk arkitekt
+				godkännare:: ITM8
+				beror på:: PA-1-3; PA-1-4; PA-2-2
+				Syfte
+					Bestämmer vad PIM levererar till MagicBox och därmed till Plattan 2.0.
+				Innehåll
+					Inkrementella ändringar för alla artiklar, effektiva värden, käll- och internfält, gruppfält skilda från artikelvärden, livscykel- och webbstatus och mediereferenser med visningsflaggor.
+					Signalering och hämtning, och hur bilder och dokument nås.
+				Underlag
+					Förstudien: PIM signalerar ändring och Magic Box hämtar. Om Magic Box hämtar bilderna eller om de skickas till PIM är inte beslutat. Dagens JSON från C4 till Magic Box för 12 referensartiklar visar nuvarande format.
+				Kvalitetskriterier
+					Mottagaren behöver inte tolka en utebliven post som radering, [[PIM-I03]].
+					Matchningsnyckeln som MagicBox använder finns i varje artikel, så att C4:s sysid kan tas bort.
+			1.2.3 Kontrakt för Snickenflödet +produkt ^PA-1-2-3
 				paket:: AP01
 				krav:: PIM-I01; PIM-I09; PIM-I10
 				part:: PIM-partner
-				Urvalsnyckel, besked vid ändrat urval, startleverans och återhämtning.
-				Förstudien: i dag en JSON-export i BMEcat-struktur på Exchange-kön, RabbitMQ. Fältlistan och en exempelexport till Snicken finns.
-			1.2.4 Fel- och transportkontrakt +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: ITM8; Snicken; Vaimo teknisk arkitekt
+				godkännare:: Snicken; ITM8
+				beror på:: PA-1-3; PA-1-4
+				Syfte
+					Bestämmer hur Snicken får sitt urval när Exchange-flödet försvinner.
+				Innehåll
+					Urvalsnyckel, besked vid ändrat urval, startleverans med full post, inkrementella ändringar och full återhämtning.
+				Underlag
+					Förstudien: i dag en JSON-export i BMEcat-struktur på Exchange-kön, RabbitMQ. Fältlistan och en exempelexport till Snicken finns.
+				Kvalitetskriterier
+					Snicken har bekräftat nycklar och fält.
+					Nytillagd artikel får en full post innan efterföljande delta, [[PIM-I09]].
+			1.2.4 Fel- och transportkontrakt +produkt ^PA-1-2-4
 				paket:: AP01
 				krav:: PIM-I01; PIM-I04
 				part:: PIM-partner
-				Felkoder, kvittens, frekvens, återförsök och omsändning. Inget befintligt API antas.
-			1.2.5 Validerade kontraktsexempel +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: ITM8; Vaimo teknisk arkitekt
+				godkännare:: ITM8
+				beror på:: PA-2-5
+				Syfte
+					Gemensamma regler för transport och fel för alla tre flöden, så att fel blir synliga och kan åtgärdas.
+				Innehåll
+					Transport, autentisering, kvittens, frekvens, felkoder, felstatus, återförsök och omsändning av vald post eller urval. Inget befintligt API antas.
+				Kvalitetskriterier
+					Varje felkod har ansvarig part och åtgärd.
+					Omsändning av ett urval påverkar inte andra mottagares position, [[PIM-I04]].
+			1.2.5 Validerade kontraktsexempel +produkt ^PA-1-2-5
 				paket:: AP01
 				krav:: PIM-I01
 				part:: PIM-partner
-				Skapa, uppdatera, livscykel- och webbstatus, relationsändring, mediauppdatering och fel, validerade av båda parter.
-				Referensartikeln från Happy Flow, 007213789 Oljebets 911 mellanbrun 275 ml, och de 15 urvalsartiklarna kan användas som exempeldata.
-			1.2.6 ITM8:s granskning av kontrakten +produkt
+				format:: Data
+				kvalitetsmetod:: Test
+				granskare:: ITM8; Vaimo testledare
+				godkännare:: ITM8
+				beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-3; PA-1-2-4
+				Syfte
+					Bevisar att kontrakten går att implementera och används som testdata i F1.
+				Innehåll
+					Exempelmeddelanden för skapa, uppdatera, livscykel- och webbstatus, relationsändring, mediauppdatering och fel, för varje flöde.
+				Underlag
+					Referensartikeln från Happy Flow, 007213789 Oljebets 911 mellanbrun 275 ml, och de 15 urvalsartiklarna.
+				Kvalitetskriterier
+					Varje exempel validerar mot kontraktets schema hos både PIM-partner och ITM8.
+					Varje händelsetyp i acceptanskriteriet för [[PIM-I01]] har minst ett exempel.
+			1.2.6 ITM8:s granskning av kontrakten +produkt ^PA-1-2-6
 				paket:: AP01
 				krav:: PIM-I01
 				part:: ITM8
-				ITM8:s medverkan räknas bara här, inte i [[AP07]] eller [[AP08]].
-		1.3 Fältmatris +produkt
+				format:: Protokoll
+				kvalitetsmetod:: Granskning
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: ITM8
+				beror på:: PA-1-2-5
+				Syfte
+					ITM8:s dokumenterade synpunkter och godkännande av MagicBox-sidan.
+				Innehåll
+					Granskningsprotokoll med synpunkter, beslut och ITM8:s estimatpåverkan för [[AP07]] och [[AP08]].
+					ITM8:s medverkan räknas bara här, inte i [[AP07]] eller [[AP08]].
+				Kvalitetskriterier
+					Alla synpunkter är stängda eller har ett beslut.
+		1.3 Fältmatris +produkt ^PA-1-3
 			paket:: AP01
 			krav:: PIM-D03; PIM-W03; PIM-W09; PIM-I03
 			part:: PIM-partner
-			Per fält: ägare, datatyp, enhet, listvärden, källprioritet, språkneutral eller svensk, skyddat eller redigerbart, och mottagarmappning. Samma matris styr enskild redigering, tabell och Excel. Se [[B07]].
-			Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
-			Bilaga K föreslår att mått och koder är språkneutrala och att text och alt-text är svenska. Förslaget är inte beslutat.
-			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team; ITM8; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1; PA-1-4
+			Syfte
+				En regel per fält som styr datamodellen, kontrakten, enskild redigering, tabell, Excel och migrering. Se [[B07]].
+			Innehåll
+				Per fält: objekt, ägare, datatyp, enhet, listvärden, källprioritet, språkneutral eller svensk, skyddat eller redigerbart, mottagarmappning och C4-källfält.
+				1.3.1, 1.3.2 och 1.3.3 som egna flikar.
+			Underlag
+				Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
+				Bilaga K föreslår att mått och koder är språkneutrala och att text och alt-text är svenska. Förslaget är inte beslutat.
+			Kvalitetskriterier
+				Varje attributdefinition i C4-exporten finns, eller är uttryckligen utesluten med skäl, [[PIM-D03]].
+				Varje fält har ägare och skyddsnivå.
+				Ingen generell standardisering eller enhetskonvertering ingår.
+			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt ^PA-1-3-1
 				paket:: AP01
 				krav:: PIM-W09
 				part:: PIM-partner
-				Attribut-ID:n för material, färg, längd, bredd, höjd, tjocklek och diameter, eller likvärdiga ersättningar.
-				Förstudien: samma begrepp finns i flera egenskaper, till exempel Langdmm, LANGDM och LANGDIN, så varje begrepp i startlistan måste knytas till en bestämd egenskap.
-			1.3.2 Förteckning över skyddade fält +produkt
+				format:: Kalkylark
+				kvalitetsmetod:: Godkännande
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Låser vilka egenskaper som får överstyras, så att priset för [[PIM-W09]] blir fast.
+				Innehåll
+					Attribut-ID, datatyp och enhet för material, färg, längd, bredd, höjd, tjocklek och diameter, eller likvärdiga ersättningar.
+				Underlag
+					Förstudien: samma begrepp finns i flera egenskaper, till exempel Langdmm, LANGDM och LANGDIN, så varje begrepp i startlistan måste knytas till en bestämd egenskap.
+				Kvalitetskriterier
+					Sju attributdefinitioner med befintlig datatyp och enhet, [[B07]].
+			1.3.2 Förteckning över skyddade fält +produkt ^PA-1-3-2
 				paket:: AP01
 				krav:: PIM-W09; PIM-D07
 				part:: PIM-partner
-				Identifierare, källägda värden och externa bedömningar.
-			1.3.3 Regel för sammanslagen extern text +produkt
+				format:: Kalkylark
+				kvalitetsmetod:: Granskning
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Visar vilka fält som aldrig får ändras manuellt eller via Excel.
+				Innehåll
+					Identifierare, källägda värden och externa bedömningar som BASTA och Byggvarubedömningen.
+				Kvalitetskriterier
+					Varje skyddat fält har ett skäl.
+			1.3.3 Regel för sammanslagen extern text +produkt ^PA-1-3-3
 				paket:: AP01
 				krav:: PIM-W03; PIM-W04
 				part:: PIM-partner
-				Vilka av Finfos textfält, Ingress, Komplett, Teknisk beskrivning och Punktlista, som blir de fyra externa textfälten och i vilken ordning.
-				Förstudien: dagens regelverk som bygger säljtexten ska byggas om. Den korta texten är en mekanisk avkortning och behövs inte.
-		1.4 Identitetsregler och exempeldata +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Bestämmer hur den sammanslagna externa texten och den effektiva texten byggs.
+				Innehåll
+					Vilka av Finfos textfält, Ingress, Komplett, Teknisk beskrivning och Punktlista, som blir de fyra externa textfälten, ordningen och styckesindelningen.
+					Tomvärdesregel: endast blanksteg räknas som tomt.
+				Underlag
+					Förstudien: dagens regelverk som bygger säljtexten ska byggas om. Den korta texten är en mekanisk avkortning och behövs inte.
+				Kvalitetskriterier
+					Regeln ger rätt resultat för de 15 urvalsartiklarna.
+		1.4 Identitetsregler och exempeldata +produkt ^PA-1-4
 			paket:: AP01
 			krav:: PIM-D01; PIM-D07
 			part:: PIM-partner
-			Sammansatt nyckel, leverantörs-id, befintliga C4-kopplingar, manuella artiklar och felkö vid tvetydig matchning. Se [[B06]].
-			Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
-			1.4.1 Rapport över artiklar utan entydig identitet +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; SFB e-handel; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1
+			Syfte
+				Bestämmer hur artiklar, produkter, leverantörer och varumärken identifieras i PIM, MagicBox och vid migrering. Se [[B06]].
+			Innehåll
+				Intern identitet, sammansatt källnyckel, prioriteringsordning, leverantörs-id, befintliga C4-kopplingar, manuella artiklar, WB-nummer och felkö vid tvetydig matchning.
+				Plats för GTIN och GLN inför övergången till GS1.
+				Exempeldata som visar varje regel.
+			Underlag
+				Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
+			Kvalitetskriterier
+				Två artiklar med samma GTIN och olika leverantörer förblir två poster, [[PIM-D01]].
+				Inledande nollor bevaras. Identifierare hanteras som text.
+				ITM8 har bekräftat att MagicBox kan matcha utan C4:s sysid.
+			1.4.1 Rapport över artiklar utan entydig identitet +produkt ^PA-1-4-1
 				paket:: AP01
 				krav:: PIM-D01
 				part:: PIM-partner
-				Antal artiklar som inte kan identifieras med prioriteringsordningen, och de 84 690 möjliga dubbletterna med samma leverantör och namn men olika artikelnummer.
-		1.5 Kontrollrapport för produktgrupper +produkt
+				format:: Kalkylark
+				kvalitetsmetod:: Granskning
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PA-2-1
+				Syfte
+					Visar hur stort problemet med identitet är före migreringen, så att SFB kan besluta om åtgärd.
+				Innehåll
+					Antal artiklar som inte kan identifieras med prioriteringsordningen, per källa och leverantör.
+					De 84 690 möjliga dubbletterna med samma leverantör och namn men olika artikelnummer.
+				Kvalitetskriterier
+					Räknat på migreringsurvalet i 2.1.3, inte på hela exporten.
+		1.5 Kontrollrapport för produktgrupper +produkt ^PA-1-5
 			paket:: AP01
 			krav:: PIM-D02
 			part:: PIM-partner
-			Befintliga grupper prövade mot regeln i [[B12]], avvikande relationer för SFB:s beslut och hur mottagarna använder gruppfälten.
-			Förstudien: 22 442 produkter, 2 042 med tre eller fler variantegenskaper och 1 353 variantegenskaper som inte varierar. Produkterna saknar id utanför C4. Bara 2 bundles.
-		1.6 Fast Excel-format +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team; SFB e-handel
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1
+			Syfte
+				Visar vilka befintliga grupper som bryter mot regeln i [[B12]], för SFB:s beslut före migreringen.
+			Innehåll
+				Avvikande relationer per typ, till exempel artikel i två variantgrupper, och hur mottagarna använder gruppfälten.
+				Variantegenskaper som inte varierar.
+			Underlag
+				Förstudien: 22 442 produkter, 2 042 med tre eller fler variantegenskaper och 1 353 variantegenskaper som inte varierar. Produkterna saknar id utanför C4. Bara 2 bundles.
+			Kvalitetskriterier
+				Varje avvikelse har en rekommenderad åtgärd. Ingen relation tas bort utan SFB:s beslut.
+		1.6 Fast Excel-format +produkt ^PA-1-6
 			paket:: AP01
 			krav:: PIM-X01; PIM-X02; PIM-X03
 			part:: PIM-partner
-			Kolumnlista, tillåtna relationer, rensningsmarkör och hantering av ändring efter export. Se [[B13]].
-			Förstudien: Berikningsfil Lokalt Sortiment och SQARP:s upp till fyra Excelfiler är utgångspunkt.
-		1.7 Specifikation av icke-funktionella krav +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB PIM-team
+			godkännare:: SFB produktägare
+			beror på:: PA-1-3
+			Syfte
+				Låser mallen för import och export så att [[AP06]] kan prissättas och byggas. Se [[B13]].
+			Innehåll
+				Kolumnlista, tillåtna relationer, rensningsmarkör, tomvärdesregel och hantering av ändring efter export.
+				En ifylld exempelfil.
+			Underlag
+				Förstudien: Berikningsfil Lokalt Sortiment och SQARP:s upp till fyra Excelfiler är utgångspunkt.
+			Kvalitetskriterier
+				Varje kolumn finns i fältmatrisen med samma skyddsnivå.
+				Tom cell lämnar oförändrat. Rensning kräver uttrycklig markör.
+		1.7 Specifikation av icke-funktionella krav +produkt ^PA-1-7
 			paket:: AP01
 			krav:: PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02
 			part:: PIM-partner
-			De icke-funktionella kraven samlade som mätbara krav, med mätvärde, mätförutsättning och verifieringssätt per krav. Testplanen i F1 spårar mot den.
-			Kapacitet: cirka 1 400 000 artiklar, 22 442 produktgrupper, 519 781 bilder och 118 228 dokument, två samtidiga administratörer, 100 artiklar per urval och 5 000 rader per Exceljobb.
-			Svarstider enligt [[B08]]: sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök per moment, med två aktiva administratörer och ett pågående jobb om 5 000 rader. Excel med 5 000 rader inom 10 minuter. Målen är förslag och bekräftas här.
-			Drift enligt [[B09]]: RPO högst en timme, RTO högst en arbetsdag, support svensk kontorstid och återställningsprov före drift.
-			Säkerhet: personliga konton, separata tekniska identiteter, behörighet för integrationer begränsad till kontraktet och hemligheter utanför källkod.
-			Spårbarhet och förvaltning: ändringshistorik så länge posten finns, kodägande och överlämningsbarhet.
-			Språk: gränssnitt och berikning på svenska.
-			Punkter som saknas i kravspecifikationen tas med när SFB har besvarat frågorna i 3.1.
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: Vaimo testledare; SFB produktägare
+			godkännare:: SFB produktägare
+			beror på:: PA-2-3; PA-2-5
+			Syfte
+				Samlar de icke-funktionella kraven som mätbara krav, så att arkitekturen i F1 kan utformas och testplanen kan spåra mot dem.
+			Innehåll
+				Per krav: mätvärde, mätförutsättning och verifieringssätt.
+				Kapacitet: cirka 1 400 000 artiklar, 22 442 produktgrupper, 519 781 bilder och 118 228 dokument, två samtidiga administratörer, 100 artiklar per urval och 5 000 rader per Exceljobb.
+				Svarstider enligt [[B08]]: sökning, öppning och sparande högst 3 sekunder i 95 procent av minst 100 försök per moment, med två aktiva administratörer och ett pågående jobb om 5 000 rader. Excel med 5 000 rader inom 10 minuter. Målen är förslag och bekräftas här.
+				Drift enligt [[B09]]: RPO högst en timme, RTO högst en arbetsdag, support svensk kontorstid och återställningsprov före drift.
+				Säkerhet: personliga konton, separata tekniska identiteter, behörighet för integrationer begränsad till kontraktet och hemligheter utanför källkod.
+				Spårbarhet och förvaltning: ändringshistorik så länge posten finns, kodägande och överlämningsbarhet.
+				Språk: gränssnitt och berikning på svenska.
+				Punkter som saknas i kravspecifikationen tas med när SFB har besvarat frågorna i 3.1.
+			Kvalitetskriterier
+				Varje krav är mätbart och har ett verifieringssätt.
+				Svarstidsmålen är bekräftade eller ändrade av SFB.
 	2 Inventeringar
-		2.1 C4-exportinventering +produkt
+		2.1 C4-exportinventering +produkt ^PA-2-1
 			paket:: AP01
 			krav:: PIM-M01
 			part:: PIM-partner
-			Antal, storlek, identifierare, relationer, käll- och internfält, filoriginal och tillgänglig historik. Saknade delar har ansvarig och åtgärd. Se [[B03]].
-			Förstudien: till största delen gjord i data audit på exporten 2026-09-30 med 3 403 330 artiklar och 22 posttyper. Återstår: historik, filoriginal och verifiering mot slutligt urval.
-			2.1.1 C4-exportprov +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: SFB PIM-team; Nuvarande part
+			godkännare:: SFB produktägare
+			beror på:: PA-1-1; PA-2-1-1
+			Syfte
+				Gör migreringens omfattning mätbar och visar vad som saknas i exporten. Se [[B03]].
+			Innehåll
+				Antal, storlek, identifierare, relationer, käll- och internfält, filoriginal och tillgänglig historik per posttyp.
+				2.1.2 och 2.1.3 som egna delar.
+			Underlag
+				Förstudien: till största delen gjord i data audit på exporten 2026-09-30 med 3 403 330 artiklar och 22 posttyper. Återstår: historik, filoriginal och verifiering mot slutligt urval.
+			Kvalitetskriterier
+				Saknade delar har ansvarig och åtgärd, [[PIM-M01]].
+			2.1.1 C4-exportprov +produkt ^PA-2-1-1
 				paket:: AP01
 				krav:: PIM-M01
 				part:: Nuvarande part
-				Provexport från nuvarande exportansvarig, underlag för inventeringen.
-				Förstudien: fullständig export finns redan. Nytt prov behövs bara för det som saknas i den, till exempel historik och dokumentversioner.
-			2.1.2 Inventering av äldre dokumentversioner och ändringslogg +produkt
+				format:: Data
+				kvalitetsmetod:: Avstämning
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB produktägare
+				beror på::
+				Syfte
+					Ger det som saknas i den befintliga exporten.
+				Innehåll
+					Provexport av ändringshistorik och äldre dokumentversioner, och annat som 1.1 visar saknas.
+				Underlag
+					Förstudien: fullständig export finns redan. Nytt prov behövs bara för det som saknas i den.
+				Kvalitetskriterier
+					Provet går att läsa och följer ett dokumenterat format.
+			2.1.2 Inventering av äldre dokumentversioner och ändringslogg +produkt ^PA-2-1-2
 				paket:: AP01
 				krav:: PIM-M06; PIM-Q04
 				part:: PIM-partner
-				Exportmöjlighet, volym och luckor. Underlag för [[AP22]].
-				Förstudien: äldre säkerhetsdatablad finns bara i C4, eftersom Finfo bara skickar det gällande. REACH artikel 36 kräver att de sparas minst tio år efter senaste leverans.
-			2.1.3 Underlag för migreringsurval +produkt
+				format:: Dokument
+				kvalitetsmetod:: Granskning
+				granskare:: SFB PIM-team; Nuvarande part
+				godkännare:: SFB produktägare
+				beror på:: PA-2-1-1
+				Syfte
+					Underlag för [[AP22]]: vad som går att få ut ur C4 före stängningen, och vad som kostar en alternativ åtkomstlösning.
+				Innehåll
+					Exportmöjlighet, antal versioner, volym i GB, tillgängliga datum och luckor per dokumenttyp.
+					Om ändringsloggen kan tas ut som läsbar export.
+				Underlag
+					Förstudien: äldre säkerhetsdatablad finns bara i C4, eftersom Finfo bara skickar det gällande. REACH artikel 36 kräver att de sparas minst tio år efter senaste leverans.
+				Kvalitetskriterier
+					Luckor och saknade datum redovisas. Inga datum uppfinns.
+			2.1.3 Underlag för migreringsurval +produkt ^PA-2-1-3
 				paket:: AP01
 				krav:: PIM-M01
 				part:: PIM-partner
-				Förslag till urvalsregel och volymer för SFB:s beslut i [[AP11]].
-				Förstudien: regeln utgångsdatum 2023-10-01 eller senare, utan utgångsdatum eller webbstatus aktiv ger 1 219 825 artiklar. SFB har beslutat att de 60 012 testartiklarna tas bort.
-				Förstudien: C4 har 783 leverantörer mot cirka 150 centrala avtalsleverantörer, PP32. Vilka leverantörer som ska med är inte beslutat.
-		2.2 Medieinventering +produkt
+				format:: Kalkylark
+				kvalitetsmetod:: Granskning
+				granskare:: SFB PIM-team
+				godkännare:: SFB produktägare
+				beror på:: PA-2-1
+				Syfte
+					Förslag som SFB beslutar urvalet utifrån i [[AP11]].
+				Innehåll
+					Urvalsregel för artiklar, leverantörer och filer, med volymer per objekttyp.
+				Underlag
+					Förstudien: regeln utgångsdatum 2023-10-01 eller senare, utan utgångsdatum eller webbstatus aktiv ger 1 219 825 artiklar. SFB har beslutat att de 60 012 testartiklarna tas bort.
+					Förstudien: C4 har 783 leverantörer mot cirka 150 centrala avtalsleverantörer, PP32. Vilka leverantörer som ska med är inte beslutat.
+				Kvalitetskriterier
+					Volymerna går att följa till exporten.
+		2.2 Medieinventering +produkt ^PA-2-2
 			paket:: AP01
 			krav:: PIM-A01; PIM-A03; PIM-A06; PIM-A07
 			part:: PIM-partner
-			Versionsnycklar, gamla URL:er, format, filstorlekar, original, domäner, lagring och transformationsprofiler. Se [[B04]].
-			Förstudien: 99,98 % av medieposterna pekar på en verklig fil. Urvalet har 421 550 bilder och 75 912 dokument efter dubblettrensning, cirka 1,1 TB. Cirka 130 000 filer saknar koppling. 15 till 20 mediatyper från dagens bildkategorier, bildgrupper och dokumentkategorier. Konverteringsreglerna finns i SFB:s dokument om bildkonvertering. Återstår: versionsnycklar, verifiering av transformationsprofiler och domäner.
-		2.3 Volym- och lastinventering +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8; SFB e-handel
+			godkännare:: SFB produktägare
+			beror på:: PA-1-1
+			Syfte
+				Underlag för medieinnehållet i kontrakten, för [[AP05]], [[AP10]] och migreringen. Se [[B04]].
+			Innehåll
+				Versionsnycklar, gamla URL:er, format, filstorlekar, original, domäner, lagring, mediatyper och transformationsprofiler.
+			Underlag
+				Förstudien: 99,98 % av medieposterna pekar på en verklig fil. Urvalet har 421 550 bilder och 75 912 dokument efter dubblettrensning, cirka 1,1 TB. Cirka 130 000 filer saknar koppling. 15 till 20 mediatyper från dagens bildkategorier, bildgrupper och dokumentkategorier. Konverteringsreglerna finns i SFB:s dokument om bildkonvertering. Återstår: versionsnycklar, verifiering av transformationsprofiler och domäner.
+			Kvalitetskriterier
+				Varje transformationsprofil har representativa original och utdata, så att [[PIM-A06]] kan provas.
+				Länkförteckningen för [[PIM-A07]] finns.
+		2.3 Volym- och lastinventering +produkt ^PA-2-3
 			paket:: AP01
 			krav:: PIM-Q01; PIM-Q02
 			part:: PIM-partner
-			Filernas bytevolym, versionsökning, dagliga ändringar och toppar. Se [[B08]].
-			Förstudien: bestånd och filvolym finns. Finfos förändringsfiler för ungefär en vecka ger en första bild av ändringsvolymen. Toppar saknas, eftersom statistik bara finns per delägare.
-		2.4 Verifiering av åtkomst vid PIM-avbrott +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PA-1-1
+			Syfte
+				Mätta volymer för dimensionering, lagring och prestandatest. Se [[B08]].
+			Innehåll
+				Filernas bytevolym, versionsökning, dagliga ändringar och toppar per källa.
+			Underlag
+				Förstudien: bestånd och filvolym finns. Finfos förändringsfiler för ungefär en vecka ger en första bild av ändringsvolymen. Toppar saknas, eftersom statistik bara finns per delägare.
+			Kvalitetskriterier
+				Varje värde har källa och mätperiod.
+		2.4 Verifiering av åtkomst vid PIM-avbrott +produkt ^PA-2-4
 			paket:: AP01
 			krav:: PIM-O05
 			part:: PIM-partner
-			Beroenden mellan PIM, MagicBox, Snicken och medielagring. Anger vilka anpassningar som behövs i [[AP04]], [[AP08]], [[AP09]] och [[AP10]].
-		2.5 Verifiering av drift och identitet +produkt
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8; Snicken
+			godkännare:: SFB produktägare
+			beror på:: PA-1-2; PA-2-2; PA-2-5
+			Syfte
+				Visar vilka anpassningar som behövs för att publicerad information fungerar vid avbrott i PIM.
+			Innehåll
+				Beroenden mellan PIM, MagicBox, Snicken och medielagring, och vilka anpassningar som behövs i [[AP04]], [[AP08]], [[AP09]] och [[AP10]].
+			Kvalitetskriterier
+				Varje beroende har en bedömning och, vid behov, en prissatt anpassning i rätt paket.
+		2.5 Verifiering av drift och identitet +produkt ^PA-2-5
 			paket:: AP01
 			krav:: PIM-O01; PIM-O03
 			part:: PIM-partner
-			Identitetstjänst, driftägare, loggtid och tekniska beroenden. Se [[B09]].
-			Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: ITM8; Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PA-1-1
+			Syfte
+				Klarar ut driftägare, identitetstjänst och tekniska beroenden före arkitekturen i F1. Se [[B09]].
+			Innehåll
+				Identitetstjänst, driftägare, loggtid, befintlig medieinfrastruktur och tekniska beroenden.
+			Underlag
+				Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
+			Kvalitetskriterier
+				Varje driftkomponent har en ägare efter C4:s stängning.
 	3 Beslutsunderlag och plan
-		3.1 Beslutsunderlag för öppna frågor +produkt
+		3.1 Beslutsunderlag för öppna frågor +produkt ^PA-3-1
 			paket:: AP01
 			krav::
 			part:: PIM-partner
-			Varje öppen fråga under Återstår att precisera i [[B01]] till [[B14]] har rekommendation, kostnadspåverkan och ansvarig.
-			Förstudien: frågorna i avsnitt 5.6 och 10.3 som rör F1 tas med, till exempel varumärke för 705 119 artiklar, de 537 leverantörer som saknar berikning och hur SQARP-artiklar hanteras innan en SQARP-integration finns.
-			Förstudien: bilaga K har öppna beslut om vad en artikel är, krav för att vara klar för kanal, livscykelstadier, språk per egenskap och ämnesdata från säkerhetsdatablad. PP24 om varumärkesmappning och PP46 om delägarnas Finfo-tjänster saknar krav och behöver ett beslut.
-			Icke-funktionella krav som saknas i kravspecifikationen
-				Personuppgifter och GDPR: vilka personuppgifter som lagras i konton och ändringshistorik, hur länge, och om ett personuppgiftsbiträdesavtal behövs.
-				Tillgänglighet i gränssnittet: om WCAG eller annan nivå ska gälla för administratörsgränssnittet.
-				Webbläsarstöd: vilka webbläsare och skärmstorlekar administratörerna använder.
-				Säkerhetstest: om penetrationstest eller säkerhetsgranskning krävs före driftstart, och vem som utför det.
-				Drifttid: om ett mål för tillgänglighet över tid ska gälla utöver RTO, och för vilka delar.
-		3.2 Förteckning över motsägelser mot förstudien +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB produktägare; Vaimo projektledare
+			godkännare:: SFB sponsor
+			beror på:: PA-1-1; PA-2-1; PA-2-2; PA-2-3; PA-2-5
+			Syfte
+				Låter SFB fatta de beslut som påverkar priset innan bindande genomförandepris.
+			Innehåll
+				Varje öppen fråga under Återstår att precisera i [[B01]] till [[B14]] med rekommendation, kostnadspåverkan, ansvarig och senaste beslutsdatum.
+				Förstudien: frågorna i avsnitt 5.6 och 10.3 som rör F1 tas med, till exempel varumärke för 705 119 artiklar, de 537 leverantörer som saknar berikning och hur SQARP-artiklar hanteras innan en SQARP-integration finns.
+				Förstudien: bilaga K har öppna beslut om vad en artikel är, krav för att vara klar för kanal, livscykelstadier, språk per egenskap och ämnesdata från säkerhetsdatablad. PP24 om varumärkesmappning och PP46 om delägarnas Finfo-tjänster saknar krav och behöver ett beslut.
+				Icke-funktionella krav som saknas i kravspecifikationen
+					Personuppgifter och GDPR: vilka personuppgifter som lagras i konton och ändringshistorik, hur länge, och om ett personuppgiftsbiträdesavtal behövs.
+					Tillgänglighet i gränssnittet: om WCAG eller annan nivå ska gälla för administratörsgränssnittet.
+					Webbläsarstöd: vilka webbläsare och skärmstorlekar administratörerna använder.
+					Säkerhetstest: om penetrationstest eller säkerhetsgranskning krävs före driftstart, och vem som utför det.
+					Drifttid: om ett mål för tillgänglighet över tid ska gälla utöver RTO, och för vilka delar.
+			Kvalitetskriterier
+				Varje fråga har ansvarig och senaste beslutsdatum.
+				Frågor som blockerar annan produkt i AP01 skickas till SFB så fort de upptäcks, inte först när dokumentet är klart.
+		3.2 Förteckning över motsägelser mot förstudien +produkt ^PA-3-2
 			paket:: AP01
 			krav::
 			part:: PIM-partner
-			Kravspecifikationen kräver att motsägelser och deras påverkan anges. Kravspecifikationen 1.3-V gäller där inget annat är beslutat.
-			Webbstatus
-				Förstudien räknar om webbstatus med regel. Kravspecifikationen låter administratören sätta den manuellt, [[PIM-W06]].
-				Beslut: webbstatus beräknas automatiskt och har en manuell komponent. F1 behåller manuell webbstatus enligt [[PIM-W06]]. Den automatiska beräkningen läggs i V2 och utökar omfattningen.
-			Arkivering
-				Förstudien arkiverar automatiskt efter datum och lagersaldo. F1 har ingen automatisk arkivering, [[PIM-W07]] och [[B14]].
-				Beslut: automatisk arkivering ingår i V2, tillsammans med [[AP19]]. Det utökar [[PIM-N04]], som bara har manuell arkivering.
-			Byggvarubedömningen
-				Förstudien flyttar kopplingen från Magic Box till PIM. Kravspecifikationen återanvänder den i Magic Box, [[PIM-I07]].
-				Beslut: kravspecifikationen gäller.
-			Snicken
-				Förstudien låter SFB och Snicken bygga integrationen. Kravspecifikationen antar ITM8, [[AP09]] och [[B02]].
-				Beslut: kravspecifikationen gäller.
-			Migrering
-				Förstudien lägger migreringen utanför projektbudgeten med SFB som ägare. Kravspecifikationen lägger den i [[AP11]].
-				Beslut: kravspecifikationen gäller.
-			Egna egenskaper
-				Förstudien gör om textvärden för mått till tal. Kravspecifikationen utesluter generell standardisering och enhetskonvertering, [[PIM-D03]].
-				Beslut: kravspecifikationen gäller.
-			Mediehantering: förstudien lägger bildkonvertering och URL:er i ett eget paket med oklar ägare, kravspecifikationen i [[AP10]] hos ITM8.
-		3.3 Reviderat genomförandeestimat +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: SFB produktägare
+			godkännare:: SFB produktägare
+			beror på:: PA-1-1
+			Syfte
+				Kravspecifikationen kräver att motsägelser mot förstudien och deras påverkan anges i svaret.
+			Innehåll
+				Kravspecifikationen 1.3-V gäller där inget annat är beslutat.
+				Webbstatus
+					Förstudien räknar om webbstatus med regel. Kravspecifikationen låter administratören sätta den manuellt, [[PIM-W06]].
+					Beslut: webbstatus beräknas automatiskt och har en manuell komponent. F1 behåller manuell webbstatus enligt [[PIM-W06]]. Den automatiska beräkningen läggs i V2 och utökar omfattningen.
+				Arkivering
+					Förstudien arkiverar automatiskt efter datum och lagersaldo. F1 har ingen automatisk arkivering, [[PIM-W07]] och [[B14]].
+					Beslut: automatisk arkivering ingår i V2, tillsammans med [[AP19]]. Det utökar [[PIM-N04]], som bara har manuell arkivering.
+				Byggvarubedömningen
+					Förstudien flyttar kopplingen från Magic Box till PIM. Kravspecifikationen återanvänder den i Magic Box, [[PIM-I07]].
+					Beslut: kravspecifikationen gäller.
+				Snicken
+					Förstudien låter SFB och Snicken bygga integrationen. Kravspecifikationen antar ITM8, [[AP09]] och [[B02]].
+					Beslut: kravspecifikationen gäller.
+				Migrering
+					Förstudien lägger migreringen utanför projektbudgeten med SFB som ägare. Kravspecifikationen lägger den i [[AP11]].
+					Beslut: kravspecifikationen gäller.
+				Egna egenskaper
+					Förstudien gör om textvärden för mått till tal. Kravspecifikationen utesluter generell standardisering och enhetskonvertering, [[PIM-D03]].
+					Beslut: kravspecifikationen gäller.
+				Mediehantering
+					Förstudien lägger bildkonvertering och URL:er i ett eget paket med oklar ägare. Kravspecifikationen lägger dem i [[AP10]] hos ITM8.
+					Beslut saknas. Kravspecifikationen gäller tills vidare.
+			Kvalitetskriterier
+				Varje motsägelse har påverkan och beslut eller ansvarig för beslut.
+		3.3 Reviderat genomförandeestimat +produkt ^PA-3-3
 			paket:: AP01
 			krav::
 			part:: PIM-partner
-			Estimatet omräknat från klass 4 till klass 3 enligt metodfilen.
-		3.4 Reviderad genomförandeplan +produkt
+			format:: Kalkylark
+			kvalitetsmetod:: Granskning
+			granskare:: Vaimo teknisk arkitekt; Vaimo projektledare
+			godkännare:: SFB sponsor
+			beror på:: PA-1-2; PA-1-3; PA-1-6; PA-1-7; PA-2-1-2; PA-2-1-3; PA-2-4; PA-3-1
+			Syfte
+				Ger SFB ett bindande eller nästan bindande genomförandepris för resten av F1.
+			Innehåll
+				Estimatet omräknat från klass 4 till klass 3 enligt metodfilen, med uppdaterade rader, risker och kostnadsposter.
+			Kvalitetskriterier
+				Relativt spann för F1 ligger ungefär mellan 30 och 50 %.
+				Kontrollerna i SFB_Estimat.ord och metodfilen är gjorda.
+				Inga saknade rader utom ITM8:s, som syns som saknade.
+		3.4 Reviderad genomförandeplan +produkt ^PA-3-4
 			paket:: AP01
 			krav:: PIM-H04
 			part:: PIM-partner
-			Tidplan och beroenden för resten av F1, underlag för [[AP15]].
-			Förstudien: paketordningen och beroendena i avsnitt 10.1 kan användas som utgångspunkt. C4 och Exchange stängs 2026-12-31.
-		3.5 Granskade workshopanteckningar +produkt
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; SFB produktägare
+			godkännare:: SFB sponsor
+			beror på:: PA-3-3
+			Syfte
+				Tidplan och beroenden för resten av F1, och underlag för [[AP15]] och för SFB:s beslut om [[ALT03]].
+			Innehåll
+				Tidplan byggd på produktflödet i F1, bemanning, SFB:s och ITM8:s medverkan per vecka, beslutsdatum och senaste möjliga start.
+			Underlag
+				Förstudien: paketordningen och beroendena i avsnitt 10.1 kan användas som utgångspunkt. C4 och Exchange stängs 2026-12-31.
+			Kvalitetskriterier
+				Visar realistisk leveransdag och om den ligger före C4:s stängning, [[PIM-M05]].
+		3.5 Granskade workshopanteckningar +produkt ^PA-3-5
 			paket:: AP01
 			krav::
 			part:: PIM-partner
-			Beslut och avstämningar med SFB och ITM8, granskade av SFB.
+			format:: Dokument
+			kvalitetsmetod:: Granskning
+			granskare:: SFB produktägare; ITM8
+			godkännare:: SFB produktägare
+			beror på::
+			Syfte
+				Spårbara beslut från workshops och avstämningar under AP01.
+			Innehåll
+				Deltagare, beslut, öppna frågor och åtgärder per möte.
+			Kvalitetskriterier
+				Granskade inom en vecka efter mötet. Beslut förs in i 3.1 eller i berörd produkt.
+	Produktflöde
+		Ordningen följer fältet beror på. Produkter i samma steg kan tas fram parallellt.
+		Kritisk linje: 1.1, 2.1, 1.4, 1.3, kontrakten 1.2.1 till 1.2.4, 1.2.5, 1.2.6, 3.3 och 3.4.
+		3.1 och 3.5 förs löpande från start. Frågor som blockerar skickas till SFB direkt.
+		Steg 1 Start
+			@ 1.1 Återanvändningsmatris för förstudien^PA-1-1
+			@ 2.1.1 C4-exportprov^PA-2-1-1
+			@ 1.3.1 Låst startlista för redigerbara produktegenskaper^PA-1-3-1
+			@ 1.3.2 Förteckning över skyddade fält^PA-1-3-2
+			@ 1.3.3 Regel för sammanslagen extern text^PA-1-3-3
+		Steg 2 Inventeringar
+			@ 2.1 C4-exportinventering^PA-2-1
+			@ 2.1.2 Inventering av äldre dokumentversioner och ändringslogg^PA-2-1-2
+			@ 2.2 Medieinventering^PA-2-2
+			@ 2.3 Volym- och lastinventering^PA-2-3
+			@ 2.5 Verifiering av drift och identitet^PA-2-5
+			@ 3.2 Förteckning över motsägelser mot förstudien^PA-3-2
+		Steg 3 Regler och rapporter
+			@ 1.4 Identitetsregler och exempeldata^PA-1-4
+			@ 1.4.1 Rapport över artiklar utan entydig identitet^PA-1-4-1
+			@ 1.5 Kontrollrapport för produktgrupper^PA-1-5
+			@ 2.1.3 Underlag för migreringsurval^PA-2-1-3
+			@ 1.7 Specifikation av icke-funktionella krav^PA-1-7
+		Steg 4 Fältmatris och Excel
+			@ 1.3 Fältmatris^PA-1-3
+			@ 1.6 Fast Excel-format^PA-1-6
+		Steg 5 Kontrakt
+			@ 1.2.1 Kontrakt MagicBox till PIM^PA-1-2-1
+			@ 1.2.2 Kontrakt PIM till MagicBox^PA-1-2-2
+			@ 1.2.3 Kontrakt för Snickenflödet^PA-1-2-3
+			@ 1.2.4 Fel- och transportkontrakt^PA-1-2-4
+			@ 1.2.5 Validerade kontraktsexempel^PA-1-2-5
+			@ 1.2.6 ITM8:s granskning av kontrakten^PA-1-2-6
+			@ 1.2 Gränssnittskontrakt^PA-1-2
+			@ 2.4 Verifiering av åtkomst vid PIM-avbrott^PA-2-4
+		Steg 6 Beslut, estimat och plan
+			@ 3.1 Beslutsunderlag för öppna frågor^PA-3-1
+			@ 3.3 Reviderat genomförandeestimat^PA-3-3
+			@ 3.4 Reviderad genomförandeplan^PA-3-4
+		Löpande
+			@ 3.5 Granskade workshopanteckningar^PA-3-5
+	Öppna frågor
+		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i 3.1.
+		[ ] Tid mot C4:s stängning: AP01 har inget startdatum, och C4 stängs 2026-12-31. Hinner AP01 och F1 före stängningen, eller ska [[ALT03]] beslutas redan nu?
+		[ ] Godkännare: är SFB produktägare rätt godkännare för specifikationerna, och SFB sponsor för estimat och plan? Ingen namngiven beslutsfattare finns enligt [[B11]].
+		[ ] ITM8:s åtagande: har ITM8 avsatt tid och budget för att granska och godkänna kontrakten i AP01? Utan det kan 1.2 inte bli klar.
+		[ ] Snicken: ska Snicken godkänna 1.2.3, och vem kontaktar Snicken?
+		[ ] Nuvarande part: kan Ariser leverera exportprovet 2.1.1 och historiken i tid, och till vilket pris?
+		[ ] Exportprov: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
+		[ ] Mediehantering: motsägelsen om bildkonvertering och URL:er i 3.2 saknar beslut.
+		[ ] Fältmatrisens omfattning: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
+		[ ] Estimatrader: 1.4.1, 1.5, 2.1.2, 2.1.3, 2.2, 2.3, 2.5, 3.2 och 3.5 saknar egna rader i SFB_Estimat_rader.csv eller ligger i bredare rader. Ska raderna delas upp per produkt?
 	Utanför AP01
 		Implementation av datamodell, gränssnitt och integrationer, se [[PBS F1 första driftversionen]].
 		Migreringsmappning och migreringsverktyg, se [[AP11]]. AP01 inventerar, AP11 mappar.
