@@ -1,6 +1,6 @@
 # SFB berikning och PIM: svar på förfrågan om estimat
 
-Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog version 1.3-V, 63 krav och 22 arbetspaket. Teknikstack: Medusa v2. Alla belopp i SEK exklusive moms.
+Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog version 1.3-V, 63 krav och 22 arbetspaket. Teknikstack: Medusa v2 på Node.js och TypeScript, PostgreSQL och Redis, med administratörsgränssnitt i React. Alla belopp i SEK exklusive moms.
 
 ## Svarets dokument
 

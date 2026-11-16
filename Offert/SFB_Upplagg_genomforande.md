@@ -46,7 +46,7 @@ I januari: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade
 
 ## Teknik
 
-Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-tenant. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler, och gränssnittet som tillägg till Medusa Admin. SFB äger den kundspecifika koden, och allt kan lämnas över till en annan partner.
+Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-tenant. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler, och gränssnittet som tillägg till Medusa Admin i React med Medusas komponentbibliotek. Tabellredigeringen byggs med en gridkomponent med öppen källkod. SFB äger den kundspecifika koden, och allt kan lämnas över till en annan partner.
 
 ## Senaste datum
 
