@@ -404,38 +404,45 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			[ ] Föreslå teknikstack och hosting +uppgift ^U-PA-1-8-T1
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
-				längd:: 2
+				längd:: 1
 				start:: 2026-11-30
-				slut:: 2026-12-01
+				slut:: 2026-11-30
 				beror på:: U-PA-1-7-T2; U-PA-2-5-T
 			[ ] Beskriv komponenter och deras gränser +uppgift ^U-PA-1-8-T2
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-02
-				slut:: 2026-12-02
+				start:: 2026-12-01
+				slut:: 2026-12-01
 				beror på:: U-PA-1-8-T1
 			[ ] Beskriv säkerhetslösningen +uppgift ^U-PA-1-8-T3
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-02
-				slut:: 2026-12-02
+				start:: 2026-12-01
+				slut:: 2026-12-01
 				beror på:: U-PA-1-8-T1
 			[ ] Spåra arkitekturen mot de icke-funktionella kraven +uppgift ^U-PA-1-8-T4
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-03
-				slut:: 2026-12-03
+				start:: 2026-12-02
+				slut:: 2026-12-02
 				beror på:: U-PA-1-8-T2; U-PA-1-8-T3
+			[ ] Lastprova Medusa och Index-modulen med 1,4 miljoner artiklar +uppgift ^U-PA-1-8-T5
+				produkt:: PA-1-8
+				ansvarig:: Vaimo utvecklare; Vaimo teknisk arkitekt
+				längd:: 3
+				start:: 2026-12-01
+				slut:: 2026-12-03
+				beror på:: U-PA-1-8-T1
 			[ ] Granska och godkänn 1.8 Teknisk arkitektur och säkerhetslösning +uppgift ^U-PA-1-8-G
 				produkt:: PA-1-8
 				ansvarig:: SFB produktägare
 				längd:: 2
 				start:: 2026-12-04
 				slut:: 2026-12-07
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4; U-PA-1-7-G; U-PA-2-5-G
+				beror på:: U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4; U-PA-1-8-T5; U-PA-1-7-G; U-PA-2-5-G
 				Granskare: ITM8; Vaimo testledare.
 	2 Inventeringar
 		[ ] Ta fram 2.1 C4-exportinventering +uppgift ^U-PA-2-1-T
@@ -607,7 +614,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				längd:: 2
 				start:: 2026-12-18
 				slut:: 2026-12-21
-				beror på:: U-PA-1-2-T; U-PA-1-3-T4; U-PA-1-6-T2; U-PA-1-7-T2; U-PA-1-8-T4; U-PA-2-1-2-T; U-PA-2-1-3-T; U-PA-3-1-T2
+				beror på:: U-PA-1-2-T; U-PA-1-3-T4; U-PA-1-6-T2; U-PA-1-7-T2; U-PA-1-8-T4; U-PA-1-8-T5; U-PA-2-1-2-T; U-PA-2-1-3-T; U-PA-3-1-T2
 			[ ] Estimeringsmöte med två estimatorer +uppgift ^U-PA-3-3-T2
 				produkt:: PA-3-3
 				ansvarig:: Vaimo teknisk arkitekt; Vaimo affärskonsult

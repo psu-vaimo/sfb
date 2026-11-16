@@ -372,10 +372,13 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Syfte
 				Kravspecifikationen ber oss föreslå teknikstack, hosting och säkerhetslösning. Alla produkter i PIM-applikationen och miljöerna i F1 bygger på den. Flyttad från F1 till AP01 enligt beslut 2026-11-16, så att den är klar före det reviderade estimatet.
 			Innehåll
-				Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
+				Teknikstack: Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, enligt beslut 2026-11-16. PIM:s egna data ligger i egna Medusa-moduler med modullänkar till produktmodulen. Administratörsgränssnittet byggs som tillägg till Medusa Admin.
+				Hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
+				Lasttest av Medusa och Index-modulen med 1,4 miljoner artiklar, eftersom Medusa är byggt för e-handel och inte för en katalog av den storleken.
 				Säkerhetslösningen driftsätts i F1, avsnitt 5.
 			Kvalitetskriterier
 				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
+				Lasttestet visar att sökning, öppning och sparande klarar svarstidsmålen med full datamängd, eller vilka anpassningar som krävs.
 				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för komponentförteckningen i F1, 7.5.
 				Godkänd innan utvecklingen av datamodellen i F1 startar.
 	2 Inventeringar
