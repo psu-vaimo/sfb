@@ -134,6 +134,7 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Stöd till regel för klar per kanal,E-AUTOWEBB,BC,,,,,,PIM-W06,,,PV-1-4-1
 ,estimatrad,Automatisk beräkning av webbstatus,E-AUTOWEBB,DEV,,,,,,PIM-W06,Beslutad utökning utöver PIM-W06.,,PV-1-4-2
 ,estimatrad,Manuell överstyrning av webbstatus,E-AUTOWEBB,DEV,,,,,,PIM-W06,,,PV-1-4-3
+,estimatrad,Tre webbstatusar i kontraktet och MagicBox,E-AUTOWEBB,ITM8,,,,,,PIM-W06; PIM-I03,"ITM8:s anpassning för B2C, B2B och Riks.",,PV-1-4-5
 ,estimatrad,"Test, driftsättning och överlämning",E-AUTOWEBB,DEV,,,,,,PIM-W06,,,PV-1-4-4
 ,estimatrad,Domän- och länkupplägg,E-AP20,DEV,,,,,,PIM-N05,,,PV-2-1-1; PV-2-1-2
 ,estimatrad,Test och driftsättning,E-AP20,DEV,,,,,,PIM-N05,,,PV-2-1-3

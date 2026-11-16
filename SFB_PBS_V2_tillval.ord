@@ -274,7 +274,7 @@ PBS V2 och tillval ^PBS-V2T
 				Syfte
 					Bestämmer när en artikel är klar för webben, så att webbstatus kan räknas ut.
 				Innehåll
-					Vad som måste finnas för att en artikel ska få webbstatus aktiv, till exempel namn, text, bild, varumärke och GTIN.
+					Vad som måste finnas för att en artikel ska få webbstatus aktiv, till exempel namn, text, bild, varumärke och GTIN, separat för de tre kanalerna B2C, B2B och Riks enligt beslut 2026-11-16. B2B kan till exempel klara sig utan bild.
 				Underlag
 					Förstudien: REQ292, REQ514, bilaga K.
 				Kvalitetskriterier
@@ -291,11 +291,12 @@ PBS V2 och tillval ^PBS-V2T
 				Syfte
 					Tänder och släcker artiklar utan manuellt arbete.
 				Innehåll
-					Webbstatus räknas om löpande när artikeln blir klar eller tappar bild eller text, och distribueras som i F1.
+					Tre webbstatusar, B2C, B2B och Riks, räknas om löpande när artikeln blir klar eller tappar bild eller text, och distribueras till MagicBox enligt det utökade kontraktet i 1.4.5.
 				Underlag
 					Förstudien: REQ314, REQ411, BE115.1.
 				Kvalitetskriterier
-					En artikel som får sin sista saknade bild blir aktiv. En som tappar texten blir inaktiv.
+					En artikel som får sin sista saknade bild blir aktiv i de kanaler där bild krävs. En som tappar texten blir inaktiv.
+					Varje kanal kan ha olika status för samma artikel.
 			1.4.3 Manuell överstyrning av webbstatus +produkt ^PV-1-4-3
 				paket::
 				krav:: PIM-W06
@@ -308,11 +309,26 @@ PBS V2 och tillval ^PBS-V2T
 				Syfte
 					Den manuella komponenten i beslutet om webbstatus.
 				Innehåll
-					Administratören kan sätta webbstatus i undantagsfall utan att automatiken skriver över, och ta bort överstyrningen. Bygger på den manuella webbstatusen från F1.
+					Administratören kan sätta webbstatus per kanal i undantagsfall utan att automatiken skriver över, och ta bort överstyrningen. Bygger på den manuella webbstatusen från F1.
 				Underlag
 					Förstudien: REQ214.
 				Kvalitetskriterier
 					En överstyrd status ändras inte av automatiken förrän överstyrningen tas bort.
+			1.4.5 Utökat kontrakt och MagicBox-anpassning för tre webbstatusar +produkt ^PV-1-4-5
+				paket::
+				krav:: PIM-W06; PIM-I03
+				part:: ITM8
+				format:: Kod
+				kvalitetsmetod:: Test
+				granskare:: Vaimo teknisk arkitekt
+				godkännare:: SFB e-handel
+				beror på:: PV-1-4-1
+				Syfte
+					MagicBox tar emot och använder tre webbstatusar i stället för en.
+				Innehåll
+					Ändring av kontraktet PA-1-2-2 och ITM8:s anpassning av MagicBox för B2C, B2B och Riks.
+				Kvalitetskriterier
+					En artikel med olika status per kanal visas rätt i varje kanal.
 			1.4.4 Testprotokoll och överlämning för automatisk webbstatus +produkt ^PV-1-4-4
 				paket::
 				krav:: PIM-W06
@@ -321,7 +337,7 @@ PBS V2 och tillval ^PBS-V2T
 				kvalitetsmetod:: Test
 				granskare:: SFB PIM-team; SFB e-handel
 				godkännare:: SFB produktägare
-				beror på:: PV-1-4-2; PV-1-4-3
+				beror på:: PV-1-4-2; PV-1-4-3; PV-1-4-5
 				Syfte
 					Visar att automatisk webbstatus fungerar och lämnas över.
 				Innehåll
@@ -474,6 +490,7 @@ PBS V2 och tillval ^PBS-V2T
 			@ 1.3.2 Manuell arkivering^PV-1-3-2
 			@ 1.3.5 Distributionsbesked för arkivstatus^PV-1-3-5
 			@ 1.4.2 Automatisk beräkning av webbstatus^PV-1-4-2
+			@ 1.4.5 Utökat kontrakt och MagicBox-anpassning för tre webbstatusar^PV-1-4-5
 			@ 2.1.2 Driftsatt domän- och länkupplägg^PV-2-1-2
 			@ 2.2.2 Förhandsvisning för valda format^PV-2-2-2
 			@ 2.3.2 Testprotokoll för mottagartjänsten^PV-2-3-2
@@ -493,8 +510,8 @@ PBS V2 och tillval ^PBS-V2T
 			@ 1.3.7 Testprotokoll och överlämning för AP19^PV-1-3-7
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB.
-		[ ] Paket för automatisk webbstatus: 1.4 estimeras nu i paketet E-AUTOWEBB under V2, utan AP-nummer, som tioårsarkivet. Ska det få ett AP-nummer i svaret till SFB?
-		[ ] Webbstatus per kanal: förstudien har tre nivåer, B2C, B2B och Riks. Kravspecifikationen har en webbstatus. Gäller beslutet om automatisk webbstatus en eller tre statusar? Tre statusar ändrar kontraktet med MagicBox.
+		[x] Paket för automatisk webbstatus: beslutat 2026-11-16, E-AUTOWEBB behålls utan AP-nummer. Fråga: 1.4 estimeras nu i paketet E-AUTOWEBB under V2, utan AP-nummer, som tioårsarkivet. Ska det få ett AP-nummer i svaret till SFB?
+		[x] Webbstatus per kanal: beslutat 2026-11-16, tre statusar i V2. Ny produkt 1.4.5. Fråga: förstudien har tre nivåer, B2C, B2B och Riks. Kravspecifikationen har en webbstatus. Gäller beslutet om automatisk webbstatus en eller tre statusar? Tre statusar ändrar kontraktet med MagicBox.
 		[ ] Automatisk arkivering utan AP17: om AP17 inte beställs saknas lagersaldo i PIM. Ska regeln då bara använda datum, eller ska automatisk arkivering vänta?
 		[ ] Återaktivering: förstudien säger att manuell återaktivering utgår och att en ny artikel skapas i stället. Kravspecifikationen och [[AP19]] har återaktivering. Kravspecifikationen gäller tills SFB säger annat.
 		[x] Estimat för utökningarna: löst. Automatisk arkivering har en rad i AP19 och automatisk webbstatus har paketet E-AUTOWEBB.

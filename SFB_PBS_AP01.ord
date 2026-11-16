@@ -518,7 +518,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Förstudien: frågorna i avsnitt 5.6 och 10.3 som rör F1 tas med, till exempel varumärke för 705 119 artiklar, de 537 leverantörer som saknar berikning och hur SQARP-artiklar hanteras innan en SQARP-integration finns.
 				Förstudien: bilaga K har öppna beslut om vad en artikel är, krav för att vara klar för kanal, livscykelstadier, språk per egenskap och ämnesdata från säkerhetsdatablad. PP24 om varumärkesmappning och PP46 om delägarnas Finfo-tjänster saknar krav och behöver ett beslut.
 				Icke-funktionella krav som saknas i kravspecifikationen
-					Personuppgifter och GDPR: vilka personuppgifter som lagras i konton och ändringshistorik, hur länge, och om ett personuppgiftsbiträdesavtal behövs.
+					Personuppgifter och GDPR: vilka personuppgifter som lagras i konton och ändringshistorik, hur länge, och om ett personuppgiftsbiträdesavtal behövs. Vaimos bedömning 2026-11-16: inget särskilt krävs, eftersom bara administratörer och tekniska identiteter loggas. SFB bekräftar.
 					Tillgänglighet i gränssnittet: om WCAG eller annan nivå ska gälla för administratörsgränssnittet.
 					Webbläsarstöd: vilka webbläsare och skärmstorlekar administratörerna använder.
 					Säkerhetstest: om penetrationstest eller säkerhetsgranskning krävs före driftstart, och vem som utför det.
