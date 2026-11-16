@@ -21,8 +21,6 @@ SFB berikningsdel och PIM
 			Produktnedbrytning (PBS) för hela F1, med produktbeskrivningar, produktflöde och öppna frågor. Speglar PBS:en för AP01.
 		./SFB_PBS_V2_tillval.ord
 			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen, med produktbeskrivningar, produktflöde och öppna frågor.
-
-
 Kravtyp +ord-type
 	name:: krav
 	fields::
@@ -71,11 +69,6 @@ Kravbedömningstyp +ord-type
 			options:: Låg; Medel; Hög
 		verifieras:: false
 	Hur väl ett system täcker ett krav. Används i SFB_Aja_bedomning.ord.
-theme::
-	font weight:: 400
-	font size:: 15
-editor::
-	line wrap:: false
 Produkttyp +ord-type
 	name:: produkt
 	fields::
@@ -99,3 +92,24 @@ Produkttyp +ord-type
 	Part är den som tar fram produkten. Beror på pekar på de produkter som måste vara klara, eller i godkänt utkast, innan produkten kan bli klar. Det ger produktflödet.
 	Under varje produkt: Syfte, Innehåll och Kvalitetskriterier, och Underlag när produkten bygger på något annat än andra produkter.
 	ID:n: PA för AP01, PF för F1 och PV för V2 och tillval, följt av produktens nummer med bindestreck.
+Note +ord-type
+	name:: note
+	color:: #39f
+	fields::
+		date::
+Doc +ord-type
+	name:: doc
+	fields::
+		summary::
+		stage::
+Decision +ord-type
+	name:: decision
+	fields::
+		why::
+		reason::
+Task +ord-type
+	name:: task
+	checkbox:: true
+	fields::
+		project::
+			options:: +project
