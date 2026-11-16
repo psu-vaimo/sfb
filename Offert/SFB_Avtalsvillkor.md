@@ -4,9 +4,9 @@ Vaimo, utkast 2026-11-16. Villkoren gäller tillsammans med estimatet och upplä
 
 ## Villkor
 
-- **Avtalsform:** löpande räkning per timme enligt timpriserna i estimatet. AP01 har ett tak på 0,50 MSEK.
+- **Avtalsform:** löpande räkning per timme enligt timpriset i estimatet. AP01 har ett tak på 0,51 MSEK.
 - **Fakturering:** upparbetad tid faktureras när respektive delleverans är godkänd: AP01, delleveransen 4 jan 2027 och F1 klar.
-- **Timpriser:** affärskonsult, teknisk arkitekt och projektledare 1 700 SEK, utvecklare och testledare 1 500 SEK, exklusive moms.
+- **Timpris:** 1 700 SEK för alla roller, exklusive moms.
 - **AI-verktyg:** kostnaden för AI-verktyg i utvecklingen debiteras enligt faktisk förbrukning och redovisas skilt från arbetstid.
 - **Efter AP01:** det reviderade estimatet och planen blir grund för beställningen av resten av F1. SFB beslutar om fortsättningen efter AP01.
 - **Ändringar:** ändrad omfattning hanteras med skriftlig ändringsbegäran med estimat och tidspåverkan, som SFB godkänner innan arbetet börjar.

@@ -8,7 +8,7 @@ C4 ersätts i flödet Finfo, C4, MagicBox, Optimizely med en PIM-applikation byg
 
 ## Bemanning
 
-Vaimo bemannar med Pontus Sundén, som gör allt arbete med AI-stöd: analys, arkitektur, utveckling, test och projektledning. Beläggningen är cirka 45 timmar per vecka till 30 dec och därefter heltid. SFB:s medverkan är cirka 20 timmar per vecka under hela genomförandet, fördelat på produktägare, sponsor och de två administratörerna. Den ökar under migreringsurval, datastädning och acceptanstest.
+Vaimo bemannar med Pontus Sundén med stöd av utvecklare, projektledare, teknisk arkitekt. Arbetet görs med AI-stöd. Beläggningen är cirka 45 timmar per vecka till 30 dec och därefter heltid. SFB:s medverkan är cirka 20 timmar per vecka under hela genomförandet, fördelat på produktägare, sponsor och de två administratörerna. Den ökar under migreringsurval, datastädning och acceptanstest.
 
 ## Faser
 

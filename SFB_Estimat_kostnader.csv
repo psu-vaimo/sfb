@@ -5,7 +5,7 @@ _id,_type,_label,_parent,slag,belopp,antal,period,leverantör,volymantagande
 ,kostnadspost,Backup av databas och filer,E-AP13,Återkommande,,1,Månad,Microsoft Azure,"Punkt-i-tid-återställning i 35 dagar för databasen och versionering med mjuk borttagning för filer. Klarar RPO en timme. Skild från dokumentversionsarkivet. Pris enligt Azures prislista, anges inte i offerten."
 ,kostnadspost,Övervakning och loggtjänst,E-AP13,Återkommande,,1,Månad,Microsoft Azure,"Application Insights och Log Analytics, cirka 10 GB loggar per månad, 90 dagars loggtid. Pris enligt Azures prislista, anges inte i offerten."
 ,kostnadspost,Support svensk kontorstid och felrättning,E-AP13,Återkommande,13600,1,Månad,Vaimo,8 timmar per månad à 1 700 SEK. Efter de tio stöddagarna i AP14. Extra timmar debiteras löpande.
-,kostnadspost,Uppgraderingar av Medusa,E-AP13,Återkommande,4000,1,Månad,Vaimo,"Två uppgraderingar per år à 16 timmar à 1 500 SEK, provade i testmiljön."
+,kostnadspost,Uppgraderingar av Medusa,E-AP13,Återkommande,4500,1,Månad,Vaimo,"Två uppgraderingar per år à 16 timmar à 1 700 SEK, provade i testmiljön."
 ,kostnadspost,Integrationer på PIM-sidan,E-AP04,Återkommande,0,1,Månad,,Inga egna integrationstjänster. ITM8:s eventuella avgifter lämnas av ITM8.
 ,kostnadspost,Export från nuvarande part,E-AP11,Engång,,,,Ariser,Om nuvarande part tar betalt för uttag. Lämnas av nuvarande part.
 ,kostnadspost,Domäner och certifikat,E-AP20,Återkommande,2000,1,År,,

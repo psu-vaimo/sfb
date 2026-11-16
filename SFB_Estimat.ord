@@ -35,7 +35,7 @@ Estimat SFB – berikningsdel och PIM
 		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
 
 	Roller
-		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget gäller när Pontus gör allt arbete med Claude, beslut 2026-11-16: 75 % för utvecklare och 50 % för affärskonsult, teknisk arkitekt, testledare och projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
+		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget gäller när Pontus gör allt arbete med Claude, beslut 2026-11-16: 75 % för utvecklare och 50 % för affärskonsult, teknisk arkitekt, testledare och projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development. Offererat timpris 1 700 SEK, samma för alla roller, beslut 2026-11-16.
 		Affärskonsult +estimatroll ^BC
 			part:: Vaimo
 			timpris:: 1700
@@ -48,14 +48,14 @@ Estimat SFB – berikningsdel och PIM
 			Samma pris som Business Consulting PIM, bekräftat 2026-11-16.
 		Utvecklare +estimatroll ^DEV
 			part:: Vaimo
-			timpris:: 1500
+			timpris:: 1700
 			scenarioavdrag:: 0.75
 			PIM Development.
 		Testledare +estimatroll ^QA
 			part:: Vaimo
-			timpris:: 1500
+			timpris:: 1700
 			scenarioavdrag:: 0.5
-			Samma pris som PIM Development, bekräftat 2026-11-16.
+			Samma timpris som övriga roller, 1 700 SEK, beslut 2026-11-16.
 		Projektledare +estimatroll ^PM
 			part:: Vaimo
 			timpris:: 1700
