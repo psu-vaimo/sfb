@@ -14,6 +14,7 @@ Estimat SFB – berikningsdel och PIM
 			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB_Uppgifter_*.ord arbetet görs i.
 				Timmarna 2026-11-16 är ett första förslag, härlett ur uppgifternas längd. De är inte estimerade av två oberoende estimatorer enligt metoden och ska ersättas i estimeringsmötet.
 				Regel: längd i arbetsdagar gånger 6,4 timmar, alltså 8 timmar gånger fokusfaktorn 0,8. Första ansvariga på en uppgift räknas på heltid, övriga ansvariga på halvtid och godkännanden på en fjärdedel. Flera rader med samma roll på samma uppgift delar timmarna. Optimistisk är 0,7 gånger trolig och pessimistisk 1,8 gånger trolig.
+				Omräknat 2026-11-16 med Medusa v2 som teknikstack. Uppgifternas längd är kortad per produkt där Medusa ger färdiga delar: kategoriträd 50 %, kategoriförvaltning 60 %, jobbstatus 50 %, återförsök och felvy 40 %, sökning och filter 30 %, artikelvy 25 %, inloggning 30 % och miljöer 20 %. Övriga delar 0 till 20 %. Regler, versioner, migrering, test och kontrakt är oförändrade. Ett lasttest av Medusa med 1,4 miljoner artiklar har lagts till i AP01, och tre Medusa-risker i riskregistret. Föregående version utan Medusa finns i git, commit 5aa61e7.
 				Rader över 40 timmar är delade per uppgift. ITM8:s rader och volymraderna i migreringen är tomma, eftersom de inte går att härleda ur längderna. Projektledningen räknas per vecka i 16 veckor.
 		./SFB_Estimat_risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
@@ -30,36 +31,44 @@ Estimat SFB – berikningsdel och PIM
 		fokusfaktor:: 0.8
 		maxrad:: 40
 		maxspann:: 4
+		scenario:: AI-assisterad utveckling
 		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
 
 	Roller
-		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
+		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget är Vaimos bedömning av AI-assisterad utveckling 2026-11-16: 30 % för utvecklare, 25 % för testledare, 15 % för affärskonsult och teknisk arkitekt och 0 för projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
 		Affärskonsult +estimatroll ^BC
 			part:: Vaimo
 			timpris:: 1700
+			scenarioavdrag:: 0.15
 			Business Consulting PIM.
 		Teknisk arkitekt +estimatroll ^TA
 			part:: Vaimo
 			timpris:: 1700
+			scenarioavdrag:: 0.15
 			Samma pris som Business Consulting PIM, bekräftat 2026-11-16.
 		Utvecklare +estimatroll ^DEV
 			part:: Vaimo
 			timpris:: 1500
+			scenarioavdrag:: 0.3
 			PIM Development.
 		Testledare +estimatroll ^QA
 			part:: Vaimo
 			timpris:: 1500
+			scenarioavdrag:: 0.25
 			Samma pris som PIM Development, bekräftat 2026-11-16.
 		Projektledare +estimatroll ^PM
 			part:: Vaimo
 			timpris:: 1700
+			scenarioavdrag:: 0
 			Project Management.
 		ITM8 +estimatroll ^ITM8
 			part:: ITM8
 			timpris::
+			scenarioavdrag::
 			ITM8:s timmar och pris kommer från ITM8. Ett saknat ITM8-estimat lämnas tomt och syns som saknat, aldrig som noll.
 		SFB:s medverkan +estimatroll ^SFB
 			part:: SFB
+			scenarioavdrag::
 			Visar SFB:s egen insats per paket, som [[B11]] efterfrågar. Ingår inte i priset.
 
 	Grupper
@@ -106,6 +115,11 @@ Estimat SFB – berikningsdel och PIM
 			Kostnadsposter med slag Återkommande, i fältet återkommandeperår. Volymantagandet står på posten.
 		Saknade externa priser syns
 			Fältet saknade på paketet och kontrollen Paket med saknade estimat.
+
+	Scenario: AI-assisterad utveckling
+		Visar estimatet om utvecklingen görs med AI-stöd. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
+		Grundestimatet prissätts. Scenariot redovisas separat tills avdraget är mätt mot utfallet i delleveransen före 2026-12-31.
+		Avdraget gäller arbetstid, inte kalendertid. Kritiska linjen i AP01 består mest av kontrakt, genomgångar med ITM8 och godkännanden, som AI-stöd påverkar lite.
 
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.

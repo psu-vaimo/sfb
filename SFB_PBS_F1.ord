@@ -5,6 +5,7 @@ PBS F1 första driftversionen ^PBS-F1
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2.3, inte igen i 2.3 eller 2.4.
 	Produkter med part ITM8 eller Nuvarande part ingår i F1 men inte i Vaimos pris.
 	Raderna Förstudien: kommer från discoveryrapporten v0.5 och dess bilagor. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
+	Teknikstack: Medusa v2, se arkitekturen PA-1-8 i AP01. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning via Index-modulen. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
 	Delleverans före 2026-12-31
@@ -95,7 +96,7 @@ PBS F1 första driftversionen ^PBS-F1
 				Syfte
 					Bär de tre aktiva kategoriträden.
 				Innehåll
-					Produktkatalog, Brukspecialisten och Weydes, och manuell relation från produkter och artiklar.
+					Produktkatalog, Brukspecialisten och Weydes, och manuell relation från produkter och artiklar. Byggs på kategorierna i Medusas produktmodul med modullänk till artiklarna.
 				Kvalitetskriterier
 					De två uteslutna äldre träden finns inte i den aktiva katalogen, [[PIM-D05]].
 			2.1.5 Produktgruppsmodell +produkt ^PF-2-1-5
@@ -125,7 +126,7 @@ PBS F1 första driftversionen ^PBS-F1
 			Syfte
 				Gränssnittet där två PIM-administratörer gör det dagliga arbetet, på svenska.
 			Innehåll
-				Delprodukterna 2.2.1 till 2.2.8. Medier ligger i 2.5, tabell i 2.3, Excel i 2.4 och arkivfunktioner i V2.
+				Delprodukterna 2.2.1 till 2.2.8, byggda som sidor och tillägg i Medusa Admin. Medier ligger i 2.5, tabell i 2.3, Excel i 2.4 och arkivfunktioner i V2.
 			Kvalitetskriterier
 				Acceptanskontrollerna Dagligt arbete och Skyddad berikning i SFB_Krav.ord går att genomföra.
 			2.2.1 Sökning och filter +produkt ^PF-2-2-1
@@ -325,7 +326,7 @@ PBS F1 första driftversionen ^PBS-F1
 				Syfte
 					Låter långa jobb köra utan att gränssnittet låses.
 				Innehåll
-					Synlig status och resultat för import, export och andra långa jobb.
+					Synlig status och resultat för import, export och andra långa jobb, byggda på Medusas workflows.
 				Kvalitetskriterier
 					Sökning och redigering fungerar medan ett jobb om 5 000 rader pågår, [[PIM-Q02]].
 		2.5 Medie- och dokumenthantering +produkt ^PF-2-5
@@ -476,7 +477,7 @@ PBS F1 första driftversionen ^PBS-F1
 				Syfte
 					Gör fel upptäckbara och möjliga att åtgärda.
 				Innehåll
-					Återförsök, felstatus, spårbar leverans, omsändning och administratörsvy med senaste lyckade överföring.
+					Återförsök, felstatus, spårbar leverans, omsändning och administratörsvy med senaste lyckade överföring. Byggs på Medusas workflows och händelser.
 				Kvalitetskriterier
 					Simulerat avbrott ger synligt fel. Återstart levererar resten utan dubbletter, [[PIM-I04]].
 	3 Integrationer utanför PIM
@@ -818,7 +819,7 @@ PBS F1 första driftversionen ^PBS-F1
 			Syfte
 				Kontrollerad åtkomst och ansvarig aktör i loggar.
 			Innehåll
-				Personliga konton för administratörer, separata tekniska identiteter för integrationer och återanvänd identitetstjänst om den finns.
+				Personliga konton för administratörer, separata tekniska identiteter för integrationer och återanvänd identitetstjänst om den finns. Byggs på Medusas användar- och autentiseringsmoduler, med en egen leverantör om SFB:s identitetstjänst kräver det.
 			Kvalitetskriterier
 				Obehörig åtkomst avvisas. Avslutad användare förlorar åtkomst. Integrationen använder inte ett personkonto, [[PIM-O01]].
 		5.4 Backup och återställningsprotokoll +produkt ^PF-5-4
