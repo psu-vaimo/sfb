@@ -25,6 +25,8 @@ SFB berikningsdel och PIM
 			Uppgifter med ansvarig, längd, beroenden, datum och status för AP01. Datumen räknas av Planering/tidplan.py.
 		./SFB_Uppgifter_F1.ord
 			Uppgifter med ansvarig, längd, beroenden, datum och status för F1, med delleveransen före 2026-12-31.
+		./SFB_Uppgifter_V2_tillval.ord
+			Uppgifter med ansvarig, längd, beroenden, datum och status för V2 och tillval.
 		./Planering/tidplan.py
 			Räknar start och slut för uppgifterna. Kör från repots rot.
 Kravtyp +ord-type
