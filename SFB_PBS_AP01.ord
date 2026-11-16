@@ -372,6 +372,23 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Innehåll
 				Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
 				Säkerhetslösningen driftsätts i F1, avsnitt 5.
+			Underlag
+				Förutsättningar 2026-11-16: Vaimo förvaltar PIM-applikationen efter driftstart. SFB har en egen Azure-tenant som ITM8 driver. Jämförda alternativ: Symfony, Laravel och .NET.
+				Förslag, att bekräfta i produkten: Symfony på Azure i SFB:s tenant.
+					Ramverk: Symfony med API Platform för API:et mot ITM8 och Messenger för asynkrona jobb, som Exceljobb och utgående deltan till MagicBox.
+					Databas: Azure Database for PostgreSQL Flexible Server med point-in-time restore, för RPO högst en timme enligt [[B09]].
+					Filer: Azure Blob Storage för bilder och dokument, med immutability för dokumentversioner som ska bevaras i tio år.
+					Körmiljö: Azure Container Apps med separata test- och produktionsmiljöer, [[PIM-O02]].
+					Identitet och hemligheter: Entra ID via OIDC för personliga konton, [[PIM-O01]], och Key Vault för hemligheter.
+					Övervakning: Application Insights och Azure Monitor, [[PIM-O04]].
+					Gränssnitt: separat grid-komponent för tabellredigering, eftersom standardadministrationen inte räcker.
+				Motivering
+					Symfony före .NET: Vaimo bygger och förvaltar, och teamet har Symfonykompetens från Akeneo. .NET skulle kräva ny bemanning, vilket tidplanen inte ger utrymme för.
+					Symfony före Laravel: Doctrine och Symfonys struktur passar en stor datamodell med versionerade dokument och ändringshistorik, [[PIM-Q04]], bättre. Mönster för attributmodell, import och export kan återanvändas från Akeneo.
+					Azure: integrationerna, Azure Storage och driftparten ITM8 finns redan i SFB:s Azure-miljö.
+				Öppet
+					Sökning över cirka 1,4 miljoner artiklar: om Postgres fulltextsökning räcker eller om Azure AI Search behövs avgörs av lasttestet med representativ datamängd, [[PIM-Q01]].
+					Val av grid-komponent och dess licens tas med i komponentförteckningen, [[PIM-H02]].
 			Kvalitetskriterier
 				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
 				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för komponentförteckningen i F1, 7.5.
