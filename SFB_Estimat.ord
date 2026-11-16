@@ -11,7 +11,7 @@ Estimat SFB – berikningsdel och PIM
 		./SFB_Estimat_paket.csv
 			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
 		./SFB_Estimat_rader.csv
-			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram.
+			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB_Uppgifter_*.ord arbetet görs i.
 		./SFB_Estimat_risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
 		./SFB_Estimat_kostnader.csv
@@ -104,6 +104,8 @@ Estimat SFB – berikningsdel och PIM
 		[ ] Varje F1-krav i SFB_Krav.ord finns i kolumnen krav på minst en rad.
 		[ ] Varje produkt i SFB_PBS_*.ord finns i kolumnen produkt på minst en rad, utom samlingsprodukter vars delprodukter har rader.
 		[ ] Kolumnen krav stämmer med produktens krav i PBS:en.
+		[ ] Varje rad har minst en uppgift i kolumnen uppgift, och varje uppgift som Vaimo eller ITM8 utför finns på minst en rad.
+		[ ] Summan av radernas troliga timmar per uppgift ryms i uppgiftens längd med den bemanning som planeras.
 		[ ] Inga rader i [[AP07]]/[[AP08]] dubblerar ITM8:s medverkan i [[AP01]].
 		[ ] Gemensamma regler räknas bara i [[AP03]], inte igen i [[AP06]] eller [[AP16]].
 		[ ] Samma fil eller körning räknas inte i både [[AP11]] och [[AP22]].

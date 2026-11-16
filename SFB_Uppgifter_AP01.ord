@@ -5,7 +5,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 	pbs:: ./SFB_PBS_AP01.ord
 	Uppgifterna som tar fram, granskar och godkänner produkterna i [[PBS AP01 Teknisk precisering och inventering]]. Varje +uppgift pekar på sin produkt i fältet produkt.
 	Ingen uppgift är längre än fem arbetsdagar, utom löpande uppgifter. Produkter som tar mer än tre dagar är uppdelade efter innehållet i produktbeskrivningen. Granskning och godkännande är en egen uppgift per produkt.
-	Längderna är preliminära bedömningar i arbetsdagar och är inte avstämda mot SFB_Estimat_rader.csv än. Ansvarig är en roll tills personerna är utsedda.
+	Längderna är preliminära bedömningar i arbetsdagar och kopplade till estimatraderna via kolumnen uppgift i SFB_Estimat_rader.csv. Raderna har inga timmar än, så längderna är inte avstämda mot dem. Ansvarig är en roll tills personerna är utsedda.
 	Start och slut räknas av Planering/tidplan.py. Ändra längd, beror på eller status och kör skriptet igen.
 	Milstolpar
 		[ ] Startmöte för AP01 med SFB och ITM8 +uppgift ^U-AP01-START
@@ -304,7 +304,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				beror på:: U-PA-1-4-T1
 			[ ] Ta fram exempeldata för varje regel +uppgift ^U-PA-1-4-T3
 				produkt:: PA-1-4
-				ansvarig:: Vaimo utvecklare
+				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
 				start:: 2026-11-25
 				slut:: 2026-11-25
@@ -380,7 +380,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 		1.7 Specifikation av icke-funktionella krav
 			[ ] Formulera de icke-funktionella kraven som mätbara krav +uppgift ^U-PA-1-7-T1
 				produkt:: PA-1-7
-				ansvarig:: Vaimo testledare
+				ansvarig:: Vaimo testledare; Vaimo teknisk arkitekt
 				längd:: 2
 				start:: 2026-11-25
 				slut:: 2026-11-26
@@ -470,7 +470,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			Granskare: SFB PIM-team; Nuvarande part.
 		[ ] Ta fram 2.1.3 Underlag för migreringsurval +uppgift ^U-PA-2-1-3-T
 			produkt:: PA-2-1-3
-			ansvarig:: Vaimo affärskonsult
+			ansvarig:: Vaimo affärskonsult; Vaimo utvecklare
 			längd:: 2
 			start:: 2026-11-25
 			slut:: 2026-11-26
@@ -632,7 +632,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				Granskare: Vaimo teknisk arkitekt; Vaimo projektledare.
 		[ ] Ta fram 3.4 Reviderad genomförandeplan +uppgift ^U-PA-3-4-T
 			produkt:: PA-3-4
-			ansvarig:: Vaimo projektledare
+			ansvarig:: Vaimo projektledare; Vaimo teknisk arkitekt
 			längd:: 2
 			start:: 2026-12-28
 			slut:: 2026-12-29
@@ -647,7 +647,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			Granskare: ITM8; SFB produktägare.
 		[ ] Ta fram 3.5 Granskade workshopanteckningar +uppgift ^U-PA-3-5-T
 			produkt:: PA-3-5
-			ansvarig:: Vaimo projektledare
+			ansvarig:: Vaimo projektledare; Vaimo affärskonsult
 			längd:: 30
 			start:: 2026-11-18
 			slut:: 2027-01-04
@@ -667,4 +667,4 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 		[ ] SFB:s och ITM8:s svarstider: godkännanden har en till två dagar. Kan SFB produktägare, SFB sponsor och ITM8 hålla det i december?
 		[x] Löst 2026-11-16: delleverans 2027-01-04 räcker. Fråga: Delleveransen: kontraktet PIM till MagicBox godkänns 2026-12-11 och arkitekturen 2026-12-07. Det lämnar knappt tre veckor för delleveransen i F1 före 2026-12-31.
 		[ ] Personer: vem bemannar rollerna? Tidplanen antar att varje roll kan arbeta med flera uppgifter parallellt.
-		[ ] Längder: längderna är preliminära och ska stämmas av mot SFB_Estimat_rader.csv.
+		[ ] Längder: uppgifterna är kopplade till estimatraderna. När raderna har timmar ska summan per uppgift stämmas av mot uppgiftens längd och bemanning.

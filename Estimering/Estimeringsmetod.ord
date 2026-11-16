@@ -103,6 +103,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				Glöm inte arbete som ofta faller bort: miljöer, behörigheter, testdata, kodgranskning, driftsättning, rättning efter test, kundens granskningsrundor och möten.
 			[ ] Ange krav-ID på raderna så att varje krav går att spåra till ett estimat.
 			[ ] Om det finns en produktnedbrytning (PBS): ange produkt-ID i kolumnen produkt, så att varje produkt går att spåra till minst en rad och varje rad till en produkt.
+			[ ] Om det finns uppgifter med tidplan: ange uppgifternas ID i kolumnen uppgift, så att timmarna på raden går att följa till de uppgifter där arbetet görs.
 			[ ] Kontrollera att varje krav i omfattningen täcks av minst en rad, och att ingen rad saknar stöd i omfattningen.
 		Skriv antaganden och risker
 			[ ] Skriv varje antagande som påverkar timmarna på raden där det spelar roll, i kolumnen antagande.
@@ -319,7 +320,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			```
 		CSV-kolumner
 			mall_paket.csv: _id, _type (estimatsumma), _label, _parent (grupp), arbetspaket, kostnadsplats, bemanning, prisstatus, start, ansvarig, antagande.
-			mall_rader.csv: _id, _type (estimatrad), _label, _parent (paket), roll, optimistisk, trolig, pessimistisk, antal, enhet, krav, antagande, utfall, produkt.
+			mall_rader.csv: _id, _type (estimatrad), _label, _parent (paket), roll, optimistisk, trolig, pessimistisk, antal, enhet, krav, antagande, utfall, produkt, uppgift.
 			mall_risker.csv: _id, _type (estimatrisk), _label, _parent (paket), roll, sannolikhet, optimistisk, trolig, pessimistisk, utlösare, åtgärd, ägare.
 			mall_kostnader.csv: _id, _type (kostnadspost), _label, _parent (paket), slag, belopp, antal, period, leverantör, volymantagande.
 			Datum skrivs ÅÅÅÅ-MM-DD och decimaler med punkt. Flera värden i en cell skiljs med semikolon.
@@ -358,6 +359,8 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				utfall::
 				produkt::
 					options:: +produkt
+				uppgift::
+					options:: +uppgift
 				n:: =($exists(antal) ? antal : 1)
 				enhetstimmar:: =((optimistisk + 4 * trolig + pessimistisk) / 6)
 				förväntad:: =(n * enhetstimmar)
