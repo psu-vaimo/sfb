@@ -6,7 +6,7 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Utbyteskontrakt,E-AP01,TA,,,,,,PIM-I01; PIM-I02,,,PA-1-2; PA-1-2-1; PA-1-2-2; PA-1-2-3; PA-1-2-4; PA-1-2-5
 ,estimatrad,"Utbyteskontrakt, ITM8:s medverkan",E-AP01,ITM8,,,,,,PIM-I01,"ITM8:s medverkan räknas bara här, inte i AP07 eller AP08.",,PA-1-2-6
 ,estimatrad,Fast Excel-mall,E-AP01,BC,,,,,,PIM-X01,,,PA-1-6
-,estimatrad,Export- och medieinventering med C4-exportprov,E-AP01,DEV,,,,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1; PA-2-1-1; PA-2-1-2; PA-2-1-3; PA-2-2; PA-2-3
+,estimatrad,Export- och medieinventering med C4-exportprov,E-AP01,DEV,,,,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1; PA-2-1-2; PA-2-1-3; PA-2-2; PA-2-3
 ,estimatrad,Verifiering av redigerbara egenskaper och åtkomst vid PIM-avbrott,E-AP01,TA,,,,,,PIM-W09; PIM-O05,,,PA-1-3-1; PA-2-4
 ,estimatrad,Specifikation av icke-funktionella krav,E-AP01,TA,,,,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Mätvärde och mätförutsättning per krav. Bekräftar svarstidsmålen i B08.,,PA-1-7
 ,estimatrad,"Specifikation av icke-funktionella krav, verifieringssätt",E-AP01,QA,,,,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Hur varje krav testas. Testplanen i AP12 spårar mot detta.,,PA-1-7

@@ -784,11 +784,12 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Avstämning
 			granskare:: Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare
-			beror på:: PA-2-1-1
+			beror på:: PA-1-1
 			Syfte
 				Säkrar allt som bara finns i C4 innan systemet stängs 2026-12-31, så att migreringen kan göras efteråt. Ingår i delleveransen före 2026-12-31.
 			Innehåll
-				Komplett export i det format som provades i AP01: artiklar, produktgrupper, kategorier, attribut, referensdata, intern berikning, relationer, filoriginal, äldre dokumentversioner och läsbar ändringslogg.
+				Ersätter exportprovet i AP01. Historik, ändringslogg och äldre dokumentversioner levereras först, så att AP01 kan inventera dem. Resten tas så nära stängningen som möjligt.
+				Komplett export: artiklar, produktgrupper, kategorier, attribut, referensdata, intern berikning, relationer, filoriginal, äldre dokumentversioner och läsbar ändringslogg.
 			Kvalitetskriterier
 				Antal per posttyp stäms av mot C4 innan stängningen.
 				Exporten går att läsa utan C4.
