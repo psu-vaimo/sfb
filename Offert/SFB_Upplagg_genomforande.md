@@ -14,14 +14,14 @@ Vaimo bemannar med Pontus Sundén med stöd av utvecklare, projektledare, teknis
 
 | Fas | Innehåll | Tid |
 |---|---|---|
-| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur, reviderat estimat och plan | 17 nov 2026 till 18 jan 2027. Avbrottsverifiering i februari |
+| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur, reviderat estimat och plan | 17 nov 2026 till 15 jan 2027. Avbrottsverifiering i februari |
 | F1 delleverans | PIM tar emot källdata och skickar vidare till MagicBox. Ingen migrering | I drift 18 dec 2026 |
-| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Januari till april 2027. Driftstart 12 apr, klar efter tio dagars stöd 26 apr |
+| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Januari till april 2027. Driftstart 9 apr, klar efter tio dagars stöd 23 apr |
 | V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | April till maj 2027, efter beslut |
 
 ## Före årsskiftet
 
-Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som delleveransen kräver, cirka 290 timmar på 24 arbetsdagar. Övriga delar av AP01 görs i januari.
+Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som delleveransen kräver, cirka 285 timmar på 24 arbetsdagar. Övriga delar av AP01 görs i januari.
 
 | Vecka | Precisering i AP01 | Bygge och drift |
 |---|---|---|
@@ -32,7 +32,7 @@ Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som dellever
 | 51 | Kontraktsexempel validerade (17 dec) | Slutexporten avstämd med SFB (14 dec). Gemensamma fält- och valideringsregler (16 dec). Miljöer godkända av ITM8 (16 dec). Integrationstest med ITM8 17 dec. Delleveransen i drift 18 dec |
 | 52 till 53 | | Ledigt. Vaimo har tillsyn av delleveransen 28 till 30 dec. C4 stängs 31 dec |
 
-I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. Snickenkontraktet godkänns 20 jan och verifieringen av åtkomst vid PIM-avbrott 18 feb. AP01 är klar 18 jan.
+I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. Snickenkontraktet godkänns 19 jan och verifieringen av åtkomst vid PIM-avbrott 17 feb. AP01 är klar 15 jan.
 
 ## Villkor för delleveransen
 
@@ -53,12 +53,12 @@ Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-t
 - C4-historik och ändringslogg från nuvarande part: 24 nov. Frys av berikning i C4: 11 dec. Komplett slutexport: 12 dec.
 - SFB:s och ITM8:s godkännande av kontrakten mellan MagicBox och PIM 3 dec och SFB:s godkännande av arkitekturen 7 dec.
 - ITM8: källintegrationer och MagicBox-sidan byggda 8 dec och ERP-matchningen verifierad 11 dec, före integrationstestet 17 dec.
-- Migreringsurval 13 jan och datastädning 21 jan.
-- Beslut om genomförandet av resten av F1: efter AP01, 18 jan.
+- Migreringsurval 12 jan och datastädning 19 jan.
+- Beslut om genomförandet av resten av F1: efter AP01, 15 jan.
 
 ## Efter årsskiftet
 
-Excel och tabellredigering i januari och februari, gränssnitt och medier klara i mars. Migreringsverktyg i februari, prov- och korrigeringskörning avstämda 24 feb och äldre dokumentversioner 12 mars. Integrationstest och acceptanstest 15 till 25 mars. Slutkörning och driftsättning 31 mars till 12 apr, utbildning 13 till 14 apr och stöd till 23 apr. Testfönster och beslutspunkter per part står i Gemensam tidplan och spårbarhet.
+Excel och tabellredigering i januari och februari, gränssnitt och medier klara i mars. Migreringsverktyg i februari, prov- och korrigeringskörning avstämda 24 feb och äldre dokumentversioner 11 mars. Integrationstest och acceptanstest 15 till 25 mars. Slutkörning och driftsättning 30 mars till 9 apr, utbildning 15 till 16 apr och stöd till 22 apr. Testfönster och beslutspunkter per part står i Gemensam tidplan och spårbarhet.
 
 ## Största riskerna
 

@@ -10,10 +10,10 @@ Vaimo, utkast 2026-11-16. Svar på kravspecifikationen avsnitt 11 och bilagan, a
 | v49 till 50 | Kontrakt, arkitektur, miljöer och datamodell | Godkänner kontrakten 3 dec och arkitekturen 7 dec. Fryser berikningen i C4 11 dec | Granskar kontrakten. Bygger källintegrationer och MagicBox-sidan 2 till 8 dec och verifierar ERP-matchningen 9 till 11 dec | Nuvarande part levererar slutexporten 12 dec |
 | v51 | Gemensamma regler, källmottagning och utgående flöde. Integrationstest 17 dec. Delleveransen i drift 18 dec | Stämmer av slutexporten 14 dec. Godkänner delleveransen 18 dec | Godkänner miljöerna som driftägare 16 dec. Integrationstest. Växlar MagicBox till PIM 18 dec | |
 | v52 till 53 | Ledigt. Tillsyn av delleveransen 28 till 30 dec | | | C4 stängs 31 dec |
-| Januari, från 7 jan | Resten av AP01 med reviderat estimat och plan. Migreringsmappning. Excel och tabellredigering påbörjas | Migreringsurval 13 jan och datastädning 21 jan. Beslut om resten av F1 18 jan | Kontrakt för fel och transport. Snicken-adaptern | Snicken och ITM8 granskar Snickenkontraktet 18 till 20 jan |
+| Januari, från 7 jan | Resten av AP01 med reviderat estimat och plan. Migreringsmappning. Excel och tabellredigering påbörjas | Migreringsurval 12 jan och datastädning 19 jan. Beslut om resten av F1 15 jan | Kontrakt för fel och transport. Snicken-adaptern | Snicken och ITM8 granskar Snickenkontraktet 15 till 19 jan |
 | Februari | Excel, tabellredigering, migreringsverktyg, prov- och korrigeringskörning. Avbrottsverifiering | Demo och godkännande av funktioner. Stämmer av körningarna 24 feb | Snicken-adaptern testad 1 feb | |
 | Mars | Gränssnitt, medier och dokumentversioner klara. Miljöer, integrationstest och acceptanstest 15 till 25 mars | Administratörerna provar alla huvudflöden. Acceptansbeslut 25 mars | Provar leveranser till MagicBox | Snicken provar leveranser |
-| April | Slutkörning, driftsättning 12 apr, utbildning 13 till 14 apr och stöd till 23 apr | Go/no-go före slutkörningen. Godkänner F1 26 apr | Växlar källflöden | |
+| April | Slutkörning, driftsättning 9 apr, utbildning 15 till 16 apr och stöd till 22 apr | Go/no-go före slutkörningen. Godkänner F1 23 apr | Växlar källflöden | |
 | April till maj | V2 och tillval, efter beslut | Beslut om V2 och tillval | AP17 och AP20 om de beställs | |
 
 SFB:s medverkan är cirka 20 timmar per vecka under hela perioden.
@@ -25,10 +25,10 @@ SFB:s medverkan är cirka 20 timmar per vecka under hela perioden.
 - 11 dec: berikningen i C4 fryses.
 - 14 dec: slutexporten från 12 dec är avstämd.
 - 18 dec: delleveransen godkänd och MagicBox växlad till PIM.
-- 18 jan: AP01 godkänd och beslut om resten av F1.
+- 15 jan: AP01 godkänd och beslut om resten av F1.
 - 25 mars: acceptansbeslut.
 - Före slutkörningen i april: go/no-go.
-- 26 apr: F1 godkänd.
+- 23 apr: F1 godkänd.
 
 ## Spårbarhet
 

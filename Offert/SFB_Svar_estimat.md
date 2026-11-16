@@ -15,9 +15,9 @@ Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog vers
 
 | Del | Timmar, bas | Kostnad, bas | Intervall |
 |---|---|---|---|
-| AP01 Teknisk precisering | 280 | 0,48 MSEK | 0,43 till 0,53 MSEK, tak 0,51 MSEK |
+| AP01 Teknisk precisering | 275 | 0,47 MSEK | 0,43 till 0,52 MSEK, tak 0,50 MSEK |
 | F1 genomförande, AP02 till AP16 och AP22 | 740 | 1,26 MSEK | 0,94 till 1,88 MSEK |
-| **F1 totalt inklusive AP01** | **1 020** | **1,74 MSEK** | |
+| **F1 totalt inklusive AP01** | **1 015** | **1,73 MSEK** | |
 | V2, AP17 till AP19 och automatisk webbstatus | 120 | 0,21 MSEK | 0,18 till 0,23 MSEK |
 | Tillval, AP21 och mottagartjänst för tioårsarkivet | 30 | 0,05 MSEK | |
 | ITM8:s paket AP07 till AP10, AP20 och ALT01 | | Saknas | Lämnas av ITM8 |
@@ -26,11 +26,11 @@ Grupperna summeras inte med varandra. Timpriset är 1 700 SEK för alla roller o
 
 ## Drift före C4:s stängning
 
-Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 18 dec 2026. Hela F1 är i drift 12 apr 2027 och klar efter stödperioden 26 apr. ALT03 behövs därför inte, men kan estimeras på begäran.
+Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 18 dec 2026. Hela F1 är i drift 9 apr 2027 och klar efter stödperioden 23 apr. ALT03 behövs därför inte, men kan estimeras på begäran.
 
 ## AP01
 
-Avgränsad leverans med eget pris, 17 nov 2026 till 18 jan 2027. Verifieringen av åtkomst vid PIM-avbrott görs i februari. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
+Avgränsad leverans med eget pris, 17 nov 2026 till 15 jan 2027. Verifieringen av åtkomst vid PIM-avbrott görs i februari. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
 
 ## F1 per arbetspaket, Vaimos del
 
@@ -67,7 +67,7 @@ Om äldre dokumentversioner saknas tar AP01 fram en kostnadssatt åtkomstlösnin
 
 ## Så har vi räknat
 
-Trepunktsestimat per arbetsmoment och roll, kopplat till produkter och uppgifter i en produktnedbrytning per paket. Där Medusa ger färdiga delar är insatsen lägre. Arbetet görs med AI-stöd, och därför är utvecklingstiden minskad med 75 % och övrig tid med 50 %. Utan AI-stöd är F1 2 640 timmar och 4,49 MSEK. Avdraget följs upp mot utfallet i delleveransen. Medusa-riskerna ingår som riskreserv i AP02, AP03 och AP13. Bas är P50 och intervallet P10 till P90. Estimatet är klass 4 och görs om till klass 3 i AP01. Timpriset är 1 700 SEK för alla roller.
+Trepunktsestimat per arbetsmoment och roll, kopplat till produkter och uppgifter i en produktnedbrytning per paket. Där Medusa ger färdiga delar är insatsen lägre. Arbetet görs med AI-stöd, och därför är utvecklingstiden minskad med 75 % och övrig tid med 50 %. Utan AI-stöd är F1 2 620 timmar och 4,46 MSEK. Avdraget följs upp mot utfallet i delleveransen. Medusa-riskerna ingår som riskreserv i AP02, AP03 och AP13. Bas är P50 och intervallet P10 till P90. Estimatet är klass 4 och görs om till klass 3 i AP01. Timpriset är 1 700 SEK för alla roller.
 
 ## Antaganden och avvikelser
 

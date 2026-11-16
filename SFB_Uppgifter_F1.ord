@@ -12,8 +12,8 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-6-2
 			ansvarig:: Vaimo testledare; ITM8
 			längd:: 3
-			start:: 2026-12-17
-			slut:: 2026-12-17
+			start:: 2026-12-16
+			slut:: 2026-12-16
 			beror på:: U-PF-2-6-1-T2; U-PF-2-6-2-T2; U-PF-3-1-1-T; U-PF-3-1-2-T; U-PF-3-1-3-T; U-PF-3-2-T2; U-PF-5-1-T
 			senast:: 2026-12-17
 			Avgränsat test av flödet från källa via PIM till MagicBox, i testmiljön.
@@ -21,23 +21,23 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-5-2
 			ansvarig:: Vaimo utvecklare; ITM8
 			längd:: 1
-			start:: 2026-12-18
-			slut:: 2026-12-18
+			start:: 2026-12-17
+			slut:: 2026-12-17
 			beror på:: U-F1-DL-TEST; U-PF-5-2-G; U-PF-5-3-G; U-PF-2-1-G; U-PF-2-2-3-G
 			senast:: 2026-12-18
 		[ ] Delleverans i drift +uppgift ^U-F1-DL
 			ansvarig:: SFB produktägare
 			längd:: 0
-			start:: 2026-12-18
-			slut:: 2026-12-18
+			start:: 2026-12-17
+			slut:: 2026-12-17
 			beror på:: U-F1-DL-DRIFT; U-PF-4-9-G; U-PA-1-2-2-G
 			senast:: 2026-12-18
 			PIM tar emot källdata och levererar till MagicBox. Slutexporten från C4 är säkrad. Se Delleverans före 2026-12-31 i SFB_PBS_F1.ord.
 		[ ] F1 klar +uppgift ^U-F1-KLAR
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-04-26
-			slut:: 2027-04-26
+			start:: 2027-04-23
+			slut:: 2027-04-23
 			beror på:: U-PF-7-2-G; U-PF-7-3-G; U-PF-7-9-G; U-PF-7-8-G
 			senast:: 2027-04-30
 			F1 är i drift, överlämnad och stödperioden är slut.
@@ -46,7 +46,7 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-1
 			ansvarig:: Vaimo affärskonsult; Vaimo utvecklare
 			längd:: 2
-			start:: 2026-12-10
+			start:: 2026-12-09
 			slut:: 2026-12-10
 			beror på:: U-PF-2-1-1-T2; U-PF-2-1-2-T2; U-PF-2-1-3-T1; U-PF-2-1-3-T2; U-PF-2-1-4-T; U-PF-2-1-5-T2
 			Komponenttest av hela datamodellen och dokumentation.
@@ -63,14 +63,14 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-1-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-03
-				slut:: 2026-12-03
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-3-T4; U-PA-1-4-T3; U-PA-1-4-T4
+				start:: 2026-12-01
+				slut:: 2026-12-02
+				beror på:: U-PA-1-8-T1; U-PA-1-3-T4; U-PA-1-4-T3; U-PA-1-4-T4
 			[ ] Dela upp Artikeltyp i separata fält +uppgift ^U-PF-2-1-1-T2
 				produkt:: PF-2-1-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-04
+				start:: 2026-12-03
 				slut:: 2026-12-07
 				beror på:: U-PF-2-1-1-T1
 			[ ] Demonstrera och godkänn 2.1.1 Artikelmodell med identiteter +uppgift ^U-PF-2-1-1-G
@@ -86,22 +86,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-1-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2026-12-03
+				start:: 2026-12-01
 				slut:: 2026-12-03
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-3-T4; U-PA-1-3-1-T
+				beror på:: U-PA-1-8-T1; U-PA-1-3-T4; U-PA-1-3-1-T
 			[ ] Bygg separata käll- och egna värden +uppgift ^U-PF-2-1-2-T2
 				produkt:: PF-2-1-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
 				start:: 2026-12-04
-				slut:: 2026-12-08
+				slut:: 2026-12-07
 				beror på:: U-PF-2-1-2-T1
 			[ ] Demonstrera och godkänn 2.1.2 Attributmodell med käll- och egna värden +uppgift ^U-PF-2-1-2-G
 				produkt:: PF-2-1-2
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2026-12-09
-				slut:: 2026-12-09
+				start:: 2026-12-08
+				slut:: 2026-12-08
 				beror på:: U-PF-2-1-2-T1; U-PF-2-1-2-T2; U-PA-1-8-G; U-PA-1-3-G; U-PA-1-3-1-G
 				Granskare: Vaimo testledare.
 		2.1.3 Referensdata för leverantörer och varumärken
@@ -109,16 +109,16 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-1-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-03
-				slut:: 2026-12-08
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-4-T3; U-PA-1-4-T4
+				start:: 2026-12-01
+				slut:: 2026-12-07
+				beror på:: U-PA-1-8-T1; U-PA-1-4-T3; U-PA-1-4-T4
 			[ ] Bygg register för miljömärkningar och farosymboler +uppgift ^U-PF-2-1-3-T2
 				produkt:: PF-2-1-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-03
+				start:: 2026-12-01
 				slut:: 2026-12-08
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-4-T3; U-PA-1-4-T4
+				beror på:: U-PA-1-8-T1; U-PA-1-4-T3; U-PA-1-4-T4
 			[ ] Demonstrera och godkänn 2.1.3 Referensdata för leverantörer och varumärken +uppgift ^U-PF-2-1-3-G
 				produkt:: PF-2-1-3
 				ansvarig:: SFB produktägare
@@ -131,15 +131,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-1-4
 			ansvarig:: Vaimo utvecklare; Vaimo affärskonsult
 			längd:: 2
-			start:: 2026-12-03
-			slut:: 2026-12-09
-			beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-3-T4
+			start:: 2026-12-01
+			slut:: 2026-12-08
+			beror på:: U-PA-1-8-T1; U-PA-1-3-T4
 		[ ] Demonstrera och godkänn 2.1.4 Tre kategoriträd +uppgift ^U-PF-2-1-4-G
 			produkt:: PF-2-1-4
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-10
-			slut:: 2026-12-10
+			start:: 2026-12-09
+			slut:: 2026-12-09
 			beror på:: U-PF-2-1-4-T; U-PA-1-8-G; U-PA-1-3-G
 			Granskare: SFB PIM-team.
 		2.1.5 Produktgruppsmodell
@@ -148,21 +148,21 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
 				start:: 2026-12-03
-				slut:: 2026-12-04
-				beror på:: U-PA-1-8-T1; U-PA-1-8-T5; U-PA-1-5-T
+				slut:: 2026-12-03
+				beror på:: U-PA-1-8-T1; U-PA-1-5-T
 			[ ] Bygg regeln en variantgrupp och flera bundles +uppgift ^U-PF-2-1-5-T2
 				produkt:: PF-2-1-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-07
-				slut:: 2026-12-09
+				start:: 2026-12-04
+				slut:: 2026-12-08
 				beror på:: U-PF-2-1-5-T1
 			[ ] Demonstrera och godkänn 2.1.5 Produktgruppsmodell +uppgift ^U-PF-2-1-5-G
 				produkt:: PF-2-1-5
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2026-12-10
-				slut:: 2026-12-10
+				start:: 2026-12-09
+				slut:: 2026-12-09
 				beror på:: U-PF-2-1-5-T1; U-PF-2-1-5-T2; U-PA-1-8-G; U-PA-1-5-G
 				Granskare: SFB PIM-team.
 		[ ] Gränssnittsdesign och avstämning med administratörerna +uppgift ^U-PF-2-2-D
@@ -170,22 +170,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo affärskonsult; SFB PIM-team
 			längd:: 3
 			start:: 2026-11-27
-			slut:: 2027-01-18
+			slut:: 2027-01-15
 			beror på:: U-PA-1-3-T4
 		[ ] Sammanställ 2.2 Administratörsgränssnitt +uppgift ^U-PF-2-2-T
 			produkt:: PF-2-2
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-03-02
-			slut:: 2027-03-10
+			start:: 2027-03-01
+			slut:: 2027-03-09
 			beror på:: U-PF-2-2-1-T2; U-PF-2-2-2-T2; U-PF-2-2-2-T3; U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3; U-PF-2-2-4-T; U-PF-2-2-5-T; U-PF-2-2-6-T2; U-PF-2-2-7-T; U-PF-2-2-8-T
 			Komponenttest av hela gränssnittet.
 		[ ] Demonstrera och godkänn 2.2 Administratörsgränssnitt +uppgift ^U-PF-2-2-G
 			produkt:: PF-2-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-11
-			slut:: 2027-03-11
+			start:: 2027-03-10
+			slut:: 2027-03-10
 			beror på:: U-PF-2-2-T; U-PF-2-2-1-G; U-PF-2-2-2-G; U-PF-2-2-3-G; U-PF-2-2-4-G; U-PF-2-2-5-G; U-PF-2-2-6-G; U-PF-2-2-7-G; U-PF-2-2-8-G
 			Granskare: SFB PIM-team; Vaimo testledare.
 		2.2.1 Sökning och filter
@@ -193,14 +193,14 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-2-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2027-01-19
-				slut:: 2027-01-19
+				start:: 2027-01-18
+				slut:: 2027-01-18
 				beror på:: U-PF-2-1-T; U-PF-2-2-D
 			[ ] Bygg filtren +uppgift ^U-PF-2-2-1-T2
 				produkt:: PF-2-2-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2027-01-20
+				start:: 2027-01-19
 				slut:: 2027-01-26
 				beror på:: U-PF-2-2-1-T1
 			[ ] Demonstrera och godkänn 2.2.1 Sökning och filter +uppgift ^U-PF-2-2-1-G
@@ -216,29 +216,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-01-19
-				slut:: 2027-01-19
+				start:: 2027-01-18
+				slut:: 2027-01-18
 				beror på:: U-PF-2-1-T; U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3; U-PF-2-2-D
 			[ ] Bygg redigering av attribut, texter och relationer +uppgift ^U-PF-2-2-2-T2
 				produkt:: PF-2-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-01-20
-				slut:: 2027-01-20
+				start:: 2027-01-19
+				slut:: 2027-01-19
 				beror på:: U-PF-2-2-2-T1
 			[ ] Bygg manuell artikel, webbstatus och livscykelstatus +uppgift ^U-PF-2-2-2-T3
 				produkt:: PF-2-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-01-20
-				slut:: 2027-01-20
+				start:: 2027-01-19
+				slut:: 2027-01-19
 				beror på:: U-PF-2-2-2-T1
 			[ ] Demonstrera och godkänn 2.2.2 Artikelvy och enskild redigering +uppgift ^U-PF-2-2-2-G
 				produkt:: PF-2-2-2
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-01-21
-				slut:: 2027-01-21
+				start:: 2027-01-20
+				slut:: 2027-01-20
 				beror på:: U-PF-2-2-2-T1; U-PF-2-2-2-T2; U-PF-2-2-2-T3; U-PF-2-1-G; U-PF-2-2-3-G
 				Granskare: SFB PIM-team.
 		2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler
@@ -246,21 +246,21 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2026-12-09
+				start:: 2026-12-08
 				slut:: 2026-12-10
 				beror på:: U-PF-2-1-2-T2; U-PA-1-3-2-T; U-PA-1-3-3-T
 			[ ] Bygg sammanslagen extern text +uppgift ^U-PF-2-2-3-T2
 				produkt:: PF-2-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-09
-				slut:: 2026-12-11
+				start:: 2026-12-08
+				slut:: 2026-12-10
 				beror på:: U-PF-2-1-2-T2; U-PA-1-3-2-T; U-PA-1-3-3-T
 			[ ] Bygg validering av identiteter, referenser och listvärden +uppgift ^U-PF-2-2-3-T3
 				produkt:: PF-2-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2026-12-09
+				start:: 2026-12-08
 				slut:: 2026-12-11
 				beror på:: U-PF-2-1-2-T2; U-PA-1-3-2-T; U-PA-1-3-3-T
 			[ ] Testa och godkänn 2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler +uppgift ^U-PF-2-2-3-G
@@ -276,29 +276,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
 			start:: 2026-12-14
-			slut:: 2027-02-18
+			slut:: 2027-02-17
 			beror på:: U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3
 		[ ] Demonstrera och godkänn 2.2.4 Ändringsnotislista +uppgift ^U-PF-2-2-4-G
 			produkt:: PF-2-2-4
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-19
-			slut:: 2027-02-19
+			start:: 2027-02-18
+			slut:: 2027-02-18
 			beror på:: U-PF-2-2-4-T; U-PF-2-2-3-G
 			Granskare: SFB PIM-team.
 		[ ] Bygg 2.2.5 Samtidighetsskydd +uppgift ^U-PF-2-2-5-T
 			produkt:: PF-2-2-5
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-01-21
-			slut:: 2027-01-27
+			start:: 2027-01-20
+			slut:: 2027-01-26
 			beror på:: U-PF-2-2-2-T2; U-PF-2-2-2-T3
 		[ ] Testa och godkänn 2.2.5 Samtidighetsskydd +uppgift ^U-PF-2-2-5-G
 			produkt:: PF-2-2-5
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-01-28
-			slut:: 2027-02-01
+			start:: 2027-01-27
+			slut:: 2027-01-29
 			beror på:: U-PF-2-2-5-T; U-PF-2-2-2-G
 			Granskare: Vaimo testledare.
 		2.2.6 Ändringshistorik
@@ -307,13 +307,13 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
 				start:: 2026-12-11
-				slut:: 2027-02-18
+				slut:: 2027-02-17
 				beror på:: U-PF-2-1-T
 			[ ] Visa historiken på artikeln +uppgift ^U-PF-2-2-6-T2
 				produkt:: PF-2-2-6
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-19
+				start:: 2027-02-18
 				slut:: 2027-02-26
 				beror på:: U-PF-2-2-6-T1
 			[ ] Demonstrera och godkänn 2.2.6 Ändringshistorik +uppgift ^U-PF-2-2-6-G
@@ -328,30 +328,30 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-2-7
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2026-12-09
-			slut:: 2027-03-01
+			start:: 2026-12-08
+			slut:: 2027-02-26
 			beror på:: U-PF-2-1-2-T2
 		[ ] Demonstrera och godkänn 2.2.7 Attributförvaltning +uppgift ^U-PF-2-2-7-G
 			produkt:: PF-2-2-7
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-02
-			slut:: 2027-03-02
+			start:: 2027-03-01
+			slut:: 2027-03-01
 			beror på:: U-PF-2-2-7-T; U-PF-2-1-2-G
 			Granskare: SFB PIM-team.
 		[ ] Bygg 2.2.8 Kategoriförvaltning +uppgift ^U-PF-2-2-8-T
 			produkt:: PF-2-2-8
 			ansvarig:: Vaimo utvecklare
 			längd:: 1
-			start:: 2026-12-10
-			slut:: 2027-03-01
+			start:: 2026-12-09
+			slut:: 2027-02-26
 			beror på:: U-PF-2-1-4-T
 		[ ] Demonstrera och godkänn 2.2.8 Kategoriförvaltning +uppgift ^U-PF-2-2-8-G
 			produkt:: PF-2-2-8
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-02
-			slut:: 2027-03-02
+			start:: 2027-03-01
+			slut:: 2027-03-01
 			beror på:: U-PF-2-2-8-T; U-PF-2-1-4-G
 			Granskare: SFB PIM-team.
 		2.3 Tabellredigering
@@ -359,28 +359,28 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-3
 				ansvarig:: Vaimo teknisk arkitekt; Vaimo utvecklare
 				längd:: 3
-				start:: 2027-01-28
-				slut:: 2027-02-05
+				start:: 2027-01-27
+				slut:: 2027-02-04
 				beror på:: U-PF-2-2-1-T2; U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3; U-PF-2-2-5-T
 			[ ] Bygg cellredigering och inklistring av cellområde +uppgift ^U-PF-2-3-T2
 				produkt:: PF-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-08
-				slut:: 2027-02-11
+				start:: 2027-02-05
+				slut:: 2027-02-10
 				beror på:: U-PF-2-3-T1
 			[ ] Bygg gemensam ändring på valda rader +uppgift ^U-PF-2-3-T3
 				produkt:: PF-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-12
-				slut:: 2027-02-19
+				start:: 2027-02-11
+				slut:: 2027-02-18
 				beror på:: U-PF-2-3-T2
 			[ ] Bygg validering och resultat per artikel +uppgift ^U-PF-2-3-T4
 				produkt:: PF-2-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-12
+				start:: 2027-02-11
 				slut:: 2027-02-19
 				beror på:: U-PF-2-3-T2
 			[ ] Demonstrera och godkänn 2.3 Tabellredigering +uppgift ^U-PF-2-3-G
@@ -395,16 +395,16 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-4
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-02-15
-			slut:: 2027-02-22
+			start:: 2027-02-12
+			slut:: 2027-02-19
 			beror på:: U-PF-2-4-1-T3; U-PF-2-4-2-T; U-PF-2-4-3-T
 			Komponenttest av hela Excelflödet.
 		[ ] Demonstrera och godkänn 2.4 Excelimport och export +uppgift ^U-PF-2-4-G
 			produkt:: PF-2-4
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-23
-			slut:: 2027-02-23
+			start:: 2027-02-22
+			slut:: 2027-02-22
 			beror på:: U-PF-2-4-T; U-PF-2-4-1-G; U-PF-2-4-2-G; U-PF-2-4-3-G
 			Granskare: SFB PIM-team; Vaimo testledare.
 		2.4.1 Excelimport med förhandskontroll
@@ -412,21 +412,21 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-4-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-01-28
-				slut:: 2027-02-01
+				start:: 2027-01-27
+				slut:: 2027-01-29
 				beror på:: U-PA-1-6-T2; U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3; U-PF-2-4-3-T
 			[ ] Bygg importen med radsvar +uppgift ^U-PF-2-4-1-T2
 				produkt:: PF-2-4-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-02
-				slut:: 2027-02-08
+				start:: 2027-02-01
+				slut:: 2027-02-05
 				beror på:: U-PF-2-4-1-T1
 			[ ] Bygg konflikthantering och återförsök +uppgift ^U-PF-2-4-1-T3
 				produkt:: PF-2-4-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-09
+				start:: 2027-02-08
 				slut:: 2027-02-11
 				beror på:: U-PF-2-4-1-T2
 			[ ] Testa och godkänn 2.4.1 Excelimport med förhandskontroll +uppgift ^U-PF-2-4-1-G
@@ -441,15 +441,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-4-2
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-01-28
-			slut:: 2027-02-12
+			start:: 2027-01-27
+			slut:: 2027-02-11
 			beror på:: U-PA-1-6-T2; U-PF-2-1-T; U-PF-2-4-3-T
 		[ ] Testa och godkänn 2.4.2 Excelexport +uppgift ^U-PF-2-4-2-G
 			produkt:: PF-2-4-2
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-02-15
-			slut:: 2027-02-17
+			start:: 2027-02-12
+			slut:: 2027-02-16
 			beror på:: U-PF-2-4-2-T; U-PA-1-6-G; U-PF-2-1-G; U-PF-2-4-3-G
 			Granskare: SFB PIM-team.
 		[ ] Bygg 2.4.3 Jobbstatus för långa jobb +uppgift ^U-PF-2-4-3-T
@@ -457,30 +457,30 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
 			start:: 2026-12-04
-			slut:: 2027-01-27
-			beror på:: U-PA-1-8-T4; U-PA-1-8-T5
+			slut:: 2027-01-26
+			beror på:: U-PA-1-8-T4
 		[ ] Demonstrera och godkänn 2.4.3 Jobbstatus för långa jobb +uppgift ^U-PF-2-4-3-G
 			produkt:: PF-2-4-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-01-28
-			slut:: 2027-01-28
+			start:: 2027-01-27
+			slut:: 2027-01-27
 			beror på:: U-PF-2-4-3-T; U-PA-1-8-G
 			Granskare: SFB PIM-team.
 		[ ] Sammanställ 2.5 Medie- och dokumenthantering +uppgift ^U-PF-2-5-T
 			produkt:: PF-2-5
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-03-03
-			slut:: 2027-03-10
+			start:: 2027-03-02
+			slut:: 2027-03-09
 			beror på:: U-PF-2-5-1-T2; U-PF-2-5-2-T; U-PF-2-5-3-T2; U-PF-2-5-4-T; U-PF-2-5-5-T
 			Komponenttest av hela medie- och dokumenthanteringen.
 		[ ] Demonstrera och godkänn 2.5 Medie- och dokumenthantering +uppgift ^U-PF-2-5-G
 			produkt:: PF-2-5
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-11
-			slut:: 2027-03-11
+			start:: 2027-03-10
+			slut:: 2027-03-10
 			beror på:: U-PF-2-5-T; U-PF-2-5-1-G; U-PF-2-5-2-G; U-PF-2-5-3-G; U-PF-2-5-4-G; U-PF-2-5-5-G
 			Granskare: SFB PIM-team; Vaimo testledare.
 		2.5.1 Medierelationer med flerfilsuppladdning
@@ -489,13 +489,13 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
 				start:: 2027-01-19
-				slut:: 2027-01-28
+				slut:: 2027-01-27
 				beror på:: U-PF-2-1-T; U-PA-2-2-T2; U-PA-2-2-T3; U-PF-3-4-T
 			[ ] Bygg flerfilsuppladdning med resultat per fil +uppgift ^U-PF-2-5-1-T2
 				produkt:: PF-2-5-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-01-29
+				start:: 2027-01-28
 				slut:: 2027-02-01
 				beror på:: U-PF-2-5-1-T1
 			[ ] Demonstrera och godkänn 2.5.1 Medierelationer med flerfilsuppladdning +uppgift ^U-PF-2-5-1-G
@@ -527,28 +527,28 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
 				start:: 2027-02-02
-				slut:: 2027-02-09
+				slut:: 2027-02-08
 				beror på:: U-PF-2-5-1-T2
 			[ ] Bygg undantagen för Färgkarta och Produktkatalog +uppgift ^U-PF-2-5-3-T2
 				produkt:: PF-2-5-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2027-02-10
-				slut:: 2027-02-12
+				start:: 2027-02-09
+				slut:: 2027-02-11
 				beror på:: U-PF-2-5-3-T1
 			[ ] Testa och godkänn 2.5.3 Dokumentversionsarkiv +uppgift ^U-PF-2-5-3-G
 				produkt:: PF-2-5-3
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-02-15
-				slut:: 2027-02-17
+				start:: 2027-02-12
+				slut:: 2027-02-16
 				beror på:: U-PF-2-5-3-T1; U-PF-2-5-3-T2; U-PF-2-5-1-G
 				Granskare: Vaimo testledare.
 		[ ] Bygg 2.5.4 Versionslista per artikel +uppgift ^U-PF-2-5-4-T
 			produkt:: PF-2-5-4
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-02-15
+			start:: 2027-02-12
 			slut:: 2027-02-22
 			beror på:: U-PF-2-5-3-T2
 		[ ] Demonstrera och godkänn 2.5.4 Versionslista per artikel +uppgift ^U-PF-2-5-4-G
@@ -563,15 +563,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-2-5-5
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-02-19
-			slut:: 2027-03-02
+			start:: 2027-02-18
+			slut:: 2027-03-01
 			beror på:: U-PF-2-5-1-T2; U-PF-2-2-4-T
 		[ ] Demonstrera och godkänn 2.5.5 Flaggning av källborttagning +uppgift ^U-PF-2-5-5-G
 			produkt:: PF-2-5-5
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-03
-			slut:: 2027-03-03
+			start:: 2027-03-02
+			slut:: 2027-03-02
 			beror på:: U-PF-2-5-5-T; U-PF-2-5-1-G; U-PF-2-2-4-G
 			Granskare: SFB PIM-team.
 		[ ] Teknisk design av transporten +uppgift ^U-PF-2-6-D
@@ -579,22 +579,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 2
 			start:: 2026-12-07
-			slut:: 2026-12-14
+			slut:: 2026-12-11
 			beror på:: U-PA-1-2-4-T3; U-PA-1-8-T1
 		[ ] Sammanställ 2.6 PIM:s integrationsgränssnitt +uppgift ^U-PF-2-6-T
 			produkt:: PF-2-6
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-02-16
-			slut:: 2027-02-23
+			start:: 2027-02-15
+			slut:: 2027-02-22
 			beror på:: U-PF-2-6-1-T2; U-PF-2-6-2-T2; U-PF-2-6-3-T1; U-PF-2-6-3-T2
 			Komponenttest av hela integrationsgränssnittet.
 		[ ] Testa och godkänn 2.6 PIM:s integrationsgränssnitt +uppgift ^U-PF-2-6-G
 			produkt:: PF-2-6
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-02-24
-			slut:: 2027-02-26
+			start:: 2027-02-23
+			slut:: 2027-02-25
 			beror på:: U-PF-2-6-T; U-PF-2-6-1-G; U-PF-2-6-2-G; U-PF-2-6-3-G
 			Granskare: ITM8; Vaimo testledare.
 		2.6.1 Källmottagning
@@ -602,16 +602,16 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-6-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2026-12-15
-				slut:: 2026-12-15
+				start:: 2026-12-14
+				slut:: 2026-12-14
 				beror på:: U-PA-1-2-1-T3; U-PF-2-1-T; U-PF-2-2-3-T1; U-PF-2-6-D
 				Källmottagningen behöver bara regeln för effektivt värde och överstyrning i 2.2.3. Textregeln och valideringen behövs inte för delleveransen.
 			[ ] Bygg revisionsordning och idempotens +uppgift ^U-PF-2-6-1-T2
 				produkt:: PF-2-6-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-16
-				slut:: 2026-12-16
+				start:: 2026-12-15
+				slut:: 2026-12-15
 				beror på:: U-PF-2-6-1-T1
 			[ ] Testa och godkänn 2.6.1 Källmottagning +uppgift ^U-PF-2-6-1-G
 				produkt:: PF-2-6-1
@@ -626,22 +626,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-6-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-15
-				slut:: 2026-12-15
+				start:: 2026-12-14
+				slut:: 2026-12-14
 				beror på:: U-PA-1-2-2-T3; U-PF-2-1-T; U-PF-2-6-D
 			[ ] Bygg beroende ändringar för produkter, kategorier och medier +uppgift ^U-PF-2-6-2-T2
 				produkt:: PF-2-6-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-16
-				slut:: 2026-12-16
+				start:: 2026-12-15
+				slut:: 2026-12-15
 				beror på:: U-PF-2-6-2-T1
 			[ ] Testa och godkänn 2.6.2 Utgående ändringsflöde +uppgift ^U-PF-2-6-2-G
 				produkt:: PF-2-6-2
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2026-12-17
-				slut:: 2027-01-07
+				start:: 2026-12-16
+				slut:: 2026-12-18
 				beror på:: U-PF-2-6-2-T1; U-PF-2-6-2-T2; U-PA-1-2-2-G; U-PF-2-1-G
 				Granskare: ITM8; SFB e-handel.
 		2.6.3 Återförsök, omsändning och felvy
@@ -649,22 +649,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-2-6-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2026-12-17
+				start:: 2026-12-16
 				slut:: 2027-02-12
 				beror på:: U-PF-2-6-1-T2; U-PF-2-6-2-T2
 			[ ] Bygg felvyn +uppgift ^U-PF-2-6-3-T2
 				produkt:: PF-2-6-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2026-12-17
-				slut:: 2027-02-15
+				start:: 2026-12-16
+				slut:: 2027-02-12
 				beror på:: U-PF-2-6-1-T2; U-PF-2-6-2-T2
 			[ ] Testa och godkänn 2.6.3 Återförsök, omsändning och felvy +uppgift ^U-PF-2-6-3-G
 				produkt:: PF-2-6-3
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-02-16
-				slut:: 2027-02-18
+				start:: 2027-02-15
+				slut:: 2027-02-17
 				beror på:: U-PF-2-6-3-T1; U-PF-2-6-3-T2; U-PF-2-6-1-G; U-PF-2-6-2-G
 				Granskare: ITM8.
 	3 Integrationer utanför PIM
@@ -760,22 +760,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-3-3
 				ansvarig:: ITM8
 				längd:: 4
-				start:: 2027-01-18
-				slut:: 2027-01-21
+				start:: 2027-01-15
+				slut:: 2027-01-20
 				beror på:: U-PA-1-2-3-T3
 			[ ] Bygg startleverans, delta och återhämtning +uppgift ^U-PF-3-3-T2
 				produkt:: PF-3-3
 				ansvarig:: ITM8
 				längd:: 4
-				start:: 2027-01-22
-				slut:: 2027-01-27
+				start:: 2027-01-21
+				slut:: 2027-01-26
 				beror på:: U-PF-3-3-T1
 			[ ] Testa och godkänn 3.3 Snicken-adapter +uppgift ^U-PF-3-3-G
 				produkt:: PF-3-3
 				ansvarig:: Snicken
 				längd:: 3
-				start:: 2027-01-28
-				slut:: 2027-02-01
+				start:: 2027-01-27
+				slut:: 2027-01-29
 				beror på:: U-PF-3-3-T1; U-PF-3-3-T2; U-PA-1-2-3-G
 				Granskare: Vaimo teknisk arkitekt; Snicken.
 		[ ] Sammanställ 3.4 Medielagring, transformering och länkar +uppgift ^U-PF-3-4-T
@@ -828,15 +828,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-4-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-01-08
-			slut:: 2027-01-11
+			start:: 2027-01-07
+			slut:: 2027-01-08
 			beror på:: U-PA-2-1-3-T
 		[ ] Granska och godkänn 4.1 Beslutat migreringsurval +uppgift ^U-PF-4-1-G
 			produkt:: PF-4-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-01-12
-			slut:: 2027-01-13
+			start:: 2027-01-11
+			slut:: 2027-01-12
 			beror på:: U-PF-4-1-T; U-PA-2-1-3-G
 			Granskare: Vaimo affärskonsult.
 		4.1.1 Städad C4-data före uttag
@@ -844,22 +844,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-4-1-1
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-01-18
-				slut:: 2027-01-20
+				start:: 2027-01-14
+				slut:: 2027-01-18
 				beror på:: U-PF-4-1-T; U-PA-1-4-1-T; U-PA-1-5-T
 			[ ] Åtgärda avvikande grupprelationer enligt beslut +uppgift ^U-PF-4-1-1-T2
 				produkt:: PF-4-1-1
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2027-01-18
-				slut:: 2027-01-19
+				start:: 2027-01-14
+				slut:: 2027-01-15
 				beror på:: U-PF-4-1-T; U-PA-1-4-1-T; U-PA-1-5-T
 			[ ] Stäm av och godkänn 4.1.1 Städad C4-data före uttag +uppgift ^U-PF-4-1-1-G
 				produkt:: PF-4-1-1
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-01-21
-				slut:: 2027-01-21
+				start:: 2027-01-19
+				slut:: 2027-01-19
 				beror på:: U-PF-4-1-1-T1; U-PF-4-1-1-T2; U-PF-4-1-G; U-PA-1-4-1-G; U-PA-1-5-G
 				Granskare: Vaimo affärskonsult.
 		4.2 C4-export för migrering
@@ -867,15 +867,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-4-2
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-01-21
-			slut:: 2027-02-02
+			start:: 2027-01-19
+			slut:: 2027-02-01
 			beror på:: U-PF-4-1-1-T1; U-PF-4-1-1-T2
 		[ ] Stäm av och godkänn 4.2 C4-export för migrering +uppgift ^U-PF-4-2-G
 			produkt:: PF-4-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-03
-			slut:: 2027-02-03
+			start:: 2027-02-02
+			slut:: 2027-02-02
 			beror på:: U-PF-4-2-T1; U-PF-4-1-1-G
 			Granskare: Vaimo teknisk arkitekt.
 		4.3 Migreringsmappning
@@ -883,29 +883,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-4-3
 				ansvarig:: Vaimo affärskonsult
 				längd:: 3
-				start:: 2027-01-12
-				slut:: 2027-01-22
+				start:: 2027-01-11
+				slut:: 2027-01-21
 				beror på:: U-PA-1-3-T4; U-PF-2-1-T; U-PF-4-1-T
 			[ ] Mappa medier, ordning och grupper +uppgift ^U-PF-4-3-T2
 				produkt:: PF-4-3
 				ansvarig:: Vaimo affärskonsult
 				längd:: 3
-				start:: 2027-01-12
-				slut:: 2027-01-25
+				start:: 2027-01-11
+				slut:: 2027-01-22
 				beror på:: U-PA-1-3-T4; U-PF-2-1-T; U-PF-4-1-T
 			[ ] Mappa varumärken och Artikeltyp +uppgift ^U-PF-4-3-T3
 				produkt:: PF-4-3
 				ansvarig:: Vaimo affärskonsult
 				längd:: 2
-				start:: 2027-01-12
-				slut:: 2027-01-26
+				start:: 2027-01-11
+				slut:: 2027-01-25
 				beror på:: U-PA-1-3-T4; U-PF-2-1-T; U-PF-4-1-T
 			[ ] Granska och godkänn 4.3 Migreringsmappning +uppgift ^U-PF-4-3-G
 				produkt:: PF-4-3
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2027-01-27
-				slut:: 2027-01-28
+				start:: 2027-01-26
+				slut:: 2027-01-27
 				beror på:: U-PF-4-3-T1; U-PF-4-3-T2; U-PF-4-3-T3; U-PA-1-3-G; U-PF-2-1-G; U-PF-4-1-G
 				Granskare: SFB PIM-team.
 		4.4 Migreringsverktyg
@@ -913,29 +913,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-4-4
 				ansvarig:: Vaimo utvecklare
 				längd:: 5
-				start:: 2027-01-27
-				slut:: 2027-01-29
+				start:: 2027-01-26
+				slut:: 2027-01-28
 				beror på:: U-PF-4-3-T1; U-PF-4-3-T2; U-PF-4-3-T3
 			[ ] Bygg avstämning och differensrapport +uppgift ^U-PF-4-4-T2
 				produkt:: PF-4-4
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-01
-				slut:: 2027-02-03
+				start:: 2027-01-29
+				slut:: 2027-02-02
 				beror på:: U-PF-4-4-T1
 			[ ] Bygg omkörning +uppgift ^U-PF-4-4-T3
 				produkt:: PF-4-4
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-01
-				slut:: 2027-02-03
+				start:: 2027-01-29
+				slut:: 2027-02-02
 				beror på:: U-PF-4-4-T1
 			[ ] Testa och godkänn 4.4 Migreringsverktyg +uppgift ^U-PF-4-4-G
 				produkt:: PF-4-4
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-02-04
-				slut:: 2027-02-08
+				start:: 2027-02-03
+				slut:: 2027-02-05
 				beror på:: U-PF-4-4-T1; U-PF-4-4-T2; U-PF-4-4-T3; U-PF-4-3-G
 				Granskare: Vaimo testledare.
 		4.5 Avstämningsprotokoll för prov- och korrigeringskörning
@@ -943,21 +943,21 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-4-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-04
-				slut:: 2027-02-09
+				start:: 2027-02-03
+				slut:: 2027-02-08
 				beror på:: U-PF-4-2-T1; U-PF-4-4-T2; U-PF-4-4-T3; U-PF-5-1-T
 			[ ] Rätta avvikelserna +uppgift ^U-PF-4-5-T2
 				produkt:: PF-4-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-10
-				slut:: 2027-02-16
+				start:: 2027-02-09
+				slut:: 2027-02-15
 				beror på:: U-PF-4-5-T1
 			[ ] Kör korrigeringskörningen och stäm av +uppgift ^U-PF-4-5-T3
 				produkt:: PF-4-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-17
+				start:: 2027-02-16
 				slut:: 2027-02-23
 				beror på:: U-PF-4-5-T2
 			[ ] Stäm av och godkänn 4.5 Avstämningsprotokoll för prov- och korrigeringskörning +uppgift ^U-PF-4-5-G
@@ -972,15 +972,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-4-6
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-31
-			slut:: 2027-04-05
+			start:: 2027-03-30
+			slut:: 2027-04-02
 			beror på:: U-PF-6-6-T; U-PF-7-1-T; U-PF-5-2-T2; U-PF-4-9-T2
 		[ ] Stäm av och godkänn 4.6 Migrerat bestånd i produktion +uppgift ^U-PF-4-6-G
 			produkt:: PF-4-6
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-04-06
-			slut:: 2027-04-06
+			start:: 2027-04-05
+			slut:: 2027-04-05
 			beror på:: U-PF-4-6-T; U-PF-6-6-G; U-PF-7-1-G; U-PF-5-2-G; U-PF-4-9-G
 			Granskare: SFB PIM-team.
 		4.7 Migrerade äldre dokumentversioner
@@ -996,29 +996,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
 				start:: 2027-03-04
-				slut:: 2027-03-11
+				slut:: 2027-03-10
 				beror på:: U-PF-4-7-T1
 			[ ] Stäm av och godkänn 4.7 Migrerade äldre dokumentversioner +uppgift ^U-PF-4-7-G
 				produkt:: PF-4-7
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-03-12
-				slut:: 2027-03-12
+				start:: 2027-03-11
+				slut:: 2027-03-11
 				beror på:: U-PF-4-7-T1; U-PF-4-7-T2; U-PF-4-4-G; U-PF-2-5-4-G; U-PA-2-1-2-G; U-PF-4-9-G
 				Granskare: SFB PIM-team.
 		[ ] Ta fram 4.8 Läsbar export av C4:s ändringslogg +uppgift ^U-PF-4-8-T
 			produkt:: PF-4-8
 			ansvarig:: Vaimo utvecklare; Vaimo teknisk arkitekt
 			längd:: 2
-			start:: 2027-01-08
-			slut:: 2027-02-10
+			start:: 2027-01-07
+			slut:: 2027-02-09
 			beror på:: U-PA-2-1-2-T; U-PF-4-9-T1
 		[ ] Granska och godkänn 4.8 Läsbar export av C4:s ändringslogg +uppgift ^U-PF-4-8-G
 			produkt:: PF-4-8
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-11
-			slut:: 2027-02-12
+			start:: 2027-02-10
+			slut:: 2027-02-11
 			beror på:: U-PF-4-8-T; U-PA-2-1-2-G; U-PF-4-9-G
 			senast:: 2027-04-01
 			Granskare: SFB PIM-team.
@@ -1056,7 +1056,7 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			längd:: 2
 			start:: 2026-12-04
 			slut:: 2026-12-14
-			beror på:: U-PA-1-8-T4; U-PA-1-8-T5
+			beror på:: U-PA-1-8-T4
 		[ ] Demonstrera och godkänn 5.1 Testmiljö +uppgift ^U-PF-5-1-G
 			produkt:: PF-5-1
 			ansvarig:: ITM8
@@ -1071,21 +1071,21 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
 				start:: 2026-12-10
-				slut:: 2026-12-14
-				beror på:: U-PA-1-8-T4; U-PA-1-8-T5; U-PF-5-3-T
+				slut:: 2026-12-11
+				beror på:: U-PA-1-8-T4; U-PF-5-3-T
 			[ ] Demonstrera återgång till föregående version +uppgift ^U-PF-5-2-T2
 				produkt:: PF-5-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2026-12-15
-				slut:: 2026-12-15
+				start:: 2026-12-14
+				slut:: 2026-12-14
 				beror på:: U-PF-5-2-T1
 			[ ] Demonstrera och godkänn 5.2 Produktionsmiljö +uppgift ^U-PF-5-2-G
 				produkt:: PF-5-2
 				ansvarig:: ITM8
 				längd:: 1
-				start:: 2026-12-16
-				slut:: 2026-12-16
+				start:: 2026-12-15
+				slut:: 2026-12-15
 				beror på:: U-PF-5-2-T1; U-PF-5-2-T2; U-PA-1-8-G; U-PF-5-3-G
 				Granskare: SFB produktägare.
 		[ ] Sätt upp 5.3 Inloggning och tekniska identiteter +uppgift ^U-PF-5-3-T
@@ -1094,7 +1094,7 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			längd:: 2
 			start:: 2026-12-04
 			slut:: 2026-12-09
-			beror på:: U-PA-1-8-T4; U-PA-1-8-T5; U-PA-2-5-T
+			beror på:: U-PA-1-8-T4; U-PA-2-5-T
 		[ ] Testa och godkänn 5.3 Inloggning och tekniska identiteter +uppgift ^U-PF-5-3-G
 			produkt:: PF-5-3
 			ansvarig:: ITM8
@@ -1107,60 +1107,60 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-5-4
 			ansvarig:: Vaimo utvecklare; Vaimo testledare
 			längd:: 3
-			start:: 2026-12-16
-			slut:: 2027-03-12
+			start:: 2026-12-15
+			slut:: 2027-03-11
 			beror på:: U-PF-5-2-T2
 		[ ] Testa och godkänn 5.4 Backup och återställningsprotokoll +uppgift ^U-PF-5-4-G
 			produkt:: PF-5-4
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2027-03-15
-			slut:: 2027-03-17
+			start:: 2027-03-12
+			slut:: 2027-03-16
 			beror på:: U-PF-5-4-T; U-PF-5-2-G
 			Granskare: SFB produktägare; Vaimo testledare.
 		[ ] Sätt upp 5.5 Övervakning och larm +uppgift ^U-PF-5-5-T
 			produkt:: PF-5-5
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2026-12-16
-			slut:: 2027-03-23
+			start:: 2026-12-15
+			slut:: 2027-03-16
 			beror på:: U-PF-5-2-T2
 		[ ] Testa och godkänn 5.5 Övervakning och larm +uppgift ^U-PF-5-5-G
 			produkt:: PF-5-5
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2027-03-24
-			slut:: 2027-03-30
+			start:: 2027-03-17
+			slut:: 2027-03-19
 			beror på:: U-PF-5-5-T; U-PF-5-2-G
 			Granskare: SFB produktägare.
 		[ ] Ta fram 5.6 Felsökningsrutin +uppgift ^U-PF-5-6-T
 			produkt:: PF-5-6
 			ansvarig:: Vaimo teknisk arkitekt; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-24
-			slut:: 2027-03-30
+			start:: 2027-03-17
+			slut:: 2027-03-25
 			beror på:: U-PF-5-5-T
 		[ ] Testa och godkänn 5.6 Felsökningsrutin +uppgift ^U-PF-5-6-G
 			produkt:: PF-5-6
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2027-03-31
-			slut:: 2027-04-02
+			start:: 2027-03-30
+			slut:: 2027-04-01
 			beror på:: U-PF-5-6-T; U-PF-5-5-G
 			Granskare: SFB produktägare.
 		[ ] Sätt upp 5.7 Verifierad lösning för åtkomst vid PIM-avbrott +uppgift ^U-PF-5-7-T
 			produkt:: PF-5-7
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-02-18
-			slut:: 2027-03-05
+			start:: 2027-02-17
+			slut:: 2027-03-04
 			beror på:: U-PA-2-4-T; U-PF-3-2-T2; U-PF-3-4-T
 		[ ] Testa och godkänn 5.7 Verifierad lösning för åtkomst vid PIM-avbrott +uppgift ^U-PF-5-7-G
 			produkt:: PF-5-7
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2027-03-08
-			slut:: 2027-03-10
+			start:: 2027-03-05
+			slut:: 2027-03-09
 			beror på:: U-PF-5-7-T; U-PA-2-4-G; U-PF-3-2-G; U-PF-3-4-G
 			Granskare: SFB produktägare; Snicken.
 	6 Test och acceptans
@@ -1168,15 +1168,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-6-1
 			ansvarig:: Vaimo testledare
 			längd:: 5
-			start:: 2027-01-07
-			slut:: 2027-02-26
+			start:: 2027-01-08
+			slut:: 2027-02-25
 			beror på:: U-PA-1-7-T2; U-PA-1-2-T
 		[ ] Granska och godkänn 6.1 Testplan med kravspårning +uppgift ^U-PF-6-1-G
 			produkt:: PF-6-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-03-01
-			slut:: 2027-03-02
+			start:: 2027-02-26
+			slut:: 2027-03-01
 			beror på:: U-PF-6-1-T; U-PA-1-7-G; U-PA-1-2-G
 			Granskare: SFB PIM-team; ITM8.
 		6.2 Integrationstestprotokoll
@@ -1184,7 +1184,7 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-6-2
 				ansvarig:: Vaimo testledare; ITM8
 				längd:: 3
-				start:: 2027-03-01
+				start:: 2027-02-26
 				slut:: 2027-03-08
 				beror på:: U-PF-6-1-T; U-PF-2-6-T; U-PF-3-1-T; U-PF-3-2-T2; U-PF-3-3-T2; U-PF-5-1-T
 			[ ] Rätta och testa om +uppgift ^U-PF-6-2-T2
@@ -1207,14 +1207,14 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-6-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-03-01
-				slut:: 2027-03-09
+				start:: 2027-02-26
+				slut:: 2027-03-08
 				beror på:: U-PF-6-1-T; U-PF-2-3-T3; U-PF-2-3-T4; U-PF-2-4-T; U-PF-4-5-T3
 			[ ] Analysera och rapportera mättiderna +uppgift ^U-PF-6-3-T2
 				produkt:: PF-6-3
 				ansvarig:: Vaimo testledare
 				längd:: 2
-				start:: 2027-03-10
+				start:: 2027-03-09
 				slut:: 2027-03-15
 				beror på:: U-PF-6-3-T1
 			[ ] Testa och godkänn 6.3 Kapacitets- och samtidighetsrapport +uppgift ^U-PF-6-3-G
@@ -1229,7 +1229,7 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-6-4
 			ansvarig:: Vaimo testledare
 			längd:: 2
-			start:: 2027-03-08
+			start:: 2027-03-05
 			slut:: 2027-03-16
 			beror på:: U-PF-6-1-T; U-PF-5-7-T
 		[ ] Testa och godkänn 6.4 Avbrottstestprotokoll +uppgift ^U-PF-6-4-G
@@ -1291,29 +1291,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo projektledare
 			längd:: 3
 			start:: 2027-02-24
-			slut:: 2027-03-30
+			slut:: 2027-03-25
 			beror på:: U-PF-4-5-T3; U-PF-5-2-T2
 		[ ] Granska och godkänn 7.1 Växlingsplan +uppgift ^U-PF-7-1-G
 			produkt:: PF-7-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-03-31
-			slut:: 2027-04-01
+			start:: 2027-03-30
+			slut:: 2027-03-31
 			beror på:: U-PF-7-1-T; U-PF-4-5-G; U-PF-5-2-G
 			Granskare: ITM8; SFB e-handel; Nuvarande part.
 		[ ] Genomför 7.2 Driftsatt F1 med växlingsprotokoll +uppgift ^U-PF-7-2-T
 			produkt:: PF-7-2
 			ansvarig:: Vaimo projektledare; Vaimo testledare
 			längd:: 2
-			start:: 2027-04-08
-			slut:: 2027-04-09
+			start:: 2027-04-07
+			slut:: 2027-04-08
 			beror på:: U-PF-4-6-T; U-PF-6-6-T; U-PF-5-5-T; U-PF-7-7-T
 		[ ] Stäm av och godkänn 7.2 Driftsatt F1 med växlingsprotokoll +uppgift ^U-PF-7-2-G
 			produkt:: PF-7-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-04-12
-			slut:: 2027-04-12
+			start:: 2027-04-09
+			slut:: 2027-04-09
 			beror på:: U-PF-7-2-T; U-PF-4-6-G; U-PF-6-6-G; U-PF-5-5-G; U-PF-7-7-G
 			Granskare: ITM8; SFB e-handel.
 		[ ] Bygg 7.3 Överlämnat kodarkiv +uppgift ^U-PF-7-3-T
@@ -1321,29 +1321,29 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
 			start:: 2027-03-30
-			slut:: 2027-04-16
+			slut:: 2027-04-15
 			beror på:: U-PF-6-6-T
 		[ ] Testa och godkänn 7.3 Överlämnat kodarkiv +uppgift ^U-PF-7-3-G
 			produkt:: PF-7-3
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-04-19
-			slut:: 2027-04-21
+			start:: 2027-04-16
+			slut:: 2027-04-20
 			beror på:: U-PF-7-3-T; U-PF-6-6-G
 			Granskare: ITM8.
 		[ ] Ta fram 7.4 Data- och gränssnittsdokumentation +uppgift ^U-PF-7-4-T
 			produkt:: PF-7-4
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-02-24
-			slut:: 2027-04-12
-			beror på:: U-PF-2-1-T; U-PF-2-6-T; U-PA-1-8-T4; U-PA-1-8-T5
+			start:: 2027-02-23
+			slut:: 2027-04-09
+			beror på:: U-PF-2-1-T; U-PF-2-6-T; U-PA-1-8-T4
 		[ ] Granska och godkänn 7.4 Data- och gränssnittsdokumentation +uppgift ^U-PF-7-4-G
 			produkt:: PF-7-4
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-04-13
-			slut:: 2027-04-14
+			start:: 2027-04-12
+			slut:: 2027-04-13
 			beror på:: U-PF-7-4-T; U-PF-2-1-G; U-PF-2-6-G; U-PA-1-8-G
 			senast:: 2027-04-23
 			Granskare: ITM8.
@@ -1352,14 +1352,14 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 2
 			start:: 2026-12-04
-			slut:: 2027-04-13
-			beror på:: U-PA-1-8-T4; U-PA-1-8-T5
+			slut:: 2027-04-12
+			beror på:: U-PA-1-8-T4
 		[ ] Granska och godkänn 7.5 Komponent- och tjänsteförteckning +uppgift ^U-PF-7-5-G
 			produkt:: PF-7-5
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-04-14
-			slut:: 2027-04-15
+			start:: 2027-04-13
+			slut:: 2027-04-14
 			beror på:: U-PF-7-5-T; U-PA-1-8-G
 			senast:: 2027-04-23
 			Granskare: ITM8.
@@ -1367,53 +1367,53 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-7-6
 			ansvarig:: Vaimo affärskonsult
 			längd:: 4
-			start:: 2027-03-11
-			slut:: 2027-04-15
+			start:: 2027-03-10
+			slut:: 2027-04-14
 			beror på:: U-PF-2-2-T; U-PF-2-3-T3; U-PF-2-3-T4; U-PF-2-4-T; U-PF-2-5-T
 		[ ] Granska och godkänn 7.6 Användarhandledning +uppgift ^U-PF-7-6-G
 			produkt:: PF-7-6
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-04-16
-			slut:: 2027-04-19
+			start:: 2027-04-15
+			slut:: 2027-04-16
 			beror på:: U-PF-7-6-T; U-PF-2-2-G; U-PF-2-3-G; U-PF-2-4-G; U-PF-2-5-G
 			Granskare: SFB PIM-team.
 		[ ] Ta fram 7.7 Runbook och ansvarsfördelning +uppgift ^U-PF-7-7-T
 			produkt:: PF-7-7
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-03-31
-			slut:: 2027-04-07
+			start:: 2027-03-30
+			slut:: 2027-04-06
 			beror på:: U-PF-5-6-T
 		[ ] Granska och godkänn 7.7 Runbook och ansvarsfördelning +uppgift ^U-PF-7-7-G
 			produkt:: PF-7-7
 			ansvarig:: ITM8
 			längd:: 2
-			start:: 2027-04-08
-			slut:: 2027-04-09
+			start:: 2027-04-07
+			slut:: 2027-04-08
 			beror på:: U-PF-7-7-T; U-PF-5-6-G
 			Granskare: SFB produktägare.
 		[ ] Genomför 7.8 Genomförda utbildningar +uppgift ^U-PF-7-8-T
 			produkt:: PF-7-8
 			ansvarig:: Vaimo affärskonsult
 			längd:: 2
-			start:: 2027-04-16
-			slut:: 2027-04-19
+			start:: 2027-04-15
+			slut:: 2027-04-16
 			beror på:: U-PF-7-6-T; U-PF-7-2-T
 		[ ] Granska och godkänn 7.8 Genomförda utbildningar +uppgift ^U-PF-7-8-G
 			produkt:: PF-7-8
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-04-20
-			slut:: 2027-04-21
+			start:: 2027-04-19
+			slut:: 2027-04-20
 			beror på:: U-PF-7-8-T; U-PF-7-6-G; U-PF-7-2-G
 			Granskare: SFB PIM-team.
 		[ ] Ta fram 7.9 Ärendelogg från stödperioden +uppgift ^U-PF-7-9-T
 			produkt:: PF-7-9
 			ansvarig:: Vaimo affärskonsult
 			längd:: 10
-			start:: 2027-04-12
-			slut:: 2027-04-23
+			start:: 2027-04-09
+			slut:: 2027-04-22
 			beror på:: U-PF-7-2-T
 			löpande:: ja
 			Löpande under de tio arbetsdagarnas förstärkta stöd.
@@ -1421,8 +1421,8 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-7-9
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-04-26
-			slut:: 2027-04-26
+			start:: 2027-04-23
+			slut:: 2027-04-23
 			beror på:: U-PF-7-9-T; U-PF-7-2-G
 			Granskare: SFB PIM-team.
 	8 Projektledning
@@ -1430,63 +1430,63 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-8-1
 			ansvarig:: Vaimo projektledare; Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-01-15
-			slut:: 2027-01-19
+			start:: 2027-01-14
+			slut:: 2027-01-18
 			beror på:: U-PA-3-4-T
 		[ ] Granska och godkänn 8.1 Leveransplan +uppgift ^U-PF-8-1-G
 			produkt:: PF-8-1
 			ansvarig:: SFB sponsor
 			längd:: 2
-			start:: 2027-01-20
-			slut:: 2027-01-21
+			start:: 2027-01-19
+			slut:: 2027-01-20
 			beror på:: U-PF-8-1-T; U-PA-3-4-G
 			Granskare: SFB produktägare; ITM8.
 		[ ] Ta fram 8.2 Risk- och beslutslogg +uppgift ^U-PF-8-2-T
 			produkt:: PF-8-2
 			ansvarig:: Vaimo projektledare
 			längd:: 1
-			start:: 2027-01-20
-			slut:: 2027-01-20
+			start:: 2027-01-19
+			slut:: 2027-01-19
 			beror på:: U-PF-8-1-T
 			Förs löpande under hela F1. Uppgiften avser att sätta upp loggen.
 		[ ] Granska och godkänn 8.2 Risk- och beslutslogg +uppgift ^U-PF-8-2-G
 			produkt:: PF-8-2
 			ansvarig:: SFB sponsor
 			längd:: 2
-			start:: 2027-01-22
-			slut:: 2027-01-25
+			start:: 2027-01-21
+			slut:: 2027-01-22
 			beror på:: U-PF-8-2-T; U-PF-8-1-G
 			Granskare: SFB produktägare.
 		[ ] Ta fram 8.3 Ändringslogg +uppgift ^U-PF-8-3-T
 			produkt:: PF-8-3
 			ansvarig:: Vaimo projektledare
 			längd:: 1
-			start:: 2027-01-20
-			slut:: 2027-01-20
+			start:: 2027-01-19
+			slut:: 2027-01-19
 			beror på:: U-PF-8-1-T
 			Förs löpande under hela F1. Uppgiften avser att sätta upp loggen.
 		[ ] Granska och godkänn 8.3 Ändringslogg +uppgift ^U-PF-8-3-G
 			produkt:: PF-8-3
 			ansvarig:: SFB sponsor
 			längd:: 2
-			start:: 2027-01-22
-			slut:: 2027-01-25
+			start:: 2027-01-21
+			slut:: 2027-01-22
 			beror på:: U-PF-8-3-T; U-PF-8-1-G
 			Granskare: SFB produktägare.
 		[ ] Ta fram 8.4 Statusrapporter +uppgift ^U-PF-8-4-T
 			produkt:: PF-8-4
 			ansvarig:: Vaimo projektledare
 			längd:: 1
-			start:: 2027-01-20
-			slut:: 2027-01-20
+			start:: 2027-01-19
+			slut:: 2027-01-19
 			beror på:: U-PF-8-1-T
 			Lämnas löpande under hela F1. Uppgiften avser den första rapporten.
 		[ ] Granska och godkänn 8.4 Statusrapporter +uppgift ^U-PF-8-4-G
 			produkt:: PF-8-4
 			ansvarig:: SFB sponsor
 			längd:: 2
-			start:: 2027-01-22
-			slut:: 2027-01-25
+			start:: 2027-01-21
+			slut:: 2027-01-22
 			beror på:: U-PF-8-4-T; U-PF-8-1-G
 			Granskare: SFB produktägare.
 	Tidplan
