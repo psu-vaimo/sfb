@@ -41,7 +41,7 @@ Estimat SFB – berikningsdel och PIM
 		Teknisk arkitekt +estimatroll ^TA
 			part:: Vaimo
 			timpris:: 1700
-			Antagande: samma pris som Business Consulting PIM, eftersom rollen saknas i prislistan.
+			Samma pris som Business Consulting PIM, bekräftat 2026-11-16.
 		Utvecklare +estimatroll ^DEV
 			part:: Vaimo
 			timpris:: 1500
@@ -49,7 +49,7 @@ Estimat SFB – berikningsdel och PIM
 		Testledare +estimatroll ^QA
 			part:: Vaimo
 			timpris:: 1500
-			Antagande: samma pris som PIM Development, eftersom rollen saknas i prislistan.
+			Samma pris som PIM Development, bekräftat 2026-11-16.
 		Projektledare +estimatroll ^PM
 			part:: Vaimo
 			timpris:: 1700
