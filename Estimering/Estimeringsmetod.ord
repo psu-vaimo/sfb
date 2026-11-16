@@ -89,6 +89,11 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Saknade: antal rader utan komplett estimat. Ett paket med saknade rader är inte klart, och en saknad rad räknas aldrig som noll.
 			Relativt spann: (hög − låg) / bas. Jämförs med estimatklassen under 5.
 			Per roll och per part: timmar för paketets egna rader, uppdelade på roll och på part. Visas på paketnivå.
+		Scenario
+			Ett scenario visar hur estimatet ändras om något påverkar arbetstiden per roll, till exempel AI-assisterad utveckling. Scenariot namnges i inställningarna, och varje roll får ett scenarioavdrag.
+			Per rad: förväntad i scenariot är förväntad × (1 − rollens scenarioavdrag), och kostnaden räknas på samma sätt.
+			Per paket och grupp: förväntad och kostnad i scenariot summeras som grundestimatet. Besparing är kostnad i grunden minus kostnad i scenariot.
+			Scenariot ändrar inte grundestimatet, riskreserven eller intervallen. Prissätt grunden och redovisa scenariot separat tills avdraget är mätt mot utfall.
 
 	4 Arbetsgång
 		Förbered
@@ -130,6 +135,7 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			[ ] För in licenser, tjänster och andra parters avgifter som kostnadsposter, med volymantaganden.
 			[ ] Ge varje paket en prisstatus: fast, intervall, enhetspris, undersökning eller saknas.
 		Versionera
+			[ ] Om ett scenario används: sätt scenarioavdrag per roll och redovisa scenariot skilt från grundestimatet.
 			[ ] Spara estimatet som en version med datum innan det skickas. Ändra versionsfältet i projektfilen.
 			[ ] Estimera om när en utredning eller förstudie är klar. Smalare intervall är ett av resultaten.
 		Följ upp och kalibrera
@@ -219,6 +225,8 @@ Estimeringsmetod med trepunktsestimat (PERT)
 					p80::
 					timpris::
 					baskostnad::
+					förväntadscenario::
+					kostnadscenario::
 					bemanning::
 					kalenderveckor::
 					extern::
@@ -294,22 +302,28 @@ Estimeringsmetod med trepunktsestimat (PERT)
 					fokusfaktor:: 0.8
 					maxrad:: 40
 					maxspann:: 4
+					scenario::
 				Roller
 					Affärskonsult +estimatroll ^BC
 						part:: Vaimo
 						timpris::
+						scenarioavdrag::
 					Teknisk arkitekt +estimatroll ^TA
 						part:: Vaimo
 						timpris::
+						scenarioavdrag::
 					Utvecklare +estimatroll ^DEV
 						part:: Vaimo
 						timpris::
+						scenarioavdrag::
 					Testledare +estimatroll ^QA
 						part:: Vaimo
 						timpris::
+						scenarioavdrag::
 					Projektledare +estimatroll ^PM
 						part:: Vaimo
 						timpris::
+						scenarioavdrag::
 					Kundens medverkan +estimatroll ^KUND
 						part:: Kund
 				Grupper
@@ -343,7 +357,10 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			fields::
 				part::
 				timpris::
+				scenarioavdrag::
+					valid:: =($value >= 0 and $value < 1)
 			En roll med timpris. Part avgör om rollens timmar ingår i vårt pris (part lika med egenpart i inställningarna) eller räknas som extern insats.
+			Scenarioavdrag är den andel av rollens timmar som scenariot i inställningarna tar bort, till exempel 0.3 för 30 %. Tomt betyder inget avdrag.
 		Estimatrad +ord-type
 			name:: estimatrad
 			fields::
@@ -374,6 +391,9 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				saknas:: =($not($exists(optimistisk) and $exists(trolig) and $exists(pessimistisk)) or ($exists(enhet) and $not($exists(antal))))
 				avvikelse:: =($exists(utfall) and förväntad > 0 ? utfall / förväntad - 1)
 				inomspann:: =($exists(utfall) ? (utfall >= n * optimistisk and utfall <= n * pessimistisk))
+				scenariofaktor:: =($exists(roll.scenarioavdrag) ? 1 - roll.scenarioavdrag : 1)
+				förväntadscenario:: =(förväntad * scenariofaktor)
+				kostnadscenario:: =(förväntadscenario * roll.timpris)
 			Ett arbetsmoment för en roll. Optimistisk och pessimistisk är P10 och P90 i timmar per enhet.
 		Estimatrisk +ord-type
 			name:: estimatrisk
@@ -447,5 +467,8 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				relativtspann:: =(bas > 0 ? (hög - låg) / bas)
 				perroll:: =(_children[("estimatrad" in _type) and $not(saknas)]{roll._label: $sum(förväntad)})
 				perpart:: =(_children[("estimatrad" in _type) and $not(saknas)]{roll.part: $sum(förväntad)})
+				förväntadscenario:: =($sum([0, _children[("estimatsumma" in _type) or egen].förväntadscenario]))
+				kostnadscenario:: =($sum([0, _children[("estimatsumma" in _type) or egen].kostnadscenario]))
+				besparingscenario:: =(kostnad - kostnadscenario)
 			En grupp, ett paket eller ett underpaket. Räknar ihop raderna, riskerna, kostnadsposterna och underpaketen direkt under sig.
 			Fältet arbetspaket pekar på projektets eget arbetspaket, om projektet har en sådan typ. Byt typen i options om projektet kallar den något annat.
