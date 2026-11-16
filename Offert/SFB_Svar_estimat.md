@@ -30,7 +30,7 @@ Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot käll
 
 ## AP01
 
-Avgränsad leverans med eget pris, 17 nov 2026 till 26 jan 2027. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
+Avgränsad leverans med eget pris, 17 nov 2026 till 28 jan 2027. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
 
 ## F1 per arbetspaket, Vaimos del
 

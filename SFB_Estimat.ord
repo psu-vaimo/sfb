@@ -119,7 +119,7 @@ Estimat SFB – berikningsdel och PIM
 	Scenario: AI-assisterad utveckling
 		Visar estimatet när Pontus gör allt arbete med Claude. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
 		Beslut 2026-11-16: offerten prissätter scenariot, inte grundestimatet. Grundestimatet redovisas som jämförelse. Avdraget mäts mot utfallet i delleveransen.
-		Sista arbetsdag före jul är 2026-12-18, med kontroller 28 till 30 dec. Fram till dess görs bara det som delleveransen kräver, cirka 290 timmar i scenariot, med Pontus cirka 45 och stödrollerna cirka 15 timmar per vecka. Delleveransen går i drift 2026-12-18. Övrigt i AP01 flyttas till januari. Med en person blir F1 klar i maj 2027.
+		Sista arbetsdag före jul är 2026-12-18, med tillsyn 28 till 30 dec och arbete igen från 2027-01-07. Berikningen i C4 fryses 2026-12-11 och slutexporten tas 2026-12-12. Fram till dess görs bara det som delleveransen kräver, cirka 290 timmar i scenariot, med Pontus cirka 45 och stödrollerna cirka 15 timmar per vecka. Delleveransen går i drift 2026-12-18. Övrigt i AP01 flyttas till januari. Med en person blir F1 klar i maj 2027.
 
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.

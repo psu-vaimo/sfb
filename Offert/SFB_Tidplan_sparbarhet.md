@@ -7,10 +7,10 @@ Vaimo, utkast 2026-11-16. Svar på kravspecifikationen avsnitt 11 och bilagan, a
 | Period | Vaimo | SFB | ITM8:s del | Snicken och nuvarande part |
 |---|---|---|---|---|
 | v47 till 48 | Startmöte. Återanvändning, startlista, inventering av export, medier, volymer, drift och identitet. Lasttest av Medusa 25 till 27 nov | Godkänner startlista och inventeringar | Startmöte. Underlag för integrationer och medielagring | Nuvarande part levererar historik och ändringslogg senast 24 nov |
-| v49 till 50 | Fältmatris, arkitektur, kontrakt PIM till MagicBox. Test- och produktionsmiljö, datamodell | Godkänner arkitektur 4 dec och kontrakt 9 dec | Granskar kontraktet. Godkänner miljöerna som driftägare | |
-| v51 | Gemensamma regler, källmottagning och utgående flöde. Integrationstest 15 till 17 dec. Delleveransen i drift 18 dec | Godkänner delleveransen 18 dec. Ingen berikning i C4 därefter | Källintegrationer och MagicBox-sidan klara 14 dec. Integrationstest. Växlar MagicBox till PIM 18 dec | |
-| v52 till 53 | Ledigt. Kontroll av slutexporten och delleveransen 28 till 30 dec | Stämmer av slutexporten 23 dec | | Nuvarande part levererar slutexporten senast 22 dec. C4 stängs 31 dec |
-| Januari | Resten av AP01: kontrakt, Excel-mall, dokumentversioner, migreringsunderlag, avbrottsverifiering, reviderat estimat och plan | Migreringsurval och datastädning. Beslut om resten av F1 26 jan | Kontrakt för fel och transport | Snicken och ITM8 granskar Snickenkontraktet |
+| v49 till 50 | Fältmatris, arkitektur, kontrakt PIM till MagicBox. Test- och produktionsmiljö, datamodell | Godkänner arkitektur 4 dec och kontrakt 9 dec. Fryser berikningen i C4 11 dec | Granskar kontraktet. Godkänner miljöerna som driftägare | Nuvarande part levererar slutexporten 12 dec |
+| v51 | Kontroll av slutexporten. Gemensamma regler, källmottagning och utgående flöde. Integrationstest 15 till 17 dec. Delleveransen i drift 18 dec | Stämmer av slutexporten 14 dec. Godkänner delleveransen 18 dec | Källintegrationer och MagicBox-sidan klara 14 dec. Integrationstest. Växlar MagicBox till PIM 18 dec | |
+| v52 till 53 | Ledigt. Tillsyn av delleveransen 28 till 30 dec | | | C4 stängs 31 dec |
+| Januari, från 7 jan | Resten av AP01: kontrakt, Excel-mall, dokumentversioner, migreringsunderlag, avbrottsverifiering, reviderat estimat och plan | Migreringsurval och datastädning. Beslut om resten av F1 28 jan | Kontrakt för fel och transport | Snicken och ITM8 granskar Snickenkontraktet |
 | Februari | Gränssnitt, Excel, tabellredigering, medier | Demo och godkännande av funktioner | Snicken-adaptern | |
 | Mars | Miljöer klara, migreringsverktyg, provkörning och korrigeringskörning, dokumentversioner | Stämmer av körningarna | Identifierarmappning och länkar | Snicken provar startleverans |
 | April | Gemensamt test och acceptanstest | Administratörerna provar alla huvudflöden | Provar leveranser till MagicBox | Snicken provar leveranser |
@@ -23,9 +23,10 @@ SFB:s medverkan är cirka 20 timmar per vecka under hela perioden.
 
 - 17 nov: beställning av AP01.
 - 4 dec och 9 dec: arkitektur och kontraktet PIM till MagicBox.
+- 11 dec: berikningen i C4 fryses.
+- 14 dec: slutexporten från 12 dec är avstämd.
 - 18 dec: delleveransen godkänd och MagicBox växlad till PIM.
-- 23 dec: slutexporten från C4 är komplett.
-- 26 jan: AP01 godkänd och beslut om resten av F1.
+- 28 jan: AP01 godkänd och beslut om resten av F1.
 - April: acceptanstest godkänt.
 - Maj: go/no-go före slutkörning och driftstart av F1.
 
