@@ -12,6 +12,9 @@ Estimat SFB – berikningsdel och PIM
 			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
 		./SFB_Estimat_rader.csv
 			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB_Uppgifter_*.ord arbetet görs i.
+				Timmarna 2026-11-16 är ett första förslag, härlett ur uppgifternas längd. De är inte estimerade av två oberoende estimatorer enligt metoden och ska ersättas i estimeringsmötet.
+				Regel: längd i arbetsdagar gånger 6,4 timmar, alltså 8 timmar gånger fokusfaktorn 0,8. Första ansvariga på en uppgift räknas på heltid, övriga ansvariga på halvtid och godkännanden på en fjärdedel. Flera rader med samma roll på samma uppgift delar timmarna. Optimistisk är 0,7 gånger trolig och pessimistisk 1,8 gånger trolig.
+				Rader över 40 timmar är delade per uppgift. ITM8:s rader och volymraderna i migreringen är tomma, eftersom de inte går att härleda ur längderna. Projektledningen räknas per vecka i 16 veckor.
 		./SFB_Estimat_risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
 		./SFB_Estimat_kostnader.csv
