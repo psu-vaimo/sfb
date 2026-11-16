@@ -141,3 +141,5 @@ Uppgiftstyp +ord-type
 	Längd är arbetsdagar. 0 betyder milstolpe. Beror på pekar på uppgifter som måste vara klara först. Senast är ett datum som uppgiften måste vara klar till. Tidigast är ett datum som uppgiften inte får börja före.
 	Start och slut räknas fram av Planering/tidplan.py från längd, beror på och projektstart, med svenska helgdagar. Estimatraderna pekar på uppgifterna i kolumnen uppgift i SFB_Estimat_rader.csv. Ändra längd eller beror på och kör skriptet igen. Klara uppgifter flyttas inte.
 	ID:n: U följt av produktens ID och T för att ta fram eller G för granskning och godkännande.
+theme::
+	line height:: 1.5
