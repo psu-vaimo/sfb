@@ -1,6 +1,6 @@
 # SFB berikning och PIM: upplägg för genomförandet
 
-Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog version 1.3-V.
+Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog version 1.3-V. Priserna står i Svar på förfrågan om estimat och hela planen per part i Gemensam tidplan och spårbarhet.
 
 ## Mål
 
@@ -25,7 +25,7 @@ Före jul görs bara det som delleveransen kräver, cirka 290 timmar. Övriga de
 
 | Vecka | Precisering i AP01 | Bygge och drift |
 |---|---|---|
-| 47 (17 nov) | Startmöte med SFB och ITM8. Återanvändningsmatris för förstudien. Låst startlista för egna egenskaper och skyddade fält | |
+| 47 (17 nov) | Startmöte med SFB och ITM8. Genomgång av återanvändningen av förstudien. Låst startlista för egna egenskaper och skyddade fält | |
 | 48 | Export-, medie- och volyminventering, drift och identitet. Identitetsregler och kontroll av produktgrupper | Beställ C4-historik och ändringslogg från nuvarande part (24 nov) |
 | 49 | Lasttest av Medusa med 1,4 miljoner artiklar (1 till 3 dec). Fältmatris och icke-funktionella krav | |
 | 50 | Arkitektur och säkerhet godkänd (7 dec). Kontrakt PIM till MagicBox granskat med ITM8 (11 dec) | Test- och produktionsmiljö, inloggning och tekniska identiteter |
@@ -57,9 +57,9 @@ Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-t
 - Migreringsurval och datastädning: januari, före migreringsverktyget.
 - Beslut om genomförandet av resten av F1: efter AP01, 26 jan.
 
-## Testfönster och beslutspunkter
+## Efter årsskiftet
 
-Integrationstest med ITM8 28 till 30 dec. Snickenkontraktet granskas med Snicken och ITM8 i januari. Provmigrering och korrigeringskörning i mars. Acceptanstest i april. Acceptanstestet görs med SFB:s administratörer, ITM8 och Snicken enligt avsnitt 9.1. SFB fattar go/no-go före slutmigrering och driftstart.
+Gränssnitt, Excel, tabellredigering och medier i februari. Migrering och dokumentversioner i mars. Acceptanstest med SFB:s administratörer, ITM8 och Snicken i april. Slutkörning, driftsättning och utbildning i maj. Testfönster och beslutspunkter per part står i Gemensam tidplan och spårbarhet.
 
 ## Största riskerna
 

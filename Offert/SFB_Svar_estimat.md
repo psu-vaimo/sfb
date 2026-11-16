@@ -2,6 +2,15 @@
 
 Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog version 1.3-V, 63 krav och 22 arbetspaket. Teknikstack: Medusa v2. Alla belopp i SEK exklusive moms.
 
+## Svarets dokument
+
+- **Svar på förfrågan om estimat:** detta dokument, med priser, intervall och antaganden.
+- **Upplägg för genomförandet:** bemanning, faser och arbetet före årsskiftet.
+- **Gemensam tidplan och spårbarhet:** plan per part, beslutspunkter och kravens koppling till arbetspaket.
+- **Återanvändning av förstudien i AP01:** vad förstudien täcker per leverabel och motsägelserna mot den.
+- **Förslag till avtalsvillkor:** kommersiella villkor, kodägande och överlämning.
+- **Kravkatalogen med Vaimos svar:** pris, bemanning, kalendertid, antaganden och avvikelser per arbetspaket, och Vaimos leveranser per krav.
+
 ## Sammanfattning
 
 | Del | Timmar, bas | Kostnad, bas | Intervall |
@@ -13,7 +22,7 @@ Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog vers
 | Tillval, AP21 och mottagartjänst för tioårsarkivet | 30 | 0,05 MSEK | |
 | ITM8:s paket AP07 till AP10, AP20 och ALT01 | | Saknas | Lämnas av ITM8 |
 
-Grupperna summeras inte med varandra. Timpriset är 1 700 SEK för alla roller och paket. Bemanning för alla paket är Pontus Sundén med stöd av utvecklare, projektledare, teknisk arkitekt. Kalendertid och beläggning står i dokumentet om upplägget.
+Grupperna summeras inte med varandra. Timpriset är 1 700 SEK för alla roller och paket. Bemanning för alla paket är Pontus Sundén med stöd av utvecklare, projektledare, teknisk arkitekt. Kalendertid och beläggning står i upplägget och tidplanen.
 
 ## Drift före C4:s stängning
 
@@ -21,7 +30,7 @@ Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot käll
 
 ## AP01
 
-Avgränsad leverans med eget pris, 17 nov 2026 till 26 jan 2027. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. En återanvändningsmatris per leverabel lämnas första veckan och visar vad som är verifierat, vad som återstår och kvarvarande osäkerhet. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
+Avgränsad leverans med eget pris, 17 nov 2026 till 26 jan 2027. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
 
 ## F1 per arbetspaket, Vaimos del
 
@@ -40,7 +49,7 @@ Avgränsad leverans med eget pris, 17 nov 2026 till 26 jan 2027. Det som delleve
 | AP14 Driftsättning, utbildning, överlämning | 95 | 77 till 112 | 1 700 | 161 | April till maj 2027 |
 | AP15 Projektledning | 147 | 98 till 195 | 1 700 | 249 | Nov 2026 till maj 2027 |
 
-AP10 innehåller 2 timmar samordning från Vaimo. Varje paket är sin egen kostnadsplats. Egen komponenttestning ligger i respektive paket, och sammanhängande test, acceptansstöd och omtest i AP12. Gemensamma regler räknas bara i AP03, och AP06 och AP16 använder dem. Samma fil eller körning räknas inte i både AP11 och AP22.
+AP10 innehåller 2 timmar samordning från Vaimo. Varje paket är sin egen kostnadsplats. Egen komponenttestning ligger i respektive paket, och sammanhängande test, acceptansstöd och omtest i AP12. Gemensamma regler räknas bara i AP03, och AP06 och AP16 använder dem. Samma fil eller körning räknas inte i både AP11 och AP22. Antaganden och avvikelser per paket står i kravkatalogen.
 
 ## Migrering
 
@@ -52,7 +61,9 @@ AP11 består av en fast del på 64 timmar och 109 kSEK (mappning, verktyg, avst�
 | Per 100 000 bild- eller dokumentfiler | 900 SEK |
 | Per 100 000 äldre dokumentversioner (AP22) | 1 800 SEK |
 | Per GB filöverföring | 5 SEK |
-| Extra körning av hela beräkningsvolymen | 20 000 SEK | Om äldre dokumentversioner saknas tar AP01 fram en kostnadssatt åtkomstlösning före C4:s stängning. Eventuella avgifter från nuvarande part för export redovisas separat.
+| Extra körning av hela beräkningsvolymen | 20 000 SEK |
+
+Om äldre dokumentversioner saknas tar AP01 fram en kostnadssatt åtkomstlösning före C4:s stängning. Eventuella avgifter från nuvarande part för export redovisas separat.
 
 ## Så har vi räknat
 
@@ -63,7 +74,7 @@ Trepunktsestimat per arbetsmoment och roll, kopplat till produkter och uppgifter
 - Antagandena B01 till B14 och de sex besluten B03, B04, B07, B09, B10 och B12 gäller utan avvikelse, inklusive driftmålen RPO en timme, RTO en arbetsdag och support under svensk kontorstid.
 - Medusa klarar svarstidsmålen i B08 med full datamängd. Lasttestet i AP01 visar det, eller vilka anpassningar som krävs.
 - ITM8 bygger Snicken-adaptern (AP09) och samordnar befintlig mediedrift (AP10). Håller inte det ökar Vaimos del.
-- Underlag: kravspecifikationen och kravkatalogen 1.3-V, och förstudien som bakgrund. Förstudien föreslog Occtoo. Vi följer kravspecifikationen, och övriga motsägelser redovisas i AP01.
+- Underlag: kravspecifikationen och kravkatalogen 1.3-V, och förstudien som bakgrund. Vi följer kravspecifikationen där förstudien säger annat. Motsägelserna står i Återanvändning av förstudien i AP01.
 - SFB:s egen medverkan är cirka 20 timmar per vecka och ingår inte i priset.
 
 ## Test, stöd och överlämning
@@ -90,4 +101,4 @@ Förslag som fastställs när ändringslasten är mätt i AP01. En manuell ändr
 
 ## Kommersiellt
 
-Löpande räkning med fakturering kopplad till godkända delleveranser: AP01, delleveransen 4 jan och F1 klar. AP01 har ett tak. Kostnad för AI-verktyg debiteras enligt förbrukning, skilt från arbetstid. SFB äger den kundspecifika koden. Befintlig MagicBox-kod och tredjepartskomponenter ägs som i dag.
+Löpande räkning med tak för AP01 och fakturering per godkänd delleverans. Kostnad för AI-verktyg debiteras enligt förbrukning, skilt från arbetstid. SFB äger den kundspecifika koden. Övriga villkor står i Förslag till avtalsvillkor.
