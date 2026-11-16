@@ -1,6 +1,5 @@
 Samtal med Hampus +note 
-	project::
-	date::
+	date:: 2026-11-14
 	ersätta c4 rakt av för att köpa sig tiden att få in en ny daniel
 	så få ändringar som möjligt i magic box 
 	temporär lösning som kanske blir permanent
@@ -11,4 +10,7 @@ Samtal med Hampus +note
 			även investeringen i att anpassa sig till hur ett annat system gör tex integrationer och datamodell blir för stor, och långsam. 
 			
 lösningen i stora drag
-	i kedjan finfo till c4 till magic box till optimizely ska c4 bytas ut
+	I deras huvudflöde (finfo till c4 till magic box till optimizely) ska c4 bytas ut.
+	SFB vill att något finns uppe i mitten av december.
+	bortvalda alternativ: occtoo, aja pim, akeneo ce, andra open-source
+	
