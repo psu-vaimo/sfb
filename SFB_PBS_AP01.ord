@@ -135,7 +135,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Underlag
 					Förstudien: i dag en JSON-export i BMEcat-struktur på Exchange-kön, RabbitMQ. Fältlistan och en exempelexport till Snicken finns.
 				Kvalitetskriterier
-					Snicken har bekräftat nycklar och fält.
+					Snicken har bekräftat nycklar och fält. SFB tar kontakten med Snicken.
 					Nytillagd artikel får en full post innan efterföljande delta, [[PIM-I09]].
 			1.2.4 Fel- och transportkontrakt +produkt ^PA-1-2-4
 				paket:: AP01
@@ -497,7 +497,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Underlag
 				Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
 			Kvalitetskriterier
-				Varje driftkomponent har en ägare efter C4:s stängning.
+				Varje driftkomponent har en ägare efter C4:s stängning. ITM8 är driftägare för PIM enligt beslut 2026-11-16.
 	3 Beslutsunderlag och plan
 		3.1 Beslutsunderlag för öppna frågor +produkt ^PA-3-1
 			paket:: AP01
@@ -654,9 +654,9 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i 3.1.
 		[x] Tid mot C4:s stängning: beslutat 2026-11-16. AP01 och flödet från PIM till MagicBox ska vara klara före 2026-12-31, se Delleverans före 2026-12-31 i SFB_PBS_F1.ord. AP01 måste därför starta omedelbart.
-		[ ] Godkännare: är SFB produktägare rätt godkännare för specifikationerna, och SFB sponsor för estimat och plan? Ingen namngiven beslutsfattare finns enligt [[B11]].
+		[x] Godkännare: beslutat 2026-11-16. SFB produktägare godkänner specifikationerna och SFB sponsor estimat, plan och beslutsunderlag. Personerna namnges av SFB.
 		[ ] ITM8:s åtagande: har ITM8 avsatt tid och budget för att granska och godkänna kontrakten i AP01? Utan det kan 1.2 inte bli klar.
-		[ ] Snicken: ska Snicken godkänna 1.2.3, och vem kontaktar Snicken?
+		[x] Snicken: beslutat 2026-11-16. Snicken godkänner 1.2.3, och SFB kontaktar Snicken.
 		[ ] Nuvarande part: kan Ariser leverera exportprovet 2.1.1 och historiken i tid, och till vilket pris?
 		[ ] Exportprov: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
 		[ ] Mediehantering: motsägelsen om bildkonvertering och URL:er i 3.2 saknar beslut.

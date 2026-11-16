@@ -799,8 +799,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Miljö
 			kvalitetsmetod:: Demo
-			granskare:: ITM8
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare
+			godkännare:: ITM8
 			beror på:: PF-2-7
 			Syfte
 				Gör förändringar möjliga att testa. ITM8 får åtkomst från start.
@@ -814,8 +814,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Miljö
 			kvalitetsmetod:: Demo
-			granskare:: ITM8
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare
+			godkännare:: ITM8
 			beror på:: PF-2-7; PF-5-3
 			Syfte
 				Driftmiljön för F1.
@@ -829,8 +829,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Konfiguration
 			kvalitetsmetod:: Test
-			granskare:: Vaimo testledare
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare; Vaimo testledare
+			godkännare:: ITM8
 			beror på:: PF-2-7; PA-2-5
 			Syfte
 				Kontrollerad åtkomst och ansvarig aktör i loggar.
@@ -844,8 +844,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Protokoll
 			kvalitetsmetod:: Test
-			granskare:: Vaimo testledare
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare; Vaimo testledare
+			godkännare:: ITM8
 			beror på:: PF-5-2
 			Syfte
 				Visar att data går att återställa inom målen. Används i acceptansen 6.5 utan att provet görs igen.
@@ -859,8 +859,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Konfiguration
 			kvalitetsmetod:: Test
-			granskare:: ITM8
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare
+			godkännare:: ITM8
 			beror på:: PF-5-2
 			Syfte
 				Förhindrar att fel blir osynliga efter överlämning.
@@ -874,8 +874,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Dokument
 			kvalitetsmetod:: Test
-			granskare:: ITM8
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare
+			godkännare:: ITM8
 			beror på:: PF-5-5
 			Syfte
 				Låter en annan tekniker felsöka utan Vaimos hjälp.
@@ -889,8 +889,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Konfiguration
 			kvalitetsmetod:: Test
-			granskare:: ITM8; Snicken
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare; Snicken
+			godkännare:: ITM8
 			beror på:: PA-2-4; PF-3-2; PF-3-4
 			Syfte
 				Redan publicerad information fungerar när PIM:s administrationsdel ligger nere.
@@ -1089,8 +1089,8 @@ PBS F1 första driftversionen ^PBS-F1
 			part:: PIM-partner
 			format:: Dokument
 			kvalitetsmetod:: Granskning
-			granskare:: ITM8
-			godkännare:: SFB produktägare
+			granskare:: SFB produktägare
+			godkännare:: ITM8
 			beror på:: PF-5-6
 			Syfte
 				Driftorganisationens stöd efter överlämning.
@@ -1291,8 +1291,8 @@ PBS F1 första driftversionen ^PBS-F1
 		[x] Medielänkar efter 2026-12-31: beslutat 2026-11-16, lagringen ligger kvar och bekräftas i AP01. Fråga: dokumenten nås via media.woody.se, och bilder och dokument ligger i lagring som kan stängas med C4. 3.4 ingår inte i delleveransen. Säkras länkarna och filerna på annat sätt?
 		[x] Egen berikning efter 2026-12-31: beslutat 2026-11-16, slutexport före stängningen, ny produkt 4.9. Fråga: interna texter, egna egenskaper och relationer finns bara i C4. Säkras en export före stängningen, så att migreringen kan göras efteråt?
 		[ ] Arkitekturens paket: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
-		[ ] Driftägare: vem på SFB godkänner miljöer, övervakning och runbook i 5 och 7? I dag står SFB produktägare, eftersom driftansvaret inte är bekräftat enligt [[B11]].
-		[ ] Godkännare för ITM8:s produkter: är SFB e-handel rätt godkännare för 3.1 till 3.4, och Snicken för 3.3?
+		[x] Driftägare: beslutat 2026-11-16. ITM8 är driftägare och godkänner miljöer, övervakning, felsökningsrutin och runbook i 5 och 7.7. SFB produktägare granskar.
+		[x] Godkännare för ITM8:s produkter: beslutat 2026-11-16. SFB e-handel godkänner 3.1, 3.2 och 3.4, och Snicken godkänner 3.3.
 		[ ] Medielagring: 2.5 bygger på att lagringen i 3.4 finns, men 3.4 hos ITM8 har ingen tidsatt leverans. När behöver PIM-partnern tillgång till lagringen?
 		[ ] Testdata: 6.3 och 6.5 behöver migrerad data från provkörningen 4.5. Räcker en korrigeringskörning, eller behövs en extra körning efter rättningar inför acceptansen?
 		[ ] Utbildning före eller efter driftstart: kravspecifikationen säger två utbildningar och tio dagars stöd efter driftstart. PBS:en lägger utbildningen före driftstart. Stämmer det?
