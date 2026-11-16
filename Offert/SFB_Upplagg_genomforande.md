@@ -14,7 +14,7 @@ Vaimo bemannar med Pontus Sundén med stöd av utvecklare, projektledare, teknis
 
 | Fas | Innehåll | Tid |
 |---|---|---|
-| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 18 jan 2027. Avbrottsverifiering i februari |
+| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur, reviderat estimat och plan | 17 nov 2026 till 18 jan 2027. Avbrottsverifiering i februari |
 | F1 delleverans | PIM tar emot källdata och skickar vidare till MagicBox. Ingen migrering | I drift 18 dec 2026 |
 | F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Januari till april 2027. Driftstart 12 apr, klar efter tio dagars stöd 26 apr |
 | V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | April till maj 2027, efter beslut |
@@ -27,7 +27,7 @@ Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som dellever
 |---|---|---|
 | 47 (17 nov) | Startmöte med SFB och ITM8. Genomgång av återanvändningen av förstudien. Startlista för egna egenskaper och skyddade fält godkända (19 nov) | Nuvarande part levererar historik och ändringslogg (19 till 23 nov) |
 | 48 | Export-, medie- och volyminventering, drift och identitet (23 till 27 nov). Identitetsregler (25 nov). Fältmatris och icke-funktionella krav (30 nov) | |
-| 49 | Lasttest av Medusa med 1,4 miljoner artiklar (1 till 2 dec). Kontrakten mellan MagicBox och PIM godkända med ITM8 (3 dec) | ITM8 bygger källintegrationer och MagicBox-sidan (2 till 8 dec). Test- och produktionsmiljö |
+| 49 | Kontrakten mellan MagicBox och PIM godkända med ITM8 (3 dec) | ITM8 bygger källintegrationer och MagicBox-sidan (2 till 8 dec). Test- och produktionsmiljö |
 | 50 | Arkitektur och säkerhet godkänd (7 dec). Fel- och transportkontrakt (8 dec) | Datamodell (11 dec). ITM8 verifierar ERP-matchningen (9 till 11 dec). Frys av berikning i C4 11 dec. Slutexport från C4 12 dec |
 | 51 | Kontraktsexempel validerade (17 dec) | Slutexporten avstämd med SFB (14 dec). Gemensamma fält- och valideringsregler (16 dec). Miljöer godkända av ITM8 (16 dec). Integrationstest med ITM8 17 dec. Delleveransen i drift 18 dec |
 | 52 till 53 | | Ledigt. Vaimo har tillsyn av delleveransen 28 till 30 dec. C4 stängs 31 dec |
@@ -62,4 +62,4 @@ Excel och tabellredigering i januari och februari, gränssnitt och medier klara 
 
 ## Största riskerna
 
-Medusa lastprovas med 1,4 miljoner artiklar i AP01 innan datamodellen byggs. C4-exporten kan avvika eller ha luckor. December är kort, och ITM8 och SFB behöver granska och testa före 18 dec. Alla tre hanteras tidigt i AP01, med lasttest och exportprov före beslut om genomförandet.
+C4-exporten kan avvika eller ha luckor. December är kort, och ITM8 och SFB behöver granska och testa före 18 dec. Båda hanteras tidigt i AP01, med exportprov och bokade tider för granskning och test.

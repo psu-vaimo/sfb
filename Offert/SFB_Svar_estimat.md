@@ -30,7 +30,7 @@ Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot käll
 
 ## AP01
 
-Avgränsad leverans med eget pris, 17 nov 2026 till 18 jan 2027. Verifieringen av åtkomst vid PIM-avbrott görs i februari. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
+Avgränsad leverans med eget pris, 17 nov 2026 till 18 jan 2027. Verifieringen av åtkomst vid PIM-avbrott görs i februari. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
 
 ## F1 per arbetspaket, Vaimos del
 
@@ -72,7 +72,7 @@ Trepunktsestimat per arbetsmoment och roll, kopplat till produkter och uppgifter
 ## Antaganden och avvikelser
 
 - Antagandena B01 till B14 och de sex besluten B03, B04, B07, B09, B10 och B12 gäller utan avvikelse, inklusive driftmålen RPO en timme, RTO en arbetsdag och support under svensk kontorstid.
-- Medusa klarar svarstidsmålen i B08 med full datamängd. Lasttestet i AP01 visar det, eller vilka anpassningar som krävs.
+- Medusa klarar svarstidsmålen i B08 med full datamängd. Medusa lastprovas med 1,4 miljoner artiklar innan arbetet börjar.
 - ITM8 bygger Snicken-adaptern (AP09) och samordnar befintlig mediedrift (AP10). Håller inte det ökar Vaimos del.
 - Underlag: kravspecifikationen och kravkatalogen 1.3-V, och förstudien som bakgrund. Vi följer kravspecifikationen där förstudien säger annat. Motsägelserna står i Återanvändning av förstudien i AP01.
 - SFB:s egen medverkan är cirka 20 timmar per vecka och ingår inte i priset.
