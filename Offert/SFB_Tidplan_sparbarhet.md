@@ -30,6 +30,21 @@ SFB:s medverkan är cirka 20 timmar per vecka under hela perioden.
 - Före slutkörningen i april: go/no-go.
 - 23 apr: F1 godkänd.
 
+## Produktnedbrytning för F1
+
+F1 består av följande leveranser. Varje leverans granskas eller demonstreras och godkänns för sig. AP01:s leveranser har egen numrering.
+
+| Område | Paket | Leveranser |
+|---|---|---|
+| Teknisk precisering | AP01 | 1.1 Återanvändningsmatris för förstudien. 1.2 Gränssnittskontrakt (kontrakt MagicBox till PIM, kontrakt PIM till MagicBox, kontrakt för Snickenflödet, fel- och transportkontrakt, validerade kontraktsexempel, ITM8:s granskning av kontrakten). 1.3 Fältmatris (låst startlista för redigerbara produktegenskaper, förteckning över skyddade fält, regel för sammanslagen extern text). 1.4 Identitetsregler och exempeldata (rapport över artiklar utan entydig identitet). 1.5 Kontrollrapport för produktgrupper. 1.6 Fast Excel-format. 1.7 Specifikation av icke-funktionella krav. 1.8 Teknisk arkitektur och säkerhetslösning. 2.1 C4-exportinventering (inventering av äldre dokumentversioner och ändringslogg, underlag för migreringsurval). 2.2 Medieinventering. 2.3 Volym- och lastinventering. 2.4 Verifiering av åtkomst vid PIM-avbrott. 2.5 Verifiering av drift och identitet. 3.1 Beslutsunderlag för öppna frågor. 3.2 Förteckning över skillnader mot förstudien. 3.3 Reviderat genomförandeestimat. 3.4 Reviderad genomförandeplan. 3.5 Granskade workshopanteckningar |
+| PIM-applikationen | AP02, AP03, AP16, AP06, AP05, AP04 | 2.1 Datamodell (artikelmodell med identiteter, attributmodell med käll- och egna värden, referensdata för leverantörer och varumärken, tre kategoriträd, produktgruppsmodell). 2.2 Administratörsgränssnitt (sökning och filter, artikelvy och enskild redigering, gemensamma fält-, överstyrnings- och valideringsregler, ändringsnotislista, samtidighetsskydd, ändringshistorik, attributförvaltning, kategoriförvaltning). 2.3 Tabellredigering. 2.4 Excelimport och export (Excelimport med förhandskontroll, Excelexport, jobbstatus för långa jobb). 2.5 Medie- och dokumenthantering (medierelationer med flerfilsuppladdning, ordning och webbexkludering per relation, dokumentversionsarkiv, versionslista per artikel, flaggning av källborttagning). 2.6 PIM:s integrationsgränssnitt (källmottagning, utgående ändringsflöde, återförsök, omsändning och felvy) |
+| Integrationer utanför PIM | AP07, AP08, AP09, AP10 | 3.1 Källintegrationer till MagicBox (omkopplad Finfo-hämtning, BASTA-anslutning, BVB-vidareföring). 3.2 MagicBox-anslutning och distribution. 3.3 Snicken-adapter. 3.4 Medielagring, transformering och länkar (godkända transformationsprofiler, bevarade medielänkar) |
+| Migrerad data | AP11, AP22 | 4.1 Beslutat migreringsurval (städad C4-data före uttag). 4.2 C4-export för migrering. 4.3 Migreringsmappning. 4.4 Migreringsverktyg. 4.5 Avstämningsprotokoll för prov- och korrigeringskörning. 4.6 Migrerat bestånd i produktion. 4.7 Migrerade äldre dokumentversioner. 4.8 Läsbar export av C4:s ändringslogg. 4.9 Slutexport från C4 före stängningen |
+| Miljöer och drift | AP13 | 5.1 Testmiljö. 5.2 Produktionsmiljö. 5.3 Inloggning och tekniska identiteter. 5.4 Backup och återställningsprotokoll. 5.5 Övervakning och larm. 5.6 Felsökningsrutin. 5.7 Verifierad lösning för åtkomst vid PIM-avbrott |
+| Test och acceptans | AP12 | 6.1 Testplan med kravspårning. 6.2 Integrationstestprotokoll. 6.3 Kapacitets- och samtidighetsrapport. 6.4 Avbrottstestprotokoll. 6.5 Acceptanstestprotokoll. 6.6 Acceptansbeslut |
+| Driftsättning och överlämning | AP14 | 7.1 Växlingsplan. 7.2 Driftsatt F1 med växlingsprotokoll. 7.3 Överlämnat kodarkiv. 7.4 Data- och gränssnittsdokumentation. 7.5 Komponent- och tjänsteförteckning. 7.6 Användarhandledning. 7.7 Runbook och ansvarsfördelning. 7.8 Genomförda utbildningar. 7.9 Ärendelogg från stödperioden |
+| Projektledning | AP15 | 8.1 Leveransplan. 8.2 Risk- och beslutslogg. 8.3 Ändringslogg. 8.4 Statusrapporter |
+
 ## Spårbarhet
 
 Alla 63 krav har ett arbetspaket och en leverans. Kravkatalogen i svaret har en kolumn per krav med Vaimos leveranser.
