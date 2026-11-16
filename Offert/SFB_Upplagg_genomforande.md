@@ -4,33 +4,39 @@ Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog vers
 
 ## Mål
 
-C4 ersätts i flödet Finfo, C4, MagicBox, Optimizely med en PIM-applikation byggd på Medusa v2, med så få ändringar i MagicBox som möjligt. Före C4:s stängning 2026-12-31 ska PIM ta emot källdata och leverera till MagicBox. Resten av F1 levereras under första kvartalet 2027.
+C4 ersätts i flödet Finfo, C4, MagicBox, Optimizely med en PIM-applikation byggd på Medusa v2, med så få ändringar i MagicBox som möjligt. Före C4:s stängning 2026-12-31 ska PIM ta emot källdata och leverera till MagicBox. Resten av F1 levereras under våren 2027.
+
+## Bemanning
+
+Vaimo bemannar med Pontus Sundén, som gör allt arbete med AI-stöd: analys, arkitektur, utveckling, test och projektledning. Beläggningen är cirka 45 timmar per vecka till 30 dec och därefter heltid. SFB:s medverkan är cirka 5 timmar per vecka under AP01, cirka 50 timmar för migreringsurval och datastädning i januari och cirka 30 timmar i acceptanstestet.
 
 ## Faser
 
 | Fas | Innehåll | Tid |
 |---|---|---|
-| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov till 30 dec 2026, Snickenkontrakt och avbrottsverifiering i januari |
+| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 22 jan 2027 |
 | F1 delleverans | PIM tar emot källdata och skickar vidare till MagicBox. Ingen migrering | I drift 4 jan 2027 |
-| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Klar 8 mars 2027, inklusive tio dagars stöd |
-| V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | 22 feb till 19 mars 2027, efter beslut |
+| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | I drift och överlämnad i mitten av maj 2027, följt av tio dagars stöd |
+| V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | Juni 2027, efter beslut |
 
 ## Före årsskiftet
 
-AP01 och delleveransen körs parallellt. AP01 levererar det som bygget behöver först, så att utvecklingen kan starta i början av december.
+Före jul görs bara det som delleveransen kräver, cirka 290 timmar. Övriga delar av AP01 görs i januari.
 
-| Vecka | Arbete i AP01 | Bygge och drift |
+| Vecka | Precisering i AP01 | Bygge och drift |
 |---|---|---|
-| 47 (17 nov) | Startmöte med SFB och ITM8. Återanvändningsmatris för förstudien. Låst startlista för egna egenskaper | |
-| 48 | Export-, medie- och volyminventering, drift och identitet. Identitetsregler, kontroll av produktgrupper, motsägelser mot förstudien | Beställ C4-historik och ändringslogg från nuvarande part (24 nov) |
-| 49 | Lasttest av Medusa med 1,4 miljoner artiklar (1 till 3 dec). Fältmatris, icke-funktionella krav, transport- och felkontrakt. Beslutsunderlag till SFB sponsor (1 dec) | Migreringsurval beslutat (2 dec). Städad C4-data (4 dec) |
-| 50 | Arkitektur och säkerhet godkänd (7 dec). Kontrakt mellan MagicBox och PIM granskade med ITM8 (11 dec). Fast Excel-mall | Test- och produktionsmiljö, inloggning |
-| 51 | Validerade kontraktsexempel. Samlat gränssnittskontrakt godkänt (21 dec) | Datamodell (16 dec). Gemensamma fält- och valideringsregler. ITM8:s källintegrationer |
-| 52 | Reviderat estimat och plan till SFB sponsor | Komplett slutexport från C4 (22 dec), avstämd 23 dec |
-| 53 | AP01 godkänd (30 dec) | Källmottagning och utgående flöde testade. Integrationstest 28 till 30 dec |
+| 47 (17 nov) | Startmöte med SFB och ITM8. Återanvändningsmatris för förstudien. Låst startlista för egna egenskaper och skyddade fält | |
+| 48 | Export-, medie- och volyminventering, drift och identitet. Identitetsregler och kontroll av produktgrupper | Beställ C4-historik och ändringslogg från nuvarande part (24 nov) |
+| 49 | Lasttest av Medusa med 1,4 miljoner artiklar (1 till 3 dec). Fältmatris och icke-funktionella krav | |
+| 50 | Arkitektur och säkerhet godkänd (7 dec). Kontrakt PIM till MagicBox granskat med ITM8 (11 dec) | Test- och produktionsmiljö, inloggning och tekniska identiteter |
+| 51 | | Datamodell (16 dec). Gemensamma fält- och valideringsregler (21 dec). ITM8:s källintegrationer |
+| 52 | | Komplett slutexport från C4 (22 dec), avstämd 23 dec. Utgående flöde testat |
+| 53 | | Källmottagning. Integrationstest med ITM8 28 till 30 dec |
 | 1 (4 jan) | | Delleveransen i drift |
 
-## Beslutade villkor för delleveransen (2026-11-16)
+I januari: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. AP01 är klar 22 jan.
+
+## Villkor för delleveransen
 
 - MagicBox behåller senaste kategori och webbstatus från C4 tills migreringen är klar. PIM skickar inga tomma värden för dem.
 - Snicken får inga uppdateringar från 31 dec tills Snicken-adaptern är klar, och får då en full startleverans.
@@ -42,14 +48,19 @@ AP01 och delleveransen körs parallellt. AP01 levererar det som bygget behöver 
 
 Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-tenant. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler, och gränssnittet som tillägg till Medusa Admin. SFB äger den kundspecifika koden, och allt kan lämnas över till en annan partner.
 
-## Det här behöver vi från SFB och andra parter före jul
+## Senaste datum
 
-- Namngiven produktägare och sponsor med tid för granskning varje vecka, cirka 125 timmar totalt i F1.
-- Beslut om migreringsurval senast 2 dec och städning av C4-data senast 4 dec.
-- C4-export, historik och slutexport från nuvarande part enligt datumen ovan.
-- ITM8: kontraktsgenomgångar vecka 50, källintegrationer och MagicBox-sidan klara till 28 dec, miljögodkännanden.
-- Beställning av AP01 senast 17 nov för att hålla 4 jan.
+- Beställning av AP01: 17 nov.
+- C4-historik och ändringslogg från nuvarande part: 24 nov. Komplett slutexport: 22 dec.
+- SFB:s godkännande av arkitektur 7 dec och av kontraktet PIM till MagicBox 11 dec.
+- ITM8: källintegrationer och MagicBox-sidan klara till integrationstestet 28 dec.
+- Migreringsurval och datastädning: januari, före migreringsverktyget.
+- Beslut om genomförandet av resten av F1: efter AP01, 22 jan.
+
+## Testfönster och beslutspunkter
+
+Integrationstest med ITM8 28 till 30 dec. Snickenkontraktet granskas med Snicken och ITM8 i januari. Provmigrering och korrigeringskörning under våren. Acceptanstest med SFB:s administratörer, ITM8 och Snicken före driftstart av F1, enligt avsnitt 9.1. SFB fattar go/no-go före slutmigrering och driftstart.
 
 ## Största riskerna
 
-Medusa är byggt för e-handel, inte för en katalog med 1,4 miljoner artiklar. Därför lastprovas det i AP01 innan datamodellen byggs. C4-exporten kan avvika eller ha luckor. ITM8 eller SFB kanske inte hinner granska under december. Alla tre hanteras tidigt i AP01, med lasttest och exportprov före beslut om genomförandeestimatet.
+Medusa lastprovas med 1,4 miljoner artiklar i AP01 innan datamodellen byggs. C4-exporten kan avvika eller ha luckor. ITM8 eller SFB kanske inte hinner granska under december. Alla tre hanteras tidigt i AP01, med lasttest och exportprov före beslut om genomförandet.

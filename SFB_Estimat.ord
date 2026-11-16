@@ -35,31 +35,31 @@ Estimat SFB – berikningsdel och PIM
 		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
 
 	Roller
-		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget är Vaimos bedömning av AI-assisterad utveckling 2026-11-16: 30 % för utvecklare, 25 % för testledare, 15 % för affärskonsult och teknisk arkitekt och 0 för projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
+		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget gäller när Pontus gör allt arbete med Claude, beslut 2026-11-16: 75 % för utvecklare och 50 % för affärskonsult, teknisk arkitekt, testledare och projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
 		Affärskonsult +estimatroll ^BC
 			part:: Vaimo
 			timpris:: 1700
-			scenarioavdrag:: 0.15
+			scenarioavdrag:: 0.5
 			Business Consulting PIM.
 		Teknisk arkitekt +estimatroll ^TA
 			part:: Vaimo
 			timpris:: 1700
-			scenarioavdrag:: 0.15
+			scenarioavdrag:: 0.5
 			Samma pris som Business Consulting PIM, bekräftat 2026-11-16.
 		Utvecklare +estimatroll ^DEV
 			part:: Vaimo
 			timpris:: 1500
-			scenarioavdrag:: 0.3
+			scenarioavdrag:: 0.75
 			PIM Development.
 		Testledare +estimatroll ^QA
 			part:: Vaimo
 			timpris:: 1500
-			scenarioavdrag:: 0.25
+			scenarioavdrag:: 0.5
 			Samma pris som PIM Development, bekräftat 2026-11-16.
 		Projektledare +estimatroll ^PM
 			part:: Vaimo
 			timpris:: 1700
-			scenarioavdrag:: 0
+			scenarioavdrag:: 0.5
 			Project Management.
 		ITM8 +estimatroll ^ITM8
 			part:: ITM8
@@ -117,9 +117,9 @@ Estimat SFB – berikningsdel och PIM
 			Fältet saknade på paketet och kontrollen Paket med saknade estimat.
 
 	Scenario: AI-assisterad utveckling
-		Visar estimatet om utvecklingen görs med AI-stöd. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
-		Grundestimatet prissätts. Scenariot redovisas separat tills avdraget är mätt mot utfallet i delleveransen före 2026-12-31.
-		Avdraget gäller arbetstid, inte kalendertid. Kritiska linjen i AP01 består mest av kontrakt, genomgångar med ITM8 och godkännanden, som AI-stöd påverkar lite.
+		Visar estimatet när Pontus gör allt arbete med Claude. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
+		Beslut 2026-11-16: offerten prissätter scenariot, inte grundestimatet. Grundestimatet redovisas som jämförelse. Avdraget mäts mot utfallet i delleveransen.
+		Före årsskiftet görs bara det som delleveransen kräver, cirka 290 timmar i scenariot. Övrigt i AP01 flyttas till januari. Med en person blir F1 klar i maj 2027.
 
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.
