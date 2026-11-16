@@ -4,7 +4,7 @@ Kör från repots rot: python3 Planering/tidplan.py
 Läser längd (arbetsdagar), beror på och status för varje +uppgift och skriver
 start och slut på samma rader. Projektstart läses från fältet projektstart på
 första nivån i SFB_Uppgifter_AP01.ord. Klara uppgifter [x] flyttas inte, och
-pågående [-] behåller sin start. Skriptet skriver ut kritisk linje per milstolpe
+pågående [-] behåller sin start. En uppgift börjar aldrig före sitt tidigast-datum. Skriptet skriver ut kritisk linje per milstolpe
 och uppgifter som slutar efter sitt senast-datum.
 """
 import datetime as dt
@@ -99,6 +99,8 @@ def main():
             tidigast = slut[senaste] if langd == 0 else nasta_arbetsdag(slut[senaste])
         else:
             tidigast = projektstart
+        if u["falt"].get("tidigast"):
+            tidigast = max(tidigast, forsta_arbetsdag(dt.date.fromisoformat(u["falt"]["tidigast"])))
         if u["status"] == "-" and gammal_start:
             tidigast = dt.date.fromisoformat(gammal_start)
         start[k] = tidigast

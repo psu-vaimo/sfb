@@ -442,7 +442,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Test
 				granskare:: ITM8
 				godkännare:: SFB produktägare
-				beror på:: PA-1-2; PF-2-1; PF-2-2-3
+				beror på:: PA-1-2-1; PF-2-1; PF-2-2-3
 				Syfte
 					Tar emot källdata utan att egen berikning skrivs över.
 				Innehåll
@@ -457,7 +457,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Test
 				granskare:: ITM8; SFB e-handel
 				godkännare:: SFB produktägare
-				beror på:: PA-1-2; PF-2-1
+				beror på:: PA-1-2-2; PF-2-1
 				Syfte
 					Håller mottagarna aktuella.
 				Innehåll
@@ -504,7 +504,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Test
 				granskare:: Vaimo teknisk arkitekt
 				godkännare:: SFB e-handel
-				beror på:: PA-1-2
+				beror på:: PA-1-2-1
 				Syfte
 					Återanvänder dagens Finfo-hämtning mot MagicBox i stället för C4.
 				Innehåll
@@ -519,7 +519,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Test
 				granskare:: Vaimo teknisk arkitekt
 				godkännare:: SFB e-handel
-				beror på:: PA-1-2
+				beror på:: PA-1-2-1
 				Syfte
 					Bevarar BASTA-information när C4 avvecklas.
 				Innehåll
@@ -534,7 +534,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Test
 				granskare:: Vaimo teknisk arkitekt
 				godkännare:: SFB e-handel
-				beror på:: PA-1-2
+				beror på:: PA-1-2-1
 				Syfte
 					Återanvänder befintlig BVB-koppling i MagicBox, enligt beslutet i PA-3-2.
 				Innehåll
@@ -549,7 +549,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Test
 			granskare:: Vaimo teknisk arkitekt
 			godkännare:: SFB e-handel
-			beror på:: PA-1-2
+			beror på:: PA-1-2-1; PA-1-2-2
 			Syfte
 				MagicBox-sidan av utbytet med PIM.
 			Innehåll
