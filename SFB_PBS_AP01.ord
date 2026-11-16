@@ -118,6 +118,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kvalitetskriterier
 					Mottagaren behöver inte tolka en utebliven post som radering, [[PIM-I03]].
 					Matchningsnyckeln som MagicBox använder finns i varje artikel, så att C4:s sysid kan tas bort.
+				Fram till migreringen skickar PIM inte tomma värden för kategori och webbstatus, så att MagicBox behåller värdena från C4.
 			1.2.3 Kontrakt för Snickenflödet +produkt ^PA-1-2-3
 				paket:: AP01
 				krav:: PIM-I01; PIM-I09; PIM-I10
@@ -492,6 +493,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Klarar ut driftägare, identitetstjänst och tekniska beroenden före arkitekturen i F1. Se [[B09]].
 			Innehåll
 				Identitetstjänst, driftägare, loggtid, befintlig medieinfrastruktur och tekniska beroenden.
+				Bekräftelse från ITM8 och Ariser att medielagringen och media.woody.se ligger kvar efter C4:s stängning.
 			Underlag
 				Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
 			Kvalitetskriterier

@@ -9,7 +9,10 @@ PBS F1 första driftversionen ^PBS-F1
 	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
 	Delleverans före 2026-12-31
 		Beslut 2026-11-16: bara AP01 och flödet från PIM till MagicBox behöver vara klara före C4:s stängning. PIM tar då emot källdata och skickar vidare. Ingen migrering görs före 2026-12-31.
-		Produkter i delleveransen: hela AP01, arkitekturen 2.7, datamodellen 2.1 med 2.1.1 till 2.1.5, reglerna 2.2.3, källmottagningen 2.6.1, det utgående flödet 2.6.2, miljöerna 5.1 till 5.3, ITM8:s källintegrationer 3.1 och MagicBox-sidan 3.2, och ett avgränsat integrationstest.
+		Produkter i delleveransen: hela AP01, arkitekturen 2.7, datamodellen 2.1 med 2.1.1 till 2.1.5, reglerna 2.2.3, källmottagningen 2.6.1, det utgående flödet 2.6.2, miljöerna 5.1 till 5.3, ITM8:s källintegrationer 3.1, MagicBox-sidan 3.2, slutexporten 4.9 och ett avgränsat integrationstest.
+		MagicBox behåller senaste kategori och webbstatus från C4 tills migreringen är klar. PIM skickar inte tomma värden för dem under tiden. Det ingår i kontraktet PA-1-2-2 och i 3.2.
+		Snicken får inga uppdateringar mellan 2026-12-31 och leveransen av 3.3, och får då en full startleverans.
+		Medielagringen och media.woody.se ligger kvar efter C4:s stängning. Det bekräftas i AP01, produkt 2.5.
 		Allt annat i F1 levereras efter 2026-12-31. Följderna av beslutet står under Öppna frågor.
 	1 Teknisk precisering
 		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord. Produkterna där heter PA-nummer, och F1:s produkter beror på dem.
@@ -568,7 +571,7 @@ PBS F1 första driftversionen ^PBS-F1
 			Syfte
 				MagicBox-sidan av utbytet med PIM.
 			Innehåll
-				Källöverföring till PIM, mottagning av berikad data, verifierad ERP-matchning utan C4:s sysid och distribution per delägare. Senast distribuerad information används vid PIM-avbrott.
+				Källöverföring till PIM, mottagning av berikad data, verifierad ERP-matchning utan C4:s sysid och distribution per delägare. Senaste kategori och webbstatus från C4 behålls tills migreringen är klar. Senast distribuerad information används vid PIM-avbrott.
 			Kvalitetskriterier
 				Ingen uppdateringsslinga när berikad data återkommer till MagicBox, [[PIM-I08]].
 		3.3 Snicken-adapter +produkt ^PF-3-3
@@ -673,11 +676,11 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Avstämning
 			granskare:: Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare
-			beror på:: PF-4-1-1
+			beror på:: PF-4-1-1; PF-4-9
 			Syfte
 				Källan för prov-, korrigerings- och slutkörning.
 			Innehåll
-				Export enligt det format som inventerades i AP01, för urvalet. En export per körning.
+				Urvalet ur slutexporten 4.9, städat enligt 4.1.1. C4 finns inte efter 2026-12-31, så alla körningar utgår från slutexporten.
 			Kvalitetskriterier
 				Antal per posttyp stämmer med urvalet.
 		4.3 Migreringsmappning +produkt ^PF-4-3
@@ -738,7 +741,7 @@ PBS F1 första driftversionen ^PBS-F1
 			Syfte
 				Det aktuella beståndet i produktion vid växlingen.
 			Innehåll
-				Slutkörning med sista delta eller kontrollerat ändringsstopp, och dess avstämningsprotokoll. Artiklar, produktgrupper, kategorier, attribut, referensdata och aktuella medier enligt urvalet.
+				Slutkörning från slutexporten 4.9, och dess avstämningsprotokoll. Källdata som PIM har tagit emot sedan delleveransen skrivs inte över. Artiklar, produktgrupper, kategorier, attribut, referensdata och aktuella medier enligt urvalet.
 				Förstudien: flytta bara filer som används och rensa dubbletter på checksumma.
 			Kvalitetskriterier
 				Avstämningen stämmer med korrigeringskörningen, med förklarade skillnader för ändringar sedan dess.
@@ -750,7 +753,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Avstämning
 			granskare:: SFB PIM-team
 			godkännare:: SFB produktägare
-			beror på:: PF-4-4; PF-2-5-4; PA-2-1-2
+			beror på:: PF-4-4; PF-2-5-4; PA-2-1-2; PF-4-9
 			Syfte
 				Säkrar dokumenthistorik innan C4 stängs.
 			Innehåll
@@ -766,13 +769,29 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Granskning
 			granskare:: SFB PIM-team
 			godkännare:: SFB produktägare
-			beror på:: PA-2-1-2
+			beror på:: PA-2-1-2; PF-4-9
 			Syfte
 				Bevarar gammal ändringshistorik utan ett nytt logggränssnitt.
 			Innehåll
 				Läsbar export om den kan tas ut. Annars en kostnadssatt åtkomstlösning för SFB:s beslut före C4:s stängning.
 			Kvalitetskriterier
 				Exporten går att öppna och söka i utan C4.
+		4.9 Slutexport från C4 före stängningen +produkt ^PF-4-9
+			paket:: AP11
+			krav:: PIM-M01; PIM-M06
+			part:: Nuvarande part
+			format:: Data
+			kvalitetsmetod:: Avstämning
+			granskare:: Vaimo teknisk arkitekt
+			godkännare:: SFB produktägare
+			beror på:: PA-2-1-1
+			Syfte
+				Säkrar allt som bara finns i C4 innan systemet stängs 2026-12-31, så att migreringen kan göras efteråt. Ingår i delleveransen före 2026-12-31.
+			Innehåll
+				Komplett export i det format som provades i AP01: artiklar, produktgrupper, kategorier, attribut, referensdata, intern berikning, relationer, filoriginal, äldre dokumentversioner och läsbar ändringslogg.
+			Kvalitetskriterier
+				Antal per posttyp stäms av mot C4 innan stängningen.
+				Exporten går att läsa utan C4.
 	5 Miljöer och drift
 		5.1 Testmiljö +produkt ^PF-5-1
 			paket:: AP13
@@ -1176,7 +1195,7 @@ PBS F1 första driftversionen ^PBS-F1
 		Parallell linje med lite marginal: urvalet 4.1, städningen 4.1.1, exporten 4.2, mappningen 4.3, verktyget 4.4 och provmigreringen 4.5, som behövs till kapacitetstestet och acceptanstestet.
 		ITM8:s produkter i 3 beror bara på kontrakten i AP01 och kan byggas parallellt. De behövs först i integrationstestet 6.2.
 		Projektledningens produkter 8.2 till 8.4 förs löpande från steg 2.
-		Steg 1 Arkitektur, ITM8:s byggen och planering
+		Steg 1 Arkitektur, ITM8:s byggen, slutexport och planering
 			@ 2.7 Teknisk arkitektur och säkerhetslösning^PF-2-7
 			@ 3.1.1 Omkopplad Finfo-hämtning^PF-3-1-1
 			@ 3.1.2 BASTA-anslutning^PF-3-1-2
@@ -1186,7 +1205,7 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 3.4.1 Godkända transformationsprofiler^PF-3-4-1
 			@ 3.4.2 Bevarade medielänkar^PF-3-4-2
 			@ 4.1 Beslutat migreringsurval^PF-4-1
-			@ 4.8 Läsbar export av C4:s ändringslogg^PF-4-8
+			@ 4.9 Slutexport från C4 före stängningen^PF-4-9
 			@ 6.1 Testplan med kravspårning^PF-6-1
 			@ 8.1 Leveransplan^PF-8-1
 		Steg 2 Datamodell och testmiljö
@@ -1199,6 +1218,7 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 3.1 Källintegrationer till MagicBox^PF-3-1
 			@ 3.4 Medielagring, transformering och länkar^PF-3-4
 			@ 4.1.1 Städad C4-data före uttag^PF-4-1-1
+			@ 4.8 Läsbar export av C4:s ändringslogg^PF-4-8
 			@ 5.1 Testmiljö^PF-5-1
 			@ 5.3 Inloggning och tekniska identiteter^PF-5-3
 			@ 7.5 Komponent- och tjänsteförteckning^PF-7-5
@@ -1266,10 +1286,10 @@ PBS F1 första driftversionen ^PBS-F1
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i AP01, produkt 3.1.
 		[x] Tid mot C4:s stängning: beslutat 2026-11-16. Bara AP01 och flödet från PIM till MagicBox, med källdata och utan migrering, ska vara klara före 2026-12-31. Se Delleverans före 2026-12-31.
-		[ ] Webbvisning utan migrering: MagicBox kräver bland annat kategori och webbstatus, som i dag sätts manuellt i C4. Utan migrerad berikning saknar PIM dem efter 2026-12-31. Försvinner artiklar från webben tills migreringen är klar, och behöver kategori och webbstatus följa med i delleveransen?
-		[ ] Snicken efter 2026-12-31: Exchange försvinner med C4, och Snicken-adaptern 3.3 ingår inte i delleveransen. Hur får Snicken data från januari?
-		[ ] Medielänkar efter 2026-12-31: dokumenten nås via media.woody.se, och bilder och dokument ligger i lagring som kan stängas med C4. 3.4 ingår inte i delleveransen. Säkras länkarna och filerna på annat sätt?
-		[ ] Egen berikning efter 2026-12-31: interna texter, egna egenskaper och relationer finns bara i C4. Säkras en export före stängningen, så att migreringen kan göras efteråt?
+		[x] Webbvisning utan migrering: beslutat 2026-11-16, MagicBox behåller senaste värden. Fråga: MagicBox kräver bland annat kategori och webbstatus, som i dag sätts manuellt i C4. Utan migrerad berikning saknar PIM dem efter 2026-12-31. Försvinner artiklar från webben tills migreringen är klar, och behöver kategori och webbstatus följa med i delleveransen?
+		[x] Snicken efter 2026-12-31: beslutat 2026-11-16, uppehåll accepteras. Fråga: Exchange försvinner med C4, och Snicken-adaptern 3.3 ingår inte i delleveransen. Hur får Snicken data från januari?
+		[x] Medielänkar efter 2026-12-31: beslutat 2026-11-16, lagringen ligger kvar och bekräftas i AP01. Fråga: dokumenten nås via media.woody.se, och bilder och dokument ligger i lagring som kan stängas med C4. 3.4 ingår inte i delleveransen. Säkras länkarna och filerna på annat sätt?
+		[x] Egen berikning efter 2026-12-31: beslutat 2026-11-16, slutexport före stängningen, ny produkt 4.9. Fråga: interna texter, egna egenskaper och relationer finns bara i C4. Säkras en export före stängningen, så att migreringen kan göras efteråt?
 		[ ] Arkitekturens paket: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
 		[ ] Driftägare: vem på SFB godkänner miljöer, övervakning och runbook i 5 och 7? I dag står SFB produktägare, eftersom driftansvaret inte är bekräftat enligt [[B11]].
 		[ ] Godkännare för ITM8:s produkter: är SFB e-handel rätt godkännare för 3.1 till 3.4, och Snicken för 3.3?

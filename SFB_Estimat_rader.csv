@@ -77,7 +77,7 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Volym: produktgrupper,E-AP11,DEV,,,,1,22 442 grupper,PIM-M02,,,PF-4-6
 ,estimatrad,Filöverföring,E-AP11,DEV,,,,,GB,PIM-M02,Bytevolym mäts i AP01. Fyll i antal när den är känd.,,PF-4-6
 ,estimatrad,SFB:s urvalsbeslut och städning före uttag,E-AP11,SFB,,,,,,PIM-M01,SFB:s egen insats. Ingår inte i priset.,,PF-4-1; PF-4-1-1
-,estimatrad,Ta emot och kontrollera C4-export per körning,E-AP11,DEV,,,,,,PIM-M01,Nuvarande parts eventuella avgift är en kostnadspost.,,PF-4-2
+,estimatrad,Ta emot och kontrollera slutexporten och exporten per körning,E-AP11,DEV,,,,,,PIM-M01,Nuvarande parts eventuella avgift är en kostnadspost.,,PF-4-2; PF-4-9
 ,estimatrad,Särskild export av äldre dokumentversioner,E-AP22,DEV,,,,,,PIM-M06,,,PF-4-7
 ,estimatrad,Historikmappning,E-AP22,BC,,,,,,PIM-M06,,,PF-4-7
 ,estimatrad,Inläsning och avstämning av dokumentversioner,E-AP22,DEV,,,,,100 000 versioner,PIM-M06,Historisk filmängd mäts i AP01. Samma fil räknas inte i AP11.,,PF-4-7
