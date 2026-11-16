@@ -26,7 +26,7 @@ Grupperna summeras inte med varandra. Timpriset är 1 700 SEK för alla roller o
 
 ## Drift före C4:s stängning
 
-Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 4 jan 2027. Hela F1 är i drift i början av maj 2027 och klar efter stödperioden i mitten av maj. ALT03 behövs därför inte, men kan estimeras på begäran.
+Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 18 dec 2026. Hela F1 är i drift i början av maj 2027 och klar efter stödperioden i mitten av maj. ALT03 behövs därför inte, men kan estimeras på begäran.
 
 ## AP01
 
