@@ -651,7 +651,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			@ 3.5 Granskade workshopanteckningar^PA-3-5
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i 3.1.
-		[ ] Tid mot C4:s stängning: AP01 har inget startdatum, och C4 stängs 2026-12-31. Hinner AP01 och F1 före stängningen, eller ska [[ALT03]] beslutas redan nu?
+		[x] Tid mot C4:s stängning: beslutat 2026-11-16. AP01 och flödet från PIM till MagicBox ska vara klara före 2026-12-31, se Delleverans före 2026-12-31 i SFB_PBS_F1.ord. AP01 måste därför starta omedelbart.
 		[ ] Godkännare: är SFB produktägare rätt godkännare för specifikationerna, och SFB sponsor för estimat och plan? Ingen namngiven beslutsfattare finns enligt [[B11]].
 		[ ] ITM8:s åtagande: har ITM8 avsatt tid och budget för att granska och godkänna kontrakten i AP01? Utan det kan 1.2 inte bli klar.
 		[ ] Snicken: ska Snicken godkänna 1.2.3, och vem kontaktar Snicken?

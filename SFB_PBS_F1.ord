@@ -7,6 +7,10 @@ PBS F1 första driftversionen ^PBS-F1
 	Raderna Förstudien: kommer från discoveryrapporten v0.5 och dess bilagor. Den är bakgrund och utökar inte omfattningen. Motsägelser mot kravspecifikationen redovisas i AP01, produkt 3.2.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
+	Delleverans före 2026-12-31
+		Beslut 2026-11-16: bara AP01 och flödet från PIM till MagicBox behöver vara klara före C4:s stängning. PIM tar då emot källdata och skickar vidare. Ingen migrering görs före 2026-12-31.
+		Produkter i delleveransen: hela AP01, arkitekturen 2.7, datamodellen 2.1 med 2.1.1 till 2.1.5, reglerna 2.2.3, källmottagningen 2.6.1, det utgående flödet 2.6.2, miljöerna 5.1 till 5.3, ITM8:s källintegrationer 3.1 och MagicBox-sidan 3.2, och ett avgränsat integrationstest.
+		Allt annat i F1 levereras efter 2026-12-31. Följderna av beslutet står under Öppna frågor.
 	1 Teknisk precisering
 		Hela produktnedbrytningen för [[AP01]] finns i SFB_PBS_AP01.ord. Produkterna där heter PA-nummer, och F1:s produkter beror på dem.
 		@ PBS AP01 Teknisk precisering och inventering^PBS-AP01
@@ -1261,7 +1265,11 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 7.9 Ärendelogg från stödperioden^PF-7-9
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i AP01, produkt 3.1.
-		[ ] Tid mot C4:s stängning: den kritiska linjen har tolv steg efter AP01, och C4 stängs 2026-12-31. Planen i PA-3-4 måste visa om F1 hinner, annars behövs [[ALT03]].
+		[x] Tid mot C4:s stängning: beslutat 2026-11-16. Bara AP01 och flödet från PIM till MagicBox, med källdata och utan migrering, ska vara klara före 2026-12-31. Se Delleverans före 2026-12-31.
+		[ ] Webbvisning utan migrering: MagicBox kräver bland annat kategori och webbstatus, som i dag sätts manuellt i C4. Utan migrerad berikning saknar PIM dem efter 2026-12-31. Försvinner artiklar från webben tills migreringen är klar, och behöver kategori och webbstatus följa med i delleveransen?
+		[ ] Snicken efter 2026-12-31: Exchange försvinner med C4, och Snicken-adaptern 3.3 ingår inte i delleveransen. Hur får Snicken data från januari?
+		[ ] Medielänkar efter 2026-12-31: dokumenten nås via media.woody.se, och bilder och dokument ligger i lagring som kan stängas med C4. 3.4 ingår inte i delleveransen. Säkras länkarna och filerna på annat sätt?
+		[ ] Egen berikning efter 2026-12-31: interna texter, egna egenskaper och relationer finns bara i C4. Säkras en export före stängningen, så att migreringen kan göras efteråt?
 		[ ] Arkitekturens paket: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
 		[ ] Driftägare: vem på SFB godkänner miljöer, övervakning och runbook i 5 och 7? I dag står SFB produktägare, eftersom driftansvaret inte är bekräftat enligt [[B11]].
 		[ ] Godkännare för ITM8:s produkter: är SFB e-handel rätt godkännare för 3.1 till 3.4, och Snicken för 3.3?
