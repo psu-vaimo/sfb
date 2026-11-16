@@ -16,7 +16,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 		Fast Excel-mall: 1.6.
 		Export- och medieinventering: 2.1 med 2.1.2 och 2.1.3, 2.2, 2.3 och 2.4, med slutexporten PF-4-9 i F1 som exportprov.
 		Reviderat estimat och plan: 3.3 och 3.4, med 3.1 som underlag.
-		Produkterna 1.1, 1.7, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och motsägelser.
+		Produkterna 1.1, 1.7, 1.8, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och motsägelser.
 	1 Verifierade specifikationer
 		1.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
 			paket:: AP01
@@ -201,6 +201,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Innehåll
 				Per fält: objekt, fältnamn, ägare, källa, datatyp, enhet, listvärden, källprioritet, ändringsrätt, obligatoriskt värde, validering, tomvärde och rensning, språkneutral eller svensk, C4-källfält och användning i gränssnitt, tabell, Excel och utgående data.
 				1.3.1, 1.3.2 och 1.3.3 som egna flikar.
+				Omfattning enligt beslut 2026-11-16: egenskaper som används i migreringsurvalet får en rad var. Övriga attributdefinitioner flyttas med en gemensam regel utan analys per fält.
 			Underlag
 				Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
 				Bilaga K föreslår att mått och koder är språkneutrala och att text och alt-text är svenska. Förslaget är inte beslutat.
@@ -357,6 +358,24 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje krav är mätbart och har ett verifieringssätt.
 				Svarstidsmålen är bekräftade eller ändrade av SFB.
+		1.8 Teknisk arkitektur och säkerhetslösning +produkt ^PA-1-8
+			paket:: AP01
+			krav:: PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02
+			part:: PIM-partner
+			format:: Dokument
+			kvalitetsmetod:: Godkännande
+			granskare:: ITM8; Vaimo testledare
+			godkännare:: SFB produktägare
+			beror på:: PA-1-7; PA-2-5; PA-1-2
+			Syfte
+				Kravspecifikationen ber oss föreslå teknikstack, hosting och säkerhetslösning. Alla produkter i PIM-applikationen och miljöerna i F1 bygger på den. Flyttad från F1 till AP01 enligt beslut 2026-11-16, så att den är klar före det reviderade estimatet.
+			Innehåll
+				Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
+				Säkerhetslösningen driftsätts i F1, avsnitt 5.
+			Kvalitetskriterier
+				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
+				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för komponentförteckningen i F1, 7.5.
+				Godkänd innan utvecklingen av datamodellen i F1 startar.
 	2 Inventeringar
 		2.1 C4-exportinventering +produkt ^PA-2-1
 			paket:: AP01
@@ -551,7 +570,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Granskning
 			granskare:: Vaimo teknisk arkitekt; Vaimo projektledare
 			godkännare:: SFB sponsor
-			beror på:: PA-1-2; PA-1-3; PA-1-6; PA-1-7; PA-2-1-2; PA-2-1-3; PA-2-4; PA-3-1
+			beror på:: PA-1-2; PA-1-3; PA-1-6; PA-1-7; PA-1-8; PA-2-1-2; PA-2-1-3; PA-2-4; PA-3-1
 			Syfte
 				Ger SFB ett bindande eller nästan bindande genomförandepris för resten av F1.
 			Innehåll
@@ -628,7 +647,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			@ 1.2.6 ITM8:s granskning av kontrakten^PA-1-2-6
 			@ 1.2 Gränssnittskontrakt^PA-1-2
 			@ 2.4 Verifiering av åtkomst vid PIM-avbrott^PA-2-4
-		Steg 6 Beslut, estimat och plan
+		Steg 6 Arkitektur, beslut, estimat och plan
+			@ 1.8 Teknisk arkitektur och säkerhetslösning^PA-1-8
 			@ 3.1 Beslutsunderlag för öppna frågor^PA-3-1
 			@ 3.3 Reviderat genomförandeestimat^PA-3-3
 			@ 3.4 Reviderad genomförandeplan^PA-3-4
@@ -643,7 +663,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 		[x] Nuvarande part: avtalat 2026-11-16, Ariser levererar i tid. Priset är kostnadsposten Export från nuvarande part. Fråga: kan Ariser leverera exportprovet 2.1.1 och historiken i tid, och till vilket pris?
 		[x] Exportprov: beslutat 2026-11-16. Exportprovet 2.1.1 är borttaget och ersatt av slutexporten PF-4-9 i F1. Fråga: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
 		[x] Mediehantering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: motsägelsen om bildkonvertering och URL:er i 3.2 saknar beslut.
-		[ ] Fältmatrisens omfattning: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
+		[x] Fältmatrisens omfattning: beslutat 2026-11-16, detalj för urvalet och gemensam regel för resten. Fråga: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
 		[x] Estimatrader: löst. Varje rad i SFB_Estimat_rader.csv har nu produkt-ID i kolumnen produkt, och 1.3.3, 1.4.1, 1.5, 2.5, 3.1 och 3.2 har fått egna rader. 2.1.2, 2.1.3, 2.2 och 2.3 delar raden för export- och medieinventering.
 	Utanför AP01
 		Implementation av datamodell, gränssnitt och integrationer, se [[PBS F1 första driftversionen]].

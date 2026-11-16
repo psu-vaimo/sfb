@@ -18,6 +18,8 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Kontrollrapport för produktgrupper,E-AP01,DEV,,,,,,PIM-D02,"Kontrollen av grupptillhörigheter enligt B12 räknas här, inte i raden Identiteter och exempeldata.",,PA-1-5
 ,estimatrad,Verifiering av drift och identitet,E-AP01,TA,,,,,,PIM-O01; PIM-O03,,,PA-2-5
 ,estimatrad,Beslutsunderlag och förteckning över motsägelser,E-AP01,BC,,,,,,,,,PA-3-1; PA-3-2
+,estimatrad,Teknisk arkitektur och säkerhetslösning,E-AP01,TA,,,,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,"Teknikstack, hosting, komponenter och säkerhetslösning. Utgår från specifikationen av icke-funktionella krav i AP01. Driftsättning av säkerhetslösningen ingår i AP13.",,PA-1-8
+,estimatrad,"Teknisk arkitektur, SFB:s granskning och godkännande",E-AP01,SFB,,,,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,Godkänns tidigt i F1.,,PA-1-8
 ,estimatrad,Objekt och identiteter,E-AP02,DEV,,,,,,PIM-D01,,,PF-2-1-1
 ,estimatrad,Attribut med skilda källvärden och egna värden,E-AP02,DEV,,,,,,PIM-D03,,,PF-2-1-2
 ,estimatrad,Referensdata,E-AP02,DEV,,,,,,PIM-D07,,,PF-2-1-3
@@ -25,8 +27,6 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,"Tre kategoriträd, implementation",E-AP02,DEV,,,,,,PIM-D05,,,PF-2-1-4
 ,estimatrad,Manuella produktgrupper enligt B12,E-AP02,DEV,,,,,,PIM-D02,"Högst en variantgrupp och flera bundles per artikel. Ingen bundle-logik för antal, pris eller lager.",,PF-2-1-5
 ,estimatrad,"Datamodell, dokumentation",E-AP02,BC,,,,,,PIM-D01; PIM-D02; PIM-D03,,,PF-2-1
-,estimatrad,Teknisk arkitektur och säkerhetslösning,E-AP02,TA,,,,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,"Teknikstack, hosting, komponenter och säkerhetslösning. Utgår från specifikationen av icke-funktionella krav i AP01. Driftsättning av säkerhetslösningen ingår i AP13.",,PF-2-7
-,estimatrad,"Teknisk arkitektur, SFB:s granskning och godkännande",E-AP02,SFB,,,,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,Godkänns tidigt i F1.,,PF-2-7
 ,estimatrad,Komponenttest och rättning,E-AP02,DEV,,,,,,,,,PF-2-1
 ,estimatrad,Gränssnittsdesign och avstämning med administratörer,E-AP03,BC,,,,,,PIM-W01; PIM-W02,,,PF-2-2
 ,estimatrad,Sökning,E-AP03,DEV,,,,,,PIM-W01,,,PF-2-2-1

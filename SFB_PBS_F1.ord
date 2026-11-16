@@ -9,7 +9,7 @@ PBS F1 första driftversionen ^PBS-F1
 	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
 	Delleverans före 2026-12-31
 		Beslut 2026-11-16: bara AP01 och flödet från PIM till MagicBox behöver vara klara före C4:s stängning. PIM tar då emot källdata och skickar vidare. Ingen migrering görs före 2026-12-31.
-		Produkter i delleveransen: hela AP01, arkitekturen 2.7, datamodellen 2.1 med 2.1.1 till 2.1.5, reglerna 2.2.3, källmottagningen 2.6.1, det utgående flödet 2.6.2, miljöerna 5.1 till 5.3, ITM8:s källintegrationer 3.1, MagicBox-sidan 3.2, slutexporten 4.9 och ett avgränsat integrationstest.
+		Produkter i delleveransen: hela AP01 med arkitekturen PA-1-8, datamodellen 2.1 med 2.1.1 till 2.1.5, reglerna 2.2.3, källmottagningen 2.6.1, det utgående flödet 2.6.2, miljöerna 5.1 till 5.3, ITM8:s källintegrationer 3.1, MagicBox-sidan 3.2, slutexporten 4.9 och ett avgränsat integrationstest.
 		MagicBox behåller senaste kategori och webbstatus från C4 tills migreringen är klar. PIM skickar inte tomma värden för dem under tiden. Det ingår i kontraktet PA-1-2-2 och i 3.2.
 		Snicken får inga uppdateringar mellan 2026-12-31 och leveransen av 3.3, och får då en full startleverans.
 		Medielagringen och media.woody.se ligger kvar efter C4:s stängning. Det bekräftas i AP01, produkt 2.5.
@@ -43,7 +43,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: Vaimo testledare
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7; PA-1-3; PA-1-4
+				beror på:: PA-1-8; PA-1-3; PA-1-4
 				Syfte
 					Ger varje artikel en stabil identitet som tål källuppdateringar och migrering.
 				Innehåll
@@ -59,7 +59,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: Vaimo testledare
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7; PA-1-3; PA-1-3-1
+				beror på:: PA-1-8; PA-1-3; PA-1-3-1
 				Syfte
 					Bevarar alla attribut och håller källvärde och eget värde isär.
 				Innehåll
@@ -75,7 +75,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: Vaimo testledare
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7; PA-1-4
+				beror på:: PA-1-8; PA-1-4
 				Syfte
 					Låter artiklar referera leverantörer och varumärken med stabil identitet.
 				Innehåll
@@ -91,7 +91,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: SFB PIM-team
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7; PA-1-3
+				beror på:: PA-1-8; PA-1-3
 				Syfte
 					Bär de tre aktiva kategoriträden.
 				Innehåll
@@ -106,7 +106,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: SFB PIM-team
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7; PA-1-5
+				beror på:: PA-1-8; PA-1-5
 				Syfte
 					Bär manuella produktgrupper enligt [[B12]].
 				Innehåll
@@ -321,7 +321,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: SFB PIM-team
 				godkännare:: SFB produktägare
-				beror på:: PF-2-7
+				beror på:: PA-1-8
 				Syfte
 					Låter långa jobb köra utan att gränssnittet låses.
 				Innehåll
@@ -351,7 +351,7 @@ PBS F1 första driftversionen ^PBS-F1
 				kvalitetsmetod:: Demo
 				granskare:: SFB PIM-team
 				godkännare:: SFB produktägare
-				beror på:: PF-2-1; PA-2-2
+				beror på:: PF-2-1; PA-2-2; PF-3-4
 				Syfte
 					Kopplar och återanvänder filer utan kopiering.
 				Innehåll
@@ -479,24 +479,6 @@ PBS F1 första driftversionen ^PBS-F1
 					Återförsök, felstatus, spårbar leverans, omsändning och administratörsvy med senaste lyckade överföring.
 				Kvalitetskriterier
 					Simulerat avbrott ger synligt fel. Återstart levererar resten utan dubbletter, [[PIM-I04]].
-		2.7 Teknisk arkitektur och säkerhetslösning +produkt ^PF-2-7
-			paket:: AP02
-			krav:: PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02
-			part:: PIM-partner
-			format:: Dokument
-			kvalitetsmetod:: Godkännande
-			granskare:: ITM8; Vaimo testledare
-			godkännare:: SFB produktägare
-			beror på:: PA-1-7; PA-2-5; PA-1-2
-			Syfte
-				Kravspecifikationen ber oss föreslå teknikstack, hosting och säkerhetslösning. Alla andra produkter i 2 och 5 bygger på den.
-			Innehåll
-				Teknikstack, hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
-				Säkerhetslösningen driftsätts i 5.
-			Kvalitetskriterier
-				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
-				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för 7.5.
-				Godkänd tidigt i F1, innan utvecklingen av 2.1 startar.
 	3 Integrationer utanför PIM
 		Externa beroenden. Ingår inte i Vaimos pris. ITM8 tar fram produkterna. SFB e-handel godkänner dem, eftersom MagicBox och Plattan 2.0 är deras.
 		3.1 Källintegrationer till MagicBox +produkt ^PF-3-1
@@ -802,7 +784,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Demo
 			granskare:: SFB produktägare
 			godkännare:: ITM8
-			beror på:: PF-2-7
+			beror på:: PA-1-8
 			Syfte
 				Gör förändringar möjliga att testa. ITM8 får åtkomst från start.
 			Innehåll
@@ -817,7 +799,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Demo
 			granskare:: SFB produktägare
 			godkännare:: ITM8
-			beror på:: PF-2-7; PF-5-3
+			beror på:: PA-1-8; PF-5-3
 			Syfte
 				Driftmiljön för F1.
 			Innehåll
@@ -832,7 +814,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Test
 			granskare:: SFB produktägare; Vaimo testledare
 			godkännare:: ITM8
-			beror på:: PF-2-7; PA-2-5
+			beror på:: PA-1-8; PA-2-5
 			Syfte
 				Kontrollerad åtkomst och ansvarig aktör i loggar.
 			Innehåll
@@ -1047,7 +1029,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Granskning
 			granskare:: ITM8
 			godkännare:: SFB produktägare
-			beror på:: PF-2-1; PF-2-6; PF-2-7
+			beror på:: PF-2-1; PF-2-6; PA-1-8
 			Syfte
 				Beskriver datamodell och gränssnitt så att andra kan förvalta och integrera.
 			Innehåll
@@ -1062,7 +1044,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Granskning
 			granskare:: ITM8
 			godkännare:: SFB produktägare
-			beror på:: PF-2-7
+			beror på:: PA-1-8
 			Syfte
 				Synliggör kostnader och faktisk överlämningsbarhet.
 			Innehåll
@@ -1192,12 +1174,17 @@ PBS F1 första driftversionen ^PBS-F1
 				Lämnas med överenskommen frekvens.
 	Produktflöde
 		Ordningen följer fältet beror på. Produkter i samma steg kan tas fram parallellt. Alla steg förutsätter att AP01 är klar, se produktflödet i SFB_PBS_AP01.ord.
-		Kritisk linje: AP01, 2.7, datamodellen 2.1, reglerna 2.2.3, artikelvyn 2.2.2, samtidighetsskyddet 2.2.5, tabellen 2.3, kapacitetstestet 6.3, acceptanstestet 6.5, acceptansbeslutet 6.6, slutmigreringen 4.6 och driftstarten 7.2.
+		Kritisk linje: AP01 med arkitekturen PA-1-8, datamodellen 2.1, reglerna 2.2.3, artikelvyn 2.2.2, samtidighetsskyddet 2.2.5, tabellen 2.3, kapacitetstestet 6.3, acceptanstestet 6.5, acceptansbeslutet 6.6, slutmigreringen 4.6 och driftstarten 7.2.
 		Parallell linje med lite marginal: urvalet 4.1, städningen 4.1.1, exporten 4.2, mappningen 4.3, verktyget 4.4 och provmigreringen 4.5, som behövs till kapacitetstestet och acceptanstestet.
 		ITM8:s produkter i 3 beror bara på kontrakten i AP01 och kan byggas parallellt. De behövs först i integrationstestet 6.2.
 		Projektledningens produkter 8.2 till 8.4 förs löpande från steg 2.
-		Steg 1 Arkitektur, ITM8:s byggen, slutexport och planering
-			@ 2.7 Teknisk arkitektur och säkerhetslösning^PF-2-7
+		Steg 1 Datamodell, testmiljö, ITM8:s byggen, slutexport och planering
+			@ 2.1.1 Artikelmodell med identiteter^PF-2-1-1
+			@ 2.1.2 Attributmodell med käll- och egna värden^PF-2-1-2
+			@ 2.1.3 Referensdata för leverantörer och varumärken^PF-2-1-3
+			@ 2.1.4 Tre kategoriträd^PF-2-1-4
+			@ 2.1.5 Produktgruppsmodell^PF-2-1-5
+			@ 2.4.3 Jobbstatus för långa jobb^PF-2-4-3
 			@ 3.1.1 Omkopplad Finfo-hämtning^PF-3-1-1
 			@ 3.1.2 BASTA-anslutning^PF-3-1-2
 			@ 3.1.3 BVB-vidareföring^PF-3-1-3
@@ -1207,34 +1194,25 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 3.4.2 Bevarade medielänkar^PF-3-4-2
 			@ 4.1 Beslutat migreringsurval^PF-4-1
 			@ 4.9 Slutexport från C4 före stängningen^PF-4-9
-			@ 6.1 Testplan med kravspårning^PF-6-1
-			@ 8.1 Leveransplan^PF-8-1
-		Steg 2 Datamodell och testmiljö
-			@ 2.1.1 Artikelmodell med identiteter^PF-2-1-1
-			@ 2.1.2 Attributmodell med käll- och egna värden^PF-2-1-2
-			@ 2.1.3 Referensdata för leverantörer och varumärken^PF-2-1-3
-			@ 2.1.4 Tre kategoriträd^PF-2-1-4
-			@ 2.1.5 Produktgruppsmodell^PF-2-1-5
-			@ 2.4.3 Jobbstatus för långa jobb^PF-2-4-3
-			@ 3.1 Källintegrationer till MagicBox^PF-3-1
-			@ 3.4 Medielagring, transformering och länkar^PF-3-4
-			@ 4.1.1 Städad C4-data före uttag^PF-4-1-1
-			@ 4.8 Läsbar export av C4:s ändringslogg^PF-4-8
 			@ 5.1 Testmiljö^PF-5-1
 			@ 5.3 Inloggning och tekniska identiteter^PF-5-3
+			@ 6.1 Testplan med kravspårning^PF-6-1
 			@ 7.5 Komponent- och tjänsteförteckning^PF-7-5
-			@ 8.2 Risk- och beslutslogg^PF-8-2
-			@ 8.3 Ändringslogg^PF-8-3
-			@ 8.4 Statusrapporter^PF-8-4
-		Steg 3 Regler och produktionsmiljö
+			@ 8.1 Leveransplan^PF-8-1
+		Steg 2 Regler och produktionsmiljö
 			@ 2.1 Datamodell^PF-2-1
 			@ 2.2.3 Gemensamma fält-, överstyrnings- och valideringsregler^PF-2-2-3
 			@ 2.2.7 Attributförvaltning^PF-2-2-7
 			@ 2.2.8 Kategoriförvaltning^PF-2-2-8
-			@ 4.2 C4-export för migrering^PF-4-2
+			@ 3.1 Källintegrationer till MagicBox^PF-3-1
+			@ 3.4 Medielagring, transformering och länkar^PF-3-4
+			@ 4.1.1 Städad C4-data före uttag^PF-4-1-1
+			@ 4.8 Läsbar export av C4:s ändringslogg^PF-4-8
 			@ 5.2 Produktionsmiljö^PF-5-2
-			@ 5.7 Verifierad lösning för åtkomst vid PIM-avbrott^PF-5-7
-		Steg 4 Funktioner och mappning
+			@ 8.2 Risk- och beslutslogg^PF-8-2
+			@ 8.3 Ändringslogg^PF-8-3
+			@ 8.4 Statusrapporter^PF-8-4
+		Steg 3 Funktioner och mappning
 			@ 2.2.1 Sökning och filter^PF-2-2-1
 			@ 2.2.2 Artikelvy och enskild redigering^PF-2-2-2
 			@ 2.2.4 Ändringsnotislista^PF-2-2-4
@@ -1244,11 +1222,12 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 2.5.1 Medierelationer med flerfilsuppladdning^PF-2-5-1
 			@ 2.6.1 Källmottagning^PF-2-6-1
 			@ 2.6.2 Utgående ändringsflöde^PF-2-6-2
+			@ 4.2 C4-export för migrering^PF-4-2
 			@ 4.3 Migreringsmappning^PF-4-3
 			@ 5.4 Backup och återställningsprotokoll^PF-5-4
 			@ 5.5 Övervakning och larm^PF-5-5
-			@ 6.4 Avbrottstestprotokoll^PF-6-4
-		Steg 5 Funktioner, verktyg och drift
+			@ 5.7 Verifierad lösning för åtkomst vid PIM-avbrott^PF-5-7
+		Steg 4 Funktioner, verktyg och drift
 			@ 2.2.5 Samtidighetsskydd^PF-2-2-5
 			@ 2.4 Excelimport och export^PF-2-4
 			@ 2.5.2 Ordning och webbexkludering per relation^PF-2-5-2
@@ -1257,32 +1236,33 @@ PBS F1 första driftversionen ^PBS-F1
 			@ 2.6.3 Återförsök, omsändning och felvy^PF-2-6-3
 			@ 4.4 Migreringsverktyg^PF-4-4
 			@ 5.6 Felsökningsrutin^PF-5-6
-		Steg 6 Samlade funktioner och provmigrering
+			@ 6.4 Avbrottstestprotokoll^PF-6-4
+		Steg 5 Samlade funktioner och provmigrering
 			@ 2.2 Administratörsgränssnitt^PF-2-2
 			@ 2.3 Tabellredigering^PF-2-3
 			@ 2.5.4 Versionslista per artikel^PF-2-5-4
 			@ 2.6 PIM:s integrationsgränssnitt^PF-2-6
 			@ 4.5 Avstämningsprotokoll för prov- och korrigeringskörning^PF-4-5
 			@ 7.7 Runbook och ansvarsfördelning^PF-7-7
-		Steg 7 Integrationstest, kapacitet och växlingsplan
+		Steg 6 Integrationstest, kapacitet och växlingsplan
 			@ 2.5 Medie- och dokumenthantering^PF-2-5
 			@ 4.7 Migrerade äldre dokumentversioner^PF-4-7
 			@ 6.2 Integrationstestprotokoll^PF-6-2
 			@ 6.3 Kapacitets- och samtidighetsrapport^PF-6-3
 			@ 7.1 Växlingsplan^PF-7-1
 			@ 7.4 Data- och gränssnittsdokumentation^PF-7-4
-		Steg 8 Acceptanstest och handledning
+		Steg 7 Acceptanstest och handledning
 			@ 6.5 Acceptanstestprotokoll^PF-6-5
 			@ 7.6 Användarhandledning^PF-7-6
-		Steg 9 Acceptansbeslut och utbildning
+		Steg 8 Acceptansbeslut och utbildning
 			@ 6.6 Acceptansbeslut^PF-6-6
 			@ 7.8 Genomförda utbildningar^PF-7-8
-		Steg 10 Slutmigrering och kodöverlämning
+		Steg 9 Slutmigrering och kodöverlämning
 			@ 4.6 Migrerat bestånd i produktion^PF-4-6
 			@ 7.3 Överlämnat kodarkiv^PF-7-3
-		Steg 11 Driftstart
+		Steg 10 Driftstart
 			@ 7.2 Driftsatt F1 med växlingsprotokoll^PF-7-2
-		Steg 12 Stödperiod
+		Steg 11 Stödperiod
 			@ 7.9 Ärendelogg från stödperioden^PF-7-9
 	Öppna frågor
 		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i AP01, produkt 3.1.
@@ -1291,11 +1271,11 @@ PBS F1 första driftversionen ^PBS-F1
 		[x] Snicken efter 2026-12-31: beslutat 2026-11-16, uppehåll accepteras. Fråga: Exchange försvinner med C4, och Snicken-adaptern 3.3 ingår inte i delleveransen. Hur får Snicken data från januari?
 		[x] Medielänkar efter 2026-12-31: beslutat 2026-11-16, lagringen ligger kvar och bekräftas i AP01. Fråga: dokumenten nås via media.woody.se, och bilder och dokument ligger i lagring som kan stängas med C4. 3.4 ingår inte i delleveransen. Säkras länkarna och filerna på annat sätt?
 		[x] Egen berikning efter 2026-12-31: beslutat 2026-11-16, slutexport före stängningen, ny produkt 4.9. Fråga: interna texter, egna egenskaper och relationer finns bara i C4. Säkras en export före stängningen, så att migreringen kan göras efteråt?
-		[ ] Arkitekturens paket: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
+		[x] Arkitekturens paket: beslutat 2026-11-16, flyttad till AP01 som 1.8, PA-1-8. Fråga: 2.7 ligger i [[AP02]] som grundstruktur. Ska den i stället ligga i [[AP01]], så att den är klar före det reviderade estimatet?
 		[x] Driftägare: beslutat 2026-11-16. ITM8 är driftägare och godkänner miljöer, övervakning, felsökningsrutin och runbook i 5 och 7.7. SFB produktägare granskar.
 		[x] Godkännare för ITM8:s produkter: beslutat 2026-11-16. SFB e-handel godkänner 3.1, 3.2 och 3.4, och Snicken godkänner 3.3.
-		[ ] Medielagring: 2.5 bygger på att lagringen i 3.4 finns, men 3.4 hos ITM8 har ingen tidsatt leverans. När behöver PIM-partnern tillgång till lagringen?
-		[ ] Testdata: 6.3 och 6.5 behöver migrerad data från provkörningen 4.5. Räcker en korrigeringskörning, eller behövs en extra körning efter rättningar inför acceptansen?
+		[x] Medielagring: beslutat 2026-11-16. PIM-partnern får åtkomst till lagringen när 2.5 byggs. 2.5.1 beror på 3.4. Fråga: 2.5 bygger på att lagringen i 3.4 finns, men 3.4 hos ITM8 har ingen tidsatt leverans. När behöver PIM-partnern tillgång till lagringen?
+		[x] Testdata: beslutat 2026-11-16. Tre körningar räcker. En extra körning prissätts som enhetspris. Fråga: 6.3 och 6.5 behöver migrerad data från provkörningen 4.5. Räcker en korrigeringskörning, eller behövs en extra körning efter rättningar inför acceptansen?
 		[ ] Utbildning före eller efter driftstart: kravspecifikationen säger två utbildningar och tio dagars stöd efter driftstart. PBS:en lägger utbildningen före driftstart. Stämmer det?
 		[ ] Ändringshistorik och arkiv i 2.2.6 och 2.5.3 innehåller personuppgifter om aktörer. Svaret på GDPR-frågan i PA-3-1 kan ändra dem.
 		[x] Estimatrader: löst. Raderna har produkt-ID i kolumnen produkt. Nya rader för 2.5.5, 4.1, 4.1.1, 4.2, 7.6 och 7.7.
