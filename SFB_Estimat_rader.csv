@@ -1,35 +1,35 @@
 _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,antagande,utfall,produkt,uppgift
 ,estimatrad,Genomgång av förstudien och återanvändningsmatris,E-AP01,BC,9,13,23,,,PIM-I01,"Bara återstående arbete estimeras. Matrisen visar dokument, version och vad som redan är verifierat.",,PA-1-1,U-PA-1-1-T
-,estimatrad,"Fältmatris, 1.3 Fältmatris: mappa egenskaperna i migreringsurvalet från bruttolistan",E-AP01,BC,13,19,34,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T1
-,estimatrad,"Fältmatris, 1.3 Fältmatris: lägg till ägare, skyddsnivå, validering och mottagarmappning",E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T2
-,estimatrad,"Fältmatris, 1.3 Fältmatris: skriv regeln för övriga attributdefinitioner",E-AP01,BC,4,6,11,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T3
-,estimatrad,Fältmatris: ta fram 1.3.1 Låst startlista för redigerbara produktegenskaper,E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3-1,U-PA-1-3-1-T
-,estimatrad,Fältmatris: ta fram 1.3.2 Förteckning över skyddade fält,E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3-2,U-PA-1-3-2-T
+,estimatrad,"Fältmatris, a.3 Fältmatris: mappa egenskaperna i migreringsurvalet från bruttolistan",E-AP01,BC,13,19,34,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T1
+,estimatrad,"Fältmatris, a.3 Fältmatris: lägg till ägare, skyddsnivå, validering och mottagarmappning",E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T2
+,estimatrad,"Fältmatris, a.3 Fältmatris: skriv regeln för övriga attributdefinitioner",E-AP01,BC,4,6,11,,,PIM-I01; PIM-D03,,,PA-1-3,U-PA-1-3-T3
+,estimatrad,Fältmatris: ta fram a.3.1 Låst startlista för redigerbara produktegenskaper,E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3-1,U-PA-1-3-1-T
+,estimatrad,Fältmatris: ta fram a.3.2 Förteckning över skyddade fält,E-AP01,BC,9,13,23,,,PIM-I01; PIM-D03,,,PA-1-3-2,U-PA-1-3-2-T
 ,estimatrad,"Fältmatris, teknisk granskning",E-AP01,TA,4,6,11,,,PIM-I01,,,PA-1-3,U-PA-1-3-T4
 ,estimatrad,Identiteter och exempeldata,E-AP01,TA,22,32,58,,,PIM-D01,Kontrollen av grupptillhörigheter enligt B12 ligger i raden Kontrollrapport för produktgrupper.,,PA-1-4,U-PA-1-4-T1; U-PA-1-4-T2; U-PA-1-4-T3; U-PA-1-4-T4
-,estimatrad,Utbyteskontrakt: sammanställ 1.2 Gränssnittskontrakt,E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2,U-PA-1-2-T
-,estimatrad,"Utbyteskontrakt, 1.2.1 Kontrakt MagicBox till PIM: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T1
-,estimatrad,"Utbyteskontrakt, 1.2.1 Kontrakt MagicBox till PIM: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T2
-,estimatrad,"Utbyteskontrakt, 1.2.1 Kontrakt MagicBox till PIM: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T3
-,estimatrad,"Utbyteskontrakt, 1.2.2 Kontrakt PIM till MagicBox: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T1
-,estimatrad,"Utbyteskontrakt, 1.2.2 Kontrakt PIM till MagicBox: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T2
-,estimatrad,"Utbyteskontrakt, 1.2.2 Kontrakt PIM till MagicBox: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T3
-,estimatrad,"Utbyteskontrakt, 1.2.3 Kontrakt för Snickenflödet: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T1
-,estimatrad,"Utbyteskontrakt, 1.2.3 Kontrakt för Snickenflödet: gå igenom utkastet med Snicken",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T2
-,estimatrad,"Utbyteskontrakt, 1.2.3 Kontrakt för Snickenflödet: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T3
-,estimatrad,"Utbyteskontrakt, 1.2.4 Fel- och transportkontrakt: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T1
-,estimatrad,"Utbyteskontrakt, 1.2.4 Fel- och transportkontrakt: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T2
-,estimatrad,"Utbyteskontrakt, 1.2.4 Fel- och transportkontrakt: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T3
+,estimatrad,Utbyteskontrakt: sammanställ a.2 Gränssnittskontrakt,E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2,U-PA-1-2-T
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T1
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T2
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-1,U-PA-1-2-1-T3
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T1
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T2
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-2,U-PA-1-2-2-T3
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T1
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: gå igenom utkastet med Snicken",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T2
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-3,U-PA-1-2-3-T3
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T1
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T2
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01; PIM-I02,,,PA-1-2-4,U-PA-1-2-4-T3
 ,estimatrad,"Utbyteskontrakt, ITM8:s medverkan",E-AP01,ITM8,,,,,,PIM-I01,"ITM8:s medverkan räknas bara här, inte i AP07 eller AP08.",,PA-1-2-6,U-PA-1-2-6-T
 ,estimatrad,Validerade kontraktsexempel,E-AP01,DEV,13,19,34,,,PIM-I01,,,PA-1-2-5,U-PA-1-2-5-T1; U-PA-1-2-5-T2
 ,estimatrad,Fast Excel-mall,E-AP01,BC,13,19,34,,,PIM-X01,,,PA-1-6,U-PA-1-6-T1; U-PA-1-6-T2
-,estimatrad,Export- och medieinventering med C4-exportprov: ta fram 2.1 C4-exportinventering,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1,U-PA-2-1-T
-,estimatrad,Export- och medieinventering med C4-exportprov: ta fram 2.1.2 Inventering av äldre dokumentversioner och ändringslogg,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-2,U-PA-2-1-2-T
-,estimatrad,Export- och medieinventering med C4-exportprov: ta fram 2.1.3 Underlag för migreringsurval,E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-3,U-PA-2-1-3-T
-,estimatrad,"Export- och medieinventering med C4-exportprov, 2.2 Medieinventering: inventera versionsnycklar och gamla URL:er",E-AP01,DEV,9,13,23,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T1
-,estimatrad,"Export- och medieinventering med C4-exportprov, 2.2 Medieinventering: ta fram transformationsprofiler med exempel",E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T2
-,estimatrad,"Export- och medieinventering med C4-exportprov, 2.2 Medieinventering: ta fram länkförteckning, domäner och lagring",E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T3
-,estimatrad,Export- och medieinventering med C4-exportprov: ta fram 2.3 Volym- och lastinventering,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-3,U-PA-2-3-T
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1 C4-exportinventering,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1,U-PA-2-1-T
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1.2 Inventering av äldre dokumentversioner och ändringslogg,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-2,U-PA-2-1-2-T
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1.3 Underlag för migreringsurval,E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-3,U-PA-2-1-3-T
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: inventera versionsnycklar och gamla URL:er",E-AP01,DEV,9,13,23,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T1
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: ta fram transformationsprofiler med exempel",E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T2
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: ta fram länkförteckning, domäner och lagring",E-AP01,DEV,4,6,11,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T3
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.3 Volym- och lastinventering,E-AP01,DEV,13,19,34,,,PIM-M01,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-3,U-PA-2-3-T
 ,estimatrad,Verifiering av redigerbara egenskaper och åtkomst vid PIM-avbrott,E-AP01,TA,13,19,34,,,PIM-W09; PIM-O05,,,PA-1-3-1; PA-2-4,U-PA-2-4-T
 ,estimatrad,Specifikation av icke-funktionella krav,E-AP01,TA,4,6,11,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Mätvärde och mätförutsättning per krav. Bekräftar svarstidsmålen i B08.,,PA-1-7,U-PA-1-7-T1
 ,estimatrad,"Specifikation av icke-funktionella krav, verifieringssätt",E-AP01,QA,13,19,34,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Hur varje krav testas. Testplanen i AP12 spårar mot detta.,,PA-1-7,U-PA-1-7-T1; U-PA-1-7-T2

@@ -78,7 +78,7 @@ Estimat SFB – berikningsdel och PIM
 			ITM8:s paket [[AP07]]–[[AP10]] ingår som externa beroenden: deras timmar syns som extern insats och ingår inte i Vaimos pris.
 		V2 +estimatsumma ^E-V2
 			[[AP17]], [[AP18]] och [[AP19]] som egna rader med fullt leveransarbete.
-			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt 3.2, i SFB_PBS_AP01.ord.
+			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt c.2, i SFB_PBS_AP01.ord.
 		Tillval +estimatsumma ^E-TILLVAL
 			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet. AP20 föreslås hos ITM8 och syns som extern insats.
 		Alternativ +estimatsumma ^E-ALT

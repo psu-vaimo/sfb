@@ -3,7 +3,7 @@ PBS V2 och tillval ^PBS-V2T
 	datum:: 2026-11-15
 	Produktnedbrytning för allt utanför F1 som har ett paket: V2 med [[AP17]], [[AP18]] och [[AP19]], tillvalen [[AP20]] och [[AP21]] samt mottagartjänsten för tioårsarkivet. Varje +produkt är något som lämnas över och kan granskas och godkännas, inte en aktivitet.
 	Varje paket levereras fullt, med test, driftsättning och överlämning. Bygger på F1, se [[PBS F1 första driftversionen]]. Produkterna där heter PF-nummer.
-	Automatisk arkivering och automatisk webbstatus är beslutade utökningar av V2 utöver kravspecifikationen. Se skillnaderna i AP01, produkt 3.2.
+	Automatisk arkivering och automatisk webbstatus är beslutade utökningar av V2 utöver kravspecifikationen. Se skillnaderna i AP01, produkt c.2.
 	Teknikstack: Medusa v2, se arkitekturen PA-1-8 i AP01. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning via Index-modulen. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	Testprotokoll och överlämning per paket omfattar test, driftsättning, uppdaterad användarhandledning och uppdaterad dokumentation.

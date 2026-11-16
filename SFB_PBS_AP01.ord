@@ -7,19 +7,19 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 	Resultatet ska kunna användas av en annan partner. Ingen implementation av produktfunktioner ingår.
 	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) och dess bilagor (SFB_Discovery_rapport_appendix_20261021.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
-	AP01 är klar när 3.3 och 3.4 är godkända av SFB. Då kan resten av F1 estimeras om till klass 3.
-	Kontraktet för Snickenflödet 1.2.3 och verifieringen av åtkomst vid PIM-avbrott 2.4 tas fram i januari 2027, efter att AP01 i övrigt är klar, enligt beslut 2026-11-16. De ingår inte i det samlade kontraktet 1.2 eller i det reviderade estimatet 3.3. Snickenexemplen tas fram tillsammans med 1.2.3.
+	AP01 är klar när c.3 och c.4 är godkända av SFB. Då kan resten av F1 estimeras om till klass 3.
+	Kontraktet för Snickenflödet a.2.3 och verifieringen av åtkomst vid PIM-avbrott b.4 tas fram i januari 2027, efter att AP01 i övrigt är klar, enligt beslut 2026-11-16. De ingår inte i det samlade kontraktet a.2 eller i det reviderade estimatet c.3. Snickenexemplen tas fram tillsammans med a.2.3.
 	Kravspecifikationens sex leverabler i avsnitt 7.1
 		Kravspecifikationen kräver att AP01 behåller sina sex leverabler med minsta innehåll och avslutskriterium. Så här motsvarar de produkterna.
-		Fältmatris: 1.3 med 1.3.1 till 1.3.3.
-		Identiteter och exempeldata: 1.4, 1.4.1 och 1.5.
-		Utbyteskontrakt: 1.2 med 1.2.1 till 1.2.6.
-		Fast Excel-mall: 1.6.
-		Export- och medieinventering: 2.1 med 2.1.2 och 2.1.3, 2.2, 2.3 och 2.4, med slutexporten PF-4-9 i F1 som exportprov.
-		Reviderat estimat och plan: 3.3 och 3.4, med 3.1 som underlag.
-		Produkterna 1.1, 1.7, 1.8, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och skillnader mot förstudien.
-	1 Verifierade specifikationer
-		1.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
+		Fältmatris: a.3 med a.3.1 till a.3.3.
+		Identiteter och exempeldata: a.4, a.4.1 och a.5.
+		Utbyteskontrakt: a.2 med a.2.1 till a.2.6.
+		Fast Excel-mall: a.6.
+		Export- och medieinventering: b.1 med b.1.2 och b.1.3, b.2, b.3 och b.4, med slutexporten PF-4-9 i F1 som exportprov.
+		Reviderat estimat och plan: c.3 och c.4, med c.1 som underlag.
+		Produkterna a.1, a.7, a.8, b.5, c.2 och c.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och skillnader mot förstudien.
+	a Verifierade specifikationer
+		a.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
 			paket:: AP01
 			krav:: PIM-I01
 			part:: PIM-partner
@@ -60,7 +60,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Varje produkt i AP01 har en rad.
 				Varje påstående om att något är verifierat har källa med version eller datum.
 				Ingen timme i estimatet avser arbete som matrisen visar som gjort.
-		1.2 Gränssnittskontrakt +produkt ^PA-1-2
+		a.2 Gränssnittskontrakt +produkt ^PA-1-2
 			paket:: AP01
 			krav:: PIM-I01; PIM-I02; PIM-I03; PIM-I04; PIM-I09; PIM-I10
 			part:: PIM-partner
@@ -72,16 +72,16 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Syfte
 				Ett versionshanterat data- och felkontrakt som PIM-partner och ITM8 bygger mot. Gör gränsen mellan [[AP04]], [[AP08]] och [[AP09]] testbar och förhindrar dubbelt arbete. Se [[B02]] och [[B05]].
 			Innehåll
-				Samlingsdokument för 1.2.1 till 1.2.6, med versionsnummer, ändringslogg och gemensamma begrepp.
+				Samlingsdokument för a.2.1 till a.2.6, med versionsnummer, ändringslogg och gemensamma begrepp.
 				Fält och beteenden per riktning: startleverans, förändringsleverans, kvittens, återförsök, rensning, relationsändring och fel.
 				Ägarskap per fält och objekt, identifierare, produkter, kategorier, statusar och medie- och versionsreferenser.
 			Underlag
 				Förstudien: integrationspunkter, riktning, trigger och byggansvar finns i avsnitt 8.1. Fält, format och felhantering saknas.
 			Kvalitetskriterier
-				Alla exempel i 1.2.5 validerar mot kontraktet.
+				Alla exempel i a.2.5 validerar mot kontraktet.
 				Kontraktet är godkänt av både PIM-partner och ITM8, med samma versionsnummer. Snicken har bekräftat urval och mottagningsformat.
 				Arkivåtgärder är markerade som V2 enligt [[PIM-N04]].
-			1.2.1 Kontrakt MagicBox till PIM +produkt ^PA-1-2-1
+			a.2.1 Kontrakt MagicBox till PIM +produkt ^PA-1-2-1
 				paket:: AP01
 				krav:: PIM-I01; PIM-I02
 				part:: PIM-partner
@@ -99,8 +99,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien: Azure Integration skickar ändrade fält till PIM via API. Bilder kommer som publika URL:er som PIM laddar ner. Hantering av bilddubbletter när Finfo skickar allt är olöst.
 				Kvalitetskriterier
 					Samma leverans två gånger ger samma resultat. En äldre revision skriver inte över en nyare. Det följer av acceptanskriteriet i [[PIM-I02]].
-					Varje källfält i fältmatrisen 1.3 finns i kontraktet.
-			1.2.2 Kontrakt PIM till MagicBox +produkt ^PA-1-2-2
+					Varje källfält i fältmatrisen a.3 finns i kontraktet.
+			a.2.2 Kontrakt PIM till MagicBox +produkt ^PA-1-2-2
 				paket:: AP01
 				krav:: PIM-I01; PIM-I03
 				part:: PIM-partner
@@ -120,7 +120,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Mottagaren behöver inte tolka en utebliven post som radering, [[PIM-I03]].
 					Matchningsnyckeln som MagicBox använder finns i varje artikel, så att C4:s sysid kan tas bort.
 				Fram till migreringen skickar PIM inte tomma värden för kategori och webbstatus, så att MagicBox behåller värdena från C4.
-			1.2.3 Kontrakt för Snickenflödet +produkt ^PA-1-2-3
+			a.2.3 Kontrakt för Snickenflödet +produkt ^PA-1-2-3
 				paket:: AP01
 				krav:: PIM-I01; PIM-I09; PIM-I10
 				part:: PIM-partner
@@ -138,7 +138,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kvalitetskriterier
 					Snicken har bekräftat nycklar och fält. SFB tar kontakten med Snicken.
 					Nytillagd artikel får en full post innan efterföljande delta, [[PIM-I09]].
-			1.2.4 Fel- och transportkontrakt +produkt ^PA-1-2-4
+			a.2.4 Fel- och transportkontrakt +produkt ^PA-1-2-4
 				paket:: AP01
 				krav:: PIM-I01; PIM-I04
 				part:: PIM-partner
@@ -154,7 +154,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kvalitetskriterier
 					Varje felkod har ansvarig part och åtgärd.
 					Omsändning av ett urval påverkar inte andra mottagares position, [[PIM-I04]].
-			1.2.5 Validerade kontraktsexempel +produkt ^PA-1-2-5
+			a.2.5 Validerade kontraktsexempel +produkt ^PA-1-2-5
 				paket:: AP01
 				krav:: PIM-I01
 				part:: PIM-partner
@@ -172,7 +172,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kvalitetskriterier
 					Varje exempel validerar mot kontraktets schema hos både PIM-partner och ITM8.
 					Varje händelsetyp i acceptanskriteriet för [[PIM-I01]] har minst ett exempel.
-			1.2.6 ITM8:s granskning av kontrakten +produkt ^PA-1-2-6
+			a.2.6 ITM8:s granskning av kontrakten +produkt ^PA-1-2-6
 				paket:: AP01
 				krav:: PIM-I01
 				part:: ITM8
@@ -188,7 +188,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					ITM8:s medverkan räknas bara här, inte i [[AP07]] eller [[AP08]].
 				Kvalitetskriterier
 					Alla synpunkter är stängda eller har ett beslut.
-		1.3 Fältmatris +produkt ^PA-1-3
+		a.3 Fältmatris +produkt ^PA-1-3
 			paket:: AP01
 			krav:: PIM-D03; PIM-W03; PIM-W09; PIM-I03; PIM-I01
 			part:: PIM-partner
@@ -201,7 +201,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				En regel per fält som styr datamodellen, kontrakten, enskild redigering, tabell, Excel och migrering. Se [[B07]].
 			Innehåll
 				Per fält: objekt, fältnamn, ägare, källa, datatyp, enhet, listvärden, källprioritet, ändringsrätt, obligatoriskt värde, validering, tomvärde och rensning, språkneutral eller svensk, C4-källfält och användning i gränssnitt, tabell, Excel och utgående data.
-				1.3.1, 1.3.2 och 1.3.3 som egna flikar.
+				a.3.1, a.3.2 och a.3.3 som egna flikar.
 				Omfattning enligt beslut 2026-11-16: egenskaper som används i migreringsurvalet får en rad var. Övriga attributdefinitioner flyttas med en gemensam regel utan analys per fält.
 			Underlag
 				Förstudien: C4:s egenskapsdefinitioner, 19 441 listvärden, cirka 2 400 egna egenskaper och ETIM finns inventerade i data audit och bruttolistan. Finfos egenskaper har finfo i koden. Fältbeskrivningen för Vilma 2.8.0 finns. Mappning per fält saknas.
@@ -211,7 +211,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Varje fält har ägare och skyddsnivå.
 				Varje oklar regel har ett beslut eller en uttrycklig prisreservation, enligt kravspecifikationen 7.1.
 				Ingen generell standardisering eller enhetskonvertering ingår.
-			1.3.1 Låst startlista för redigerbara produktegenskaper +produkt ^PA-1-3-1
+			a.3.1 Låst startlista för redigerbara produktegenskaper +produkt ^PA-1-3-1
 				paket:: AP01
 				krav:: PIM-W09
 				part:: PIM-partner
@@ -228,7 +228,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien: samma begrepp finns i flera egenskaper, till exempel Langdmm, LANGDM och LANGDIN, så varje begrepp i startlistan måste knytas till en bestämd egenskap.
 				Kvalitetskriterier
 					Sju attributdefinitioner med befintlig datatyp och enhet, [[B07]].
-			1.3.2 Förteckning över skyddade fält +produkt ^PA-1-3-2
+			a.3.2 Förteckning över skyddade fält +produkt ^PA-1-3-2
 				paket:: AP01
 				krav:: PIM-W09; PIM-D07
 				part:: PIM-partner
@@ -243,7 +243,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Identifierare, källägda värden och externa bedömningar som BASTA och Byggvarubedömningen.
 				Kvalitetskriterier
 					Varje skyddat fält har ett skäl.
-			1.3.3 Regel för sammanslagen extern text +produkt ^PA-1-3-3
+			a.3.3 Regel för sammanslagen extern text +produkt ^PA-1-3-3
 				paket:: AP01
 				krav:: PIM-W03; PIM-W04
 				part:: PIM-partner
@@ -261,7 +261,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien: dagens regelverk som bygger säljtexten ska byggas om. Den korta texten är en mekanisk avkortning och behövs inte.
 				Kvalitetskriterier
 					Regeln ger rätt resultat för de 15 urvalsartiklarna.
-		1.4 Identitetsregler och exempeldata +produkt ^PA-1-4
+		a.4 Identitetsregler och exempeldata +produkt ^PA-1-4
 			paket:: AP01
 			krav:: PIM-D01; PIM-D07
 			part:: PIM-partner
@@ -278,13 +278,13 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Plats för GTIN och GLN inför övergången till GS1.
 				Exempel för manuella artiklar, Finfo-artiklar, samma GTIN hos olika leverantörer, variantgrupp och bundle.
 			Underlag
-				Utgår från förstudiens data audit, så att arbetet kan börja innan exportinventeringen 2.1 är klar.
+				Utgår från förstudiens data audit, så att arbetet kan börja innan exportinventeringen b.1 är klar.
 				Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
 			Kvalitetskriterier
 				Två artiklar med samma GTIN och olika leverantörer förblir två poster, [[PIM-D01]].
 				Inledande nollor bevaras. Identifierare hanteras som text.
 				ITM8 har bekräftat att MagicBox kan matcha utan C4:s sysid.
-			1.4.1 Rapport över artiklar utan entydig identitet +produkt ^PA-1-4-1
+			a.4.1 Rapport över artiklar utan entydig identitet +produkt ^PA-1-4-1
 				paket:: AP01
 				krav:: PIM-D01
 				part:: PIM-partner
@@ -299,8 +299,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Antal artiklar som inte kan identifieras med prioriteringsordningen, per källa och leverantör.
 					De 84 690 möjliga dubbletterna med samma leverantör och namn men olika artikelnummer.
 				Kvalitetskriterier
-					Räknat på migreringsurvalet i 2.1.3, inte på hela exporten.
-		1.5 Kontrollrapport för produktgrupper +produkt ^PA-1-5
+					Räknat på migreringsurvalet i b.1.3, inte på hela exporten.
+		a.5 Kontrollrapport för produktgrupper +produkt ^PA-1-5
 			paket:: AP01
 			krav:: PIM-D02
 			part:: PIM-partner
@@ -318,7 +318,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Förstudien: 22 442 produkter, 2 042 med tre eller fler variantegenskaper och 1 353 variantegenskaper som inte varierar. Produkterna saknar id utanför C4. Bara 2 bundles.
 			Kvalitetskriterier
 				Varje avvikelse har en rekommenderad åtgärd. Ingen relation tas bort utan SFB:s beslut.
-		1.6 Fast Excel-format +produkt ^PA-1-6
+		a.6 Fast Excel-format +produkt ^PA-1-6
 			paket:: AP01
 			krav:: PIM-X01; PIM-X02; PIM-X03
 			part:: PIM-partner
@@ -337,7 +337,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje kolumn finns i fältmatrisen med samma skyddsnivå.
 				Tom cell lämnar oförändrat. Rensning kräver uttrycklig markör.
-		1.7 Specifikation av icke-funktionella krav +produkt ^PA-1-7
+		a.7 Specifikation av icke-funktionella krav +produkt ^PA-1-7
 			paket:: AP01
 			krav:: PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02
 			part:: PIM-partner
@@ -356,11 +356,11 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Säkerhet: personliga konton, separata tekniska identiteter, behörighet för integrationer begränsad till kontraktet och hemligheter utanför källkod.
 				Spårbarhet och förvaltning: ändringshistorik så länge posten finns, kodägande och överlämningsbarhet.
 				Språk: gränssnitt och berikning på svenska.
-				Punkter som saknas i kravspecifikationen tas med när SFB har besvarat frågorna i 3.1.
+				Punkter som saknas i kravspecifikationen tas med när SFB har besvarat frågorna i c.1.
 			Kvalitetskriterier
 				Varje krav är mätbart och har ett verifieringssätt.
 				Svarstidsmålen är bekräftade eller ändrade av SFB.
-		1.8 Teknisk arkitektur och säkerhetslösning +produkt ^PA-1-8
+		a.8 Teknisk arkitektur och säkerhetslösning +produkt ^PA-1-8
 			paket:: AP01
 			krav:: PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02
 			part:: PIM-partner
@@ -381,8 +381,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Arkitekturen visar, med lasttestet som underlag, att sökning, öppning och sparande klarar svarstidsmålen med full datamängd, eller vilka anpassningar som krävs.
 				Alla tredjepartskomponenter och tjänster finns med licens och exitberoende, som underlag för komponentförteckningen i F1, 7.5.
 				Godkänd innan utvecklingen av datamodellen i F1 startar.
-	2 Inventeringar
-		2.1 C4-exportinventering +produkt ^PA-2-1
+	b Inventeringar
+		b.1 C4-exportinventering +produkt ^PA-2-1
 			paket:: AP01
 			krav:: PIM-M01
 			part:: PIM-partner
@@ -395,13 +395,13 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Gör migreringens omfattning mätbar och visar vad som saknas i exporten. Se [[B03]].
 			Innehåll
 				Antal, storlek, identifierare, relationer, käll- och internfält, filoriginal och tillgänglig historik per posttyp.
-				2.1.2 och 2.1.3 som egna delar.
+				b.1.2 och b.1.3 som egna delar.
 				Bygger på exporten från 2026-09-30. Historik och äldre dokumentversioner inventeras ur slutexporten PF-4-9, som ersätter det tidigare exportprovet enligt beslut 2026-11-16.
 			Underlag
 				Förstudien: till största delen gjord i data audit på exporten 2026-09-30 med 3 403 330 artiklar och 22 posttyper. Återstår: historik, filoriginal och verifiering mot slutligt urval.
 			Kvalitetskriterier
 				Saknade delar har ansvarig och åtgärd, [[PIM-M01]].
-			2.1.2 Inventering av äldre dokumentversioner och ändringslogg +produkt ^PA-2-1-2
+			b.1.2 Inventering av äldre dokumentversioner och ändringslogg +produkt ^PA-2-1-2
 				paket:: AP01
 				krav:: PIM-M06; PIM-Q04
 				part:: PIM-partner
@@ -420,7 +420,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kvalitetskriterier
 					Luckor och saknade datum redovisas. Inga datum uppfinns.
 				Varje exportlucka har en kostnadssatt lösning för SFB:s beslut före C4:s stängning.
-			2.1.3 Underlag för migreringsurval +produkt ^PA-2-1-3
+			b.1.3 Underlag för migreringsurval +produkt ^PA-2-1-3
 				paket:: AP01
 				krav:: PIM-M01
 				part:: PIM-partner
@@ -438,7 +438,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien: C4 har 783 leverantörer mot cirka 150 centrala avtalsleverantörer, PP32. Vilka leverantörer som ska med är inte beslutat.
 				Kvalitetskriterier
 					Volymerna går att följa till exporten.
-		2.2 Medieinventering +produkt ^PA-2-2
+		b.2 Medieinventering +produkt ^PA-2-2
 			paket:: AP01
 			krav:: PIM-A01; PIM-A03; PIM-A06; PIM-A07
 			part:: PIM-partner
@@ -456,7 +456,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje transformationsprofil har representativa original och utdata, så att [[PIM-A06]] kan provas.
 				Länkförteckningen för [[PIM-A07]] finns.
-		2.3 Volym- och lastinventering +produkt ^PA-2-3
+		b.3 Volym- och lastinventering +produkt ^PA-2-3
 			paket:: AP01
 			krav:: PIM-Q01; PIM-Q02
 			part:: PIM-partner
@@ -473,7 +473,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Förstudien: bestånd och filvolym finns. Finfos förändringsfiler för ungefär en vecka ger en första bild av ändringsvolymen. Toppar saknas, eftersom statistik bara finns per delägare.
 			Kvalitetskriterier
 				Varje värde har källa och mätperiod.
-		2.4 Verifiering av åtkomst vid PIM-avbrott +produkt ^PA-2-4
+		b.4 Verifiering av åtkomst vid PIM-avbrott +produkt ^PA-2-4
 			paket:: AP01
 			krav:: PIM-O05
 			part:: PIM-partner
@@ -488,7 +488,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Beroenden mellan PIM, MagicBox, Snicken och medielagring, och vilka anpassningar som behövs i [[AP04]], [[AP08]], [[AP09]] och [[AP10]].
 			Kvalitetskriterier
 				Varje beroende har en bedömning och, vid behov, en prissatt anpassning i rätt paket.
-		2.5 Verifiering av drift och identitet +produkt ^PA-2-5
+		b.5 Verifiering av drift och identitet +produkt ^PA-2-5
 			paket:: AP01
 			krav:: PIM-O01; PIM-O03
 			part:: PIM-partner
@@ -506,8 +506,8 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Förstudien: om ImageMagick, Azure Storage och Azure Fileshare finns kvar efter C4 beslutas med ITM8. ImageMagick och Azure Storage drivs av ITM8 tillsammans med Ariser, och ägarskapet behöver dokumenteras före bytet.
 			Kvalitetskriterier
 				Varje driftkomponent har en ägare efter C4:s stängning. ITM8 är driftägare för PIM enligt beslut 2026-11-16.
-	3 Beslutsunderlag och plan
-		3.1 Beslutsunderlag för öppna frågor +produkt ^PA-3-1
+	c Beslutsunderlag och plan
+		c.1 Beslutsunderlag för öppna frågor +produkt ^PA-3-1
 			paket:: AP01
 			krav::
 			part:: PIM-partner
@@ -531,7 +531,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje fråga har ansvarig och senaste beslutsdatum.
 				Frågor som blockerar annan produkt i AP01 skickas till SFB så fort de upptäcks, inte först när dokumentet är klart.
-		3.2 Förteckning över skillnader mot förstudien +produkt ^PA-3-2
+		c.2 Förteckning över skillnader mot förstudien +produkt ^PA-3-2
 			paket:: AP01
 			krav::
 			part:: PIM-partner
@@ -567,7 +567,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Beslut: kravspecifikationen gäller.
 			Kvalitetskriterier
 				Varje skillnad har påverkan och beslut eller ansvarig för beslut.
-		3.3 Reviderat genomförandeestimat +produkt ^PA-3-3
+		c.3 Reviderat genomförandeestimat +produkt ^PA-3-3
 			paket:: AP01
 			krav::
 			part:: PIM-partner
@@ -586,7 +586,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Kontrollerna i SFB_Estimat.ord och metodfilen är gjorda.
 				Inga saknade rader utom ITM8:s, som syns som saknade.
 				Inget öppet område försvinner i en generell reservation, enligt kravspecifikationen 7.1.
-		3.4 Reviderad genomförandeplan +produkt ^PA-3-4
+		c.4 Reviderad genomförandeplan +produkt ^PA-3-4
 			paket:: AP01
 			krav:: PIM-H04
 			part:: PIM-partner
@@ -603,7 +603,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Förstudien: paketordningen och beroendena i avsnitt 10.1 kan användas som utgångspunkt. C4 och Exchange stängs 2026-12-31.
 			Kvalitetskriterier
 				Visar realistisk leveransdag och om den ligger före C4:s stängning, [[PIM-M05]].
-		3.5 Granskade workshopanteckningar +produkt ^PA-3-5
+		c.5 Granskade workshopanteckningar +produkt ^PA-3-5
 			paket:: AP01
 			krav::
 			part:: PIM-partner
@@ -617,59 +617,59 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Innehåll
 				Deltagare, beslut, öppna frågor och åtgärder per möte.
 			Kvalitetskriterier
-				Granskade inom en vecka efter mötet. Beslut förs in i 3.1 eller i berörd produkt.
+				Granskade inom en vecka efter mötet. Beslut förs in i c.1 eller i berörd produkt.
 	Produktflöde
 		Ordningen följer fältet beror på. Produkter i samma steg kan tas fram parallellt.
-		Kritisk linje: 1.1, 2.1, 1.4, 1.3, kontrakten 1.2.1 till 1.2.4, 1.2.5, 1.2.6, 3.3 och 3.4.
-		3.1 och 3.5 förs löpande från start. Frågor som blockerar skickas till SFB direkt.
+		Kritisk linje: a.1, b.1, a.4, a.3, kontrakten a.2.1 till a.2.4, a.2.5, a.2.6, c.3 och c.4.
+		c.1 och c.5 förs löpande från start. Frågor som blockerar skickas till SFB direkt.
 		Steg 1 Start
-			@ 1.1 Återanvändningsmatris för förstudien^PA-1-1
-			@ 1.3.1 Låst startlista för redigerbara produktegenskaper^PA-1-3-1
-			@ 1.3.2 Förteckning över skyddade fält^PA-1-3-2
-			@ 1.3.3 Regel för sammanslagen extern text^PA-1-3-3
+			@ a.1 Återanvändningsmatris för förstudien^PA-1-1
+			@ a.3.1 Låst startlista för redigerbara produktegenskaper^PA-1-3-1
+			@ a.3.2 Förteckning över skyddade fält^PA-1-3-2
+			@ a.3.3 Regel för sammanslagen extern text^PA-1-3-3
 		Steg 2 Inventeringar
-			@ 2.1 C4-exportinventering^PA-2-1
-			@ 2.1.2 Inventering av äldre dokumentversioner och ändringslogg^PA-2-1-2
-			@ 2.2 Medieinventering^PA-2-2
-			@ 2.3 Volym- och lastinventering^PA-2-3
-			@ 2.5 Verifiering av drift och identitet^PA-2-5
-			@ 3.2 Förteckning över skillnader mot förstudien^PA-3-2
+			@ b.1 C4-exportinventering^PA-2-1
+			@ b.1.2 Inventering av äldre dokumentversioner och ändringslogg^PA-2-1-2
+			@ b.2 Medieinventering^PA-2-2
+			@ b.3 Volym- och lastinventering^PA-2-3
+			@ b.5 Verifiering av drift och identitet^PA-2-5
+			@ c.2 Förteckning över skillnader mot förstudien^PA-3-2
 		Steg 3 Regler och rapporter
-			@ 1.4 Identitetsregler och exempeldata^PA-1-4
-			@ 1.4.1 Rapport över artiklar utan entydig identitet^PA-1-4-1
-			@ 1.5 Kontrollrapport för produktgrupper^PA-1-5
-			@ 2.1.3 Underlag för migreringsurval^PA-2-1-3
-			@ 1.7 Specifikation av icke-funktionella krav^PA-1-7
+			@ a.4 Identitetsregler och exempeldata^PA-1-4
+			@ a.4.1 Rapport över artiklar utan entydig identitet^PA-1-4-1
+			@ a.5 Kontrollrapport för produktgrupper^PA-1-5
+			@ b.1.3 Underlag för migreringsurval^PA-2-1-3
+			@ a.7 Specifikation av icke-funktionella krav^PA-1-7
 		Steg 4 Fältmatris och Excel
-			@ 1.3 Fältmatris^PA-1-3
-			@ 1.6 Fast Excel-format^PA-1-6
+			@ a.3 Fältmatris^PA-1-3
+			@ a.6 Fast Excel-format^PA-1-6
 		Steg 5 Kontrakt
-			@ 1.2.1 Kontrakt MagicBox till PIM^PA-1-2-1
-			@ 1.2.2 Kontrakt PIM till MagicBox^PA-1-2-2
-			@ 1.2.3 Kontrakt för Snickenflödet^PA-1-2-3
-			@ 1.2.4 Fel- och transportkontrakt^PA-1-2-4
-			@ 1.2.5 Validerade kontraktsexempel^PA-1-2-5
-			@ 1.2.6 ITM8:s granskning av kontrakten^PA-1-2-6
-			@ 1.2 Gränssnittskontrakt^PA-1-2
-			@ 2.4 Verifiering av åtkomst vid PIM-avbrott^PA-2-4
+			@ a.2.1 Kontrakt MagicBox till PIM^PA-1-2-1
+			@ a.2.2 Kontrakt PIM till MagicBox^PA-1-2-2
+			@ a.2.3 Kontrakt för Snickenflödet^PA-1-2-3
+			@ a.2.4 Fel- och transportkontrakt^PA-1-2-4
+			@ a.2.5 Validerade kontraktsexempel^PA-1-2-5
+			@ a.2.6 ITM8:s granskning av kontrakten^PA-1-2-6
+			@ a.2 Gränssnittskontrakt^PA-1-2
+			@ b.4 Verifiering av åtkomst vid PIM-avbrott^PA-2-4
 		Steg 6 Arkitektur, beslut, estimat och plan
-			@ 1.8 Teknisk arkitektur och säkerhetslösning^PA-1-8
-			@ 3.1 Beslutsunderlag för öppna frågor^PA-3-1
-			@ 3.3 Reviderat genomförandeestimat^PA-3-3
-			@ 3.4 Reviderad genomförandeplan^PA-3-4
+			@ a.8 Teknisk arkitektur och säkerhetslösning^PA-1-8
+			@ c.1 Beslutsunderlag för öppna frågor^PA-3-1
+			@ c.3 Reviderat genomförandeestimat^PA-3-3
+			@ c.4 Reviderad genomförandeplan^PA-3-4
 		Löpande
-			@ 3.5 Granskade workshopanteckningar^PA-3-5
+			@ c.5 Granskade workshopanteckningar^PA-3-5
 	Öppna frågor
-		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i 3.1.
+		Frågor om den här PBS:en, för Vaimo och SFB. Frågor som SFB ska besluta i leveransen finns i c.1.
 		[x] Tid mot C4:s stängning: beslutat 2026-11-16. AP01 och flödet från PIM till MagicBox ska vara klara före 2026-12-31, se Delleverans före 2026-12-31 i SFB_PBS_F1.ord. AP01 måste därför starta omedelbart.
 		[x] Godkännare: beslutat 2026-11-16. SFB produktägare godkänner specifikationerna och SFB sponsor estimat, plan och beslutsunderlag. Personerna namnges av SFB.
-		[x] ITM8:s åtagande: bekräftat 2026-11-16, ITM8 har tid och budget. Fråga: har ITM8 avsatt tid och budget för att granska och godkänna kontrakten i AP01? Utan det kan 1.2 inte bli klar.
-		[x] Snicken: beslutat 2026-11-16. Snicken godkänner 1.2.3, och SFB kontaktar Snicken.
-		[x] Nuvarande part: avtalat 2026-11-16, Ariser levererar i tid. Priset är kostnadsposten Export från nuvarande part. Fråga: kan Ariser leverera exportprovet 2.1.1 och historiken i tid, och till vilket pris?
-		[x] Exportprov: beslutat 2026-11-16. Exportprovet 2.1.1 är borttaget och ersatt av slutexporten PF-4-9 i F1. Fråga: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
-		[x] Mediehantering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: skillnaden om bildkonvertering och URL:er i 3.2 saknar beslut.
-		[x] Fältmatrisens omfattning: beslutat 2026-11-16, detalj för urvalet och gemensam regel för resten. Fråga: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
-		[x] Estimatrader: löst. Varje rad i SFB_Estimat_rader.csv har nu produkt-ID i kolumnen produkt, och 1.3.3, 1.4.1, 1.5, 2.5, 3.1 och 3.2 har fått egna rader. 2.1.2, 2.1.3, 2.2 och 2.3 delar raden för export- och medieinventering.
+		[x] ITM8:s åtagande: bekräftat 2026-11-16, ITM8 har tid och budget. Fråga: har ITM8 avsatt tid och budget för att granska och godkänna kontrakten i AP01? Utan det kan a.2 inte bli klar.
+		[x] Snicken: beslutat 2026-11-16. Snicken godkänner a.2.3, och SFB kontaktar Snicken.
+		[x] Nuvarande part: avtalat 2026-11-16, Ariser levererar i tid. Priset är kostnadsposten Export från nuvarande part. Fråga: kan Ariser leverera exportprovet b.1.1 och historiken i tid, och till vilket pris?
+		[x] Exportprov: beslutat 2026-11-16. Exportprovet b.1.1 är borttaget och ersatt av slutexporten PF-4-9 i F1. Fråga: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att b.1.1 kan hållas liten?
+		[x] Mediehantering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: skillnaden om bildkonvertering och URL:er i c.2 saknar beslut.
+		[x] Fältmatrisens omfattning: beslutat 2026-11-16, detalj för urvalet och gemensam regel för resten. Fråga: ska a.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
+		[x] Estimatrader: löst. Varje rad i SFB_Estimat_rader.csv har nu produkt-ID i kolumnen produkt, och a.3.3, a.4.1, a.5, b.5, c.1 och c.2 har fått egna rader. b.1.2, b.1.3, b.2 och b.3 delar raden för export- och medieinventering.
 	Utanför AP01
 		Implementation av datamodell, gränssnitt och integrationer, se [[PBS F1 första driftversionen]].
 		Migreringsmappning och migreringsverktyg, se [[AP11]]. AP01 inventerar, AP11 mappar.
