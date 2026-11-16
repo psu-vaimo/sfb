@@ -18,5 +18,14 @@ Implementationen i stora drag
 	Kommersiellt
 		För att vinna uppdraget behöver vi ge estimat på ett helt projekt. viktigast är den tekniska förstudien eftersom den förväntas påverka fortsättningen. 
 		Vi ska nog tänka att projektet i praktiken har ganska lite att göra med estimaten vi gör för att vinna uppdraget.
+		Avtalen behöver utgå från att vi jobbar löpande, inte till fast pris som SFB vill. Det borde gå om det är tydliga delleveranser villkorade för fakturering.
 	Teknik
+		Symfony med API Platform för API:et mot ITM8 och Messenger för jobb.
+		Azure Database for PostgreSQL Flexible Server.
+		Azure Blob Storage för media och dokument.
+		Azure Container Apps i SFB:s tenant.
+		Ett separat grid i frontend för tabellredigeringen.
+	Bemanning 
+		Pontus utvecklar med Claude, med stöd från Otto och Hampus.
+		Kunden betalar för extra AI tokens.
 		
