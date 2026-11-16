@@ -9,8 +9,14 @@ Samtal med Hampus +note
 		kan man inte ta ett open source?
 			även investeringen i att anpassa sig till hur ett annat system gör tex integrationer och datamodell blir för stor, och långsam. 
 			
-lösningen i stora drag
-	I deras huvudflöde (finfo till c4 till magic box till optimizely) ska c4 bytas ut.
-	SFB vill att något finns uppe i mitten av december.
-	bortvalda alternativ: occtoo, aja pim, akeneo ce, andra open-source
-	
+Implementationen i stora drag
+	Förutsättningar
+		I deras huvudflöde (finfo till c4 till magic box till optimizely) ska c4 bytas ut.
+		SFB vill att något finns uppe i mitten av december.
+		Bortvalda alternativ: occtoo, aja pim, akeneo ce, andra open-source
+		Projektet är preliminärt indelat i tre faser: teknisk förstudie ("AP01"), MVP ("F1") och fas 2 ("V2")
+	Kommersiellt
+		För att vinna uppdraget behöver vi ge estimat på ett helt projekt. viktigast är den tekniska förstudien eftersom den förväntas påverka fortsättningen. 
+		Vi ska nog tänka att projektet i praktiken har ganska lite att göra med estimaten vi gör för att vinna uppdraget.
+	Teknik
+		
