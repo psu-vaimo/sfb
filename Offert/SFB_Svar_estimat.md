@@ -76,14 +76,11 @@ Medusa, PostgreSQL och Redis är öppen källkod utan licensavgift, och tabellko
 
 | Återkommande kostnad | Per månad | Volymantagande |
 |---|---|---|
-| Miljöer, test och produktion | 11 000 SEK | Container Apps, PostgreSQL och Redis för 1,4 miljoner artiklar, databas cirka 200 GB, två administratörer |
-| Lagring med tioårsarkiv | 800 SEK | Originalfiler 1,2 TB i geo-redundant lagring, tillväxt cirka 10 % per år, äldre versioner i svalare nivå |
-| Backup | 800 SEK | Databas med återställning till valfri tidpunkt i 35 dagar, filer med versionering. Skild från versionsarkivet |
-| Övervakning | 600 SEK | Cirka 10 GB loggar per månad, 90 dagars loggtid |
+| Azure i SFB:s tenant | Enligt Azures prislista | Test- och produktionsmiljö med Container Apps för Medusa och jobb, PostgreSQL Flexible Server (databas cirka 200 GB för 1,4 miljoner artiklar) och Redis. Blob Storage för originalfiler 1,2 TB, geo-redundant, med tioårsarkiv i svalare nivå och tillväxt cirka 10 % per år. Backup av databasen med återställning till valfri tidpunkt i 35 dagar och versionering av filer, skild från versionsarkivet. Application Insights och Log Analytics, cirka 10 GB loggar per månad med 90 dagars loggtid |
 | Licenser och integrationer | 0 SEK | Öppen källkod. ITM8:s avgifter lämnas av ITM8 |
 | Support från Vaimo | 13 600 SEK | 8 timmar per månad under svensk kontorstid, efter stödperioden |
 | Uppgraderingar av Medusa | 4 000 SEK | Två uppgraderingar per år, provade i testmiljön |
-| **Totalt** | **30 800 SEK** | Cirka 370 kSEK per år. Azure enligt bedömt listpris, november 2026 |
+| **Totalt från Vaimo** | **17 600 SEK** | Cirka 211 kSEK per år. Azure tillkommer |
 
 Tillvalen tillkommer om de beställs: domäner och certifikat för AP20 cirka 2 000 SEK per år, och tjänst för förhandsvisning i AP21 cirka 1 000 SEK per månad.
 
