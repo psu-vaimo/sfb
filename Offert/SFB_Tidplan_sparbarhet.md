@@ -36,7 +36,7 @@ Alla 63 krav har ett arbetspaket och en leverans. Kravkatalogen i svaret har en 
 
 | Paket | Krav | Vaimos leveranser |
 |---|---|---|
-| AP01 | PIM-I01, PIM-M01 | Återanvändningsmatris, gränssnittskontrakt, fältmatris, identitetsregler, gruppkontroll, Excel-format, icke-funktionella krav, arkitektur, export-, medie- och volyminventering, avbrotts- och driftverifiering, motsägelser, reviderat estimat och plan |
+| AP01 | PIM-I01, PIM-M01 | Återanvändningsmatris, gränssnittskontrakt, fältmatris, identitetsregler, gruppkontroll, Excel-format, icke-funktionella krav, arkitektur, export-, medie- och volyminventering, avbrotts- och driftverifiering, skillnader mot förstudien, reviderat estimat och plan |
 | AP02 | PIM-D01, D02, D03, D05, D07 | Datamodell |
 | AP03 | PIM-D04, D06, W01 till W09, Q03, Q04 | Administratörsgränssnitt |
 | AP04 | PIM-I02, I03, I04 | PIM:s integrationsgränssnitt |

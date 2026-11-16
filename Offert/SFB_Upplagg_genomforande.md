@@ -32,7 +32,7 @@ Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som dellever
 | 51 | Kontraktsexempel validerade (17 dec) | Slutexporten avstämd med SFB (14 dec). Gemensamma fält- och valideringsregler (16 dec). Miljöer godkända av ITM8 (16 dec). Integrationstest med ITM8 17 dec. Delleveransen i drift 18 dec |
 | 52 till 53 | | Ledigt. Vaimo har tillsyn av delleveransen 28 till 30 dec. C4 stängs 31 dec |
 
-I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. Snickenkontraktet godkänns 19 jan och verifieringen av åtkomst vid PIM-avbrott 17 feb. AP01 är klar 15 jan.
+I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, skillnader mot förstudien, och reviderat estimat och plan. Snickenkontraktet godkänns 19 jan och verifieringen av åtkomst vid PIM-avbrott 17 feb. AP01 är klar 15 jan.
 
 ## Villkor för delleveransen
 
