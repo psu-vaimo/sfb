@@ -136,8 +136,9 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Manuell överstyrning av webbstatus,E-AUTOWEBB,DEV,,,,,,PIM-W06,,,PV-1-4-3
 ,estimatrad,Tre webbstatusar i kontraktet och MagicBox,E-AUTOWEBB,ITM8,,,,,,PIM-W06; PIM-I03,"ITM8:s anpassning för B2C, B2B och Riks.",,PV-1-4-5
 ,estimatrad,"Test, driftsättning och överlämning",E-AUTOWEBB,DEV,,,,,,PIM-W06,,,PV-1-4-4
-,estimatrad,Domän- och länkupplägg,E-AP20,DEV,,,,,,PIM-N05,,,PV-2-1-1; PV-2-1-2
-,estimatrad,Test och driftsättning,E-AP20,DEV,,,,,,PIM-N05,,,PV-2-1-3
+,estimatrad,Domän- och länkupplägg,E-AP20,ITM8,,,,,,PIM-N05,ITM8:s estimat.,,PV-2-1-1; PV-2-1-2
+,estimatrad,Test och driftsättning,E-AP20,ITM8,,,,,,PIM-N05,ITM8:s estimat.,,PV-2-1-3
+,estimatrad,Stöd med länkmappning,E-AP20,TA,,,,,,PIM-N05,,,PV-2-1-1
 ,estimatrad,Visning av valda filformat,E-AP21,DEV,,,,,,PIM-N06,,,PV-2-2-1; PV-2-2-2
 ,estimatrad,Test och driftsättning,E-AP21,DEV,,,,,,PIM-N06,,,PV-2-2-3
 ,estimatrad,Mottagartjänst för hela tioårsarkivet,E-TV-ARKIV,DEV,,,,,,,,,PV-2-3-1

@@ -63,7 +63,7 @@ Estimat SFB – berikningsdel och PIM
 			[[AP17]], [[AP18]] och [[AP19]] som egna rader med fullt leveransarbete.
 			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt 3.2, i SFB_PBS_AP01.ord.
 		Tillval +estimatsumma ^E-TILLVAL
-			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet.
+			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet. AP20 föreslås hos ITM8 och syns som extern insats.
 		Alternativ +estimatsumma ^E-ALT
 			[[ALT01]] och [[ALT03]]. Ersätter arbete i basen eller beställs separat; adderas aldrig till F1.
 

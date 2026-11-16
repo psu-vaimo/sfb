@@ -20,7 +20,7 @@ E-AP17,estimatsumma,AP17 ERP-baserad prioritering,E-V2,AP17,AP17,,Intervall,,,IT
 E-AP18,estimatsumma,AP18 Automatisk produktgruppering,E-V2,AP18,AP18,,Intervall,,,Regelbaserad metod i basen.
 E-AP19,estimatsumma,AP19 Manuell arkivering sökning och återaktivering,E-V2,AP19,AP19,,Intervall,,,
 E-AUTOWEBB,estimatsumma,Automatisk webbstatus,E-V2,,,,Intervall,,,Beslutad utökning utöver PIM-W06. Saknar AP-nummer i kravspecifikationen.
-E-AP20,estimatsumma,AP20 Nya mediedomäner,E-TILLVAL,AP20,AP20,,Intervall,,,Vi föreslår ansvarig.
+E-AP20,estimatsumma,AP20 Nya mediedomäner,E-TILLVAL,AP20,AP20,,Saknas,,ITM8,Externt beroende. Vi föreslår ITM8 som ansvarig. ITM8:s estimat.
 E-AP21,estimatsumma,AP21 Avancerade förhandsvisningar,E-TILLVAL,AP21,AP21,,Intervall,,,Formatlista anges.
 E-TV-ARKIV,estimatsumma,Automatiserad mottagartjänst för tioårsarkivet,E-TILLVAL,,AP05,,Intervall,,,Tillval enligt PDF 7.
 E-ALT01,estimatsumma,ALT01 Snicken inne i MagicBox,E-ALT,,AP09,,Saknas,,ITM8,"Ersätter AP09. Ersättningskostnad, inte tillägg."

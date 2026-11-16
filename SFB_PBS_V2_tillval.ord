@@ -241,6 +241,7 @@ PBS V2 och tillval ^PBS-V2T
 				Innehåll
 					Arkivering enligt en regel som kombinerar utgåendedatum och lagersaldo. Artikeln ligger kvar så länge den har saldo. Lagersaldot kommer från ERP-återföringen i AP17.
 					Utökning utöver [[PIM-N04]]. Ny källdata återaktiverar inte en arkiverad artikel.
+					Beställs bara tillsammans med AP17, enligt beslut 2026-11-16. Utan lagersaldo i PIM väntar automatisk arkivering.
 				Underlag
 					Förstudien: REQ325, BE107.1.
 				Kvalitetskriterier
@@ -346,15 +347,15 @@ PBS V2 och tillval ^PBS-V2T
 					Kvalitetskriterierna i 1.4.2 och 1.4.3 är uppfyllda i produktion.
 	2 Tillval
 		2.1 Nya mediedomäner
-			Paket [[AP20]], [[PIM-N05]]. Ansvarig part föreslås i offerten.
+			Paket [[AP20]], [[PIM-N05]]. Vi föreslår ITM8 som ansvarig, eftersom ITM8 äger lagring och länkar i [[AP10]]. PIM-partnern stödjer med länkmappningen. Ingår inte i Vaimos pris.
 			2.1.1 Godkänd domänlista och länkmappning +produkt ^PV-2-1-1
 				paket:: AP20
 				krav:: PIM-N05
-				part:: PIM-partner
+				part:: ITM8
 				format:: Kalkylark
 				kvalitetsmetod:: Godkännande
-				granskare:: SFB e-handel; ITM8
-				godkännare:: SFB produktägare
+				granskare:: Vaimo teknisk arkitekt; SFB e-handel
+				godkännare:: SFB e-handel
 				beror på:: PF-3-4-2
 				Syfte
 					Bestämmer vilka domäner som införs och hur gamla länkar pekar.
@@ -365,11 +366,11 @@ PBS V2 och tillval ^PBS-V2T
 			2.1.2 Driftsatt domän- och länkupplägg +produkt ^PV-2-1-2
 				paket:: AP20
 				krav:: PIM-N05
-				part:: PIM-partner
+				part:: ITM8
 				format:: Konfiguration
 				kvalitetsmetod:: Test
-				granskare:: SFB e-handel; ITM8
-				godkännare:: SFB produktägare
+				granskare:: Vaimo teknisk arkitekt; SFB e-handel
+				godkännare:: SFB e-handel
 				beror på:: PV-2-1-1
 				Syfte
 					De nya domänerna i drift.
@@ -380,11 +381,11 @@ PBS V2 och tillval ^PBS-V2T
 			2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +produkt ^PV-2-1-3
 				paket:: AP20
 				krav:: PIM-N05
-				part:: PIM-partner
+				part:: ITM8
 				format:: Protokoll
 				kvalitetsmetod:: Test
-				granskare:: SFB e-handel
-				godkännare:: SFB produktägare
+				granskare:: Vaimo teknisk arkitekt; SFB e-handel
+				godkännare:: SFB e-handel
 				beror på:: PV-2-1-2
 				Syfte
 					Visar att tillvalet fungerar och vad det kostar att driva.
@@ -512,10 +513,10 @@ PBS V2 och tillval ^PBS-V2T
 		Frågor om den här PBS:en, för Vaimo och SFB.
 		[x] Paket för automatisk webbstatus: beslutat 2026-11-16, E-AUTOWEBB behålls utan AP-nummer. Fråga: 1.4 estimeras nu i paketet E-AUTOWEBB under V2, utan AP-nummer, som tioårsarkivet. Ska det få ett AP-nummer i svaret till SFB?
 		[x] Webbstatus per kanal: beslutat 2026-11-16, tre statusar i V2. Ny produkt 1.4.5. Fråga: förstudien har tre nivåer, B2C, B2B och Riks. Kravspecifikationen har en webbstatus. Gäller beslutet om automatisk webbstatus en eller tre statusar? Tre statusar ändrar kontraktet med MagicBox.
-		[ ] Automatisk arkivering utan AP17: om AP17 inte beställs saknas lagersaldo i PIM. Ska regeln då bara använda datum, eller ska automatisk arkivering vänta?
-		[ ] Återaktivering: förstudien säger att manuell återaktivering utgår och att en ny artikel skapas i stället. Kravspecifikationen och [[AP19]] har återaktivering. Kravspecifikationen gäller tills SFB säger annat.
+		[x] Automatisk arkivering utan AP17: beslutat 2026-11-16, automatisk arkivering väntar tills AP17 beställs. Fråga: om AP17 inte beställs saknas lagersaldo i PIM. Ska regeln då bara använda datum, eller ska automatisk arkivering vänta?
+		[x] Återaktivering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: förstudien säger att manuell återaktivering utgår och att en ny artikel skapas i stället. Kravspecifikationen och [[AP19]] har återaktivering. Kravspecifikationen gäller tills SFB säger annat.
 		[x] Estimat för utökningarna: löst. Automatisk arkivering har en rad i AP19 och automatisk webbstatus har paketet E-AUTOWEBB.
-		[ ] Ansvar för AP20: kravspecifikationen låter oss föreslå ansvarig part. PBS:en antar PIM-partner.
+		[x] Ansvar för AP20: beslutat 2026-11-16, ITM8 föreslås som ansvarig. PIM-partnern stödjer med länkmappningen. Fråga: kravspecifikationen låter oss föreslå ansvarig part. PBS:en antar PIM-partner.
 	Utanför
 		[[ALT01]] och [[ALT03]] är alternativ, inte tillägg, och ingår inte här.
 		[[PIM-N07]] Framtida delägaranvändare har inget paket och ingår inte i F1 eller V2.
