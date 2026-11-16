@@ -549,7 +549,7 @@ Uppgifter V2 och tillval ^UPG-V2T
 		Beräknat 2026-11-16 med Planering/tidplan.py, tillsammans med uppgifterna i AP01 och F1.
 		V2 och tillvalen kan börja 2027-02-18, när F1 är i drift.
 		Om allt körs parallellt: AP17 klar 2027-03-10, AP18 klar 2027-03-17, AP19 klar 2027-03-16, automatisk webbstatus klar 2027-03-16, V2 klar 2027-03-17 och tillvalen klara 2027-03-10.
-		AP19 är längst, eftersom automatisk arkivering väntar på ERP-uppgifterna från AP17.
+		AP18 är längst, eftersom regelmotorn för gruppering tar längst tid. Automatisk arkivering i AP19 väntar på ERP-uppgifterna från AP17.
 		Datumen är tidigaste möjliga. Verklig start beror på beställning och på i vilken ordning paketen läggs.
 	Öppna frågor
 		Frågor om uppgifterna och tidplanen, för Vaimo och SFB.
