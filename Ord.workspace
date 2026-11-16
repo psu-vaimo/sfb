@@ -21,6 +21,10 @@ SFB berikningsdel och PIM
 			Produktnedbrytning (PBS) för hela F1, med produktbeskrivningar, produktflöde och öppna frågor. Speglar PBS:en för AP01.
 		./SFB_PBS_V2_tillval.ord
 			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen, med produktbeskrivningar, produktflöde och öppna frågor.
+		./SFB_Uppgifter_AP01.ord
+			Uppgifter med ansvarig, längd, beroenden, datum och status för AP01. Datumen räknas av Planering/tidplan.py.
+		./Planering/tidplan.py
+			Räknar start och slut för uppgifterna. Kör från repots rot.
 Kravtyp +ord-type
 	name:: krav
 	fields::
@@ -113,3 +117,22 @@ Task +ord-type
 	fields::
 		project::
 			options:: +project
+Uppgiftstyp +ord-type
+	name:: uppgift
+	checkbox:: true
+	fields::
+		produkt::
+			options:: +produkt
+		ansvarig::
+			options:: SFB produktägare; SFB PIM-team; SFB e-handel; SFB sponsor; ITM8; Snicken; Nuvarande part; Vaimo affärskonsult; Vaimo teknisk arkitekt; Vaimo utvecklare; Vaimo testledare; Vaimo projektledare
+		längd::
+		start::
+		slut::
+		beror på::
+			options:: +uppgift
+		senast::
+	En uppgift som tar fram, granskar eller godkänner en produkt i PBS:en. Används i SFB_Uppgifter_*.ord.
+	Status är nodens tillstånd: [ ] ny, [-] pågår, [?] väntar och [x] klar.
+	Längd är arbetsdagar. 0 betyder milstolpe. Beror på pekar på uppgifter som måste vara klara först. Senast är ett datum som uppgiften måste vara klar till.
+	Start och slut räknas fram av Planering/tidplan.py från längd, beror på och projektstart, med svenska helgdagar. Ändra längd eller beror på och kör skriptet igen. Klara uppgifter flyttas inte.
+	ID:n: U följt av produktens ID och T för att ta fram eller G för granskning och godkännande.

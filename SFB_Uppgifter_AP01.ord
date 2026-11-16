@@ -1,0 +1,665 @@
+Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
+	version:: 0.1
+	datum:: 2026-11-16
+	projektstart:: 2026-11-17
+	pbs:: ./SFB_PBS_AP01.ord
+	Uppgifterna som tar fram, granskar och godkänner produkterna i [[PBS AP01 Teknisk precisering och inventering]]. Varje +uppgift pekar på sin produkt i fältet produkt.
+	Ingen uppgift är längre än fem arbetsdagar, utom löpande uppgifter. Produkter som tar mer än tre dagar är uppdelade efter innehållet i produktbeskrivningen. Granskning och godkännande är en egen uppgift per produkt.
+	Längderna är preliminära bedömningar i arbetsdagar och är inte avstämda mot SFB_Estimat_rader.csv än. Ansvarig är en roll tills personerna är utsedda.
+	Start och slut räknas av Planering/tidplan.py. Ändra längd, beror på eller status och kör skriptet igen.
+	Milstolpar
+		[ ] Startmöte för AP01 med SFB och ITM8 +uppgift ^U-AP01-START
+			ansvarig:: Vaimo projektledare; SFB produktägare; ITM8
+			längd:: 1
+			start:: 2026-11-17
+			slut:: 2026-11-17
+			beror på::
+		[ ] AP01 klar +uppgift ^U-AP01-KLAR
+			ansvarig:: SFB sponsor
+			längd:: 0
+			start:: 2026-12-30
+			slut:: 2026-12-30
+			beror på:: U-PA-3-3-G; U-PA-3-4-G; U-PA-1-8-G; U-PA-1-2-G
+			senast:: 2026-12-30
+			AP01 är klar när reviderat estimat och plan är godkända. Arkitekturen och kontrakten behövs dessutom för delleveransen före 2026-12-31.
+	1 Verifierade specifikationer
+		[ ] Ta fram 1.1 Återanvändningsmatris för förstudien +uppgift ^U-PA-1-1-T
+			produkt:: PA-1-1
+			ansvarig:: Vaimo affärskonsult
+			längd:: 2
+			start:: 2026-11-18
+			slut:: 2026-11-19
+			beror på:: U-AP01-START
+		[ ] Granska och godkänn 1.1 Återanvändningsmatris för förstudien +uppgift ^U-PA-1-1-G
+			produkt:: PA-1-1
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-1-1-T
+			Granskare: SFB produktägare; Vaimo teknisk arkitekt.
+		[ ] Sammanställ 1.2 Gränssnittskontrakt +uppgift ^U-PA-1-2-T
+			produkt:: PA-1-2
+			ansvarig:: Vaimo teknisk arkitekt
+			längd:: 1
+			start:: 2026-12-17
+			slut:: 2026-12-17
+			beror på:: U-PA-1-2-1-T3; U-PA-1-2-2-T3; U-PA-1-2-3-T3; U-PA-1-2-4-T3; U-PA-1-2-5-T2; U-PA-1-2-6-T
+		[ ] Granska och godkänn 1.2 Gränssnittskontrakt +uppgift ^U-PA-1-2-G
+			produkt:: PA-1-2
+			ansvarig:: SFB produktägare; ITM8
+			längd:: 2
+			start:: 2026-12-18
+			slut:: 2026-12-21
+			beror på:: U-PA-1-2-T; U-PA-1-2-1-G; U-PA-1-2-2-G; U-PA-1-2-3-G; U-PA-1-2-4-G; U-PA-1-2-5-G
+			Granskare: ITM8; SFB e-handel; Vaimo teknisk arkitekt.
+		1.2.1 Kontrakt MagicBox till PIM
+			[ ] Skriv utkast +uppgift ^U-PA-1-2-1-T1
+				produkt:: PA-1-2-1
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-3-T4; U-PA-1-4-T4; U-PA-2-2-T3
+			[ ] Gå igenom utkastet med ITM8 +uppgift ^U-PA-1-2-1-T2
+				produkt:: PA-1-2-1
+				ansvarig:: Vaimo teknisk arkitekt; ITM8
+				längd:: 1
+				start:: 2026-12-08
+				slut:: 2026-12-08
+				beror på:: U-PA-1-2-1-T1
+			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-1-T3
+				produkt:: PA-1-2-1
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-09
+				slut:: 2026-12-09
+				beror på:: U-PA-1-2-1-T2
+			[ ] Granska och godkänn 1.2.1 Kontrakt MagicBox till PIM +uppgift ^U-PA-1-2-1-G
+				produkt:: PA-1-2-1
+				ansvarig:: ITM8
+				längd:: 2
+				start:: 2026-12-10
+				slut:: 2026-12-11
+				beror på:: U-PA-1-2-1-T1; U-PA-1-2-1-T2; U-PA-1-2-1-T3; U-PA-1-3-G; U-PA-1-4-G; U-PA-2-2-G
+				Granskare: ITM8; Vaimo teknisk arkitekt.
+		1.2.2 Kontrakt PIM till MagicBox
+			[ ] Skriv utkast +uppgift ^U-PA-1-2-2-T1
+				produkt:: PA-1-2-2
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-3-T4; U-PA-1-4-T4; U-PA-2-2-T3
+			[ ] Gå igenom utkastet med ITM8 +uppgift ^U-PA-1-2-2-T2
+				produkt:: PA-1-2-2
+				ansvarig:: Vaimo teknisk arkitekt; ITM8
+				längd:: 1
+				start:: 2026-12-08
+				slut:: 2026-12-08
+				beror på:: U-PA-1-2-2-T1
+			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-2-T3
+				produkt:: PA-1-2-2
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-09
+				slut:: 2026-12-09
+				beror på:: U-PA-1-2-2-T2
+			[ ] Granska och godkänn 1.2.2 Kontrakt PIM till MagicBox +uppgift ^U-PA-1-2-2-G
+				produkt:: PA-1-2-2
+				ansvarig:: ITM8
+				längd:: 2
+				start:: 2026-12-10
+				slut:: 2026-12-11
+				beror på:: U-PA-1-2-2-T1; U-PA-1-2-2-T2; U-PA-1-2-2-T3; U-PA-1-3-G; U-PA-1-4-G; U-PA-2-2-G
+				Granskare: ITM8; SFB e-handel; Vaimo teknisk arkitekt.
+		1.2.3 Kontrakt för Snickenflödet
+			[ ] Skriv utkast +uppgift ^U-PA-1-2-3-T1
+				produkt:: PA-1-2-3
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-3-T4; U-PA-1-4-T4
+			[ ] Gå igenom utkastet med Snicken +uppgift ^U-PA-1-2-3-T2
+				produkt:: PA-1-2-3
+				ansvarig:: Vaimo teknisk arkitekt; Snicken; ITM8
+				längd:: 1
+				start:: 2026-12-08
+				slut:: 2026-12-08
+				beror på:: U-PA-1-2-3-T1
+			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-3-T3
+				produkt:: PA-1-2-3
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-09
+				slut:: 2026-12-09
+				beror på:: U-PA-1-2-3-T2
+			[ ] Granska och godkänn 1.2.3 Kontrakt för Snickenflödet +uppgift ^U-PA-1-2-3-G
+				produkt:: PA-1-2-3
+				ansvarig:: Snicken; ITM8
+				längd:: 3
+				start:: 2026-12-10
+				slut:: 2026-12-14
+				beror på:: U-PA-1-2-3-T1; U-PA-1-2-3-T2; U-PA-1-2-3-T3; U-PA-1-3-G; U-PA-1-4-G
+				Granskare: ITM8; Snicken; Vaimo teknisk arkitekt.
+		1.2.4 Fel- och transportkontrakt
+			[ ] Skriv utkast +uppgift ^U-PA-1-2-4-T1
+				produkt:: PA-1-2-4
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-11-24
+				slut:: 2026-11-25
+				beror på:: U-PA-2-5-T
+			[ ] Gå igenom utkastet med ITM8 +uppgift ^U-PA-1-2-4-T2
+				produkt:: PA-1-2-4
+				ansvarig:: Vaimo teknisk arkitekt; ITM8
+				längd:: 1
+				start:: 2026-11-26
+				slut:: 2026-11-26
+				beror på:: U-PA-1-2-4-T1
+			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-4-T3
+				produkt:: PA-1-2-4
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-11-27
+				slut:: 2026-11-27
+				beror på:: U-PA-1-2-4-T2
+			[ ] Granska och godkänn 1.2.4 Fel- och transportkontrakt +uppgift ^U-PA-1-2-4-G
+				produkt:: PA-1-2-4
+				ansvarig:: ITM8
+				längd:: 2
+				start:: 2026-11-30
+				slut:: 2026-12-01
+				beror på:: U-PA-1-2-4-T1; U-PA-1-2-4-T2; U-PA-1-2-4-T3; U-PA-2-5-G
+				Granskare: ITM8; Vaimo teknisk arkitekt.
+		1.2.5 Validerade kontraktsexempel
+			[ ] Ta fram exempelmeddelanden för varje flöde +uppgift ^U-PA-1-2-5-T1
+				produkt:: PA-1-2-5
+				ansvarig:: Vaimo utvecklare
+				längd:: 2
+				start:: 2026-12-10
+				slut:: 2026-12-11
+				beror på:: U-PA-1-2-1-T3; U-PA-1-2-2-T3; U-PA-1-2-3-T3; U-PA-1-2-4-T3
+			[ ] Validera exemplen mot kontraktets schema hos båda parter +uppgift ^U-PA-1-2-5-T2
+				produkt:: PA-1-2-5
+				ansvarig:: Vaimo utvecklare; ITM8
+				längd:: 1
+				start:: 2026-12-14
+				slut:: 2026-12-14
+				beror på:: U-PA-1-2-5-T1
+			[ ] Testa och godkänn 1.2.5 Validerade kontraktsexempel +uppgift ^U-PA-1-2-5-G
+				produkt:: PA-1-2-5
+				ansvarig:: ITM8
+				längd:: 2
+				start:: 2026-12-15
+				slut:: 2026-12-16
+				beror på:: U-PA-1-2-5-T1; U-PA-1-2-5-T2; U-PA-1-2-1-G; U-PA-1-2-2-G; U-PA-1-2-3-G; U-PA-1-2-4-G
+				Granskare: ITM8; Vaimo testledare.
+		[ ] Genomför 1.2.6 ITM8:s granskning av kontrakten +uppgift ^U-PA-1-2-6-T
+			produkt:: PA-1-2-6
+			ansvarig:: ITM8
+			längd:: 2
+			start:: 2026-12-15
+			slut:: 2026-12-16
+			beror på:: U-PA-1-2-5-T2
+		1.3 Fältmatris
+			[ ] Mappa egenskaperna i migreringsurvalet från bruttolistan +uppgift ^U-PA-1-3-T1
+				produkt:: PA-1-3
+				ansvarig:: Vaimo affärskonsult
+				längd:: 3
+				start:: 2026-11-26
+				slut:: 2026-11-30
+				beror på:: U-PA-1-1-T; U-PA-1-4-T4
+			[ ] Lägg till ägare, skyddsnivå, validering och mottagarmappning +uppgift ^U-PA-1-3-T2
+				produkt:: PA-1-3
+				ansvarig:: Vaimo affärskonsult
+				längd:: 2
+				start:: 2026-12-01
+				slut:: 2026-12-02
+				beror på:: U-PA-1-3-T1
+			[ ] Skriv regeln för övriga attributdefinitioner +uppgift ^U-PA-1-3-T3
+				produkt:: PA-1-3
+				ansvarig:: Vaimo affärskonsult
+				längd:: 1
+				start:: 2026-11-26
+				slut:: 2026-11-26
+				beror på:: U-PA-1-1-T; U-PA-1-4-T4
+			[ ] Teknisk granskning av matrisen +uppgift ^U-PA-1-3-T4
+				produkt:: PA-1-3
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-03
+				slut:: 2026-12-03
+				beror på:: U-PA-1-3-T2; U-PA-1-3-T3
+			[ ] Granska och godkänn 1.3 Fältmatris +uppgift ^U-PA-1-3-G
+				produkt:: PA-1-3
+				ansvarig:: SFB produktägare
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-3-T1; U-PA-1-3-T2; U-PA-1-3-T3; U-PA-1-3-T4; U-PA-1-1-G; U-PA-1-4-G
+				Granskare: SFB PIM-team; ITM8; Vaimo teknisk arkitekt.
+		[ ] Ta fram 1.3.1 Låst startlista för redigerbara produktegenskaper +uppgift ^U-PA-1-3-1-T
+			produkt:: PA-1-3-1
+			ansvarig:: Vaimo affärskonsult
+			längd:: 2
+			start:: 2026-11-18
+			slut:: 2026-11-19
+			beror på:: U-AP01-START
+		[ ] Granska och godkänn 1.3.1 Låst startlista för redigerbara produktegenskaper +uppgift ^U-PA-1-3-1-G
+			produkt:: PA-1-3-1
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-1-3-1-T
+			Granskare: SFB PIM-team.
+		[ ] Ta fram 1.3.2 Förteckning över skyddade fält +uppgift ^U-PA-1-3-2-T
+			produkt:: PA-1-3-2
+			ansvarig:: Vaimo affärskonsult
+			längd:: 2
+			start:: 2026-11-18
+			slut:: 2026-11-19
+			beror på:: U-AP01-START
+		[ ] Granska och godkänn 1.3.2 Förteckning över skyddade fält +uppgift ^U-PA-1-3-2-G
+			produkt:: PA-1-3-2
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-1-3-2-T
+			Granskare: SFB PIM-team.
+		[ ] Ta fram 1.3.3 Regel för sammanslagen extern text +uppgift ^U-PA-1-3-3-T
+			produkt:: PA-1-3-3
+			ansvarig:: Vaimo affärskonsult
+			längd:: 2
+			start:: 2026-11-18
+			slut:: 2026-11-19
+			beror på:: U-AP01-START
+		[ ] Granska och godkänn 1.3.3 Regel för sammanslagen extern text +uppgift ^U-PA-1-3-3-G
+			produkt:: PA-1-3-3
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-1-3-3-T
+			Granskare: SFB PIM-team.
+		1.4 Identitetsregler och exempeldata
+			[ ] Ta fram nycklar per objekttyp +uppgift ^U-PA-1-4-T1
+				produkt:: PA-1-4
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-11-20
+				slut:: 2026-11-23
+				beror på:: U-PA-1-1-T
+			[ ] Bestäm prioriteringsordning och felkö +uppgift ^U-PA-1-4-T2
+				produkt:: PA-1-4
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-11-24
+				slut:: 2026-11-24
+				beror på:: U-PA-1-4-T1
+			[ ] Ta fram exempeldata för varje regel +uppgift ^U-PA-1-4-T3
+				produkt:: PA-1-4
+				ansvarig:: Vaimo utvecklare
+				längd:: 1
+				start:: 2026-11-25
+				slut:: 2026-11-25
+				beror på:: U-PA-1-4-T2
+			[ ] Få ITM8:s bekräftelse på matchning utan C4:s sysid +uppgift ^U-PA-1-4-T4
+				produkt:: PA-1-4
+				ansvarig:: Vaimo teknisk arkitekt; ITM8
+				längd:: 1
+				start:: 2026-11-25
+				slut:: 2026-11-25
+				beror på:: U-PA-1-4-T2
+			[ ] Granska och godkänn 1.4 Identitetsregler och exempeldata +uppgift ^U-PA-1-4-G
+				produkt:: PA-1-4
+				ansvarig:: SFB produktägare
+				längd:: 2
+				start:: 2026-11-26
+				slut:: 2026-11-27
+				beror på:: U-PA-1-4-T1; U-PA-1-4-T2; U-PA-1-4-T3; U-PA-1-4-T4; U-PA-1-1-G
+				Granskare: ITM8; SFB e-handel; Vaimo teknisk arkitekt.
+		[ ] Ta fram 1.4.1 Rapport över artiklar utan entydig identitet +uppgift ^U-PA-1-4-1-T
+			produkt:: PA-1-4-1
+			ansvarig:: Vaimo utvecklare
+			längd:: 3
+			start:: 2026-11-25
+			slut:: 2026-11-27
+			beror på:: U-PA-2-1-T
+		[ ] Granska och godkänn 1.4.1 Rapport över artiklar utan entydig identitet +uppgift ^U-PA-1-4-1-G
+			produkt:: PA-1-4-1
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-30
+			slut:: 2026-11-30
+			beror på:: U-PA-1-4-1-T; U-PA-2-1-G
+			Granskare: SFB PIM-team.
+		[ ] Ta fram 1.5 Kontrollrapport för produktgrupper +uppgift ^U-PA-1-5-T
+			produkt:: PA-1-5
+			ansvarig:: Vaimo utvecklare
+			längd:: 3
+			start:: 2026-11-25
+			slut:: 2026-11-27
+			beror på:: U-PA-2-1-T
+		[ ] Granska och godkänn 1.5 Kontrollrapport för produktgrupper +uppgift ^U-PA-1-5-G
+			produkt:: PA-1-5
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-30
+			slut:: 2026-11-30
+			beror på:: U-PA-1-5-T; U-PA-2-1-G
+			Granskare: SFB PIM-team; SFB e-handel.
+		1.6 Fast Excel-format
+			[ ] Ta fram kolumnlista och regler +uppgift ^U-PA-1-6-T1
+				produkt:: PA-1-6
+				ansvarig:: Vaimo affärskonsult
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-3-T4
+			[ ] Ta fram exempelfiler +uppgift ^U-PA-1-6-T2
+				produkt:: PA-1-6
+				ansvarig:: Vaimo affärskonsult
+				längd:: 1
+				start:: 2026-12-08
+				slut:: 2026-12-08
+				beror på:: U-PA-1-6-T1
+			[ ] Granska och godkänn 1.6 Fast Excel-format +uppgift ^U-PA-1-6-G
+				produkt:: PA-1-6
+				ansvarig:: SFB produktägare
+				längd:: 2
+				start:: 2026-12-09
+				slut:: 2026-12-10
+				beror på:: U-PA-1-6-T1; U-PA-1-6-T2; U-PA-1-3-G
+				Granskare: SFB PIM-team.
+		1.7 Specifikation av icke-funktionella krav
+			[ ] Formulera de icke-funktionella kraven som mätbara krav +uppgift ^U-PA-1-7-T1
+				produkt:: PA-1-7
+				ansvarig:: Vaimo testledare
+				längd:: 2
+				start:: 2026-11-25
+				slut:: 2026-11-26
+				beror på:: U-PA-2-3-T; U-PA-2-5-T
+			[ ] Bestäm verifieringssätt per krav +uppgift ^U-PA-1-7-T2
+				produkt:: PA-1-7
+				ansvarig:: Vaimo testledare
+				längd:: 1
+				start:: 2026-11-27
+				slut:: 2026-11-27
+				beror på:: U-PA-1-7-T1
+			[ ] Granska och godkänn 1.7 Specifikation av icke-funktionella krav +uppgift ^U-PA-1-7-G
+				produkt:: PA-1-7
+				ansvarig:: SFB produktägare
+				längd:: 2
+				start:: 2026-11-30
+				slut:: 2026-12-01
+				beror på:: U-PA-1-7-T1; U-PA-1-7-T2; U-PA-2-3-G; U-PA-2-5-G
+				Granskare: Vaimo testledare; SFB produktägare.
+		1.8 Teknisk arkitektur och säkerhetslösning
+			[ ] Föreslå teknikstack och hosting +uppgift ^U-PA-1-8-T1
+				produkt:: PA-1-8
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-11-30
+				slut:: 2026-12-01
+				beror på:: U-PA-1-7-T2; U-PA-2-5-T
+			[ ] Beskriv komponenter och deras gränser +uppgift ^U-PA-1-8-T2
+				produkt:: PA-1-8
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-02
+				slut:: 2026-12-02
+				beror på:: U-PA-1-8-T1
+			[ ] Beskriv säkerhetslösningen +uppgift ^U-PA-1-8-T3
+				produkt:: PA-1-8
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-02
+				slut:: 2026-12-02
+				beror på:: U-PA-1-8-T1
+			[ ] Spåra arkitekturen mot de icke-funktionella kraven +uppgift ^U-PA-1-8-T4
+				produkt:: PA-1-8
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-03
+				slut:: 2026-12-03
+				beror på:: U-PA-1-8-T2; U-PA-1-8-T3
+			[ ] Granska och godkänn 1.8 Teknisk arkitektur och säkerhetslösning +uppgift ^U-PA-1-8-G
+				produkt:: PA-1-8
+				ansvarig:: SFB produktägare
+				längd:: 2
+				start:: 2026-12-04
+				slut:: 2026-12-07
+				beror på:: U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4; U-PA-1-7-G; U-PA-2-5-G
+				Granskare: ITM8; Vaimo testledare.
+	2 Inventeringar
+		[ ] Ta fram 2.1 C4-exportinventering +uppgift ^U-PA-2-1-T
+			produkt:: PA-2-1
+			ansvarig:: Vaimo utvecklare
+			längd:: 3
+			start:: 2026-11-20
+			slut:: 2026-11-24
+			beror på:: U-PA-1-1-T
+		[ ] Granska och godkänn 2.1 C4-exportinventering +uppgift ^U-PA-2-1-G
+			produkt:: PA-2-1
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-25
+			slut:: 2026-11-25
+			beror på:: U-PA-2-1-T; U-PA-1-1-G
+			Granskare: SFB PIM-team; Nuvarande part.
+		[ ] Ta fram 2.1.2 Inventering av äldre dokumentversioner och ändringslogg +uppgift ^U-PA-2-1-2-T
+			produkt:: PA-2-1-2
+			ansvarig:: Vaimo utvecklare
+			längd:: 3
+			start:: 2026-11-17
+			slut:: 2026-11-19
+			beror på:: U-PF-4-9-T
+		[ ] Granska och godkänn 2.1.2 Inventering av äldre dokumentversioner och ändringslogg +uppgift ^U-PA-2-1-2-G
+			produkt:: PA-2-1-2
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-2-1-2-T; U-PF-4-9-G
+			Granskare: SFB PIM-team; Nuvarande part.
+		[ ] Ta fram 2.1.3 Underlag för migreringsurval +uppgift ^U-PA-2-1-3-T
+			produkt:: PA-2-1-3
+			ansvarig:: Vaimo affärskonsult
+			längd:: 2
+			start:: 2026-11-25
+			slut:: 2026-11-26
+			beror på:: U-PA-2-1-T
+		[ ] Granska och godkänn 2.1.3 Underlag för migreringsurval +uppgift ^U-PA-2-1-3-G
+			produkt:: PA-2-1-3
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-27
+			slut:: 2026-11-27
+			beror på:: U-PA-2-1-3-T; U-PA-2-1-G
+			Granskare: SFB PIM-team.
+		2.2 Medieinventering
+			[ ] Inventera versionsnycklar och gamla URL:er +uppgift ^U-PA-2-2-T1
+				produkt:: PA-2-2
+				ansvarig:: Vaimo utvecklare
+				längd:: 2
+				start:: 2026-11-20
+				slut:: 2026-11-23
+				beror på:: U-PA-1-1-T
+			[ ] Ta fram transformationsprofiler med exempel +uppgift ^U-PA-2-2-T2
+				produkt:: PA-2-2
+				ansvarig:: Vaimo utvecklare
+				längd:: 1
+				start:: 2026-11-20
+				slut:: 2026-11-20
+				beror på:: U-PA-1-1-T
+			[ ] Ta fram länkförteckning, domäner och lagring +uppgift ^U-PA-2-2-T3
+				produkt:: PA-2-2
+				ansvarig:: Vaimo utvecklare
+				längd:: 1
+				start:: 2026-11-24
+				slut:: 2026-11-24
+				beror på:: U-PA-2-2-T1
+			[ ] Granska och godkänn 2.2 Medieinventering +uppgift ^U-PA-2-2-G
+				produkt:: PA-2-2
+				ansvarig:: SFB produktägare
+				längd:: 1
+				start:: 2026-11-25
+				slut:: 2026-11-25
+				beror på:: U-PA-2-2-T1; U-PA-2-2-T2; U-PA-2-2-T3; U-PA-1-1-G
+				Granskare: ITM8; SFB e-handel.
+		[ ] Ta fram 2.3 Volym- och lastinventering +uppgift ^U-PA-2-3-T
+			produkt:: PA-2-3
+			ansvarig:: Vaimo utvecklare
+			längd:: 3
+			start:: 2026-11-20
+			slut:: 2026-11-24
+			beror på:: U-PA-1-1-T
+		[ ] Granska och godkänn 2.3 Volym- och lastinventering +uppgift ^U-PA-2-3-G
+			produkt:: PA-2-3
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-25
+			slut:: 2026-11-25
+			beror på:: U-PA-2-3-T; U-PA-1-1-G
+			Granskare: ITM8; Vaimo teknisk arkitekt.
+		[ ] Ta fram 2.4 Verifiering av åtkomst vid PIM-avbrott +uppgift ^U-PA-2-4-T
+			produkt:: PA-2-4
+			ansvarig:: Vaimo teknisk arkitekt
+			längd:: 3
+			start:: 2026-12-10
+			slut:: 2026-12-14
+			beror på:: U-PA-1-2-2-T3; U-PA-2-2-T3; U-PA-2-5-T
+		[ ] Granska och godkänn 2.4 Verifiering av åtkomst vid PIM-avbrott +uppgift ^U-PA-2-4-G
+			produkt:: PA-2-4
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-12-15
+			slut:: 2026-12-15
+			beror på:: U-PA-2-4-T; U-PA-1-2-2-G; U-PA-2-2-G; U-PA-2-5-G
+			Granskare: ITM8; Snicken.
+		[ ] Ta fram 2.5 Verifiering av drift och identitet +uppgift ^U-PA-2-5-T
+			produkt:: PA-2-5
+			ansvarig:: Vaimo teknisk arkitekt
+			längd:: 2
+			start:: 2026-11-20
+			slut:: 2026-11-23
+			beror på:: U-PA-1-1-T
+		[ ] Granska och godkänn 2.5 Verifiering av drift och identitet +uppgift ^U-PA-2-5-G
+			produkt:: PA-2-5
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-24
+			slut:: 2026-11-24
+			beror på:: U-PA-2-5-T; U-PA-1-1-G
+			Granskare: ITM8; Vaimo teknisk arkitekt.
+	3 Beslutsunderlag och plan
+		3.1 Beslutsunderlag för öppna frågor
+			[ ] Sammanställ frågor med rekommendation +uppgift ^U-PA-3-1-T1
+				produkt:: PA-3-1
+				ansvarig:: Vaimo affärskonsult
+				längd:: 2
+				start:: 2026-11-25
+				slut:: 2026-11-26
+				beror på:: U-PA-1-1-T; U-PA-2-1-T; U-PA-2-2-T3; U-PA-2-3-T; U-PA-2-5-T
+				Frågor som blockerar skickas till SFB direkt när de upptäcks. Uppgiften avser den samlade versionen.
+			[ ] Bedöm kostnadspåverkan och sätt beslutsdatum +uppgift ^U-PA-3-1-T2
+				produkt:: PA-3-1
+				ansvarig:: Vaimo affärskonsult
+				längd:: 1
+				start:: 2026-11-27
+				slut:: 2026-11-27
+				beror på:: U-PA-3-1-T1
+			[ ] Granska och godkänn 3.1 Beslutsunderlag för öppna frågor +uppgift ^U-PA-3-1-G
+				produkt:: PA-3-1
+				ansvarig:: SFB sponsor
+				längd:: 2
+				start:: 2026-11-30
+				slut:: 2026-12-01
+				beror på:: U-PA-3-1-T1; U-PA-3-1-T2; U-PA-1-1-G; U-PA-2-1-G; U-PA-2-2-G; U-PA-2-3-G; U-PA-2-5-G
+				Granskare: SFB produktägare; Vaimo projektledare.
+		[ ] Ta fram 3.2 Förteckning över motsägelser mot förstudien +uppgift ^U-PA-3-2-T
+			produkt:: PA-3-2
+			ansvarig:: Vaimo affärskonsult
+			längd:: 1
+			start:: 2026-11-20
+			slut:: 2026-11-20
+			beror på:: U-PA-1-1-T
+		[ ] Granska och godkänn 3.2 Förteckning över motsägelser mot förstudien +uppgift ^U-PA-3-2-G
+			produkt:: PA-3-2
+			ansvarig:: SFB produktägare
+			längd:: 1
+			start:: 2026-11-23
+			slut:: 2026-11-23
+			beror på:: U-PA-3-2-T; U-PA-1-1-G
+			Granskare: SFB produktägare.
+		3.3 Reviderat genomförandeestimat
+			[ ] Uppdatera estimatrader, risker och kostnadsposter +uppgift ^U-PA-3-3-T1
+				produkt:: PA-3-3
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 2
+				start:: 2026-12-18
+				slut:: 2026-12-21
+				beror på:: U-PA-1-2-T; U-PA-1-3-T4; U-PA-1-6-T2; U-PA-1-7-T2; U-PA-1-8-T4; U-PA-2-1-2-T; U-PA-2-1-3-T; U-PA-2-4-T; U-PA-3-1-T2
+			[ ] Estimeringsmöte med två estimatorer +uppgift ^U-PA-3-3-T2
+				produkt:: PA-3-3
+				ansvarig:: Vaimo teknisk arkitekt; Vaimo affärskonsult
+				längd:: 1
+				start:: 2026-12-22
+				slut:: 2026-12-22
+				beror på:: U-PA-3-3-T1
+			[ ] Kör kontrollerna och räkna totalerna +uppgift ^U-PA-3-3-T3
+				produkt:: PA-3-3
+				ansvarig:: Vaimo teknisk arkitekt
+				längd:: 1
+				start:: 2026-12-23
+				slut:: 2026-12-23
+				beror på:: U-PA-3-3-T2
+			[ ] Granska och godkänn 3.3 Reviderat genomförandeestimat +uppgift ^U-PA-3-3-G
+				produkt:: PA-3-3
+				ansvarig:: SFB sponsor
+				längd:: 2
+				start:: 2026-12-28
+				slut:: 2026-12-29
+				beror på:: U-PA-3-3-T1; U-PA-3-3-T2; U-PA-3-3-T3; U-PA-1-2-G; U-PA-1-3-G; U-PA-1-6-G; U-PA-1-7-G; U-PA-1-8-G; U-PA-2-1-2-G; U-PA-2-1-3-G; U-PA-2-4-G; U-PA-3-1-G
+				Granskare: Vaimo teknisk arkitekt; Vaimo projektledare.
+		[ ] Ta fram 3.4 Reviderad genomförandeplan +uppgift ^U-PA-3-4-T
+			produkt:: PA-3-4
+			ansvarig:: Vaimo projektledare
+			längd:: 2
+			start:: 2026-12-28
+			slut:: 2026-12-29
+			beror på:: U-PA-3-3-T3
+		[ ] Granska och godkänn 3.4 Reviderad genomförandeplan +uppgift ^U-PA-3-4-G
+			produkt:: PA-3-4
+			ansvarig:: SFB sponsor
+			längd:: 1
+			start:: 2026-12-30
+			slut:: 2026-12-30
+			beror på:: U-PA-3-4-T; U-PA-3-3-G
+			Granskare: ITM8; SFB produktägare.
+		[ ] Ta fram 3.5 Granskade workshopanteckningar +uppgift ^U-PA-3-5-T
+			produkt:: PA-3-5
+			ansvarig:: Vaimo projektledare
+			längd:: 30
+			start:: 2026-11-18
+			slut:: 2027-01-04
+			beror på:: U-AP01-START
+			Löpande under hela AP01. Längden är AP01:s längd.
+	Tidplan
+		Beräknat 2026-11-16 med Planering/tidplan.py. Projektstart 2026-11-17.
+		AP01 klar: 2026-12-30, samma dag som senast-datumet. Ingen marginal.
+		Viktiga datum för delleveransen i F1: identitetsreglerna godkända 2026-11-27, de icke-funktionella kraven 2026-12-01, fältmatrisen och arkitekturen 2026-12-07, kontraktet PIM till MagicBox 2026-12-11 och alla kontrakt 2026-12-21.
+		Kritisk linje: startmötet, återanvändningsmatrisen 1.1, identitetsreglerna 1.4, fältmatrisen 1.3, kontraktet MagicBox till PIM 1.2.1, kontraktsexemplen 1.2.5, ITM8:s granskning 1.2.6, det samlade kontraktet 1.2, det reviderade estimatet 3.3 och planen 3.4.
+		Tidplanen förutsätter att varje roll kan arbeta med flera uppgifter samtidigt, och att granskning och godkännande tar en till tre dagar.
+	Öppna frågor
+		Frågor om uppgifterna och tidplanen, för Vaimo och SFB.
+		[ ] Ingen marginal: AP01 slutar 2026-12-30, samma dag som senast-datumet, och bara om AP01 startar 2026-11-17. Varje dags försening flyttar slutet in i januari. Ska AP01 krympas, till exempel genom att Snickenkontraktet 1.2.3 och avbrottsverifieringen 2.4 flyttas till efter 2026-12-31?
+		[ ] Parallellt arbete: tidplanen antar att varje roll kan ha flera uppgifter samtidigt. Teknisk arkitekt har till exempel kontrakt, arkitektur och identitetsregler parallellt i december. Hur många personer per roll finns?
+		[ ] SFB:s och ITM8:s svarstider: godkännanden har en till två dagar. Kan SFB produktägare, SFB sponsor och ITM8 hålla det i december?
+		[ ] Delleveransen: kontraktet PIM till MagicBox godkänns 2026-12-11 och arkitekturen 2026-12-07. Det lämnar knappt tre veckor för delleveransen i F1 före 2026-12-31.
+		[ ] Personer: vem bemannar rollerna? Tidplanen antar att varje roll kan arbeta med flera uppgifter parallellt.
+		[ ] Längder: längderna är preliminära och ska stämmas av mot SFB_Estimat_rader.csv.

@@ -195,7 +195,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Granskning
 			granskare:: SFB PIM-team; ITM8; Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare
-			beror på:: PA-2-1; PA-1-4
+			beror på:: PA-1-1; PA-1-4
 			Syfte
 				En regel per fält som styr datamodellen, kontrakten, enskild redigering, tabell, Excel och migrering. Se [[B07]].
 			Innehåll
@@ -268,7 +268,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Godkännande
 			granskare:: ITM8; SFB e-handel; Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare
-			beror på:: PA-2-1
+			beror på:: PA-1-1
 			Syfte
 				Bestämmer hur artiklar, produkter, leverantörer och varumärken identifieras i PIM, MagicBox och vid migrering. Se [[B06]].
 			Innehåll
@@ -277,6 +277,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				Plats för GTIN och GLN inför övergången till GS1.
 				Exempel för manuella artiklar, Finfo-artiklar, samma GTIN hos olika leverantörer, variantgrupp och bundle.
 			Underlag
+				Utgår från förstudiens data audit, så att arbetet kan börja innan exportinventeringen 2.1 är klar.
 				Förstudien: bilaga K föreslår att artikeln är leverantörens listning, som i ERP, och att nyckeln är artikelnumret exakt som i källan med plats för minst 8 siffror. Prioriteringsordningen Finfo-nummer, sedan leverantörs-id med leverantörens artikelnummer, sist WB-nummer, är föreslagen. Leverantörens artikelnummer delas av 465 000 artiklar mellan leverantörer. C4:s sysid används i Magic Box och måste bort.
 			Kvalitetskriterier
 				Två artiklar med samma GTIN och olika leverantörer förblir två poster, [[PIM-D01]].
@@ -366,7 +367,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Godkännande
 			granskare:: ITM8; Vaimo testledare
 			godkännare:: SFB produktägare
-			beror på:: PA-1-7; PA-2-5; PA-1-2
+			beror på:: PA-1-7; PA-2-5
 			Syfte
 				Kravspecifikationen ber oss föreslå teknikstack, hosting och säkerhetslösning. Alla produkter i PIM-applikationen och miljöerna i F1 bygger på den. Flyttad från F1 till AP01 enligt beslut 2026-11-16, så att den är klar före det reviderade estimatet.
 			Innehåll
@@ -476,7 +477,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Granskning
 			granskare:: ITM8; Snicken
 			godkännare:: SFB produktägare
-			beror på:: PA-1-2; PA-2-2; PA-2-5
+			beror på:: PA-1-2-2; PA-2-2; PA-2-5
 			Syfte
 				Visar vilka anpassningar som behövs för att publicerad information fungerar vid avbrott i PIM.
 			Innehåll
