@@ -33,22 +33,27 @@ Estimat SFB – berikningsdel och PIM
 		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
 
 	Roller
-		Fyll i timpris i SEK exklusive moms innan kostnaderna räknas.
+		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development.
 		Affärskonsult +estimatroll ^BC
 			part:: Vaimo
-			timpris::
+			timpris:: 1700
+			Business Consulting PIM.
 		Teknisk arkitekt +estimatroll ^TA
 			part:: Vaimo
-			timpris::
+			timpris:: 1700
+			Antagande: samma pris som Business Consulting PIM, eftersom rollen saknas i prislistan.
 		Utvecklare +estimatroll ^DEV
 			part:: Vaimo
-			timpris::
+			timpris:: 1500
+			PIM Development.
 		Testledare +estimatroll ^QA
 			part:: Vaimo
-			timpris::
+			timpris:: 1500
+			Antagande: samma pris som PIM Development, eftersom rollen saknas i prislistan.
 		Projektledare +estimatroll ^PM
 			part:: Vaimo
-			timpris::
+			timpris:: 1700
+			Project Management.
 		ITM8 +estimatroll ^ITM8
 			part:: ITM8
 			timpris::
