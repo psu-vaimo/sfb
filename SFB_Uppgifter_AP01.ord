@@ -588,14 +588,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				slut:: 2027-01-08
 				beror på:: U-PA-3-1-T1; U-PA-3-1-T2; U-PA-1-1-G; U-PA-2-1-G; U-PA-2-2-G; U-PA-2-3-G; U-PA-2-5-G
 				Granskare: SFB produktägare; Vaimo projektledare.
-		[ ] Ta fram 3.2 Förteckning över motsägelser mot förstudien +uppgift ^U-PA-3-2-T
+		[ ] Ta fram 3.2 Förteckning över skillnader mot förstudien +uppgift ^U-PA-3-2-T
 			produkt:: PA-3-2
 			ansvarig:: Vaimo affärskonsult
 			längd:: 1
 			start:: 2026-11-19
 			slut:: 2026-12-16
 			beror på:: U-PA-1-1-T
-		[ ] Granska och godkänn 3.2 Förteckning över motsägelser mot förstudien +uppgift ^U-PA-3-2-G
+		[ ] Granska och godkänn 3.2 Förteckning över skillnader mot förstudien +uppgift ^U-PA-3-2-G
 			produkt:: PA-3-2
 			ansvarig:: SFB produktägare
 			längd:: 1

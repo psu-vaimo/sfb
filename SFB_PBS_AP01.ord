@@ -17,7 +17,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 		Fast Excel-mall: 1.6.
 		Export- och medieinventering: 2.1 med 2.1.2 och 2.1.3, 2.2, 2.3 och 2.4, med slutexporten PF-4-9 i F1 som exportprov.
 		Reviderat estimat och plan: 3.3 och 3.4, med 3.1 som underlag.
-		Produkterna 1.1, 1.7, 1.8, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och motsägelser.
+		Produkterna 1.1, 1.7, 1.8, 2.5, 3.2 och 3.5 kommer från kravspecifikationens krav på återanvändning, icke-funktionella krav, drift och skillnader mot förstudien.
 	1 Verifierade specifikationer
 		1.1 Återanvändningsmatris för förstudien +produkt ^PA-1-1
 			paket:: AP01
@@ -531,7 +531,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Kvalitetskriterier
 				Varje fråga har ansvarig och senaste beslutsdatum.
 				Frågor som blockerar annan produkt i AP01 skickas till SFB så fort de upptäcks, inte först när dokumentet är klart.
-		3.2 Förteckning över motsägelser mot förstudien +produkt ^PA-3-2
+		3.2 Förteckning över skillnader mot förstudien +produkt ^PA-3-2
 			paket:: AP01
 			krav::
 			part:: PIM-partner
@@ -541,7 +541,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			godkännare:: SFB produktägare
 			beror på:: PA-1-1
 			Syfte
-				Kravspecifikationen kräver att motsägelser mot förstudien och deras påverkan anges i svaret.
+				Kravspecifikationen kräver att skillnader mot förstudien och deras påverkan anges i svaret.
 			Innehåll
 				Kravspecifikationen 1.3-V gäller där inget annat är beslutat.
 				Webbstatus
@@ -566,7 +566,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 					Förstudien lägger bildkonvertering och URL:er i ett eget paket med oklar ägare. Kravspecifikationen lägger dem i [[AP10]] hos ITM8.
 					Beslut: kravspecifikationen gäller.
 			Kvalitetskriterier
-				Varje motsägelse har påverkan och beslut eller ansvarig för beslut.
+				Varje skillnad har påverkan och beslut eller ansvarig för beslut.
 		3.3 Reviderat genomförandeestimat +produkt ^PA-3-3
 			paket:: AP01
 			krav::
@@ -633,7 +633,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			@ 2.2 Medieinventering^PA-2-2
 			@ 2.3 Volym- och lastinventering^PA-2-3
 			@ 2.5 Verifiering av drift och identitet^PA-2-5
-			@ 3.2 Förteckning över motsägelser mot förstudien^PA-3-2
+			@ 3.2 Förteckning över skillnader mot förstudien^PA-3-2
 		Steg 3 Regler och rapporter
 			@ 1.4 Identitetsregler och exempeldata^PA-1-4
 			@ 1.4.1 Rapport över artiklar utan entydig identitet^PA-1-4-1
@@ -667,7 +667,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 		[x] Snicken: beslutat 2026-11-16. Snicken godkänner 1.2.3, och SFB kontaktar Snicken.
 		[x] Nuvarande part: avtalat 2026-11-16, Ariser levererar i tid. Priset är kostnadsposten Export från nuvarande part. Fråga: kan Ariser leverera exportprovet 2.1.1 och historiken i tid, och till vilket pris?
 		[x] Exportprov: beslutat 2026-11-16. Exportprovet 2.1.1 är borttaget och ersatt av slutexporten PF-4-9 i F1. Fråga: räcker exporten från 2026-09-30 för allt utom historik och dokumentversioner, så att 2.1.1 kan hållas liten?
-		[x] Mediehantering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: motsägelsen om bildkonvertering och URL:er i 3.2 saknar beslut.
+		[x] Mediehantering: beslutat 2026-11-16, kravspecifikationen gäller. Fråga: skillnaden om bildkonvertering och URL:er i 3.2 saknar beslut.
 		[x] Fältmatrisens omfattning: beslutat 2026-11-16, detalj för urvalet och gemensam regel för resten. Fråga: ska 1.3 täcka alla cirka 2 400 egna egenskaper, eller bara de som följer med i urvalet? Det påverkar timmarna kraftigt.
 		[x] Estimatrader: löst. Varje rad i SFB_Estimat_rader.csv har nu produkt-ID i kolumnen produkt, och 1.3.3, 1.4.1, 1.5, 2.5, 3.1 och 3.2 har fått egna rader. 2.1.2, 2.1.3, 2.2 och 2.3 delar raden för export- och medieinventering.
 	Utanför AP01

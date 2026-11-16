@@ -40,7 +40,7 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Analys av identitet och möjliga dubbletter i urvalet,E-AP01,DEV,13,19,34,,,PIM-D01,,,PA-1-4-1,U-PA-1-4-1-T
 ,estimatrad,Kontrollrapport för produktgrupper,E-AP01,DEV,13,19,34,,,PIM-D02,"Kontrollen av grupptillhörigheter enligt B12 räknas här, inte i raden Identiteter och exempeldata.",,PA-1-5,U-PA-1-5-T
 ,estimatrad,Verifiering av drift och identitet,E-AP01,TA,9,13,23,,,PIM-O01; PIM-O03,,,PA-2-5,U-PA-2-5-T
-,estimatrad,Beslutsunderlag och förteckning över motsägelser,E-AP01,BC,18,26,47,,,,,,PA-3-1; PA-3-2,U-PA-3-1-T1; U-PA-3-1-T2; U-PA-3-2-T
+,estimatrad,Beslutsunderlag och förteckning över skillnader,E-AP01,BC,18,26,47,,,,,,PA-3-1; PA-3-2,U-PA-3-1-T1; U-PA-3-1-T2; U-PA-3-2-T
 ,estimatrad,Teknisk arkitektur och säkerhetslösning,E-AP01,TA,24,35,63,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,"Teknikstack, hosting, komponenter och säkerhetslösning. Utgår från specifikationen av icke-funktionella krav i AP01. Driftsättning av säkerhetslösningen ingår i AP13.",,PA-1-8,U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4
 ,estimatrad,"Teknisk arkitektur, SFB:s granskning och godkännande",E-AP01,SFB,2,3,5,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,Godkänns tidigt i F1.,,PA-1-8,U-PA-1-8-G
 ,estimatrad,Objekt och identiteter,E-AP02,DEV,18,26,47,,,PIM-D01,,,PF-2-1-1,U-PF-2-1-1-T1; U-PF-2-1-1-T2
