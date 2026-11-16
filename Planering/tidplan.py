@@ -1,12 +1,25 @@
 """Räknar start och slut för uppgifter i SFB_Uppgifter_*.ord.
 
 Kör från repots rot: python3 Planering/tidplan.py
-Läser längd (arbetsdagar), beror på och status för varje +uppgift och skriver
-start och slut på samma rader. Projektstart läses från fältet projektstart på
-första nivån i SFB_Uppgifter_AP01.ord. Klara uppgifter [x] flyttas inte, och
-pågående [-] behåller sin start. En uppgift börjar aldrig före sitt tidigast-datum. Skriptet skriver ut kritisk linje per milstolpe
-och uppgifter som slutar efter sitt senast-datum.
+
+Uppgifter som Vaimo utför planeras efter kapacitet. Timmarna per uppgift hämtas
+ur SFB_Estimat_rader.csv via kolumnen uppgift, med rollernas scenarioavdrag i
+SFB_Estimat.ord. Vaimos kapacitet i timmar per arbetsdag och lediga perioder
+står i fälten kapacitet och ledigt på första nivån i SFB_Uppgifter_AP01.ord.
+Projektledningens rader (E-AP15) ingår inte, eftersom kapaciteten anges netto
+efter projektledning.
+
+Varje arbetsdag får de Vaimo-uppgifter som är redo kapacitet i prioritetsordning:
+den uppgift som senast måste vara klar först, räknat bakåt från fälten senast. En Vaimo-uppgift tar minst
+en arbetsdag. Uppgifter med löpande:: ja, som stödperioden, tar sin längd i
+arbetsdagar och planeras inte efter kapacitet. Uppgifter utan Vaimo-timmar, till exempel granskning hos SFB eller
+ITM8:s arbete, tar sin längd i arbetsdagar.
+
+Klara uppgifter [x] flyttas inte. En uppgift börjar aldrig före sitt
+tidigast-datum. Skriptet skriver ut milstolparna, kritisk linje och uppgifter
+som slutar efter sitt senast-datum.
 """
+import csv
 import datetime as dt
 import glob
 import re
@@ -16,12 +29,15 @@ HELGDAGAR = {
     # Svenska helgdagar och dagar som i praktiken är lediga, 2026 till 2027.
     "2026-12-24", "2026-12-25", "2026-12-31",
     "2027-01-01", "2027-01-06", "2027-03-26", "2027-03-29",
-    "2027-05-06", "2027-06-25", "2027-12-24", "2027-12-31",
+    "2027-05-06", "2027-05-14", "2027-06-25", "2027-12-24", "2027-12-31",
 }
+LEDIGT = []
 
 
 def arbetsdag(d):
-    return d.weekday() < 5 and d.isoformat() not in HELGDAGAR
+    if d.weekday() >= 5 or d.isoformat() in HELGDAGAR:
+        return False
+    return not any(a <= d <= b for a, b in LEDIGT)
 
 
 def nasta_arbetsdag(d):
@@ -67,47 +83,147 @@ def las(filer):
     return uppg
 
 
+def las_roller():
+    """Scenarioavdrag per roll för Vaimos roller i SFB_Estimat.ord."""
+    text = open("SFB_Estimat.ord", encoding="utf-8").read()
+    roller = {}
+    for m in re.finditer(r"\+estimatroll \^(\S+)\n((?:\t{3}.*\n)*)", text):
+        falt = dict(re.findall(r"^\t{3}(\S+):: ?(.*)$", m.group(2), re.M))
+        if falt.get("part") == "Vaimo":
+            roller[m.group(1)] = float(falt.get("scenarioavdrag") or 0)
+    return roller
+
+
+def vaimo_timmar(uppg):
+    roller = las_roller()
+    timmar = {}
+    for r in csv.DictReader(open("SFB_Estimat_rader.csv", encoding="utf-8")):
+        if r["roll"] not in roller or r["_parent"] == "E-AP15":
+            continue
+        try:
+            o, m, p = float(r["optimistisk"]), float(r["trolig"]), float(r["pessimistisk"])
+        except ValueError:
+            continue
+        n = float(r["antal"]) if r["antal"] else 1
+        h = n * (o + 4 * m + p) / 6 * (1 - roller[r["roll"]])
+        ups = [x.strip() for x in r["uppgift"].split(";") if x.strip() in uppg]
+        for x in ups:
+            timmar[x] = timmar.get(x, 0) + h / len(ups)
+    return timmar
+
+
 def main():
     filer = sorted(glob.glob("SFB_Uppgifter_*.ord"))
     if not filer:
         sys.exit("Inga SFB_Uppgifter_*.ord i katalogen.")
-    m = re.search(r"^\tprojektstart:: (\S+)$", open("SFB_Uppgifter_AP01.ord", encoding="utf-8").read(), re.M)
-    projektstart = forsta_arbetsdag(dt.date.fromisoformat(m.group(1)))
-    uppg = las(filer)
-    beroenden = {k: [x.strip() for x in u["falt"].get("beror på", "").split(";") if x.strip()] for k, u in uppg.items()}
-    saknas = sorted({d for ds in beroenden.values() for d in ds if d not in uppg})
-    start, slut, faller = {}, {}, {}
+    huvud = open("SFB_Uppgifter_AP01.ord", encoding="utf-8").read()
+    projektstart = dt.date.fromisoformat(re.search(r"^\tprojektstart:: (\S+)$", huvud, re.M).group(1))
+    for a, b in re.findall(r"(\d{4}-\d\d-\d\d) till (\d{4}-\d\d-\d\d)",
+                           (re.search(r"^\tledigt:: (.*)$", huvud, re.M) or [None, ""])[1]):
+        LEDIGT.append((dt.date.fromisoformat(a), dt.date.fromisoformat(b)))
+    kapacitet = sorted((dt.date.fromisoformat(a), float(b)) for a, b in re.findall(
+        r"(\d{4}-\d\d-\d\d) (\d+(?:\.\d+)?)", (re.search(r"^\tkapacitet:: (.*)$", huvud, re.M) or [None, ""])[1]))
+    if not kapacitet:
+        sys.exit("Fältet kapacitet saknas i SFB_Uppgifter_AP01.ord.")
+    projektstart = forsta_arbetsdag(projektstart)
 
-    def berakna(k, stack=()):
-        if k in slut:
-            return
-        if k in stack:
-            sys.exit("Cykel: " + " > ".join(stack + (k,)))
-        u = uppg[k]
-        ds = [d for d in beroenden[k] if d in uppg]
+    uppg = las(filer)
+    ordning = {k: i for i, k in enumerate(uppg)}
+    beroenden = {k: [x.strip() for x in u["falt"].get("beror på", "").split(";") if x.strip() in uppg]
+                 for k, u in uppg.items()}
+    saknas = sorted({x.strip() for u in uppg.values() for x in u["falt"].get("beror på", "").split(";")
+                     if x.strip() and x.strip() not in uppg})
+    timmar = vaimo_timmar(uppg)
+    for k, u in uppg.items():
+        if u["falt"].get("löpande") == "ja":
+            timmar.pop(k, None)
+    langd = {k: int(float(u["falt"].get("längd", "1") or 1)) for k, u in uppg.items()}
+
+    # Prioritet: senaste tillåtna slut, räknat bakåt från fälten senast med
+    # uppgifternas längd. Vaimo-uppgifter räknas med timmar delat med kapacitet.
+    efter = {k: [] for k in uppg}
+    for k, ds in beroenden.items():
         for d in ds:
-            berakna(d, stack + (k,))
-        langd = int(float(u["falt"].get("längd", "1") or 1))
-        gammal_start = u["falt"].get("start")
-        if u["status"] == "x" and gammal_start and u["falt"].get("slut"):
-            start[k] = dt.date.fromisoformat(gammal_start)
-            slut[k] = dt.date.fromisoformat(u["falt"]["slut"])
-            return
-        if ds:
-            senaste = max(ds, key=lambda d: slut[d])
-            faller[k] = senaste
-            tidigast = slut[senaste] if langd == 0 else nasta_arbetsdag(slut[senaste])
-        else:
-            tidigast = projektstart
-        if u["falt"].get("tidigast"):
-            tidigast = max(tidigast, forsta_arbetsdag(dt.date.fromisoformat(u["falt"]["tidigast"])))
-        if u["status"] == "-" and gammal_start:
-            tidigast = dt.date.fromisoformat(gammal_start)
-        start[k] = tidigast
-        slut[k] = tidigast if langd == 0 else lagg_till(tidigast, langd)
+            efter[d].append(k)
+    dagar = [projektstart]
+    while len(dagar) < 400:
+        dagar.append(nasta_arbetsdag(dagar[-1]))
+    index = {d: i for i, d in enumerate(dagar)}
+    kap0 = kapacitet[0][1]
+    tid = {k: (0 if langd[k] == 0 else max(1, -(-timmar[k] // kap0)) if timmar.get(k, 0) > 0 else langd[k]) for k in uppg}
+    senast = {}
+
+    def sen(k):
+        if k not in senast:
+            v = 10 ** 6
+            if uppg[k]["falt"].get("senast"):
+                v = index.get(forsta_arbetsdag(dt.date.fromisoformat(uppg[k]["falt"]["senast"])), 10 ** 6)
+            for e in efter[k]:
+                v = min(v, sen(e) - tid[e])
+            senast[k] = v
+        return senast[k]
 
     for k in uppg:
-        berakna(k)
+        sen(k)
+
+    def kap(d):
+        v = 0
+        for a, h in kapacitet:
+            if a <= d:
+                v = h
+        return v
+
+    start, slut, faller, kvar = {}, {}, {}, {}
+    for k, u in uppg.items():
+        if u["status"] == "x" and u["falt"].get("start") and u["falt"].get("slut"):
+            start[k] = dt.date.fromisoformat(u["falt"]["start"])
+            slut[k] = dt.date.fromisoformat(u["falt"]["slut"])
+    tidigast = {k: forsta_arbetsdag(dt.date.fromisoformat(u["falt"]["tidigast"]))
+                for k, u in uppg.items() if u["falt"].get("tidigast")}
+
+    dag = projektstart
+    gräns = projektstart + dt.timedelta(days=800)
+    while len(slut) < len(uppg) and dag < gräns:
+        if not arbetsdag(dag):
+            dag += dt.timedelta(days=1)
+            continue
+        andrat = True
+        while andrat:
+            andrat = False
+            for k in uppg:
+                if k in slut or k in start or not all(d in slut for d in beroenden[k]):
+                    continue
+                senaste = max(beroenden[k], key=lambda d: slut[d]) if beroenden[k] else None
+                if senaste:
+                    faller[k] = senaste
+                if langd[k] == 0:
+                    start[k] = slut[k] = slut[senaste] if senaste else projektstart
+                    andrat = True
+                    continue
+                if senaste and slut[senaste] >= dag:
+                    continue
+                if k in tidigast and tidigast[k] > dag:
+                    continue
+                if timmar.get(k, 0) > 0:
+                    kvar[k] = timmar[k]
+                    start[k] = dag
+                else:
+                    start[k] = dag
+                    slut[k] = lagg_till(dag, langd[k])
+                    andrat = True
+        c = kap(dag)
+        for k in sorted(kvar, key=lambda x: (senast[x], ordning[x])):
+            if c <= 0:
+                break
+            del_ = min(kvar[k], c)
+            kvar[k] -= del_
+            c -= del_
+        for k in [x for x, v in kvar.items() if v <= 1e-9]:
+            slut[k] = dag
+            del kvar[k]
+        dag += dt.timedelta(days=1)
+    if len(slut) < len(uppg):
+        sys.exit("Kunde inte planera: " + ", ".join(k for k in uppg if k not in slut))
 
     andrade = {}
     for k, u in uppg.items():
@@ -123,6 +239,7 @@ def main():
 
     if saknas:
         print("Beroenden till uppgifter som inte finns än:", ", ".join(saknas))
+    print(f"Vaimos timmar i planen: {sum(timmar.values()):.0f}, exklusive projektledning.")
     for k, u in uppg.items():
         s = u["falt"].get("senast")
         if s and slut[k] > dt.date.fromisoformat(s):

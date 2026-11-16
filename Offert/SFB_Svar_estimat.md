@@ -26,28 +26,28 @@ Grupperna summeras inte med varandra. Timpriset är 1 700 SEK för alla roller o
 
 ## Drift före C4:s stängning
 
-Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 18 dec 2026. Hela F1 är i drift i början av maj 2027 och klar efter stödperioden i mitten av maj. ALT03 behövs därför inte, men kan estimeras på begäran.
+Ja, för delleveransen på de villkor som anges i upplägget. PIM tar emot källdata och levererar till MagicBox från 18 dec 2026. Hela F1 är i drift 12 apr 2027 och klar efter stödperioden 26 apr. ALT03 behövs därför inte, men kan estimeras på begäran.
 
 ## AP01
 
-Avgränsad leverans med eget pris, 17 nov 2026 till 28 jan 2027. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
+Avgränsad leverans med eget pris, 17 nov 2026 till 18 jan 2027. Verifieringen av åtkomst vid PIM-avbrott görs i februari. Det som delleveransen kräver görs före jul och resten i januari. Alla sex leverabler i avsnitt 7.1 ingår, plus ett lasttest av Medusa med 1,4 miljoner artiklar före beslut om genomförandet. Förstudien (discoveryrapport v0.5 med bilagor) återanvänds, och bara återstående arbete estimeras. Vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår står i Återanvändning av förstudien i AP01. Resultatet kan lämnas till en annan partner. ITM8:s medverkan räknas bara i AP01, och ITM8:s timmar lämnas av ITM8.
 
 ## F1 per arbetspaket, Vaimos del
 
 | Paket | Timmar | Låg till hög | Timpris | kSEK | Kalendertid |
 |---|---|---|---|---|---|
-| AP02 Datamodell och grundstruktur | 61 | 52 till 70 | 1 700 | 103 | Dec 2026 och feb 2027 |
-| AP03 Gränssnitt och berikning | 69 | 58 till 79 | 1 700 | 117 | Dec 2026 och feb 2027 |
-| AP04 Integrationsgränssnitt | 29 | 22 till 37 | 1 700 | 50 | Dec 2026 och feb 2027 |
-| AP05 Bilder, dokument, versioner | 31 | 25 till 37 | 1 700 | 53 | Feb 2027 |
-| AP06 Excelimport och export | 26 | 20 till 32 | 1 700 | 45 | Feb 2027 |
-| AP16 Tabellredigering | 26 | 20 till 33 | 1 700 | 45 | Feb 2027 |
-| AP11 Migrering | 87 | 71 till 104 | 1 700 | 149 | Mars 2027, slutkörning i maj |
-| AP22 Äldre dokumentversioner och historikexport | 22 | 16 till 28 | 1 700 | 37 | Mars 2027 |
-| AP12 Gemensamt test och acceptans | 100 | 81 till 119 | 1 700 | 171 | Dec 2026 och april 2027 |
-| AP13 Miljöer, drift, återställning | 43 | 35 till 51 | 1 700 | 73 | Dec 2026 och mars 2027 |
-| AP14 Driftsättning, utbildning, överlämning | 95 | 77 till 112 | 1 700 | 161 | April till maj 2027 |
-| AP15 Projektledning | 147 | 98 till 195 | 1 700 | 249 | Nov 2026 till maj 2027 |
+| AP02 Datamodell och grundstruktur | 61 | 52 till 70 | 1 700 | 103 | Dec 2026 |
+| AP03 Gränssnitt och berikning | 69 | 58 till 79 | 1 700 | 117 | Nov 2026 till mars 2027 |
+| AP04 Integrationsgränssnitt | 29 | 22 till 37 | 1 700 | 50 | Dec 2026 till feb 2027 |
+| AP05 Bilder, dokument, versioner | 31 | 25 till 37 | 1 700 | 53 | Jan till mars 2027 |
+| AP06 Excelimport och export | 26 | 20 till 32 | 1 700 | 45 | Dec 2026 till feb 2027 |
+| AP16 Tabellredigering | 26 | 20 till 33 | 1 700 | 45 | Jan till feb 2027 |
+| AP11 Migrering | 87 | 71 till 104 | 1 700 | 149 | Jan till april 2027, slutkörning i april |
+| AP22 Äldre dokumentversioner och historikexport | 22 | 16 till 28 | 1 700 | 37 | Jan till mars 2027 |
+| AP12 Gemensamt test och acceptans | 100 | 81 till 119 | 1 700 | 171 | Dec 2026 och mars 2027 |
+| AP13 Miljöer, drift, återställning | 43 | 35 till 51 | 1 700 | 73 | Dec 2026 till mars 2027 |
+| AP14 Driftsättning, utbildning, överlämning | 95 | 77 till 112 | 1 700 | 161 | Dec 2026 till april 2027 |
+| AP15 Projektledning | 147 | 98 till 195 | 1 700 | 249 | Nov 2026 till april 2027 |
 
 AP10 innehåller 2 timmar samordning från Vaimo. Varje paket är sin egen kostnadsplats. Egen komponenttestning ligger i respektive paket, och sammanhängande test, acceptansstöd och omtest i AP12. Gemensamma regler räknas bara i AP03, och AP06 och AP16 använder dem. Samma fil eller körning räknas inte i både AP11 och AP22. Antaganden och avvikelser per paket står i kravkatalogen.
 

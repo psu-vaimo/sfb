@@ -5,27 +5,27 @@ Uppgifter V2 och tillval ^UPG-V2T
 	Uppgifterna som tar fram, granskar och godkänner produkterna i [[PBS V2 och tillval]]. V2 och tillvalen börjar när F1 är i drift, se SFB_Uppgifter_F1.ord.
 	Ingen uppgift är längre än fem arbetsdagar. Produkter som tar mer än tre dagar är uppdelade efter innehållet i produktbeskrivningen. Granskning och godkännande är en egen uppgift per produkt.
 	Tidplanen visar den tidigaste möjliga starten. Tillvalen börjar först när de beställs. Då sätts fältet tidigast på deras första uppgifter.
-	Längderna är preliminära bedömningar i arbetsdagar och kopplade till estimatraderna via kolumnen uppgift i SFB_Estimat_rader.csv. Raderna har inga timmar än, så längderna är inte avstämda mot dem. ITM8:s längder är antaganden tills ITM8 lämnat egna. Ansvarig är en roll tills personerna är utsedda.
-	Start och slut räknas av Planering/tidplan.py. Ändra längd, beror på, tidigast eller status och kör skriptet igen.
+	Vaimos uppgifter planeras efter timmarna på estimatraderna, kopplade via kolumnen uppgift i SFB_Estimat_rader.csv, och Vaimos kapacitet i SFB_Uppgifter_AP01.ord. Längden gäller uppgifter utan Vaimo-timmar, till exempel granskning hos SFB och ITM8:s arbete. ITM8:s längder är antaganden tills ITM8 lämnat egna.
+	Start och slut räknas av Planering/tidplan.py. Ändra längd, beror på, tidigast, senast, status eller kapacitet och kör skriptet igen.
 	Milstolpar
 		[ ] V2 och tillval kan börja +uppgift ^U-V2-START
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-02-22
-			slut:: 2027-02-22
+			start:: 2027-04-12
+			slut:: 2027-04-12
 			beror på:: U-PF-7-2-G
 			F1 är i drift. V2 och tillvalen beställs separat.
 		[ ] V2 klar +uppgift ^U-V2-KLAR
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-03-19
-			slut:: 2027-03-19
+			start:: 2027-05-26
+			slut:: 2027-05-26
 			beror på:: U-PV-1-1-4-G; U-PV-1-2-5-G; U-PV-1-3-7-G; U-PV-1-4-4-G
 		[ ] Tillvalen klara +uppgift ^U-TILLVAL-KLAR
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-03-12
-			slut:: 2027-03-12
+			start:: 2027-05-27
+			slut:: 2027-05-27
 			beror på:: U-PV-2-1-3-G; U-PV-2-2-3-G; U-PV-2-3-2-G
 			Gäller bara de tillval som beställs.
 	1 V2
@@ -33,30 +33,30 @@ Uppgifter V2 och tillval ^UPG-V2T
 			produkt:: PV-1-1-1
 			ansvarig:: Vaimo affärskonsult
 			längd:: 3
-			start:: 2027-02-23
-			slut:: 2027-02-25
+			start:: 2027-04-13
+			slut:: 2027-04-20
 			beror på:: U-V2-START
 		[ ] Granska och godkänn 1.1.1 Fältanalys för relevans per delägare +uppgift ^U-PV-1-1-1-G
 			produkt:: PV-1-1-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-26
-			slut:: 2027-03-01
+			start:: 2027-04-21
+			slut:: 2027-04-22
 			beror på:: U-PV-1-1-1-T
 			Granskare: SFB e-handel; ITM8.
 		[ ] Bygg 1.1.2 Återföring av ERP-uppgifter från MagicBox +uppgift ^U-PV-1-1-2-T
 			produkt:: PV-1-1-2
 			ansvarig:: ITM8
 			längd:: 5
-			start:: 2027-02-26
-			slut:: 2027-03-04
+			start:: 2027-04-21
+			slut:: 2027-04-27
 			beror på:: U-PV-1-1-1-T
 		[ ] Testa och godkänn 1.1.2 Återföring av ERP-uppgifter från MagicBox +uppgift ^U-PV-1-1-2-G
 			produkt:: PV-1-1-2
 			ansvarig:: SFB e-handel
 			längd:: 3
-			start:: 2027-03-05
-			slut:: 2027-03-09
+			start:: 2027-04-28
+			slut:: 2027-04-30
 			beror på:: U-PV-1-1-2-T; U-PV-1-1-1-G
 			Granskare: Vaimo teknisk arkitekt.
 		1.1.3 Prioriteringsfilter i PIM
@@ -64,37 +64,37 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-1-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-26
-				slut:: 2027-03-01
+				start:: 2027-04-21
+				slut:: 2027-04-28
 				beror på:: U-PV-1-1-1-T; U-PF-2-2-1-T2; U-PF-2-6-1-T2
 			[ ] Bygg filtren i sökningen +uppgift ^U-PV-1-1-3-T2
 				produkt:: PV-1-1-3
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-03-02
-				slut:: 2027-03-03
+				start:: 2027-04-29
+				slut:: 2027-04-30
 				beror på:: U-PV-1-1-3-T1
 			[ ] Demonstrera och godkänn 1.1.3 Prioriteringsfilter i PIM +uppgift ^U-PV-1-1-3-G
 				produkt:: PV-1-1-3
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-03-04
-				slut:: 2027-03-04
+				start:: 2027-05-03
+				slut:: 2027-05-03
 				beror på:: U-PV-1-1-3-T1; U-PV-1-1-3-T2; U-PV-1-1-1-G; U-PF-2-2-1-G; U-PF-2-6-1-G
 				Granskare: SFB PIM-team.
 		[ ] Genomför 1.1.4 Testprotokoll och överlämning för AP17 +uppgift ^U-PV-1-1-4-T
 			produkt:: PV-1-1-4
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-05
-			slut:: 2027-03-09
+			start:: 2027-05-03
+			slut:: 2027-05-20
 			beror på:: U-PV-1-1-2-T; U-PV-1-1-3-T2
 		[ ] Testa och godkänn 1.1.4 Testprotokoll och överlämning för AP17 +uppgift ^U-PV-1-1-4-G
 			produkt:: PV-1-1-4
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-10
-			slut:: 2027-03-12
+			start:: 2027-05-21
+			slut:: 2027-05-25
 			beror på:: U-PV-1-1-4-T; U-PV-1-1-2-G; U-PV-1-1-3-G
 			Granskare: SFB PIM-team; ITM8.
 		1.2.1 Grupperingsregler med testmaterial
@@ -102,22 +102,22 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-2-1
 				ansvarig:: Vaimo affärskonsult
 				längd:: 2
-				start:: 2027-02-23
-				slut:: 2027-02-24
+				start:: 2027-04-13
+				slut:: 2027-04-21
 				beror på:: U-PF-2-1-5-T2; U-V2-START
 			[ ] Ta fram testmaterial med säkra och osäkra fall +uppgift ^U-PV-1-2-1-T2
 				produkt:: PV-1-2-1
 				ansvarig:: Vaimo affärskonsult
 				längd:: 2
-				start:: 2027-02-23
-				slut:: 2027-02-24
+				start:: 2027-04-13
+				slut:: 2027-04-22
 				beror på:: U-PF-2-1-5-T2; U-V2-START
 			[ ] Granska och godkänn 1.2.1 Grupperingsregler med testmaterial +uppgift ^U-PV-1-2-1-G
 				produkt:: PV-1-2-1
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2027-02-25
-				slut:: 2027-02-26
+				start:: 2027-04-23
+				slut:: 2027-04-26
 				beror på:: U-PV-1-2-1-T1; U-PV-1-2-1-T2; U-PF-2-1-5-G
 				Granskare: SFB PIM-team.
 		1.2.2 Automatisk gruppering för säkra träffar
@@ -125,82 +125,82 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 5
-				start:: 2027-02-25
-				slut:: 2027-03-03
+				start:: 2027-04-23
+				slut:: 2027-04-26
 				beror på:: U-PV-1-2-1-T1; U-PV-1-2-1-T2
 			[ ] Kör mot testmaterialet och justera +uppgift ^U-PV-1-2-2-T2
 				produkt:: PV-1-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-03-04
-				slut:: 2027-03-08
+				start:: 2027-04-27
+				slut:: 2027-04-29
 				beror på:: U-PV-1-2-2-T1
 			[ ] Testa och godkänn 1.2.2 Automatisk gruppering för säkra träffar +uppgift ^U-PV-1-2-2-G
 				produkt:: PV-1-2-2
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-03-09
-				slut:: 2027-03-11
+				start:: 2027-04-30
+				slut:: 2027-05-04
 				beror på:: U-PV-1-2-2-T1; U-PV-1-2-2-T2; U-PV-1-2-1-G
 				Granskare: SFB PIM-team.
 		[ ] Bygg 1.2.3 Förslagskö för osäkra fall +uppgift ^U-PV-1-2-3-T
 			produkt:: PV-1-2-3
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-02-25
-			slut:: 2027-03-01
+			start:: 2027-04-23
+			slut:: 2027-05-17
 			beror på:: U-PV-1-2-1-T1; U-PV-1-2-1-T2
 		[ ] Demonstrera och godkänn 1.2.3 Förslagskö för osäkra fall +uppgift ^U-PV-1-2-3-G
 			produkt:: PV-1-2-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-02
-			slut:: 2027-03-02
+			start:: 2027-05-18
+			slut:: 2027-05-18
 			beror på:: U-PV-1-2-3-T; U-PV-1-2-1-G
 			Granskare: SFB PIM-team.
 		[ ] Bygg 1.2.4 Skydd för manuella grupper och notiser om nya medlemmar +uppgift ^U-PV-1-2-4-T
 			produkt:: PV-1-2-4
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-09
-			slut:: 2027-03-11
+			start:: 2027-04-30
+			slut:: 2027-05-10
 			beror på:: U-PV-1-2-2-T2; U-PF-2-2-4-T
 		[ ] Testa och godkänn 1.2.4 Skydd för manuella grupper och notiser om nya medlemmar +uppgift ^U-PV-1-2-4-G
 			produkt:: PV-1-2-4
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-12
-			slut:: 2027-03-16
+			start:: 2027-05-11
+			slut:: 2027-05-13
 			beror på:: U-PV-1-2-4-T; U-PV-1-2-2-G; U-PF-2-2-4-G
 			Granskare: SFB PIM-team.
 		[ ] Genomför 1.2.5 Testprotokoll och överlämning för AP18 +uppgift ^U-PV-1-2-5-T
 			produkt:: PV-1-2-5
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-12
-			slut:: 2027-03-16
+			start:: 2027-05-18
+			slut:: 2027-05-20
 			beror på:: U-PV-1-2-2-T2; U-PV-1-2-3-T; U-PV-1-2-4-T
 		[ ] Testa och godkänn 1.2.5 Testprotokoll och överlämning för AP18 +uppgift ^U-PV-1-2-5-G
 			produkt:: PV-1-2-5
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-17
-			slut:: 2027-03-19
+			start:: 2027-05-21
+			slut:: 2027-05-25
 			beror på:: U-PV-1-2-5-T; U-PV-1-2-2-G; U-PV-1-2-3-G; U-PV-1-2-4-G
 			Granskare: SFB PIM-team.
 		[ ] Ta fram 1.3.1 Regler för arkivering och återaktivering +uppgift ^U-PV-1-3-1-T
 			produkt:: PV-1-3-1
 			ansvarig:: Vaimo affärskonsult
 			längd:: 3
-			start:: 2027-02-23
-			slut:: 2027-02-25
+			start:: 2027-04-13
+			slut:: 2027-04-28
 			beror på:: U-V2-START
 		[ ] Granska och godkänn 1.3.1 Regler för arkivering och återaktivering +uppgift ^U-PV-1-3-1-G
 			produkt:: PV-1-3-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-26
-			slut:: 2027-03-01
+			start:: 2027-04-29
+			slut:: 2027-04-30
 			beror på:: U-PV-1-3-1-T
 			Granskare: SFB PIM-team; SFB e-handel.
 		1.3.2 Manuell arkivering
@@ -208,52 +208,52 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-3-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-26
-				slut:: 2027-03-02
+				start:: 2027-04-29
+				slut:: 2027-05-03
 				beror på:: U-PV-1-3-1-T; U-PF-2-2-2-T2; U-PF-2-2-2-T3; U-PF-2-5-T
 			[ ] Bygg arkivering av bilder och dokument +uppgift ^U-PV-1-3-2-T2
 				produkt:: PV-1-3-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-26
-				slut:: 2027-03-01
+				start:: 2027-04-29
+				slut:: 2027-05-04
 				beror på:: U-PV-1-3-1-T; U-PF-2-2-2-T2; U-PF-2-2-2-T3; U-PF-2-5-T
 			[ ] Demonstrera och godkänn 1.3.2 Manuell arkivering +uppgift ^U-PV-1-3-2-G
 				produkt:: PV-1-3-2
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-03-03
-				slut:: 2027-03-03
+				start:: 2027-05-05
+				slut:: 2027-05-05
 				beror på:: U-PV-1-3-2-T1; U-PV-1-3-2-T2; U-PV-1-3-1-G; U-PF-2-2-2-G; U-PF-2-5-G
 				Granskare: SFB PIM-team.
 		[ ] Bygg 1.3.3 Arkivsökning +uppgift ^U-PV-1-3-3-T
 			produkt:: PV-1-3-3
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2027-03-03
-			slut:: 2027-03-04
+			start:: 2027-05-05
+			slut:: 2027-05-13
 			beror på:: U-PV-1-3-2-T1; U-PV-1-3-2-T2; U-PF-2-2-1-T2
 		[ ] Demonstrera och godkänn 1.3.3 Arkivsökning +uppgift ^U-PV-1-3-3-G
 			produkt:: PV-1-3-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-05
-			slut:: 2027-03-05
+			start:: 2027-05-17
+			slut:: 2027-05-17
 			beror på:: U-PV-1-3-3-T; U-PV-1-3-2-G; U-PF-2-2-1-G
 			Granskare: SFB PIM-team.
 		[ ] Bygg 1.3.4 Återaktivering +uppgift ^U-PV-1-3-4-T
 			produkt:: PV-1-3-4
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-05
-			slut:: 2027-03-09
+			start:: 2027-05-17
+			slut:: 2027-05-18
 			beror på:: U-PV-1-3-3-T
 		[ ] Demonstrera och godkänn 1.3.4 Återaktivering +uppgift ^U-PV-1-3-4-G
 			produkt:: PV-1-3-4
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-10
-			slut:: 2027-03-10
+			start:: 2027-05-19
+			slut:: 2027-05-19
 			beror på:: U-PV-1-3-4-T; U-PV-1-3-3-G
 			Granskare: SFB PIM-team.
 		1.3.5 Distributionsbesked för arkivstatus
@@ -261,22 +261,22 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-3-5
 				ansvarig:: Vaimo teknisk arkitekt; ITM8
 				längd:: 1
-				start:: 2027-02-26
-				slut:: 2027-02-26
+				start:: 2027-04-29
+				slut:: 2027-04-29
 				beror på:: U-PV-1-3-1-T
 			[ ] Anpassa MagicBox och Snicken-adaptern +uppgift ^U-PV-1-3-5-T2
 				produkt:: PV-1-3-5
 				ansvarig:: ITM8
 				längd:: 3
-				start:: 2027-03-01
-				slut:: 2027-03-03
+				start:: 2027-04-30
+				slut:: 2027-05-04
 				beror på:: U-PV-1-3-5-T1
 			[ ] Testa och godkänn 1.3.5 Distributionsbesked för arkivstatus +uppgift ^U-PV-1-3-5-G
 				produkt:: PV-1-3-5
 				ansvarig:: SFB e-handel
 				längd:: 3
-				start:: 2027-03-04
-				slut:: 2027-03-08
+				start:: 2027-05-05
+				slut:: 2027-05-10
 				beror på:: U-PV-1-3-5-T1; U-PV-1-3-5-T2; U-PV-1-3-1-G
 				Granskare: Vaimo teknisk arkitekt; Snicken.
 		1.3.6 Automatisk arkivering
@@ -284,52 +284,52 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-3-6
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-03-04
-				slut:: 2027-03-08
+				start:: 2027-05-05
+				slut:: 2027-05-05
 				beror på:: U-PV-1-3-1-T; U-PV-1-3-2-T1; U-PV-1-3-2-T2; U-PV-1-1-3-T2
 			[ ] Skydda arkiverade artiklar mot återaktivering från källan +uppgift ^U-PV-1-3-6-T2
 				produkt:: PV-1-3-6
 				ansvarig:: Vaimo utvecklare
 				längd:: 1
-				start:: 2027-03-09
-				slut:: 2027-03-09
+				start:: 2027-05-07
+				slut:: 2027-05-10
 				beror på:: U-PV-1-3-6-T1
 			[ ] Testa och godkänn 1.3.6 Automatisk arkivering +uppgift ^U-PV-1-3-6-G
 				produkt:: PV-1-3-6
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-03-10
-				slut:: 2027-03-12
+				start:: 2027-05-11
+				slut:: 2027-05-13
 				beror på:: U-PV-1-3-6-T1; U-PV-1-3-6-T2; U-PV-1-3-1-G; U-PV-1-3-2-G; U-PV-1-1-3-G
 				Granskare: SFB PIM-team.
 		[ ] Genomför 1.3.7 Testprotokoll och överlämning för AP19 +uppgift ^U-PV-1-3-7-T
 			produkt:: PV-1-3-7
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-10
-			slut:: 2027-03-12
+			start:: 2027-05-19
+			slut:: 2027-05-21
 			beror på:: U-PV-1-3-3-T; U-PV-1-3-4-T; U-PV-1-3-5-T2; U-PV-1-3-6-T2
 		[ ] Testa och godkänn 1.3.7 Testprotokoll och överlämning för AP19 +uppgift ^U-PV-1-3-7-G
 			produkt:: PV-1-3-7
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-15
-			slut:: 2027-03-17
+			start:: 2027-05-24
+			slut:: 2027-05-26
 			beror på:: U-PV-1-3-7-T; U-PV-1-3-3-G; U-PV-1-3-4-G; U-PV-1-3-5-G; U-PV-1-3-6-G
 			Granskare: SFB PIM-team; ITM8.
 		[ ] Besluta om 1.4.1 Regel för klar per kanal +uppgift ^U-PV-1-4-1-T
 			produkt:: PV-1-4-1
 			ansvarig:: SFB produktägare; Vaimo affärskonsult
 			längd:: 3
-			start:: 2027-02-23
-			slut:: 2027-02-25
+			start:: 2027-04-13
+			slut:: 2027-04-23
 			beror på:: U-V2-START
 		[ ] Granska och godkänn 1.4.1 Regel för klar per kanal +uppgift ^U-PV-1-4-1-G
 			produkt:: PV-1-4-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-26
-			slut:: 2027-03-01
+			start:: 2027-04-26
+			slut:: 2027-04-27
 			beror på:: U-PV-1-4-1-T
 			Granskare: SFB e-handel; Vaimo affärskonsult.
 		1.4.2 Automatisk beräkning av webbstatus
@@ -337,37 +337,37 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-4-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 4
-				start:: 2027-02-26
-				slut:: 2027-03-03
+				start:: 2027-04-26
+				slut:: 2027-05-04
 				beror på:: U-PV-1-4-1-T; U-PF-2-2-2-T2; U-PF-2-2-2-T3; U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3
 			[ ] Räkna om vid ändringar på artikeln +uppgift ^U-PV-1-4-2-T2
 				produkt:: PV-1-4-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-03-04
-				slut:: 2027-03-05
+				start:: 2027-05-05
+				slut:: 2027-05-07
 				beror på:: U-PV-1-4-2-T1
 			[ ] Testa och godkänn 1.4.2 Automatisk beräkning av webbstatus +uppgift ^U-PV-1-4-2-G
 				produkt:: PV-1-4-2
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-03-08
-				slut:: 2027-03-10
+				start:: 2027-05-10
+				slut:: 2027-05-12
 				beror på:: U-PV-1-4-2-T1; U-PV-1-4-2-T2; U-PV-1-4-1-G; U-PF-2-2-2-G; U-PF-2-2-3-G
 				Granskare: SFB PIM-team.
 		[ ] Bygg 1.4.3 Manuell överstyrning av webbstatus +uppgift ^U-PV-1-4-3-T
 			produkt:: PV-1-4-3
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-08
-			slut:: 2027-03-10
+			start:: 2027-05-10
+			slut:: 2027-05-18
 			beror på:: U-PV-1-4-2-T2
 		[ ] Demonstrera och godkänn 1.4.3 Manuell överstyrning av webbstatus +uppgift ^U-PV-1-4-3-G
 			produkt:: PV-1-4-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-11
-			slut:: 2027-03-11
+			start:: 2027-05-19
+			slut:: 2027-05-19
 			beror på:: U-PV-1-4-3-T; U-PV-1-4-2-G
 			Granskare: SFB PIM-team.
 		1.4.5 Utökat kontrakt och MagicBox-anpassning för tre webbstatusar
@@ -375,37 +375,37 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-1-4-5
 				ansvarig:: Vaimo teknisk arkitekt; ITM8
 				längd:: 1
-				start:: 2027-02-26
-				slut:: 2027-02-26
+				start:: 2027-04-26
+				slut:: 2027-04-26
 				beror på:: U-PV-1-4-1-T
 			[ ] Anpassa MagicBox för tre kanaler +uppgift ^U-PV-1-4-5-T2
 				produkt:: PV-1-4-5
 				ansvarig:: ITM8
 				längd:: 4
-				start:: 2027-03-01
-				slut:: 2027-03-04
+				start:: 2027-04-27
+				slut:: 2027-04-30
 				beror på:: U-PV-1-4-5-T1
 			[ ] Testa och godkänn 1.4.5 Utökat kontrakt och MagicBox-anpassning för tre webbstatusar +uppgift ^U-PV-1-4-5-G
 				produkt:: PV-1-4-5
 				ansvarig:: SFB e-handel
 				längd:: 3
-				start:: 2027-03-05
-				slut:: 2027-03-09
+				start:: 2027-05-03
+				slut:: 2027-05-05
 				beror på:: U-PV-1-4-5-T1; U-PV-1-4-5-T2; U-PV-1-4-1-G
 				Granskare: Vaimo teknisk arkitekt.
 		[ ] Genomför 1.4.4 Testprotokoll och överlämning för automatisk webbstatus +uppgift ^U-PV-1-4-4-T
 			produkt:: PV-1-4-4
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-11
-			slut:: 2027-03-15
+			start:: 2027-05-19
+			slut:: 2027-05-21
 			beror på:: U-PV-1-4-2-T2; U-PV-1-4-3-T; U-PV-1-4-5-T2
 		[ ] Testa och godkänn 1.4.4 Testprotokoll och överlämning för automatisk webbstatus +uppgift ^U-PV-1-4-4-G
 			produkt:: PV-1-4-4
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-16
-			slut:: 2027-03-18
+			start:: 2027-05-24
+			slut:: 2027-05-26
 			beror på:: U-PV-1-4-4-T; U-PV-1-4-2-G; U-PV-1-4-3-G; U-PV-1-4-5-G
 			Granskare: SFB PIM-team; SFB e-handel.
 	2 Tillval
@@ -413,60 +413,60 @@ Uppgifter V2 och tillval ^UPG-V2T
 			produkt:: PV-2-1-1
 			ansvarig:: ITM8; Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-02-23
-			slut:: 2027-02-25
+			start:: 2027-04-13
+			slut:: 2027-04-30
 			beror på:: U-PF-3-4-2-T; U-V2-START
 		[ ] Granska och godkänn 2.1.1 Godkänd domänlista och länkmappning +uppgift ^U-PV-2-1-1-G
 			produkt:: PV-2-1-1
 			ansvarig:: SFB e-handel
 			längd:: 2
-			start:: 2027-02-26
-			slut:: 2027-03-01
+			start:: 2027-05-03
+			slut:: 2027-05-04
 			beror på:: U-PV-2-1-1-T; U-PF-3-4-2-G
 			Granskare: Vaimo teknisk arkitekt; SFB e-handel.
 		[ ] Sätt upp 2.1.2 Driftsatt domän- och länkupplägg +uppgift ^U-PV-2-1-2-T
 			produkt:: PV-2-1-2
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2027-02-26
-			slut:: 2027-03-02
+			start:: 2027-05-03
+			slut:: 2027-05-05
 			beror på:: U-PV-2-1-1-T
 		[ ] Testa och godkänn 2.1.2 Driftsatt domän- och länkupplägg +uppgift ^U-PV-2-1-2-G
 			produkt:: PV-2-1-2
 			ansvarig:: SFB e-handel
 			längd:: 3
-			start:: 2027-03-03
-			slut:: 2027-03-05
+			start:: 2027-05-07
+			slut:: 2027-05-11
 			beror på:: U-PV-2-1-2-T; U-PV-2-1-1-G
 			Granskare: Vaimo teknisk arkitekt; SFB e-handel.
 		[ ] Genomför 2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +uppgift ^U-PV-2-1-3-T
 			produkt:: PV-2-1-3
 			ansvarig:: ITM8
 			längd:: 2
-			start:: 2027-03-03
-			slut:: 2027-03-04
+			start:: 2027-05-07
+			slut:: 2027-05-10
 			beror på:: U-PV-2-1-2-T
 		[ ] Testa och godkänn 2.1.3 Testprotokoll och driftkostnadsunderlag för AP20 +uppgift ^U-PV-2-1-3-G
 			produkt:: PV-2-1-3
 			ansvarig:: SFB e-handel
 			längd:: 3
-			start:: 2027-03-08
-			slut:: 2027-03-10
+			start:: 2027-05-12
+			slut:: 2027-05-17
 			beror på:: U-PV-2-1-3-T; U-PV-2-1-2-G
 			Granskare: Vaimo teknisk arkitekt; SFB e-handel.
 		[ ] Ta fram 2.2.1 Avtalad formatlista +uppgift ^U-PV-2-2-1-T
 			produkt:: PV-2-2-1
 			ansvarig:: Vaimo affärskonsult
 			längd:: 2
-			start:: 2027-02-23
-			slut:: 2027-02-24
+			start:: 2027-04-13
+			slut:: 2027-05-11
 			beror på:: U-V2-START
 		[ ] Granska och godkänn 2.2.1 Avtalad formatlista +uppgift ^U-PV-2-2-1-G
 			produkt:: PV-2-2-1
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-25
-			slut:: 2027-02-26
+			start:: 2027-05-12
+			slut:: 2027-05-13
 			beror på:: U-PV-2-2-1-T
 			Granskare: SFB PIM-team.
 		2.2.2 Förhandsvisning för valda format
@@ -474,37 +474,37 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-2-2-2
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2027-02-25
-				slut:: 2027-02-25
+				start:: 2027-05-12
+				slut:: 2027-05-13
 				beror på:: U-PV-2-2-1-T; U-PF-2-5-1-T2
 			[ ] Bygg förhandsvisning för formaten i listan +uppgift ^U-PV-2-2-2-T2
 				produkt:: PV-2-2-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 5
-				start:: 2027-02-26
-				slut:: 2027-03-04
+				start:: 2027-05-17
+				slut:: 2027-05-19
 				beror på:: U-PV-2-2-2-T1
 			[ ] Demonstrera och godkänn 2.2.2 Förhandsvisning för valda format +uppgift ^U-PV-2-2-2-G
 				produkt:: PV-2-2-2
 				ansvarig:: SFB produktägare
 				längd:: 1
-				start:: 2027-03-05
-				slut:: 2027-03-05
+				start:: 2027-05-20
+				slut:: 2027-05-20
 				beror på:: U-PV-2-2-2-T1; U-PV-2-2-2-T2; U-PV-2-2-1-G; U-PF-2-5-1-G
 				Granskare: SFB PIM-team.
 		[ ] Genomför 2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21 +uppgift ^U-PV-2-2-3-T
 			produkt:: PV-2-2-3
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 3
-			start:: 2027-03-05
-			slut:: 2027-03-09
+			start:: 2027-05-20
+			slut:: 2027-05-21
 			beror på:: U-PV-2-2-2-T2
 		[ ] Testa och godkänn 2.2.3 Testfiler, testprotokoll och kostnadsunderlag för AP21 +uppgift ^U-PV-2-2-3-G
 			produkt:: PV-2-2-3
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-10
-			slut:: 2027-03-12
+			start:: 2027-05-24
+			slut:: 2027-05-26
 			beror på:: U-PV-2-2-3-T; U-PV-2-2-2-G
 			Granskare: SFB PIM-team.
 		2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet
@@ -512,37 +512,37 @@ Uppgifter V2 och tillval ^UPG-V2T
 				produkt:: PV-2-3-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-23
-				slut:: 2027-02-25
+				start:: 2027-04-13
+				slut:: 2027-05-07
 				beror på:: U-PF-2-5-3-T2; U-V2-START
 			[ ] Bygg åtkomsten för mottagare +uppgift ^U-PV-2-3-1-T2
 				produkt:: PV-2-3-1
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2027-02-26
-				slut:: 2027-03-01
+				start:: 2027-05-10
+				slut:: 2027-05-12
 				beror på:: U-PV-2-3-1-T1
 			[ ] Testa och godkänn 2.3.1 Automatiserad mottagartjänst för hela tioårsarkivet +uppgift ^U-PV-2-3-1-G
 				produkt:: PV-2-3-1
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-03-02
-				slut:: 2027-03-04
+				start:: 2027-05-13
+				slut:: 2027-05-18
 				beror på:: U-PV-2-3-1-T1; U-PV-2-3-1-T2; U-PF-2-5-3-G
 				Granskare: SFB e-handel.
 		[ ] Genomför 2.3.2 Testprotokoll för mottagartjänsten +uppgift ^U-PV-2-3-2-T
 			produkt:: PV-2-3-2
 			ansvarig:: Vaimo testledare; Vaimo utvecklare
 			längd:: 2
-			start:: 2027-03-02
-			slut:: 2027-03-03
+			start:: 2027-05-13
+			slut:: 2027-05-24
 			beror på:: U-PV-2-3-1-T2
 		[ ] Testa och godkänn 2.3.2 Testprotokoll för mottagartjänsten +uppgift ^U-PV-2-3-2-G
 			produkt:: PV-2-3-2
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-03-05
-			slut:: 2027-03-09
+			start:: 2027-05-25
+			slut:: 2027-05-27
 			beror på:: U-PV-2-3-2-T; U-PV-2-3-1-G
 			Granskare: SFB e-handel.
 	Tidplan

@@ -8,16 +8,16 @@ C4 ersätts i flödet Finfo, C4, MagicBox, Optimizely med en PIM-applikation byg
 
 ## Bemanning
 
-Vaimo bemannar med Pontus Sundén med stöd av utvecklare, projektledare, teknisk arkitekt. Arbetet görs med AI-stöd. Till 18 dec är beläggningen cirka 45 timmar per vecka för Pontus och cirka 15 timmar per vecka för stödrollerna. 21 dec till 6 jan är ledigt, utom tillsyn av delleveransen 28 till 30 dec. Från 7 jan är beläggningen heltid. SFB:s medverkan är cirka 20 timmar per vecka under hela genomförandet, fördelat på produktägare, sponsor och de två administratörerna. Den ökar under migreringsurval, datastädning och acceptanstest.
+Vaimo bemannar med Pontus Sundén med stöd av utvecklare, projektledare, teknisk arkitekt. Arbetet görs med AI-stöd. Till 18 dec är beläggningen cirka 70 timmar per vecka: Pontus cirka 45 och stödrollerna cirka 25. 21 dec till 6 jan är ledigt, utom tillsyn av delleveransen 28 till 30 dec. Från 7 jan är beläggningen cirka 35 timmar per vecka utöver projektledningen. SFB:s medverkan är cirka 20 timmar per vecka under hela genomförandet, fördelat på produktägare, sponsor och de två administratörerna. Den ökar under migreringsurval, datastädning och acceptanstest.
 
 ## Faser
 
 | Fas | Innehåll | Tid |
 |---|---|---|
-| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 28 jan 2027 |
+| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 18 jan 2027. Avbrottsverifiering i februari |
 | F1 delleverans | PIM tar emot källdata och skickar vidare till MagicBox. Ingen migrering | I drift 18 dec 2026 |
-| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Februari till maj 2027. Driftstart i början av maj, klar efter tio dagars stöd i mitten av maj |
-| V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | Juni 2027, efter beslut |
+| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Januari till april 2027. Driftstart 12 apr, klar efter tio dagars stöd 26 apr |
+| V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | April till maj 2027, efter beslut |
 
 ## Före årsskiftet
 
@@ -25,14 +25,14 @@ Sista arbetsdag före jul är 18 dec. Fram till dess görs bara det som dellever
 
 | Vecka | Precisering i AP01 | Bygge och drift |
 |---|---|---|
-| 47 (17 nov) | Startmöte med SFB och ITM8. Genomgång av återanvändningen av förstudien. Låst startlista för egna egenskaper och skyddade fält | |
-| 48 | Export-, medie- och volyminventering, drift och identitet. Identitetsregler och kontroll av produktgrupper. Lasttest av Medusa med 1,4 miljoner artiklar (25 till 27 nov) | Beställ C4-historik och ändringslogg från nuvarande part (24 nov) |
-| 49 | Fältmatris och icke-funktionella krav. Arkitektur och säkerhet godkänd (4 dec) | Test- och produktionsmiljö, inloggning och tekniska identiteter |
-| 50 | Kontrakt PIM till MagicBox granskat med ITM8 och godkänt (9 dec) | Datamodell (11 dec). Gemensamma fält- och valideringsregler. Frys av berikning i C4 från 11 dec. Slutexport från C4 12 dec |
-| 51 | | Slutexporten kontrolleras och stäms av med SFB (14 dec). Källmottagning och utgående flöde. ITM8:s källintegrationer och MagicBox-sidan klara 14 dec. Integrationstest med ITM8 15 till 17 dec. Delleveransen i drift 18 dec |
+| 47 (17 nov) | Startmöte med SFB och ITM8. Genomgång av återanvändningen av förstudien. Startlista för egna egenskaper och skyddade fält godkända (19 nov) | Nuvarande part levererar historik och ändringslogg (19 till 23 nov) |
+| 48 | Export-, medie- och volyminventering, drift och identitet (23 till 27 nov). Identitetsregler (25 nov). Fältmatris och icke-funktionella krav (30 nov) | |
+| 49 | Lasttest av Medusa med 1,4 miljoner artiklar (1 till 2 dec). Kontrakten mellan MagicBox och PIM godkända med ITM8 (3 dec) | ITM8 bygger källintegrationer och MagicBox-sidan (2 till 8 dec). Test- och produktionsmiljö |
+| 50 | Arkitektur och säkerhet godkänd (7 dec). Fel- och transportkontrakt (8 dec) | Datamodell (11 dec). ITM8 verifierar ERP-matchningen (9 till 11 dec). Frys av berikning i C4 11 dec. Slutexport från C4 12 dec |
+| 51 | Kontraktsexempel validerade (17 dec) | Slutexporten avstämd med SFB (14 dec). Gemensamma fält- och valideringsregler (16 dec). Miljöer godkända av ITM8 (16 dec). Integrationstest med ITM8 17 dec. Delleveransen i drift 18 dec |
 | 52 till 53 | | Ledigt. Vaimo har tillsyn av delleveransen 28 till 30 dec. C4 stängs 31 dec |
 
-I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. AP01 är klar 28 jan.
+I januari, från 7 jan: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. Snickenkontraktet godkänns 20 jan och verifieringen av åtkomst vid PIM-avbrott 18 feb. AP01 är klar 18 jan.
 
 ## Villkor för delleveransen
 
@@ -51,14 +51,14 @@ Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-t
 
 - Beställning av AP01: 17 nov.
 - C4-historik och ändringslogg från nuvarande part: 24 nov. Frys av berikning i C4: 11 dec. Komplett slutexport: 12 dec.
-- SFB:s godkännande av arkitektur 4 dec och av kontraktet PIM till MagicBox 9 dec.
-- ITM8: källintegrationer och MagicBox-sidan klara 14 dec, före integrationstestet 15 till 17 dec.
-- Migreringsurval och datastädning: januari, före migreringsverktyget.
-- Beslut om genomförandet av resten av F1: efter AP01, 28 jan.
+- SFB:s och ITM8:s godkännande av kontrakten mellan MagicBox och PIM 3 dec och SFB:s godkännande av arkitekturen 7 dec.
+- ITM8: källintegrationer och MagicBox-sidan byggda 8 dec och ERP-matchningen verifierad 11 dec, före integrationstestet 17 dec.
+- Migreringsurval 13 jan och datastädning 21 jan.
+- Beslut om genomförandet av resten av F1: efter AP01, 18 jan.
 
 ## Efter årsskiftet
 
-Gränssnitt, Excel, tabellredigering och medier i februari. Migrering och dokumentversioner i mars. Acceptanstest med SFB:s administratörer, ITM8 och Snicken i april. Slutkörning, driftsättning och utbildning i maj. Testfönster och beslutspunkter per part står i Gemensam tidplan och spårbarhet.
+Excel och tabellredigering i januari och februari, gränssnitt och medier klara i mars. Migreringsverktyg i februari, prov- och korrigeringskörning avstämda 24 feb och äldre dokumentversioner 12 mars. Integrationstest och acceptanstest 15 till 25 mars. Slutkörning och driftsättning 31 mars till 12 apr, utbildning 13 till 14 apr och stöd till 23 apr. Testfönster och beslutspunkter per part står i Gemensam tidplan och spårbarhet.
 
 ## Största riskerna
 
