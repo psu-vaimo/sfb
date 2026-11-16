@@ -24,3 +24,16 @@ Plattformsspecifika delar av förstudien, som Happy Flow och datamodellen i Occt
 | Reviderat estimat och plan | Avsnitt 10.1: paketordning och beroenden. Öppna frågor i avsnitt 5.6 och 10.3 och bilaga K | Inget, förstudien gav inget estimat på kravbasen 1.3 | Estimat i klass 3 och plan, byggda på verifierade kontrakt, volymer och beslut |
 
 Kvarvarande osäkerhet efter förstudien: dagens gränssnitt, exportformat för historik och dokumentversioner, och ändringsvolym med toppar. ITM8 medverkar i kontrakten, identifierarmappningen och medieinventeringen. Snicken medverkar i sitt kontrakt. Nuvarande part levererar historik och slutexport.
+
+## Skillnader mot förstudien
+
+Vi följer kravspecifikationen. Påverkan finns i estimatet.
+
+- Förstudien räknar om webbstatus med regel. Kravspecifikationen låter administratören sätta den manuellt (PIM-W06).
+- Förstudien arkiverar automatiskt. F1 har ingen automatisk arkivering (PIM-W07, B14).
+- Förstudien flyttar BVB-kopplingen till PIM. Kravspecifikationen behåller den i MagicBox (PIM-I07).
+- Förstudien låter SFB och Snicken bygga Snickenintegrationen. Kravspecifikationen antar ITM8 (AP09, B02).
+- Förstudien lägger migreringen utanför projektet. Kravspecifikationen lägger den i AP11.
+- Förstudien gör om textvärden för mått till tal. Kravspecifikationen utesluter generell enhetskonvertering (PIM-D03).
+- Förstudien lägger bildkonvertering och URL:er i ett paket med oklar ägare. Kravspecifikationen lägger dem hos ITM8 i AP10.
+- Förstudien föreslog Occtoo. Vi föreslår Medusa v2, och det påverkar inte kravbasen.
