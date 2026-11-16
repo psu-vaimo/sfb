@@ -8,6 +8,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 	Raderna Förstudien: anger vad discoveryrapporten v0.5 (SFB_Discovery_rapport_v0.5_20261028.pdf) och dess bilagor (SFB_Discovery_rapport_appendix_20261021.pdf) redan täcker. Förstudien är bakgrund och utökar inte omfattningen. Bara återstående arbete estimeras.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	AP01 är klar när 3.3 och 3.4 är godkända av SFB. Då kan resten av F1 estimeras om till klass 3.
+	Kontraktet för Snickenflödet 1.2.3 och verifieringen av åtkomst vid PIM-avbrott 2.4 tas fram i januari 2027, efter att AP01 i övrigt är klar, enligt beslut 2026-11-16. De ingår inte i det samlade kontraktet 1.2 eller i det reviderade estimatet 3.3. Snickenexemplen tas fram tillsammans med 1.2.3.
 	Kravspecifikationens sex leverabler i avsnitt 7.1
 		Kravspecifikationen kräver att AP01 behåller sina sex leverabler med minsta innehåll och avslutskriterium. Så här motsvarar de produkterna.
 		Fältmatris: 1.3 med 1.3.1 till 1.3.3.
@@ -67,7 +68,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Godkännande
 			granskare:: ITM8; SFB e-handel; Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare; ITM8
-			beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-3; PA-1-2-4; PA-1-2-5; PA-1-2-6
+			beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-4; PA-1-2-5; PA-1-2-6
 			Syfte
 				Ett versionshanterat data- och felkontrakt som PIM-partner och ITM8 bygger mot. Gör gränsen mellan [[AP04]], [[AP08]] och [[AP09]] testbar och förhindrar dubbelt arbete. Se [[B02]] och [[B05]].
 			Innehåll
@@ -161,7 +162,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 				kvalitetsmetod:: Test
 				granskare:: ITM8; Vaimo testledare
 				godkännare:: ITM8
-				beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-3; PA-1-2-4
+				beror på:: PA-1-2-1; PA-1-2-2; PA-1-2-4
 				Syfte
 					Bevisar att kontrakten går att implementera och används som testdata i F1.
 				Innehåll
@@ -571,7 +572,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			kvalitetsmetod:: Granskning
 			granskare:: Vaimo teknisk arkitekt; Vaimo projektledare
 			godkännare:: SFB sponsor
-			beror på:: PA-1-2; PA-1-3; PA-1-6; PA-1-7; PA-1-8; PA-2-1-2; PA-2-1-3; PA-2-4; PA-3-1
+			beror på:: PA-1-2; PA-1-3; PA-1-6; PA-1-7; PA-1-8; PA-2-1-2; PA-2-1-3; PA-3-1
 			Syfte
 				Ger SFB ett bindande eller nästan bindande genomförandepris för resten av F1.
 			Innehåll

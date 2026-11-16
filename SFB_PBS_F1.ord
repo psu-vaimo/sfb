@@ -658,11 +658,11 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Avstämning
 			granskare:: Vaimo teknisk arkitekt
 			godkännare:: SFB produktägare
-			beror på:: PF-4-1-1; PF-4-9
+			beror på:: PF-4-1-1
 			Syfte
-				Källan för prov-, korrigerings- och slutkörning.
+				Källan för prov- och korrigeringskörningen.
 			Innehåll
-				Urvalet ur slutexporten 4.9, städat enligt 4.1.1. C4 finns inte efter 2026-12-31, så alla körningar utgår från slutexporten.
+				Provkörningen och korrigeringskörningen utgår från exporten från 2026-09-30, städad enligt 4.1.1, enligt beslut 2026-11-16. Slutkörningen 4.6 utgår från slutexporten 4.9.
 			Kvalitetskriterier
 				Antal per posttyp stämmer med urvalet.
 		4.3 Migreringsmappning +produkt ^PF-4-3
@@ -719,7 +719,7 @@ PBS F1 första driftversionen ^PBS-F1
 			kvalitetsmetod:: Avstämning
 			granskare:: SFB PIM-team
 			godkännare:: SFB produktägare
-			beror på:: PF-6-6; PF-7-1; PF-5-2
+			beror på:: PF-6-6; PF-7-1; PF-5-2; PF-4-9
 			Syfte
 				Det aktuella beståndet i produktion vid växlingen.
 			Innehåll

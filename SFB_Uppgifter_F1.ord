@@ -24,20 +24,20 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			start:: 2027-01-04
 			slut:: 2027-01-04
 			beror på:: U-F1-DL-TEST; U-PF-5-2-G; U-PF-5-3-G; U-PF-2-1-G; U-PF-2-2-3-G
-			senast:: 2026-12-30
+			senast:: 2027-01-04
 		[ ] Delleverans i drift +uppgift ^U-F1-DL
 			ansvarig:: SFB produktägare
 			längd:: 0
 			start:: 2027-01-04
 			slut:: 2027-01-04
 			beror på:: U-F1-DL-DRIFT; U-PF-4-9-G; U-PA-1-2-2-G
-			senast:: 2026-12-30
+			senast:: 2027-01-04
 			PIM tar emot källdata och levererar till MagicBox. Slutexporten från C4 är säkrad. Se Delleverans före 2026-12-31 i SFB_PBS_F1.ord.
 		[ ] F1 klar +uppgift ^U-F1-KLAR
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-03-04
-			slut:: 2027-03-04
+			start:: 2027-03-08
+			slut:: 2027-03-08
 			beror på:: U-PF-7-2-G; U-PF-7-3-G; U-PF-7-9-G; U-PF-7-8-G
 			F1 är i drift, överlämnad och stödperioden är slut.
 	2 PIM-applikationen
@@ -736,22 +736,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-3-3
 				ansvarig:: ITM8
 				längd:: 4
-				start:: 2026-12-10
-				slut:: 2026-12-15
+				start:: 2027-01-11
+				slut:: 2027-01-14
 				beror på:: U-PA-1-2-3-T3
 			[ ] Bygg startleverans, delta och återhämtning +uppgift ^U-PF-3-3-T2
 				produkt:: PF-3-3
 				ansvarig:: ITM8
 				längd:: 4
-				start:: 2026-12-16
-				slut:: 2026-12-21
+				start:: 2027-01-15
+				slut:: 2027-01-20
 				beror på:: U-PF-3-3-T1
 			[ ] Testa och godkänn 3.3 Snicken-adapter +uppgift ^U-PF-3-3-G
 				produkt:: PF-3-3
 				ansvarig:: Snicken
 				längd:: 3
-				start:: 2026-12-22
-				slut:: 2026-12-28
+				start:: 2027-01-21
+				slut:: 2027-01-25
 				beror på:: U-PF-3-3-T1; U-PF-3-3-T2; U-PA-1-2-3-G
 				Granskare: Vaimo teknisk arkitekt; Snicken.
 		[ ] Sammanställ 3.4 Medielagring, transformering och länkar +uppgift ^U-PF-3-4-T
@@ -843,16 +843,16 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-4-2
 			ansvarig:: Vaimo utvecklare
 			längd:: 2
-			start:: 2026-12-23
-			slut:: 2026-12-28
-			beror på:: U-PF-4-1-1-T1; U-PF-4-1-1-T2; U-PF-4-9-T2
+			start:: 2026-12-04
+			slut:: 2026-12-07
+			beror på:: U-PF-4-1-1-T1; U-PF-4-1-1-T2
 		[ ] Stäm av och godkänn 4.2 C4-export för migrering +uppgift ^U-PF-4-2-G
 			produkt:: PF-4-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-29
-			slut:: 2026-12-29
-			beror på:: U-PF-4-2-T1; U-PF-4-1-1-G; U-PF-4-9-G
+			start:: 2026-12-08
+			slut:: 2026-12-08
+			beror på:: U-PF-4-2-T1; U-PF-4-1-1-G
 			Granskare: Vaimo teknisk arkitekt.
 		4.3 Migreringsmappning
 			[ ] Mappa artiklar, attribut och referensdata +uppgift ^U-PF-4-3-T1
@@ -948,16 +948,16 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-4-6
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2027-02-11
-			slut:: 2027-02-15
-			beror på:: U-PF-6-6-T; U-PF-7-1-T; U-PF-5-2-T2
+			start:: 2027-02-15
+			slut:: 2027-02-17
+			beror på:: U-PF-6-6-T; U-PF-7-1-T; U-PF-5-2-T2; U-PF-4-9-T2
 		[ ] Stäm av och godkänn 4.6 Migrerat bestånd i produktion +uppgift ^U-PF-4-6-G
 			produkt:: PF-4-6
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-17
-			slut:: 2027-02-17
-			beror på:: U-PF-4-6-T; U-PF-6-6-G; U-PF-7-1-G; U-PF-5-2-G
+			start:: 2027-02-19
+			slut:: 2027-02-19
+			beror på:: U-PF-4-6-T; U-PF-6-6-G; U-PF-7-1-G; U-PF-5-2-G; U-PF-4-9-G
 			Granskare: SFB PIM-team.
 		4.7 Migrerade äldre dokumentversioner
 			[ ] Läs in äldre dokumentversioner +uppgift ^U-PF-4-7-T1
@@ -1127,15 +1127,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-5-7
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2026-12-22
-			slut:: 2026-12-28
+			start:: 2027-01-08
+			slut:: 2027-01-12
 			beror på:: U-PA-2-4-T; U-PF-3-2-T2; U-PF-3-4-T
 		[ ] Testa och godkänn 5.7 Verifierad lösning för åtkomst vid PIM-avbrott +uppgift ^U-PF-5-7-G
 			produkt:: PF-5-7
 			ansvarig:: ITM8
 			längd:: 3
-			start:: 2026-12-29
-			slut:: 2027-01-04
+			start:: 2027-01-13
+			slut:: 2027-01-15
 			beror på:: U-PF-5-7-T; U-PA-2-4-G; U-PF-3-2-G; U-PF-3-4-G
 			Granskare: SFB produktägare; Snicken.
 	6 Test och acceptans
@@ -1159,22 +1159,22 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-6-2
 				ansvarig:: Vaimo testledare; ITM8
 				längd:: 3
-				start:: 2027-01-04
-				slut:: 2027-01-07
+				start:: 2027-01-21
+				slut:: 2027-01-25
 				beror på:: U-PF-6-1-T; U-PF-2-6-T; U-PF-3-1-T; U-PF-3-2-T2; U-PF-3-3-T2; U-PF-5-1-T
 			[ ] Rätta och testa om +uppgift ^U-PF-6-2-T2
 				produkt:: PF-6-2
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-01-08
-				slut:: 2027-01-12
+				start:: 2027-01-26
+				slut:: 2027-01-28
 				beror på:: U-PF-6-2-T1
 			[ ] Testa och godkänn 6.2 Integrationstestprotokoll +uppgift ^U-PF-6-2-G
 				produkt:: PF-6-2
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-01-13
-				slut:: 2027-01-15
+				start:: 2027-01-29
+				slut:: 2027-02-02
 				beror på:: U-PF-6-2-T1; U-PF-6-2-T2; U-PF-6-1-G; U-PF-2-6-G; U-PF-3-1-G; U-PF-3-2-G; U-PF-3-3-G; U-PF-5-1-G
 				Granskare: ITM8; SFB e-handel.
 		6.3 Kapacitets- och samtidighetsrapport
@@ -1204,15 +1204,15 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-6-4
 			ansvarig:: Vaimo testledare
 			längd:: 2
-			start:: 2026-12-29
-			slut:: 2026-12-30
+			start:: 2027-01-13
+			slut:: 2027-01-14
 			beror på:: U-PF-6-1-T; U-PF-5-7-T
 		[ ] Testa och godkänn 6.4 Avbrottstestprotokoll +uppgift ^U-PF-6-4-G
 			produkt:: PF-6-4
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-01-05
-			slut:: 2027-01-08
+			start:: 2027-01-18
+			slut:: 2027-01-20
 			beror på:: U-PF-6-4-T; U-PF-6-1-G; U-PF-5-7-G
 			Granskare: ITM8; Snicken.
 		6.5 Acceptanstestprotokoll
@@ -1220,44 +1220,44 @@ Uppgifter F1 första driftversionen ^UPG-F1
 				produkt:: PF-6-5
 				ansvarig:: Vaimo testledare; SFB produktägare
 				längd:: 5
-				start:: 2027-01-27
-				slut:: 2027-02-02
+				start:: 2027-01-29
+				slut:: 2027-02-04
 				beror på:: U-PF-6-2-T2; U-PF-6-3-T2; U-PF-6-4-T; U-PF-5-4-T; U-PF-4-5-T3; U-PF-4-7-T2; U-PF-2-2-T; U-PF-2-5-T
 			[ ] Rätta och testa om +uppgift ^U-PF-6-5-T2
 				produkt:: PF-6-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 3
-				start:: 2027-02-03
-				slut:: 2027-02-05
+				start:: 2027-02-05
+				slut:: 2027-02-09
 				beror på:: U-PF-6-5-T1
 			[ ] Sammanställ acceptanstestprotokollet +uppgift ^U-PF-6-5-T3
 				produkt:: PF-6-5
 				ansvarig:: Vaimo testledare
 				längd:: 2
-				start:: 2027-02-08
-				slut:: 2027-02-09
+				start:: 2027-02-10
+				slut:: 2027-02-11
 				beror på:: U-PF-6-5-T2
 			[ ] Testa och godkänn 6.5 Acceptanstestprotokoll +uppgift ^U-PF-6-5-G
 				produkt:: PF-6-5
 				ansvarig:: SFB produktägare
 				längd:: 3
-				start:: 2027-02-10
-				slut:: 2027-02-12
+				start:: 2027-02-12
+				slut:: 2027-02-16
 				beror på:: U-PF-6-5-T1; U-PF-6-5-T2; U-PF-6-5-T3; U-PF-6-2-G; U-PF-6-3-G; U-PF-6-4-G; U-PF-5-4-G; U-PF-4-5-G; U-PF-4-7-G; U-PF-2-2-G; U-PF-2-5-G
 				Granskare: SFB PIM-team.
 		[ ] Besluta om 6.6 Acceptansbeslut +uppgift ^U-PF-6-6-T
 			produkt:: PF-6-6
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-10
-			slut:: 2027-02-10
+			start:: 2027-02-12
+			slut:: 2027-02-12
 			beror på:: U-PF-6-5-T3
 		[ ] Granska och godkänn 6.6 Acceptansbeslut +uppgift ^U-PF-6-6-G
 			produkt:: PF-6-6
 			ansvarig:: SFB sponsor
 			längd:: 2
-			start:: 2027-02-15
-			slut:: 2027-02-16
+			start:: 2027-02-17
+			slut:: 2027-02-18
 			beror på:: U-PF-6-6-T; U-PF-6-5-G
 			Granskare: SFB produktägare.
 	7 Driftsättning och överlämning
@@ -1280,30 +1280,30 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-7-2
 			ansvarig:: Vaimo projektledare
 			längd:: 2
-			start:: 2027-02-16
-			slut:: 2027-02-17
+			start:: 2027-02-18
+			slut:: 2027-02-19
 			beror på:: U-PF-4-6-T; U-PF-6-6-T; U-PF-5-5-T; U-PF-7-7-T
 		[ ] Stäm av och godkänn 7.2 Driftsatt F1 med växlingsprotokoll +uppgift ^U-PF-7-2-G
 			produkt:: PF-7-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-18
-			slut:: 2027-02-18
+			start:: 2027-02-22
+			slut:: 2027-02-22
 			beror på:: U-PF-7-2-T; U-PF-4-6-G; U-PF-6-6-G; U-PF-5-5-G; U-PF-7-7-G
 			Granskare: ITM8; SFB e-handel.
 		[ ] Bygg 7.3 Överlämnat kodarkiv +uppgift ^U-PF-7-3-T
 			produkt:: PF-7-3
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
-			start:: 2027-02-11
-			slut:: 2027-02-15
+			start:: 2027-02-15
+			slut:: 2027-02-17
 			beror på:: U-PF-6-6-T
 		[ ] Testa och godkänn 7.3 Överlämnat kodarkiv +uppgift ^U-PF-7-3-G
 			produkt:: PF-7-3
 			ansvarig:: SFB produktägare
 			längd:: 3
-			start:: 2027-02-17
-			slut:: 2027-02-19
+			start:: 2027-02-19
+			slut:: 2027-02-23
 			beror på:: U-PF-7-3-T; U-PF-6-6-G
 			Granskare: ITM8.
 		[ ] Ta fram 7.4 Data- och gränssnittsdokumentation +uppgift ^U-PF-7-4-T
@@ -1370,31 +1370,31 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			produkt:: PF-7-8
 			ansvarig:: Vaimo affärskonsult
 			längd:: 2
-			start:: 2027-02-18
-			slut:: 2027-02-19
+			start:: 2027-02-22
+			slut:: 2027-02-23
 			beror på:: U-PF-7-6-T; U-PF-7-2-T
 		[ ] Granska och godkänn 7.8 Genomförda utbildningar +uppgift ^U-PF-7-8-G
 			produkt:: PF-7-8
 			ansvarig:: SFB produktägare
 			längd:: 2
-			start:: 2027-02-22
-			slut:: 2027-02-23
+			start:: 2027-02-24
+			slut:: 2027-02-25
 			beror på:: U-PF-7-8-T; U-PF-7-6-G; U-PF-7-2-G
 			Granskare: SFB PIM-team.
 		[ ] Ta fram 7.9 Ärendelogg från stödperioden +uppgift ^U-PF-7-9-T
 			produkt:: PF-7-9
 			ansvarig:: Vaimo affärskonsult
 			längd:: 10
-			start:: 2027-02-18
-			slut:: 2027-03-03
+			start:: 2027-02-22
+			slut:: 2027-03-05
 			beror på:: U-PF-7-2-T
 			Löpande under de tio arbetsdagarnas förstärkta stöd.
 		[ ] Stäm av och godkänn 7.9 Ärendelogg från stödperioden +uppgift ^U-PF-7-9-G
 			produkt:: PF-7-9
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-03-04
-			slut:: 2027-03-04
+			start:: 2027-03-08
+			slut:: 2027-03-08
 			beror på:: U-PF-7-9-T; U-PF-7-2-G
 			Granskare: SFB PIM-team.
 	8 Projektledning
@@ -1463,18 +1463,18 @@ Uppgifter F1 första driftversionen ^UPG-F1
 			Granskare: SFB produktägare.
 	Tidplan
 		Beräknat 2026-11-16 med Planering/tidplan.py, tillsammans med uppgifterna i AP01.
-		Delleverans i drift: 2027-01-04, två arbetsdagar efter senast-datumet 2026-12-30. Det är första arbetsdagen efter C4:s stängning.
+		Delleverans i drift: 2027-01-04, första arbetsdagen efter C4:s stängning. Godtaget enligt beslut 2026-11-16.
 		Kritisk linje till delleveransen: AP01:s matris, identitetsregler och fältmatris, attributmodellen 2.1.2, regeln för effektivt värde i 2.2.3, källmottagningen 2.6.1, integrationstestet och driftsättningen.
 		Datamodellen godkänd 2026-12-15, MagicBox-sidan klar 2026-12-21, källmottagningen klar 2026-12-23 och integrationstestet 2026-12-28 till 2026-12-30.
-		Slutexporten från C4 levereras 2026-12-21 till 2026-12-22. Migreringen utgår från den: korrigeringskörningen klar 2027-01-13.
-		Acceptansbeslut 2027-02-16, driftstart för hela F1 2027-02-18 och F1 klar efter stödperioden 2027-03-04.
-		Kritisk linje till F1 klar: datamodellen, reglerna, artikelvyn, samtidighetsskyddet, tabellredigeringen 2.3, kapacitetstestet 6.3, acceptanstestet 6.5, acceptansbeslutet, slutmigreringen, driftstarten och stödperioden.
+		Provmigreringen utgår från exporten från 2026-09-30: korrigeringskörningen klar 2027-01-13. Slutexporten från C4 levereras 2026-12-21 till 2026-12-22 och används i slutkörningen.
+		Acceptansbeslut 2027-02-18, driftstart för hela F1 2027-02-22 och F1 klar efter stödperioden 2027-03-08.
+		Kritisk linje till F1 klar: Snickenkontraktet i januari, Snicken-adaptern 3.3, integrationstestet 6.2, acceptanstestet 6.5, acceptansbeslutet, slutmigreringen, driftstarten och stödperioden.
 		Tidplanen förutsätter att varje roll kan arbeta med flera uppgifter samtidigt. Juluppehåll är inte inlagt utöver helgdagarna.
 	Öppna frågor
 		Frågor om uppgifterna och tidplanen, för Vaimo och SFB.
-		[ ] Delleveransen hamnar 2027-01-04, två arbetsdagar efter senast-datumet. 2026-12-31 och 2027-01-01 är helgdagar och 2027-01-02 och 2027-01-03 är helg, så 2027-01-04 är första arbetsdagen efter C4:s stängning. Räcker det, om MagicBox behåller senaste data från C4 under helgerna, eller måste delleveransen tidigareläggas?
-		[ ] Tidigareläggning: om delleveransen måste vara i drift före 2026-12-31 kan datamodell och källmottagning börja från utkast av fältmatrisen i stället för den färdiga, eller integrationstestet kortas från tre dagar till två. Vilken risk accepteras?
+		[x] Beslutat 2026-11-16: delleverans 2027-01-04 räcker. Senast-datumet är ändrat till 2027-01-04. Fråga: Delleveransen hamnar 2027-01-04, två arbetsdagar efter senast-datumet. 2026-12-31 och 2027-01-01 är helgdagar och 2027-01-02 och 2027-01-03 är helg, så 2027-01-04 är första arbetsdagen efter C4:s stängning. Räcker det, om MagicBox behåller senaste data från C4 under helgerna, eller måste delleveransen tidigareläggas?
+		[x] Behövs inte, eftersom delleverans 2027-01-04 räcker. Fråga: Tidigareläggning: om delleveransen måste vara i drift före 2026-12-31 kan datamodell och källmottagning börja från utkast av fältmatrisen i stället för den färdiga, eller integrationstestet kortas från tre dagar till två. Vilken risk accepteras?
 		[ ] Parallellt arbete i december: utvecklarna bygger datamodell, regler, flöden och miljöer samtidigt som AP01 avslutas. Tidplanen antar att det finns flera utvecklare. Hur många finns?
 		[ ] ITM8:s längder: källintegrationerna och MagicBox-sidan har antagna längder på tre till fem dagar per del. ITM8 behöver lämna egna längder före startmötet.
-		[ ] Migrering efter slutexporten: migreringen kan börja först när den kompletta slutexporten finns, tidigast 2026-12-21. F1 blir klar 2027-03-04. Ska provmigreringen i stället börja med exporten från 2026-09-30?
+		[x] Beslutat 2026-11-16: prov- och korrigeringskörningen utgår från exporten från 2026-09-30, slutkörningen från slutexporten. Fråga: Migrering efter slutexporten: migreringen kan börja först när den kompletta slutexporten finns, tidigast 2026-12-21. F1 blir klar 2027-03-04. Ska provmigreringen i stället börja med exporten från 2026-09-30?
 		[ ] Längder: längderna är preliminära och ska stämmas av mot SFB_Estimat_rader.csv.
