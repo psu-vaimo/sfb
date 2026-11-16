@@ -101,18 +101,18 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,"Fast: avstämning och differensrapport, rättning mellan körningarna",E-AP11,DEV,9,13,23,,,PIM-M03,Själva körningarna ligger i raden Körning med pris per körning. Bygget av avstämningen ligger i migreringsverktyget.,,PF-4-5,U-PF-4-5-T2
 ,estimatrad,"Körning: provkörning, korrigeringskörning och slutkörning",E-AP11,DEV,10,15,27,3,körning,PIM-M03,"Tre körningar i basen enligt B03. Timmar per körning, härledda ur uppgifterna för prov-, korrigerings- och slutkörning.",,PF-4-5; PF-4-6,U-PF-4-5-T1; U-PF-4-5-T2; U-PF-4-5-T3; U-PF-4-6-T
 ,estimatrad,Extra körning,E-AP11,DEV,10,15,27,0,körning,PIM-M03,"Enhetspris. Ingår inte i basen. Timmar per körning, härledda ur uppgifterna för prov-, korrigerings- och slutkörning.",,PF-4-5,U-PF-4-5-T1; U-PF-4-5-T2; U-PF-4-5-T3
-,estimatrad,Volym: artiklar,E-AP11,DEV,,,,14,100 000 artiklar,PIM-M02,"Beräkningsvolym 1,4 miljoner. SFB beslutar urvalet.",,PF-4-6,U-PF-4-6-T
-,estimatrad,Volym: bildfiler,E-AP11,DEV,,,,5.2,100 000 filer,PIM-M02,519 781 bildfiler.,,PF-4-6,U-PF-4-6-T
-,estimatrad,Volym: dokumentfiler,E-AP11,DEV,,,,1.18,100 000 filer,PIM-M02,118 228 dokumentfiler.,,PF-4-6,U-PF-4-6-T
-,estimatrad,Volym: produktgrupper,E-AP11,DEV,,,,1,22 442 grupper,PIM-M02,,,PF-4-6,U-PF-4-6-T
-,estimatrad,Filöverföring,E-AP11,DEV,,,,,GB,PIM-M02,Bytevolym mäts i AP01. Fyll i antal när den är känd.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: artiklar,E-AP11,DEV,2,4,8,14,100 000 artiklar,PIM-M02,"Beräkningsvolym 1,4 miljoner. SFB beslutar urvalet. Timmar per 100 000 artiklar för kontroll, felhantering och avstämning över de tre körningarna.",,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: bildfiler,E-AP11,DEV,1,2,4,5.2,100 000 filer,PIM-M02,519 781 bildfiler. Timmar per 100 000 filer för kontroll och felhantering över de tre körningarna.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: dokumentfiler,E-AP11,DEV,1,2,4,1.18,100 000 filer,PIM-M02,118 228 dokumentfiler. Timmar per 100 000 filer för kontroll och felhantering över de tre körningarna.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: produktgrupper,E-AP11,DEV,2,4,8,1,22 442 grupper,PIM-M02,22 442 produktgrupper. Kontroll av relationer mot gruppregeln i B12.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Filöverföring,E-AP11,DEV,0.5,1,3,12,100 GB,PIM-M02,"Antagande 1,2 TB, storleken på C4-exporten med bilder och dokument. Bytevolym mäts i AP01. Timmar per 100 GB för övervakning, omtag och kontroll av överföringen.",,PF-4-6,U-PF-4-6-T
 ,estimatrad,SFB:s urvalsbeslut och städning före uttag: besluta om 4.1 Beslutat migreringsurval,E-AP11,SFB,9,13,23,,,PIM-M01,SFB:s egen insats. Ingår inte i priset.,,PF-4-1,U-PF-4-1-T
 ,estimatrad,"SFB:s urvalsbeslut och städning före uttag, 4.1.1 Städad C4-data före uttag: rensa varumärkesfältet och ta bort testartiklarna",E-AP11,SFB,13,19,34,,,PIM-M01,SFB:s egen insats. Ingår inte i priset.,,PF-4-1-1,U-PF-4-1-1-T1
 ,estimatrad,"SFB:s urvalsbeslut och städning före uttag, 4.1.1 Städad C4-data före uttag: åtgärda avvikande grupprelationer enligt beslut",E-AP11,SFB,9,13,23,,,PIM-M01,SFB:s egen insats. Ingår inte i priset.,,PF-4-1-1,U-PF-4-1-1-T2
 ,estimatrad,Ta emot och kontrollera slutexporten och exporten per körning,E-AP11,DEV,9,13,23,,,PIM-M01,Nuvarande parts eventuella avgift är en kostnadspost.,,PF-4-2; PF-4-9,U-PF-4-2-T1
 ,estimatrad,Särskild export av äldre dokumentversioner,E-AP22,DEV,22,32,58,,,PIM-M06,,,PF-4-7,U-PF-4-7-T1; U-PF-4-7-T2
 ,estimatrad,Historikmappning,E-AP22,BC,7,10,18,,,PIM-M06,,,PF-4-7,U-PF-4-7-T1
-,estimatrad,Inläsning och avstämning av dokumentversioner,E-AP22,DEV,,,,,100 000 versioner,PIM-M06,Historisk filmängd mäts i AP01. Samma fil räknas inte i AP11.,,PF-4-7,U-PF-4-7-T1; U-PF-4-7-T2
+,estimatrad,Inläsning och avstämning av dokumentversioner,E-AP22,DEV,2,4,8,1,100 000 versioner,PIM-M06,Antagande 100 000 äldre dokumentversioner. Historisk filmängd mäts i AP01. Samma fil räknas inte i AP11.,,PF-4-7,U-PF-4-7-T1; U-PF-4-7-T2
 ,estimatrad,Läsbar export av gammal ändringslogg,E-AP22,DEV,9,13,23,,,PIM-M06,Om loggen kan tas ut. Inget logggränssnitt.,,PF-4-8,U-PF-4-8-T
 ,estimatrad,Kostnadssatt lösning för exportluckor,E-AP22,TA,4,6,11,,,PIM-M06,Beslutas av SFB före C4-stängning.,,PF-4-7; PF-4-8,U-PF-4-8-T
 ,estimatrad,Testplan kopplad till acceptanskontrollerna,E-AP12,QA,22,32,58,,,PIM-M04,,,PF-6-1,U-PF-6-1-T

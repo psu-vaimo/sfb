@@ -8,15 +8,15 @@ C4 ersätts i flödet Finfo, C4, MagicBox, Optimizely med en PIM-applikation byg
 
 ## Bemanning
 
-Vaimo bemannar med Pontus Sundén, som gör allt arbete med AI-stöd: analys, arkitektur, utveckling, test och projektledning. Beläggningen är cirka 45 timmar per vecka till 30 dec och därefter heltid. SFB:s medverkan är cirka 5 timmar per vecka under AP01, cirka 50 timmar för migreringsurval och datastädning i januari och cirka 30 timmar i acceptanstestet.
+Vaimo bemannar med Pontus Sundén, som gör allt arbete med AI-stöd: analys, arkitektur, utveckling, test och projektledning. Beläggningen är cirka 45 timmar per vecka till 30 dec och därefter heltid. SFB:s medverkan är cirka 20 timmar per vecka under hela genomförandet, fördelat på produktägare, sponsor och de två administratörerna. Den ökar under migreringsurval, datastädning och acceptanstest.
 
 ## Faser
 
 | Fas | Innehåll | Tid |
 |---|---|---|
-| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 22 jan 2027 |
+| AP01 Teknisk precisering | Verifierade kontrakt, fältmatris, identiteter, export- och medieinventering, arkitektur med lasttest av Medusa, reviderat estimat och plan | 17 nov 2026 till 26 jan 2027 |
 | F1 delleverans | PIM tar emot källdata och skickar vidare till MagicBox. Ingen migrering | I drift 4 jan 2027 |
-| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | I drift och överlämnad i mitten av maj 2027, följt av tio dagars stöd |
+| F1 resten | Gränssnitt, Excel, medier, migrering, Snicken, test, överlämning | Februari till maj 2027. Driftstart i början av maj, klar efter tio dagars stöd i mitten av maj |
 | V2 och tillval | AP17 till AP19, automatisk webbstatus, AP20, AP21, arkivtjänst | Juni 2027, efter beslut |
 
 ## Före årsskiftet
@@ -34,7 +34,7 @@ Före jul görs bara det som delleveransen kräver, cirka 290 timmar. Övriga de
 | 53 | | Källmottagning. Integrationstest med ITM8 28 till 30 dec |
 | 1 (4 jan) | | Delleveransen i drift |
 
-I januari: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. AP01 är klar 22 jan.
+I januari: kontrakt MagicBox till PIM, fel och transport och Snicken, validerade kontraktsexempel, fast Excel-mall, äldre dokumentversioner, underlag för migreringsurval, verifiering av åtkomst vid PIM-avbrott, motsägelser mot förstudien, och reviderat estimat och plan. AP01 är klar 26 jan.
 
 ## Villkor för delleveransen
 
@@ -55,11 +55,11 @@ Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, driftat i SFB:s Azure-t
 - SFB:s godkännande av arkitektur 7 dec och av kontraktet PIM till MagicBox 11 dec.
 - ITM8: källintegrationer och MagicBox-sidan klara till integrationstestet 28 dec.
 - Migreringsurval och datastädning: januari, före migreringsverktyget.
-- Beslut om genomförandet av resten av F1: efter AP01, 22 jan.
+- Beslut om genomförandet av resten av F1: efter AP01, 26 jan.
 
 ## Testfönster och beslutspunkter
 
-Integrationstest med ITM8 28 till 30 dec. Snickenkontraktet granskas med Snicken och ITM8 i januari. Provmigrering och korrigeringskörning under våren. Acceptanstest med SFB:s administratörer, ITM8 och Snicken före driftstart av F1, enligt avsnitt 9.1. SFB fattar go/no-go före slutmigrering och driftstart.
+Integrationstest med ITM8 28 till 30 dec. Snickenkontraktet granskas med Snicken och ITM8 i januari. Provmigrering och korrigeringskörning i mars. Acceptanstest i april. Acceptanstestet görs med SFB:s administratörer, ITM8 och Snicken enligt avsnitt 9.1. SFB fattar go/no-go före slutmigrering och driftstart.
 
 ## Största riskerna
 
