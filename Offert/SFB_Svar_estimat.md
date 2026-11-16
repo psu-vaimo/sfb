@@ -7,7 +7,7 @@ Vaimo, utkast 2026-11-16. Omfattningsbas: kravspecifikation och kravkatalog vers
 - **Svar på förfrågan om estimat:** detta dokument, med priser, intervall och antaganden.
 - **Upplägg för genomförandet:** bemanning, faser och arbetet före årsskiftet.
 - **Gemensam tidplan och spårbarhet:** plan per part, beslutspunkter och kravens koppling till arbetspaket.
-- **Återanvändning av förstudien i AP01:** vad förstudien täcker per leverabel och motsägelserna mot den.
+- **Återanvändning av förstudien i AP01:** vad förstudien täcker per leverabel, vad som är verifierat och vad som återstår.
 - **Förslag till avtalsvillkor:** kommersiella villkor, kodägande och överlämning.
 - **Kravkatalogen med Vaimos svar:** pris, bemanning, kalendertid, antaganden och avvikelser per arbetspaket, och Vaimos leveranser per krav.
 
@@ -74,7 +74,7 @@ Trepunktsestimat per arbetsmoment och roll, kopplat till produkter och uppgifter
 - Antagandena B01 till B14 och de sex besluten B03, B04, B07, B09, B10 och B12 gäller utan avvikelse, inklusive driftmålen RPO en timme, RTO en arbetsdag och support under svensk kontorstid.
 - Medusa klarar svarstidsmålen i B08 med full datamängd. Medusa lastprovas med 1,4 miljoner artiklar innan arbetet börjar.
 - ITM8 bygger Snicken-adaptern (AP09) och samordnar befintlig mediedrift (AP10). Håller inte det ökar Vaimos del.
-- Underlag: kravspecifikationen och kravkatalogen 1.3-V, och förstudien som bakgrund. Vi följer kravspecifikationen där förstudien säger annat. Motsägelserna står i Återanvändning av förstudien i AP01.
+- Underlag: kravspecifikationen och kravkatalogen 1.3-V, och förstudien som bakgrund. Vi följer kravspecifikationen där förstudien säger annat. Motsägelserna redovisas i AP01.
 - SFB:s egen medverkan är cirka 20 timmar per vecka och ingår inte i priset.
 
 ## Test, stöd och överlämning
