@@ -462,3 +462,4 @@ Estimeringsmetod med trepunktsestimat (PERT)
 				besparingscenario:: =(kostnad - kostnadscenario)
 			En grupp, ett paket eller ett underpaket. Räknar ihop raderna, riskerna, kostnadsposterna och underpaketen direkt under sig.
 			Fältet arbetspaket pekar på projektets eget arbetspaket, om projektet har en sådan typ. Byt typen i options om projektet kallar den något annat.
+@5 Estimatklass och förväntad precision

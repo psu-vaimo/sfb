@@ -21,7 +21,6 @@ Estimat SFB – berikningsdel och PIM
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
 		./SFB Estimat kostnader.csv
 			Licenser, drift, support och andra parters avgifter.
-
 	Inställningar ^estimatinst
 		egenpart:: Vaimo
 		valuta:: SEK
