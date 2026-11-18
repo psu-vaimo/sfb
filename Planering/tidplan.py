@@ -1,11 +1,11 @@
-"""Räknar start och slut för uppgifter i SFB_Uppgifter_*.ord.
+"""Räknar start och slut för uppgifter i SFB Uppgifter *.ord.
 
 Kör från repots rot: python3 Planering/tidplan.py
 
 Uppgifter som Vaimo utför planeras efter kapacitet. Timmarna per uppgift hämtas
-ur SFB_Estimat_rader.csv via kolumnen uppgift, med rollernas scenarioavdrag i
-SFB_Estimat.ord. Vaimos kapacitet i timmar per arbetsdag och lediga perioder
-står i fälten kapacitet och ledigt på första nivån i SFB_Uppgifter_AP01.ord.
+ur SFB Estimat rader.csv via kolumnen uppgift, med rollernas scenarioavdrag i
+SFB Estimat.ord. Vaimos kapacitet i timmar per arbetsdag och lediga perioder
+står i fälten kapacitet och ledigt på första nivån i SFB Uppgifter AP01.ord.
 Projektledningens rader (E-AP15) ingår inte, eftersom kapaciteten anges netto
 efter projektledning.
 
@@ -84,8 +84,8 @@ def las(filer):
 
 
 def las_roller():
-    """Scenarioavdrag per roll för Vaimos roller i SFB_Estimat.ord."""
-    text = open("SFB_Estimat.ord", encoding="utf-8").read()
+    """Scenarioavdrag per roll för Vaimos roller i SFB Estimat.ord."""
+    text = open("SFB Estimat.ord", encoding="utf-8").read()
     roller = {}
     for m in re.finditer(r"\+estimatroll \^(\S+)\n((?:\t{3}.*\n)*)", text):
         falt = dict(re.findall(r"^\t{3}(\S+):: ?(.*)$", m.group(2), re.M))
@@ -97,7 +97,7 @@ def las_roller():
 def vaimo_timmar(uppg):
     roller = las_roller()
     timmar = {}
-    for r in csv.DictReader(open("SFB_Estimat_rader.csv", encoding="utf-8")):
+    for r in csv.DictReader(open("SFB Estimat rader.csv", encoding="utf-8")):
         if r["roll"] not in roller or r["_parent"] == "E-AP15":
             continue
         try:
@@ -113,10 +113,10 @@ def vaimo_timmar(uppg):
 
 
 def main():
-    filer = sorted(glob.glob("SFB_Uppgifter_*.ord"))
+    filer = sorted(glob.glob("SFB Uppgifter *.ord"))
     if not filer:
-        sys.exit("Inga SFB_Uppgifter_*.ord i katalogen.")
-    huvud = open("SFB_Uppgifter_AP01.ord", encoding="utf-8").read()
+        sys.exit("Inga SFB Uppgifter *.ord i katalogen.")
+    huvud = open("SFB Uppgifter AP01.ord", encoding="utf-8").read()
     projektstart = dt.date.fromisoformat(re.search(r"^\tprojektstart:: (\S+)$", huvud, re.M).group(1))
     for a, b in re.findall(r"(\d{4}-\d\d-\d\d) till (\d{4}-\d\d-\d\d)",
                            (re.search(r"^\tledigt:: (.*)$", huvud, re.M) or [None, ""])[1]):
@@ -124,7 +124,7 @@ def main():
     kapacitet = sorted((dt.date.fromisoformat(a), float(b)) for a, b in re.findall(
         r"(\d{4}-\d\d-\d\d) (\d+(?:\.\d+)?)", (re.search(r"^\tkapacitet:: (.*)$", huvud, re.M) or [None, ""])[1]))
     if not kapacitet:
-        sys.exit("Fältet kapacitet saknas i SFB_Uppgifter_AP01.ord.")
+        sys.exit("Fältet kapacitet saknas i SFB Uppgifter AP01.ord.")
     projektstart = forsta_arbetsdag(projektstart)
 
     uppg = las(filer)

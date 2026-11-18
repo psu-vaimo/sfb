@@ -20,8 +20,8 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 		[ ] AP01 klar +uppgift ^U-AP01-KLAR
 			ansvarig:: SFB sponsor
 			längd:: 0
-			start:: 2027-01-15
-			slut:: 2027-01-15
+			start:: 2026-12-17
+			slut:: 2026-12-17
 			beror på:: U-PA-3-3-G; U-PA-3-4-G; U-PA-1-8-G; U-PA-1-2-G
 			senast:: 2027-01-28
 			AP01 är klar när reviderat estimat och plan är godkända. Arkitekturen och kontrakten behövs dessutom för delleveransen före 2026-12-31.
@@ -45,15 +45,15 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			produkt:: PA-1-2
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 1
-			start:: 2027-01-07
-			slut:: 2027-01-07
+			start:: 2026-12-09
+			slut:: 2026-12-09
 			beror på:: U-PA-1-2-1-T3; U-PA-1-2-2-T3; U-PA-1-2-4-T3; U-PA-1-2-5-T2; U-PA-1-2-6-T
 		[ ] Granska och godkänn a.2 Gränssnittskontrakt +uppgift ^U-PA-1-2-G
 			produkt:: PA-1-2
 			ansvarig:: SFB produktägare; ITM8
 			längd:: 2
-			start:: 2027-01-08
-			slut:: 2027-01-11
+			start:: 2026-12-10
+			slut:: 2026-12-11
 			beror på:: U-PA-1-2-T; U-PA-1-2-1-G; U-PA-1-2-2-G; U-PA-1-2-4-G; U-PA-1-2-5-G
 			Granskare: ITM8; SFB e-handel; Vaimo teknisk arkitekt.
 		a.2.1 Kontrakt MagicBox till PIM
@@ -122,7 +122,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 2
 				start:: 2027-01-07
-				slut:: 2027-01-11
+				slut:: 2027-01-07
 				beror på:: U-PA-1-3-T4; U-PA-1-4-T3; U-PA-1-4-T4
 				tidigast:: 2027-01-07
 				Tas fram i januari 2027 enligt beslut 2026-11-16.
@@ -130,22 +130,22 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-1-2-3
 				ansvarig:: Vaimo teknisk arkitekt; Snicken; ITM8
 				längd:: 1
-				start:: 2027-01-12
-				slut:: 2027-01-13
+				start:: 2027-01-08
+				slut:: 2027-01-08
 				beror på:: U-PA-1-2-3-T1
 			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-3-T3
 				produkt:: PA-1-2-3
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2027-01-14
-				slut:: 2027-01-14
+				start:: 2027-01-11
+				slut:: 2027-01-11
 				beror på:: U-PA-1-2-3-T2
 			[ ] Granska och godkänn a.2.3 Kontrakt för Snickenflödet +uppgift ^U-PA-1-2-3-G
 				produkt:: PA-1-2-3
 				ansvarig:: Snicken; ITM8
 				längd:: 3
-				start:: 2027-01-15
-				slut:: 2027-01-19
+				start:: 2027-01-12
+				slut:: 2027-01-14
 				beror på:: U-PA-1-2-3-T1; U-PA-1-2-3-T2; U-PA-1-2-3-T3; U-PA-1-3-G; U-PA-1-4-G
 				Granskare: ITM8; Snicken; Vaimo teknisk arkitekt.
 		a.2.4 Fel- och transportkontrakt
@@ -153,29 +153,29 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-1-2-4
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 2
-				start:: 2026-11-23
-				slut:: 2026-11-30
+				start:: 2026-11-20
+				slut:: 2026-11-20
 				beror på:: U-PA-2-5-T
 			[ ] Gå igenom utkastet med ITM8 +uppgift ^U-PA-1-2-4-T2
 				produkt:: PA-1-2-4
 				ansvarig:: Vaimo teknisk arkitekt; ITM8
 				längd:: 1
-				start:: 2026-12-01
-				slut:: 2026-12-02
+				start:: 2026-11-23
+				slut:: 2026-11-23
 				beror på:: U-PA-1-2-4-T1
 			[ ] Revidera efter genomgången +uppgift ^U-PA-1-2-4-T3
 				produkt:: PA-1-2-4
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-03
-				slut:: 2026-12-04
+				start:: 2026-11-24
+				slut:: 2026-11-25
 				beror på:: U-PA-1-2-4-T2
 			[ ] Granska och godkänn a.2.4 Fel- och transportkontrakt +uppgift ^U-PA-1-2-4-G
 				produkt:: PA-1-2-4
 				ansvarig:: ITM8
 				längd:: 2
-				start:: 2026-12-07
-				slut:: 2026-12-08
+				start:: 2026-11-26
+				slut:: 2026-11-27
 				beror på:: U-PA-1-2-4-T1; U-PA-1-2-4-T2; U-PA-1-2-4-T3; U-PA-2-5-G
 				Granskare: ITM8; Vaimo teknisk arkitekt.
 		a.2.5 Validerade kontraktsexempel
@@ -183,30 +183,30 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-1-2-5
 				ansvarig:: Vaimo utvecklare
 				längd:: 2
-				start:: 2026-12-07
-				slut:: 2026-12-15
+				start:: 2026-12-02
+				slut:: 2026-12-03
 				beror på:: U-PA-1-2-1-T3; U-PA-1-2-2-T3; U-PA-1-2-4-T3
 			[ ] Validera exemplen mot kontraktets schema hos båda parter +uppgift ^U-PA-1-2-5-T2
 				produkt:: PA-1-2-5
 				ansvarig:: Vaimo utvecklare; ITM8
 				längd:: 1
-				start:: 2026-12-16
-				slut:: 2026-12-16
+				start:: 2026-12-04
+				slut:: 2026-12-04
 				beror på:: U-PA-1-2-5-T1
 			[ ] Testa och godkänn a.2.5 Validerade kontraktsexempel +uppgift ^U-PA-1-2-5-G
 				produkt:: PA-1-2-5
 				ansvarig:: ITM8
 				längd:: 2
-				start:: 2026-12-17
-				slut:: 2026-12-18
+				start:: 2026-12-07
+				slut:: 2026-12-08
 				beror på:: U-PA-1-2-5-T1; U-PA-1-2-5-T2; U-PA-1-2-1-G; U-PA-1-2-2-G; U-PA-1-2-4-G
 				Granskare: ITM8; Vaimo testledare.
 		[ ] Genomför a.2.6 ITM8:s granskning av kontrakten +uppgift ^U-PA-1-2-6-T
 			produkt:: PA-1-2-6
 			ansvarig:: ITM8
 			längd:: 2
-			start:: 2026-12-17
-			slut:: 2026-12-18
+			start:: 2026-12-07
+			slut:: 2026-12-08
 			beror på:: U-PA-1-2-5-T2
 		a.3 Fältmatris
 			[ ] Mappa egenskaperna i migreringsurvalet från bruttolistan +uppgift ^U-PA-1-3-T1
@@ -265,14 +265,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo affärskonsult
 			längd:: 2
 			start:: 2026-11-18
-			slut:: 2026-12-04
+			slut:: 2026-11-18
 			beror på:: U-AP01-START
 		[ ] Granska och godkänn a.3.2 Förteckning över skyddade fält +uppgift ^U-PA-1-3-2-G
 			produkt:: PA-1-3-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-07
-			slut:: 2026-12-07
+			start:: 2026-11-19
+			slut:: 2026-11-19
 			beror på:: U-PA-1-3-2-T
 			Granskare: SFB PIM-team.
 		[ ] Ta fram a.3.3 Regel för sammanslagen extern text +uppgift ^U-PA-1-3-3-T
@@ -280,14 +280,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo affärskonsult
 			längd:: 2
 			start:: 2026-11-18
-			slut:: 2026-12-07
+			slut:: 2026-11-18
 			beror på:: U-AP01-START
 		[ ] Granska och godkänn a.3.3 Regel för sammanslagen extern text +uppgift ^U-PA-1-3-3-G
 			produkt:: PA-1-3-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-08
-			slut:: 2026-12-08
+			start:: 2026-11-19
+			slut:: 2026-11-19
 			beror på:: U-PA-1-3-3-T
 			Granskare: SFB PIM-team.
 		a.4 Identitetsregler och exempeldata
@@ -331,30 +331,30 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			produkt:: PA-1-4-1
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2026-11-27
-			slut:: 2027-01-13
+			start:: 2026-11-20
+			slut:: 2026-12-04
 			beror på:: U-PA-2-1-T
 		[ ] Granska och godkänn a.4.1 Rapport över artiklar utan entydig identitet +uppgift ^U-PA-1-4-1-G
 			produkt:: PA-1-4-1
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-01-14
-			slut:: 2027-01-14
+			start:: 2026-12-07
+			slut:: 2026-12-07
 			beror på:: U-PA-1-4-1-T; U-PA-2-1-G
 			Granskare: SFB PIM-team.
 		[ ] Ta fram a.5 Kontrollrapport för produktgrupper +uppgift ^U-PA-1-5-T
 			produkt:: PA-1-5
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
-			start:: 2026-11-27
-			slut:: 2026-12-02
+			start:: 2026-11-20
+			slut:: 2026-11-23
 			beror på:: U-PA-2-1-T
 		[ ] Granska och godkänn a.5 Kontrollrapport för produktgrupper +uppgift ^U-PA-1-5-G
 			produkt:: PA-1-5
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-03
-			slut:: 2026-12-03
+			start:: 2026-11-24
+			slut:: 2026-11-24
 			beror på:: U-PA-1-5-T; U-PA-2-1-G
 			Granskare: SFB PIM-team; SFB e-handel.
 		a.6 Fast Excel-format
@@ -363,21 +363,21 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				ansvarig:: Vaimo affärskonsult
 				längd:: 2
 				start:: 2026-11-27
-				slut:: 2026-12-17
+				slut:: 2026-12-03
 				beror på:: U-PA-1-3-T4
 			[ ] Ta fram exempelfiler +uppgift ^U-PA-1-6-T2
 				produkt:: PA-1-6
 				ansvarig:: Vaimo affärskonsult
 				längd:: 1
-				start:: 2026-12-18
-				slut:: 2026-12-18
+				start:: 2026-12-04
+				slut:: 2026-12-04
 				beror på:: U-PA-1-6-T1
 			[ ] Granska och godkänn a.6 Fast Excel-format +uppgift ^U-PA-1-6-G
 				produkt:: PA-1-6
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2027-01-07
-				slut:: 2027-01-08
+				start:: 2026-12-07
+				slut:: 2026-12-08
 				beror på:: U-PA-1-6-T1; U-PA-1-6-T2; U-PA-1-3-G
 				Granskare: SFB PIM-team.
 		a.7 Specifikation av icke-funktionella krav
@@ -385,22 +385,22 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-1-7
 				ansvarig:: Vaimo testledare; Vaimo teknisk arkitekt
 				längd:: 2
-				start:: 2026-11-23
-				slut:: 2026-11-25
+				start:: 2026-11-20
+				slut:: 2026-11-20
 				beror på:: U-PA-2-3-T; U-PA-2-5-T
 			[ ] Bestäm verifieringssätt per krav +uppgift ^U-PA-1-7-T2
 				produkt:: PA-1-7
 				ansvarig:: Vaimo testledare
 				längd:: 1
-				start:: 2026-11-26
-				slut:: 2026-11-26
+				start:: 2026-11-23
+				slut:: 2026-11-23
 				beror på:: U-PA-1-7-T1
 			[ ] Granska och godkänn a.7 Specifikation av icke-funktionella krav +uppgift ^U-PA-1-7-G
 				produkt:: PA-1-7
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2026-11-27
-				slut:: 2026-11-30
+				start:: 2026-11-24
+				slut:: 2026-11-25
 				beror på:: U-PA-1-7-T1; U-PA-1-7-T2; U-PA-2-3-G; U-PA-2-5-G
 				Granskare: Vaimo testledare; SFB produktägare.
 		a.8 Teknisk arkitektur och säkerhetslösning
@@ -408,36 +408,36 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-11-27
-				slut:: 2026-11-30
+				start:: 2026-11-24
+				slut:: 2026-11-24
 				beror på:: U-PA-1-7-T2; U-PA-2-5-T
 			[ ] Beskriv komponenter och deras gränser +uppgift ^U-PA-1-8-T2
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-01
-				slut:: 2026-12-01
+				start:: 2026-11-25
+				slut:: 2026-11-25
 				beror på:: U-PA-1-8-T1
 			[ ] Beskriv säkerhetslösningen +uppgift ^U-PA-1-8-T3
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-01
-				slut:: 2026-12-02
+				start:: 2026-11-25
+				slut:: 2026-11-25
 				beror på:: U-PA-1-8-T1
 			[ ] Spåra arkitekturen mot de icke-funktionella kraven +uppgift ^U-PA-1-8-T4
 				produkt:: PA-1-8
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2026-12-03
-				slut:: 2026-12-03
+				start:: 2026-11-26
+				slut:: 2026-11-26
 				beror på:: U-PA-1-8-T2; U-PA-1-8-T3
 			[ ] Granska och godkänn a.8 Teknisk arkitektur och säkerhetslösning +uppgift ^U-PA-1-8-G
 				produkt:: PA-1-8
 				ansvarig:: SFB produktägare
 				längd:: 2
-				start:: 2026-12-04
-				slut:: 2026-12-07
+				start:: 2026-11-27
+				slut:: 2026-11-30
 				beror på:: U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4; U-PA-1-7-G; U-PA-2-5-G
 				Granskare: ITM8; Vaimo testledare.
 	b Inventeringar
@@ -446,14 +446,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
 			start:: 2026-11-19
-			slut:: 2026-11-26
+			slut:: 2026-11-19
 			beror på:: U-PA-1-1-T
 		[ ] Granska och godkänn b.1 C4-exportinventering +uppgift ^U-PA-2-1-G
 			produkt:: PA-2-1
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-11-27
-			slut:: 2026-11-27
+			start:: 2026-11-20
+			slut:: 2026-11-20
 			beror på:: U-PA-2-1-T; U-PA-1-1-G
 			Granskare: SFB PIM-team; Nuvarande part.
 		[ ] Ta fram b.1.2 Inventering av äldre dokumentversioner och ändringslogg +uppgift ^U-PA-2-1-2-T
@@ -461,29 +461,29 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
 			start:: 2026-11-24
-			slut:: 2026-12-18
+			slut:: 2026-12-04
 			beror på:: U-PF-4-9-T1
 		[ ] Granska och godkänn b.1.2 Inventering av äldre dokumentversioner och ändringslogg +uppgift ^U-PA-2-1-2-G
 			produkt:: PA-2-1-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-01-07
-			slut:: 2027-01-07
+			start:: 2026-12-07
+			slut:: 2026-12-07
 			beror på:: U-PA-2-1-2-T
 			Granskare: SFB PIM-team; Nuvarande part.
 		[ ] Ta fram b.1.3 Underlag för migreringsurval +uppgift ^U-PA-2-1-3-T
 			produkt:: PA-2-1-3
 			ansvarig:: Vaimo affärskonsult; Vaimo utvecklare
 			längd:: 2
-			start:: 2026-11-27
-			slut:: 2026-12-18
+			start:: 2026-11-20
+			slut:: 2026-12-04
 			beror på:: U-PA-2-1-T
 		[ ] Granska och godkänn b.1.3 Underlag för migreringsurval +uppgift ^U-PA-2-1-3-G
 			produkt:: PA-2-1-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-01-07
-			slut:: 2027-01-07
+			start:: 2026-12-07
+			slut:: 2026-12-07
 			beror på:: U-PA-2-1-3-T; U-PA-2-1-G
 			Granskare: SFB PIM-team.
 		b.2 Medieinventering
@@ -521,14 +521,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo utvecklare
 			längd:: 3
 			start:: 2026-11-19
-			slut:: 2026-11-20
+			slut:: 2026-11-19
 			beror på:: U-PA-1-1-T
 		[ ] Granska och godkänn b.3 Volym- och lastinventering +uppgift ^U-PA-2-3-G
 			produkt:: PA-2-3
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-11-23
-			slut:: 2026-11-23
+			start:: 2026-11-20
+			slut:: 2026-11-20
 			beror på:: U-PA-2-3-T; U-PA-1-1-G
 			Granskare: ITM8; Vaimo teknisk arkitekt.
 		[ ] Ta fram b.4 Verifiering av åtkomst vid PIM-avbrott +uppgift ^U-PA-2-4-T
@@ -536,7 +536,7 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 3
 			start:: 2027-01-07
-			slut:: 2027-02-16
+			slut:: 2027-01-08
 			beror på:: U-PA-1-2-2-T3; U-PA-2-2-T2; U-PA-2-2-T3; U-PA-2-5-T
 			tidigast:: 2027-01-07
 			Tas fram i januari 2027 enligt beslut 2026-11-16.
@@ -544,8 +544,8 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			produkt:: PA-2-4
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2027-02-17
-			slut:: 2027-02-17
+			start:: 2027-01-11
+			slut:: 2027-01-11
 			beror på:: U-PA-2-4-T; U-PA-1-2-2-G; U-PA-2-2-G; U-PA-2-5-G
 			Granskare: ITM8; Snicken.
 		[ ] Ta fram b.5 Verifiering av drift och identitet +uppgift ^U-PA-2-5-T
@@ -553,14 +553,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo teknisk arkitekt
 			längd:: 2
 			start:: 2026-11-19
-			slut:: 2026-11-20
+			slut:: 2026-11-19
 			beror på:: U-PA-1-1-T
 		[ ] Granska och godkänn b.5 Verifiering av drift och identitet +uppgift ^U-PA-2-5-G
 			produkt:: PA-2-5
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-11-23
-			slut:: 2026-11-23
+			start:: 2026-11-20
+			slut:: 2026-11-20
 			beror på:: U-PA-2-5-T; U-PA-1-1-G
 			Granskare: ITM8; Vaimo teknisk arkitekt.
 	c Beslutsunderlag och plan
@@ -569,23 +569,23 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-3-1
 				ansvarig:: Vaimo affärskonsult
 				längd:: 2
-				start:: 2026-11-27
-				slut:: 2026-12-17
+				start:: 2026-11-23
+				slut:: 2026-12-03
 				beror på:: U-PA-1-1-T; U-PA-2-1-T; U-PA-2-2-T2; U-PA-2-2-T3; U-PA-2-3-T; U-PA-2-5-T
 				Frågor som blockerar skickas till SFB direkt när de upptäcks. Uppgiften avser den samlade versionen.
 			[ ] Bedöm kostnadspåverkan och sätt beslutsdatum +uppgift ^U-PA-3-1-T2
 				produkt:: PA-3-1
 				ansvarig:: Vaimo affärskonsult
 				längd:: 1
-				start:: 2026-12-18
-				slut:: 2026-12-18
+				start:: 2026-12-04
+				slut:: 2026-12-04
 				beror på:: U-PA-3-1-T1
 			[ ] Granska och godkänn c.1 Beslutsunderlag för öppna frågor +uppgift ^U-PA-3-1-G
 				produkt:: PA-3-1
 				ansvarig:: SFB sponsor
 				längd:: 2
-				start:: 2027-01-07
-				slut:: 2027-01-08
+				start:: 2026-12-07
+				slut:: 2026-12-08
 				beror på:: U-PA-3-1-T1; U-PA-3-1-T2; U-PA-1-1-G; U-PA-2-1-G; U-PA-2-2-G; U-PA-2-3-G; U-PA-2-5-G
 				Granskare: SFB produktägare; Vaimo projektledare.
 		[ ] Ta fram c.2 Förteckning över skillnader mot förstudien +uppgift ^U-PA-3-2-T
@@ -593,14 +593,14 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			ansvarig:: Vaimo affärskonsult
 			längd:: 1
 			start:: 2026-11-19
-			slut:: 2026-12-16
+			slut:: 2026-11-19
 			beror på:: U-PA-1-1-T
 		[ ] Granska och godkänn c.2 Förteckning över skillnader mot förstudien +uppgift ^U-PA-3-2-G
 			produkt:: PA-3-2
 			ansvarig:: SFB produktägare
 			längd:: 1
-			start:: 2026-12-17
-			slut:: 2026-12-17
+			start:: 2026-11-20
+			slut:: 2026-11-20
 			beror på:: U-PA-3-2-T; U-PA-1-1-G
 			senast:: 2027-01-15
 			Granskare: SFB produktägare.
@@ -609,44 +609,44 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 				produkt:: PA-3-3
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 2
-				start:: 2027-01-08
-				slut:: 2027-01-08
+				start:: 2026-12-10
+				slut:: 2026-12-10
 				beror på:: U-PA-1-2-T; U-PA-1-3-T4; U-PA-1-6-T2; U-PA-1-7-T2; U-PA-1-8-T4; U-PA-2-1-2-T; U-PA-2-1-3-T; U-PA-3-1-T2
 			[ ] Estimeringsmöte med två estimatorer +uppgift ^U-PA-3-3-T2
 				produkt:: PA-3-3
 				ansvarig:: Vaimo teknisk arkitekt; Vaimo affärskonsult
 				längd:: 1
-				start:: 2027-01-11
-				slut:: 2027-01-11
+				start:: 2026-12-11
+				slut:: 2026-12-11
 				beror på:: U-PA-3-3-T1
 			[ ] Kör kontrollerna och räkna totalerna +uppgift ^U-PA-3-3-T3
 				produkt:: PA-3-3
 				ansvarig:: Vaimo teknisk arkitekt
 				längd:: 1
-				start:: 2027-01-12
-				slut:: 2027-01-12
+				start:: 2026-12-14
+				slut:: 2026-12-14
 				beror på:: U-PA-3-3-T2
 			[ ] Granska och godkänn c.3 Reviderat genomförandeestimat +uppgift ^U-PA-3-3-G
 				produkt:: PA-3-3
 				ansvarig:: SFB sponsor
 				längd:: 2
-				start:: 2027-01-13
-				slut:: 2027-01-14
+				start:: 2026-12-15
+				slut:: 2026-12-16
 				beror på:: U-PA-3-3-T1; U-PA-3-3-T2; U-PA-3-3-T3; U-PA-1-2-G; U-PA-1-3-G; U-PA-1-6-G; U-PA-1-7-G; U-PA-1-8-G; U-PA-2-1-2-G; U-PA-2-1-3-G; U-PA-3-1-G
 				Granskare: Vaimo teknisk arkitekt; Vaimo projektledare.
 		[ ] Ta fram c.4 Reviderad genomförandeplan +uppgift ^U-PA-3-4-T
 			produkt:: PA-3-4
 			ansvarig:: Vaimo projektledare; Vaimo teknisk arkitekt
 			längd:: 2
-			start:: 2027-01-13
-			slut:: 2027-01-13
+			start:: 2026-12-15
+			slut:: 2026-12-15
 			beror på:: U-PA-3-3-T3
 		[ ] Granska och godkänn c.4 Reviderad genomförandeplan +uppgift ^U-PA-3-4-G
 			produkt:: PA-3-4
 			ansvarig:: SFB sponsor
 			längd:: 1
-			start:: 2027-01-15
-			slut:: 2027-01-15
+			start:: 2026-12-17
+			slut:: 2026-12-17
 			beror på:: U-PA-3-4-T; U-PA-3-3-G
 			Granskare: ITM8; SFB produktägare.
 		[ ] Ta fram c.5 Granskade workshopanteckningar +uppgift ^U-PA-3-5-T
@@ -659,11 +659,11 @@ Uppgifter AP01 Teknisk precisering och inventering ^UPG-AP01
 			löpande:: ja
 			Löpande under hela AP01. Längden är AP01:s längd.
 	Tidplan
-		Beräknat 2026-11-16 med Planering/tidplan.py. Projektstart 2026-11-17.
-		Vaimos uppgifter planeras efter kapacitet i timmar: 14 timmar per arbetsdag till 2026-12-18, Pontus cirka 45 och stödrollerna cirka 25 timmar per vecka, och 7 timmar per arbetsdag från 2027-01-07, netto efter projektledning. 2026-12-21 till 2027-01-06 är ledigt. Timmarna kommer från estimatraderna med scenarioavdraget.
-		Delleverans i drift 2026-12-17, en dags marginal mot 2026-12-18. AP01 klar 2027-01-15. Lasttestet av Medusa görs innan arbetet börjar och ingår inte i planen. Snickenkontraktet godkänt 2027-01-19 och avbrottsverifieringen 2027-02-17.
-		Viktiga datum för delleveransen: kontrakten MagicBox till PIM och PIM till MagicBox godkända 2026-12-03, arkitekturen 2026-12-07, datamodellen 2026-12-11, slutexporten avstämd 2026-12-14 och integrationstestet 2026-12-17.
-		Med 12 timmar per dag före jul blir delleveransen klar först i januari. Kapaciteten före jul är därför en förutsättning.
+		Beräknat 2026-11-18 med Planering/tidplan.py, med timmarna från estimeringsworkshopen. Projektstart 2026-11-17.
+		Vaimos uppgifter planeras efter kapacitet i timmar: 14 timmar per arbetsdag till 2026-12-18, Pontus cirka 45 och stödrollerna cirka 25 timmar per vecka, och 7 timmar per arbetsdag från 2027-01-07, netto efter projektledning. 2026-12-21 till 2027-01-06 är ledigt. Timmarna kommer från estimatraderna med scenarioavdraget. Offerten prissätter timmarna utan avdraget.
+		Delleverans i drift 2026-12-15, tre dagars marginal mot 2026-12-18. AP01:s beslutsunderlag, estimat och plan klara 2026-12-17. Lasttestet av Medusa görs innan arbetet börjar och ingår inte i planen. Snickenkontraktet godkänt 2027-01-14 och avbrottsverifieringen 2027-01-11, så AP01 slutar 2027-01-15.
+		Viktiga datum för delleveransen: arkitekturen godkänd 2026-11-30, kontrakten MagicBox till PIM och PIM till MagicBox 2026-12-03, datamodellen 2026-12-03, slutexporten avstämd 2026-12-14 och integrationstestet 2026-12-14.
+		Med 8 timmar per arbetsdag före jul blir delleveransen klar 2026-12-18, utan marginal.
 	Öppna frågor
 		Frågor om uppgifterna och tidplanen, för Vaimo och SFB.
 		[x] Beslutat 2026-11-16: Snickenkontraktet a.2.3 och avbrottsverifieringen b.4 flyttas till januari 2027. Fråga: Ingen marginal: AP01 slutar 2026-12-30, samma dag som senast-datumet, och bara om AP01 startar 2026-11-17. Varje dags försening flyttar slutet in i januari. Ska AP01 krympas, till exempel genom att Snickenkontraktet a.2.3 och avbrottsverifieringen b.4 flyttas till efter 2026-12-31?

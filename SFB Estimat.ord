@@ -12,11 +12,11 @@ Estimat SFB – berikningsdel och PIM
 			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
 		./SFB Estimat rader.csv
 			Arbetsmoment per roll, utgår från paketens leverabler i SFB Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB PBS *.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB Uppgifter *.ord arbetet görs i.
-				Timmarna estimerades om i en workshop 2026-11-18, rad för rad och paket för paket, med Estimering/Medusa-underlag.md som underlag för funktionskraven. De ersätter förslaget från 2026-11-16 som beskrivs nedan, som finns kvar i git, commit 14c9f87. En estimator, inte två oberoende. Förväntad tid för Vaimo, utan SFB och ITM8: F1 1 380,6 timmar (förut 2 657,7), V2 156,8 (406,7) och tillval 43,7 (118,0). ALT03 är inte estimerad.
+				Timmarna estimerades om i en workshop 2026-11-18, rad för rad och paket för paket, med Estimering/Medusa-underlag.md som underlag för funktionskraven. De ersätter förslaget från 2026-11-16 som beskrivs nedan, som finns kvar i git, commit 14c9f87. En estimator, inte två oberoende. Förväntad tid för Vaimo, utan SFB och ITM8: F1 1 358,4 timmar (förut 2 657,7), efter att projektledningen räknats om till 14 veckor, V2 156,8 (406,7) och tillval 43,7 (118,0). ALT03 är inte estimerad.
 				Förslaget från 2026-11-16 var härlett ur uppgifternas längd:
 				Regel: längd i arbetsdagar gånger 6,4 timmar, alltså 8 timmar gånger fokusfaktorn 0,8. Första ansvariga på en uppgift räknas på heltid, övriga ansvariga på halvtid och godkännanden på en fjärdedel. Flera rader med samma roll på samma uppgift delar timmarna. Optimistisk är 0,7 gånger trolig och pessimistisk 1,8 gånger trolig.
 				Omräknat 2026-11-16 med Medusa v2 som teknikstack. Uppgifternas längd är kortad per produkt där Medusa ger färdiga delar: kategoriträd 50 %, kategoriförvaltning 60 %, jobbstatus 50 %, återförsök och felvy 40 %, sökning och filter 30 % (ska bli 10–15 %, eftersom Index-modulen är avvecklad och sökningen byggs med egna index), artikelvy 25 %, inloggning 30 % och miljöer 20 %. Övriga delar 0 till 20 %. Regler, versioner, migrering, test och kontrakt är oförändrade. Ett lasttest av Medusa med 1,4 miljoner artiklar görs innan arbetet börjar och ingår inte i estimatet, och tre Medusa-risker i riskregistret. Föregående version utan Medusa finns i git, commit 5aa61e7.
-				Rader över 40 timmar är delade per uppgift. ITM8:s rader och volymraderna i migreringen är tomma, eftersom de inte går att härleda ur längderna. Projektledningen räknas per vecka i 16 veckor.
+				Rader över 40 timmar är delade per uppgift. ITM8:s rader och volymraderna i migreringen är tomma, eftersom de inte går att härleda ur längderna. Projektledningen räknas per vecka i 14 veckor, från 2026-11-17 till F1 klar 2027-02-19.
 		./SFB Estimat risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
 		./SFB Estimat kostnader.csv
@@ -119,8 +119,8 @@ Estimat SFB – berikningsdel och PIM
 
 	Scenario: AI-assisterad utveckling
 		Visar estimatet när Pontus gör allt arbete med Claude. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
-		Beslut 2026-11-16: offerten prissätter scenariot, inte grundestimatet. Grundestimatet redovisas som jämförelse. Avdraget mäts mot utfallet i delleveransen.
-		Sista arbetsdag före jul är 2026-12-18, med tillsyn 28 till 30 dec och arbete igen från 2027-01-07. Berikningen i C4 fryses 2026-12-11 och slutexporten tas 2026-12-12. Fram till dess görs bara det som delleveransen kräver, cirka 285 timmar i scenariot, med Pontus cirka 45 och stödrollerna cirka 25 timmar per vecka. Delleveransen går i drift 2026-12-18. Övrigt i AP01 flyttas till januari. Med Pontus och stödrollerna blir F1 i drift 2027-04-09 och klar 2027-04-23, enligt Planering/tidplan.py.
+		Beslut 2026-11-18: offerten prissätter grundestimatet från estimeringsworkshopen, utan scenarioavdrag och utan riskreserv. Tidplanen räknar fortfarande med scenarioavdraget. Beslutet 2026-11-16 att prissätta scenariot gäller inte längre.
+		Sista arbetsdag före jul är 2026-12-18, med tillsyn 28 till 30 dec och arbete igen från 2027-01-07. Berikningen i C4 fryses 2026-12-11 och slutexporten tas 2026-12-12. Fram till dess görs bara det som delleveransen kräver, cirka 276 timmar i scenariot, med Pontus cirka 45 och stödrollerna cirka 25 timmar per vecka. Delleveransen går i drift 2026-12-15. Snickenkontraktet och avbrottsverifieringen i AP01 görs i januari. Med Pontus och stödrollerna blir F1 i drift 2027-02-04 och klar 2027-02-19, enligt Planering/tidplan.py.
 
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.

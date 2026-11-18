@@ -143,10 +143,10 @@ _id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,a
 ,estimatrad,Förstärkt stöd efter driftstart,E-AP14,BC,1,2,3,10,arbetsdag,PIM-H03 Utbildning och stöd,"Timmar per arbetsdag. Timmar per arbetsdag, halvtid under stödperioden.",,PF-7-9,U-PF-7-9-T
 ,estimatrad,Användarhandledning,E-AP14,BC,8,12,20,,,PIM-H03 Utbildning och stöd,,,PF-7-6,U-PF-7-6-T
 ,estimatrad,Runbook och ansvarsfördelning,E-AP14,TA,4,8,12,,,PIM-H03 Utbildning och stöd,,,PF-7-7,U-PF-7-7-T
-,estimatrad,Projektledning,E-AP15,PM,4,6,10,16,vecka,PIM-H04 Projektledning,"Timmar per vecka. Antal veckor sätts från F1:s kalendertid. Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-1; PF-8-4,U-PF-8-1-T; U-PF-8-4-T
-,estimatrad,Styrgrupp och avstämningsmöten,E-AP15,PM,1,1.5,3,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-2; PF-8-4,U-PF-8-2-T; U-PF-8-4-T
-,estimatrad,Teknisk samordning med ITM8,E-AP15,TA,1,2,3,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-1,U-PF-8-1-T
-,estimatrad,Ändrings- och beslutshantering,E-AP15,PM,0.5,1,2,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-2; PF-8-3,U-PF-8-2-T; U-PF-8-3-T
+,estimatrad,Projektledning,E-AP15,PM,4,6,10,14,vecka,PIM-H04 Projektledning,"Timmar per vecka. Antal veckor sätts från F1:s kalendertid. Timmar per vecka i 14 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-02-19 enligt tidplanen.",,PF-8-1; PF-8-4,U-PF-8-1-T; U-PF-8-4-T
+,estimatrad,Styrgrupp och avstämningsmöten,E-AP15,PM,1,1.5,3,14,vecka,PIM-H04 Projektledning,"Timmar per vecka i 14 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-02-19 enligt tidplanen.",,PF-8-2; PF-8-4,U-PF-8-2-T; U-PF-8-4-T
+,estimatrad,Teknisk samordning med ITM8,E-AP15,TA,1,2,3,14,vecka,PIM-H04 Projektledning,"Timmar per vecka i 14 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-02-19 enligt tidplanen.",,PF-8-1,U-PF-8-1-T
+,estimatrad,Ändrings- och beslutshantering,E-AP15,PM,0.5,1,2,14,vecka,PIM-H04 Projektledning,"Timmar per vecka i 14 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-02-19 enligt tidplanen.",,PF-8-2; PF-8-3,U-PF-8-2-T; U-PF-8-3-T
 ,estimatrad,Komponentval och prototyp med representativa artiklar,E-AP16,TA,4,6,12,,,PIM-N01 Tabellredigering och massändring,DataGrid i Medusa Admin är förstahandsval.,,PF-2-3,U-PF-2-3-T1
 ,estimatrad,Cellredigering och inklistring av cellområde,E-AP16,DEV,6,10,18,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
 ,estimatrad,Gemensam ändring på valda rader,E-AP16,DEV,4,6,10,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
