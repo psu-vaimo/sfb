@@ -34,7 +34,6 @@ Estimat SFB – berikningsdel och PIM
 		maxspann:: 4
 		scenario:: AI-assisterad utveckling
 		Optimistisk och pessimistisk anges som P10 och P90. Timmar per dag används för omräkning till persondagar, som SFB kräver när vi räknar i dagar.
-
 	Roller
 		Timpris i SEK exklusive moms, enligt prislistan 2026-11-16. Scenarioavdraget gäller när Pontus gör allt arbete med Claude, beslut 2026-11-16: 75 % för utvecklare och 50 % för affärskonsult, teknisk arkitekt, testledare och projektledning. ITM8 och SFB har inget avdrag. I euro: 160 för Business Consulting PIM och Project Management, 145 för PIM Development. Offererat timpris 1 700 SEK, samma för alla roller, beslut 2026-11-16.
 		Affärskonsult +estimatroll ^BC
@@ -71,7 +70,6 @@ Estimat SFB – berikningsdel och PIM
 			part:: SFB
 			scenarioavdrag::
 			Visar SFB:s egen insats per paket, som [[B11]] efterfrågar. Ingår inte i priset.
-
 	Grupper
 		Grupperna följer hur SFB vill se priset. De summeras inte med varandra.
 		F1 basestimat +estimatsumma ^E-F1
@@ -84,7 +82,6 @@ Estimat SFB – berikningsdel och PIM
 			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet. AP20 föreslås hos ITM8 och syns som extern insats.
 		Alternativ +estimatsumma ^E-ALT
 			[[ALT01]] och [[ALT03]]. Ersätter arbete i basen eller beställs separat; adderas aldrig till F1.
-
 	Så fyller estimatet SFB:s krav
 		Kraven kommer från avsnitt 3 och 9 i [[Offertprocess SFB – estimat för berikningsdel och PIM]].
 		Per paket: timmar
@@ -116,12 +113,10 @@ Estimat SFB – berikningsdel och PIM
 			Kostnadsposter med slag Återkommande, i fältet återkommandeperår. Volymantagandet står på posten.
 		Saknade externa priser syns
 			Fältet saknade på paketet och kontrollen Paket med saknade estimat.
-
 	Scenario: AI-assisterad utveckling
 		Visar estimatet när Pontus gör allt arbete med Claude. Varje roll har ett scenarioavdrag, och paketen räknar förväntad tid, kostnad och besparing i scenariot. Se metodfilen, avsnitt 3, Scenario.
 		Beslut 2026-11-18: offerten prissätter grundestimatet från estimeringsworkshopen, utan scenarioavdrag och utan riskreserv. Tidplanen räknar fortfarande med scenarioavdraget. Beslutet 2026-11-16 att prissätta scenariot gäller inte längre.
 		Sista arbetsdag före jul är 2026-12-18, med tillsyn 28 till 30 dec och arbete igen från 2027-01-07. Berikningen i C4 fryses 2026-12-11 och slutexporten tas 2026-12-12. Fram till dess görs bara det som delleveransen kräver, cirka 276 timmar i scenariot, med Pontus cirka 45 och stödrollerna cirka 25 timmar per vecka. Delleveransen går i drift 2026-12-15. Snickenkontraktet och avbrottsverifieringen i AP01 görs i januari. Med Pontus och stödrollerna blir F1 i drift 2027-02-04 och klar 2027-02-19, enligt Planering/tidplan.py.
-
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.
 		[ ] Varje F1-krav i SFB Krav.ord finns i kolumnen krav på minst en rad.
