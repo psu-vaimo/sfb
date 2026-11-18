@@ -4,33 +4,33 @@ Workspace
 SFB berikningsdel och PIM
 	Arbetsyta för SFB:s förfrågan, version 1.3-V.
 	Filer
-		./SFB_Krav.ord
+		[SFB Krav.ord](./SFB%20Krav.ord)
 			Alla krav, arbetspaket, beslut B01–B14 och alternativ. Typdefinitionerna finns där.
-		./SFB_Offertprocess.ord
-			Checklista för Vaimos offert med estimat. Länkar till ID:n i SFB_Krav.ord.
-		./SFB_Estimat.ord
-			Estimatet för SFB: inställningar, roller och grupper. Siffrorna finns i SFB_Estimat_paket.csv, SFB_Estimat_rader.csv, SFB_Estimat_risker.csv och SFB_Estimat_kostnader.csv.
-		./Estimering/Estimeringsmetod.ord
+		[SFB Offertprocess.ord](./SFB%20Offertprocess.ord)
+			Checklista för Vaimos offert med estimat. Länkar till ID:n i SFB Krav.ord.
+		[SFB Estimat.ord](./SFB%20Estimat.ord)
+			Estimatet för SFB: inställningar, roller och grupper. Siffrorna finns i SFB Estimat paket.csv, SFB Estimat rader.csv, SFB Estimat risker.csv och SFB Estimat kostnader.csv.
+		[Estimeringsmetod.ord](./Estimering/Estimeringsmetod.ord)
 			Återanvändbar estimeringsmetod med trepunktsestimat. Arbetsgång, kontroller och typerna som räknar estimatet. Tomma CSV-mallar i samma mapp.
-		./SFB_Aja_bedomning.ord
+		[SFB Aja bedomning.ord](./SFB%20Aja%20bedomning.ord)
 			Kraven bedömda mot Vaimo Aja: täckning, risk och vad som behöver verifieras.
-		./SFB_Discovery_rapport_v0.5_20261028.pdf
+		[SFB Discovery rapport v0.5 20261028.pdf](./SFB%20Discovery%20rapport%20v0.5%2020261028.pdf)
 			Vaimos discoveryrapport v0.5. Bakgrund, utökar inte omfattningen i kravspecifikationen 1.3-V.
-		./SFB_Discovery_rapport_appendix_20261021.pdf
+		[SFB Discovery rapport appendix 20261021.pdf](./SFB%20Discovery%20rapport%20appendix%2020261021.pdf)
 			Bilagor C till M till discoveryrapporten: smärtpunkter, kravregister, underlag, datamodell och Happy Flow.
-		./SFB_PBS_AP01.ord
+		[SFB PBS AP01.ord](./SFB%20PBS%20AP01.ord)
 			Produktnedbrytning (PBS) för AP01, med produktbeskrivningar, produktflöde och öppna frågor.
-		./SFB_PBS_F1.ord
+		[SFB PBS F1.ord](./SFB%20PBS%20F1.ord)
 			Produktnedbrytning (PBS) för hela F1, med produktbeskrivningar, produktflöde och öppna frågor. Speglar PBS:en för AP01.
-		./SFB_PBS_V2_tillval.ord
+		[SFB PBS V2 tillval.ord](./SFB%20PBS%20V2%20tillval.ord)
 			Produktnedbrytning (PBS) för V2 och tillval, utan alternativen, med produktbeskrivningar, produktflöde och öppna frågor.
-		./SFB_Uppgifter_AP01.ord
+		[SFB Uppgifter AP01.ord](./SFB%20Uppgifter%20AP01.ord)
 			Uppgifter med ansvarig, längd, beroenden, datum och status för AP01. Datumen räknas av Planering/tidplan.py.
-		./SFB_Uppgifter_F1.ord
+		[SFB Uppgifter F1.ord](./SFB%20Uppgifter%20F1.ord)
 			Uppgifter med ansvarig, längd, beroenden, datum och status för F1, med delleveransen före 2026-12-31.
-		./SFB_Uppgifter_V2_tillval.ord
+		[SFB Uppgifter V2 tillval.ord](./SFB%20Uppgifter%20V2%20tillval.ord)
 			Uppgifter med ansvarig, längd, beroenden, datum och status för V2 och tillval.
-		./Planering/tidplan.py
+		[tidplan.py](./Planering/tidplan.py)
 			Räknar start och slut för uppgifterna. Kör från repots rot.
 Kravtyp +ord-type
 	name:: krav
@@ -79,7 +79,7 @@ Kravbedömningstyp +ord-type
 		risk::
 			options:: Låg; Medel; Hög
 		verifieras:: false
-	Hur väl ett system täcker ett krav. Används i SFB_Aja_bedomning.ord.
+	Hur väl ett system täcker ett krav. Används i SFB Aja bedomning.ord.
 Produkttyp +ord-type
 	name:: produkt
 	fields::
@@ -99,7 +99,7 @@ Produkttyp +ord-type
 			options:: SFB produktägare; SFB PIM-team; SFB e-handel; SFB sponsor; ITM8; Snicken; Nuvarande part; Vaimo affärskonsult; Vaimo teknisk arkitekt; Vaimo testledare; Vaimo projektledare
 		beror på::
 			options:: +produkt
-	En produkt i en produktnedbrytning (PBS): något som lämnas över och kan godkännas, inte en aktivitet. Används i SFB_PBS_*.ord.
+	En produkt i en produktnedbrytning (PBS): något som lämnas över och kan godkännas, inte en aktivitet. Används i SFB PBS *.ord.
 	Part är den som tar fram produkten. Beror på pekar på de produkter som måste vara klara, eller i godkänt utkast, innan produkten kan bli klar. Det ger produktflödet.
 	Under varje produkt: Syfte, Innehåll och Kvalitetskriterier, och Underlag när produkten bygger på något annat än andra produkter.
 	ID:n: PA för AP01, PF för F1 och PV för V2 och tillval, följt av produktens nummer med bindestreck.
@@ -139,10 +139,10 @@ Uppgiftstyp +ord-type
 			options:: +uppgift
 		senast::
 		tidigast::
-	En uppgift som tar fram, granskar eller godkänner en produkt i PBS:en. Används i SFB_Uppgifter_*.ord.
+	En uppgift som tar fram, granskar eller godkänner en produkt i PBS:en. Används i SFB Uppgifter *.ord.
 	Status är nodens tillstånd: [ ] ny, [-] pågår, [?] väntar och [x] klar.
 	Längd är arbetsdagar. 0 betyder milstolpe. Beror på pekar på uppgifter som måste vara klara först. Senast är ett datum som uppgiften måste vara klar till. Tidigast är ett datum som uppgiften inte får börja före.
-	Start och slut räknas fram av Planering/tidplan.py från längd, beror på och projektstart, med svenska helgdagar. Estimatraderna pekar på uppgifterna i kolumnen uppgift i SFB_Estimat_rader.csv. Ändra längd eller beror på och kör skriptet igen. Klara uppgifter flyttas inte.
+	Start och slut räknas fram av Planering/tidplan.py från längd, beror på och projektstart, med svenska helgdagar. Estimatraderna pekar på uppgifterna i kolumnen uppgift i SFB Estimat rader.csv. Ändra längd eller beror på och kör skriptet igen. Klara uppgifter flyttas inte.
 	ID:n: U följt av produktens ID och T för att ta fram eller G för granskning och godkännande.
 
 
