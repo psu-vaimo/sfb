@@ -1,13 +1,10 @@
-_id,_type,_label,_parent,roll,sannolikhet,optimistisk,trolig,pessimistisk,utlösare,åtgärd,ägare
-,estimatrisk,C4-exporten avviker från antaget format eller har luckor,E-AP11,DEV,,,,,Exportprovet i AP01 visar avvikelser,Exportprov tidigt i AP01. Kostnadssatt lösning före C4-stängning.,
-,estimatrisk,Äldre dokumentversioner saknas eller kan inte kopplas till artikel,E-AP22,DEV,,,,,Inventeringen i AP01 visar saknade versioner,Kostnadssatt åtkomstlösning för SFB:s beslut.,
-,estimatrisk,Transport mellan PIM och MagicBox måste byggas från grunden,E-AP04,DEV,,,,,AP01 visar att endpointar eller köer saknas,,
-,estimatrisk,Befintliga grupprelationer avviker från gruppregeln i B12,E-AP02,BC,,,,,Kontrollen i AP01 hittar avvikande relationer,Redovisas för SFB:s beslut. Tas inte bort tyst.,
-,estimatrisk,Vald tabellkomponent klarar inte kraven,E-AP16,DEV,,,,,Prototypen med representativa artiklar underkänns,Prototyp före beslut om komponent.,
-,estimatrisk,Jämförelseprofilen för prestanda nås inte med vald infrastruktur,E-AP12,DEV,,,,,Kapacitetstestet visar svarstider över profilen,,
-,estimatrisk,ITM8 är inte tillgängliga när gemensamt test ska köras,E-AP12,PM,,,,,ITM8:s plan avviker från vår,,
-,estimatrisk,SFB:s beslut eller medverkan dröjer,E-AP15,PM,,,,,Beslutsdatum i planen passeras,Senaste beslutsdatum i tidplanen. Medverkan per vecka enligt B11.,SFB
-,estimatrisk,"Volymen, cirka 1,4 miljoner artiklar, ligger över vad Aja själv anger att plattformen hanterar",E-AP01,TA,,,,,Lasttestet i AP01 med representativ datamängd visar svarstider eller jobbtider över målen i B08,"Lasttest med representativ datamängd tidigt i AP01, före beslut om plattform och genomförandeestimat.",
-,estimatrisk,"Medusa och Index-modulen klarar inte svarstidsmålen med 1,4 miljoner artiklar",E-AP02,TA,0.3,40,80,200,Lasttestet före start visar för långa svarstider,Lasttest innan arbetet börjar. Egen sökindex eller databasoptimering om det behövs.,Vaimo teknisk arkitekt
-,estimatrisk,Teamets erfarenhet av Medusa v2 är begränsad,E-AP03,DEV,0.4,24,60,120,Utvecklingen går långsammare än planerat de första veckorna,Bemanna med minst en utvecklare med Medusa v2-erfarenhet. Följ upp utfall per rad i delleveransen.,Vaimo projektledare
-,estimatrisk,Nya Medusa-versioner kräver anpassning av egna moduler och admintillägg,E-AP13,DEV,0.3,8,24,60,En säkerhetsuppdatering kräver ny Medusa-version,Lås version. Prova uppgraderingar i testmiljön. Ta med uppgraderingar i förvaltningen.,Vaimo teknisk arkitekt
+_id,_type,_label,_parent,roll,sannolikhet,utlösare,åtgärd,ägare
+,estimatrisk,C4-exporten avviker från antaget format eller har luckor,E-AP11,DEV,,Exportprovet i AP01 visar avvikelser,Exportprov tidigt i AP01. Kostnadssatt lösning före C4-stängning.,
+,estimatrisk,Äldre dokumentversioner saknas eller kan inte kopplas till artikel,E-AP22,DEV,,Inventeringen i AP01 visar saknade versioner,Kostnadssatt åtkomstlösning för SFB:s beslut.,
+,estimatrisk,Transport mellan PIM och MagicBox måste byggas från grunden,E-AP04,DEV,,AP01 visar att endpointar eller köer saknas,,
+,estimatrisk,Befintliga grupprelationer avviker från gruppregeln i B12,E-AP02,BC,,Kontrollen i AP01 hittar avvikande relationer,Redovisas för SFB:s beslut. Tas inte bort tyst.,
+,estimatrisk,Vald tabellkomponent klarar inte kraven,E-AP16,DEV,,Prototypen med representativa artiklar underkänns,Prototyp före beslut om komponent.,
+,estimatrisk,Jämförelseprofilen för prestanda nås inte med vald infrastruktur,E-AP12,DEV,,Kapacitetstestet visar svarstider över profilen,,
+,estimatrisk,ITM8 är inte tillgängliga när gemensamt test ska köras,E-AP12,PM,,ITM8:s plan avviker från vår,,
+,estimatrisk,SFB:s beslut eller medverkan dröjer,E-AP15,PM,,Beslutsdatum i planen passeras,Senaste beslutsdatum i tidplanen. Medverkan per vecka enligt B11.,SFB
+,estimatrisk,"Volymen, cirka 1,4 miljoner artiklar, ligger över vad Aja själv anger att plattformen hanterar",E-AP01,TA,,Lasttestet i AP01 med representativ datamängd visar svarstider eller jobbtider över målen i B08,"Lasttest med representativ datamängd tidigt i AP01, före beslut om plattform och genomförandeestimat.",
