@@ -5,7 +5,7 @@ PBS F1 första driftversionen ^PBS-F1
 	Strukturen följer 100 %-regeln: tillsammans täcker produkterna hela F1, och varje produkt hör till ett paket. Gemensamma regler finns bara i 2.2.3, inte igen i 2.3 eller 2.4.
 	Produkter med part ITM8 eller Nuvarande part ingår i F1 men inte i Vaimos pris.
 	Raderna Förstudien: kommer från discoveryrapporten v0.5 och dess bilagor. Den är bakgrund och utökar inte omfattningen. Skillnader mot kravspecifikationen redovisas i AP01, produkt c.2.
-	Teknikstack: Medusa v2, se arkitekturen PA-1-8 i AP01. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och sökning via Index-modulen. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler.
+	Teknikstack: Medusa v2, se arkitekturen PA-1-8 i AP01. Medusa ger ramverket för administratörsgränssnittet, inloggning och användare, filhantering, kategoriträd, workflows med återförsök, händelser, schemalagda jobb och listvyer. Sökning och filter görs med egna PostgreSQL-index i artikelmodulen, eftersom Medusas Index-modul är avvecklad sedan v2.22.7. Artiklar med käll- och egna värden, dokumentversioner, Excelregler och migrering byggs som egna moduler.
 	Varje produkt har en produktbeskrivning: fälten format, kvalitetsmetod, granskare, godkännare och beror på, och undernoderna Syfte, Innehåll, Underlag och Kvalitetskriterier. Produktflödet sist i filen visar ordningen.
 	Funktioner i PIM-applikationen godkänns med demo mot acceptanskriteriet i respektive krav. Det samlade beviset är acceptanstestet i 6.5.
 	Delleverans före 2026-12-31

@@ -374,7 +374,7 @@ PBS AP01 Teknisk precisering och inventering ^PBS-AP01
 			Innehåll
 				Teknikstack: Medusa v2 med Node.js, TypeScript, PostgreSQL och Redis, enligt beslut 2026-11-16. PIM:s egna data ligger i egna Medusa-moduler med modullänkar till produktmodulen. Administratörsgränssnittet byggs som tillägg till Medusa Admin.
 				Hosting, komponenter och deras gränser, säkerhetslösning och hur arkitekturen uppfyller de icke-funktionella kraven i PA-1-7.
-				Resultatet av lasttestet av Medusa och Index-modulen med 1,4 miljoner artiklar. Lasttestet görs innan arbetet börjar och ingår inte i AP01.
+				Resultatet av lasttestet av Medusa med PostgreSQL och artikelmodulen med 1,4 miljoner artiklar: fritextsökning, filterkombinationer, kategorifilter och filtren saknar bild och saknar kategori. Ingen fråga får falla tillbaka på filtrering i minnet. Medusas Index-modul är avvecklad sedan v2.22.7 och används inte. Lasttestet görs innan arbetet börjar och ingår inte i AP01.
 				Säkerhetslösningen driftsätts i F1, avsnitt 5.
 			Kvalitetskriterier
 				Varje icke-funktionellt krav i PA-1-7 har en lösning i arkitekturen.
