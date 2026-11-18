@@ -4,21 +4,21 @@ Estimat SFB – berikningsdel och PIM
 	estimatklass:: 4
 	omfattningsbas:: SFB_Kravspecifikation_Vaimo.pdf 1.3-V; SFB_Kravkatalog_Vaimo.xlsx 1.3-V
 	metod:: ./Estimering/Estimeringsmetod.ord
-	checklista:: ./SFB_Offertprocess.ord
+	checklista:: ./SFB Offertprocess.ord
 	Estimatet för SFB enligt [[Estimeringsmetod med trepunktsestimat (PERT)]]. Siffrorna matas in i CSV-filerna; paket, grupper och totaler räknas av typerna i metodfilen.
 	Klass 4: kraven och arbetspaketen finns, men gränssnitt, export och volymer verifieras först i [[AP01]]. Estimera om till klass 3 när AP01 är klar.
 	Filer
-		./SFB_Estimat_paket.csv
+		./SFB Estimat paket.csv
 			Ett paket per arbetspaket AP01–AP22, alternativ och tillval.
-		./SFB_Estimat_rader.csv
-			Arbetsmoment per roll, utgår från paketens leverabler i SFB_Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB_PBS_*.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB_Uppgifter_*.ord arbetet görs i.
+		./SFB Estimat rader.csv
+			Arbetsmoment per roll, utgår från paketens leverabler i SFB Krav.ord. Tre värden fylls i av estimatorerna. Kolumnen produkt anger vilken produkt i SFB PBS *.ord raden tar fram, och kolumnen uppgift vilka uppgifter i SFB Uppgifter *.ord arbetet görs i.
 				Timmarna 2026-11-16 är ett första förslag, härlett ur uppgifternas längd. De är inte estimerade av två oberoende estimatorer enligt metoden och ska ersättas i estimeringsmötet.
 				Regel: längd i arbetsdagar gånger 6,4 timmar, alltså 8 timmar gånger fokusfaktorn 0,8. Första ansvariga på en uppgift räknas på heltid, övriga ansvariga på halvtid och godkännanden på en fjärdedel. Flera rader med samma roll på samma uppgift delar timmarna. Optimistisk är 0,7 gånger trolig och pessimistisk 1,8 gånger trolig.
 				Omräknat 2026-11-16 med Medusa v2 som teknikstack. Uppgifternas längd är kortad per produkt där Medusa ger färdiga delar: kategoriträd 50 %, kategoriförvaltning 60 %, jobbstatus 50 %, återförsök och felvy 40 %, sökning och filter 30 %, artikelvy 25 %, inloggning 30 % och miljöer 20 %. Övriga delar 0 till 20 %. Regler, versioner, migrering, test och kontrakt är oförändrade. Ett lasttest av Medusa med 1,4 miljoner artiklar görs innan arbetet börjar och ingår inte i estimatet, och tre Medusa-risker i riskregistret. Föregående version utan Medusa finns i git, commit 5aa61e7.
 				Rader över 40 timmar är delade per uppgift. ITM8:s rader och volymraderna i migreringen är tomma, eftersom de inte går att härleda ur längderna. Projektledningen räknas per vecka i 16 veckor.
-		./SFB_Estimat_risker.csv
+		./SFB Estimat risker.csv
 			Risker ur underlaget och besluten B01–B14. Sannolikhet och konsekvens fylls i.
-		./SFB_Estimat_kostnader.csv
+		./SFB Estimat kostnader.csv
 			Licenser, drift, support och andra parters avgifter.
 
 	Inställningar ^estimatinst
@@ -78,7 +78,7 @@ Estimat SFB – berikningsdel och PIM
 			ITM8:s paket [[AP07]]–[[AP10]] ingår som externa beroenden: deras timmar syns som extern insats och ingår inte i Vaimos pris.
 		V2 +estimatsumma ^E-V2
 			[[AP17]], [[AP18]] och [[AP19]] som egna rader med fullt leveransarbete.
-			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt c.2, i SFB_PBS_AP01.ord.
+			Automatisk arkivering i [[AP19]] och automatisk webbstatus i paketet E-AUTOWEBB är beslutade utökningar utöver kravspecifikationen. Se AP01, produkt c.2, i SFB PBS AP01.ord.
 		Tillval +estimatsumma ^E-TILLVAL
 			[[AP20]], [[AP21]] och mottagartjänsten för tioårsarkivet. AP20 föreslås hos ITM8 och syns som extern insats.
 		Alternativ +estimatsumma ^E-ALT
@@ -123,8 +123,8 @@ Estimat SFB – berikningsdel och PIM
 
 	Kontroller före inlämning
 		Utöver kontrollerna i metodfilen.
-		[ ] Varje F1-krav i SFB_Krav.ord finns i kolumnen krav på minst en rad.
-		[ ] Varje produkt i SFB_PBS_*.ord finns i kolumnen produkt på minst en rad, utom samlingsprodukter vars delprodukter har rader.
+		[ ] Varje F1-krav i SFB Krav.ord finns i kolumnen krav på minst en rad.
+		[ ] Varje produkt i SFB PBS *.ord finns i kolumnen produkt på minst en rad, utom samlingsprodukter vars delprodukter har rader.
 		[ ] Kolumnen krav stämmer med produktens krav i PBS:en.
 		[ ] Varje rad har minst en uppgift i kolumnen uppgift, och varje uppgift som Vaimo eller ITM8 utför finns på minst en rad.
 		[ ] Summan av radernas troliga timmar per uppgift ryms i uppgiftens längd med den bemanning som planeras.
