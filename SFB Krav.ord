@@ -1,6 +1,6 @@
 Kravkatalog för vår berikningsdel och PIM
 	version:: 1.3-V
-	källor:: SFB_Kravkatalog_Vaimo.xlsx; SFB_Kravspecifikation_Vaimo.pdf
+	källor:: [SFB_Kravkatalog_Vaimo.xlsx](./F%C3%B6rfr%C3%A5gan/SFB_Kravkatalog_Vaimo.xlsx); [SFB_Kravspecifikation_Vaimo.pdf](./F%C3%B6rfr%C3%A5gan/SFB_Kravspecifikation_Vaimo.pdf)
 	Version 1.3-V. Till Vaimo. Kravbas 1.3. Filtrera på F1, V2, Tillval eller Framtid.
 	Alla F1-rader ingår i basestimatet. Bekräftat avser behovet; föreslagna detaljer anges i text och beroenden. Se [[B01]]-[[B14]] och huvuddokumentet.
 	Sammanställt ur kravkatalogen (Excel) och kravspecifikationen (PDF). Vid dubbletter gäller Excel. Krav-ID, AP-, B- och ALT-nummer är källornas egna och används som Ord-ID.

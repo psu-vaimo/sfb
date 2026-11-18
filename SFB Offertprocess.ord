@@ -1,6 +1,6 @@
 Offertprocess SFB – estimat för berikningsdel och PIM
 	version:: 1.3-V
-	källor:: SFB_Kravspecifikation_Vaimo.pdf; SFB_Kravkatalog_Vaimo.xlsx
+	källor:: [SFB_Kravspecifikation_Vaimo.pdf](./F%C3%B6rfr%C3%A5gan/SFB_Kravspecifikation_Vaimo.pdf); [SFB_Kravkatalog_Vaimo.xlsx](./F%C3%B6rfr%C3%A5gan/SFB_Kravkatalog_Vaimo.xlsx)
 	krav:: ./SFB_Krav.ord
 	Checklista för att ta fram Vaimos offert med estimat. Den bygger på kravspecifikationens regler för estimering (avsnitt 1, 2.1, 7–12 och bilagan) och på kravkatalogens instruktioner.
 	Länkar som [[AP01]], [[B07]] och [[PIM-N01]] pekar på noder i SFB_Krav.ord.
