@@ -1,0 +1,189 @@
+_id,_type,_label,_parent,roll,optimistisk,trolig,pessimistisk,antal,enhet,krav,antagande,utfall,produkt,uppgift
+,estimatrad,Genomgång av förstudien och återanvändningsmatris,E-AP01,BC,9,13,23,,,PIM-I01 Gränssnittskontrakt,"Bara återstående arbete estimeras. Matrisen visar dokument, version och vad som redan är verifierat.",,PA-1-1,U-PA-1-1-T
+,estimatrad,"Fältmatris, a.3 Fältmatris: mappa egenskaperna i migreringsurvalet från bruttolistan",E-AP01,BC,13,19,34,,,PIM-I01 Gränssnittskontrakt; PIM-D03 Attribut,,,PA-1-3,U-PA-1-3-T1
+,estimatrad,"Fältmatris, a.3 Fältmatris: lägg till ägare, skyddsnivå, validering och mottagarmappning",E-AP01,BC,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-D03 Attribut,,,PA-1-3,U-PA-1-3-T2
+,estimatrad,"Fältmatris, a.3 Fältmatris: skriv regeln för övriga attributdefinitioner",E-AP01,BC,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-D03 Attribut,,,PA-1-3,U-PA-1-3-T3
+,estimatrad,Fältmatris: ta fram a.3.1 Låst startlista för redigerbara produktegenskaper,E-AP01,BC,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-D03 Attribut,,,PA-1-3-1,U-PA-1-3-1-T
+,estimatrad,Fältmatris: ta fram a.3.2 Förteckning över skyddade fält,E-AP01,BC,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-D03 Attribut,,,PA-1-3-2,U-PA-1-3-2-T
+,estimatrad,"Fältmatris, teknisk granskning",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt,,,PA-1-3,U-PA-1-3-T4
+,estimatrad,Identiteter och exempeldata,E-AP01,TA,22,32,58,,,PIM-D01 Identitet,Kontrollen av grupptillhörigheter enligt B12 ligger i raden Kontrollrapport för produktgrupper.,,PA-1-4,U-PA-1-4-T1; U-PA-1-4-T2; U-PA-1-4-T3; U-PA-1-4-T4
+,estimatrad,Utbyteskontrakt: sammanställ a.2 Gränssnittskontrakt,E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2,U-PA-1-2-T
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-1,U-PA-1-2-1-T1
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-1,U-PA-1-2-1-T2
+,estimatrad,"Utbyteskontrakt, a.2.1 Kontrakt MagicBox till PIM: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-1,U-PA-1-2-1-T3
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-2,U-PA-1-2-2-T1
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-2,U-PA-1-2-2-T2
+,estimatrad,"Utbyteskontrakt, a.2.2 Kontrakt PIM till MagicBox: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-2,U-PA-1-2-2-T3
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-3,U-PA-1-2-3-T1
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: gå igenom utkastet med Snicken",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-3,U-PA-1-2-3-T2
+,estimatrad,"Utbyteskontrakt, a.2.3 Kontrakt för Snickenflödet: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-3,U-PA-1-2-3-T3
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: skriv utkast",E-AP01,TA,9,13,23,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-4,U-PA-1-2-4-T1
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: gå igenom utkastet med ITM8",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-4,U-PA-1-2-4-T2
+,estimatrad,"Utbyteskontrakt, a.2.4 Fel- och transportkontrakt: revidera efter genomgången",E-AP01,TA,4,6,11,,,PIM-I01 Gränssnittskontrakt; PIM-I02 Källmottagning i PIM,,,PA-1-2-4,U-PA-1-2-4-T3
+,estimatrad,"Utbyteskontrakt, ITM8:s medverkan",E-AP01,ITM8,,,,,,PIM-I01 Gränssnittskontrakt,"ITM8:s medverkan räknas bara här, inte i AP07 eller AP08.",,PA-1-2-6,U-PA-1-2-6-T
+,estimatrad,Validerade kontraktsexempel,E-AP01,DEV,13,19,34,,,PIM-I01 Gränssnittskontrakt,,,PA-1-2-5,U-PA-1-2-5-T1; U-PA-1-2-5-T2
+,estimatrad,Fast Excel-mall,E-AP01,BC,13,19,34,,,PIM-X01 Excelimport,,,PA-1-6,U-PA-1-6-T1; U-PA-1-6-T2
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1 C4-exportinventering,E-AP01,DEV,13,19,34,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1,U-PA-2-1-T
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1.2 Inventering av äldre dokumentversioner och ändringslogg,E-AP01,DEV,13,19,34,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-2,U-PA-2-1-2-T
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.1.3 Underlag för migreringsurval,E-AP01,DEV,4,6,11,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-1-3,U-PA-2-1-3-T
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: inventera versionsnycklar och gamla URL:er",E-AP01,DEV,9,13,23,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T1
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: ta fram transformationsprofiler med exempel",E-AP01,DEV,4,6,11,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T2
+,estimatrad,"Export- och medieinventering med C4-exportprov, b.2 Medieinventering: ta fram länkförteckning, domäner och lagring",E-AP01,DEV,4,6,11,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-2,U-PA-2-2-T3
+,estimatrad,Export- och medieinventering med C4-exportprov: ta fram b.3 Volym- och lastinventering,E-AP01,DEV,13,19,34,,,PIM-M01 Export och inventering,Inkluderar äldre dokumentexport och mätning av filvolym.,,PA-2-3,U-PA-2-3-T
+,estimatrad,Verifiering av redigerbara egenskaper och åtkomst vid PIM-avbrott,E-AP01,TA,13,19,34,,,PIM-W09 Egen berikning av produktegenskaper; PIM-O05 Publicerad information vid PIM-avbrott,,,PA-1-3-1; PA-2-4,U-PA-2-4-T
+,estimatrad,Specifikation av icke-funktionella krav,E-AP01,TA,4,6,11,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Mätvärde och mätförutsättning per krav. Bekräftar svarstidsmålen i B08.,,PA-1-7,U-PA-1-7-T1
+,estimatrad,"Specifikation av icke-funktionella krav, verifieringssätt",E-AP01,QA,13,19,34,,,PIM-Q01; PIM-Q02; PIM-Q03; PIM-Q04; PIM-O01; PIM-O02; PIM-O03; PIM-O04; PIM-O05; PIM-H01; PIM-H02,Hur varje krav testas. Testplanen i AP12 spårar mot detta.,,PA-1-7,U-PA-1-7-T1; U-PA-1-7-T2
+,estimatrad,Reviderat estimat och plan,E-AP01,TA,22,32,58,,,,Estimeras om enligt metoden till klass 3.,,PA-3-3; PA-3-4,U-PA-3-3-T1; U-PA-3-3-T2; U-PA-3-3-T3; U-PA-3-4-T
+,estimatrad,Workshops och avstämningar med SFB och ITM8,E-AP01,BC,27,38,68,,,,,,PA-3-5,U-PA-3-5-T
+,estimatrad,SFB:s medverkan i workshops och granskning,E-AP01,SFB,27,38,68,,,,,,PA-3-5,U-PA-3-5-T
+,estimatrad,Regel för sammanslagen extern text,E-AP01,BC,9,13,23,,,PIM-W03 Textfält; PIM-W04 Textöverstyrning,,,PA-1-3-3,U-PA-1-3-3-T
+,estimatrad,Analys av identitet och möjliga dubbletter i urvalet,E-AP01,DEV,13,19,34,,,PIM-D01 Identitet,,,PA-1-4-1,U-PA-1-4-1-T
+,estimatrad,Kontrollrapport för produktgrupper,E-AP01,DEV,13,19,34,,,PIM-D02 Produktgrupper,"Kontrollen av grupptillhörigheter enligt B12 räknas här, inte i raden Identiteter och exempeldata.",,PA-1-5,U-PA-1-5-T
+,estimatrad,Verifiering av drift och identitet,E-AP01,TA,9,13,23,,,PIM-O01 Inloggning; PIM-O03 Backup och återställning,,,PA-2-5,U-PA-2-5-T
+,estimatrad,Beslutsunderlag och förteckning över skillnader,E-AP01,BC,18,26,47,,,,,,PA-3-1; PA-3-2,U-PA-3-1-T1; U-PA-3-1-T2; U-PA-3-2-T
+,estimatrad,Teknisk arkitektur och säkerhetslösning,E-AP01,TA,24,35,63,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,"Teknikstack, hosting, komponenter och säkerhetslösning. Utgår från specifikationen av icke-funktionella krav i AP01. Driftsättning av säkerhetslösningen ingår i AP13.",,PA-1-8,U-PA-1-8-T1; U-PA-1-8-T2; U-PA-1-8-T3; U-PA-1-8-T4
+,estimatrad,"Teknisk arkitektur, SFB:s granskning och godkännande",E-AP01,SFB,2,3,5,,,PIM-O01; PIM-O02; PIM-Q01; PIM-H01; PIM-H02,Godkänns tidigt i F1.,,PA-1-8,U-PA-1-8-G
+,estimatrad,Objekt och identiteter,E-AP02,DEV,18,26,47,,,PIM-D01 Identitet,,,PF-2-1-1,U-PF-2-1-1-T1; U-PF-2-1-1-T2
+,estimatrad,Attribut med skilda källvärden och egna värden,E-AP02,DEV,27,38,68,,,PIM-D03 Attribut,,,PF-2-1-2,U-PF-2-1-2-T1; U-PF-2-1-2-T2
+,estimatrad,Referensdata,E-AP02,DEV,18,26,47,,,PIM-D07 Referensdata,,,PF-2-1-3,U-PF-2-1-3-T1; U-PF-2-1-3-T2
+,estimatrad,Tre kategoriträd,E-AP02,BC,4,6,11,,,PIM-D05 Kategorier,,,PF-2-1-4,U-PF-2-1-4-T
+,estimatrad,"Tre kategoriträd, implementation",E-AP02,DEV,9,13,23,,,PIM-D05 Kategorier,,,PF-2-1-4,U-PF-2-1-4-T
+,estimatrad,Manuella produktgrupper enligt B12,E-AP02,DEV,18,26,47,,,PIM-D02 Produktgrupper,"Högst en variantgrupp och flera bundles per artikel. Ingen bundle-logik för antal, pris eller lager.",,PF-2-1-5,U-PF-2-1-5-T1; U-PF-2-1-5-T2
+,estimatrad,"Datamodell, dokumentation",E-AP02,BC,9,13,23,,,PIM-D01; PIM-D02; PIM-D03,,,PF-2-1,U-PF-2-1-T
+,estimatrad,Komponenttest och rättning,E-AP02,DEV,4,6,11,,,,,,PF-2-1,U-PF-2-1-T
+,estimatrad,Gränssnittsdesign och avstämning med administratörer,E-AP03,BC,13,19,34,,,PIM-W01 Sökning; PIM-W02 Artikelredigering,,,PF-2-2,U-PF-2-2-D
+,estimatrad,Sökning,E-AP03,DEV,9,13,23,,,PIM-W01 Sökning,,,PF-2-2-1,U-PF-2-2-1-T1; U-PF-2-2-1-T2
+,estimatrad,Enskild redigering,E-AP03,DEV,13,19,34,,,PIM-W02 Artikelredigering,,,PF-2-2-2,U-PF-2-2-2-T1; U-PF-2-2-2-T2; U-PF-2-2-2-T3
+,estimatrad,Textregler,E-AP03,DEV,12,17,31,,,PIM-W03 Textfält,,,PF-2-2-3,U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3
+,estimatrad,"Gemensamma fält-, överstyrnings- och valideringsregler",E-AP03,DEV,25,36,65,,,PIM-W04; PIM-W08; PIM-Q03,Räknas bara här. AP06 och AP16 återanvänder reglerna.,,PF-2-2-3; PF-2-2-5,U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3; U-PF-2-2-5-T
+,estimatrad,Egen attributöverstyrning för startlistans sju egenskaper,E-AP03,DEV,12,17,31,,,PIM-W09 Egen berikning av produktegenskaper,"Material, färg, längd, bredd, höjd, tjocklek och diameter enligt B07.",,PF-2-2-3,U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3
+,estimatrad,Tillkommande attribut med samma grundregel,E-AP03,DEV,1,2,4,0,attribut,PIM-W09 Egen berikning av produktegenskaper,"Enhetspris. Ingår inte i basen. Timmar per attribut, bedömning.",,PF-2-2-3,U-PF-2-2-3-T1; U-PF-2-2-3-T2; U-PF-2-2-3-T3
+,estimatrad,Notiser,E-AP03,DEV,9,13,23,,,PIM-W05 Ändringsnotiser,,,PF-2-2-4,U-PF-2-2-4-T
+,estimatrad,Webbstatus och livscykelstatus,E-AP03,DEV,13,19,34,,,PIM-W06 Webbstatus; PIM-W07 Livscykelstatus i första versionen,,,PF-2-2-2,U-PF-2-2-2-T1; U-PF-2-2-2-T2; U-PF-2-2-2-T3
+,estimatrad,Ny ändringshistorik,E-AP03,DEV,18,26,47,,,PIM-Q04 Ändringshistorik,,,PF-2-2-6,U-PF-2-2-6-T1; U-PF-2-2-6-T2
+,estimatrad,Enkel attributstädning enligt B10,E-AP03,DEV,13,19,34,,,PIM-D04 Attributförvaltning; PIM-D06 Kategoriförvaltning,"Ingen sammanslagning, värdeflytt eller datatypbyte.",,PF-2-2-7; PF-2-2-8,U-PF-2-2-7-T; U-PF-2-2-8-T
+,estimatrad,Komponenttest och rättning,E-AP03,DEV,9,13,23,,,,,,PF-2-2,U-PF-2-2-T
+,estimatrad,Mottagning av källdata,E-AP04,DEV,22,32,58,,,PIM-I02 Källmottagning i PIM,,,PF-2-6-1,U-PF-2-6-1-T1; U-PF-2-6-1-T2
+,estimatrad,Utgående förändringsflöde,E-AP04,DEV,18,26,47,,,PIM-I03 Utgående från PIM,,,PF-2-6-2,U-PF-2-6-2-T1; U-PF-2-6-2-T2
+,estimatrad,Återförsök och omsändning,E-AP04,DEV,4,6,11,,,PIM-I04 Fel och omsändning,,,PF-2-6-3,U-PF-2-6-3-T1; U-PF-2-6-3-T2
+,estimatrad,Felvy,E-AP04,DEV,4,6,11,,,PIM-I04 Fel och omsändning,,,PF-2-6-3,U-PF-2-6-3-T1; U-PF-2-6-3-T2
+,estimatrad,Teknisk design av transport,E-AP04,TA,9,13,23,,,PIM-I02 Källmottagning i PIM; PIM-I03 Utgående från PIM,Transport väljs efter AP01. Inget befintligt API antas.,,PF-2-6,U-PF-2-6-D
+,estimatrad,Komponenttest och rättning,E-AP04,DEV,9,13,23,,,,,,PF-2-6,U-PF-2-6-T
+,estimatrad,Medieinformation,E-AP05,DEV,6,9,16,,,PIM-A01 Medierelationer,,,PF-2-5-1,U-PF-2-5-1-T1; U-PF-2-5-1-T2
+,estimatrad,Uppladdning av flera filer med resultat per fil,E-AP05,DEV,6,9,16,,,PIM-A01 Medierelationer,Till en vald artikel eller produkt. Ingen automatisk matchning mot många artiklar.,,PF-2-5-1,U-PF-2-5-1-T1; U-PF-2-5-1-T2
+,estimatrad,"Återanvändning, ordning och webbexkludering",E-AP05,DEV,20,28,50,,,PIM-A01 Medierelationer; PIM-A02 Ordning och bortval,,,PF-2-5-1; PF-2-5-2,U-PF-2-5-1-T1; U-PF-2-5-1-T2; U-PF-2-5-2-T
+,estimatrad,"Oföränderliga dokumentversioner och versionslista, 2.5.3 Dokumentversionsarkiv: bygg oföränderliga dokumentversioner",E-AP05,DEV,13,19,34,,,PIM-A03; PIM-A04; PIM-A05,Tioårsarkiv utan automatisk radering.,,PF-2-5-3,U-PF-2-5-3-T1
+,estimatrad,"Oföränderliga dokumentversioner och versionslista, 2.5.3 Dokumentversionsarkiv: bygg undantagen för Färgkarta och Produktkatalog",E-AP05,DEV,4,6,11,,,PIM-A03; PIM-A04; PIM-A05,Tioårsarkiv utan automatisk radering.,,PF-2-5-3,U-PF-2-5-3-T2
+,estimatrad,Oföränderliga dokumentversioner och versionslista: bygg 2.5.4 Versionslista per artikel,E-AP05,DEV,13,19,34,,,PIM-A03; PIM-A04; PIM-A05,Tioårsarkiv utan automatisk radering.,,PF-2-5-4,U-PF-2-5-4-T
+,estimatrad,Komponenttest och rättning,E-AP05,DEV,9,13,23,,,,,,PF-2-5,U-PF-2-5-T
+,estimatrad,Flaggning av källborttagning,E-AP05,DEV,9,13,23,,,PIM-A08 Källborttagning,,,PF-2-5-5,U-PF-2-5-5-T
+,estimatrad,Fast mall och förhandskontroll,E-AP06,DEV,9,13,23,,,PIM-X01 Excelimport; PIM-X03 Importkontroll,,,PF-2-4-1,U-PF-2-4-1-T1; U-PF-2-4-1-T2; U-PF-2-4-1-T3
+,estimatrad,Import med radsvar och jobbstatus,E-AP06,DEV,18,26,47,,,PIM-X01; PIM-X03; PIM-Q02,5 000 rader inom 10 minuter enligt jämförelseprofilen.,,PF-2-4-1; PF-2-4-3,U-PF-2-4-1-T1; U-PF-2-4-1-T2; U-PF-2-4-1-T3; U-PF-2-4-3-T
+,estimatrad,Export,E-AP06,DEV,7,10,18,,,PIM-X02 Excelexport,,,PF-2-4-2,U-PF-2-4-2-T
+,estimatrad,"Skydd av källfält, nya manuella artiklar och borttag av överstyrning",E-AP06,DEV,15,22,40,,,PIM-X01 Excelimport; PIM-X02 Excelexport,Enligt B07 och B13. Reglerna kommer från AP03.,,PF-2-4-1; PF-2-4-2,U-PF-2-4-1-T1; U-PF-2-4-1-T2; U-PF-2-4-1-T3; U-PF-2-4-2-T
+,estimatrad,Konflikt vid föråldrad Excel-fil,E-AP06,DEV,9,13,23,,,PIM-X03 Importkontroll,,,PF-2-4-1,U-PF-2-4-1-T1; U-PF-2-4-1-T2; U-PF-2-4-1-T3
+,estimatrad,Komponenttest och rättning,E-AP06,DEV,9,13,23,,,,,,PF-2-4,U-PF-2-4-T
+,estimatrad,Finfo-omkoppling,E-AP07,ITM8,,,,,,PIM-I05 Finfo till MagicBox,,,PF-3-1-1,U-PF-3-1-1-T
+,estimatrad,Ny BASTA-anslutning,E-AP07,ITM8,,,,,,PIM-I06 BASTA till MagicBox,,,PF-3-1-2,U-PF-3-1-2-T
+,estimatrad,"BVB, återanvändning med anpassningar",E-AP07,ITM8,,,,,,PIM-I07 BVB i MagicBox,,,PF-3-1-3,U-PF-3-1-3-T
+,estimatrad,MagicBox-sidan av utbytet med PIM,E-AP08,ITM8,,,,,,PIM-I08 MagicBoxanpassning,,,PF-3-2,U-PF-3-2-T1; U-PF-3-2-T2
+,estimatrad,"ERP-matchning och distribution per delägare, verifiering",E-AP08,ITM8,,,,,,PIM-I08 MagicBoxanpassning,,,PF-3-2,U-PF-3-2-T1; U-PF-3-2-T2
+,estimatrad,Snicken-adapter,E-AP09,ITM8,,,,,,PIM-I09 Snickens urval; PIM-I10 Snickens leveranser,,,PF-3-3,U-PF-3-3-T1; U-PF-3-3-T2
+,estimatrad,"Lagring, transformering och länkhantering",E-AP10,ITM8,,,,,,PIM-A06 Medietransformering; PIM-A07 Befintliga länkar,,,PF-3-4-1; PF-3-4-2,U-PF-3-4-1-T; U-PF-3-4-2-T
+,estimatrad,Vaimos samordning med ITM8 om medier,E-AP10,TA,2,3,5,,,PIM-A06 Medietransformering,,,PF-3-4,U-PF-3-4-T
+,estimatrad,"Fast: mappning och urvalsregler, 4.3 Migreringsmappning: mappa artiklar, attribut och referensdata",E-AP11,BC,13,19,34,,,PIM-M02 Mappning,,,PF-4-3,U-PF-4-3-T1
+,estimatrad,"Fast: mappning och urvalsregler, 4.3 Migreringsmappning: mappa medier, ordning och grupper",E-AP11,BC,13,19,34,,,PIM-M02 Mappning,,,PF-4-3,U-PF-4-3-T2
+,estimatrad,"Fast: mappning och urvalsregler, 4.3 Migreringsmappning: mappa varumärken och Artikeltyp",E-AP11,BC,9,13,23,,,PIM-M02 Mappning,,,PF-4-3,U-PF-4-3-T3
+,estimatrad,"Fast: migreringsverktyg, 4.4 Migreringsverktyg: bygg inläsning och transformering",E-AP11,DEV,22,32,58,,,PIM-M02 Mappning; PIM-M03 Provmigrering,,,PF-4-4,U-PF-4-4-T1
+,estimatrad,"Fast: migreringsverktyg, 4.4 Migreringsverktyg: bygg avstämning och differensrapport",E-AP11,DEV,13,19,34,,,PIM-M02 Mappning; PIM-M03 Provmigrering,,,PF-4-4,U-PF-4-4-T2
+,estimatrad,"Fast: migreringsverktyg, 4.4 Migreringsverktyg: bygg omkörning",E-AP11,DEV,9,13,23,,,PIM-M02 Mappning; PIM-M03 Provmigrering,,,PF-4-4,U-PF-4-4-T3
+,estimatrad,"Fast: avstämning och differensrapport, rättning mellan körningarna",E-AP11,DEV,9,13,23,,,PIM-M03 Provmigrering,Själva körningarna ligger i raden Körning med pris per körning. Bygget av avstämningen ligger i migreringsverktyget.,,PF-4-5,U-PF-4-5-T2
+,estimatrad,"Körning: provkörning, korrigeringskörning och slutkörning",E-AP11,DEV,10,15,27,3,körning,PIM-M03 Provmigrering,"Tre körningar i basen enligt B03. Timmar per körning, härledda ur uppgifterna för prov-, korrigerings- och slutkörning.",,PF-4-5; PF-4-6,U-PF-4-5-T1; U-PF-4-5-T2; U-PF-4-5-T3; U-PF-4-6-T
+,estimatrad,Extra körning,E-AP11,DEV,10,15,27,0,körning,PIM-M03 Provmigrering,"Enhetspris. Ingår inte i basen. Timmar per körning, härledda ur uppgifterna för prov-, korrigerings- och slutkörning.",,PF-4-5,U-PF-4-5-T1; U-PF-4-5-T2; U-PF-4-5-T3
+,estimatrad,Volym: artiklar,E-AP11,DEV,2,4,8,14,100 000 artiklar,PIM-M02 Mappning,"Beräkningsvolym 1,4 miljoner. SFB beslutar urvalet. Timmar per 100 000 artiklar för kontroll, felhantering och avstämning över de tre körningarna.",,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: bildfiler,E-AP11,DEV,1,2,4,5.2,100 000 filer,PIM-M02 Mappning,519 781 bildfiler. Timmar per 100 000 filer för kontroll och felhantering över de tre körningarna.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: dokumentfiler,E-AP11,DEV,1,2,4,1.18,100 000 filer,PIM-M02 Mappning,118 228 dokumentfiler. Timmar per 100 000 filer för kontroll och felhantering över de tre körningarna.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Volym: produktgrupper,E-AP11,DEV,2,4,8,1,22 442 grupper,PIM-M02 Mappning,22 442 produktgrupper. Kontroll av relationer mot gruppregeln i B12.,,PF-4-6,U-PF-4-6-T
+,estimatrad,Filöverföring,E-AP11,DEV,0.5,1,3,12,100 GB,PIM-M02 Mappning,"Antagande 1,2 TB, storleken på C4-exporten med bilder och dokument. Bytevolym mäts i AP01. Timmar per 100 GB för övervakning, omtag och kontroll av överföringen.",,PF-4-6,U-PF-4-6-T
+,estimatrad,SFB:s urvalsbeslut och städning före uttag: besluta om 4.1 Beslutat migreringsurval,E-AP11,SFB,9,13,23,,,PIM-M01 Export och inventering,SFB:s egen insats. Ingår inte i priset.,,PF-4-1,U-PF-4-1-T
+,estimatrad,"SFB:s urvalsbeslut och städning före uttag, 4.1.1 Städad C4-data före uttag: rensa varumärkesfältet och ta bort testartiklarna",E-AP11,SFB,13,19,34,,,PIM-M01 Export och inventering,SFB:s egen insats. Ingår inte i priset.,,PF-4-1-1,U-PF-4-1-1-T1
+,estimatrad,"SFB:s urvalsbeslut och städning före uttag, 4.1.1 Städad C4-data före uttag: åtgärda avvikande grupprelationer enligt beslut",E-AP11,SFB,9,13,23,,,PIM-M01 Export och inventering,SFB:s egen insats. Ingår inte i priset.,,PF-4-1-1,U-PF-4-1-1-T2
+,estimatrad,Ta emot och kontrollera slutexporten och exporten per körning,E-AP11,DEV,9,13,23,,,PIM-M01 Export och inventering,Nuvarande parts eventuella avgift är en kostnadspost.,,PF-4-2; PF-4-9,U-PF-4-2-T1
+,estimatrad,Särskild export av äldre dokumentversioner,E-AP22,DEV,22,32,58,,,PIM-M06 Äldre dokumentversioner och historikexport,,,PF-4-7,U-PF-4-7-T1; U-PF-4-7-T2
+,estimatrad,Historikmappning,E-AP22,BC,7,10,18,,,PIM-M06 Äldre dokumentversioner och historikexport,,,PF-4-7,U-PF-4-7-T1
+,estimatrad,Inläsning och avstämning av dokumentversioner,E-AP22,DEV,2,4,8,1,100 000 versioner,PIM-M06 Äldre dokumentversioner och historikexport,Antagande 100 000 äldre dokumentversioner. Historisk filmängd mäts i AP01. Samma fil räknas inte i AP11.,,PF-4-7,U-PF-4-7-T1; U-PF-4-7-T2
+,estimatrad,Läsbar export av gammal ändringslogg,E-AP22,DEV,9,13,23,,,PIM-M06 Äldre dokumentversioner och historikexport,Om loggen kan tas ut. Inget logggränssnitt.,,PF-4-8,U-PF-4-8-T
+,estimatrad,Kostnadssatt lösning för exportluckor,E-AP22,TA,4,6,11,,,PIM-M06 Äldre dokumentversioner och historikexport,Beslutas av SFB före C4-stängning.,,PF-4-7; PF-4-8,U-PF-4-8-T
+,estimatrad,Testplan kopplad till acceptanskontrollerna,E-AP12,QA,22,32,58,,,PIM-M04 Acceptanstest,,,PF-6-1,U-PF-6-1-T
+,estimatrad,Sammanhängande integrationstest,E-AP12,QA,27,38,68,,,PIM-M04 Acceptanstest; PIM-I08 MagicBoxanpassning,,,PF-6-2,U-F1-DL-TEST; U-PF-6-2-T1
+,estimatrad,"Sammanhängande integrationstest, ITM8:s medverkan",E-AP12,ITM8,,,,,,PIM-M04 Acceptanstest; PIM-I08 MagicBoxanpassning,,,PF-6-2,U-F1-DL-TEST; U-PF-6-2-T1
+,estimatrad,Kapacitetstest enligt jämförelseprofilen,E-AP12,DEV,13,19,34,,,PIM-Q01 Dimensionering; PIM-Q02 Arbete med större urval,Tabellredigering 100 artiklar per administratör och Exceljobb 5 000 rader.,,PF-6-3,U-PF-6-3-T1
+,estimatrad,Kapacitetsrapport och analys av mättider,E-AP12,QA,9,13,23,,,PIM-Q01 Dimensionering; PIM-Q02 Arbete med större urval,,,PF-6-3,U-PF-6-3-T2
+,estimatrad,"Migreringskontroll, 6.5 Acceptanstestprotokoll: acceptanstest med administratörerna",E-AP12,QA,22,32,58,,,PIM-M03 Provmigrering; PIM-M04 Acceptanstest,,,PF-6-5,U-PF-6-5-T1
+,estimatrad,"Migreringskontroll, 6.5 Acceptanstestprotokoll: sammanställ acceptanstestprotokollet",E-AP12,QA,9,13,23,,,PIM-M03 Provmigrering; PIM-M04 Acceptanstest,,,PF-6-5,U-PF-6-5-T3
+,estimatrad,Samlat avbrottstest,E-AP12,QA,9,13,23,,,PIM-O05 Publicerad information vid PIM-avbrott,Använder AP13:s återställningsprotokoll utan att räkna provet igen.,,PF-6-4,U-PF-6-4-T
+,estimatrad,Acceptansstöd,E-AP12,BC,11,16,29,,,PIM-M04 Acceptanstest,,,PF-6-5,U-PF-6-5-T1
+,estimatrad,Rättning och omtest före godkännande,E-AP12,DEV,27,38,68,,,PIM-M04 Acceptanstest,,,PF-6-5; PF-6-2,U-PF-6-2-T2; U-PF-6-5-T2
+,estimatrad,SFB:s acceptanstest,E-AP12,SFB,21,30,54,,,PIM-M04 Acceptanstest,,,PF-6-5; PF-6-6,U-PF-6-5-T1; U-PF-6-5-G; U-PF-6-6-T; U-PF-6-6-G
+,estimatrad,"Test- och produktionsmiljö, 5.2 Produktionsmiljö: driftsätt delleveransen",E-AP13,DEV,4,6,11,,,PIM-O02 Miljöer,,,PF-5-2,U-F1-DL-DRIFT
+,estimatrad,Test- och produktionsmiljö: sätt upp 5.1 Testmiljö,E-AP13,DEV,9,13,23,,,PIM-O02 Miljöer,,,PF-5-1,U-PF-5-1-T
+,estimatrad,"Test- och produktionsmiljö, 5.2 Produktionsmiljö: sätt upp produktionsmiljön",E-AP13,DEV,9,13,23,,,PIM-O02 Miljöer,,,PF-5-2,U-PF-5-2-T1
+,estimatrad,"Test- och produktionsmiljö, 5.2 Produktionsmiljö: demonstrera återgång till föregående version",E-AP13,DEV,4,6,11,,,PIM-O02 Miljöer,,,PF-5-2,U-PF-5-2-T2
+,estimatrad,Identitet och säker konfiguration,E-AP13,TA,9,13,23,,,PIM-O01 Inloggning; PIM-O02 Miljöer,Befintlig identitetstjänst återanvänds där möjligt.,,PF-5-3; PF-5-2,U-PF-5-3-T
+,estimatrad,Backup med RPO högst en timme,E-AP13,DEV,7,10,18,,,PIM-O03 Backup och återställning,,,PF-5-4,U-PF-5-4-T
+,estimatrad,Återställningsprov,E-AP13,DEV,7,10,18,,,PIM-O03 Backup och återställning,Utförs här en gång.,,PF-5-4,U-PF-5-4-T
+,estimatrad,Övervakning och supportrutiner,E-AP13,DEV,20,29,52,,,PIM-O04 Övervakning och förvaltning,,,PF-5-5; PF-5-6,U-PF-5-5-T; U-PF-5-6-T
+,estimatrad,Åtkomst vid PIM-avbrott,E-AP13,TA,13,19,34,,,PIM-O05 Publicerad information vid PIM-avbrott,,,PF-5-7,U-PF-5-7-T
+,estimatrad,Växlingsplan och växling,E-AP14,PM,22,32,58,,,PIM-M05 Övergång till drift,,,PF-7-1; PF-7-2,U-PF-7-1-T; U-PF-7-2-T
+,estimatrad,Kontroll av mottagare,E-AP14,QA,4,6,11,,,PIM-M05 Övergång till drift,,,PF-7-2,U-PF-7-2-T
+,estimatrad,Överlämning av kod och dokumentation: bygg 7.3 Överlämnat kodarkiv,E-AP14,TA,13,19,34,,,PIM-H01 Kodägande; PIM-H02 Tredjepartsberoenden,,,PF-7-3,U-PF-7-3-T
+,estimatrad,Överlämning av kod och dokumentation: ta fram 7.4 Data- och gränssnittsdokumentation,E-AP14,TA,13,19,34,,,PIM-H01 Kodägande; PIM-H02 Tredjepartsberoenden,,,PF-7-4,U-PF-7-4-T
+,estimatrad,Överlämning av kod och dokumentation: ta fram 7.5 Komponent- och tjänsteförteckning,E-AP14,TA,9,13,23,,,PIM-H01 Kodägande; PIM-H02 Tredjepartsberoenden,,,PF-7-5,U-PF-7-5-T
+,estimatrad,Utbildning,E-AP14,BC,4,6,11,2,tillfälle,PIM-H03 Utbildning och stöd,"Två tillfällen för två administratörer. Timmar per tillfälle, härledda ur uppgiften för utbildningarna.",,PF-7-8,U-PF-7-8-T
+,estimatrad,Förstärkt stöd efter driftstart,E-AP14,BC,2,3,5,10,arbetsdag,PIM-H03 Utbildning och stöd,"Timmar per arbetsdag. Timmar per arbetsdag, halvtid under stödperioden.",,PF-7-9,U-PF-7-9-T
+,estimatrad,Användarhandledning,E-AP14,BC,18,26,47,,,PIM-H03 Utbildning och stöd,,,PF-7-6,U-PF-7-6-T
+,estimatrad,Runbook och ansvarsfördelning,E-AP14,TA,13,19,34,,,PIM-H03 Utbildning och stöd,,,PF-7-7,U-PF-7-7-T
+,estimatrad,Projektledning,E-AP15,PM,7,10,18,16,vecka,PIM-H04 Projektledning,"Timmar per vecka. Antal veckor sätts från F1:s kalendertid. Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-1; PF-8-4,U-PF-8-1-T; U-PF-8-4-T
+,estimatrad,Styrgrupp och avstämningsmöten,E-AP15,PM,1,2,4,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-2; PF-8-4,U-PF-8-2-T; U-PF-8-4-T
+,estimatrad,Teknisk samordning med ITM8,E-AP15,TA,2,3,5,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-1,U-PF-8-1-T
+,estimatrad,Ändrings- och beslutshantering,E-AP15,PM,1,2,4,16,vecka,PIM-H04 Projektledning,"Timmar per vecka i 16 veckor, från AP01:s start 2026-11-17 till F1 klar 2027-03-08 enligt tidplanen.",,PF-8-2; PF-8-3,U-PF-8-2-T; U-PF-8-3-T
+,estimatrad,Komponentval och prototyp med representativa artiklar,E-AP16,TA,13,19,34,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1
+,estimatrad,Cellredigering och inklistring av cellområde,E-AP16,DEV,10,15,27,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
+,estimatrad,Gemensam ändring på valda rader,E-AP16,DEV,10,15,27,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
+,estimatrad,Validering och resultat per artikel,E-AP16,DEV,10,15,27,,,PIM-N01 Tabellredigering och massändring,Använder AP03:s regler.,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
+,estimatrad,Komponenttest och rättning,E-AP16,DEV,10,15,27,,,PIM-N01 Tabellredigering och massändring,,,PF-2-3,U-PF-2-3-T1; U-PF-2-3-T2; U-PF-2-3-T3; U-PF-2-3-T4
+,estimatrad,Avgränsad fältanalys,E-AP17,BC,13,19,34,,,PIM-N02 ERP-baserad prioritering,,,PV-1-1-1,U-PV-1-1-1-T
+,estimatrad,Prioriteringsfilter i PIM,E-AP17,DEV,18,26,47,,,PIM-N02 ERP-baserad prioritering,,,PV-1-1-3,U-PV-1-1-3-T1; U-PV-1-1-3-T2
+,estimatrad,Återföring från MagicBox,E-AP17,ITM8,,,,,,PIM-N02 ERP-baserad prioritering,,,PV-1-1-2,U-PV-1-1-2-T
+,estimatrad,"Test, driftsättning och överlämning",E-AP17,DEV,7,10,18,,,PIM-N02 ERP-baserad prioritering,,,PV-1-1-4,U-PV-1-1-4-T
+,estimatrad,Regelanalys med testmaterial,E-AP18,BC,18,26,47,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-1,U-PV-1-2-1-T1; U-PV-1-2-1-T2
+,estimatrad,"Automatisk gruppering för säkra träffar, 1.2.2 Automatisk gruppering för säkra träffar: bygg regelmotorn för gruppering",E-AP18,DEV,22,32,58,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-2,U-PV-1-2-2-T1
+,estimatrad,"Automatisk gruppering för säkra träffar, 1.2.2 Automatisk gruppering för säkra träffar: kör mot testmaterialet och justera",E-AP18,DEV,13,19,34,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-2,U-PV-1-2-2-T2
+,estimatrad,Manuell hantering av osäkra fall,E-AP18,DEV,13,19,34,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-3,U-PV-1-2-3-T
+,estimatrad,Skydd för manuella grupper och notiser,E-AP18,DEV,13,19,34,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-4,U-PV-1-2-4-T
+,estimatrad,"Test, driftsättning och överlämning",E-AP18,DEV,7,10,18,,,PIM-N03 Automatisk produktgruppering,,,PV-1-2-5,U-PV-1-2-5-T
+,estimatrad,Manuell arkivering,E-AP19,DEV,22,32,58,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-2,U-PV-1-3-2-T1; U-PV-1-3-2-T2
+,estimatrad,Arkivsökning,E-AP19,DEV,9,13,23,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-3,U-PV-1-3-3-T
+,estimatrad,Återaktivering med bibehållna identiteter och relationer,E-AP19,DEV,13,19,34,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-4,U-PV-1-3-4-T
+,estimatrad,"Distributionsbesked, ITM8 vid kontraktsändring",E-AP19,ITM8,,,,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-5,U-PV-1-3-5-T1; U-PV-1-3-5-T2
+,estimatrad,"Test, driftsättning och överlämning",E-AP19,DEV,7,10,18,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-7,U-PV-1-3-7-T
+,estimatrad,Regler för arkivering och återaktivering,E-AP19,BC,13,19,34,,,PIM-N04 Samlad arkivhantering,,,PV-1-3-1,U-PV-1-3-1-T
+,estimatrad,Automatisk arkivering med datum och lagersaldo,E-AP19,DEV,18,26,47,,,PIM-N04 Samlad arkivhantering; PIM-W07 Livscykelstatus i första versionen,Beslutad utökning utöver PIM-N04. Kräver lagersaldo från AP17.,,PV-1-3-6,U-PV-1-3-6-T1; U-PV-1-3-6-T2
+,estimatrad,SFB:s regel för klar per kanal,E-AUTOWEBB,SFB,15,22,40,,,PIM-W06 Webbstatus,SFB:s egen insats. Ingår inte i priset.,,PV-1-4-1,U-PV-1-4-1-T; U-PV-1-4-1-G
+,estimatrad,Stöd till regel för klar per kanal,E-AUTOWEBB,BC,7,10,18,,,PIM-W06 Webbstatus,,,PV-1-4-1,U-PV-1-4-1-T
+,estimatrad,Automatisk beräkning av webbstatus,E-AUTOWEBB,DEV,27,38,68,,,PIM-W06 Webbstatus,Beslutad utökning utöver PIM-W06.,,PV-1-4-2,U-PV-1-4-2-T1; U-PV-1-4-2-T2
+,estimatrad,Manuell överstyrning av webbstatus,E-AUTOWEBB,DEV,13,19,34,,,PIM-W06 Webbstatus,,,PV-1-4-3,U-PV-1-4-3-T
+,estimatrad,Tre webbstatusar i kontraktet och MagicBox,E-AUTOWEBB,ITM8,,,,,,PIM-W06 Webbstatus; PIM-I03 Utgående från PIM,"ITM8:s anpassning för B2C, B2B och Riks.",,PV-1-4-5,U-PV-1-4-5-T1; U-PV-1-4-5-T2
+,estimatrad,"Test, driftsättning och överlämning",E-AUTOWEBB,DEV,7,10,18,,,PIM-W06 Webbstatus,,,PV-1-4-4,U-PV-1-4-4-T
+,estimatrad,Domän- och länkupplägg,E-AP20,ITM8,,,,,,PIM-N05 Nya mediedomäner,ITM8:s estimat.,,PV-2-1-1; PV-2-1-2,U-PV-2-1-1-T; U-PV-2-1-2-T
+,estimatrad,Test och driftsättning,E-AP20,ITM8,,,,,,PIM-N05 Nya mediedomäner,ITM8:s estimat.,,PV-2-1-3,U-PV-2-1-3-T
+,estimatrad,Stöd med länkmappning,E-AP20,TA,7,10,18,,,PIM-N05 Nya mediedomäner,,,PV-2-1-1,U-PV-2-1-1-T
+,estimatrad,Visning av valda filformat,E-AP21,DEV,22,32,58,,,PIM-N06 Förhandsvisningar,,,PV-2-2-2,U-PV-2-2-2-T2
+,estimatrad,Avtalad formatlista,E-AP21,BC,9,13,23,,,PIM-N06 Förhandsvisningar,,,PV-2-2-1,U-PV-2-2-1-T
+,estimatrad,Val av renderingstjänst,E-AP21,TA,4,6,11,,,PIM-N06 Förhandsvisningar,,,PV-2-2-2,U-PV-2-2-2-T1
+,estimatrad,Test och driftsättning,E-AP21,DEV,7,10,18,,,PIM-N06 Förhandsvisningar,,,PV-2-2-3,U-PV-2-2-3-T
+,estimatrad,Mottagartjänst för hela tioårsarkivet,E-TV-ARKIV,DEV,22,32,58,,,,,,PV-2-3-1,U-PV-2-3-1-T1; U-PV-2-3-1-T2
+,estimatrad,Test och driftsättning,E-TV-ARKIV,DEV,4,6,11,,,,,,PV-2-3-2,U-PV-2-3-2-T
+,estimatrad,"Snicken i MagicBox, ersättning för AP09",E-ALT01,ITM8,,,,,,PIM-I09 Snickens urval; PIM-I10 Snickens leveranser,,,,
+,estimatrad,Kontinuitetslösning: bevarad export och nödvändiga mottagarflöden,E-ALT03,TA,,,,,,,,,,
+,estimatrad,Kontinuitetslösning: implementation,E-ALT03,DEV,,,,,,,,,,
