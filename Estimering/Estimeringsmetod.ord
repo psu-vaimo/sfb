@@ -3,7 +3,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 	datum:: 2026-11-13
 	Återanvändbar metod och mall för Vaimos estimat. Filen beskriver arbetsgången och definierar de typer som räknar fram estimatet. Själva siffrorna matas in i CSV-filer; Ord räknar resten.
 	Ersätter osäkerhetsfaktorn i Vaimos estimeringsmall v3.2 med trepunktsestimat, ett riskregister i timmar och öppna reserver. Se Vad som ändrats mot den gamla mallen längre ned.
-
 	1 Principer
 		Estimera arbetsinsats först. Kostnad och kalendertid räknas fram ur insatsen, aldrig tvärtom.
 			Ett pris eller ett datum som någon redan önskar får inte styra timmarna. Är ramen för snäv, ändra omfattning eller bemanning öppet.
@@ -23,7 +22,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Skillnader diskuteras och leder till nya antaganden. De medelvärdesbildas inte bort.
 		Estimatet är en prognos med känd osäkerhet, inte ett löfte.
 			Det redovisas som låg, bas och hög, och uppdateras när ny kunskap finns. Varje version sparas.
-
 	2 Struktur
 		Estimatet är ett träd med tre nivåer. Varje nivå räknar ihop nivån under.
 			Grupp, till exempel F1, V2, Tillval eller Alternativ. Typen estimatsumma.
@@ -50,7 +48,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Antal multiplicerar radens timmar. Utan antal räknas 1.
 			Om enhet är ifylld måste antal också vara det, annars räknas raden som saknad.
 			Antal 0 ger en ren enhetsprisrad: den syns som enhetspris men ingår inte i summan. Använd det för extra körningar, fler attribut och liknande.
-
 	3 Beräkningar
 		Inställningarna ligger på en nod med ID estimatinst i projektfilen. Formlerna hämtar dem därifrån.
 		Per rad
@@ -94,7 +91,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Per rad: förväntad i scenariot är förväntad × (1 − rollens scenarioavdrag), och kostnaden räknas på samma sätt.
 			Per paket och grupp: förväntad och kostnad i scenariot summeras som grundestimatet. Besparing är kostnad i grunden minus kostnad i scenariot.
 			Scenariot ändrar inte grundestimatet, riskreserven eller intervallen. Prissätt grunden och redovisa scenariot separat tills avdraget är mätt mot utfall.
-
 	4 Arbetsgång
 		Förbered
 			[ ] Bestäm omfattningsbasen: vilka dokument och versioner estimatet bygger på. Skriv dem i projektfilen.
@@ -143,7 +139,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			[ ] Kontrollera efter avslutat paket hur många rader som hamnade mellan optimistisk och pessimistisk. Med 10/90 ska det vara ungefär åtta av tio.
 				Färre betyder för smala spann. Fler betyder för breda.
 			[ ] Spara projektets utfall som referens till nästa estimat av samma typ.
-
 	5 Estimatklass och förväntad precision
 		Klassen beskriver hur mogen omfattningen är. Den bygger på AACE:s klassificering, anpassad till systemleveranser.
 		Klass 5, idé eller tidig förfrågan
@@ -156,7 +151,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Estimatet bygger på detaljerade specifikationer och eget utfall. Relativt spann under 30 %.
 		Om totalens relativa spann är mycket smalare än klassen tillåter är intervallen sannolikt för optimistiska.
 		Siffrorna är riktvärden för vår typ av uppdrag. AACE:s egna intervall gäller byggprojekt och ska inte citeras som exakta.
-
 	6 Komplexitetsfaktorer
 		Gå igenom listan när raderna och riskerna skrivs. En faktor som gäller breddar spannet på berörda rader, eller blir en risk om den är en händelse.
 		Datamängd: stort artikelbestånd, många digitala filer, stora filer.
@@ -253,7 +247,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 					utfall::
 					avvikelse::
 					inomspann::
-
 	8 Vad som ändrats mot den gamla mallen
 		Gäller Estimate PIM Project Template v3.2, Detailed estimation per task och PERT-bladet.
 		Osäkerhetsfaktor ersätts av tre värden
@@ -281,7 +274,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			Engångs- och återkommande kostnader ligger per paket med leverantör och volymantagande.
 		Uppföljningen finns kvar
 			Utfall per rad ger avvikelse och kalibrering, som Outcome och Variance gjorde förut.
-
 	9 Mallar
 		Projektfil
 			Kopiera blocket nedan till en ny .ord-fil i projektets workspace och fyll i. ID:t estimatinst måste vara unikt i workspace.
@@ -338,7 +330,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 			mall_risker.csv: _id, _type (estimatrisk), _label, _parent (paket), roll, sannolikhet, optimistisk, trolig, pessimistisk, utlösare, åtgärd, ägare.
 			mall_kostnader.csv: _id, _type (kostnadspost), _label, _parent (paket), slag, belopp, antal, period, leverantör, volymantagande.
 			Datum skrivs ÅÅÅÅ-MM-DD och decimaler med punkt. Flera värden i en cell skiljs med semikolon.
-
 	10 Källor
 		Malcolm, Roseboom, Clark och Fazar (1959). Application of a Technique for Research and Development Program Evaluation. Operations Research 7(5). Ursprunget till PERT och trepunktsformeln.
 		Project Management Institute (2019). Practice Standard for Project Estimating, andra upplagan. Trepunktsestimat, reserver och estimat i flera steg.
@@ -349,7 +340,6 @@ Estimeringsmetod med trepunktsestimat (PERT)
 		AACE International. Recommended Practice 40R-08, Contingency Estimating – General Principles, och 65R-11, riskreserv med förväntat värde.
 		Flyvbjerg, Bent (2006). From Nobel Prize to Project Management: Getting Risks Right. Project Management Journal 37(3). Referensklassprognoser mot planeringsoptimism.
 		Jørgensen, Magne (2014). What We Do and Don't Know about Software Development Effort Estimation. IEEE Software 31(2). Expertbedömning och för smala intervall.
-
 	Typdefinitioner
 		Formlerna nedan räknar estimatet. Ändra dem bara här.
 		Estimatroll +ord-type
